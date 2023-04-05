@@ -30,6 +30,7 @@ Version 1.0.8 of the CLI was released on 5 April 2023.
 
 This release has the following changes:
 
+- Vulnerability remediations.
 - Updated translations.
 - Updated error messages.
 
