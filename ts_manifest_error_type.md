@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-04-13"
+  years: 2017, 2023
+lastupdated: "2023-04-12"
 
 keywords: error, registry, manifest type, tag, image, the manifest type for this image is not supported for tagging
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You get a manifest type error when you try to tag your image in {{site.data.keyword.registrylong}}: `The manifest type for this image is not supported for tagging.`
+When you try to tag your image in {{site.data.keyword.registrylong}}, you get a manifest type error: `The manifest type for this image is not supported for tagging.`
 {: shortdesc}
 
 You tried to tag your image, but you receive the following manifest error message: `The manifest type for this image is not supported for tagging.`
@@ -51,5 +51,3 @@ To resolve the problem, complete the following steps:
     docker push <target_image>
     ```
     {: pre}
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-05-30"
+  years: 2017, 2023
+lastupdated: "2023-04-12"
 
 keywords: error, registry, not a registered command, registered command, cr, command, ibmcloud cr
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You can't run any {{site.data.keyword.registrylong}} `ibmcloud cr` commands, they are failing with the message: `'cr' is not a registered command. See 'ibmcloud help'`.
+You can't run any {{site.data.keyword.registrylong}} `ibmcloud cr` commands. The commands are failing with the message: `'cr' is not a registered command. See 'ibmcloud help'`.
 {: shortdesc}
 
 You're trying to run an `ibmcloud cr` command, but you receive an error message similar to one of the following error messages:
@@ -42,5 +42,3 @@ The `container-registry` CLI plug-in is not installed.
 
 Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 {: tsResolve}
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-12"
 
 keywords: registry, resource, authorized, namespace, create a namespace, permissions
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-When you try to create a namespace in {{site.data.keyword.registrylong}}, you are not authorized.
+You aren't authorized to create a namespace in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 You try to create a namespace, but you receive the following error message:
