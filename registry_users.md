@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-04-12"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Defining IAM access policies for {{site.data.keyword.registryshort_notm}}
 {: #user}
 
-As an administrator, you can define {{site.data.keyword.iamlong}} (IAM) access policies to create different levels of access for different users in {{site.data.keyword.registrylong}}. For example, you can authorize certain users to set quotas while other users can only view quotas.
+As an administrator, you can define {{site.data.keyword.iamlong}} (IAM) access policies to create different levels of access for different users in {{site.data.keyword.registrylong}}. For example, you can authorize some users to view quotas and other users to set quotas.
 {: shortdesc}
 
 You must define IAM [access policies](x2853407){: term} for every user that works with {{site.data.keyword.registrylong_notm}}. The scope of an IAM access policy is based on the user's role or roles that determine the actions that they are allowed to do. Some roles are predefined, but custom roles can be defined.
@@ -45,5 +45,5 @@ If you want to access resources, you must assign roles to users or service IDs. 
 - To create a policy for users, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 - To create a policy for service IDs, run the `ibmcloud iam service-policy-create` command or use the {{site.data.keyword.cloud_notm}} console to bind roles to your service IDs. To create policies, you must have the Administrator role. You automatically have the Administrator role on your own account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids) and [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
-For an example of useful access policies for {{site.data.keyword.registrylong_notm}}, see the [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access).
+For an example of useful access policies for {{site.data.keyword.registrylong_notm}}, see [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access).
 {: tip}

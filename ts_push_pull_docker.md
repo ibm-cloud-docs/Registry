@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-04-12"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Pushing or pulling a Docker image fails when you're using {{site.data.keyword.registrylong}}. You might receive various messages, for example, about being over quota.
+When you're using {{site.data.keyword.registrylong}}, pushing or pulling a Docker image fails. You might receive various messages, for example, about being over quota or invalid credentials.
 {: shortdesc}
 
 When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. The following error messages are potential error messages that you might receive:
