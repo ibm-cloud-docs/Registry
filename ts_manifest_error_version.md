@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-06-13"
+  years: 2017, 2023
+lastupdated: "2023-04-12"
 
 keywords: error, registry, manifest version, manifest version error, tag, image, the manifest version for this image is not supported for tagging
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You get a manifest version error when you try to tag your image in {{site.data.keyword.registrylong}}: `The manifest version for this image is not supported for tagging.`
+When you try to tag your image in {{site.data.keyword.registrylong}}, you get a manifest version error: `The manifest version for this image is not supported for tagging.`
 {: shortdesc}
 
 You tried to tag your image, but you receive the following error message: `The manifest version for this image is not supported for tagging. To upgrade to a supported manifest version, pull and push this image by using Docker version 17.07 or later, then run the 'ibmcloud cr image-tag' command again.`
@@ -48,5 +48,3 @@ To resolve the problem, complete the following steps:
     {: pre}
 
 4. Tag the image by running the `ibmcloud cr image-tag` command, see [Creating new images that refer to a source image](/docs/Registry?topic=Registry-registry_images_#registry_images_source).
-
-
