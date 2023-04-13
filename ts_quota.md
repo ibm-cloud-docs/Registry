@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-13"
 
 keywords: error, iam, access denied, access, quota, pull traffic quota, image storage quota
 
@@ -31,5 +31,5 @@ When you try to access {{site.data.keyword.registryshort}}, you get one of the f
 You exceeded your image storage quota or pull traffic quota.
 {: tsCauses}
 
-Review your quota limits and increase them as necessary. However, if you do increase your quota, your costs increase. For more information, see [Managing quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_get).
+Review your quota limits and increase them as necessary. However, increasing your quota does increase your costs. For more information, see [Managing quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_get).
 {: tsResolve}
