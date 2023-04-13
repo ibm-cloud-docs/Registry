@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-04-13"
+  years: 2021, 2022
+lastupdated: "2022-05-17"
 
 keywords: Portieris, image security, Portieris policies, installing Portieris, security, removing Portieris, policies, cluster
 
@@ -49,3 +49,5 @@ For more information about Portieris policies, see [Portieris policies](https://
 How to uninstall Portieris.
 
 [Uninstall Portieris](https://github.com/IBM/portieris#uninstalling-portieris){: external}.
+
+
