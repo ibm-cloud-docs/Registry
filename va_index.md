@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-03"
+lastupdated: "2023-04-13"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -18,7 +18,7 @@ subcollection: va
 Vulnerability Advisor is provided as part of {{site.data.keyword.registrylong}}. Vulnerability Advisor checks the security status of container images that are provided by {{site.data.keyword.IBM_notm}}, third parties, or added to your organization's registry namespace.
 {: shortdesc}
 
-Vulnerability Advisor provides security management for [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started), generating a security status report that includes suggested fixes and best practices. Vulnerability Advisor is available in two versions: version 3 and version 4. Version 4 uses new architecture and a different scanning engine.
+Vulnerability Advisor provides security management for [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started). Vulnerability Advisor generates a security status report that includes suggested fixes and best practices. Vulnerability Advisor is available in two versions: version 3 and version 4. Version 4 uses new architecture and a different scanning engine.
 
 When you add an image to a namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability.
 
