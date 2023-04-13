@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-13"
 
 keywords: error, iam, access denied, access, private network,
 
@@ -30,5 +30,5 @@ When you try to access {{site.data.keyword.registryshort}}, you get the followin
 You attempted to access {{site.data.keyword.registryshort}} over the public network, but the account is set to allow only private network traffic.
 {: tsCauses}
 
-Check the account settings for private only traffic. If private-only traffic is enabled, ensure that you're accessing {{site.data.keyword.registryshort}} from the private network. For more information, see [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images).
+Check the account settings for private only traffic. If private-only traffic is enabled, ensure that you are accessing {{site.data.keyword.registryshort}} from the private network. For more information, see [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 {: tsResolve}

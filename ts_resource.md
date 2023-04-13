@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-13"
 
 keywords: error, iam, access denied, access, resource,
 
@@ -36,7 +36,7 @@ The following alternatives are possible causes:
 You can fix this problem in the following ways:
 {: tsResolve}
 
-- Confirm that the API key that you're using has suitable permissions for the resource that you're trying to access. Contact the owner of the resource for help. For more information, see [Managing IAM access](/docs/Registry?topic=Registry-iam&interface=ui).
+- Confirm that the API key that you are using has suitable permissions for the resource that you are trying to access. Contact the owner of the resource for help. For more information, see [Managing IAM access](/docs/Registry?topic=Registry-iam&interface=ui).
 
 - Check whether context-based restriction rules are in place. If so, these rules prevent you from accessing resources outside the defined allowed contexts. Adjust the allowed context or rerun your pull from within an allowed context. For more information, see [Context-based restrictions](/docs/Registry?topic=Registry-iam&interface=ui#iam_cbr).
 
