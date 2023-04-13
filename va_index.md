@@ -225,7 +225,7 @@ You can deploy containers from any image regardless of security status unless Po
 
 When you use Portieris, any security issue that is detected by Vulnerability Advisor prevents a container from being deployed from the image. If you want to allow an image with detected issues to be deployed, you must add exemptions from your policy, see [Vulnerability policies](https://github.com/IBM/portieris/blob/main/POLICIES.md#vulnerability){: external}.
 
-To find out about the required permissions for working with exemptions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure)..
+To find out about the required permissions for working with exemptions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Setting exemption policies by using the console
 {: #va_managing_policy_gui}
