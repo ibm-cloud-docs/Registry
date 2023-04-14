@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-04-14"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -23,7 +23,7 @@ You can use {{site.data.keyword.cloud}} virtual private endpoints (VPE) for Virt
 
 VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all [availability zones](x7018171){: term} of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
 
-If you have an [{{site.data.keyword.vpc_short}} instance](/docs/vpc?topic=vpc-getting-started) and want to connect the VPC instance to {{site.data.keyword.registrylong_notm}} for your {{site.data.keyword.registryshort_notm}} services, you can create a VPE gateway for your VPC to access {{site.data.keyword.registrylong_notm}} within your VPC network. Any connections to {{site.data.keyword.registrylong_notm}} that originate from within the VPC automatically go through the {{site.data.keyword.registryshort_notm}} VPE gateway, if one exists.
+If you have an {{site.data.keyword.vpc_short}} instance and want to connect the VPC instance to {{site.data.keyword.registrylong_notm}} for your {{site.data.keyword.registryshort_notm}} services, you can create a VPE gateway for your VPC to access {{site.data.keyword.registrylong_notm}} within your VPC network. Any connections to {{site.data.keyword.registrylong_notm}} that originate from within the VPC automatically go through the {{site.data.keyword.registryshort_notm}} VPE gateway, if one exists. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
 
 When you connect to {{site.data.keyword.registryshort_notm}} from the {{site.data.keyword.cloud_notm}} console, you must go through a browser in your VPC to ensure that the connection goes through the {{site.data.keyword.registryshort_notm}} VPE gateway.
 {: note}
@@ -39,11 +39,11 @@ For more information about other {{site.data.keyword.cloud_notm}} VPE services, 
 
 Before you target a VPE for {{site.data.keyword.registryshort_notm}}, you must complete the following tasks.
 
-- Ensure that a [Virtual Private Cloud is created](/docs/vpc?topic=vpc-getting-started).
-- Make a plan for your [virtual private endpoints](/docs/vpc?topic=vpc-planning-considerations).
-- Ensure that [correct access controls](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways) are set for your VPE.
-- Understand the [limitations](/docs/vpc?topic=vpc-limitations-vpe) of having a VPE.
-- Understand how to [view details](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) about a VPE.
+- Ensure that a Virtual Private Cloud is created, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
+- Make a plan for your virtual private endpoints, see [Planning for virtual private endpoint gateways](/docs/vpc?topic=vpc-planning-considerations).
+- Ensure that correct access controls are set for your VPE, see [Configuring ACLs and security groups for use with endpoint gateways](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways).
+- Understand the limitations of having a VPE, see [Virtual private endpoint limitations](/docs/vpc?topic=vpc-limitations-vpe).
+- Understand how to view details about a VPE, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway).
 
 ## Virtual private endpoints
 {: #registry_vpe_endpoints}
