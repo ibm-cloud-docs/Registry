@@ -21,13 +21,7 @@ toc:
         navtitle: About Container Registry
       - topic: registry_architecture.md
         navtitle: Container Registry architecture and workload
-      - topicgroup:
-          label: Public images
-          topics:
-          - registry_public_images.md
-          - include: ../RegistryImages/ibmcloud-secure-perimeter-health/index-ibmcloud-secure-perimeter-health.md
-          - include: ../RegistryImages/ibmcloud-secure-perimeter-network/index-ibmcloud-secure-perimeter-network.md
-          - include: ../RegistryImages/ibmliberty/index-ibmliberty.md
+      - registry_public_images.md
       - link:
           label: What are containers?
           href: https://www.ibm.com/topics/containers

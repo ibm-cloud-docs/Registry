@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-21"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -114,55 +114,13 @@ subcollection: Registry
 * [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
 
 
-## Public images
+## Public {{site.data.keyword.IBM_notm}} images
 {: #sitemap_public_images}
 
 
 [Public {{site.data.keyword.IBM_notm}} images](/docs/Registry?topic=Registry-public_images#public_images)
 
 * [Accessing the public IBM images by using the CLI](/docs/Registry?topic=Registry-public_images#public_images_cli)
-
-[Getting started with `ibmcloud-secure-perimeter-health`](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#ibmcloud-secure-perimeter-health)
-
-* [How the image works](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_how-it-works)
-
-* [What is included with the image](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_whats_included)
-
-* [Provision a Kubernetes cluster in a Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_provision_cluster)
-
-* [Scan private networks within a Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_private_networks)
-
-    * [Before you begin](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_private_networks_prereq)
-
-* [Scan public networks outside a Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_public_networks)
-
-    * [Before you begin](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_public_networks_prereq)
-
-* [Analyzing scan results](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_scan_results)
-
-* [Container argument reference](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_reference_container_arg)
-
-* [Environment variable reference](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_reference_env_var)
-
-[Getting started with `ibmcloud-secure-perimeter-network`](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#ibmcloud-secure-perimeter-network)
-
-* [How the image works](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_how-it-works)
-
-* [What is included with the image](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_whats_included)
-
-* [Before you begin](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_prerequisites)
-
-* [Provision a Kubernetes cluster in a Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_provision_cluster)
-
-* [Run the configuration of your Secure Perimeter Vyatta](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_initial_setup)
-
-* [Set up a Kubernetes pod within your Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_setup)
-
-* [`config.json` reference](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_reference_config_json)
-
-* [`rules.conf` reference](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_reference_rules_conf)
-
-[`ibm/liberty` public image - deprecated](/docs/Registry?topic=Registry-ibmliberty#ibmliberty)
 
 
 ## What are containers?
