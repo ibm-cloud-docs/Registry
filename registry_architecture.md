@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-06-30"
+  years: 2020, 2023
+lastupdated: "2023-04-24"
 
 keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
@@ -41,5 +41,3 @@ All traffic to the registry, and from the service to {{site.data.keyword.registr
 You can decide whether your data plane interactions use private connections. Additionally, you can choose to prohibit public data plane connections for your account.
 
 The flow of all customer data between {{site.data.keyword.registrylong_notm}} and its dependencies uses private network connections. For more information about private connections, see [Securing your connection to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_private).
-
-
