@@ -24,7 +24,7 @@ In each regional instance of the [registry](/docs/Registry?topic=Registry-regist
 
 {{site.data.keyword.registrylong_notm}} runs in {{site.data.keyword.containerlong_notm}} clusters, and uses {{site.data.keyword.cos_full_notm}} to store images. Image data in {{site.data.keyword.cos_full_notm}} is encrypted at rest.
 
-![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
+![Diagram showing deployment.](images/container_registry_architecture.svg "Diagram showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Figure 1. Diagram showing deployment" caption-side="bottom"}
 
 ## Segmentation of data
 {: #registry_architecture_segment}
