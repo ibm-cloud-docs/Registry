@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-04-25"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1605,6 +1605,8 @@ subcollection: Registry
     * [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
     * [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
+
+    * [Can I rename a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_rename)
 
     * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 

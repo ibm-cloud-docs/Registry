@@ -32,6 +32,14 @@
         "namespaces creation limit for Container Registry",
         "namespace amount allowed in Container Registry"
       ],
+      "faq_namespace_rename": [
+        "rename namespace",
+        "renaming namespaces in Container Registry",
+        "namespace renaming in Container Registry",
+        "can namespaces be renamed",
+        "can't rename namespace in Container Registry",
+        "can i rename a namespace"
+      ],
       "faq_trash": [
         "do images in the trash count toward quota",
         "images in the trash",

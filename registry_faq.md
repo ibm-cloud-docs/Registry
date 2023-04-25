@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-04-25"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -50,6 +50,24 @@ You can use Docker and non-Docker tools to build and push images to the registry
 {: faq}
 
 You can have 100 registry [namespaces](x2031005){: term} in each region.
+
+### Can I rename a namespace?
+{: #faq_namespace_rename}
+{: faq}
+
+You can't rename a [namespace](x2031005){: term}. If you want to change the name of the namespace, you must create a namespace with the new name and transfer its data. To transfer its data, you can copy the contents of the existing namespace into the namespace that you created.
+
+If you don't want to transfer data manually, you can create a script for this action by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command. For example, you can use the following script, where `<old_namespace>` is the exisitng namespace and `<new_namespace>` is the namespace that you created:
+
+```txt
+IMAGES=$(icr images --restrict <old_namespace> --format "{{ .Repository }}:{{ .Tag }}")
+
+for i in $IMAGES ; do
+   new=$(echo $i | sed "s|/<old_namespace>/|/<new_namespace>/|1")
+   ibmcloud cr image-tag $i $new
+done
+```
+{: codeblock}
 
 ### Do images in the trash count toward my quota?
 {: #faq_trash}
