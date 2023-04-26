@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-04-26"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -57,7 +57,7 @@ You can have 100 registry [namespaces](x2031005){: term} in each region.
 
 You can't rename a [namespace](x2031005){: term}. If you want to change the name of the namespace, you must create a namespace with the new name and transfer its data. To transfer its data, you can copy the contents of the existing namespace into the namespace that you created.
 
-If you don't want to transfer data manually, you can create a script for this action by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command. For example, you can use the following script, where `<old_namespace>` is the exisitng namespace and `<new_namespace>` is the namespace that you created:
+If you don't want to transfer data manually, you can create a script for this action by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command. For example, you can use the following script, where `<old_namespace>` is the existing namespace and `<new_namespace>` is the namespace that you created:
 
 ```txt
 IMAGES=$(icr images --restrict <old_namespace> --format "{{ .Repository }}:{{ .Tag }}")
