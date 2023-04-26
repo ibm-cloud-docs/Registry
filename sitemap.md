@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-04-26"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -185,6 +185,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [26 April 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-26apr2023)
+
+    * [Using Portieris to block the deployment of images with issues is deprecated.](/docs/Registry?topic=Registry-registry_release_notes#26apr2023_portieris)
 
 * [11 November 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-11nov2022)
 

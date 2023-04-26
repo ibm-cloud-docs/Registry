@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-04-26"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 26 April 2023
+{: #registry-26apr2023}
+{: release-note}
+
+Using Portieris to block the deployment of images with issues is deprecated. {: #26apr2023_portieris}
+:   The use of Portieris to block the deployment of images with issues that are found by Vulnerability Advisor is deprecated.
 
 ## 11 November 2022
 {: #registry-11nov2022}
