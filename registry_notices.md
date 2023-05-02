@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2023-01-27"
+  years: 2022, 2023
+lastupdated: "2023-05-02"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, iam
 
@@ -22,6 +22,7 @@ Notifications about changes that affect {{site.data.keyword.registrylong}} and V
 {: #registry_notices_topics}
 
 Notifications about changes.
+
 
 - [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe).
 - [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address).
