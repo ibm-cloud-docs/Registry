@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-05-02"
 
 keywords: Portieris, image security, Portieris policies, installing Portieris, security, removing Portieris, policies, cluster
 
@@ -37,7 +37,7 @@ Install Portieris in your cluster.
 
 To install Portieris in your {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} cluster, see [Enabling image security enforcement in your cluster](/docs/containers?topic=containers-images#portieris-image-sec). If you use this installation, it is deployed and maintained for you and it runs in the control plane, which gives higher availability.
 
-If you prefer to install Portieris directly, or you're not using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}}, see [Installing Portieris](https://github.com/IBM/portieris#installing-portieris){: external}.
+If you prefer to install Portieris directly, or you aren't using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}}, see [Installing Portieris](https://github.com/IBM/portieris#installing-portieris){: external}.
 
 ## Portieris policies
 {: #policies_portieris}
