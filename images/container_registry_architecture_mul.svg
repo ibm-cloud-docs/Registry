@@ -48,7 +48,7 @@
 <rect x="656.5" y="48.5" width="351" height="494" stroke="#0F62FE"/>
 <rect x="672.5" y="112.5" width="168" height="415" fill="white"/>
 <g clip-path="url(#clip2_1484_62697)">
-<text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans" font-size="14" font-weight="600" letter-spacing="0.16px"><tspan x="688" y="141.25">IBM Cloud  </tspan><tspan x="688" y="159.25">Kubernetes Services</tspan></text>
+<text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans" font-size="14" font-weight="600" letter-spacing="0.16px"><tspan x="688" y="141.25">IBM Cloud  </tspan><tspan x="688" y="159.25">Kubernetes Service</tspan></text>
 <line x1="674" y1="112" x2="674" y2="178" stroke="#0F62FE" stroke-width="4"/>
 </g>
 <rect x="672.5" y="112.5" width="168" height="415" stroke="#0F62FE"/>
