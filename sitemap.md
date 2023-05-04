@@ -1642,6 +1642,8 @@ subcollection: Registry
 
     * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
 
+    * [Why can I see a vulnerability in Vulnerability Advisor v4 but not in v3?](/docs/Registry?topic=Registry-registry_faq#faq_va_v3_v4)
+
     * [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
 
         * [Alpine package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_alpine)
