@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-05-04"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -197,6 +197,12 @@ If you still see unacceptable performance, contact support, see [Getting help an
 {: faq}
 
 Security notices for Vulnerability Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
+
+### Why can I see a vulnerability in Vulnerability Advisor v4 but not in v3?
+{: #faq_va_v3_v4}
+{: faq}
+
+Some vulnerabilities are picked up earlier by Vulnerability Advisor version 4 than by version 3 because version 4 uses a different architecture and a different scanning engine.
 
 ### Which version of a package is installed in my image?
 {: #faq_va_package_version}
