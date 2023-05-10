@@ -141,6 +141,14 @@
         "many times are security notices posted in CR",
         "often are the security notices updated in CR"
       ],
+      "faq_va_v3_v4": [
+        "why can I see a vulnerability in v4 but not v3",
+        "see a vulnerability in vulnerability advisor version 4 but not in version 3",
+        "vulnerabilities showing in v4 but not v3",
+        "vulnerabilities showing in vulnerability advisor version 4 but not version 3",
+        "vulnerabilities show in version 4 but not version 3",
+        "vulnerabilities not showing in version 3"
+      ],
       "faq_va_package_version": [
         "what version of a package is installed in my image",
         "what version of a package is installed in my image in container registry",
