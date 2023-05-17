@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-31"
+lastupdated: "2023-05-17"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -27,9 +27,9 @@ You can alter the CLI output by applying the format option in two different ways
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
-- [`ibmcloud cr image-digests`](#registry_cli_list_imagedigests)
-- [`ibmcloud cr image-list`](#registry_cli_list_imagelist)
-- [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect)
+- [`ibmcloud cr image-digests`](#registry_cli_list_imagedigests) command
+- [`ibmcloud cr image-list`](#registry_cli_list_imagelist) command
+- [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect) commmand
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
@@ -40,12 +40,12 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: pre}
 
-    The following message is an example of the output from the command.
+    The following message is an example of the output from the command
 
     ```txt
-    example-<region>.icr.io/user1/ibmliberty@<digest1>
-    example-<region>.icr.io/user1/ibmliberty@<digest2>
-    example-<region>.icr.io/user1/ibmliberty@<digest3>
+    example-<region>.icr.io/user1/my_first_repo@<digest1>
+    example-<region>.icr.io/user1/my_first_repo@<digest2>
+    example-<region>.icr.io/user1/my_first_repo@<digest3>
     ```
     {: screen}
 
@@ -59,10 +59,10 @@ The following code examples demonstrate how you might use the formatting and fil
     The following message is an example of the output from the command:
 
     ```txt
-    example-<region>.icr.io/user1/ibmliberty:latest No Issues
-    example-<region>.icr.io/user1/ibmnode:1 2 Issues
-    example-<region>.icr.io/user1/ibmnode:test1 1 Issue
-    example-<region>.icr.io/user1/ibmnode2:test2 7 Issues
+    example-<region>.icr.io/user1/my_first_repo:latest No Issues
+    example-<region>.icr.io/user1/my_second_repo:1 2 Issues
+    example-<region>.icr.io/user1/my_second_repo:test1 1 Issue
+    example-<region>.icr.io/user1/my_second_repo_2:test2 7 Issues
     ```
     {: screen}
 
@@ -72,21 +72,21 @@ The following code examples demonstrate how you might use the formatting and fil
 - Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} Documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
 
     ```txt
-    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+    ibmcloud cr image-inspect ibm_public_image --format "{{ .ContainerConfig.Labels }}"
     ```
     {: pre}
 
     The following message is an example of the output from the command:
 
     ```txt
-    map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
+    map[doc.url:/docs/images/docker_image_ibm_public_image/ibm_public_image_starter.html]
     ```
     {: screen}
 
 - Run the following `ibmcloud cr image-inspect` command to display the exposed ports for a specified image.
 
     ```txt
-    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+    ibmcloud cr image-inspect ibm_public_image --format "{{ .Config.ExposedPorts }}"
     ```
     {: pre}
 
