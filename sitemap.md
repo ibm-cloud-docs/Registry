@@ -192,9 +192,9 @@ subcollection: Registry
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
 
-* [18 May 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-18may2023)
+* [19 May 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19may2023)
 
-    * [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#18may2023_va_v4)
+    * [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#19may2023_va_v4)
 
 * [26 April 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-26apr2023)
 
