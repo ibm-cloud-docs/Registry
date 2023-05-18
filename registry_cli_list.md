@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-05-18"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -29,7 +29,7 @@ You can use the format option with the following {{site.data.keyword.registrylon
 
 - [`ibmcloud cr image-digests`](#registry_cli_list_imagedigests) command
 - [`ibmcloud cr image-list`](#registry_cli_list_imagelist) command
-- [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect) commmand
+- [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect) command
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
