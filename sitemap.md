@@ -1105,6 +1105,8 @@ subcollection: Registry
 
 * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#containerregcli_prereq)
 
+    * [Notes](/docs/Registry?topic=Registry-containerregcli#containerregcli_prereq_notes)
+
 * [`ibmcloud cr api`](/docs/Registry?topic=Registry-containerregcli#bx_cr_api)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_api_prereq)
@@ -1488,8 +1490,6 @@ subcollection: Registry
 
 [Troubleshooting](/docs/Registry?topic=Registry-ts_index#ts_index)
 
-* [Getting help and support for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-ts_index#gettinghelp)
-
 * [Troubleshooting topics](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts)
 
     * [Troubleshooting CLI login](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts_cli_login)
@@ -1653,4 +1653,11 @@ subcollection: Registry
         * [{{site.data.keyword.redhat_notm}} and CentOS package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)
 
     * [Does Vulnerability Advisor have versions?](/docs/Registry?topic=Registry-registry_faq#faq_va_versions)
+
+
+## Getting help and support for {{site.data.keyword.registryshort_notm}}
+{: #sitemap_getting_help_and_support_for_}
+
+
+[Getting help and support for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-help-and-support#help-and-support)
 
