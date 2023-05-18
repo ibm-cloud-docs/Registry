@@ -137,12 +137,6 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
-[Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_va_v4)
-
-* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_change)
-
-* [What actions you must take by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_action)
-
 [Changes to {{site.data.keyword.registryshort_notm}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_know)
@@ -191,10 +185,6 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
-
-* [19 May 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19may2023)
-
-    * [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#19may2023_va_v4)
 
 * [26 April 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-26apr2023)
 
