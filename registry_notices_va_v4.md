@@ -16,6 +16,7 @@ subcollection: Registry
 {: #registry_notices_va_v4}
 
 The Vulnerability Advisor component of {{site.data.keyword.registrylong}} is being updated. To continue to scan your images, you must update to Vulnerability Advisor version 4.
+{: shortdesc}
 
 Vulnerability Advisor version 3 is being discontinued and to continue to use Vulnerability Advisor, you must update to Vulnerability Advisor version 4 by 19 June 2023.
 
