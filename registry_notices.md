@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-05-19"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, iam
 
@@ -23,6 +23,7 @@ Notifications about changes that affect {{site.data.keyword.registrylong}} and V
 
 Notifications about changes.
 
+- [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4).
 - [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe).
 - [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address).
 - [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists).
