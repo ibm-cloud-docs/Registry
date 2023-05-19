@@ -205,5 +205,5 @@ toc:
               - ts_pods.md
       - topic: registry_faq.md
         navtitle: Frequently asked questions (FAQs)
-      - sitemap.md
       - registry_help_support.md
+      - sitemap.md
