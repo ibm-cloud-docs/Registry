@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-05-19"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -587,8 +587,6 @@ Automating access to your namespaces {: #21feb2019_access}
 
 End of support for Vulnerability Advisor API version 2 {: #8jan2019_va2}
 :   Vulnerability Advisor’s API version 2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](/apidocs/container-registry/va).
-
-    For more information, see [Vulnerability Advisor v2 API Deprecation](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/){: external}.
 
 ## 4 October 2018
 {: #registry-4oct2018}
