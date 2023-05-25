@@ -113,7 +113,7 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 | Debian | All stable versions with vendor security support.  \n  \n CVEs on binary packages that are associated with the Debian source package `linux`, such as `linux-libc-dev`, are not reported. Most of these binary packages are kernel and kernel modules, which are not run in container images. | [Debian Oval database](https://www.debian.org/security/oval/){: external}. |
 | GoogleContainerTools distroless | All stable versions with vendor security support. | [GoogleContainerTools distroless](https://github.com/GoogleContainerTools/distroless){: external} |
 | Red Hat&reg; Enterprise Linux&reg; (RHEL) | RHEL/UBI 7 and RHEL/UBI 8 | [{{site.data.keyword.redhat_notm}} Security Data API](https://access.redhat.com/labsinfo/securitydataapi){: external}. |
-| Ubuntu | All stable versions with vendor security support. | [Ubuntu Security Notices](https://ubuntu.com/security/notices){: external}. | 
+| Ubuntu | All stable versions with vendor security support. | [Ubuntu Security Notices](https://launchpad.net/ubuntu-cve-tracker){: external}. | 
 {: caption="Table 2. Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
 
 ### Configuration issues - version 3 only
