@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-05-31"
+lastupdated: "2023-06-01"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -22,6 +22,8 @@ subcollection: Registry
 
 
 [Getting started](/docs/Registry?topic=Registry-getting-started#getting-started)
+
+* [Before you begin](/docs/Registry?topic=Registry-getting-started#gs_registry_prereqs)
 
 * [Install the {{site.data.keyword.registryshort_notm}} CLI](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install)
 

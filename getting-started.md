@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-06-01"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -31,13 +31,23 @@ The {{site.data.keyword.cloud_notm}} console includes a brief Quick Start. To fi
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
+## Before you begin
+{: #gs_registry_prereqs}
+
+Install the {{site.data.keyword.cloud_notm}} CLI so that you can run the {{site.data.keyword.cloud_notm}} `ibmcloud` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
+
 ## Install the {{site.data.keyword.registryshort_notm}} CLI
 {: #gs_registry_cli_install}
 {: step}
 
-1. Install the {{site.data.keyword.cloud_notm}} CLI so that you can run the {{site.data.keyword.cloud_notm}} `ibmcloud` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
+1. Install the `container-registry` CLI plug-in by running the following command:
 
-2. [Install the `container-registry` CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#idt-install-container-registry-cli-plugin).
+```
+ibmcloud plugin install container-registry
+```
+{: pre}
+
+For more information about installing plug-ins, see [Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 
 ## Set up a namespace
 {: #gs_registry_namespace_add}
