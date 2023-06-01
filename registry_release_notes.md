@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-19"
+lastupdated: "2023-06-01"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -65,7 +65,7 @@ Changes to private IP addresses from 15 December 2022 {: #2nov2022_ip}
 {: release-note}
 
 {{site.data.keyword.registryshort}} plug-in 1.0.0 is available {: #15sep2022_v1}
-:   A new version, version 1.0.0, of the {{site.data.keyword.registryshort}} CLI plug-in is available. To update the version of your {{site.data.keyword.registryshort}} CLI plug-in, see [Install the `container-registry` CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#idt-install-container-registry-cli-plugin).
+:   A new version, version 1.0.0, of the {{site.data.keyword.registryshort}} CLI plug-in is available. To update the version of your {{site.data.keyword.registryshort}} CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace&interface=ui#registry_cli_update).
 
     Version 1.0.0 includes [Vulnerability Advisor 4](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_4).
 
@@ -74,7 +74,7 @@ Changes to private IP addresses from 15 December 2022 {: #2nov2022_ip}
     For more information, see [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists).
 
 All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated {: #15sep2022_v0}
-:   All releases of version 0.1 of the {{site.data.keyword.registryshort}} CLI plug-in are deprecated. You can continue to use releases of version 0.1, but version 1.0.0 is available for you to use. Version 0.1 will continue to be updated with any required updates until 15 September 2023. To update the version of your CLI plug-in, see [Install the `container-registry` CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#idt-install-container-registry-cli-plugin).
+:   All releases of version 0.1 of the {{site.data.keyword.registryshort}} CLI plug-in are deprecated. You can continue to use releases of version 0.1, but version 1.0.0 is available for you to use. Version 0.1 will continue to be updated with any required updates until 15 September 2023. To update the version of your CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace&interface=ui#registry_cli_update).
 
 Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} plug-in 1.0.0 {: #15sep2022_va_version_4}
 :   From {{site.data.keyword.registryshort}} plug-in 1.0.0, you can choose whether to use Vulnerability Advisor version 3 or version 4 to run your commands. Vulnerability Advisor 4 is available from version 1.0.0 of the {{site.data.keyword.registryshort}} plug-in. Vulnerability Advisor 3 is the default.
