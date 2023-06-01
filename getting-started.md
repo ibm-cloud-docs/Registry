@@ -42,12 +42,12 @@ Install the {{site.data.keyword.cloud_notm}} CLI so that you can run the {{site.
 
 1. Install the `container-registry` CLI plug-in by running the following command:
 
-```
-ibmcloud plugin install container-registry
-```
-{: pre}
+    ```
+    ibmcloud plugin install container-registry
+    ```
+    {: pre}
 
-For more information about installing plug-ins, see [Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+    For more information about installing plug-ins, see [Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 
 ## Set up a namespace
 {: #gs_registry_namespace_add}

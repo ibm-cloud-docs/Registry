@@ -35,12 +35,12 @@ Install the `container-registry` CLI plug-in so that you can use the command lin
 
 1. Install the `container-registry` CLI plug-in by running the following command:
 
-```
-ibmcloud plugin install container-registry
-```
-{: pre}
+    ```
+    ibmcloud plugin install container-registry
+    ```
+    {: pre}
 
-For more information about installing plug-ins, see [Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+    For more information about installing plug-ins, see [Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 
 2. Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo` or as root.
 
