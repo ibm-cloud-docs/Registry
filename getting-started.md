@@ -42,7 +42,7 @@ Install the {{site.data.keyword.cloud_notm}} CLI so that you can run the {{site.
 
 1. Install the `container-registry` CLI plug-in by running the following command:
 
-    ```
+    ```txt
     ibmcloud plugin install container-registry
     ```
     {: pre}
