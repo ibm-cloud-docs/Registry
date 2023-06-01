@@ -35,7 +35,7 @@ Install the `container-registry` CLI plug-in so that you can use the command lin
 
 1. Install the `container-registry` CLI plug-in by running the following command:
 
-    ```
+    ```txt
     ibmcloud plugin install container-registry
     ```
     {: pre}
