@@ -1,1 +1,0 @@
-# doctopus-common
