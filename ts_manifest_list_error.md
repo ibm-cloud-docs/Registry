@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-06-05"
 
 keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error, image, repository
 
@@ -99,7 +99,7 @@ You can resolve this issue by using one of the following options, following on f
 
 - If the missing image exists elsewhere in the registry, you can use the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command to move the image to the same repository.
 
-    1. To detect if the missing digest exists elsewhere in the registry, run the following command:
+    1. To detect if the missing digest exists elsewhere in the registry, run the following command.
 
         ```txt
         ibmcloud cr digests --format '{{if eq .Digest "sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc"}}{{.Repository}}@{{.Digest}}{{end}}'
@@ -107,7 +107,7 @@ You can resolve this issue by using one of the following options, following on f
         ```
         {: pre}
 
-    2. If the previous command returns an image, you can copy it to the same repository as the manifest list:
+    2. If the previous command returns an image, you can copy it to the same repository as the manifest list.
 
         ```txt
         ibmcloud cr image-tag icr.io/mynamespace/myrepo2@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc icr.io/mynamespace/myrepo:ppc64le
@@ -116,7 +116,7 @@ You can resolve this issue by using one of the following options, following on f
 
 - If the missing image was deleted in the last 30 days, you can restore it from the trash.
 
-    1. Detect if the image exists in trash by running the following command:
+    1. Detect if the image exists in trash by running the following command.
 
         ```txt
         ibmcloud cr trash-list --restrict mynamespace
@@ -136,7 +136,7 @@ You can resolve this issue by using one of the following options, following on f
         ```
         {: screen}
 
-    2. If the image does exist in trash, you can restore it by running the following command:
+    2. If the image does exist in trash, you can restore it by running the following command.
 
         ```txt
         ibmcloud cr image-restore icr.io/mynamespacemyrepo@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc
