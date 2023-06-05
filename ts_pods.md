@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-04-13"
+  years: 2017, 2023
+lastupdated: "2023-06-05"
 
 keywords: pods, worker, cluster workers, portieris, webhook
 
@@ -38,7 +38,7 @@ You must have sufficient role-based access control (RBAC) privileges to use the 
 
 For more information about RBAC, see [Understanding RBAC permissions](/docs/containers?topic=containers-users#understand-rbac), [Creating custom RBAC permissions for users, groups, or service accounts](/docs/containers?topic=containers-users#rbac), and [Kubernetes - Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){: external}.
 
-To change the webhook configuration so that it fails open, and then, when at least one Portieris pod is running, restore the webhook configuration so that it fails closed, complete the following steps:
+To change the webhook configuration so that it fails open, and, when at least one Portieris pod is running, restore the webhook configuration so that it fails closed, complete the following steps:
 
 1. Update `MutatingWebhookConfiguration` by running the following command.
 
@@ -82,5 +82,3 @@ To change the webhook configuration so that it fails open, and then, when at lea
     {: pre}
 
     Change `failurePolicy` to `Fail`, save, and close.
-
-

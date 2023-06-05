@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-06-05"
 
 keywords: error, iam, access denied, access, quota, pull traffic quota, image storage quota
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 You have a valid IAM API key or OAuth token, but you still get `Access denied` errors about your quota in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-When you try to access {{site.data.keyword.registryshort}}, you get one of the following messages:
+When you try to access {{site.data.keyword.registryshort}}, you get one of the following messages.
 {: tsSymptoms}
 
 - `Your account has exceeded its pull traffic quota for the current month.`
