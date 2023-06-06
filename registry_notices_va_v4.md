@@ -45,9 +45,4 @@ Update the following items as described in [What you need to know about this cha
 - The {{site.data.keyword.registryshort}} CLI plug-in and, if you have explicitly run the `ibmcloud cr va-version-set v3` command previously, run the `ibmcloud cr va-version-set v4` command.
 - Any code that calls Vulnerability Advisor version 3 either through the API or through the SDK.
 
-You might have to update any existing exemptions that specify a security notice.<staging>If you want to use Vulnerability Advisor version 4 as the default, update the following items as described in [What you need to know about this change](#notices_va_v4_change):
-
-- The {{site.data.keyword.registryshort}} CLI plug-in and, if you have explicitly run the `ibmcloud cr va-version-set v3` command previously, run the `ibmcloud cr va-version-set v4` command.
-- Any code that calls Vulnerability Advisor version 3 either through the API or through the SDK.
-
 You might have to update any existing exemptions that specify a security notice.
