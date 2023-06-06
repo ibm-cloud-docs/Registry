@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-01"
+lastupdated: "2023-06-06"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -149,10 +149,10 @@ You can control which users can work with namespaces by using IAM roles.
 
     - To add and assign namespaces, you must also have the Viewer platform role for the resource group in which you want to create the namespace. To assign the Viewer role for a resource group to a user, run the following [`ibmcloud iam user-policy-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, where `<user>` is the name of the user and `<resource_group_id>` is the resource group ID:
 
-    ```txt
-    ibmcloud iam user-policy-create <user> --roles Viewer --resource-type resource-group --resource <resource_group_id>
-    ```
-    {: pre}
+        ```txt
+        ibmcloud iam user-policy-create <user> --roles Viewer --resource-type resource-group --resource <resource_group_id>
+        ```
+        {: pre}
 
 - To view and analyze namespaces, you must have the Reader or Manager role in the {{site.data.keyword.registrylong_notm}} service, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
