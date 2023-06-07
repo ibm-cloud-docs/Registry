@@ -102,7 +102,11 @@ subcollection: Registry
 
         * [Targeting a local region](/docs/Registry?topic=Registry-registry_overview#registry_regions_local_target)
 
-* [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker)
+* [Supported clients](/docs/Registry?topic=Registry-registry_overview#support_clients)
+
+    * [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker)
+
+    * [Support for other clients](/docs/Registry?topic=Registry-registry_overview#clients)
 
 
 ## Container Registry architecture and workload
