@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-01"
+lastupdated: "2023-06-07"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -25,7 +25,9 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 {: release-note}
 
 Update Vulnerability Advisor to version 4 by 19 June 2023 {: #19may2023_va_v4}
-:   The Vulnerability Advisor component of {{site.data.keyword.registrylong}} is being updated. To continue to scan your images, you must update to Vulnerability Advisor version 4.
+:   The Vulnerability Advisor component of {{site.data.keyword.registrylong}} is being updated.
+
+    Vulnerability Advisor version 3 is being deprecated as the default on 19 June 2023. From 19 June 2023, the default will be Vulnerability Advisor version 4. If you have version 3 set as the default, you can continue to use version 3 until the end of support date. An end of support date is not available yet.
 
     For more information, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4).
 
