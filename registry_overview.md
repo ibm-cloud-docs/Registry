@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-06-07"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -397,10 +397,13 @@ If you want to use a region other than your local region, you can target the reg
     {{site.data.keyword.registryshort}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
     {: tip}
 
-## Support for Docker
+## Supported clients
+{: #support_clients}
+
+### Support for Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} supports Docker Engine v17.07, or later.
+{{site.data.keyword.registrylong_notm}} supports versions of Docker Engine that Docker supports.
 
 Docker is required only if you want to push or pull images.
 
@@ -408,3 +411,8 @@ Docker V2 schema 2 images are supported. Manifest lists are also supported. For 
 
 Docker V2 schema 1 images are discontinued and you can't push them to {{site.data.keyword.registryshort}} anymore.
 {: note}
+
+### Support for other clients
+{: #clients}
+
+{{site.data.keyword.registrylong_notm}} supports supported versions of clients that are compliant with the OCI Distribution spec version 1, or later, such as Buildah, Podman, and Skopeo.
