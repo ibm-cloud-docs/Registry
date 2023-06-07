@@ -15,6 +15,7 @@ subcollection: Registry
 # Update Vulnerability Advisor to version 4 by 19 June 2023
 {: #registry_notices_va_v4}
 
+
 The Vulnerability Advisor component of {{site.data.keyword.registrylong}} is being updated. From 19 June 2023, Vulnerability Advisor version 3 will be replaced as the default by Vulnerability Advisor version 4.
 {: shortdesc}
 
