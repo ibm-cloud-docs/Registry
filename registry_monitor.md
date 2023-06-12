@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-31"
+lastupdated: "2023-06-12"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -104,7 +104,7 @@ For more information about the locations where {{site.data.keyword.cloud_notm}} 
 ### {{site.data.keyword.mon_short}} metrics
 {: #registry_monitor_ui_at}
 
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registryshort}} or a Vulnerability Advisor metric is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the metric.
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which a {{site.data.keyword.registryshort}} or a Vulnerability Advisor metric is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the metric.
 
 The following table shows the location of {{site.data.keyword.mon_short}} metrics.
 
