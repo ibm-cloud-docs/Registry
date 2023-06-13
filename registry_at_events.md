@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-03-31"
+lastupdated: "2023-06-12"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -60,7 +60,7 @@ For more information about the locations where {{site.data.keyword.cloud_notm}} 
 ### {{site.data.keyword.at_full_notm}} events
 {: #ui_at}
 
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registryshort}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which a {{site.data.keyword.registryshort}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
 
 The following table shows the location of {{site.data.keyword.at_full_notm}} events.
 
@@ -118,7 +118,7 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registryshort}}.  \n  \n Assign an {{site.data.keyword.registryshort}} namespace to a resource group. | |
+| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registryshort}}.  \n  \n Assign a {{site.data.keyword.registryshort}} namespace to a resource group. | |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registryshort}}. | |
 | `container-registry.namespace.list` | List the {{site.data.keyword.registryshort}} namespaces in your {{site.data.keyword.IBM_notm}} account. | |
 {: caption="Table 9. Actions that generate events for namespaces" caption-side="bottom"}
