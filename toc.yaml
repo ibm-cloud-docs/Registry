@@ -9,7 +9,6 @@ toc:
     product-page: https://www.ibm.com/cloud/container-registry
     path: Registry
     label: Container Registry
-
   entries:
   - navgroup:
       id: learn
@@ -38,7 +37,6 @@ toc:
           - registry_notices_docker.md
       - topic: registry_release_notes.md
         navtitle: Release notes
-
   - navgroup:
       id: tutorial
       topics:
@@ -52,7 +50,6 @@ toc:
           - include: ../solution-tutorials/vm-to-containers-and-kubernetes.md
           - include: ../solution-tutorials/multi-region-k8s-cis.md
           - include: ../solution-tutorials/continuous-deployment-to-kubernetes.md
-
   - navgroup:
       id: howto
       topics:
@@ -100,7 +97,6 @@ toc:
           - topic: registry_logs.md
             navtitle: Analyzing logs
           - registry_at_iam.md
-
   - navgroup:
       id: reference
       topics:
@@ -146,7 +142,6 @@ toc:
           - link:
               label: IBM Developer - Containers
               href: https://developer.ibm.com/technologies/containers/
-
   - navgroup:
       id: help
       topics:
