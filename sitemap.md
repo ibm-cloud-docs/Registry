@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-06-14"
+lastupdated: "2023-06-15"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -142,6 +142,8 @@ subcollection: Registry
 [Notifications](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
+
+[Upcoming public networking changes for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
 
 [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_va_v4)
 
