@@ -31,23 +31,7 @@ Version 1.0.11 of the CLI was released on 19 June 2023.
 This release has the following changes:
 
 - Support for the switch to Vulnerability Advisor version 4 as the default.
-
-## Version 1.0.10
-{: #cli-change-logv1-1010}
-
-Version 1.0.10 of the CLI was released on 6 June 2023.
-
-This release has the following changes:
-
 - Vulnerability remediations.
-
-## Version 1.0.9
-{: #cli-change-logv1-109}
-
-Version 1.0.9 of the CLI was released on 12 May 2023.
-
-This release has the following changes:
-
 - Updated translations.
 
 ## Version 1.0.8
