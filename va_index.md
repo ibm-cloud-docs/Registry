@@ -12,6 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Managing image security with Vulnerability Advisor
 {: #va_index}
 
@@ -19,6 +20,9 @@ Vulnerability Advisor is provided as part of {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 Vulnerability Advisor provides security management for [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started). Vulnerability Advisor generates a security status report that includes suggested fixes and best practices. Vulnerability Advisor is available in two versions: version 3 and version 4. Version 4 uses new architecture and a different scanning engine.
+
+Vulnerability Advisor version 3 is deprecated from 19 June 2023. For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4&interface=ui).
+{: deprecated}
 
 When you add an image to a namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability.
 
@@ -35,6 +39,9 @@ Using Portieris to block the deployment of images with issues that are found by 
 {: #about}
 
 Vulnerability Advisor provides functions to help you to secure your images.
+
+Vulnerability Advisor version 3 is deprecated from 19 June 2023. For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4&interface=ui).
+{: deprecated}
 
 The following functions are available in version 3:
 
@@ -90,6 +97,9 @@ For version 3, the scanning of an image is triggered in one of the following way
 - When a new security notice is released for a package that is installed in the image, the image is queued for scanning, which might take some time to complete.
 - While an image is tagged in the registry, it is scanned every week.
 
+Vulnerability Advisor version 3 is deprecated from 19 June 2023. For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4&interface=ui).
+{: deprecated}
+
 For version 4, the image is indexed the first time that it is pushed. Thereafter, the vulnerability assessment is calculated every time Vulnerability Advisor is queried about that image.
 
 The following tables show the supported Docker base images that Vulnerability Advisor checks for vulnerable packages.
@@ -119,6 +129,9 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 ### Configuration issues - version 3 only
 {: #app_configurations}
 
+Vulnerability Advisor version 3 is deprecated from 19 June 2023. For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4&interface=ui).
+{: deprecated}
+
 Configuration issues are potential security issues that are related to how an [app](x4281528){: term} is set up. Configuration issues are not supported in version 4.
 
 Many of the reported problems can be fixed by updating your [Dockerfile](x9860414){: term}.
@@ -131,6 +144,9 @@ Images are scanned only if they are using an operating system that is supported 
 
 ## Setting the Vulnerability Advisor version
 {: #va_set_version}
+
+Vulnerability Advisor version 3 is deprecated from 19 June 2023. For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4&interface=ui).
+{: deprecated}
 
 Starting from version 1.0.0 of the {{site.data.keyword.registryshort}} plug-in, you can choose whether to fetch results from either version 3, `v3` (the default), or version 4, `v4`, of Vulnerability Advisor for the following commands:
 
@@ -164,6 +180,9 @@ If your image does not meet the requirements that are set by your organization's
 {: help}
 {: support}
 {: ui}
+
+Vulnerability Advisor version 3 is deprecated from 19 June 2023. For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4&interface=ui).
+{: deprecated}
 
 You can review the security of Docker images that are stored in your namespaces in {{site.data.keyword.registrylong_notm}} by using the {{site.data.keyword.cloud_notm}} console. Version 4 does not support viewing vulnerability reports in the console, but you can use the CLI or the API.
 

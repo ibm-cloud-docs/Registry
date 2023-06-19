@@ -200,6 +200,10 @@ subcollection: Registry
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
 
+* [19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19jun2023)
+
+    * [Vulnerability Advisor version 3 is deprecated from 19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19jun2023_v3)
+
 * [19 May 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19may2023)
 
     * [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#19may2023_va_v4)

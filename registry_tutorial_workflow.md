@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-31"
+lastupdated: "2023-06-19"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -16,6 +16,7 @@ completion-time: 2h
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor workflow tutorial
 {: #registry_tutorial_workflow}
@@ -55,6 +56,10 @@ Before you begin, complete the following tasks:
 - [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository.
 - [Create a cluster](/docs/containers?topic=containers-clusters).
 - Ensure that you have the correct access permissions for adding and removing [namespaces](x2031005){: term}, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+- Ensure that you are using Vulnerability Advisor version 4.
+
+    Vulnerability Advisor version 3 is deprecated from 19 June 2023. For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4&interface=ui).
+    {: deprecated}
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}
