@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-19"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -112,8 +112,8 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 | Alpine | All stable versions with vendor security support. | [Alpine SecDB database](https://secdb.alpinelinux.org/){: external}. |
 | Debian | All stable versions with vendor security support.  \n  \n CVEs on binary packages that are associated with the Debian source package `linux`, such as `linux-libc-dev`, are not reported. Most of these binary packages are kernel and kernel modules, which are not run in container images. | [Debian Oval database](https://www.debian.org/security/oval/){: external}. |
 | GoogleContainerTools distroless | All stable versions with vendor security support. | [GoogleContainerTools distroless](https://github.com/GoogleContainerTools/distroless){: external} |
-| Red Hat&reg; Enterprise Linux&reg; (RHEL) | RHEL/UBI 7 and RHEL/UBI 8 | [{{site.data.keyword.redhat_notm}} Security Data API](https://access.redhat.com/labsinfo/securitydataapi){: external}. |
-| Ubuntu | All stable versions with vendor security support. | [Ubuntu CVE Tracker](https://launchpad.net/ubuntu-cve-tracker){: external}. | 
+| Red Hat&reg; Enterprise Linux&reg; (RHEL) | RHEL/UBI 7, RHEL/UBI 8, and RHEL/UBI 9 | [{{site.data.keyword.redhat_notm}} Security Data API](https://access.redhat.com/labsinfo/securitydataapi){: external}. |
+| Ubuntu | All stable versions with vendor security support. | [Ubuntu CVE Tracker](https://launchpad.net/ubuntu-cve-tracker){: external}. |
 {: caption="Table 2. Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
 
 ### Configuration issues - version 3 only
