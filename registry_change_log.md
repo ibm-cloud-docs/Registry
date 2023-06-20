@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-06-20"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI
 
@@ -30,7 +30,7 @@ Version 1.0.11 of the CLI was released on 19 June 2023.
 
 This release has the following changes:
 
-- Support for the switch to Vulnerability Advisor version 4 as the default.
+- The backup default Vulnerability Advisor version is now version 4.
 - Vulnerability remediations.
 - Updated translations.
 
