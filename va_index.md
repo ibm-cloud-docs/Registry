@@ -120,7 +120,7 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 | Docker base image | Supported versions | Source of security notices |
 |-------------------|--------------------|----------------------------|
 | Alpine | All stable versions with vendor security support. | [Alpine SecDB database](https://secdb.alpinelinux.org/){: external}. |
-| Debian | All stable versions with vendor security support up to version 11 (bullseye).  \n  \n CVEs on binary packages that are associated with the Debian source package `linux`, such as `linux-libc-dev`, are not reported. Most of these binary packages are kernel and kernel modules, which are not run in container images. | [Debian Oval database](https://www.debian.org/security/oval/){: external}. |
+| Debian | All stable versions with vendor security support up to version 11 (`bullseye`).  \n  \n CVEs on binary packages that are associated with the Debian source package `linux`, such as `linux-libc-dev`, are not reported. Most of these binary packages are kernel and kernel modules, which are not run in container images. | [Debian Oval database](https://www.debian.org/security/oval/){: external}. |
 | GoogleContainerTools distroless | All stable versions with vendor security support. | [GoogleContainerTools distroless](https://github.com/GoogleContainerTools/distroless){: external} |
 | Red Hat&reg; Enterprise Linux&reg; (RHEL) | RHEL/UBI 7, RHEL/UBI 8, and RHEL/UBI 9 | [{{site.data.keyword.redhat_notm}} Security Data API](https://access.redhat.com/labsinfo/securitydataapi){: external}. |
 | Ubuntu | All stable versions with vendor security support. | [Ubuntu CVE Tracker](https://launchpad.net/ubuntu-cve-tracker){: external}. |
