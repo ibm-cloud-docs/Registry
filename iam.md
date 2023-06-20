@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-03-31"
+lastupdated: "2023-06-20"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -56,7 +56,7 @@ Review the following tables that outline the actions that each role allows withi
 
 - [Service access roles](#service_access_roles) enable users access to {{site.data.keyword.registryshort}} and the ability to call the {{site.data.keyword.registryshort}} API.
 
-For more information about the exact actions that are mapped to each role, see [IAM roles and actions for {{site.data.keyword.registryshort}}](/docs/account?topic=account-iam-service-roles-actions#container-registry).
+For more information about the exact actions that are mapped to each role, see [IAM roles and actions for {{site.data.keyword.registryshort}}](/docs/account?topic=account-iam-service-roles-actions#container-registry-roles).
 
 For more information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
