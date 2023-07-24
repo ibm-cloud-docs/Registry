@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-07-24"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -20,6 +20,34 @@ content-type: release-note
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 24 July 2023
+{: #registry-24jul2023}
+{: release-note}
+
+JSON output option added to several {{site.data.keyword.registrylong_notm}} commands {: #registry-24jul2023_json_option}
+:   The following {{site.data.keyword.registrylong_notm}} commands now have an output option for JSON format:
+
+    - `ibmcloud cr exemption-add`
+    - `ibmcloud cr exemption-list`
+    - `ibmcloud cr exemption-types`
+    - `ibmcloud cr image-list`
+    - `ibmcloud cr namespace-list`
+    - `ibmcloud cr plan`
+    - `ibmcloud cr quota`
+    - `ibmcloud cr retention-policy-list`
+
+    For more information about the {{site.data.keyword.registrylong_notm}} commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-containerregcli)
+
+The `--json` option for {{site.data.keyword.registrylong_notm}} commands is deprecated {: #registry-24jul2023_json}
+:   The `--json` option is replaced with the `--output json` option in the following commands:
+
+    - `ibmcloud cr image-digests`
+    - `ibmcloud cr image-prune-untagged`
+    - `ibmcloud cr image-retention-run`
+    - `ibmcloud cr trash-list`
+
+    For more information about the {{site.data.keyword.registrylong_notm}} commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-containerregcli)
 
 ## 19 June 2023
 {: #registry-19jun2023}

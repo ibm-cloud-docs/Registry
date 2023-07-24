@@ -200,6 +200,12 @@ subcollection: Registry
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
 
+* [24 July 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023)
+
+    * [JSON output option added to several {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023_json_option)
+
+    * [The `--json` option for {{site.data.keyword.registrylong_notm}} commands is deprecated](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023_json)
+
 * [19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19jun2023)
 
     * [Vulnerability Advisor version 3 is deprecated from 19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19jun2023_v3)
@@ -1400,6 +1406,8 @@ subcollection: Registry
     * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
 
 [{{site.data.keyword.registryshort}} CLI change log](/docs/Registry?topic=Registry-registry_cli_change_log#registry_cli_change_log)
+
+* [Version 1.2.2](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-122)
 
 * [Version 1.1.0](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-110)
 

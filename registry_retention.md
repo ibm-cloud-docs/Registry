@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-07-24"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -202,6 +202,6 @@ You can clean up your namespace and reduce your bills by deleting your [untagged
 If you want to delete your untagged images and output the results in JSON format, run the following [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command, where `<namespace>` is your namespace:
 
 ```txt
-ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict <namespace>
+ibmcloud cr image-prune-untagged [--force | -f [--output json]] --restrict <namespace>
 ```
 {: pre}
