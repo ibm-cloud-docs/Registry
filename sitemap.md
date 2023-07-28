@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-07-28"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1167,6 +1167,8 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_prereq)
 
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_option)
+
 * [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable_prereq)
@@ -1293,6 +1295,8 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_prereq)
 
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_option)
+
 * [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_prereq)
@@ -1321,6 +1325,8 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_prereq)
 
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_option)
+
 * [`ibmcloud cr quota-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set_prereq)
@@ -1344,6 +1350,8 @@ subcollection: Registry
 * [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list_prereq)
+
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list_option)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list_example)
 
