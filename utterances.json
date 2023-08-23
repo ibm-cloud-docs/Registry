@@ -73,11 +73,10 @@
       ],
       "faq_share_image": [
         "how do I share my image in container registry",
-        "how do I share images",
+        "how do I share container images",
         "can I share my images with lots of users",
-        "can I share my image",
-        "can I use access policies to share images",
-        "sharing images in container registry"
+        "can I use access policies to share private container images",
+        "sharing images in container registry with other users"
       ],
       "faq_untagged_image_1": [
         "how do I find untagged images",
@@ -327,7 +326,6 @@
         "ibmcloud cr cli login error"
       ],
       "troubleshoot-manifest-unknown": [
-        "The manifest for this image is unknown",
         "error in container registry - The manifest is unknown",
         "getting manifest unknnown error when I try to pull an image in container registry",
         "when I try to pull an image in container registry I am getting a manifest unknown error",
@@ -448,12 +446,10 @@
         "no access to container registry due to insufficient scope"
       ],
       "troubleshoot-unauthorized-ce": [
-        "cannot access Container Registry with code engine",
-        "not authorized to access Container Registry using code engine",
-        "unauthorized to access Container Registry with code engine",
-        "can't authenticate with Container Registry using code engine",
-        "authorization required to access Container Registry with code engine",
-        "using code engine and not authorized to access Container Registry",
-        "credentials are incorrect for accessing registry with code engine"
+        "error not authorized to access Container Registry using code engine",
+        "seeing “unauthorized” when trying to access Container Registry with code engine",
+        "getting Status code 401 Unauthorized accessing Container Registry",
+        "error 401 trying to use Container Registry through Code Engine",
+        "401 Unauthorized trying to use Registry image"
       ]
     }
