@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-08-23"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -82,7 +82,7 @@ Images that are in the trash don't count toward your quota.
 
 You can find the long format of the image [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) by running one of the following commands. The digest is displayed in the **Digest** column of the CLI.
 
-When you are using the digest to identify an image, always use the long format.
+When you're using the digest to identify an image, always use the long format.
 {: note}
 
 - Run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command:
@@ -143,7 +143,7 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 {: #faq_eligible_image}
 {: faq}
 
-If you are cleaning up images by using retention policies, only eligible images are cleaned up. Images that are always retained are distroless images that do not set a created time, such as Google distroless images and manifest lists. Images that are always retained are not eligible images.
+If you're cleaning up images by using retention policies, only eligible images are cleaned up. Images that are always retained are distroless images that do not set a created time, such as Google distroless images and manifest lists. Images that are always retained are not eligible images.
 
 The images that are not eligible are still displayed, but they do not count toward the total number of images that is set in the retention policy and are not removed.
 
