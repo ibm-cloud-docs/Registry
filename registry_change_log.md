@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-09-05"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI
 
@@ -22,6 +22,16 @@ For more information about how to update the {{site.data.keyword.registryshort}}
 
 Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
 {: deprecated}
+
+## Version 1.3.1
+{: #cli-change-logv1-131}
+
+Version 1.3.1 of the CLI was released on 31 August 2023.
+
+This release has the following changes:
+
+- Adds a `--force` option to the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli&locale=en#bx_cr_retention_policy_set) command so that you can immediately apply and run the policy without user prompts.
+- Vulnerability remediation for the CVE with the ID `CVE-2023-3978`.
 
 ## Version 1.2.2
 {: #cli-change-logv1-122}
