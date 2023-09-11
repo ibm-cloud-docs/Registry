@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-02"
+lastupdated: "2023-09-11"
 
 keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
@@ -24,7 +24,7 @@ In each regional instance of the [registry](/docs/Registry?topic=Registry-regist
 
 {{site.data.keyword.registrylong_notm}} runs in {{site.data.keyword.containerlong_notm}} clusters, and uses {{site.data.keyword.cos_full_notm}} to store images. Image data in {{site.data.keyword.cos_full_notm}} is encrypted at rest.
 
-![Diagram showing deployment.](images/container_registry_architecture_mul.svg "Diagram showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Figure 1. Diagram showing deployment" caption-side="bottom"}
+![Diagram showing deployment.](images/container_registry_architecture_mul.svg "Diagram showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Figure 1. Diagram showing deployment" caption-side="bottom"}{: external download="../images/container_registry_architecture_mul.svg"}
 
 ## Segmentation of data
 {: #registry_architecture_segment}
