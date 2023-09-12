@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-06-05"
 
 keywords: registry, image, retention, distroless, list, creation date
 
