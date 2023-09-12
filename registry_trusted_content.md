@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-09-12"
 
 keywords: Docker, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, skopeo, podman, Red Hat signatures, sign images, images, signatures, cli
 
@@ -67,14 +67,14 @@ The following example doesn't include Skopeo authentication.
     ```
     {: pre}
 
-    On macOS, if you get the error `Error copying image to the remote destination: Error writing signatures: mkdir /var/lib/containers/sigstore: permission denied`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the `--registries.d` option.
+    [macOS]{: tag-macos} On macOS, if you get the error `Error copying image to the remote destination: Error writing signatures: mkdir /var/lib/containers/sigstore: permission denied`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the `--registries.d` option.
 
     ```txt
     skopeo --registries.d . --insecure-policy copy --sign-by user@email.com docker-daemon:us.icr.io/birds/bluebird:build1 docker://us.icr.io/birds/bluebird:build1
     ```
     {: pre}
 
-On Linux&reg; and macOS, the default configuration for the tools is to store the signatures locally. Storing signatures locally can lead to signature verification failure because the signature is not in the registry. To fix this problem, you can modify or delete the configuration file. On Linux&reg;, the configuration is saved in `/etc/containers/registries.d/default.yaml`. On macOS, the configuration file is saved in `/usr/local/etc/containers/registries.d/default.yaml`. On macOS, when Skopeo is installed by using the [Homebrew](https://brew.sh/){: external} package manager, the configuration file might be at `/opt/homebrew/Cellar/etc/containers/registries.d/default.yaml` for Apple silicon, or `/usr/local/Cellar/etc/containers/registries.d/default.yaml` for Intel.
+[Linux]{: tag-linux} [macOS]{: tag-macos} On Linux&reg; and macOS, the default configuration for the tools is to store the signatures locally. Storing signatures locally can lead to signature verification failure because the signature is not in the registry. To fix this problem, you can modify or delete the configuration file. On Linux&reg;, the configuration is saved in `/etc/containers/registries.d/default.yaml`. On macOS, the configuration file is saved in `/usr/local/etc/containers/registries.d/default.yaml`. On macOS, when Skopeo is installed by using the [Homebrew](https://brew.sh/){: external} package manager, the configuration file might be at `/opt/homebrew/Cellar/etc/containers/registries.d/default.yaml` for Apple silicon, or `/usr/local/Cellar/etc/containers/registries.d/default.yaml` for Intel.
 {: tip}
 
 ### Using Podman to sign images
