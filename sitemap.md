@@ -204,11 +204,11 @@ subcollection: Registry
 
     * [JSON output option added to several {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023_json_option)
 
-    * [[Deprecated]{: tag-deprecated} The `--json` option for {{site.data.keyword.registrylong_notm}} commands is deprecated](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023_json)
+    * [The `--json` option for {{site.data.keyword.registrylong_notm}} commands is deprecated](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023_json)
 
 * [19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19jun2023)
 
-    * [[Deprecated]{: tag-deprecated} Vulnerability Advisor version 3 is deprecated from 19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19jun2023_v3)
+    * [Vulnerability Advisor version 3 is deprecated from 19 June 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19jun2023_v3)
 
 * [19 May 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-19may2023)
 
@@ -216,7 +216,7 @@ subcollection: Registry
 
 * [26 April 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-26apr2023)
 
-    * [[Deprecated]{: tag-deprecated} Using Portieris to block the deployment of images with issues is deprecated.](/docs/Registry?topic=Registry-registry_release_notes#26apr2023_portieris)
+    * [Using Portieris to block the deployment of images with issues is deprecated.](/docs/Registry?topic=Registry-registry_release_notes#26apr2023_portieris)
 
 * [11 November 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-11nov2022)
 
@@ -230,7 +230,7 @@ subcollection: Registry
 
     * [{{site.data.keyword.registryshort}} plug-in 1.0.0 is available](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v1)
 
-    * [[Deprecated]{: tag-deprecated} All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0)
+    * [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0)
 
     * [Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} plug-in 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_4)
 
@@ -308,7 +308,7 @@ subcollection: Registry
 
 * [8 July 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-08jul2021)
 
-    * [[Deprecated]{: tag-deprecated} Using Notary v1 for signing images is deprecated](/docs/Registry?topic=Registry-registry_release_notes#08jul2021_notary)
+    * [Using Notary v1 for signing images is deprecated](/docs/Registry?topic=Registry-registry_release_notes#08jul2021_notary)
 
 * [21 June 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-21jun2021)
 
@@ -340,7 +340,7 @@ subcollection: Registry
 
 * [6 October 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-06oct2020)
 
-    * [[Deprecated]{: tag-deprecated} {{site.data.keyword.registryshort}} container builds are deprecated](/docs/Registry?topic=Registry-registry_release_notes#06oct2020_build)
+    * [{{site.data.keyword.registryshort}} container builds are deprecated](/docs/Registry?topic=Registry-registry_release_notes#06oct2020_build)
 
 * [27 August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-27aug2020)
 
@@ -382,7 +382,7 @@ subcollection: Registry
 
 * [3 February 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-3feb2020)
 
-    * [[Deprecated]{: tag-deprecated} Using {{site.data.keyword.registryshort}} tokens is deprecated](/docs/Registry?topic=Registry-registry_release_notes#3feb2020_tokens)
+    * [Using {{site.data.keyword.registryshort}} tokens is deprecated](/docs/Registry?topic=Registry-registry_release_notes#3feb2020_tokens)
 
 * [31 January 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-31jan2020)
 
@@ -428,7 +428,7 @@ subcollection: Registry
 
 * [13 May 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-13may2019)
 
-    * [[Deprecated]{: tag-deprecated} End of support for Container Scanner](/docs/Registry?topic=Registry-registry_release_notes#13may2019_cs)
+    * [End of support for Container Scanner](/docs/Registry?topic=Registry-registry_release_notes#13may2019_cs)
 
 * [2 April 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-2apr2019)
 
@@ -452,7 +452,7 @@ subcollection: Registry
 
 * [8 January 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-8jan2019)
 
-    * [[Deprecated]{: tag-deprecated} End of support for Vulnerability Advisor API version 2](/docs/Registry?topic=Registry-registry_release_notes#8jan2019_va2)
+    * [End of support for Vulnerability Advisor API version 2](/docs/Registry?topic=Registry-registry_release_notes#8jan2019_va2)
 
 * [4 October 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-4oct2018)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-09-13"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -39,7 +39,7 @@ JSON output option added to several {{site.data.keyword.registrylong_notm}} comm
 
     For more information about the {{site.data.keyword.registrylong_notm}} commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-containerregcli)
 
-[Deprecated]{: tag-deprecated} The `--json` option for {{site.data.keyword.registrylong_notm}} commands is deprecated {: #registry-24jul2023_json}
+The `--json` option for {{site.data.keyword.registrylong_notm}} commands is deprecated {: #registry-24jul2023_json}
 :   The `--json` option is replaced with the `--output json` option in the following commands:
 
     - `ibmcloud cr image-digests`
@@ -53,7 +53,7 @@ JSON output option added to several {{site.data.keyword.registrylong_notm}} comm
 {: #registry-19jun2023}
 {: release-note}
 
-[Deprecated]{: tag-deprecated} Vulnerability Advisor version 3 is deprecated from 19 June 2023 {: #registry-19jun2023_v3}
+Vulnerability Advisor version 3 is deprecated from 19 June 2023 {: #registry-19jun2023_v3}
 :   For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4&interface=ui).
 
 ## 19 May 2023
@@ -71,7 +71,7 @@ Update Vulnerability Advisor to version 4 by 19 June 2023 {: #19may2023_va_v4}
 {: #registry-26apr2023}
 {: release-note}
 
-[Deprecated]{: tag-deprecated} Using Portieris to block the deployment of images with issues is deprecated. {: #26apr2023_portieris}
+Using Portieris to block the deployment of images with issues is deprecated. {: #26apr2023_portieris}
 :   The use of Portieris to block the deployment of images with issues that are found by Vulnerability Advisor is deprecated.
 
 ## 11 November 2022
@@ -111,7 +111,7 @@ Changes to private IP addresses from 15 December 2022 {: #2nov2022_ip}
 
     For more information, see [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists).
 
-[Deprecated]{: tag-deprecated} All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated {: #15sep2022_v0}
+All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated {: #15sep2022_v0}
 :   All releases of version 0.1 of the {{site.data.keyword.registryshort}} CLI plug-in are deprecated. You can continue to use releases of version 0.1, but version 1.0.0 is available for you to use. Version 0.1 will continue to be updated with any required updates until 15 September 2023. To update the version of your CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace&interface=ui#registry_cli_update).
 
 Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} plug-in 1.0.0 {: #15sep2022_va_version_4}
@@ -308,7 +308,7 @@ The `ibmcloud cr login` command logs you into the `<region>.icr.io` registry dom
 {: #registry-08jul2021}
 {: release-note}
 
-[Deprecated]{: tag-deprecated} Using Notary v1 for signing images is deprecated {: #08jul2021_notary}
+Using Notary v1 for signing images is deprecated {: #08jul2021_notary}
 :   The Notary v1 service for signing images is deprecated. It is being removed from {{site.data.keyword.registryshort}} on 31 August 2021.
 
     As an alternative approach, {{site.data.keyword.registryshort}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
@@ -370,7 +370,7 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 {: #registry-06oct2020}
 {: release-note}
 
-[Deprecated]{: tag-deprecated} {{site.data.keyword.registryshort}} container builds are deprecated {: #06oct2020_build}
+{{site.data.keyword.registryshort}} container builds are deprecated {: #06oct2020_build}
 :   The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registryshort_notm}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
     For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
@@ -467,7 +467,7 @@ You can use private network connections to securely route your data in {{site.da
 {: #registry-3feb2020}
 {: release-note}
 
-[Deprecated]{: tag-deprecated} Using {{site.data.keyword.registryshort}} tokens is deprecated {: #3feb2020_tokens}
+Using {{site.data.keyword.registryshort}} tokens is deprecated {: #3feb2020_tokens}
 :   The use of UAA and {{site.data.keyword.registryshort}} tokens is deprecated. From 12 August 2020, UAA tokens are not accepted for authentication.
 
     For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
@@ -577,7 +577,7 @@ Remove tags from images {: #13jun2019_tags}
 {: #registry-13may2019}
 {: release-note}
 
-[Deprecated]{: tag-deprecated} End of support for Container Scanner {: #13may2019_cs}
+End of support for Container Scanner {: #13may2019_cs}
 :   Container Scanner is now deprecated and is no longer usable.
 
 ## 2 April 2019
@@ -632,7 +632,7 @@ Automating access to your namespaces {: #21feb2019_access}
 {: #registry-8jan2019}
 {: release-note}
 
-[Deprecated]{: tag-deprecated} End of support for Vulnerability Advisor API version 2 {: #8jan2019_va2}
+End of support for Vulnerability Advisor API version 2 {: #8jan2019_va2}
 :   Vulnerability Advisor’s API version 2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](/apidocs/container-registry/va).
 
 ## 4 October 2018
