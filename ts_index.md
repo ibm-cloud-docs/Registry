@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-18"
+lastupdated: "2023-09-12"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -36,7 +36,7 @@ Troubleshoot logging in problems.
 - [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire)
 - [Why do commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud)
 - [Why do `cr` commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error)
-- [Why is Docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac)
+- [macOS]{: tag-macos} [Why is Docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac)
 
 ### Troubleshooting pull and push errors
 {: #gettinghelp_ts_pull_push}
