@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-09-18"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -80,7 +80,7 @@ Create a [namespace](x2031005){: term} to store your container images in {{site.
     {: pre}
 
     If you have a federated ID, use `ibmcloud login -r us-south --sso` to log in. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
-    {: tip}
+    {: requirement}
 
 2. Set `us-south` as the target region for the {{site.data.keyword.registrylong_notm}} commands.
 
@@ -92,7 +92,7 @@ Create a [namespace](x2031005){: term} to store your container images in {{site.
 3. Create a namespace by running the following command. Choose a name for your namespace, and replace `<my_namespace>` with that name.
 
     The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters and include lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
-    {: tip}
+    {: requirement}
 
     If you want to create the namespace in a specific resource group, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
     {: tip}
