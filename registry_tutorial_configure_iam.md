@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-09-18"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -174,7 +174,7 @@ Create some [namespaces](x2031005){: term} with sample images, and grant access 
         {: pre}
 
         The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
-        {: tip}
+        {: requirement}
 
         If you have a problem when you try to add a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
         {: tip}
@@ -551,3 +551,4 @@ Remove the resources that you created in previous sections to leave your account
     ibmcloud account user-remove <user.b@example.com>
     ```
     {: pre}
+

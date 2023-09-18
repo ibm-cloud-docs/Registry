@@ -416,3 +416,4 @@ Docker V2 schema 1 images are discontinued and you can't push them to {{site.dat
 {: #clients}
 
 {{site.data.keyword.registrylong_notm}} supports supported versions of clients that are compliant with the OCI Distribution spec version 1, or later, such as Buildah, Podman, and Skopeo.
+

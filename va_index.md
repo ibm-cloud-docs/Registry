@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-08"
+lastupdated: "2023-09-18"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -107,7 +107,7 @@ For version 4, the image is indexed the first time that it is pushed. Thereafter
 The following tables show the supported Docker base images that Vulnerability Advisor checks for vulnerable packages.
 
 Vulnerability Advisor supports only releases of platforms that are currently supported by the vendor of that platform.
-{: note}
+{: important}
 
 | Docker base image | Supported versions | Source of security notices |
 |-------------------|--------------------|----------------------------|
@@ -175,7 +175,7 @@ You can also check whether the image is compliant with organizational policies.
 If you don't address any discovered issues, those issues can impact the security of containers that are using that image. If you use enforcement in your container runtime environment, you might be prevented from deploying that image unless all issues are exempted by your policy.
 
 If your image does not meet the requirements that are set by your organization's policy, you must configure the image to meet those requirements before you can deploy it. For more information about how to view and change the organization policy, see [Setting organizational exemption policies](#va_managing_policy).
-{: tip}
+{: requirement}
 
 ### Reviewing a vulnerability report by using the console - version 3 only
 {: #va_reviewing_gui}
@@ -291,3 +291,4 @@ If you want to set exemptions from the policy by using the CLI, you can run the 
 - To delete an exemption for a security issue, run the [`ibmcloud cr exemption-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm) command.
 
 For more information about the commands, you can use the `--help` option when you run the command.
+

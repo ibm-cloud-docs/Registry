@@ -461,3 +461,4 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
         {: pre}
 
     This time the command succeeds, and you can access your container by using a `curl` command or a web browser.
+

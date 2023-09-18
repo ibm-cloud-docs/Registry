@@ -260,3 +260,4 @@ You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed you
 - [Store and manage more images in your namespace.](/docs/Registry?topic=Registry-registry_images_)
 - [Define access policies.](/docs/Registry?topic=Registry-user#user)
 - [Set up clusters and worker nodes.](/docs/containers?topic=containers-clusters#clusters)
+
