@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -215,4 +215,3 @@ Encrypted images are not scanned by Vulnerability Advisor.
 {: #registry_encrypt_next}
 
 Run your encrypted image in a {{site.data.keyword.openshiftlong}} cluster by using the [Image Key Synchronizer cluster add-on](/docs/openshift?topic=openshift-images#encrypted-images).
-

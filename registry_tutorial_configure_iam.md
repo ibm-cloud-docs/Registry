@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -247,7 +247,7 @@ Create some [namespaces](x2031005){: term} with sample images, and grant access 
         {: pre}
 
         This command adds two roles to the same resource in the same policy.
-        {: tip}
+        {: note}
 
 4. Push images into `namespace_a` and `namespace_b`.
 
@@ -551,4 +551,3 @@ Remove the resources that you created in previous sections to leave your account
     ibmcloud account user-remove <user.b@example.com>
     ```
     {: pre}
-

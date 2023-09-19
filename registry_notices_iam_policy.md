@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: IBM Cloud Container Registry notices, iam access policies, access policies, changes, prepare, iam, policy, region
 
@@ -63,4 +63,3 @@ If the changes affect you, you must create IAM [access policies](/docs/Registry?
 {: #notices_iam_policy_unprepared}
 
 To recover any access that is lost, follow the steps in [Prepare for the changes](#notices_iam_policy_prepare).
-

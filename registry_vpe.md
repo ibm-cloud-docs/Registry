@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -104,4 +104,3 @@ To configure a VPE gateway, complete the following steps:
 4. View the created VPE gateways associated with the {{site.data.keyword.registrylong_notm}}. For more information, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway).
 
 Now your virtual server instances in the VPC can access your {{site.data.keyword.registrylong_notm}} instance privately through it.
-

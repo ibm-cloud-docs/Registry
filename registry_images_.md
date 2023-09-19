@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -497,4 +497,3 @@ To delete a private repository by using the {{site.data.keyword.cloud_notm}} con
     {: attention}
 
 6. Click **Delete Repository**.
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
@@ -170,4 +170,3 @@ Depending on the size of the image, it might take a while for the image to be re
     - Wait until the next billing cycle starts.
     - If you have a free plan, [upgrade to the standard service plan](/docs/Registry?topic=Registry-registry_overview#registry_plan_upgrade).
     - If you already have a standard plan, [set new quota limits for the pull traffic](#registry_quota_set).
-

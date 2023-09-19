@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -461,4 +461,3 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
         {: pre}
 
     This time the command succeeds, and you can access your container by using a `curl` command or a web browser.
-

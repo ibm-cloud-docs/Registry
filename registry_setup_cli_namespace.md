@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -257,4 +257,3 @@ If you no longer require a registry namespace, you can remove the namespace from
     {: pre}
 
     After you delete a namespace, it might take a few minutes before that namespace becomes available again to reuse.
-
