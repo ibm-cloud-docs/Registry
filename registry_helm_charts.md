@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2022
+  years: 2022, 2023
 lastupdated: "2023-09-19"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
@@ -9,6 +9,7 @@ keywords: helm, charts, private repository, trash, recycle bin, restoring charts
 subcollection: Registry
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 
