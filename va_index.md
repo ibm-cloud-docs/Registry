@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -76,6 +76,7 @@ To scan images and containers in your account for security issues, Vulnerability
 - Installed packages and libraries (including their versions)
 
 Do not put personal information into any field or location that Vulnerability Advisor processes, as identified in the preceding list.
+{: important}
 
 Scan results, aggregated at a data center level, are processed to produce anonymized metrics to operate and improve the service. In version 3, a vulnerability report (scan result) is generated when the image is pushed to the registry (and is regenerated regularly thereafter). When Vulnerability Advisor is queried, a scan result is retrieved that might be up to 5 days old. Scan results are deleted 30 days after they are generated.
 
@@ -291,4 +292,3 @@ If you want to set exemptions from the policy by using the CLI, you can run the 
 - To delete an exemption for a security issue, run the [`ibmcloud cr exemption-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm) command.
 
 For more information about the commands, you can use the `--help` option when you run the command.
-
