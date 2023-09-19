@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -211,7 +211,7 @@ For step-by-step instructions for assigning, removing, and reviewing access, see
 The following example is for assigning the `Manager` role for {{site.data.keyword.registryshort}}:
 
 Use `container-registry` for the service name, and refer to the Role ID values table to ensure that you're using the correct value for the CRN.
-{: tip}
+{: requirement}
 
 ```curl
 curl -X POST 'https://iam.cloud.ibm.com/v1/policies' -H 'Authorization: Bearer $TOKEN' -H 'Content-Type: application/json' -d '{
@@ -437,4 +437,3 @@ resource "ibm_iam_user_policy" "policy" {
 {: codeblock}
 
 For more information, see [ibm_iam_user_policy](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_user_policy){: external} in the Terraform documentation.
-
