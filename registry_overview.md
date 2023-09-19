@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-19"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -214,7 +214,7 @@ In the context of the registry, an image digest is an immutable reference to an 
 To find the image digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. The [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command also returns the image digest, but, by default, it is in a truncated format. You can add an option to the `ibmcloud cr image-list` command to return the image digest in the long format.
 
 When you are using the image digest to identify an image, always use the long format.
-{: tip}
+{: requirement}
 
 In {{site.data.keyword.registryshort}}, any reference to "digest" means "image digest".
 {: note}
@@ -416,4 +416,3 @@ Docker V2 schema 1 images are discontinued and you can't push them to {{site.dat
 {: #clients}
 
 {{site.data.keyword.registrylong_notm}} supports supported versions of clients that are compliant with the OCI Distribution spec version 1, or later, such as Buildah, Podman, and Skopeo.
-
