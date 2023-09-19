@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-06"
+lastupdated: "2023-09-19"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -22,7 +22,7 @@ Do not put personal information in your container images, namespace names, descr
 {: important}
 
 To add and remove namespaces, you must have the Manager role at the account level, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
-{: tip}
+{: requirement}
 
 Before you begin, install the {{site.data.keyword.cloud_notm}} CLI, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 
@@ -175,7 +175,7 @@ To create a namespace, see [Set up a namespace](/docs/Registry?topic=Registry-ge
 Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 
 The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
-{: tip}
+{: requirement}
 
 You can now [push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_images_#registry_images_pushing_namespace) and share these images with other users in your account. To control access to namespaces in {{site.data.keyword.cloud_notm}} IAM, see [Creating policies](/docs/Registry?topic=Registry-user#create).
 
@@ -247,7 +247,7 @@ If you no longer require a registry namespace, you can remove the namespace from
 3. Remove a namespace.
 
     When you remove a namespace, any images that are stored in that namespace are also deleted. This action cannot be undone.
-    {: important}
+    {: attention}
 
     Replace `<my_namespace>` with the namespace that you want to remove.
 

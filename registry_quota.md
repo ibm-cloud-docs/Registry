@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-09-19"
 
 keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
@@ -115,7 +115,7 @@ You can review your quota limits and check your current storage and pull traffic
 If you exceed the quota limits that are set for your {{site.data.keyword.cloud_notm}} account, you can free up storage and change your service plan or quota limits so that you can continue pushing and pulling images to and from your namespace.
 
 From 1 February 2022, both [tagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) and [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images are charged for.
-{: note}
+{: important}
 
 To free up image storage in your {{site.data.keyword.cloud_notm}} account, complete the following steps.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-09-19"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -43,7 +43,7 @@ You can choose between the free or standard {{site.data.keyword.registryshort}} 
 The {{site.data.keyword.registrylong_notm}} service plan determines the amount of storage and pull traffic that you can use for your private images. The service plan is associated with your {{site.data.keyword.cloud_notm}} account, and limits for storage and image pull traffic apply to all namespaces that you set up in your account.
 
 Service plans are scoped to the specific registry instance (one of the regional registries or the global registry) that you're currently working with. Plan settings must all be managed separately for your account in each registry instance. For more information, see [Regions](#registry_regions).
-{: note}
+{: important}
 
 The following table shows available {{site.data.keyword.registrylong_notm}} service plans and their characteristics. For more information about how billing works and what happens when you exceed service plan limits, see [Quota limits and billing](#registry_plan_billing).
 
@@ -63,13 +63,13 @@ Find information and examples for how the billing process and quota limits work 
 Every image is built from a number of layers that each represent an incremental change from the base image. When you push or pull an image, the amount of storage and pull traffic that is needed for each layer is added to your monthly usage. Identical layers are automatically shared between images in your {{site.data.keyword.cloud_notm}} account and are reused when you create other images. The storage for each identical layer is charged only once, regardless of how many images in your account reference the layer. Layers that are only referenced by deleted images in the trash are not charged.
 
 From 1 February 2022, both [tagged](#overview_elements_tag) and [untagged](#overview_elements_untagged) images are charged for.
-{: note}
+{: important}
 
 Quota limits and billing are scoped to the specific registry instance (one of the regional registries or the global registry) that you're currently working with. Quota settings must be managed separately for your account in each registry instance. For more information, see [Regions](#registry_regions).
-{: note}
+{: important}
 
 Pull traffic across public connections counts toward usage and quota. Pull traffic across private connections doesn't count.
-{: note}
+{: important}
 
 The following example is for pushing images:
 :   You push an image to your namespace that is based on the Ubuntu image. The Ubuntu image contains several layers. Because you do not have these layers in your account yet, the amount of storage that these layers require is added to your monthly usage.
@@ -99,7 +99,7 @@ The following example is for the standard plan:
 Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local computer. If you're on the standard plan, you're charged by GB of usage per month. The first 5 GB each month is free. If you're on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
 
 Pull traffic across public connections counts toward usage and quota. Pull traffic across private connections doesn't count.
-{: note}
+{: important}
 
 The following example is for the standard plan:
 :   In the month, you pulled images that contain layers with a total size of 14 GB. Your monthly usage is calculated as shown in the following example:
@@ -135,7 +135,7 @@ When you reach or exceed the quota limits for your plan, you can't pull any imag
 - [Increase your quota limits for pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_set).
 
 Pull traffic across public connections counts toward usage and quota. Pull traffic across private connections doesn't count.
-{: note}
+{: important}
 
 The following example is for the standard plan:
 :   In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull an image from your namespace with a size of 1 GB. Because the quota limit is not yet reached, {{site.data.keyword.registryshort}} allows the user to pull this image.
@@ -167,7 +167,7 @@ To upgrade your service plan, complete the following steps.
     {: pre}
 
     If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
-    {: tip}
+    {: requirement}
 
 2. Target the region for which you want to upgrade the plan.
 
@@ -186,7 +186,7 @@ To upgrade your service plan, complete the following steps.
     {: pre}
 
     If you have an {{site.data.keyword.cloud_notm}} lite plan, you must upgrade to an {{site.data.keyword.cloud_notm}} Pay-as-you-go or Subscription account before you run `ibmcloud cr plan-upgrade`.
-    {: tip}
+    {: requirement}
 
     For more information, see [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade).
 
@@ -214,7 +214,7 @@ In the context of the registry, an image digest is an immutable reference to an 
 To find the image digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. The [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command also returns the image digest, but, by default, it is in a truncated format. You can add an option to the `ibmcloud cr image-list` command to return the image digest in the long format.
 
 When you are using the image digest to identify an image, always use the long format.
-{: tip}
+{: requirement}
 
 In {{site.data.keyword.registryshort}}, any reference to "digest" means "image digest".
 {: note}

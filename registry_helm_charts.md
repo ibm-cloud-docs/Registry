@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2023-09-11"
+lastupdated: "2023-09-19"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -116,7 +116,7 @@ To upload (push) a chart, complete the following steps:
     {: pre}
 
     You must log in if you pull a chart from your private {{site.data.keyword.registrylong_notm}}.
-    {: tip}
+    {: requirement}
 
 2. To view all namespaces that are available in your account, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list) command.
 3. Upload the chart to your namespace.
@@ -189,7 +189,7 @@ You can delete unwanted charts from your private {{site.data.keyword.cloud_notm}
 If you want to delete a private repository and its associated charts, see [Deleting a private repository and any associated charts](#registry_helm_charts_repo_remove).
 
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
-{: important}
+{: attention}
 
 If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use these commands because Helm charts are a supported artifact type in OCI.
 {: tip}
@@ -198,7 +198,7 @@ Where multiple [tags](#x2040924){: term} exist for the same chart digest within 
 {: tip}
 
 A tag must always match the chart's semantic version, which means that a `latest` tag isn't used.
-{: tip}
+{: requirement}
 
 ### Deleting charts from your private repository in the CLI
 {: #registry_helm_charts_remove_cli}
@@ -208,7 +208,7 @@ A tag must always match the chart's semantic version, which means that a `latest
 You can delete unwanted charts and all their tags from your private {{site.data.keyword.cloud_notm}} repository by using the CLI.
 
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
-{: important}
+{: attention}
 
 If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
@@ -241,7 +241,7 @@ To delete a chart by using the CLI, complete the following steps:
 You can delete unwanted charts and all their tags from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console.
 
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
-{: important}
+{: attention}
 
 If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
@@ -369,10 +369,10 @@ To restore a chart by tag from the trash, complete the following steps.
 You can delete private repositories that are no longer required, and any associated charts, by using the {{site.data.keyword.cloud_notm}} console.
 
 When you delete a repository, all charts in that repository are deleted. This action can't be undone.
-{: important}
+{: attention}
 
 Before you begin, you must back up any charts that you want to keep.
-{: tip}
+{: important}
 
 To delete a private repository by using the {{site.data.keyword.cloud_notm}} console, complete the following steps.
 
@@ -383,6 +383,6 @@ To delete a private repository by using the {{site.data.keyword.cloud_notm}} con
 5. In the row that contains the private repository that you want to delete, select the checkbox.
 
     Ensure that the correct repository is selected because this action can't be undone.
-    {: important}
+    {: attention}
 
 6. Click **Delete Repository**.

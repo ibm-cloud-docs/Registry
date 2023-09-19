@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-09-19"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -187,7 +187,7 @@ You can use one of the following options to assign access in the console:
 For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the CLI](/docs/account?topic=account-assign-access-resources&interface=cli#access-resources-cli). The following example shows a command for assigning the `Manager` role for {{site.data.keyword.registryshort}}:
 
 Use `container-registry` for the service name.
-{: tip}
+{: requirement}
 
 ```bash
 ibmcloud iam user-policy-create <user@example.com> --service-name container-registry --roles Manager
@@ -211,7 +211,7 @@ For step-by-step instructions for assigning, removing, and reviewing access, see
 The following example is for assigning the `Manager` role for {{site.data.keyword.registryshort}}:
 
 Use `container-registry` for the service name, and refer to the Role ID values table to ensure that you're using the correct value for the CRN.
-{: tip}
+{: requirement}
 
 ```curl
 curl -X POST 'https://iam.cloud.ibm.com/v1/policies' -H 'Authorization: Bearer $TOKEN' -H 'Content-Type: application/json' -d '{
@@ -422,7 +422,7 @@ fmt.Println(string(b))
 The following example is for assigning the `Manager` role for {{site.data.keyword.registryshort}}:
 
 Use `container-registry` for the service name.
-{: tip}
+{: requirement}
 
 ```terraform
 resource "ibm_iam_user_policy" "policy" {

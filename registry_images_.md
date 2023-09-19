@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-09-19"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -81,7 +81,7 @@ To upload (push) an image, complete the following steps:
     {: pre}
 
     You must log in if you pull an image from your private {{site.data.keyword.registrylong_notm}}.
-    {: tip}
+    {: requirement}
 
     If you have a problem when you try to log in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
     {: tip}
@@ -134,7 +134,7 @@ Create an image by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=Regi
 In the region that you are logged in to, create an image in {{site.data.keyword.registrylong_notm}} that refers to an existing image in the same region. This action is supported for source images that are created by using supported versions of Docker Engine, see [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
 New images that are created by using this mechanism do not retain signatures. If you require the new image to be signed, do not use this mechanism.
-{: tip}
+{: important}
 
 Before you begin, complete the following tasks.
 
@@ -306,7 +306,7 @@ You can delete unwanted images from your private {{site.data.keyword.cloud_notm}
 If you want to delete a private repository and its associated images, see [Deleting a private repository and any associated images](#registry_repo_remove).
 
 Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
-{: important}
+{: attention}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
@@ -320,7 +320,7 @@ Where multiple tags exist for the same image digest within a repository, the [`i
 You can delete unwanted images and all their tags from your private {{site.data.keyword.cloud_notm}} repository by using the CLI.
 
 Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
-{: important}
+{: attention}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
@@ -351,7 +351,7 @@ To delete an image by using the CLI, complete the following steps:
 You can delete unwanted images and all their tags from your private {{site.data.keyword.cloud_notm}} image repository by using the {{site.data.keyword.cloud_notm}} console.
 
 Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
-{: important}
+{: attention}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
@@ -480,10 +480,10 @@ To restore an image by tag from the trash, complete the following steps:
 You can delete private repositories that are no longer required, and any associated images, by using the {{site.data.keyword.cloud_notm}} console.
 
 When you delete a repository, all images in that repository are deleted. This action can't be undone.
-{: important}
+{: attention}
 
 Before you begin, you must back up any images that you want to keep.
-{: tip}
+{: important}
 
 To delete a private repository by using the {{site.data.keyword.cloud_notm}} console, complete the following steps:
 
@@ -494,6 +494,6 @@ To delete a private repository by using the {{site.data.keyword.cloud_notm}} con
 5. In the row that contains the private repository that you want to delete, select the checkbox.
 
     Ensure that the correct repository is selected because this action can't be undone.
-    {: important}
+    {: attention}
 
 6. Click **Delete Repository**.

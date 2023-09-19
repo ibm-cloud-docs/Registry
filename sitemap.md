@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-09-08"
+lastupdated: "2023-09-19"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -571,7 +571,7 @@ subcollection: Registry
 
         * [Kubernetes orchestration](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-6)
 
-    * [What IBM's doing for you](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-7)
+    * [What IBM is doing for you](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-7)
 
 * [Sizing clusters](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-sizing_clusters)
 

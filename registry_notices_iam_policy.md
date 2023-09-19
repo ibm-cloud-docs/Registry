@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2023-01-31"
+  years: 2022, 2023
+lastupdated: "2023-09-19"
 
 keywords: IBM Cloud Container Registry notices, iam access policies, access policies, changes, prepare, iam, policy, region
 
@@ -55,7 +55,7 @@ If the changes affect you, you must create IAM [access policies](/docs/Registry?
 3. (Optional) If you want to upgrade the account to use IAM access policy authorization at a more convenient time, rather than on the date of the change, run the [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable) command.
 
     This change cannot be reversed.
-    {: important}
+    {: attention}
 
     This change applies to the currently targeted region only. Remember to check all regions where you have {{site.data.keyword.registryshort}} namespaces.
 

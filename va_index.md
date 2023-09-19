@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-08"
+lastupdated: "2023-09-19"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -76,6 +76,7 @@ To scan images and containers in your account for security issues, Vulnerability
 - Installed packages and libraries (including their versions)
 
 Do not put personal information into any field or location that Vulnerability Advisor processes, as identified in the preceding list.
+{: important}
 
 Scan results, aggregated at a data center level, are processed to produce anonymized metrics to operate and improve the service. In version 3, a vulnerability report (scan result) is generated when the image is pushed to the registry (and is regenerated regularly thereafter). When Vulnerability Advisor is queried, a scan result is retrieved that might be up to 5 days old. Scan results are deleted 30 days after they are generated.
 
@@ -107,7 +108,7 @@ For version 4, the image is indexed the first time that it is pushed. Thereafter
 The following tables show the supported Docker base images that Vulnerability Advisor checks for vulnerable packages.
 
 Vulnerability Advisor supports only releases of platforms that are currently supported by the vendor of that platform.
-{: note}
+{: important}
 
 | Docker base image | Supported versions | Source of security notices |
 |-------------------|--------------------|----------------------------|
@@ -175,7 +176,7 @@ You can also check whether the image is compliant with organizational policies.
 If you don't address any discovered issues, those issues can impact the security of containers that are using that image. If you use enforcement in your container runtime environment, you might be prevented from deploying that image unless all issues are exempted by your policy.
 
 If your image does not meet the requirements that are set by your organization's policy, you must configure the image to meet those requirements before you can deploy it. For more information about how to view and change the organization policy, see [Setting organizational exemption policies](#va_managing_policy).
-{: tip}
+{: requirement}
 
 ### Reviewing a vulnerability report by using the console - version 3 only
 {: #va_reviewing_gui}
