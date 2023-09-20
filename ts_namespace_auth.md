@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2023-04-12"
+  years: 2022, 2023
+lastupdated: "2023-09-20"
 
 keywords: registry, resource, authorized, namespace, create a namespace, permissions
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # When I create a namespace, why aren't I authorized to access the specified resource?
 {: #troubleshoot-namespace-auth}
