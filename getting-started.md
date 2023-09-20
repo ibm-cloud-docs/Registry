@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-09-20"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -102,7 +102,12 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_el
 {: support}
 
 1. Install Docker or a tool of your choice, such as Podman.
-    - Install the [Docker Engine CLI](https://www.docker.com/products/container-runtime/#/download){: external}. [Windows]{: tag-windows} [macOS]{: tag-macos} For Windows&reg; 8, or macOS X Yosemite 10.10.x or earlier, install [Docker Desktop](https://docs.docker.com/desktop/){: external} instead. For more information about the version of Docker that is supported by {{site.data.keyword.registrylong_notm}}, see [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker).
+    - Install the [Docker Engine CLI](https://www.docker.com/products/container-runtime/#/download){: external}.
+
+      [Windows]{: tag-windows} [macOS]{: tag-macos} For Windows&reg; 8, or macOS X Yosemite 10.10.x or earlier, install [Docker Desktop](https://docs.docker.com/desktop/){: external} instead.
+
+      For more information about the version of Docker that is supported by {{site.data.keyword.registrylong_notm}}, see [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker).
+
     - Install [Podman](https://podman.io/){: external}.
 
 2. Download (_pull_) the image to your local computer. Replace `<source_image>` with the repository of the image and `<tag>` with the [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) of the image that you want to use, for example, `latest`. For example, depending on the tool that you are using, run one of the following commands.
