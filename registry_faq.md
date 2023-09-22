@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-09-22"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -13,7 +13,6 @@ content-type: faq
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Frequently asked questions about {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor
 {: #registry_faq}
@@ -110,6 +109,18 @@ The [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_d
 
 To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
 
+### How do I list images that are more than a year old?
+{: #faq_images_year_old}
+{: faq}
+
+[Linux]{: tag-linux} [macOS]{: tag-macos} On Linux&reg; and macOS, if you want to list all images, both tagged and untagged, that were created more than a year ago, you can run the following command:
+
+```txt
+year=$(($(date +%s) - 31556952))
+ibmcloud cr digests --format '{{ if (lt .Created '$year')}}{{.Repository}}:{{.Digest}}{{end}}'
+```
+{: pre}
+
 ### How do you use access control?
 {: #faq_access_control}
 {: faq}
@@ -151,7 +162,7 @@ The images that are not eligible are still displayed, but they do not count towa
 {: #faq_regions}
 {: faq}
 
-To find out about the regions that are available for {{site.data.keyword.registrylong_notm}}, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+To find out more about the regions that are available for {{site.data.keyword.registrylong_notm}}, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 ## Frequently asked questions about Vulnerability Advisor
 {: #registry_faq_va}

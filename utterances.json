@@ -60,6 +60,20 @@
         "what part of the image manifest is the digest",
         "how do I use the long digest"
       ],
+      "faq_images_year_old": [
+        "how do I list images that are more than a year old",
+        "how do I list tagged images that are more than a year old",
+        "how do I list untagged images that are more than a year old",
+        "how do I list tagged and untagged images that are more than a year old",
+        "how do I list old images",
+        "can I list old images",
+        "can I list old tagged images",
+        "can I list old untagged images",
+        "can I list old tagged and untagged images",
+        "can I list images that are older than a year",
+        "how do I list old images on linux",
+        "how do I list old images on macOS"
+      ],
       "faq_access_control": [
         "IAM access control container registry",
         "limit access on CR",
