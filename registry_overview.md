@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-09-22"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -200,7 +200,7 @@ To learn more about Docker-specific terms, see [Docker glossary](https://docs.do
 ### Container image
 {: #overview_elements_container_image}
 
-A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, which are combined at run time, that are created as the container image is built by successive updates. The container image does not retain state as the container runs.
+A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, which are combined at run time, that are created as the container image is built by successive updates. The container image does not retain its state as the container runs.
 
 Container images are stored in a repository that is stored in a namespace.
 
@@ -224,7 +224,7 @@ In {{site.data.keyword.registryshort}}, any reference to "digest" means "image d
 
 A Dockerfile is a text file that contains instructions to build a Docker image.
 
-Typically, a container image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the configuration of the app, and its dependencies. For more information about Dockerfile, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/){: external}.
+Typically, a container image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile might also reference build artifacts that are stored separately, such as an app, the configuration of the app, and its dependencies. For more information about Dockerfile, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/){: external}.
 
 ### Docker V2 container images
 {: #overview_elements_dockerv2_images}
