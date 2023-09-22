@@ -1662,6 +1662,8 @@ subcollection: Registry
 
     * [How do I use digests to work with images?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
 
+    * [How do I list images that are more than a year old?](/docs/Registry?topic=Registry-registry_faq#faq_images_year_old)
+
     * [How do you use access control?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
     * [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
