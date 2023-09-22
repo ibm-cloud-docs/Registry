@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-09-22"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -62,7 +62,7 @@ Before you begin, complete the following tasks.
         ```
         {: pre}
 
-        Example, where `<registry>` is `localhost:5000`, `my_namespace` is `helm-charts`, `chart_name` is `mychart`, and `<chart_version>` is `0.1.0`:
+        Example, where `<registry>` is `localhost:5000`, `<my_namespace>` is `helm-charts`, `<chart_name>` is `mychart`, and `<chart_version>` is `0.1.0`:
 
         ```txt
         helm pull oci://localhost:5000/helm-charts/mychart --version 0.1.0
@@ -127,7 +127,7 @@ To upload (push) a chart, complete the following steps:
     ```
     {: pre}
 
-    Example, where `<my_chart_package>` is `mychart-0.1.0.tgz`, `region` is `uk`, and `<my_namespace>` is `helm-charts`:
+    Example, where `<my_chart_package>` is `mychart-0.1.0.tgz`, `<region>` is `uk`, and `<my_namespace>` is `helm-charts`:
 
     ```txt
     helm push mychart-0.1.0.tgz oci://uk.icr.io/helm-charts
@@ -173,7 +173,7 @@ helm install <release_name> oci://<region>.icr.io/<my_namespace>/<chart_name> --
 ```
 {: pre}
 
-Example, where `<release_name>` is `myrelease`, `region` is `uk`, `<my_namespace>` is `helm-charts`, `<chart_name>` is `mychart`, and `<chart_version>` is `0.1.0`:
+Example, where `<release_name>` is `myrelease`, `<region>` is `uk`, `<my_namespace>` is `helm-charts`, `<chart_name>` is `mychart`, and `<chart_version>` is `0.1.0`:
 
 ```txt
 helm install myrelease oci://uk.icr.io/helm-charts/mychart --version 0.1.0
