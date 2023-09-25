@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-09-22"
+lastupdated: "2023-09-25"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1573,6 +1573,8 @@ subcollection: Registry
 [Why am I getting `Authorization required` errors?](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req)
 
 [Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce#troubleshoot-unauthorized-ce)
+
+[Why am I having problems when I try to pull an image with `cosign` when I'm using Podman?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman#troubleshoot-cosign-podman)
 
 [Why am I getting `Access denied` errors?](/docs/Registry?topic=Registry-troubleshoot-access-denied#troubleshoot-access-denied)
 

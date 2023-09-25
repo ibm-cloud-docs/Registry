@@ -1,49 +1,15 @@
 {
-    "faq_list_public_images": [
-        "list public images Container Registry",
-        "get public image CR",
-        "How to target global for CR",
-        "set container registry region",
-        "CLI command for images in Container Registry",
-        "IBM images list in Container Registry",
-        "know available images on Container Registry",
-        "view the images on Container Registry list",
-        "listing public images for CR"
-      ],
-      "faq_tools": [
-        "non-docker tools in Container Registry",
-        "alternatives to build my Container Registry images",
-        "options OCI image format and protocol tools for CR",
-        "non docker push images in Container Registry",
-        "custom tool to build images for Container Registry",
-        "use non-docker tools to build my images in CR",
-        "Container Registry support OCI images",
-        "OCI images supported in container registry",
-        "non docker tool supported ContainerRegistry"
-      ],
-      "faq_namespace": [
-        "limit to the number of namespaces",
-        "how many namespaces create in Container Registry",
-        "limit to namespaces creation in Container Registry",
-        "amount of namespaces allowed in CR",
-        "number of namespaces allowed in Container Registry",
-        "namespace limit in Container Registry",
-        "how many registry namespaces in each region",
-        "namespaces creation limit for Container Registry",
-        "namespace amount allowed in Container Registry"
-      ],
-      "faq_namespace_rename": [
-        "rename namespace",
-        "renaming namespaces in Container Registry",
-        "namespace renaming in Container Registry",
-        "can namespaces be renamed",
-        "can't rename namespace in Container Registry",
-        "can i rename a namespace"
-      ],
-      "faq_trash": [
-        "do images in the trash count toward quota",
-        "images in the trash",
-        "does my quota include images in the trash"
+
+      "faq_access_control": [
+        "IAM access control container registry",
+        "limit access on CR",
+        "Grant access to ContainerRegistry",
+        "IAM access policy to access container registry",
+        "configure IAM for container registry",
+        "IAM configuration for ContainerRegistry",
+        "IAM access for Container Registry",
+        "IBM Cloud Identity and Access management for container registry",
+        "use access control within container registry"
       ],
       "faq_digest": [
         "how do I find the digest",
@@ -74,16 +40,42 @@
         "how do I list old images on linux",
         "how do I list old images on macOS"
       ],
-      "faq_access_control": [
-        "IAM access control container registry",
-        "limit access on CR",
-        "Grant access to ContainerRegistry",
-        "IAM access policy to access container registry",
-        "configure IAM for container registry",
-        "IAM configuration for ContainerRegistry",
-        "IAM access for Container Registry",
-        "IBM Cloud Identity and Access management for container registry",
-        "use access control within container registry"
+      "faq_list_public_images": [
+        "list public images Container Registry",
+        "get public image CR",
+        "How to target global for CR",
+        "set container registry region",
+        "CLI command for images in Container Registry",
+        "IBM images list in Container Registry",
+        "know available images on Container Registry",
+        "view the images on Container Registry list",
+        "listing public images for CR"
+      ],
+      "faq_namespace": [
+        "limit to the number of namespaces",
+        "how many namespaces create in Container Registry",
+        "limit to namespaces creation in Container Registry",
+        "amount of namespaces allowed in CR",
+        "number of namespaces allowed in Container Registry",
+        "namespace limit in Container Registry",
+        "how many registry namespaces in each region",
+        "namespaces creation limit for Container Registry",
+        "namespace amount allowed in Container Registry"
+      ],
+      "faq_namespace_rename": [
+        "rename namespace",
+        "renaming namespaces in Container Registry",
+        "namespace renaming in Container Registry",
+        "can namespaces be renamed",
+        "can't rename namespace in Container Registry",
+        "can i rename a namespace"
+      ],
+      "faq_regions": [
+        "Container registry regions",
+        "Global registry images available for CR",
+        "Region list for ContainerRegistry",
+        "local regions container registry",
+        "global regions available for container registry"
       ],
       "faq_share_image": [
         "how do I share my image in container registry",
@@ -91,6 +83,22 @@
         "can I share my images with lots of users",
         "can I use access policies to share private container images",
         "sharing images in container registry with other users"
+      ],
+      "faq_tools": [
+        "non-docker tools in Container Registry",
+        "alternatives to build my Container Registry images",
+        "options OCI image format and protocol tools for CR",
+        "non docker push images in Container Registry",
+        "custom tool to build images for Container Registry",
+        "use non-docker tools to build my images in CR",
+        "Container Registry support OCI images",
+        "OCI images supported in container registry",
+        "non docker tool supported ContainerRegistry"
+      ],
+      "faq_trash": [
+        "do images in the trash count toward quota",
+        "images in the trash",
+        "does my quota include images in the trash"
       ],
       "faq_untagged_image_1": [
         "how do I find untagged images",
@@ -110,13 +118,6 @@
         "why do I need untagged images",
         "should I keep my untagged images"
       ],
-      "faq_regions": [
-        "Container registry regions",
-        "Global registry images available for CR",
-        "Region list for ContainerRegistry",
-        "local regions container registry",
-        "global regions available for container registry"
-      ],
       "faq_va_cost": [
         "how much does VA cost",
         "does va cost anything",
@@ -124,6 +125,24 @@
         "how much does vulnerability advisor cost",
         "is va free",
         "is vulnerability advisor free"
+      ],
+      "faq_va_new_scan_error": [
+        "scan not found on image error for CR",
+        "error BXNVA0009E in container registry",
+        "vulnerability check from container registry",
+        "scanning image takes a while in container registry",
+        "What does BXNVA0009E mean for container registry",
+        "error BXNVA0009E given in CR",
+        "scan error in CR"
+      ],
+      "faq_va_package_version": [
+        "what version of a package is installed in my image",
+        "what version of a package is installed in my image in container registry",
+        "on Alpine, what version of a package is installed in my image",
+        "on Debian, what version of a package is installed in my image",
+        "on Ubuntu, what version of a package is installed in my image",
+        "on Red Hat, what version of a package is installed in my image",
+        "on CentOS, what version of a package is installed in my image"
       ],
       "faq_va_reg": [
         "does va scan images from container registry",
@@ -137,15 +156,6 @@
         "how vulnerabilitiy scan start in container registry",
         "when image scan starts for container registry",
         "Vulnerability Advisor scan triggered in CR"
-      ],
-      "faq_va_new_scan_error": [
-        "scan not found on image error for CR",
-        "error BXNVA0009E in container registry",
-        "vulnerability check from container registry",
-        "scanning image takes a while in container registry",
-        "What does BXNVA0009E mean for container registry",
-        "error BXNVA0009E given in CR",
-        "scan error in CR"
       ],
       "faq_va_update_security_notice": [
         "how often vulnerability advisor notice updated in CR",
@@ -161,15 +171,6 @@
         "vulnerabilities showing in vulnerability advisor version 4 but not version 3",
         "vulnerabilities show in version 4 but not version 3",
         "vulnerabilities not showing in version 3"
-      ],
-      "faq_va_package_version": [
-        "what version of a package is installed in my image",
-        "what version of a package is installed in my image in container registry",
-        "on Alpine, what version of a package is installed in my image",
-        "on Debian, what version of a package is installed in my image",
-        "on Ubuntu, what version of a package is installed in my image",
-        "on Red Hat, what version of a package is installed in my image",
-        "on CentOS, what version of a package is installed in my image"
       ],
        "troubleshoot-access-denied": [
         "get access denied errors although I have IAM access",
@@ -206,6 +207,13 @@
         "can't connect to container registry and get connection reset message",
         "issue connecting to container registry and getting connection reset message",
         "issue connecting to container registry"
+      ],
+      "troubleshoot-cosign-podman": [
+        "cannot pull image in Container Registry when I use cosign with Podman",
+        "not authorized to pull iamge using cosign with Podman in Container Registry",
+        "using cosign and Podman in Container Registry and can't pull an image",
+        "can't authenticate with Container Registry when using cosign and Podman",
+        "authorization required to access Container Registry with cosign and Podman"
       ],
       "troubleshoot-docker-latest": [
         "unable to pull recent image latest tag for container registry",
@@ -306,6 +314,17 @@
         "UI timed out list images for CR",
         "Listing images in the GUI time out in CR"
       ],
+      "troubleshoot-login": [
+        "ibmcloud cr login command fails for CR",
+        "cli container-registry plugin login",
+        "ibmcloud cr login command failing",
+        "log in to Container registry error",
+        "Cannot login to Container Registry",
+        "unable to log in to Container Registry",
+        "can't login to CR",
+        "login error for Container Registry",
+        "ibmcloud cr cli login error"
+      ],
       "troubleshoot-login-cloud": [
         "any ibmcloud cr command fail",
         "container registry cli error not logged-in",
@@ -327,25 +346,6 @@
         "ibmcloud cr login command expires ",
         "push image fails",
         "pull image fails"
-      ],
-      "troubleshoot-login": [
-        "ibmcloud cr login command fails for CR",
-        "cli container-registry plugin login",
-        "ibmcloud cr login command failing",
-        "log in to Container registry error",
-        "Cannot login to Container Registry",
-        "unable to log in to Container Registry",
-        "can't login to CR",
-        "login error for Container Registry",
-        "ibmcloud cr cli login error"
-      ],
-      "troubleshoot-manifest-unknown": [
-        "error in container registry - The manifest is unknown",
-        "getting manifest unknnown error when I try to pull an image in container registry",
-        "when I try to pull an image in container registry I am getting a manifest unknown error",
-        "manifest unknown error trying to pull image",
-        "I receive a manifest unknown error in Container Registry",
-        "get unknown error for the manifest in CR"
       ],
       "troubleshoot-manifest-error-type": [
         "The manifest type for this image is not supported for tagging",
@@ -371,6 +371,14 @@
         "manifest list error trying to tag my manifest list or OCI Image Index",
         "get error tagging my manifest list or OCI Image Index is not supported in CR",
         "the manifest list or OCI Image Index for this image is not supported for tagging in container registry"
+      ],
+      "troubleshoot-manifest-unknown": [
+        "error in container registry - The manifest is unknown",
+        "getting manifest unknnown error when I try to pull an image in container registry",
+        "when I try to pull an image in container registry I am getting a manifest unknown error",
+        "manifest unknown error trying to pull image",
+        "I receive a manifest unknown error in Container Registry",
+        "get unknown error for the manifest in CR"
       ],
       "troubleshoot-namespace-auth": [
         "can't add namespace Container Registry",
