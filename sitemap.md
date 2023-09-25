@@ -1686,6 +1686,8 @@ subcollection: Registry
 
     * [How is a Vulnerability Advisor scan triggered?](/docs/Registry?topic=Registry-registry_faq#faq_va_trigger_scan)
 
+    * [Why doesn't my image scan in Vulnerability Advisor v4?](/docs/Registry?topic=Registry-registry_faq#faq_va_v4_scan)
+
     * [Why doesn't a new image scan?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
 
     * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)

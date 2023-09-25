@@ -172,6 +172,18 @@
         "vulnerabilities show in version 4 but not version 3",
         "vulnerabilities not showing in version 3"
       ],
+      "faq_va_v4_scan": [
+        "my image isn't scanning in Vulnerability Advisor version 4",
+        "my image scanned in Vulnerability Advisor version 3 but isn't scanning in version 4",
+        "image scanned in v3 but not v4",
+        "image scanned in VA v3 but not VA v4",
+        "image scanned in Vulnerability Advisor v3 but not v4",
+        "why doesn't my image scan in VA version 4",
+        "my image used to scan in VA v3 but it isn't working in v4",
+        "my image isn't scanning in VA version 4",
+        "my image isn't scanning in Vulnerability Advisor version 4",
+        "my image isn't scanning in version 4"
+      ],
        "troubleshoot-access-denied": [
         "get access denied errors although I have IAM access",
         "getting access denied errors container registry",
