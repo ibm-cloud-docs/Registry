@@ -166,6 +166,7 @@ toc:
               - ts_pull_performance.md
               - ts_auth_req.md
               - ts_unauthorized_ce.md
+              - ts_cosign_podman.md
               - ts_access_denied.md
               - ts_resource.md
               - ts_scope.md
