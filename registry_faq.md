@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-26"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -11,7 +11,6 @@ subcollection: Registry
 content-type: faq
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
