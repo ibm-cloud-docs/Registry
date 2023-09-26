@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-26"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -147,7 +147,7 @@ To find out whether you have any [untagged](/docs/Registry?topic=Registry-regist
 
 If you have active containers that are running [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, you must retain the untagged images. If you delete untagged images that are in use, you can cause problems with scaling or automated restarts. Deleting untagged images might cause a problem in the following circumstances:
 
-- The image was deployed by referencing the image by using the digest.
+- The image was deployed by using the digest as the reference. For example, {{site.data.keyword.codeenginefull_notm}} does resolve and use an image digest when it is serving applications, see [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app&interface=ui).
 - The image reference was mutated by a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
 
 ### What are eligible images?
