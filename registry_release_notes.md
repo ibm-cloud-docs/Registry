@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-09-28"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -13,7 +13,6 @@ content-type: release-note
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Release notes for {{site.data.keyword.registryshort}}
 {: #registry_release_notes}
@@ -152,7 +151,7 @@ The CLI stops returning security status results in lists by default from version
 Context-based restrictions {: #08jul2022_cbr}
 :   You can use context-based restrictions to define and enforce access restrictions for {{site.data.keyword.cloud_notm}} resources based on the network location of access requests.
 
-    For more information, see [Context-based restrictions](/docs/Registry?topic=Registry-iam&interface=ui#iam_cbr).
+    For more information, see [Protecting {{site.data.keyword.registryshort}} resources with context-based restrictions](/docs/Registry?topic=Registry-registry-cbr&interface=ui).
 
 ## 5 July 2022
 {: #registry-05jul2022}

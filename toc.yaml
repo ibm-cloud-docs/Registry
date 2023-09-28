@@ -88,6 +88,7 @@ toc:
           - topic: registry_iam_ip.md
             navtitle: Using IAM IP address access restrictions
           - registry_security_enforce_portieris.md
+          - registry_cbr.md
       - topicgroup:
           label: Observability
           topics:
