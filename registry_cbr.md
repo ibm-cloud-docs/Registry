@@ -89,10 +89,10 @@ The following attribute types for specific resources are available in the {{site
 1. To create rules from the CLI, [install the context-based restrictions CLI plug-in](/docs/cli?topic=cli-cbr-plugin#install-cbr-plugin).
 2. You can use the [`ibmcloud cbr rule-create` command](/docs/account?topic=account-cbr-plugin#cbr-cli-rule-create-command) to create rules for context-based restrictions. For more information, see [Creating rules by using the CLI](/docs/account?topic=account-context-restrictions-create&interface=cli#context-restrictions-create-rules-cli).
 
-The following example creates a rule that targets the Container Registry service and blocks access to your namespace, `my_namespace`, over private in `us-south`.
+The following example creates a rule that targets the Container Registry service and allows access to your namespace `my_namespace` only over the private network in `us-south`.
 
 ```txt
-ibmcloud cbr rule-create --description 'Block access to my_namespace over private' --service-name container-registry --context-attributes endpointType=private --resource-attributes resourceType=namespace,resource=my_namespace --region=us-south
+ibmcloud cbr rule-create --description 'Only allow access to my_namespace over the private network' --service-name container-registry --context-attributes endpointType=private --resource-attributes resourceType=namespace,resource=my_namespace --region=us-south
 ```
 {: pre}
 
