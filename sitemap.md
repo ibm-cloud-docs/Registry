@@ -1011,6 +1011,22 @@ subcollection: Registry
 
 * [Uninstalling Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#uninstall_portieris)
 
+[Protecting {{site.data.keyword.registryshort}} resources with context-based restrictions](/docs/Registry?topic=Registry-registry-cbr#registry-cbr)
+
+* [How {{site.data.keyword.registryshort}} integrates with context-based restrictions](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_overview)
+
+* [Protecting specific resources](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_protect)
+
+* [Limitations](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_limitations)
+
+* [Creating rules](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_create_rules)
+
+    * [Creating rules in the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_rules_ui)
+
+    * [Creating rules by using the CLI](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_rules_cli)
+
+    * [Creating rules by using the API](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_rules_api)
+
 
 ## Observability
 {: #sitemap_observability}

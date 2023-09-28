@@ -151,7 +151,7 @@ The CLI stops returning security status results in lists by default from version
 Context-based restrictions {: #08jul2022_cbr}
 :   You can use context-based restrictions to define and enforce access restrictions for {{site.data.keyword.cloud_notm}} resources based on the network location of access requests.
 
-    For more information, see [Context-based restrictions](/docs/Registry?topic=Registry-iam&interface=ui#iam_cbr).
+    For more information, see [Protecting {{site.data.keyword.registryshort}} resources with context-based restrictions](/docs/Registry?topic=Registry-registry-cbr&interface=ui).
 
 ## 5 July 2022
 {: #registry-05jul2022}
