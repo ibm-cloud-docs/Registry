@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-09-29"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -35,7 +35,7 @@ Before you begin, complete the following tasks:
 
 - [Invite users to an account](/docs/account?topic=account-iamuserinv#iamuserinv).
 
-    If you want users to create clusters in {{site.data.keyword.containerlong_notm}}, ensure that you assign the {{site.data.keyword.registrylong_notm}} Administrator role to those users, and don't assign a resource group. For more information, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare).
+    If you want users to create clusters in {{site.data.keyword.containerlong_notm}}, ensure that you assign the {{site.data.keyword.registrylong_notm}} Administrator role to those users, and don't assign a resource group. For more information, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters).
     {: tip}
 
 To create policies for {{site.data.keyword.registrylong_notm}}, the service name field must be `container-registry`.
