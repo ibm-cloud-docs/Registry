@@ -28,6 +28,7 @@ toc:
           topics:
           - topic: registry_notices.md
             navtitle: Notifications
+          - registry_notices_va_v3.md
           - registry_notices_wildcard_domains.md
           - registry_notices_va_v4.md
           - registry_notices_vpe.md
