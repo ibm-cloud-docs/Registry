@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-10-11"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -143,6 +143,12 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
+[Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#registry_notices_va_v3)
+
+* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_change)
+
+* [What actions you must take by 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_action)
+
 [Upcoming public networking changes for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
 
 [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_va_v4)
@@ -199,6 +205,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [11 October 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-11oct2023)
+
+    * [Vulnerability Advisor version 3 is discontinued from 13 November 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-11oct2023_v3)
 
 * [24 July 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023)
 
