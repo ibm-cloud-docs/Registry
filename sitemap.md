@@ -913,7 +913,7 @@ subcollection: Registry
 
 * [Reviewing a vulnerability report](/docs/Registry?topic=Registry-va_index#va_reviewing)
 
-    * [Reviewing a vulnerability report by using the console - version 3 only](/docs/Registry?topic=Registry-va_index#va_reviewing_gui)
+    * [Reviewing a vulnerability report by using the console](/docs/Registry?topic=Registry-va_index#va_reviewing_gui)
 
     * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index#va_registry_cli)
 

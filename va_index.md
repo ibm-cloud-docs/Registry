@@ -177,14 +177,11 @@ If you don't address any discovered issues, those issues can impact the security
 If your image does not meet the requirements that are set by your organization's policy, you must configure the image to meet those requirements before you can deploy it. For more information about how to view and change the organization policy, see [Setting organizational exemption policies](#va_managing_policy).
 {: requirement}
 
-### Reviewing a vulnerability report by using the console - version 3 only
+### Reviewing a vulnerability report by using the console
 {: #va_reviewing_gui}
 {: help}
 {: support}
 {: ui}
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
 
 You can review the security of Docker images that are stored in your namespaces in {{site.data.keyword.registrylong_notm}} by using the {{site.data.keyword.cloud_notm}} console. Version 4 does not support viewing vulnerability reports in the console, but you can use the CLI or the API.
 

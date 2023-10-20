@@ -17,7 +17,6 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor workflow tutorial
 {: #registry_tutorial_workflow}
 {: toc-content-type="tutorial"}
