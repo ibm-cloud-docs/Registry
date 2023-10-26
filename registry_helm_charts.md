@@ -195,7 +195,7 @@ Deleting a chart that is being used by an existing deployment might cause a Helm
 If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use these commands because Helm charts are a supported artifact type in OCI.
 {: tip}
 
-Where multiple [tags](#x2040924){: term} exist for the same chart digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying chart and all its tags. If the same chart exists in a different repository or namespace, that copy of the chart is not removed.
+Where multiple [tags](#x2040924){: term} exist for the same chart digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying chart and all its tags. If the same chart exists in a different repository or namespace that copy of the chart is not removed.
 {: tip}
 
 A tag must always match the chart's semantic version, which means that a `latest` tag isn't used.
@@ -287,11 +287,11 @@ To list the charts in the trash, complete the following steps.
 {: help}
 {: support}
 
-You can restore charts from the trash. Deleted charts are stored in the trash for 30 days.
+You can restore the charts from the trash. Deleted charts are stored in the trash for 30 days.
 
 You can restore a chart from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. To find out which charts are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command.
 
-You can restore charts by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use the following options:
+You can restore the charts by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use the following options:
 
 - `<repo>@<digest>`, which restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring charts by digest](#registry_helm_charts_restore_digest).
 - `<repo>:<tag>`, which restores the tag, see [Restoring charts by tag](#registry_helm_charts_restore_tag).
@@ -323,7 +323,7 @@ To restore a chart by digest from the trash, complete the following steps:
     ```
     {: pre}
 
-    If some tags aren't restored, see [Why aren't all the tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
+    If some of the tags aren't restored, see [Why aren't all the tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
     {: tip}
 
     In your live repository, you can pull the chart by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command, the chart shows in the output.
@@ -348,7 +348,7 @@ To restore a chart by tag from the trash, complete the following steps.
 
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
-3. For the chart that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
+3. For the chart that you want to restore make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
 4. For the chart that you want to restore, make a note of the tag, `<tag>`.
 5. Run the following command to restore the chart to your repository, where `<dns>/<namespace>/<repo>` is the name of the chart that you want to restore and `<tag>` is the tag.
 
