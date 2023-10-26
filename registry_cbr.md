@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-10-26"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -18,7 +18,7 @@ subcollection: Registry
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.registrylong}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies.
 {: shortdesc}
 
-These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Because both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
+These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Because both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. See [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis) for more information.
 
 A user must have the Administrator role on the {{site.data.keyword.registryshort}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role for context-based restrictions to create, update, or delete network zones. A user with the Viewer role for the context-based restrictions can add network zones to a rule.
 {: note}
