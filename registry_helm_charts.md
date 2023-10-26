@@ -349,7 +349,7 @@ To restore a chart by tag from the trash, complete the following steps.
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
 3. For the chart that you want to restore make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
-4. For the chart that you want to restore, make a note of the tag, `<tag>`.
+4. For the chart that you want to restore, make a note of the tag `<tag>`.
 5. Run the following command to restore the chart to your repository, where `<dns>/<namespace>/<repo>` is the name of the chart that you want to restore and `<tag>` is the tag.
 
     ```txt
