@@ -48,6 +48,6 @@ When you try to access {{site.data.keyword.registryshort}}, you get one of the f
 
   You might see this message if you are using {{site.data.keyword.codeenginefull_notm}}. See [Why am I getting a `Forbidden` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce) for assistance.
 
-`ImagePullBackoff`
+- `ImagePullBackoff`
 
   You might see this status when you start containers in Kubernetes. See [Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull) for assistance.
