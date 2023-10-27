@@ -1665,7 +1665,7 @@ subcollection: Registry
 {: #sitemap_troubleshooting_portieris}
 
 
-[Why don't my pods restart after my workers were down?](/docs/Registry?topic=Registry-troubleshoot-pods#troubleshoot-pods)
+[Why don't my pods restart after my workers are down?](/docs/Registry?topic=Registry-troubleshoot-pods#troubleshoot-pods)
 
 
 ## Frequently asked questions (FAQs)
