@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-05"
+lastupdated: "2023-10-27"
 
 keywords: pods, worker, cluster workers, portieris, webhook
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why don't my pods restart after my workers were down?
+# Why don't my pods restart after my workers are down?
 {: #troubleshoot-pods}
 {: troubleshoot}
 {: support}
 
-When you are using {{site.data.keyword.registrylong}}, the [Pods](x8461823){: term} do not restart after your cluster workers were down.
+When you are using {{site.data.keyword.registrylong}}, the [Pods](x8461823){: term} do not restart after your cluster workers are down.
 {: shortdesc}
 
 Portieris is deployed. The cluster workers are showing as working correctly, but nothing is scheduled.

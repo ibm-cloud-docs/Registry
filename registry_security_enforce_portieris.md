@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-05-02"
+lastupdated: "2023-10-27"
 
 keywords: Portieris, image security, Portieris policies, installing Portieris, security, removing Portieris, policies, cluster
 
@@ -25,7 +25,7 @@ You can use Portieris to enforce policies on image signatures. If an image doesn
 Using Portieris to block the deployment of images with issues that are found by Vulnerability Advisor is deprecated.
 {: deprecated}
 
-If Portieris is deployed and the cluster workers are showing as working correctly, but nothing is scheduled, see [Why don't my pods restart after my workers were down?](/docs/Registry?topic=Registry-troubleshoot-pods) for assistance.
+If Portieris is deployed and the cluster workers are showing as working correctly, but nothing is scheduled, see [Why don't my pods restart after my workers are down?](/docs/Registry?topic=Registry-troubleshoot-pods) for assistance.
 {: tip}
 
 Portieris is supported on {{site.data.keyword.redhat_openshift_full}}.
