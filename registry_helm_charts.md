@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-26"
+lastupdated: "2023-10-27"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -195,7 +195,7 @@ Deleting a chart that is being used by an existing deployment might cause a Helm
 If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use these commands because Helm charts are a supported artifact type in OCI.
 {: tip}
 
-Where multiple [tags](#x2040924){: term} exist for the same chart digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying chart and all its tags. If the same chart exists in a different repository or namespace that copy of the chart is not removed.
+Where multiple [tags](#x2040924){: term} exist for the same chart digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying chart and all its tags. If the same chart exists in a different repository or namespace, that copy of the chart is not removed.
 {: tip}
 
 A tag must always match the chart's semantic version, which means that a `latest` tag isn't used.
@@ -323,7 +323,7 @@ To restore a chart by digest from the trash, complete the following steps:
     ```
     {: pre}
 
-    If some of the tags aren't restored, see [Why aren't all the tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
+    If some tags aren't restored, see [Why aren't all the tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
     {: tip}
 
     In your live repository, you can pull the chart by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command, the chart shows in the output.
