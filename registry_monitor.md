@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-10-27"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -18,7 +18,7 @@ subcollection: Registry
 You can use {{site.data.keyword.mon_full}} to monitor platform metrics of {{site.data.keyword.registrylong}} usage for your account and to create alerts based on these metrics.
 {: shortdesc}
 
-Platform metrics for {{site.data.keyword.registryshort_notm}} must be enabled in each {{site.data.keyword.registryshort_notm}} region that you want to monitor, see [Enabling metrics for {{site.data.keyword.registryshort}}](#registry_enable_platform_metrics).
+Platform metrics for {{site.data.keyword.registryshort_notm}} must be enabled in each {{site.data.keyword.registryshort_notm}} region that you want to monitor, see [Enabling metrics for {{site.data.keyword.registryshort}}](#registry_enable_platform_metrics). For more information about {{site.data.keyword.monitoringlong_notm}}, see [{{site.data.keyword.monitoringshort}} in {{site.data.keyword.cloud_notm}}](/docs/monitoring?topic=monitoring-about-monitor).
 
 ## Enabling metrics for {{site.data.keyword.registryshort_notm}}
 {: #registry_enable_platform_metrics}
