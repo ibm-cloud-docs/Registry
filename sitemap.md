@@ -1737,3 +1737,5 @@ subcollection: Registry
 
 [Getting help and support for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-help-and-support#help-and-support)
 
+* [Providing support case details](/docs/Registry?topic=Registry-help-and-support#support-case-details)
+
