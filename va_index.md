@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-20"
+lastupdated: "2023-11-01"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -45,16 +45,16 @@ Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more 
 The following functions are available in version 3:
 
 - Scans images for issues.
-- Provides an evaluation report that is based on security practices that are specific to {{site.data.keyword.containerlong_notm}}.
+- Creates an evaluation report that is based on security practices that are specific to {{site.data.keyword.containerlong_notm}}.
 - Provides recommendations to secure configuration files for a subset of application types.
-- Provides instructions about how to fix a reported [vulnerable package](#packages) or [configuration issue](#app_configurations) in its reports.
+- Supplies instructions about how to fix a reported [vulnerable package](#packages) or [configuration issue](#app_configurations) in its reports.
 - Applies exemption policies to reports at an account, [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), or [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) level to mark when issues that are flagged do not apply to your use case.
 
 The following functions are available in version 4:
 
 - Scans images for issues.
-- Provides an evaluation report that is based on security practices that are specific to {{site.data.keyword.containerlong_notm}}.
-- Provides instructions about how to fix a reported [vulnerable package](#packages) in its reports.
+- Creates an evaluation report that is based on security practices that are specific to {{site.data.keyword.containerlong_notm}}.
+- Supplies instructions about how to fix a reported [vulnerable package](#packages) in its reports.
 - Applies exemption policies to reports at an account, [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), or [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) level to mark when issues that are flagged do not apply to your use case.
 
 The **Security status** column in the **Images** tab of the {{site.data.keyword.registryshort}} dashboard displays the number of issues that are associated with each image. To find out more about the issues, click the link in the **Security status** column.
@@ -122,7 +122,7 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 | Docker base image | Supported versions | Source of security notices |
 |-------------------|--------------------|----------------------------|
 | Alpine | All stable versions with vendor security support. | [Alpine SecDB database](https://secdb.alpinelinux.org/){: external}. |
-| Debian | All stable versions with vendor security support.  \n  \n CVEs on binary packages that are associated with the Debian source package `linux`, such as `linux-libc-dev`, are not reported. Most of these binary packages are kernel and kernel modules, which are not run in container images. | [Debian Security Bug Tracker](https://security-tracker.debian.org){: external}. |
+| Debian | All stable versions with vendor security support.  \n  \n CVEs on binary packages that are associated with the Debian source package `linux`, such as `linux-libc-dev`, are not reported. Most of these binary packages are kernel and kernel modules, which are not run in container images. | [Debian Security Bug Tracker](https://security-tracker.debian.org/tracker/){: external}. |
 | GoogleContainerTools distroless | All stable versions with vendor security support. | [GoogleContainerTools distroless](https://github.com/GoogleContainerTools/distroless){: external} |
 | Red Hat&reg; Enterprise Linux&reg; (RHEL) | RHEL/UBI 7, RHEL/UBI 8, and RHEL/UBI 9 | [{{site.data.keyword.redhat_notm}} Security Data API](https://access.redhat.com/labsinfo/securitydataapi){: external}. |
 | Ubuntu | All stable versions with vendor security support. | [Ubuntu CVE Tracker](https://launchpad.net/ubuntu-cve-tracker){: external}. |
@@ -150,7 +150,7 @@ Images are scanned only if they are using an operating system that is supported 
 Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
 {: deprecated}
 
-Starting from version 1.0.0 of the {{site.data.keyword.registryshort}} plug-in, you can choose whether to fetch results from either version 3, `v3` (the default), or version 4, `v4`, of Vulnerability Advisor for the following commands:
+Starting from version 1.0.0 of the {{site.data.keyword.registryshort}} plug-in, you can choose whether to fetch results from either version 3 `v3` (the default), or version 4 `v4`, of Vulnerability Advisor for the following commands:
 
 - [`ibmcloud cr va IMAGE`](/docs/Registry?topic=Registry-containerregcli#bx_cr_va), where `IMAGE` is the name of the image.
 - [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list).
@@ -163,7 +163,7 @@ ibmcloud cr va-version-set v4
 ```
 {: pre}
 
-Alternatively, you can set an environment variable, `va_version`, and specify the Vulnerability Advisor version that you want to use. Valid values are `v3` and `v4`.
+Alternatively, you can set an environment variable `va_version`, and specify the Vulnerability Advisor version that you want to use. Valid values are `v3` and `v4`.
 
 ## Reviewing a vulnerability report
 {: #va_reviewing}
@@ -189,13 +189,13 @@ You can review the security of Docker images that are stored in your namespaces 
 2. Click the **Navigation menu** icon, then click **Container Registry**.
 3. Click **Images**. A list of your images and the security status of each image is displayed in the **Images** table.
 4. To see the report for the image that is tagged `latest`, click the row for that image. The **Image details** tab opens showing the data for that image. If no `latest` tag exists in the repository, the most recent image is used.
-5. If the **Security status** column shows any issues, to find out about the issues, click the **Issues by type** tab. The **Vulnerabilities** and **Configuration Issues** tables open.
+5. If the **Security status** column shows any issues, to find out about the issues, click the **Issues by type** tab. The **Vulnerabilities** and **Configuration Issues** tables are displayed.
 
-    - **Vulnerabilities** table. Shows the Vulnerability ID for each issue, the policy status for that issue, the affected packages and how to resolve the issue. To see more information about that issue, expand the row. A summary of that issue is displayed that contains a link to the vendor security notice for that issue. Lists packages that contain known vulnerability issues.
+    - **Vulnerabilities** table. This table shows the Vulnerability ID for each issue, the policy status for that issue, the affected packages and how to resolve the issue. To see more information about that issue, expand the row. A summary of that issue is displayed that contains a link to the vendor security notice for that issue. Lists packages that contain known vulnerability issues.
 
-        The list is updated daily by using published security notices for the Docker image types that are listed in [Types of vulnerabilities](#types). Typically, for a vulnerable package to pass the scan, a later version of the package is required that includes a fix for the vulnerability. The same package can list multiple vulnerabilities, and in this case, a single package update can correct multiple issues. Click the security notice code to view more information about the package and for steps to update the package.
+        The list is updated daily by using published security notices for the Docker image types that are listed in [Types of vulnerabilities](#types). Typically, for a vulnerable package to pass the scan, a later version of the package is required that includes a fix for the vulnerability. The same package can list multiple vulnerabilities and in this case, a single package update can correct multiple issues. Click the security notice code to view more information about the package and for steps to update the package.
 
-    - **Configuration issues** table. Shows the configuration issue ID for each issue, the policy status for that issue, and the security practice. To see more information about that issue, expand the row. A summary of that issue is displayed that contains a link to the security notice for that issue.
+    - **Configuration issues** table. This table shows the configuration issue ID for each issue, the policy status for that issue, and the security practice. To see more information about that issue, expand the row. A summary of that issue is displayed that contains a link to the security notice for that issue.
 
         The list contains suggestions for actions that you can take to increase the security of the container and any application settings for the container that are nonsecure. Expand the row to view how to resolve the issue.
 
@@ -240,7 +240,7 @@ If you want to manage the security of an {{site.data.keyword.cloud_notm}} organi
 
 You can deploy containers from any image regardless of security status.
 
-To find out about the required permissions for working with exemptions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+To find out more about the required permissions for working with exemptions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 Using Portieris to block the deployment of images with issues that are found by Vulnerability Advisor is deprecated.
 {: deprecated}
