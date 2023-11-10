@@ -1651,6 +1651,8 @@ subcollection: Registry
 
 [Why do I get a manifest list invalid error?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error#troubleshoot-manifest-list-error)
 
+[Why do I get an error about an invalid version of Vulnerability Advisor being specified?](/docs/Registry?topic=Registry-troubleshoot-va-version-error#troubleshoot-va-version-error)
+
 
 ### Troubleshooting networking
 {: #sitemap_troubleshooting_networking}

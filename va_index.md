@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-10"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -164,6 +164,9 @@ ibmcloud cr va-version-set v4
 {: pre}
 
 Alternatively, you can set an environment variable `va_version`, and specify the Vulnerability Advisor version that you want to use. Valid values are `v3` and `v4`.
+
+If you try to set an invalid version of Vulnerability Advisor, you get en error, see [Why do I get an error about an invalid version of Vulnerability Advisor being specified?](/docs/Registry?topic=Registry-troubleshoot-va-version-error) for assistance.
+{: tip}
 
 ## Reviewing a vulnerability report
 {: #va_reviewing}

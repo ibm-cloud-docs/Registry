@@ -584,5 +584,17 @@
         "getting Status code 401 Unauthorized accessing Container Registry",
         "error 401 trying to use Container Registry through Code Engine",
         "401 Unauthorized trying to use Registry image"
+      ],
+      "troubleshoot-va-version-error": [
+        "get error message invalid version Vulnerability Advisor",
+        "getting error message invalid version Vulnerability Advisor",
+        "see error invalid version Vulnerability Advisor",
+        "seeing error invalid version Vulnerability Advisor",
+        "specify valid version Vulnerability Advisor",
+        "specifying valid version Vulnerability Advisor",
+        "specified invalid version Vulnerability Advisor",
+        "set valid version Vulnerability Advisor",
+        "set invalid version Vulnerability Advisor",
+        "setting valid version Vulnerability Advisor"
       ]
     }
