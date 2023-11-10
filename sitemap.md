@@ -1540,7 +1540,7 @@ subcollection: Registry
 
 [Vulnerability Advisor 3 for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: external}
 
-[Vulnerability Advisor 4 for IBM Cloud Container Registry API](https://{DomainName}/apidocs/vulnerability-advisor){: external}
+[Vulnerability Advisor 4 for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va-v4){: external}
 
 
 ## Related links
