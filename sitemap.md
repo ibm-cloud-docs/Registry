@@ -208,7 +208,7 @@ subcollection: Registry
 
 * [13 November 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-13nov2023)
 
-    * [End of support for Vulnerability Advisor version 3](/docs/Registry?topic=Registry-registry_release_notes#13nov2023_va3)
+    * [Discontinuation of Vulnerability Advisor version 3](/docs/Registry?topic=Registry-registry_release_notes#13nov2023_va3)
 
 * [11 October 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-11oct2023)
 

@@ -25,10 +25,10 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 {: #registry-13nov2023}
 {: release-note}
 
-End of support for Vulnerability Advisor version 3 {: #13nov2023_va3}
+Discontinuation of Vulnerability Advisor version 3 {: #13nov2023_va3}
 :   Vulnerability Advisor version 3 is discontinued.
 
-    For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
+    For more information about how to update to Vulnerability Advisor version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
 
 ## 11 October 2023
 {: #registry-11oct2023}
