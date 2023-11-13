@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-11-10"
+lastupdated: "2023-11-13"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -205,6 +205,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [13 November 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-13nov2023)
+
+    * [Discontinuation of Vulnerability Advisor version 3](/docs/Registry?topic=Registry-registry_release_notes#13nov2023_va3)
 
 * [11 October 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-11oct2023)
 
@@ -907,7 +911,7 @@ subcollection: Registry
 
     * [Vulnerable packages](/docs/Registry?topic=Registry-va_index#packages)
 
-    * [Configuration issues - version 3 only](/docs/Registry?topic=Registry-va_index#app_configurations)
+    * [Configuration issues](/docs/Registry?topic=Registry-va_index#app_configurations)
 
 * [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index#va_set_version)
 
@@ -1538,8 +1542,6 @@ subcollection: Registry
 
 [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry){: external}
 
-[Vulnerability Advisor 3 for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: external}
-
 [Vulnerability Advisor 4 for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va-v4){: external}
 
 
@@ -1719,8 +1721,6 @@ subcollection: Registry
     * [Why doesn't a new image scan?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
 
     * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
-
-    * [Why can I see a vulnerability in Vulnerability Advisor v4 but not in v3?](/docs/Registry?topic=Registry-registry_faq#faq_va_v3_v4)
 
     * [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
 

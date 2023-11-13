@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-10"
+lastupdated: "2023-11-13"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -18,10 +18,7 @@ subcollection: Registry
 Vulnerability Advisor is provided as part of {{site.data.keyword.registrylong}}. Vulnerability Advisor checks the security status of container images that are provided by {{site.data.keyword.IBM_notm}}, third parties, or added to your organization's registry namespace.
 {: shortdesc}
 
-Vulnerability Advisor provides security management for [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started). Vulnerability Advisor generates a security status report that includes suggested fixes and best practices. Vulnerability Advisor is available in two versions: version 3 and version 4. Version 4 uses new architecture and a different scanning engine.
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
+Vulnerability Advisor provides security management for [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started). Vulnerability Advisor generates a security status report that includes suggested fixes and best practices.
 
 When you add an image to a namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability.
 
@@ -31,6 +28,9 @@ Fixing the security and configuration issues that are reported by Vulnerability 
 
 You can use {{site.data.keyword.compliance_long}} to monitor vulnerabilities that are detected by Vulnerability Advisor. For more information, see [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic=security-compliance-getting-started).
 
+Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
+{: deprecated}
+
 Using Portieris to block the deployment of images with issues that are found by Vulnerability Advisor is deprecated.
 {: deprecated}
 
@@ -38,17 +38,6 @@ Using Portieris to block the deployment of images with issues that are found by 
 {: #about}
 
 Vulnerability Advisor provides functions to help you to secure your images.
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
-
-The following functions are available in version 3:
-
-- Scans images for issues.
-- Creates an evaluation report that is based on security practices that are specific to {{site.data.keyword.containerlong_notm}}.
-- Provides recommendations to secure configuration files for a subset of application types.
-- Supplies instructions about how to fix a reported [vulnerable package](#packages) or [configuration issue](#app_configurations) in its reports.
-- Applies exemption policies to reports at an account, [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), or [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) level to mark when issues that are flagged do not apply to your use case.
 
 The following functions are available in version 4:
 
@@ -77,7 +66,7 @@ To scan images and containers in your account for security issues, Vulnerability
 Do not put personal information into any field or location that Vulnerability Advisor processes, as identified in the preceding list.
 {: important}
 
-Scan results, aggregated at a data center level, are processed to produce anonymized metrics to operate and improve the service. In version 3, a vulnerability report (scan result) is generated when the image is pushed to the registry (and is regenerated regularly thereafter). When Vulnerability Advisor is queried, a scan result is retrieved that might be up to 5 days old. Scan results are deleted 30 days after they are generated.
+Scan results, aggregated at a data center level, are processed to produce anonymized metrics to operate and improve the service.
 
 In version 4, the image is indexed when it is first pushed to {{site.data.keyword.registryshort}} registry, and that index report is stored in the database. When Vulnerability Advisor is queried, the image index report is retrieved, and a vulnerability assessment is produced. This action happens dynamically every time Vulnerability Advisor is queried. Therefore, no pregenerated scan result exists that requires deleting. However, the image index report is deleted within 30 days of the deletion of the image from the registry.
 
@@ -93,15 +82,6 @@ Packages that contain known vulnerability issues are displayed in the scan resul
 
 Vulnerability Advisor returns vulnerabilities only when a package fix is published by the distributor. Declared vulnerabilities that aren't fixed yet, or are not going to be fixed, are not reported by Vulnerability Advisor. Therefore, if Vulnerability Advisor does not report any vulnerabilities, there might still be a risk in the image.
 
-For version 3, the scanning of an image is triggered in one of the following ways:
-
-- When a new image is pushed to the registry.
-- When a new security notice is released for a package that is installed in the image, the image is queued for scanning, which might take some time to complete.
-- While an image is tagged in the registry, it is scanned every week.
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
-
 For version 4, the image is indexed the first time that it is pushed. Thereafter, the vulnerability assessment is calculated every time Vulnerability Advisor is queried about that image. Images are scanned only if they have a tag.
 
 The following tables show the supported Docker base images that Vulnerability Advisor checks for vulnerable packages.
@@ -111,62 +91,35 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 
 | Docker base image | Supported versions | Source of security notices |
 |-------------------|--------------------|----------------------------|
-| Alpine | All stable versions with vendor security support. | [Git - Alpine Linux](https://gitlab.alpinelinux.org/){: external} and [CVE](https://cve.mitre.org/data/downloads/index.html){: external}. |
-| CentOS | Version 7 | [CentOS announce archives](https://lists.centos.org/pipermail/centos-announce/){: external} and [CentOS CR announce archives](https://lists.centos.org/pipermail/centos-cr-announce/){: external}. |
-| Debian | All stable versions with vendor security support or long-term support. | [Debian security announcements](https://lists.debian.org/debian-security-announce/){: external} and [Debian LTS Security Information](https://www.debian.org/lts/security/){: external}. |
-| GoogleContainerTools distroless | All stable versions with vendor security support. | [GoogleContainerTools distroless](https://github.com/GoogleContainerTools/distroless){: external} |
-| Red Hat&reg; Enterprise Linux&reg; (RHEL) | RHEL/UBI 7, RHEL/UBI 8, and RHEL/UBI 9 | [{{site.data.keyword.redhat_notm}} Security Data API](https://access.redhat.com/labsinfo/securitydataapi){: external}. |
-| Ubuntu | All stable versions with vendor security support. | [Ubuntu Security Notices](https://ubuntu.com/security/notices){: external}. |
-{: caption="Table 1. Supported Docker base images that Vulnerability Advisor 3 checks for vulnerable packages" caption-side="bottom"}
-
-| Docker base image | Supported versions | Source of security notices |
-|-------------------|--------------------|----------------------------|
 | Alpine | All stable versions with vendor security support. | [Alpine SecDB database](https://secdb.alpinelinux.org/){: external}. |
 | Debian | All stable versions with vendor security support.  \n  \n CVEs on binary packages that are associated with the Debian source package `linux`, such as `linux-libc-dev`, are not reported. Most of these binary packages are kernel and kernel modules, which are not run in container images. | [Debian Security Bug Tracker](https://security-tracker.debian.org/tracker/){: external}. |
 | GoogleContainerTools distroless | All stable versions with vendor security support. | [GoogleContainerTools distroless](https://github.com/GoogleContainerTools/distroless){: external} |
 | Red Hat&reg; Enterprise Linux&reg; (RHEL) | RHEL/UBI 7, RHEL/UBI 8, and RHEL/UBI 9 | [{{site.data.keyword.redhat_notm}} Security Data API](https://access.redhat.com/labsinfo/securitydataapi){: external}. |
 | Ubuntu | All stable versions with vendor security support. | [Ubuntu CVE Tracker](https://launchpad.net/ubuntu-cve-tracker){: external}. |
-{: caption="Table 2. Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
+{: caption="Table 1. Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
 
-### Configuration issues - version 3 only
+### Configuration issues
 {: #app_configurations}
 
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
-
-Configuration issues are potential security issues that are related to how an [app](x4281528){: term} is set up. Configuration issues are not supported in version 4.
-
-Many of the reported problems can be fixed by updating your [Dockerfile](x9860414){: term}.
-
-Images are scanned only if they are using an operating system that is supported by Vulnerability Advisor. Vulnerability Advisor checks the configuration settings for the following types of apps:
-
-- MySQL
-- NGINX
-- Apache
+Configuration issues are not supported in Vulnerability Advisor version 4.
 
 ## Setting the Vulnerability Advisor version
 {: #va_set_version}
 
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
-
-Starting from version 1.0.0 of the {{site.data.keyword.registryshort}} plug-in, you can choose whether to fetch results from either version 3 `v3` (the default), or version 4 `v4`, of Vulnerability Advisor for the following commands:
-
-- [`ibmcloud cr va IMAGE`](/docs/Registry?topic=Registry-containerregcli#bx_cr_va), where `IMAGE` is the name of the image.
-- [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list).
-- [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests).
-
-To retrieve results from version 4 instead of version 3, run the following [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) command.
+To retrieve results from version 4, run the following [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) command. The only valid value is `v4`.
 
 ```txt
 ibmcloud cr va-version-set v4
 ```
 {: pre}
 
-Alternatively, you can set an environment variable `va_version`, and specify the Vulnerability Advisor version that you want to use. Valid values are `v3` and `v4`.
+Alternatively, you can set an environment variable `va_version`, and specify the Vulnerability Advisor version that you want to use. The only valid value is `v4`.
 
 If you try to set an invalid version of Vulnerability Advisor, you get en error, see [Why do I get an error about an invalid version of Vulnerability Advisor being specified?](/docs/Registry?topic=Registry-troubleshoot-va-version-error) for assistance.
 {: tip}
+
+Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
+{: deprecated}
 
 ## Reviewing a vulnerability report
 {: #va_reviewing}
