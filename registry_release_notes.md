@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-10"
+lastupdated: "2023-11-13"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -12,6 +12,7 @@ content-type: release-note
 
 ---
 
+
 {{site.data.keyword.attribute-definition-list}}
 
 # Release notes for {{site.data.keyword.registryshort}}
@@ -19,6 +20,15 @@ content-type: release-note
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 13 November 2023
+{: #registry-13nov2023}
+{: release-note}
+
+End of support for Vulnerability Advisor version 3 {: #13nov2023_va3}
+:   Vulnerability Advisor version 3 is discontinued.
+
+    For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
 
 ## 11 October 2023
 {: #registry-11oct2023}
@@ -462,7 +472,7 @@ Retaining untagged images is now an option when you clean up your namespaces {: 
 {: release-note}
 
 You can use private network connections to securely route your data in {{site.data.keyword.registryshort}} {: #16apr2020_private_network}
-:   If you use cloud-based services for production workloads, you can use a secure private connection so that you ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the private {{site.data.keyword.cloud_notm}} network.
+:   If you use cloud-based services for production workloads, you can use a secure private connection so that you can ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the private {{site.data.keyword.cloud_notm}} network.
 
     For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private) and [{{site.data.keyword.registrylong_notm}} architecture and workload](/docs/Registry?topic=Registry-registry_architecture).
 

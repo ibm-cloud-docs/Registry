@@ -128,9 +128,6 @@ toc:
               label: IBM Cloud Container Registry API
               href: https://{DomainName}/apidocs/container-registry
           - link:
-              label: Vulnerability Advisor 3 for IBM Cloud Container Registry API
-              href: https://{DomainName}/apidocs/container-registry/va
-          - link:
               label: Vulnerability Advisor 4 for IBM Cloud Container Registry API
               href: https://{DomainName}/apidocs/container-registry/va-v4
       - topicgroup:

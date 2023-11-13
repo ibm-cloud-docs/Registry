@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-10-20"
+lastupdated: "2023-11-13"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -216,15 +216,6 @@ If you still see unacceptable performance, contact support, see [Getting help an
 
 Security notices for Vulnerability Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
 
-### Why can I see a vulnerability in Vulnerability Advisor v4 but not in v3?
-{: #faq_va_v3_v4}
-{: faq}
-
-Some vulnerabilities are picked up earlier by Vulnerability Advisor version 4 than by version 3 because version 4 uses a different architecture and a different scanning engine.
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
-
 ### Which version of a package is installed in my image?
 {: #faq_va_package_version}
 {: faq}
@@ -312,7 +303,7 @@ On {{site.data.keyword.redhat_openshift_full}} and CentOS, to determine the vers
 {: #faq_va_versions}
 {: faq}
 
-Vulnerability Advisor is available in two versions, version 3 and version 4. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
+Vulnerability Advisor version 4 is the only version available. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
 
 Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
 {: deprecated}

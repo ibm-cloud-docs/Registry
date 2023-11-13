@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-20"
+lastupdated: "2023-11-13"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -141,14 +141,6 @@ Review the following account API methods, their required actions in {{site.data.
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
-| Get the vulnerability assessment for all images. | `GET /va/api/v3/report/account` | `container-registry.exemption.list` | `container-registry.account-vulnerability-report.list` |
-| Get vulnerability assessment status for all images. | `GET /va/api/v3/report/account/status` | `container-registry.exemption.list` | `container-registry.account-vulnerability-status.list` |
-| Get vulnerability status. | `GET /va/api/v3/report/image/status/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-status.read` |
-| Get vulnerability assessment status. | `GET /va/api/v3/report/image/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-report.read` |
-{: caption="Table 11. Report for version 3" caption-side="bottom"}
-
-| Action                                    | Method                 | IAM ACTION    |  AT ACTION |
-|-------------------------------------------|------------------------|---------------|------------|
 | Get the vulnerability assessment for all images. | `GET /va/api/v4/report/account` | `container-registry.exemption.list` | `container-registry.account-vulnerability-report.list` |
 | Get vulnerability assessment status for all images. | `GET /va/api/v4/report/account/status` | `container-registry.exemption.list` | `container-registry.account-vulnerability-status.list` |
 | Get vulnerability status. | `GET /va/api/v4/report/image/status/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-status.read` |
@@ -157,23 +149,6 @@ Review the following account API methods, their required actions in {{site.data.
 
 ### Exemption API methods
 {: #registry_at_iam_vuln_exempt}
-
-| Action                                    | Method                 | IAM ACTION    |  AT ACTION |
-|-------------------------------------------|------------------------|---------------|------------|
-| List account-level exemptions. | `GET /va/api/v3/exempt/image` | `container-registry.exemption.list` | |
-| Get an account-level exemption. | `GET /va/api/v3/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.list` | |
-| Create or update an account-level exemption. | `POST /va/api/v3/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.create` |
-| Delete an account-level exemption. | `DELETE /va/api/v3/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.delete` |
-| List resource exemptions. | `GET /va/api/v3/exempt/image/{resource}` | `container-registry.exemption.list` | |
-| Get details of a resource exemption. | `GET /va/api/v3/exempt/image/{resource}/issue/{issueType}/{issueID}` | `container-registry.exemption.list` | |
-| Create or update a resource exemption. | `POST /va/api/v3/exempt/image/{resource}/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.create` |
-| Delete a resource exemption. | `DELETE /va/api/v3/exempt/image/{resource}/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.delete` |
-| List the types of exemption. | `GET /va/api/v3/exempt/types` | | |
-| List all exemptions. | `GET /va/api/v3/exemptions/account` | `container-registry.exemption.list` | |
-| Delete all exemptions. | `POST /va/api/v3/exemptions/deleteAll` | `container-registry.exemption.manager` | `container-registry.exemption.delete` |
-| List image exemptions. | `GET /va/api/v3/exemptions/image/{resource}` | `container-registry.exemption.list` | |
-| List exemptions for images. | `POST /va/api/v3/exemptions/images` | `container-registry.exemption.list` | |
-{: caption="Table 12. Exemptions for version 3" caption-side="bottom"}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
