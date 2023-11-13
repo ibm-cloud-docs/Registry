@@ -25,7 +25,7 @@ Review the following list of {{site.data.keyword.iamshort}} (IAM) actions and {{
 For more information, see the following topics:
 
 - [{{site.data.keyword.registryshort_notm}} API documentation](https://cloud.ibm.com/apidocs/container-registry){: external}
-- [Vulnerability Advisor for {{site.data.keyword.registryshort_notm}} API documentation](https://cloud.ibm.com/apidocs/container-registry/va){: external}
+- [Vulnerability Advisor for {{site.data.keyword.registryshort_notm}} API documentation](https://cloud.ibm.com/apidocs/vulnerability-advisor){: external}
 - [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events)
 - [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam)
 

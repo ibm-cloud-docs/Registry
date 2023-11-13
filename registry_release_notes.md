@@ -139,7 +139,7 @@ Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} pl
 
     If you want to use version 4 to run the `ibmcloud cr va`, `ibmcloud cr image-list`, or `ibmcloud cr image-digests` commands, see [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
 
-    For more information about Vulnerability Advisor, see [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#about). For more information about Vulnerability Advisor API 4, see [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/container-registry/va-v4).
+    For more information about Vulnerability Advisor, see [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#about). For more information about Vulnerability Advisor API 4, see [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/vulnerability-advisor).
 
 New commands for setting and checking the Vulnerability Advisor version are available from {{site.data.keyword.registryshort}} plug-in 1.0.0 {: #15sep2022_va_version_commands}
 :   From {{site.data.keyword.registryshort}} plug-in 1.0.0, you can use new commands to check and set Vulnerability Advisor versions.
@@ -651,7 +651,7 @@ Automating access to your namespaces {: #21feb2019_access}
 {: release-note}
 
 End of support for Vulnerability Advisor API version 2 {: #8jan2019_va2}
-:   Vulnerability Advisor’s API version 2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](/apidocs/container-registry/va).
+:   Vulnerability Advisor’s API version 2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](/apidocs/vulnerability-advisor).
 
 ## 4 October 2018
 {: #registry-4oct2018}
@@ -687,7 +687,7 @@ Exemption policies available in Vulnerability Advisor {: #7aug2018_exemption}
 Vulnerability Advisor API version 3 {: #12jul2018_va3}
 :   Version 3 of the API changes the behavior of the API endpoints that are used to list exemptions. You must check that your use of the API does not rely on the behavior of version 2.
 
-    For more information, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](/apidocs/container-registry/va).
+    For more information, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](/apidocs/vulnerability-advisor).
 
 ## 31 May 2018
 {: #registry-31may2018}
