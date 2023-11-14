@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-11-14"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -53,7 +53,7 @@ The **Resource Name** value is a namespace, as shown by the [`ibmcloud cr namesp
 ## Limitations
 {: #registry-cbr_limitations}
 
-Context-based restrictions protect only the actions that are associated with the [{{site.data.keyword.registrylong_notm}} API](/apidocs/container-registry) and the [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}} API](/apidocs//vulnerability-advisor). Actions that are associated with the following platform APIs are not protected by context-based restrictions. Reference the API docs for the specific action IDs.
+Context-based restrictions protect only the actions that are associated with the [{{site.data.keyword.registrylong_notm}} API](/apidocs/container-registry) and the [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}} API](/apidocs/vulnerability-advisor). Actions that are associated with the following platform APIs are not protected by context-based restrictions. Reference the API docs for the specific action IDs.
 
 - [Resource Instance APIs](/apidocs/resource-controller/resource-controller#list-resource-instances)
 - [Resource Keys APIs](/apidocs/resource-controller/resource-controller#list-resource-keys)
