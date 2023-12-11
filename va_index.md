@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-12-11"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -207,7 +207,7 @@ Using Portieris to block the deployment of images with issues that are found by 
 {: support}
 {: ui}
 
-If you are using the {{site.data.keyword.cloud_notm}} console, you can set a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), or [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) as the scope of the exemption policy. If you want to use the [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) as the scope, you must use the CLI, see [Setting organizational exemption policies by using the CLI](#va_managing_policy_cli).
+If you are using the {{site.data.keyword.cloud_notm}} console, you can set a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), or [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) as the scope of the exemption policy. If you want to use the [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) as the scope, you must use the CLI, see [Setting organizational exemption policies by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_managing_policy_cli).
 {: note}
 
 If you want to set exemptions from the policy by using the {{site.data.keyword.cloud_notm}} console, complete the following steps:
