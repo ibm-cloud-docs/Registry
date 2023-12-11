@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-12-11"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -60,7 +60,7 @@ Before you begin, complete the following tasks:
 {: #registry_tutorial_workflow_code_run}
 {: step}
 
-Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/container-registry){: external} to store your container images is the easiest way to get an application up and running with {{site.data.keyword.containerlong_notm}}. The following steps show you how to build a container image, store it in {{site.data.keyword.registrylong_notm}}, and create a Kubernetes deployment that uses that image.
+Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/products/container-registry){: external} to store your container images is the easiest way to get an application up and running with {{site.data.keyword.containerlong_notm}}. The following steps show you how to build a container image, store it in {{site.data.keyword.registrylong_notm}}, and create a Kubernetes deployment that uses that image.
 
 ### Create a namespace
 {: #registry_tutorial_workflow_create_namespace}

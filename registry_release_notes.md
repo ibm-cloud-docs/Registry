@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-12-11"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -247,7 +247,7 @@ All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam
 Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions is discontinued {: #02feb2022_exemption}
 :   From 2 February 2022, all regions require separate exemption policy management. Exemption policies are used to exclude any matching vulnerabilities or configuration issues from Vulnerability Advisor reports. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add) command, see [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy).
 
-    For more information, see [{{site.data.keyword.registrylong_notm}} Is Ending Exemption Synchronization Across Regions](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-is-ending-exemption-synchronization-across-regions){: external}.
+    For more information, see [{{site.data.keyword.registrylong_notm}} Is Ending Exemption Synchronization Across Regions](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-is-ending-exemption-synchronization-across-regions/){: external}.
 
 ## 1 February 2022
 {: #registry-01feb2022}
@@ -256,7 +256,7 @@ Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions
 Storage that is used by untagged images is being charged for {: #01feb2022_billing}
 :   From 1 February 2022, {{site.data.keyword.registrylong_notm}} is charging for the storage that is used by [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images. To reduce the amount that you're charged, you can [clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged). You can also [free up used storage and change service plans or quota limits to stay within given quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
 
-    For more information, see [Starting 1 February 2022, {{site.data.keyword.registrylong_notm}} will be billing for the storage that is used by untagged images](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-to-bill-for-storage-used-by-untagged-images){: external}.
+    For more information, see [Starting 1 February 2022, {{site.data.keyword.registrylong_notm}} will be billing for the storage that is used by untagged images](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-to-bill-for-storage-used-by-untagged-images/){: external}.
 
 ## 17 January 2022
 {: #registry-17jan2022}
@@ -292,7 +292,7 @@ Using Notary v1 for signing images is discontinued {: #01nov2021_notary}
 {{site.data.keyword.registryshort}} container builds are discontinued {: #05oct2021_build}
 :   The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
-    For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
+    For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-deprecating-container-builds/){: external}.
 
 ## 2 September 2021
 {: #registry-02sep2021}
@@ -313,7 +313,7 @@ New region in Brazil {: #30aug2021_brazil}
 {: release-note}
 
 Using registry tokens is discontinued {: #19aug2021_remove_tokens}
-:   From 19 August 2021, registry tokens are no longer accepted for authentication. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
+:   From 19 August 2021, registry tokens are no longer accepted for authentication. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication/){: external}.
 
 ## 9 August 2021
 {: #registry-09aug2021}
@@ -391,7 +391,7 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 {{site.data.keyword.registryshort}} container builds are deprecated {: #06oct2020_build}
 :   The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registryshort_notm}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
-    For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
+    For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-deprecating-container-builds/){: external}.
 
 ## 27 August 2020
 {: #registry-27aug2020}
@@ -409,7 +409,7 @@ Setting exemption policies by digest {: #27aug2020_digest}
 Using UAA tokens is discontinued {: #12aug2020_tokens}
 :   From 12 August 2020, UAA tokens are no longer accepted for authentication. At the moment, registry tokens continue to be accepted, but their use is deprecated.
 
-    For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
+    For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/blog/announcement/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens/){: external}.
 
 ## 30 July 2020
 {: #registry-30jul2020}
@@ -488,7 +488,7 @@ You can use private network connections to securely route your data in {{site.da
 Using {{site.data.keyword.registryshort}} tokens is deprecated {: #3feb2020_tokens}
 :   The use of UAA and {{site.data.keyword.registryshort}} tokens is deprecated. From 12 August 2020, UAA tokens are not accepted for authentication.
 
-    For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
+    For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/blog/announcement/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens/){: external}.
 
 ## 31 January 2020
 {: #registry-31jan2020}
@@ -621,7 +621,7 @@ General Availability of Container Image Security Enforcement {: #2apr2019_cise}
 New domain names {: #25feb2019_dns}
 :   {{site.data.keyword.registryshort}} is adopting new domain names. The new domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet.
 
-    For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New {{site.data.keyword.registrylong_notm}} Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
+    For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New {{site.data.keyword.registrylong_notm}} Domain Names](https://www.ibm.com/blog/announcement/introducing-new-ibm-cloud-container-registry-domain-names/){: external}.
 
     Signatures apply to the whole image name, which includes the domain name. If you're using content trust, you must add new signatures so that you can use content trust under the new domain name.
 
