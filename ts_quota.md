@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-06-05"
 
 keywords: error, iam, access denied, access, quota, pull traffic quota, image storage quota
 
