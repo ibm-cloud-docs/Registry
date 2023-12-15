@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-10"
+lastupdated: "2023-12-15"
 
-keywords: error, va, vulnerability advisor, v3, version 3, version 4, invalid version
+keywords: error, va, vulnerability advisor, v3, version 3, version 4, invalid version, CRC0589E
 
 subcollection: Registry
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You tried to set Vulnerability Advisor to an invalid version, for example, version 3 in {{site.data.keyword.registrylong}}. Version 3 is discontinued.
+You tried to set Vulnerability Advisor to an invalid version, for example, version 3 in {{site.data.keyword.registrylong}}. Version 3 is discontinued. For example, `CRC0589E Invalid Vulnerability Advisor version v3 specified.`
 {: shortdesc}
 
 When you try to set the version of Vulnerability Advisor to version 3 `v3`, you get the following message.
@@ -28,7 +28,7 @@ When you try to set the version of Vulnerability Advisor to version 3 `v3`, you 
 ```txt
 $ ibmcloud cr va-version-set v3
 FAILED
-Invalid Vulnerability Advisor version 'v3' specified. Specify a valid version or, to list the available versions, re-run the command with no parameters. See https://cloud.ibm.com/docs/Registry?topic=Registry-troubleshoot-va-version-error
+CRC0589E Invalid Vulnerability Advisor version v3 specified. Specify a valid version or, to list the available versions, re-run the command with no parameters. See https://cloud.ibm.com/docs/Registry?topic=Registry-troubleshoot-va-version-error
 ```
 {: screen}
 
