@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-12-15"
 
 keywords: error, iam, access denied, access policy, policy, access,
 
@@ -28,9 +28,9 @@ When you try to access {{site.data.keyword.registryshort}}, you get one of the f
 
 - `Insufficient scope`, you might see this message if you are trying to access {{site.data.keyword.registryshort}} by using a client such as Docker, see [Why am I getting `Access denied` errors about insufficient scope?](/docs/Registry?topic=Registry-troubleshoot-scope) for assistance.
 
-- `Your account has exceeded its pull traffic quota for the current month`, see [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
+- `Your account has exceeded its pull traffic quota for the current month.`, see [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
 
-- `Your account has exceeded its image storage quota for the current month`, see [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
+- `Your account has exceeded its image storage quota for the current month.`, see [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
 
 - `You must access this account over the private network`, see [Why am I getting `Access denied` errors over a private network?](/docs/Registry?topic=Registry-troubleshoot-private) for assistance.
 

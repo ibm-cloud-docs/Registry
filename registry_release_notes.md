@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-15"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -72,7 +72,7 @@ The `--json` option for {{site.data.keyword.registrylong_notm}} commands is depr
 {: release-note}
 
 Vulnerability Advisor version 3 is deprecated from 19 June 2023 {: #registry-19jun2023_v3}
-:   For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4&interface=ui).
+:   For more information about how to update to version 4, see [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4).
 
 ## 19 May 2023
 {: #registry-19may2023}
@@ -103,7 +103,7 @@ Change to virtual private endpoints {: #11nov2022_vpe}
 
     If you create a new {{site.data.keyword.registryshort}} VPE gateway after 11 November 2022 and also use {{site.data.keyword.iamshort}} (IAM) [restricted IP address lists](/docs/account?topic=account-ips&interface=ui), you must ensure that your restricted IP address list contains the Cloud Service Endpoint (CSE) source IP addresses of the VPCs in which your {{site.data.keyword.registryshort}} VPE gateways exist. This requirement is related to a previous change to how {{site.data.keyword.registryshort}} works over the private network that the new VPE version also uses, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
 
-    For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe&interface=ui).
+    For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe).
 
 ## 2 November 2022
 {: #registry-2nov2022}
@@ -121,7 +121,7 @@ Changes to private IP addresses from 15 December 2022 {: #2nov2022_ip}
 {: release-note}
 
 {{site.data.keyword.registryshort}} plug-in 1.0.0 is available {: #15sep2022_v1}
-:   A new version, version 1.0.0, of the {{site.data.keyword.registryshort}} CLI plug-in is available. To update the version of your {{site.data.keyword.registryshort}} CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace&interface=ui#registry_cli_update).
+:   A new version, version 1.0.0, of the {{site.data.keyword.registryshort}} CLI plug-in is available. To update the version of your {{site.data.keyword.registryshort}} CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 
     Version 1.0.0 includes [Vulnerability Advisor 4](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_4).
 
@@ -130,7 +130,7 @@ Changes to private IP addresses from 15 December 2022 {: #2nov2022_ip}
     For more information, see [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists).
 
 All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated {: #15sep2022_v0}
-:   All releases of version 0.1 of the {{site.data.keyword.registryshort}} CLI plug-in are deprecated. You can continue to use releases of version 0.1, but version 1.0.0 is available for you to use. Version 0.1 will continue to be updated with any required updates until 15 September 2023. To update the version of your CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace&interface=ui#registry_cli_update).
+:   All releases of version 0.1 of the {{site.data.keyword.registryshort}} CLI plug-in are deprecated. You can continue to use releases of version 0.1, but version 1.0.0 is available for you to use. Version 0.1 will continue to be updated with any required updates until 15 September 2023. To update the version of your CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 
 Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} plug-in 1.0.0 {: #15sep2022_va_version_4}
 :   From {{site.data.keyword.registryshort}} plug-in 1.0.0, you can choose whether to use Vulnerability Advisor version 3 or version 4 to run your commands. Vulnerability Advisor 4 is available from version 1.0.0 of the {{site.data.keyword.registryshort}} plug-in. Vulnerability Advisor 3 is the default.
@@ -274,7 +274,7 @@ View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_no
 Define configuration rules for {{site.data.keyword.registryshort}} {: #07dec2021_gov}
 :   As a security or compliance focal, you can use the **Govern resources** section of the {{site.data.keyword.compliance_short}} dashboard to define [configuration rules](#x3084914){: term} for {{site.data.keyword.registryshort}}.
 
-    For more information, see [Managing security and compliance for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-manage-security-compliance&interface=ui).
+    For more information, see [Managing security and compliance for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-manage-security-compliance).
 
 ## 1 November 2021
 {: #registry-01nov2021}

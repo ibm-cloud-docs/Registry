@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-14"
+lastupdated: "2023-12-15"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -25,7 +25,7 @@ A user must have the Administrator role on the {{site.data.keyword.registryshort
 
 Any {{site.data.keyword.at_full_notm}} or audit log events generated come from the context-based restrictions, not {{site.data.keyword.registryshort}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
 
-{{site.data.keyword.registryshort}} is a service that is integrated with context-based restrictions. For more information, see [Services that are integrated with context-based restrictions](/docs/account?topic=account-context-restrictions-whatis&interface=cli#cbr-adopters).
+{{site.data.keyword.registryshort}} is a service that is integrated with context-based restrictions. For more information, see [Services that are integrated with context-based restrictions](/docs/account?topic=account-context-restrictions-whatis#cbr-adopters).
 
 To find out how to protect your {{site.data.keyword.registryshort}} resources with context-based restrictions, see the [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial) tutorial.
 

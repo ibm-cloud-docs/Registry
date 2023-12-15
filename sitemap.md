@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-15"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -884,13 +884,13 @@ subcollection: Registry
 
     * [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using)
 
-* [Assigning access to {{site.data.keyword.registryshort}} in the console](/docs/Registry?topic=Registry-iam#registry_iam_assign-access-console)
+* [Assigning access to {{site.data.keyword.registryshort}} in the console](/docs/Registry?topic=Registry-iam&interface=ui#registry_iam_assign-access-console)
 
-* [Assigning access to {{site.data.keyword.registryshort}} in the CLI](/docs/Registry?topic=Registry-iam#registry_iam_assign-access-cli)
+* [Assigning access to {{site.data.keyword.registryshort}} in the CLI](/docs/Registry?topic=Registry-iam&interface=cli#registry_iam_assign-access-cli)
 
-* [Assigning access to {{site.data.keyword.registryshort}} by using the API](/docs/Registry?topic=Registry-iam#registry_iam_assign-access-api)
+* [Assigning access to {{site.data.keyword.registryshort}} by using the API](/docs/Registry?topic=Registry-iam&interface=api#registry_iam_assign-access-api)
 
-* [Assigning access to {{site.data.keyword.registryshort}} by using Terraform](/docs/Registry?topic=Registry-iam#registry_iam_assign-access-terraform)
+* [Assigning access to {{site.data.keyword.registryshort}} by using Terraform](/docs/Registry?topic=Registry-iam&interface=terraform#registry_iam_assign-access-terraform)
 
 [Defining IAM access policies](/docs/Registry?topic=Registry-user#user)
 
@@ -917,15 +917,15 @@ subcollection: Registry
 
 * [Reviewing a vulnerability report](/docs/Registry?topic=Registry-va_index#va_reviewing)
 
-    * [Reviewing a vulnerability report by using the console](/docs/Registry?topic=Registry-va_index#va_reviewing_gui)
+    * [Reviewing a vulnerability report by using the console](/docs/Registry?topic=Registry-va_index&interface=ui#va_reviewing_gui)
 
-    * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index#va_registry_cli)
+    * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli)
 
-* [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index#va_managing_policy)
+* [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=cli#va_managing_policy)
 
-    * [Setting exemption policies by using the console](/docs/Registry?topic=Registry-va_index#va_managing_policy_gui)
+    * [Setting exemption policies by using the console](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy_gui)
 
-    * [Setting exemption policies by using the CLI](/docs/Registry?topic=Registry-va_index#va_managing_policy_cli)
+    * [Setting exemption policies by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_managing_policy_cli)
 
 
 ## Setting up Terraform for Container Registry
@@ -1035,11 +1035,11 @@ subcollection: Registry
 
 * [Creating rules](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_create_rules)
 
-    * [Creating rules in the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_rules_ui)
+    * [Creating rules in the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry-cbr&interface=ui#registry-cbr_rules_ui)
 
-    * [Creating rules by using the CLI](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_rules_cli)
+    * [Creating rules by using the CLI](/docs/Registry?topic=Registry-registry-cbr&interface=cli#registry-cbr_rules_cli)
 
-    * [Creating rules by using the API](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_rules_api)
+    * [Creating rules by using the API](/docs/Registry?topic=Registry-registry-cbr&interface=api#registry-cbr_rules_api)
 
 
 ## Observability

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-12-15"
 
 keywords: registry, access, authorization required, error, API key, client, token, region
 
@@ -26,7 +26,7 @@ When you try to access {{site.data.keyword.registryshort}}, you get one of the f
 {: tsSymptoms}
 
 - `Authorization required`
-- `You were not authorized to complete this operation`
+- `You were not authorized to complete this operation.`
 - `An error occurred when authenticating your request`
 - `Status code 401 Unauthorized`, you might see this message if you are using {{site.data.keyword.codeenginefull_notm}}, see [Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce) for assistance.
 - `UNAUTHORIZED: Authorization required`, you might see this message if you are using `cosign` with Podman, see [Why am I having problems when I try to pull an image with `cosign` when I'm using Podman?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman) for assistance.
@@ -45,7 +45,7 @@ The following alternatives are possible causes:
 You can fix this problem in the following ways:
 {: tsResolve}
 
-- Check the information about logging a client into {{site.data.keyword.registryshort}}, see [Push images to your namespace](/docs/Registry?topic=Registry-getting-started&interface=ui#gs_registry_images_pushing) in [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started&interface=ui).
+- Check the information about logging a client into {{site.data.keyword.registryshort}}, see [Push images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing) in [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
 - Create and use a valid IAM API key to log a client, such as Docker, in to {{site.data.keyword.registryshort}} with username `iamapikey` and the API key as your password. For more information, see [Managing user API keys](/docs/account?topic=account-userapikey&interface=ui#userapikey).
 - Use the `ibmcloud` CLI or IAM API to retrieve a valid OAuth token to authenticate against the {{site.data.keyword.registryshort}} API. For more information, see [{{site.data.keyword.registrylong_notm}} API - Authentication](https://{DomainName}/apidocs/container-registry#authentication).
 - When you authenticate against the {{site.data.keyword.registryshort}} API, ensure that you use a valid Account ID.
