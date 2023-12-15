@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You tried to set Vulnerability Advisor to an invalid version, for example, version 3 in {{site.data.keyword.registrylong}}. Version 3 is discontinued. For example, `Invalid Vulnerability Advisor version 'v3' specified.`
+You tried to set Vulnerability Advisor to an invalid version, for example, version 3 in {{site.data.keyword.registrylong}}, but version 3 is discontinued. You receive an error message, for example `Invalid Vulnerability Advisor version 'v3' specified.`
 {: shortdesc}
 
 When you try to set the version of Vulnerability Advisor to version 3 `v3`, you get the following message.

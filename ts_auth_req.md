@@ -25,9 +25,9 @@ You are trying to access {{site.data.keyword.registrylong}} but are getting `Aut
 When you try to access {{site.data.keyword.registryshort}}, you get one of the following messages.
 {: tsSymptoms}
 
-- `Authorization required.`
+- `Authorization required`
 - `You were not authorized to complete this operation.`
-- An error occurred when authenticating your request
+- `An error occurred when authenticating your request`
 - `Status code 401 Unauthorized`, you might see this message if you are using {{site.data.keyword.codeenginefull_notm}}, see [Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce) for assistance.
 - `UNAUTHORIZED: Authorization required`, you might see this message if you are using `cosign` with Podman, see [Why am I having problems when I try to pull an image with `cosign` when I'm using Podman?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman) for assistance.
 
