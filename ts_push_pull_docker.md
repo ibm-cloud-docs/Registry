@@ -25,11 +25,11 @@ When you're using {{site.data.keyword.registrylong}}, pushing or pulling a Docke
 When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. The following error messages are potential error messages that you might receive:
 {: tsSymptoms}
 
-A. `unauthorized: authentication required`
-B. `denied: You are not authorized to access the specified resource.`
-C. `unauthorized: An error occurred when authenticating your request with IBM Cloud. Clear your browser cookies, log in to IBM Cloud, and try your request again.`
-D. `Your account has exceeded its pull traffic quota for the current month.`, see [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
-E. `Your account has exceeded its image storage quota for the current month.`, see [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
+- A. `unauthorized: authentication required`
+- B. `denied: You are not authorized to access the specified resource.`
+- C. `unauthorized: An error occurred when authenticating your request with IBM Cloud. Clear your browser cookies, log in to IBM Cloud, and try your request again.`
+- D. `Your account has exceeded its pull traffic quota for the current month.`, see [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
+- E. `Your account has exceeded its image storage quota for the current month.`, see [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
 
 The following alternatives are possible causes:
 {: tsCauses}
