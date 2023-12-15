@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-01-31"
 
 keywords: error, registry, restore, trash, image, tag, tagged image, digest, tagged image already exists, restore this image by using the digest
 
