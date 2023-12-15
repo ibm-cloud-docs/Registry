@@ -4,7 +4,7 @@ copyright:
   years: 2021, 2023
 lastupdated: "2023-12-15"
 
-keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error, image, repository, CRI0304E
+keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error, image, repository
 
 subcollection: Registry
 
@@ -19,10 +19,10 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-When you try to tag your manifest list or OCI Image Index in {{site.data.keyword.registrylong}}, you get a manifest list invalid error `CRI0304E The manifest list or OCI index that you are tagging references an image that doesn't exist`
+When you try to tag your manifest list or OCI Image Index in {{site.data.keyword.registrylong}}, you get a manifest list invalid error.
 {: shortdesc}
 
-You get the following manifest list invalid error when you try to [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) your [manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest) list or OCI Image Index in {{site.data.keyword.registrylong_notm}}: `CRI0304E The manifest list or OCI index that you are tagging references an image that doesn't exist, see https://cloud.ibm.com/docs/Registry?topic=Registry-troubleshoot-manifest-list-error`
+You get the following manifest list invalid error when you try to [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) your [manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest) list or OCI Image Index in {{site.data.keyword.registrylong_notm}}: `The manifest list or OCI index that you are tagging references an image that doesn't exist.`
 {: tsSymptoms}
 
 Manifest lists and OCI Image Indexes contain a list of references to different images, where each image is for a different architecture. When you tag a manifest list or OCI Image Index, {{site.data.keyword.registryshort}} tries to copy the referenced images. When you get this error message, it indicates that one of those referenced images was not found in the registry.
