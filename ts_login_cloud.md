@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-04-12"
 
 keywords: registry, fail, command, container-registry, CLI, plug-in, you are not logged in to IBM Cloud, failed
 
