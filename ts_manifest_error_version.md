@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-04-12"
 
 keywords: error, registry, manifest version, manifest version error, tag, image, the manifest version for this image is not supported for tagging
 
