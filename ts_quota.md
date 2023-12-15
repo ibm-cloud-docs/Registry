@@ -28,14 +28,8 @@ When you try to access {{site.data.keyword.registryshort}}, you get one of the f
 - `Your account has exceeded its pull traffic quota for the current month.`
 - `Your account has exceeded its image storage quota for the current month.`
 
-The following alternatives are possible causes:
+You exceeded your image storage quota or pull traffic quota.
 {: tsCauses}
 
-- A. You exceeded your image storage quota or pull traffic quota.
-- B. You're on a free plan and you need to upgrade to a standard plan.
-
-You can fix this problem in the following ways:
+Review your quota limits and increase them as necessary. However, increasing your quota does increase your costs. For more information, see [Managing quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_get).
 {: tsResolve}
-
-- A. Review your quota limits and increase them as necessary. However, increasing your quota does increase your costs. For more information, see [Managing quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_get) and [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
-- B. Upgrade to a standard plan. For more information, see [Upgrading your service plan](/docs/Registry?topic=Registry-registry_overview&interface=ui#registry_plan_upgrade).
