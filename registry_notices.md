@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-11"
+lastupdated: "2023-12-15"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, iam
 
@@ -24,7 +24,7 @@ Notifications about changes that affect {{site.data.keyword.registrylong}} and V
 Notifications about changes.
 
 - [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-- [Upcoming public networking changes for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_notices_wildcard_domains&interface=ui).
+- [Upcoming public networking changes for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_notices_wildcard_domains).
 - [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4).
 - [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe).
 - [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address).

@@ -45,7 +45,7 @@ The following alternatives are possible causes:
 You can fix this problem in the following ways:
 {: tsResolve}
 
-- Check the information about logging a client into {{site.data.keyword.registryshort}}, see [Push images to your namespace](/docs/Registry?topic=Registry-getting-started&interface=ui#gs_registry_images_pushing) in [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started&interface=ui).
+- Check the information about logging a client into {{site.data.keyword.registryshort}}, see [Push images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing) in [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
 - Create and use a valid IAM API key to log a client, such as Docker, in to {{site.data.keyword.registryshort}} with username `iamapikey` and the API key as your password. For more information, see [Managing user API keys](/docs/account?topic=account-userapikey&interface=ui#userapikey).
 - Use the `ibmcloud` CLI or IAM API to retrieve a valid OAuth token to authenticate against the {{site.data.keyword.registryshort}} API. For more information, see [{{site.data.keyword.registrylong_notm}} API - Authentication](https://{DomainName}/apidocs/container-registry#authentication).
 - When you authenticate against the {{site.data.keyword.registryshort}} API, ensure that you use a valid Account ID.

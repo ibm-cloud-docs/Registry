@@ -155,4 +155,4 @@ You can resolve this issue by using one of the following options, following on f
         ```
         {: screen}
 
-- If you have a local copy of the image, you can push it back to the registry. For more information, see [Pushing Docker images to your namespace](/docs/Registry?topic=Registry-registry_images_&interface=ui#registry_images_pushing_namespace).
+- If you have a local copy of the image, you can push it back to the registry. For more information, see [Pushing Docker images to your namespace](/docs/Registry?topic=Registry-registry_images_#registry_images_pushing_namespace).

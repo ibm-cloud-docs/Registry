@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-12-15"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -189,7 +189,7 @@ For more information about how the scanning of an image is triggered, see [Vulne
 {: #faq_va_v4_scan}
 {: faq}
 
-If your image isn't being scanned, check that it has a [tag](/docs/Registry?topic=Registry-registry_overview&interface=ui#overview_elements_tag). In Vulnerability Advisor version 4, images are scanned only if they have a tag.
+If your image isn't being scanned, check that it has a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). In Vulnerability Advisor version 4, images are scanned only if they have a tag.
 
 ### Why doesn't a new image scan?
 {: #faq_va_new_scan_error}
