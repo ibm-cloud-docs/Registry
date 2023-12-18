@@ -196,7 +196,7 @@ Namespaces that are assigned to a resource group show in the **Resource list** p
 If the namespaces don't all show in the **Resource list** page, see [Why don't all my namespaces show in the Resource list?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list) for assistance.
 {: tip}
 
-For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs#create_rgs).
+For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs&interface=ui#create_rgs).
 
 To assign an existing namespace to a resource group, complete the following steps:
 

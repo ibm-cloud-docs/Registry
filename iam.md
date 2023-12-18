@@ -48,7 +48,7 @@ For more information about enabling policies for {{site.data.keyword.registrysho
 
 After you define the scope of the IAM access policy, you assign a role.
 
-If a specific role and its actions don't fit the use case that you're looking to address, you can [create a custom role](/docs/account?topic=account-custom-roles#custom-access-roles) and pick the actions to include.
+If a specific role and its actions don't fit the use case that you're looking to address, you can [create a custom role](/docs/account?topic=account-custom-roles&interface=ui#custom-access-roles) and pick the actions to include.
 
 Review the following tables that outline the actions that each role allows within the {{site.data.keyword.registryshort}} service.
 

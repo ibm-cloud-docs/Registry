@@ -87,7 +87,7 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 
 6. From the [{{site.data.keyword.registryshort}} namespace overview page](https://cloud.ibm.com/registry/namespaces){: external}, verify that your namespace is created successfully.
 
-7. Verify that the IAM access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/account?topic=account-assign-access-resources#review-your-access-console).
+7. Verify that the IAM access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/account?topic=account-assign-access-resources&interface=terraform#review-your-access-console).
 
 ## Next steps
 {: #registry_terraform-setup-next}
