@@ -30,10 +30,7 @@ Version 1.3.5 of the CLI was released on 18 December 2023.
 
 This release has the following changes:
 
-- Vulnerability remediation for the following CVEs:
-    - CVE-2023-45283
-    - CVE-2023-45285
-    - CVE-2023-39326
+- Vulnerability remediations.
 - Updated translations.
 
 ## Version 1.3.4
@@ -54,7 +51,7 @@ Version 1.3.1 of the CLI was released on 31 August 2023.
 This release has the following changes:
 
 - Adds a `--force` option to the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli&locale=en#bx_cr_retention_policy_set) command so that you can immediately apply and run the policy without user prompts.
-- Vulnerability remediation for the CVE with the ID `CVE-2023-3978`.
+- Vulnerability remediations.
 
 ## Version 1.2.2
 {: #cli-change-logv1-122}
