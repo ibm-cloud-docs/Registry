@@ -30,7 +30,10 @@ Version 1.3.5 of the CLI was released on 18 December 2023.
 
 This release has the following changes:
 
-- Vulnerability remediation for PVR0478945.
+- Vulnerability remediation for the following CVEs:
+    - CVE-2023-45283
+    - CVE-2023-45285
+    - CVE-2023-39326
 - Updated translations.
 
 ## Version 1.3.4
