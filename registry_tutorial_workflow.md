@@ -84,23 +84,18 @@ Create a [namespace](#x2031005){: term} to store your container images in {{site
     ```
     {: pre}
 
-3. Create a namespace by running the following command. Choose a name for your namespace, and replace `<my_namespace>` with that name.
+3. Create a namespace by running the following command. Choose a name for your namespace, and replace `<my_namespace>` with that name. Throughout this tutorial, replace `<my_namespace>` with your chosen namespace.
 
     The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters and include lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
     {: requirement}
 
-    If you want to create the namespace in a specific resource group, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
+    If you want to create the namespace in a specific resource group, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add). If you have a problem when you try to add a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
     {: tip}
 
     ```txt
     ibmcloud cr namespace-add <my_namespace>
     ```
     {: pre}
-
-    Throughout this tutorial, replace `<my_namespace>` with your chosen namespace.
-
-    If you have a problem when you try to add a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
-    {: tip}
 
 ### Build and push an image
 {: #registry_tutorial_workflow_build_push_image}
