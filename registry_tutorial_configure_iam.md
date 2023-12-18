@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-12-18"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -36,7 +36,7 @@ Before you begin, you must complete the following tasks:
 - Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 - Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 - Ensure that you have access to two [{{site.data.keyword.cloud_notm}} accounts](https://cloud.ibm.com/login){: external} that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
-- Ensure that you have the correct access permissions for adding and removing [namespaces](x2031005){: term}, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+- Ensure that you have the correct access permissions for adding and removing [namespaces](#x2031005){: term}, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## Authorize a user to configure the registry
 {: #configure_registry}
@@ -155,7 +155,7 @@ Add a second user to your account and grant them the ability to configure {{site
 {: #access_resources}
 {: step}
 
-Create some [namespaces](x2031005){: term} with sample images, and grant access to them. You create policies to grant different roles to each namespace, and show what effect that has.
+Create some [namespaces](#x2031005){: term} with sample images, and grant access to them. You create policies to grant different roles to each namespace, and show what effect that has.
 
 1. Create three new namespaces in User A's account. These namespaces must be unique across the region, so choose your own namespace names, but this tutorial uses `namespace_a`, `namespace_b` and `namespace_c` as examples.
 
@@ -406,7 +406,7 @@ Create some [namespaces](x2031005){: term} with sample images, and grant access 
 
 Configure a service ID and grant it access to your {{site.data.keyword.registrylong_notm}} namespace.
 
-1. Set up a service ID with access to {{site.data.keyword.registrylong_notm}} and create an [API key](x8051010){: term} for it.
+1. Set up a service ID with access to {{site.data.keyword.registrylong_notm}} and create an [API key](#x8051010){: term} for it.
 
     1. Log in to User A's account by running the following command.
 

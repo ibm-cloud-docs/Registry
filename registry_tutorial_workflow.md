@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-12-11"
+lastupdated: "2023-12-18"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -54,7 +54,7 @@ Before you begin, complete the following tasks:
 - [Install Git](https://git-scm.com/){: external}.
 - [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository.
 - [Create a cluster](/docs/containers?topic=containers-clusters).
-- Ensure that you have the correct access permissions for adding and removing [namespaces](x2031005){: term}, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+- Ensure that you have the correct access permissions for adding and removing [namespaces](#x2031005){: term}, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}
@@ -65,7 +65,7 @@ Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/products/con
 ### Create a namespace
 {: #registry_tutorial_workflow_create_namespace}
 
-Create a [namespace](x2031005){: term} to store your container images in {{site.data.keyword.registrylong_notm}}. Namespaces are created in a [resource group](x2161955){: term}. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
+Create a [namespace](#x2031005){: term} to store your container images in {{site.data.keyword.registrylong_notm}}. Namespaces are created in a [resource group](#x2161955){: term}. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
 
 1. To log in to {{site.data.keyword.cloud_notm}} and target the `us-south` region, run the following command.
 
@@ -105,7 +105,7 @@ Create a [namespace](x2031005){: term} to store your container images in {{site.
 ### Build and push an image
 {: #registry_tutorial_workflow_build_push_image}
 
-To [build a container image and push it to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_images_#registry_images_creating), you require an application and a [Dockerfile](x9860414){: term}. To get the application and the Dockerfile, and the other artifacts that you require, clone the [GitHub repository](https://github.com/IBM/registry-va-workflow){: external} that is associated with this tutorial. For the rest of this tutorial, ensure that you run all commands from the directory of the cloned repository.
+To [build a container image and push it to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_images_#registry_images_creating), you require an application and a [Dockerfile](#x9860414){: term}. To get the application and the Dockerfile, and the other artifacts that you require, clone the [GitHub repository](https://github.com/IBM/registry-va-workflow){: external} that is associated with this tutorial. For the rest of this tutorial, ensure that you run all commands from the directory of the cloned repository.
 
 1. To build the image, run the following command:
 
@@ -141,7 +141,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     ```
     {: pre}
 
-    You can [automate access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access) with [API keys](x8051010){: term} and [grant access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=Registry-user) by using IAM.
+    You can [automate access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access) with [API keys](#x8051010){: term} and [grant access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=Registry-user) by using IAM.
     {: tip}
 
 ### Deploy a container that uses your image
@@ -415,7 +415,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
             ```
             {: pre}
 
-            The `kubectl apply` command completes successfully. However, when you inspect the deployment's [pod](x8461823){: term} by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image.
+            The `kubectl apply` command completes successfully. However, when you inspect the deployment's [pod](#x8461823){: term} by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image.
 
             You can find the pod name by running `kubectl get pod -n test`.
             {: tip}

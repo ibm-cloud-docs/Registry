@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-12-18"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -18,7 +18,7 @@ subcollection: Registry
 Access to {{site.data.keyword.registrylong}} for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM).
 {: shortdesc}
 
-Every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an IAM [access policy](x2853407){: term} with an IAM role. A user can also be a member of an [access group](/docs/account?topic=account-groups) with assigned IAM access policies that grant an IAM role. Review the following roles, actions, and more to help determine the best way to assign access to {{site.data.keyword.registryshort}}.
+Every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an IAM [access policy](#x2853407){: term} with an IAM role. A user can also be a member of an [access group](/docs/account?topic=account-groups) with assigned IAM access policies that grant an IAM role. Review the following roles, actions, and more to help determine the best way to assign access to {{site.data.keyword.registryshort}}.
 
 For more information about IAM, see [How {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} works](/docs/account?topic=account-iamoverview#iamoverview).
 
@@ -37,9 +37,9 @@ Policies enable access to be granted at different levels. Some options include t
 - Access to all IAM-enabled services in your account
 - Access to resources within a resource group
 
-If you want to restrict user access to one or more [namespaces](x2031005){: term} for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
+If you want to restrict user access to one or more [namespaces](#x2031005){: term} for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
 
-You can set permissions so that you can configure access to resources within a namespace at the [resource group](x2161955){: term} level. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
+You can set permissions so that you can configure access to resources within a namespace at the [resource group](#x2161955){: term} level. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
 
 For more information about enabling policies for {{site.data.keyword.registryshort}}, see [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 

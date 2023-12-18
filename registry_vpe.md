@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -21,7 +21,7 @@ You can use {{site.data.keyword.cloud}} virtual private endpoints (VPE) for Virt
  Any {{site.data.keyword.registryshort}} VPE gateways that were created before 11 November 2022 are deprecated and must be replaced by 15 December 2022. For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe).
 {: important}
 
-VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all [availability zones](x7018171){: term} of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
+VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all [availability zones](#x7018171){: term} of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
 
 If you have an {{site.data.keyword.vpc_short}} instance and want to connect the VPC instance to {{site.data.keyword.registrylong_notm}} for your {{site.data.keyword.registryshort_notm}} services, you can create a VPE gateway for your VPC to access {{site.data.keyword.registrylong_notm}} within your VPC network. Any connections to {{site.data.keyword.registrylong_notm}} that originate from within the VPC automatically go through the {{site.data.keyword.registryshort_notm}} VPE gateway, if one exists. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
 
@@ -66,7 +66,7 @@ You can create a VPE gateway for your local {{site.data.keyword.registryshort_no
 ## Setting up a VPE for {{site.data.keyword.registrylong_notm}}
 {: #registry_vpe_endpoint_setup}
 
-When you create a VPE gateway by using the CLI or API, you must specify the [cloud resource name (CRN)](x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
+When you create a VPE gateway by using the CLI or API, you must specify the [cloud resource name (CRN)](#x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
 You can create VPE gateways in the following locations: `ap-north`, `ap-south`, `br-sao`, `ca-tor`, `eu-central`, `jp-osa`, `uk-south`, `us-south`, and `us-east` (global registry).
 

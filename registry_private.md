@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-12-18"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry, private network, image, connection, service endpoint, account, services
 
@@ -63,7 +63,7 @@ Private connections are available so that you can push and pull images. You use 
 You can't use private connections for image management operations by using the {{site.data.keyword.registrylong_notm}} CLI.
 {: note}
 
-Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your [API key](x8051010){: term} and `<private_registry_domain>` with the private domain name where your namespaces are set up. The private domain names are described in [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your [API key](#x8051010){: term} and `<private_registry_domain>` with the private domain name where your namespaces are set up. The private domain names are described in [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 ```txt
 docker login -u iamapikey -p <apikey> <private_registry_domain>

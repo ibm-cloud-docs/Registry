@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-07-25"
+  years: 2018, 2023
+lastupdated: "2023-12-18"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
 
@@ -20,7 +20,7 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
 
 [High availability](#x2284708){: term} (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure.
 
-- In each supported region, traffic is load balanced across registry infrastructure in multiple [availability zones](x7018171){: term}, with no single point of failure.
+- In each supported region, traffic is load balanced across registry infrastructure in multiple [availability zones](#x7018171){: term}, with no single point of failure.
 - Data that is stored in {{site.data.keyword.registrylong_notm}} is replicated over the availability zones and it is also backed up in another region regularly.
 - If you're worried about the availability of your images if an entire region is unavailable, you can choose to push your images to multiple registry regions.
 
@@ -45,7 +45,7 @@ You can achieve high availability on different levels in your IT infrastructure 
 ## What level of availability does {{site.data.keyword.cloud_notm}} offer?
 {: #ha-service}
 
-The level of availability that you set up for your cluster impacts your coverage under the {{site.data.keyword.cloud_notm}} high availability service level agreement terms. 
+The level of availability that you set up for your cluster impacts your coverage under the {{site.data.keyword.cloud_notm}} high availability service level agreement terms.
 
 Service level objectives (SLO) describe the design points that the {{site.data.keyword.cloud_notm}} services are engineered to meet. {{site.data.keyword.registrylong_notm}} is designed to achieve the following availability target.
 
@@ -75,5 +75,3 @@ Review the following FAQs about high availability.
 {: #ha-dr_service_replicate}
 
 You're not required to replicate your data into another region, but you can do it yourself by using tools such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}.
-
-

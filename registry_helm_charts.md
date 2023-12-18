@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-27"
+lastupdated: "2023-12-18"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -31,7 +31,7 @@ The [Open Container Initiative (OCI)](https://opencontainers.org){: external} re
 {: help}
 {: support}
 
-You can securely store and share Helm charts with other users by adding charts to your [namespace](x2031005){: term} in {{site.data.keyword.registrylong_notm}}.
+You can securely store and share Helm charts with other users by adding charts to your [namespace](#x2031005){: term} in {{site.data.keyword.registrylong_notm}}.
 
 Every Helm chart that you want to add to your namespace must exist on your local computer first. You can either download (pull) a chart from another repository to your local computer, or build your own chart by using the [`helm create`](https://helm.sh/docs/helm/helm_create/){: external} command. To add a chart to your namespace, you must upload (push) the local chart to your namespace in {{site.data.keyword.registrylong_notm}}.
 
@@ -43,7 +43,7 @@ Do not put personal information in your charts (for example, in namespace names 
 {: help}
 {: support}
 
-You can pull (download) a chart from any private or public [registry](x2064940){: term} source or Helm repository, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
+You can pull (download) a chart from any private or public [registry](#x2064940){: term} source or Helm repository, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 
 ![Pull a chart from a private or public registry or Helm repository to your computer.](images/pulling_images_mul.svg "You can pull a chart from {{site.data.keyword.registrylong_notm}} or from any private or public registry source or Helm repository to your local computer."){: caption="Figure 1. Pulling charts from another registry" caption-side="bottom"}{: external download="../images/pulling_images_mul.svg"}
 

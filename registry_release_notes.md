@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -658,7 +658,7 @@ End of support for Vulnerability Advisor API version 2 {: #8jan2019_va2}
 {: release-note}
 
 Managing user access {: #4oct2018_access}
-:   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registryshort}}. When IAM access policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the service in your account must be assigned an IAM [access policy](x2853407){: term} with an IAM user role defined. That policy determines the role that the user has within the context of the service, and what actions the user can perform.
+:   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registryshort}}. When IAM access policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the service in your account must be assigned an IAM [access policy](#x2853407){: term} with an IAM user role defined. That policy determines the role that the user has within the context of the service, and what actions the user can perform.
 
     For more information, see [Managing IAM access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining IAM access policies](/docs/Registry?topic=Registry-user#user), and [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access#iam_access).
 

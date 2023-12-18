@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-12-18"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -15,12 +15,12 @@ subcollection: Registry
 # Cleaning up your namespaces
 {: #registry_retention}
 
-You can clean up your [namespace](x2031005){: term} by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registrylong}}.
+You can clean up your [namespace](#x2031005){: term} by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 You can also choose whether to delete or retain your untagged images.
 
-You can detect and delete old images from all the repositories in a namespace by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. You can choose the number of images that you want to keep in each repository in a namespace, all other images are automatically deleted. Both options keep the most recent images. The age of the image is determined by when the image was created, not when it was pushed to the [registry](x2064940){: term}. The number of images that are kept is the same for each repository in that namespace.
+You can detect and delete old images from all the repositories in a namespace by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. You can choose the number of images that you want to keep in each repository in a namespace, all other images are automatically deleted. Both options keep the most recent images. The age of the image is determined by when the image was created, not when it was pushed to the [registry](#x2064940){: term}. The number of images that are kept is the same for each repository in that namespace.
 
 When you run the [`ibmcloud cr retention-run`](#retention_images) and [`ibmcloud cr retention-policy-set`](#retention_policy_set) commands, a list of images to delete is shown, and you must confirm that you want to delete those images. After you run the `ibmcloud cr retention-policy-set` command the first time, the policy runs automatically and deletes any images that meet the criteria that are specified in the policy. Deleted images are stored in the trash for 30 days.
 

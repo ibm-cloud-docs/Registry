@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-12-18"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -15,10 +15,10 @@ subcollection: Registry
 # Adding images to your namespace
 {: #registry_images_}
 
-You can securely store and share Docker images with other users by adding images to your [namespace](x2031005){: term} in {{site.data.keyword.registrylong}}.
+You can securely store and share Docker images with other users by adding images to your [namespace](#x2031005){: term} in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-Every image that you want to add to your namespace must exist on your local computer first. You can either download (pull) an image from another repository to your local computer, or build your own image from a [Dockerfile](x9860414){: term} by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
+Every image that you want to add to your namespace must exist on your local computer first. You can either download (pull) an image from another repository to your local computer, or build your own image from a [Dockerfile](#x9860414){: term} by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
@@ -28,7 +28,7 @@ Do not put personal information in your container images, namespace names, descr
 {: help}
 {: support}
 
-You can pull (download) an image from any private or public [registry](x2064940){: term} source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
+You can pull (download) an image from any private or public [registry](#x2064940){: term} source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 
 ![Pull an image from a private or public registry to your computer.](images/pulling_images_mul.svg "You can pull an image from {{site.data.keyword.registrylong_notm}} or from any private or public registry source to your local computer."){: caption="Figure 1. Pulling images from another registry" caption-side="bottom"}{: external download="../images/pulling_images_mul.svg"}
 
@@ -253,7 +253,7 @@ To use Vulnerability Advisor to check the security of your image, see [Managing 
 {: help}
 {: support}
 
-Create a service ID that uses an [API key](x8051010){: term} to push images to {{site.data.keyword.registrylong_notm}}.
+Create a service ID that uses an [API key](#x8051010){: term} to push images to {{site.data.keyword.registrylong_notm}}.
 
 Complete the following steps:
 

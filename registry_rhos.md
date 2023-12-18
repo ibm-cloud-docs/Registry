@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-12-18"
 
 keywords: External registry, private registry, Red Hat OpenShift, Red Hat, clusters, Red Hat OpenShift Container Platform, container platform, internal registry, images
 
@@ -54,7 +54,7 @@ To configure {{site.data.keyword.redhat_openshift_notm}} Container Platform to p
 
 1. [Set up image pull secrets to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#other_registry_accounts) for each project that you want to pull images in.
 
-2. [Configure {{site.data.keyword.redhat_openshift_notm}} Container Platform to use the image pull secrets](/docs/openshift?topic=openshift-registry#use_imagePullSecret) by adding the secrets to a service account in each project or by referring to the secret in your [pod](x8461823){: term} deployment. You are only required to add the secret to the projects that you want to pull to.
+2. [Configure {{site.data.keyword.redhat_openshift_notm}} Container Platform to use the image pull secrets](/docs/openshift?topic=openshift-registry#use_imagePullSecret) by adding the secrets to a service account in each project or by referring to the secret in your [pod](#x8461823){: term} deployment. You are only required to add the secret to the projects that you want to pull to.
 
 ### Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registryshort}}
 {: #registry_rhos_os_push}
