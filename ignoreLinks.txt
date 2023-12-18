@@ -1,5 +1,3 @@
 https://git-scm.com,
 https://microprofile.io,
-https://test.cloud.ibm.com/apidocs/container-registry,
-https://test.cloud.ibm.com/apidocs/vulnerability-advisor,
 https://www.atomic.io,
