@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-10-21"
+  years: 2021, 2023
+lastupdated: "2023-12-18"
 
 keywords: Terraform for IBM Cloud Container Registry, terraform, namespace, cli, image, resource
 
@@ -28,9 +28,9 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 
 1. To install the Terraform CLI and configure the {{site.data.keyword.cloud_notm}} Provider plug-in for Terraform, follow the [Terraform on {{site.data.keyword.cloud_notm}} getting started tutorial](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started). The plug-in abstracts the {{site.data.keyword.cloud_notm}} APIs that are used to provision, update, or delete {{site.data.keyword.registryshort}} resources.
 
-2. Create a Terraform configuration file that is named `main.tf`. In this file, you add the configuration to create a {{site.data.keyword.registryshort}} namespace and to assign a user an IAM [access policy](x2853407){: term} in Identity and Access Management (IAM) for that namespace by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language){: external}.
+2. Create a Terraform configuration file that is named `main.tf`. In this file, you add the configuration to create a {{site.data.keyword.registryshort}} namespace and to assign a user an IAM [access policy](#x2853407){: term} in Identity and Access Management (IAM) for that namespace by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language){: external}.
 
-    The following example creates a namespace in the default [resource group](x2161955){: term} with a name of your choice and attaches an image retention policy to that namespace that retains 10 images. To retrieve the ID of the default resource group, the `ibm_resource_group` data source is used. Then, the user `user@ibm.com` is assigned the Manager role in the IAM access policy for the namespace for a particular region. The region is retrieved from the `terraform.tfvars` file that you created in step 1.
+    The following example creates a namespace in the default [resource group](#x2161955){: term} with a name of your choice and attaches an image retention policy to that namespace that retains 10 images. To retrieve the ID of the default resource group, the `ibm_resource_group` data source is used. Then, the user `user@ibm.com` is assigned the Manager role in the IAM access policy for the namespace for a particular region. The region is retrieved from the `terraform.tfvars` file that you created in step 1.
 
     ```terraform
     data "ibm_resource_group" "group" {
@@ -94,7 +94,5 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 
 Now that you successfully created your first {{site.data.keyword.registryshort}} namespace with Terraform on {{site.data.keyword.cloud_notm}}, you can choose between the following tasks:
 
-- Learn how to [add images to your namespace](/docs/Registry?topic=Registry-registry_images_). 
+- Learn how to [add images to your namespace](/docs/Registry?topic=Registry-registry_images_).
 - Explore other supported arguments and attributes for the [{{site.data.keyword.registryshort}} Terraform resources and data sources](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace){: external} that were used in this example.
-
-

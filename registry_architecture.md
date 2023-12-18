@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-12-18"
 
 keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # {{site.data.keyword.registrylong_notm}} architecture and workload
 {: #registry_architecture}
 
-{{site.data.keyword.registrylong}} is a multi-tenant, highly available, scalable, and encrypted private image [registry](x2064940){: term} that is hosted and managed by {{site.data.keyword.IBM_notm}}.
+{{site.data.keyword.registrylong}} is a multi-tenant, highly available, scalable, and encrypted private image [registry](#x2064940){: term} that is hosted and managed by {{site.data.keyword.IBM_notm}}.
 {: shortdesc}
 
 Both the control plane (management of images and configuration) and data plane (pushing and pulling your images) are multi-tenant. All parts of the service are hosted in an {{site.data.keyword.IBM_notm}} service account, which is not shared with users or other services.
@@ -29,7 +29,7 @@ In each regional instance of the [registry](/docs/Registry?topic=Registry-regist
 ## Segmentation of data
 {: #registry_architecture_segment}
 
-Segmentation of data within {{site.data.keyword.registrylong_notm}} is achieved by using private [namespaces](x2031005){: term}, which are strictly owned by single accounts.
+Segmentation of data within {{site.data.keyword.registrylong_notm}} is achieved by using private [namespaces](#x2031005){: term}, which are strictly owned by single accounts.
 
 You can control access to [namespaces](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace) within the account by using {{site.data.keyword.iamshort}} (IAM) access policies. Storage in {{site.data.keyword.cos_full_notm}} is not segmented, but user accounts do not have direct access to the {{site.data.keyword.cos_full_notm}} that contains the image data. For more information, see [Managing IAM access for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam).
 

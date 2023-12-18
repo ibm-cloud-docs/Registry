@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -57,7 +57,7 @@ The following alternatives are possible causes:
 
 - Docker is not installed.
 - The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
-- Your {{site.data.keyword.cloud_notm}} [access token](x2113001){: term} expired.
+- Your {{site.data.keyword.cloud_notm}} [access token](#x2113001){: term} expired.
 - You exceeded the quota limit for storage or pull traffic that is set for your {{site.data.keyword.cloud_notm}} account.
 - You're on a free plan and you need to upgrade to a standard plan.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-12-18"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -26,7 +26,7 @@ completion-time: 2h
 You can protect the confidentiality of your {{site.data.keyword.registrylong}} images, and ensure that hosts that aren't trusted can't run the images.
 {: shortdesc}
 
-Create an encrypted image so that people without the [private key](x2034701){: term} can't access the content. Create the encrypted image by using an RSA public-private key pair to encrypt and decrypt the image. A public key is not a secret and anyone can use it to encrypt an image. A private key is a secret, and only users that have that private key can use it to decrypt the image.
+Create an encrypted image so that people without the [private key](#x2034701){: term} can't access the content. Create the encrypted image by using an RSA public-private key pair to encrypt and decrypt the image. A public key is not a secret and anyone can use it to encrypt an image. A private key is a secret, and only users that have that private key can use it to decrypt the image.
 
 Encryption is supported in {{site.data.keyword.registrylong_notm}} and complies with the following standards:
 
@@ -106,7 +106,7 @@ Create a public-private key pair by using OpenSSL commands.
 {: #registry_encrypt_image}
 {: step}
 
-Encrypt the image by using the public key and then build a container image by using a [Dockerfile](x9860414){: term}.
+Encrypt the image by using the public key and then build a container image by using a [Dockerfile](#x9860414){: term}.
 
 1. Go to the directory where you store your apps, for example, `<my_app>`.
 
@@ -141,7 +141,7 @@ Encrypt the image by using the public key and then build a container image by us
     ```
     {: pre}
 
-    Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an [API key](x8051010){: term}, you can supply the `—-creds <user_name>` option, where `<user_name>` is the username. If you use the `—-creds <user_name>` the option, when requested, type in the password of the registry credential.
+    Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an [API key](#x8051010){: term}, you can supply the `—-creds <user_name>` option, where `<user_name>` is the username. If you use the `—-creds <user_name>` the option, when requested, type in the password of the registry credential.
     {: tip}
 
     You get a response that informs you that the manifest is written to the image destination, which is the registry.

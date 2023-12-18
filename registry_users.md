@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-12-18"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -18,7 +18,7 @@ subcollection: Registry
 As an administrator, you can define {{site.data.keyword.iamlong}} (IAM) access policies to create different levels of access for different users in {{site.data.keyword.registrylong}}. For example, you can authorize some users to view quotas and other users to set quotas.
 {: shortdesc}
 
-You must define IAM [access policies](x2853407){: term} for every user that works with {{site.data.keyword.registrylong_notm}}. The scope of an IAM access policy is based on the user's role or roles that determine the actions that they are allowed to do. Some roles are predefined, but custom roles can be defined.
+You must define IAM [access policies](#x2853407){: term} for every user that works with {{site.data.keyword.registrylong_notm}}. The scope of an IAM access policy is based on the user's role or roles that determine the actions that they are allowed to do. Some roles are predefined, but custom roles can be defined.
 
 To find out more about IAM access policies, see [{{site.data.keyword.cloud_notm}} IAM roles](/docs/account?topic=account-userroles).
 

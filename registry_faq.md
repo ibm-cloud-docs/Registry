@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -49,13 +49,13 @@ You can use Docker and non-Docker tools to build and push images to the registry
 {: #faq_namespace}
 {: faq}
 
-You can have 100 registry [namespaces](x2031005){: term} in each region.
+You can have 100 registry [namespaces](#x2031005){: term} in each region.
 
 ### Can I rename a namespace?
 {: #faq_namespace_rename}
 {: faq}
 
-You can't rename a [namespace](x2031005){: term}. If you want to change the name of the namespace, you must create a namespace with the new name and transfer its data. To transfer its data, you can copy the contents of the existing namespace into the namespace that you created.
+You can't rename a [namespace](#x2031005){: term}. If you want to change the name of the namespace, you must create a namespace with the new name and transfer its data. To transfer its data, you can copy the contents of the existing namespace into the namespace that you created.
 
 If you don't want to transfer data manually, you can create a script for this action by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command. For example, you can use the following script, where `<old_namespace>` is the existing namespace and `<new_namespace>` is the namespace that you created:
 
@@ -131,7 +131,7 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 {: #faq_share_image}
 {: faq}
 
-You can create an {{site.data.keyword.cloud_notm}} account and invite all the users to it. They can then all have access to any [namespace](x2031005){: term} that is created in the account. You can create a subset of the users and set an IAM access policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts.
+You can create an {{site.data.keyword.cloud_notm}} account and invite all the users to it. They can then all have access to any [namespace](#x2031005){: term} that is created in the account. You can create a subset of the users and set an IAM access policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts.
 
 For more information, see [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 
@@ -195,7 +195,7 @@ If your image isn't being scanned, check that it has a [tag](/docs/Registry?topi
 {: #faq_va_new_scan_error}
 {: faq}
 
-If you get the vulnerability report immediately after you add the image to the [registry](x2064940){: term}, you might receive the following error:
+If you get the vulnerability report immediately after you add the image to the [registry](#x2064940){: term}, you might receive the following error:
 
 ```txt
 BXNVA0009E:  <imagename> has not been scanned. Try again later.

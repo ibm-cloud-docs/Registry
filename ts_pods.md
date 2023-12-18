@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-27"
+lastupdated: "2023-12-18"
 
 keywords: pods, worker, cluster workers, portieris, webhook
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-When you are using {{site.data.keyword.registrylong}}, the [Pods](x8461823){: term} do not restart after your cluster workers are down.
+When you are using {{site.data.keyword.registrylong}}, the [Pods](#x8461823){: term} do not restart after your cluster workers are down.
 {: shortdesc}
 
 Portieris is deployed. The cluster workers are showing as working correctly, but nothing is scheduled.

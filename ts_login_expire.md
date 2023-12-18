@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-12-18"
 
 keywords: registry, login, push, pull, iam session, iam
 
@@ -35,5 +35,5 @@ When you log in by using the `ibmcloud cr login` command, you are subject to the
 You can mitigate the issue by taking one of the following actions:
 {: tsResolve}
 
-- Log in by using an IAM [API key](x8051010){: term} because this key is not subject to the IAM session expiry, see [Using Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker).
+- Log in by using an IAM [API key](#x8051010){: term} because this key is not subject to the IAM session expiry, see [Using Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker).
 - Change the IAM login session limits to better suit your needs, see [Setting limits for login sessions](/docs/account?topic=account-iam-work-sessions). The longer you set the limits, the longer your {{site.data.keyword.registrylong_notm}} login lasts for.
