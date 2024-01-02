@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-12-18"
+  years: 2017, 2024
+lastupdated: "2024-01-02"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -107,9 +107,9 @@ ibmcloud plugin uninstall container-registry
 ## Planning namespaces
 {: #registry_setup_cli_namespace_plan}
 
-{{site.data.keyword.registrylong_notm}} provides a multi-tenant private image [registry](#x2064940){: term} that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry [namespace](#x2031005){: term}.
+{{site.data.keyword.registrylong_notm}} provides a multi-tenant private image [registry](#x2064940){: term} that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry namespace.
 
-Namespaces are created in a [resource group](#x2161955){: term} that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used. However, you can still set permissions for the namespace at the account level or in the namespace itself. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.
+Namespaces are created in a resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used. However, you can still set permissions for the namespace at the account level or in the namespace itself. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.
 
 If you have an older namespace that isn't in a resource group, you can assign it to a resource group and then set permissions for that namespace at the resource group level. For more information about resource groups, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
 

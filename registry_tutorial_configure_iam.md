@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-12-18"
+  years: 2018, 2024
+lastupdated: "2024-01-02"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -155,7 +155,7 @@ Add a second user to your account and grant them the ability to configure {{site
 {: #access_resources}
 {: step}
 
-Create some [namespaces](#x2031005){: term} with sample images, and grant access to them. You create policies to grant different roles to each namespace, and show what effect that has.
+Create some namespaces with sample images, and grant access to them. You create policies to grant different roles to each namespace, and show what effect that has.
 
 1. Create three new namespaces in User A's account. These namespaces must be unique across the region, so choose your own namespace names, but this tutorial uses `namespace_a`, `namespace_b` and `namespace_c` as examples.
 
