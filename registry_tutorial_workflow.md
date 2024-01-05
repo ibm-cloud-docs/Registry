@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-02"
+lastupdated: "2024-01-05"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -256,10 +256,11 @@ Despite the vulnerability that is present in your image, you're still able to de
 
 2. The [Portieris default policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris) are too restrictive for this tutorial because they involve [image signing](/docs/Registry?topic=Registry-registry_trustedcontent). Therefore, you must create custom policies. View the `security.yaml` file in the [GitHub repository](https://github.com/IBM/registry-va-workflow){: external}, and read about customizing [policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris) to understand this file's contents. In short, this policy requires all images in your namespace to have no issues reported by Vulnerability Advisor.
 
-3. Update the following line in the `security.yaml` file by replacing `<my_namespace>` with your namespace:
+3. Update the following text in the `security.yaml` file by replacing `<my_namespace>` with your namespace:
 
     ```txt
-    - name: us.icr.io/<my_namespace>/*
+    repositories:
+      - name: us.icr.io/<my_namespace>/*
     ```
     {: pre}
 
