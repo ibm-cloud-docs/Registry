@@ -333,9 +333,9 @@
       "troubleshoot-get-started": [
         "can't get started in container registry",
         "get started tutorial not working in icr",
-        "permission for getting started tutorial in Container Registry",
+        "don't have permission for getting started tutorial in Container Registry",
         "trying to use getting started tutorial, but I don't have permission in Container Registry",
-        "commands in getting started tutorial don't work",
+        "commands in Container Registry getting started tutorial don't work",
         "can't run commands in container registry I don't have permission",
         "getting started instructions failing in icr",
         "getting started instructions not working in Container Registry",
