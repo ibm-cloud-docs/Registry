@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-12-18"
+  years: 2021, 2024
+lastupdated: "2024-01-08"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1588,6 +1588,8 @@ subcollection: Registry
 [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire#troubleshoot-login-expire)
 
 [Why do commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
+
+[Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started#troubleshoot-get-started)
 
 [Why do commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 

@@ -330,6 +330,18 @@
         "403 forbidden issue using code engine to access CR",
         "forbidden error trying to access registry using code engine in icr"
       ],
+      "troubleshoot-get-started": [
+        "can't get started in container registry",
+        "get started tutorial not working in icr",
+        "permission for getting started tutorial in Container Registry",
+        "trying to use getting started tutorial, but I don't have permission in Container Registry",
+        "commands in getting started tutorial don't work",
+        "can't run commands in container registry I don't have permission",
+        "getting started instructions failing in icr",
+        "getting started instructions not working in Container Registry",
+        "commands failing in getting started tutorial in Container Registry",
+        "trying to get started in Container Registry but commands are failing because don't have permission"
+      ],
       "troubleshoot-image-find": [
         "image missing in container registry",
         "namespace missing in container registry",
