@@ -22,7 +22,7 @@ content-type: troubleshoot
 You're trying to use the [getting started instructions](/docs/Registry?topic=Registry-getting-started) for {{site.data.keyword.registrylong}}, but you can't get any {{site.data.keyword.registryshort}} commands to work.
 {: shortdesc}
 
-You can't run any commands in {{site.data.keyword.registryshort}} because you dont have permission.
+You can't run any commands in {{site.data.keyword.registryshort}} because you don't have permission.
 {: tsSymptoms}
 
 The [getting started instructions](/docs/Registry?topic=Registry-getting-started) assume that you’re in your own account with permission to do everything. If you’re a member of an account that is owned and administered by someone else, you might not have the correct permissions to configure and operate the registry service.
