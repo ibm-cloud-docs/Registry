@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-04-12"
+  years: 2017, 2024
+lastupdated: "2024-01-12"
 
-keywords: registry, fail, command, container-registry, CLI, plug-in, you are not logged in to IBM Cloud, failed
+keywords: registry, fail, command, container-registry, CLI, plug-in, you are not logged in to IBM Cloud, failed, CRC0016E
 
 subcollection: Registry
 
@@ -19,10 +19,10 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You are logged in to {{site.data.keyword.cloud_notm}} but you can't run any commands in {{site.data.keyword.registrylong}}. You get the following message: `FAILED You are not logged in to IBM Cloud`.
+You are logged in to {{site.data.keyword.cloud_notm}} but you can't run any commands in {{site.data.keyword.registrylong}}. You get the following message: `CRC0016E FAILED You are not logged in to IBM Cloud`.
 {: shortdesc}
 
-All `ibmcloud cr` commands fail with the message: `FAILED You are not logged in to IBM Cloud`.
+All `ibmcloud cr` commands fail with the message: `CRC0016E FAILED You are not logged in to IBM Cloud`.
 {: tsSymptoms}
 
 The `container-registry` CLI plug-in is out of date and needs updating.
