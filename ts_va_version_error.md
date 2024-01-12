@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2023
+  years: 2023, 2024
 lastupdated: "2024-01-12"
 
 keywords: error, va, vulnerability advisor, v3, version 3, version 4, invalid version
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Why do I get an error about an invalid version of Vulnerability Advisor being specified?
 {: #troubleshoot-va-version-error}
