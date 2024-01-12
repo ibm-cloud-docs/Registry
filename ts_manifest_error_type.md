@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-04-12"
+  years: 2017, 2024
+lastupdated: "2024-01-12"
 
-keywords: error, registry, manifest type, tag, image, the manifest type for this image is not supported for tagging
+keywords: error, registry, manifest type, tag, image, the manifest type for this image is not supported for tagging, CRI0302E
 
 subcollection: Registry
 
@@ -19,10 +19,10 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-When you try to tag your image in {{site.data.keyword.registrylong}}, you get a manifest type error: `The manifest type for this image is not supported for tagging.`
+When you try to tag your image in {{site.data.keyword.registrylong}}, you get a manifest type error: `CRI0302E The manifest type for this image is not supported for tagging.`
 {: shortdesc}
 
-You tried to tag your image, but you receive the following manifest error message: `The manifest type for this image is not supported for tagging.`
+You tried to tag your image, but you receive the following manifest error message: `CRI0302E The manifest type for this image is not supported for tagging. To find out about supported manifest types, see https://cloud.ibm.com/docs/Registry?topic=Registry-ts_index#ts_manifest_error_type`
 {: tsSymptoms}
 
 The manifest type is not supported.

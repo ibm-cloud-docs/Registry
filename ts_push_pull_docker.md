@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-12-18"
+  years: 2017, 2024
+lastupdated: "2024-01-12"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -26,14 +26,12 @@ When you run commands to push or pull Docker images, you receive an error messag
 {: tsSymptoms}
 
 ```txt
-You have exceeded your storage quota. Delete one or more images,
-or review your storage quota and pricing plan
+Your account has exceeded its image storage quota for the current month. See https://cloud.ibm.com/docs/Registry?topic=Registry-troubleshoot-quota
 ```
 {: screen}
 
 ```txt
-You have exceeded your pull traffic quota for the current month.
-Review your pull traffic quota and pricing plan
+Your account has exceeded your pull traffic quota for the current month. See https://cloud.ibm.com/docs/Registry?topic=Registry-troubleshoot-quota
 ```
 {: screen}
 
@@ -43,12 +41,12 @@ unauthorized: authentication required
 {: screen}
 
 ```txt
-denied: requested access to the resource is denied
+You are not authorized to access the specified resource.
 ```
 {: screen}
 
 ```txt
-unauthorized: The login credentials are not valid, or your IBM Cloud account is not active.
+An error occurred when authenticating your request with IBM Cloud. Clear your browser cookies, log in to IBM Cloud, and try your request again.
 ```
 {: screen}
 
