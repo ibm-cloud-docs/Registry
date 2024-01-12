@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You are logged in to {{site.data.keyword.cloud_notm}} but you can't run any commands in {{site.data.keyword.registrylong}}. You get the following message: `CRC0016E: FAILED You are not logged in to IBM Cloud`.
+You are logged in to {{site.data.keyword.cloud_notm}} but you can't run any commands in {{site.data.keyword.registrylong}}. You get the following message: `CRC0016E FAILED You are not logged in to IBM Cloud`.
 {: shortdesc}
 
 All `ibmcloud cr` commands fail with the message: `CRC0016E FAILED You are not logged in to IBM Cloud`.
