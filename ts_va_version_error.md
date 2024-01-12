@@ -14,7 +14,6 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Why do I get an error about an invalid version of Vulnerability Advisor being specified?
 {: #troubleshoot-va-version-error}
 {: troubleshoot}
