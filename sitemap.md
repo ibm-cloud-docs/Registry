@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-01-15"
+lastupdated: "2024-01-12"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
