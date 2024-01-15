@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You have a valid IAM API key or OAuth token, but you still get `Access denied` errors over a private network in {{site.data.keyword.registrylong}}. For example, you receive the following message: `Private-only access is enabled on this account, but this request was over the public network.`
+You have a valid IAM API key or OAuth token, but you still get an `Access denied` error over a private network in {{site.data.keyword.registrylong}}: `Private-only access is enabled on this account, but this request was over the public network.`
 {: shortdesc}
 
 When you try to access {{site.data.keyword.registryshort}}, you get the following message:
