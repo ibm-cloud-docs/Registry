@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-13"
+lastupdated: "2024-01-15"
 
 keywords: error, iam, access denied, access, private network,
 
@@ -19,13 +19,13 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You have a valid IAM API key or OAuth token, but you still get `Access denied` errors over a private network in {{site.data.keyword.registrylong}}.
+You have a valid IAM API key or OAuth token, but you still get an `Access denied` error over a private network in {{site.data.keyword.registrylong}}: `Private-only access is enabled on this account, but this request was over the public network.`
 {: shortdesc}
 
 When you try to access {{site.data.keyword.registryshort}}, you get the following message:
 {: tsSymptoms}
 
-`You must access this account over the private network.`
+`Private-only access is enabled on this account, but this request was over the public network. You must access this account over the private network`
 
 You attempted to access {{site.data.keyword.registryshort}} over the public network, but the account is set to allow only private network traffic.
 {: tsCauses}
