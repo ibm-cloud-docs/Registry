@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-01-29"
 
 keywords: registry, image, retention, distroless, list, creation date
 
@@ -25,8 +25,11 @@ An image doesn't show in the list that is produced by the {{site.data.keyword.re
 You ran the [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) command and an image that you're expecting to view in the list is not displayed.
 {: tsSymptoms}
 
-You might have a [distroless](https://github.com/GoogleContainerTools/distroless){: external} image. Some distroless images don't have a creation date. The `ibmcloud cr retention-run` command deletes the oldest images, and therefore requires a creation date.
+You might have [Buildpacks](https://buildpacks.io/){: external} or [distroless](https://github.com/GoogleContainerTools/distroless){: external} base images that produce images with the build date set to a specific constant rather than the real build time or with no build timestamp at all. The `ibmcloud cr retention-run` command deletes the oldest images, and therefore requires a real build time.
 {: tsCauses}
+
+Images created before `2013-01-19T00:13:39Z` are excluded from retention policy evaluation.
+{: note}
 
 You can delete the image manually by running the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command, see [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
 {: tsResolve}

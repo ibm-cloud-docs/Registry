@@ -41,11 +41,11 @@
         "clean up images with retention policies in icr",
         "cleaning up images with retention policies in icr",
         "clean up eligible images with retention policies in CR",
-        "cleaning up eligible images with retention policies in icr",
         "removing images with retention policies in container registry",
         "remove eligible images with retention policies in container registry",
         "using retention policies to clean up images in CR",
-        "use retention policies to clean up images in icr"
+        "use retention policies to clean up images in icr",
+        "images excluded from retention policy in Container Registry"
       ],
       "faq_images_year_old": [
         "list images more than a year old in icr",
@@ -361,7 +361,7 @@
         "image not shown in Container Registry",
         "retention-run command delete old image in icr",
         "check the creation date of image in icr",
-        "checking the creation date of image in CR",
+        "checking the build time of image in CR",
         "ibmcloud cr image-inspect gives creation date",
         "image not showing after running ibmcloud cr retention-run",
         "deleting images from private repository in container registry"

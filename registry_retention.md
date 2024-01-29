@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-12-18"
+  years: 2019, 2024
+lastupdated: "2024-01-29"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -47,6 +47,13 @@ You gain the following advantages by using this technique:
 - You minimize the chances of accidentally removing an image that might be in use in your staging or production environments, when compared with using a single namespace for all images.
 - You can use different [IAM](/docs/Registry?topic=Registry-iam) policies. For example, you can have more restrictive access to production images.
 - You can sign production images, but leave development and staging images unsigned.
+
+Some build tools like [Buildpacks](https://buildpacks.io/){: external} and [distroless](https://github.com/GoogleContainerTools/distroless){: external} base images produce images with the build date set to a specific constant rather than the real build time or with no build timestamp at all. If you want to use retention policies on namespaces that contain images that are built by using similar tools, be aware that images that do not have a created date and images that were created before `2013-01-19T00:13:39Z` are always retained.
+
+For more information, see the following topics for assistance:
+
+- [Why doesn't the retention command show all the images?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention)
+- [What are eligible images?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
 
 ## Clean up your namespaces to keep a set number of images
 {: #retention_images}
