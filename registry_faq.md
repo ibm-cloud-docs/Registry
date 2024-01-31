@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-01-29"
+lastupdated: "2024-01-30"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -113,7 +113,7 @@ To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs
 {: #faq_images_year_old}
 {: faq}
 
-[Linux]{: tag-linux} [macOS]{: tag-macos} On Linux&reg; and macOS, if you want to list all images, both tagged and untagged, that were created more than a year ago, you can run the following command:
+[Linux]{: tag-linux} [macOS]{: tag-macos} On Linux&reg; and macOS, if you want to list all images, both tagged and untagged that were created more than a year ago, you can run the following command:
 
 ```txt
 year=$(($(date +%s) - 31556952))
