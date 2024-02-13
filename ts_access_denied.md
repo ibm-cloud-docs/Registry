@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-15"
+  years: 2023, 2024
+lastupdated: "2024-02-13"
 
 keywords: error, iam, access denied, access policy, policy, access,
 
@@ -32,7 +32,7 @@ When you try to access {{site.data.keyword.registryshort}}, you get one of the f
 
 - `Your account has exceeded its image storage quota for the current month.`, see [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
 
-- `You must access this account over the private network`, see [Why am I getting `Access denied` errors over a private network?](/docs/Registry?topic=Registry-troubleshoot-private) for assistance.
+- `You must access this account over the private network`, see [Why am I getting `Access denied` errors  over a private network?](/docs/Registry?topic=Registry-troubleshoot-private) for assistance.
 
 - `Status code 403 Forbidden`, you might see this message if you are using {{site.data.keyword.codeenginefull_notm}}, see [Why am I getting a `Forbidden` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce) for assistance.
 
