@@ -26,8 +26,7 @@ toc:
       - topicgroup:
           label: Notifications
           topics:
-          - topic: registry_notices.md
-            navtitle: Notifications
+          - registry_notices.md
           - registry_notices_va_v3.md
           - registry_notices_wildcard_domains.md
           - registry_notices_va_v4.md
@@ -148,8 +147,7 @@ toc:
       - topicgroup:
           label: Troubleshooting
           topics:
-          - topic: ts_index.md
-            navtitle: Troubleshooting
+          - ts_index.md
           - topicgroup:
               label: Troubleshooting CLI login
               topics:
