@@ -139,7 +139,7 @@ subcollection: Registry
 {: #sitemap_notifications}
 
 
-[Notifications](/docs/Registry?topic=Registry-registry_notices#registry_notices)
+[Notifications about {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
@@ -1564,7 +1564,7 @@ subcollection: Registry
 {: #sitemap_troubleshooting}
 
 
-[Troubleshooting](/docs/Registry?topic=Registry-ts_index#ts_index)
+[Troubleshooting {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ts_index#ts_index)
 
 * [Troubleshooting topics](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts)
 
