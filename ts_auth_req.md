@@ -43,7 +43,7 @@ The following alternatives are possible causes:
 
 For more information, see [Scenario A. You're trying to push or pull an image](#troubleshoot-auth-req-push-pull).
 
-**Scenario B.** You're logged in to the wrong region of {{site.data.keyword.registryshort}}.
+**Scenario B.** You're logged in to the wrong region of {{site.data.keyword.registryshort}}. To check which region you're logged in to, run the [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region) command.
 
 For more information, see [Scenario B. You logged in to the wrong region](#troubleshoot-auth-req-region).
 
