@@ -1608,7 +1608,7 @@ subcollection: Registry
 
 * [Scenario A. You're trying to push or pull an image](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req-push-pull)
 
-* [Scenario B. You logged in to the wrong region](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req-region)
+* [Scenario B. You're logged in to the wrong region](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req-region)
 
 * [Scenario C. You're trying to use the API or CLI](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req-api-cli)
 

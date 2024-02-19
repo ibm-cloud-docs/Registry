@@ -45,7 +45,7 @@ For more information, see [Scenario A. You're trying to push or pull an image](#
 
 **Scenario B.** You're logged in to the wrong region of {{site.data.keyword.registryshort}}. To check which region you're logged in to, run the [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region) command.
 
-For more information, see [Scenario B. You logged in to the wrong region](#troubleshoot-auth-req-region).
+For more information, see [Scenario B. You're logged in to the wrong region](#troubleshoot-auth-req-region).
 
 **Scenario C.** You're trying to use the API or container-registry CLI.
 
@@ -68,7 +68,7 @@ You can fix these problems in the following ways:
 - Create and use a valid IAM API key to log a client, such as Docker, in to {{site.data.keyword.registryshort}} with username `iamapikey` and the API key as your password. For more information, see [Managing user API keys](/docs/account?topic=account-userapikey&interface=ui#userapikey).
 - When you access {{site.data.keyword.registryshort}} by using automation, set up a service ID and API key. For more information, see [Accessing {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_access#registry_access_serviceid_apikey_create).
 
-## Scenario B. You logged in to the wrong region
+## Scenario B. You're logged in to the wrong region
 {: #troubleshoot-auth-req-region}
 
 You can't access {{site.data.keyword.registryshort}} because you're logged in to the wrong region.
