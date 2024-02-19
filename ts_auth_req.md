@@ -52,7 +52,7 @@ For more information, see [Scenario B. You're logged in to the wrong region](#tr
 - You attempted to authenticate against the {{site.data.keyword.registryshort}} API with an invalid API key.
 - You attempted to authenticate against the {{site.data.keyword.registryshort}} API with an invalid Account ID.
 
-For more information, see [Scenario C. You're trying to use the API or CLI](#troubleshoot-auth-req-push-pull).
+For more information, see [Scenario C. You're trying to use the API or CLI](#troubleshoot-auth-req-api-cli).
 
 You can fix this problem in the following ways:
 {: tsResolve}
