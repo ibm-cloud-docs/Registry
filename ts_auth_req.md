@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-01-12"
 
 keywords: registry, access, authorization required, error, API key, client, token, region, CRG0014E
 
