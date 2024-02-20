@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-12-18"
+  years: 2022, 2024
+lastupdated: "2024-02-20"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI
 
@@ -30,7 +30,7 @@ Version 1.3.5 of the CLI was released on 18 December 2023.
 
 This release has the following changes:
 
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 - Updated translations.
 
 ## Version 1.3.4
@@ -51,7 +51,7 @@ Version 1.3.1 of the CLI was released on 31 August 2023.
 This release has the following changes:
 
 - Adds a `--force` option to the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli&locale=en#bx_cr_retention_policy_set) command so that you can immediately apply and run the policy without user prompts.
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 
 ## Version 1.2.2
 {: #cli-change-logv1-122}
@@ -60,11 +60,11 @@ Version 1.2.2 of the CLI was released on 24 July 2023.
 
 This release has the following changes:
 
-- Added a JSON output option, `--output json` or `-o json`, to several commands.
+- Added a JSON format output option `--output json` or `-o json` to several commands.
 - [Deprecated]{: tag-deprecated} The `--json` option is deprecated and is replaced with the `--output json` option.
 - Updated translations.
 
-For more information about the commands for which the JSON format option is available, see [JSON output option added to several {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023).
+For more information about the commands for which the JSON format option is available, see [JSON format output option added to several {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023).
 
 ## Version 1.1.0
 {: #cli-change-logv1-110}
@@ -83,7 +83,7 @@ Version 1.0.11 of the CLI was released on 19 June 2023.
 This release has the following changes:
 
 - The backup default Vulnerability Advisor version is now version 4.
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 - Updated translations.
 
 ## Version 1.0.8
@@ -93,7 +93,7 @@ Version 1.0.8 of the CLI was released on 5 April 2023.
 
 This release has the following changes:
 
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 - Updated translations.
 - Updated error messages.
 
@@ -104,7 +104,7 @@ Version 0.1.587 of the CLI was released on 26 January 2023.
 
 This release has the following changes:
 
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 
 ## Version 1.0.6
 {: #cli-change-logv1-106}
@@ -113,7 +113,7 @@ Version 1.0.6 of the CLI was released on 25 January 2023.
 
 This release has the following changes:
 
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 
 ## Version 1.0.5
 {: #cli-change-logv1-105}
@@ -122,7 +122,7 @@ Version 1.0.5 of the CLI was released on 5 December 2022.
 
 This release has the following changes:
 
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 - Updated translations.
 - You can install and uninstall the container-registry plug-in by using the `cr` alias.
 
@@ -133,7 +133,7 @@ Version 0.1.585 of the CLI was released on 5 December 2022.
 
 This release has the following changes:
 
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 
 ## Version 1.0.2
 {: #cli-change-logv1-102}
@@ -143,7 +143,7 @@ Version 1.0.2 of the CLI was released on 19 October 2022.
 This release has the following changes:
 
 - Minor bug fixes.
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 - Updated translations.
 
 ## Version 0.1.584
@@ -162,7 +162,7 @@ Version 1.0.1 of the CLI was released on 23 September 2022.
 
 This release has the following changes:
 
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 - Updated translations.
 
 ## Version 0.1.583
@@ -172,7 +172,7 @@ Version 0.1.583 of the CLI was released on 23 September 2022.
 
 This release has the following changes:
 
-- Vulnerability remediations.
+- Remediate vulnerabilities.
 - Updated translations.
 
 ## Version 1.0.0
@@ -192,4 +192,4 @@ Version 0.1.582 of the CLI was released on 15 September 2022.
 
 This release has the following changes:
 
-- Vulnerability remediations.
+- Remediate vulnerabilities.
