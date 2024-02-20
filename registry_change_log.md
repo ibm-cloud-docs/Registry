@@ -60,7 +60,7 @@ Version 1.2.2 of the CLI was released on 24 July 2023.
 
 This release has the following changes:
 
-- Added a JSON format output option, `--output json` or `-o json`, to several commands.
+- Added a JSON format output option `--output json` or `-o json` to several commands.
 - [Deprecated]{: tag-deprecated} The `--json` option is deprecated and is replaced with the `--output json` option.
 - Updated translations.
 
