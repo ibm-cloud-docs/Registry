@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-02-20"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1610,7 +1610,7 @@ subcollection: Registry
 
 * [Scenario B. You're logged in to the wrong region](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req-region)
 
-* [Scenario C. You're trying to use the API or CLI](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req-api-cli)
+* [Scenario C. You're trying to use the API](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req-api)
 
 [Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce#troubleshoot-unauthorized-ce)
 
