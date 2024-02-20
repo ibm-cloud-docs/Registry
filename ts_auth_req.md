@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-02-20"
 
 keywords: registry, access, authorization required, error, API key, client, token, region, CRG0014E
 
@@ -41,18 +41,18 @@ The following alternatives are possible causes:
 - A client attempted to access {{site.data.keyword.registryshort}} without a bearer token.
 - A client attempted to access {{site.data.keyword.registryshort}} with an expired OAuth token.
 
-For more information, see [Scenario A. You're trying to push or pull an image](#troubleshoot-auth-req-push-pull).
+For more information about how to fix this problem, see [Scenario A. You're trying to push or pull an image](#troubleshoot-auth-req-push-pull).
 
 **Scenario B.** You're logged in to the wrong region of {{site.data.keyword.registryshort}}. To check which region you're logged in to, run the [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region) command.
 
-For more information, see [Scenario B. You're logged in to the wrong region](#troubleshoot-auth-req-region).
+For more information about how to fix this problem, see [Scenario B. You're logged in to the wrong region](#troubleshoot-auth-req-region).
 
-**Scenario C.** You're trying to use the API or container-registry CLI.
+**Scenario C.** You're trying to use the API.
 
 - You attempted to authenticate against the {{site.data.keyword.registryshort}} API with an invalid API key.
 - You attempted to authenticate against the {{site.data.keyword.registryshort}} API with an invalid Account ID.
 
-For more information, see [Scenario C. You're trying to use the API or CLI](#troubleshoot-auth-req-api-cli).
+For more information about how to fix this problem, see [Scenario C. You're trying to use the API](#troubleshoot-auth-req-api).
 
 You can fix this problem in the following ways:
 {: tsResolve}
@@ -84,8 +84,8 @@ If your image is in a different region of {{site.data.keyword.registryshort}}, y
 
 For more information, see [Targeting a local region](/docs/Registry?topic=Registry-registry_overview#registry_regions_local_target).
 
-## Scenario C. You're trying to use the API or CLI
-{: #troubleshoot-auth-req-api-cli}
+## Scenario C. You're trying to use the API
+{: #troubleshoot-auth-req-api}
 
 You can't access {{site.data.keyword.registryshort}} because you attempted to authenticate against the {{site.data.keyword.registryshort}} API with an invalid API key or Account ID.
 
