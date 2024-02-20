@@ -216,7 +216,7 @@ subcollection: Registry
 
 * [24 July 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023)
 
-    * [JSON output option added to several {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023_json_option)
+    * [JSON format output option added to several {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023_json_option)
 
     * [The `--json` option for {{site.data.keyword.registrylong_notm}} commands is deprecated](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023_json)
 
