@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-02-21"
 
 keywords: error, iam, access denied, access, resource,
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You are trying to access a specific resource in {{site.data.keyword.registrylong}}, but you get an `Access denied` error message that says that you are not authorized to access that resource.
+You're trying to access a specific resource in {{site.data.keyword.registrylong}}, but you get an `Access denied` error message that says that you are not authorized to access that resource.
 {: shortdesc}
 
 When you try to access {{site.data.keyword.registryshort}}, you get the following message:
