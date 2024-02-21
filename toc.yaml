@@ -153,7 +153,6 @@ toc:
               topics:
               - ts_login.md
               - ts_login_expire.md
-              - ts_login_cloud.md
               - ts_get_started.md
               - ts_login_error.md
               - ts_docker_mac.md

@@ -425,16 +425,6 @@
         "login error for Container Registry",
         "ibmcloud cr cli login error in icr"
       ],
-      "troubleshoot-login-cloud": [
-        "any ibmcloud cr command fails in container registry",
-        "container registry cli error not logged-in",
-        "ibmcloud cr failed not logged in",
-        "unable to run ibmcloud cr cli in icr",
-        "cannot run commands in Container Registry",
-        "can't run commands in Container Registry",
-        "unable to run any commands in container registry",
-        "CLI Container Registry fails"
-      ],
       "troubleshoot-login-error": [
         "cr command fails cr is not a registered command",
         "Container registry plugin cli cannot use",
