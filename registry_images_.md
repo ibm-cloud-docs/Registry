@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-12-18"
+  years: 2017, 2024
+lastupdated: "2024-02-26"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -213,7 +213,7 @@ To build your own Docker image, complete the following steps:
         ```
         {: pre}
 
-        This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/){: external}.
+        This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile reference](https://docs.docker.com/reference/dockerfile/){: external}.
 
 3. Decide on a name for your image. The image name must be in the following format, where `<my_namespace>` is your namespace information, `<repo_name>` is the name of your repository, and `<tag>` is the version that you want to use for your image:
 
