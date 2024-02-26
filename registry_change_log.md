@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-26"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI
 
@@ -60,11 +60,11 @@ Version 1.2.2 of the CLI was released on 24 July 2023.
 
 This release has the following changes:
 
-- Added a JSON format output option `--output json` or `-o json` to several commands.
+- Added the option to output several commands in JSON format by using `--output json` or `-o json`.
 - [Deprecated]{: tag-deprecated} The `--json` option is deprecated and is replaced with the `--output json` option.
 - Updated translations.
 
-For more information about the commands for which the JSON format option is available, see [JSON format output option added to several {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023).
+For more information about the commands for which the JSON format option is available, see [Added the option to output several {{site.data.keyword.registrylong_notm}} commands in JSON format](/docs/Registry?topic=Registry-registry_release_notes#registry-24jul2023).
 
 ## Version 1.1.0
 {: #cli-change-logv1-110}
