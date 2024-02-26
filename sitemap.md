@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-02-26"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -666,28 +666,6 @@ subcollection: Registry
     * [Remove {{site.data.keyword.cis_short_notm}} resources](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-24)
 
 * [Related content](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-7)
-
-[Continuous Deployment to Kubernetes](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes)
-
-* [Objectives](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-objectives)
-
-* [Before you begin](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-prereq)
-
-* [Create development Kubernetes cluster](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_kube_cluster)
-
-* [Create a sample application](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_application)
-
-* [Modify the application and deploy the updates](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-6)
-
-* [Deploy to a production environment](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-deploytoproduction)
-
-* [Setup Slack notifications](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-setup_slack)
-
-* [Remove resources](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-removeresources)
-
-* [Expand the Tutorial](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-expandTutorial)
-
-* [Related Content](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-related)
 
 
 ## Setting up the {{site.data.keyword.registryshort}} CLI and namespace

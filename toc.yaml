@@ -50,7 +50,6 @@ toc:
           topics:
           - include: ../solution-tutorials/vm-to-containers-and-kubernetes.md
           - include: ../solution-tutorials/multi-region-k8s-cis.md
-          - include: ../solution-tutorials/continuous-deployment-to-kubernetes.md
   - navgroup:
       id: howto
       topics:
