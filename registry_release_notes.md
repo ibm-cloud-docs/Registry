@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-26"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -43,7 +43,7 @@ Vulnerability Advisor version 3 is discontinued from 13 November 2023 {: #regist
 {: #registry-24jul2023}
 {: release-note}
 
-JSON format output option added to several {{site.data.keyword.registrylong_notm}} commands {: #registry-24jul2023_json_option}
+Added the option to output several {{site.data.keyword.registrylong_notm}} commands in JSON format {: #registry-24jul2023_json_option}
 :   The following {{site.data.keyword.registrylong_notm}} commands now have an output option for JSON format:
 
     - `ibmcloud cr exemption-add`
