@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-02-27"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -177,7 +177,7 @@ Context-based restrictions {: #08jul2022_cbr}
 {: release-note}
 
 Change to {{site.data.keyword.registryshort}} private IP addresses in all regions {: #05jul2022_private_network}
-:   If you are using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you are connecting to {{site.data.keyword.registryshort}} over the private network, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees also changed. This change also affects you if you have allowlists or a firewall rule.
+:   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you are connecting to {{site.data.keyword.registryshort}} over the private network, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees also changed. This change also affects you if you have allowlists or a firewall rule.
 
     For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
 
