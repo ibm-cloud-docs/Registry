@@ -16,7 +16,6 @@ toc:
       - topic: getting-started.md
         navtitle: Getting started
       - topic: registry_overview.md
-        navtitle: About Container Registry
       - topic: registry_architecture.md
         navtitle: Container Registry architecture and workload
       - registry_public_images.md

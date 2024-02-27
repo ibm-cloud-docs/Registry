@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-02-27"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -40,11 +40,11 @@ subcollection: Registry
 * [Next steps in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started#gs_get_start_next)
 
 
-## About Container Registry
-{: #sitemap_about_container_registry}
+## About {{site.data.keyword.registryshort_notm}}
+{: #sitemap_about_}
 
 
-[About Container Registry](/docs/Registry?topic=Registry-registry_overview#registry_overview)
+[About {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_overview#registry_overview)
 
 * [Service plans](/docs/Registry?topic=Registry-registry_overview#registry_plans)
 

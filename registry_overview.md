@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-02-27"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -313,7 +313,7 @@ The default instance of {{site.data.keyword.registryshort}} is the global regist
 
 Use the global instance of the registry unless you have a specific requirement, for example, data sovereignty, to store your data in a particular region. In which case, you can use {{site.data.keyword.registryshort}} in [local regions](#registry_regions_local).
 
-All registry artifacts are scoped to the specific registry instance (one of the regional registries or the global registry) that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for your account in each registry instance.
+All registry artifacts are scoped to the specific registry instance (one of the regional registries or the global registry) that you're currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for your account in each registry instance.
 
 ### Global registry
 {: #registry_regions_global}
