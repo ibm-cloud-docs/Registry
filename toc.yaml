@@ -14,7 +14,7 @@ toc:
       id: learn
       topics:
       - topic: getting-started.md
-        navtitle: Getting started
+        navtitle: Getting started with Container Registry
       - topic: registry_overview.md
       - topic: registry_architecture.md
         navtitle: Container Registry architecture and workload
