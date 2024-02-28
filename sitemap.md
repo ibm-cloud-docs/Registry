@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-02-28"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -17,11 +17,11 @@ subcollection: Registry
 
 
 
-## Getting started
-{: #sitemap_getting_started}
+## Getting started with Container Registry
+{: #sitemap_getting_started_with_container_registry}
 
 
-[Getting started](/docs/Registry?topic=Registry-getting-started#getting-started)
+[Getting started with Container Registry](/docs/Registry?topic=Registry-getting-started#getting-started)
 
 * [Before you begin](/docs/Registry?topic=Registry-getting-started#gs_registry_prereqs)
 
