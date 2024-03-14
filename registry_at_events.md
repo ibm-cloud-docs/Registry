@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-11-13"
+  years: 2018, 2024
+lastupdated: "2024-03-14"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -71,6 +71,7 @@ The following table shows the location of {{site.data.keyword.at_full_notm}} eve
 | `br-sao` | `br.icr.io` | `Sao Paulo (br-sao)` |
 | `ca-tor` | `ca.icr.io` | `Toronto (ca-tor)` |
 | `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `eu-es` | `es.icr.io` | `Madrid (eu-es)` |
 | `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |

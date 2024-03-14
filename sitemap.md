@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-03-14"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -205,6 +205,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [15 March 2024](/docs/Registry?topic=Registry-registry_release_notes#registry-15mar2024)
+
+    * [New region in Madrid](/docs/Registry?topic=Registry-registry_release_notes#15mar2024_madrid)
 
 * [13 November 2023](/docs/Registry?topic=Registry-registry_release_notes#registry-13nov2023)
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-12-18"
+  years: 2017, 2024
+lastupdated: "2024-03-14"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -84,6 +84,7 @@ Clients require an API key and a domain, replace `<apikey>` with your API key an
 | `br-sao` | `br.icr.io` |
 | `ca-tor` | `ca.icr.io` |
 | `eu-central` | `de.icr.io` |
+| `eu-es` | `es.icr.io` |
 | `jp-osa` | `jp2.icr.io` |
 | `uk-south` | `uk.icr.io` |
 | `us-south` | `us.icr.io` |
