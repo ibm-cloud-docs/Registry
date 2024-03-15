@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-12-18"
+  years: 2021, 2024
+lastupdated: "2024-03-14"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -53,6 +53,7 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Dallas (`us-south`)
 - Frankfurt (`eu-de`)
 - London (`eu-gb`)
+- Madrid (`eu-es`)
 - Osaka (`jp-osa`)
 - Sao Paulo (`br-sao`)
 - Sydney (`au-syd`)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-14"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -20,6 +20,14 @@ content-type: release-note
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+
+## 15 March 2024
+{: #registry-15mar2024}
+{: release-note}
+
+New region in Madrid {: #15mar2024_madrid}
+:   A new region in Madrid, Spain is available. The new region is `eu-es` and the domain name is `es.icr.io`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
 ## 13 November 2023
 {: #registry-13nov2023}

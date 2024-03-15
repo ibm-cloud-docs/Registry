@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-12-15"
+  years: 2019, 2024
+lastupdated: "2024-03-14"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -75,6 +75,7 @@ The following table shows the location of {{site.data.keyword.la_full_notm}} log
 | `br-sao` | `br.icr.io` | `Sao Paulo (br-sao)` |
 | `ca-tor` | `ca.icr.io` | `Toronto (ca-tor)` |
 | `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `eu-es` | `es.icr.io` | `Madrid (eu-es)` |
 | `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
