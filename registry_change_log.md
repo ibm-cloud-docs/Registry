@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-03-18"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI, vulnerabilities
 
@@ -23,6 +23,15 @@ For more information about how to update the {{site.data.keyword.registryshort}}
 Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
 {: deprecated}
 
+## Version 1.3.7
+{: #cli-change-logv1-137}
+
+Version 1.3.7 of the CLI was released on 18 March 2024.
+
+This release has the following changes:
+
+- Remediates vulnerabilities.
+
 ## Version 1.3.5
 {: #cli-change-logv1-135}
 
@@ -30,7 +39,7 @@ Version 1.3.5 of the CLI was released on 18 December 2023.
 
 This release has the following changes:
 
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 - Updates the translations.
 
 ## Version 1.3.4
@@ -51,7 +60,7 @@ Version 1.3.1 of the CLI was released on 31 August 2023.
 This release has the following changes:
 
 - Adds a `--force` option to the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli&locale=en#bx_cr_retention_policy_set) command so that you can immediately apply and run the policy without user prompts.
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 
 ## Version 1.2.2
 {: #cli-change-logv1-122}
@@ -83,7 +92,7 @@ Version 1.0.11 of the CLI was released on 19 June 2023.
 This release has the following changes:
 
 - The backup default Vulnerability Advisor version is now version 4.
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 - Updates the translations.
 
 ## Version 1.0.8
@@ -93,7 +102,7 @@ Version 1.0.8 of the CLI was released on 5 April 2023.
 
 This release has the following changes:
 
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 - Updates the translations.
 - Updates the error messages.
 
@@ -104,7 +113,7 @@ Version 0.1.587 of the CLI was released on 26 January 2023.
 
 This release has the following changes:
 
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 
 ## Version 1.0.6
 {: #cli-change-logv1-106}
@@ -113,7 +122,7 @@ Version 1.0.6 of the CLI was released on 25 January 2023.
 
 This release has the following changes:
 
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 
 ## Version 1.0.5
 {: #cli-change-logv1-105}
@@ -122,7 +131,7 @@ Version 1.0.5 of the CLI was released on 5 December 2022.
 
 This release has the following changes:
 
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 - Updates the translations.
 - You can install and uninstall the container-registry plug-in by using the `cr` alias.
 
@@ -133,7 +142,7 @@ Version 0.1.585 of the CLI was released on 5 December 2022.
 
 This release has the following changes:
 
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 
 ## Version 1.0.2
 {: #cli-change-logv1-102}
@@ -143,7 +152,7 @@ Version 1.0.2 of the CLI was released on 19 October 2022.
 This release has the following changes:
 
 - Minor bug fixes.
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 - Updates the translations.
 
 ## Version 0.1.584
@@ -162,7 +171,7 @@ Version 1.0.1 of the CLI was released on 23 September 2022.
 
 This release has the following changes:
 
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 - Updates the translations.
 
 ## Version 0.1.583
@@ -172,7 +181,7 @@ Version 0.1.583 of the CLI was released on 23 September 2022.
 
 This release has the following changes:
 
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
 - Updates the translations.
 
 ## Version 1.0.0
@@ -192,4 +201,4 @@ Version 0.1.582 of the CLI was released on 15 September 2022.
 
 This release has the following changes:
 
-- Remediates the vulnerabilities.
+- Remediates vulnerabilities.
