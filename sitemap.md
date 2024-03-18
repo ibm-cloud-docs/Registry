@@ -1427,6 +1427,8 @@ subcollection: Registry
 
 [{{site.data.keyword.registryshort}} CLI change log](/docs/Registry?topic=Registry-registry_cli_change_log#registry_cli_change_log)
 
+* [Version 1.3.7](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-137)
+
 * [Version 1.3.5](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-135)
 
 * [Version 1.3.4](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-134)
