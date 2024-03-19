@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-19"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -50,6 +50,7 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you'
 |---------------------|---------------------------------------|
 | `Frankfurt (eu-de)` | Yes |
 | `London (eu-gb)` | Yes |
+| `Madrid (eu-es)` | Yes |
 {: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Europe locations" caption-side="bottom"}
 
 | Location for Global | Are platform services logs available? |
