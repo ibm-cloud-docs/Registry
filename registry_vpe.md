@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-19"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -69,7 +69,7 @@ You can create a VPE gateway for your local {{site.data.keyword.registryshort_no
 
 When you create a VPE gateway by using the CLI or API, you must specify the [cloud resource name (CRN)](#x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
-You can create VPE gateways in the following locations: `ap-north`, `ap-south`, `br-sao`, `ca-tor`, `eu-central`, `jp-osa`, `uk-south`, `us-south`, and `us-east` (global registry).
+You can create VPE gateways in the following locations: `ap-north`, `ap-south`, `br-sao`, `ca-tor`, `eu-central`, `eu-es`, `jp-osa`, `uk-south`, `us-south`, and `us-east` (global registry).
 
 | Registry region | Cloud resource name (CRN) |
 |-----------------|---------------------------|
@@ -78,6 +78,7 @@ You can create VPE gateways in the following locations: `ap-north`, `ap-south`, 
 | `br-sao` | `crn:v1:bluemix:public:container-registry:br-sao:::endpoint:br.icr.io` |
 | `ca-tor` | `crn:v1:bluemix:public:container-registry:ca-tor:::endpoint:ca.icr.io` |
 | `eu-central` | `crn:v1:bluemix:public:container-registry:eu-de:::endpoint:de.icr.io` |
+| `eu-es` | `crn:v1:bluemix:public:container-registry:eu-es:::endpoint:es.icr.io` |
 | `jp-osa` | `crn:v1:bluemix:public:container-registry:jp-osa:::endpoint:jp2.icr.io` |
 | `uk-south` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:uk.icr.io` |
 | `us-south` | `crn:v1:bluemix:public:container-registry:us-south:::endpoint:us.icr.io` |

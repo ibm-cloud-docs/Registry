@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-27"
+  years: 2020, 2024
+lastupdated: "2024-03-19"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -87,6 +87,7 @@ You can configure one monitoring instance in each region to collect platform met
 |---------------------|----------------------------|
 | `Frankfurt (eu-de)` | Yes |
 | `London (eu-gb)` | Yes |
+| `Madrid (eu-es)` | Yes |
 {: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Europe locations" caption-side="bottom"}
 
 | Location for Global | Platform metrics available |
@@ -115,6 +116,7 @@ The following table shows the location of {{site.data.keyword.mon_short}} metric
 | `br-sao` | `br.icr.io` | `Sao Paulo (br-sao)` |
 | `ca-tor` | `ca.icr.io` | `Toronto (ca-tor)` |
 | `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `eu-es` | `es.icr.io` | `Madrid (eu-es)` |
 | `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |

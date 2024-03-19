@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-19"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -43,6 +43,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 |---------------------|--------------------------|
 | `Frankfurt (eu-de)` | Yes |
 | `London (eu-gb)` | Yes |
+| `Madrid (eu-es)` | Yes |
 {: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Europe locations" caption-side="bottom"}
 
 | Location for Global | Service events available |
