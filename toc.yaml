@@ -103,7 +103,7 @@ toc:
       - topicgroup:
           label: Container Registry CLI
           topics:
-          - include: ../container-registry-cli-plugin/container-registry-cli.md
+          - container-registry-cli.md
           - registry_cli_list.md
           - registry_change_log.md
       - topicgroup:
