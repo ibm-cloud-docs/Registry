@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-04-02"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -49,10 +49,10 @@ Troubleshoot pull and push problems.
     - [Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce)
     - [Why am I having problems when I try to pull an image with `cosign` when I'm using Podman?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman)
 - [Why am I getting `Access denied` errors?](/docs/Registry?topic=Registry-troubleshoot-access-denied)
-    - [Why am I getting `Access denied` errors for a resource?](/docs/Registry?topic=Registry-troubleshoot-resource)
-    - [Why am I getting `Access denied` errors about insufficient scope?](/docs/Registry?topic=Registry-troubleshoot-scope)
-    - [Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota)
-    - [Why am I getting `Access denied` errors over a private network?](/docs/Registry?topic=Registry-troubleshoot-private)
+    - [Why am I getting errors for a resource?](/docs/Registry?topic=Registry-troubleshoot-resource)
+    - [Why am I getting errors about insufficient scope?](/docs/Registry?topic=Registry-troubleshoot-scope)
+    - [Why am I getting errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota)
+    - [Why am I getting errors about using a private network?](/docs/Registry?topic=Registry-troubleshoot-private)
     - [Why am I getting a `Forbidden` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce)
     - [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull)
 

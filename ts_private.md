@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2024-01-15"
+  years: 2023, 2024
+lastupdated: "2024-04-02"
 
 keywords: error, iam, access denied, access, private network,
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting `Access denied` errors over a private network?
+# Why am I getting errors about using a private network?
 {: #troubleshoot-private}
 {: troubleshoot}
 {: support}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-04-02"
 
 keywords: error, iam, access denied, access, resource,
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting `Access denied` errors for a resource?
+# Why am I getting errors for a resource?
 {: #troubleshoot-resource}
 {: troubleshoot}
 {: support}
