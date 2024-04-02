@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-04-02"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1600,13 +1600,13 @@ subcollection: Registry
 
 [Why am I getting `Access denied` errors?](/docs/Registry?topic=Registry-troubleshoot-access-denied#troubleshoot-access-denied)
 
-[Why am I getting `Access denied` errors for a resource?](/docs/Registry?topic=Registry-troubleshoot-resource#troubleshoot-resource)
+[Why am I getting errors for a resource?](/docs/Registry?topic=Registry-troubleshoot-resource#troubleshoot-resource)
 
-[Why am I getting `Access denied` errors about insufficient scope?](/docs/Registry?topic=Registry-troubleshoot-scope#troubleshoot-scope)
+[Why am I getting errors about insufficient scope?](/docs/Registry?topic=Registry-troubleshoot-scope#troubleshoot-scope)
 
-[Why am I getting `Access denied` errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota#troubleshoot-quota)
+[Why am I getting errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota#troubleshoot-quota)
 
-[Why am I getting `Access denied` errors over a private network?](/docs/Registry?topic=Registry-troubleshoot-private#troubleshoot-private)
+[Why am I getting errors about using a private network?](/docs/Registry?topic=Registry-troubleshoot-private#troubleshoot-private)
 
 [Why am I getting a `Forbidden` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce#troubleshoot-forbidden-ce)
 
