@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-02"
+lastupdated: "2024-04-03"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -25,16 +25,16 @@ When you're using {{site.data.keyword.registrylong}}, pushing or pulling a Docke
 When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. The following error messages are potential error messages that you might receive:
 {: tsSymptoms}
 
-- A. `unauthorized: authentication required`
-- B. `denied: You are not authorized to access the specified resource.`
-- C. `unauthorized: An error occurred when authenticating your request with IBM Cloud. Clear your browser cookies, log in to IBM Cloud, and try your request again.`
-- D. `Your account has exceeded its pull traffic quota for the current month.`, see [Why am I getting errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
-- E. `Your account has exceeded its image storage quota for the current month.`, see [Why am I getting errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
+- **Scenario A.** `unauthorized: authentication required`
+- **Scenario B.** `denied: You are not authorized to access the specified resource.`
+- **Scenario C.** `unauthorized: An error occurred when authenticating your request with IBM Cloud. Clear your browser cookies, log in to IBM Cloud, and try your request again.`
+- **Scenario D.** `Your account has exceeded its pull traffic quota for the current month.`, see [Why am I getting errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
+- **Scenario E.** `Your account has exceeded its image storage quota for the current month.`, see [Why am I getting errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota) for assistance.
 
 The following alternatives are possible causes:
 {: tsCauses}
 
-For A, B, and C:
+For scenarios A, B, and C:
 
 - Docker is not installed.
 - The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
@@ -43,7 +43,7 @@ For A, B, and C:
 You can fix this problem in the following ways:
 {: tsResolve}
 
-For A, B, and C:
+For scenarios A, B, and C:
 
 - [Ensure that Docker is installed on your computer](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install).
 - Check your Docker installation path.
