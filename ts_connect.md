@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-15"
+  years: 2023, 2024
+lastupdated: "2024-04-05"
 
 keywords: registry, connect, firewall, proxy
 
@@ -28,15 +28,15 @@ You can't connect to {{site.data.keyword.registrylong_notm}} and you receive the
 The following alternatives are possible causes:
 {: tsCauses}
 
-- Firewall or Calico rules are in place.
-- The connection to {{site.data.keyword.registryshort_notm}} is through a proxy.
-- IP allowlists are configured.
-- Context-based restrictions are configured.
+- **Scenario A.** Firewall or Calico rules are in place.
+- **Scenario B.** The connection to {{site.data.keyword.registryshort_notm}} is through a proxy.
+- **Scenario C.** IP allowlists are configured.
+- **Scenario D.** Context-based restrictions are configured.
 
 You can fix this problem in the following ways:
 {: tsResolve}
 
-- Check your [firewall](/docs/Registry?topic=Registry-troubleshoot-firewall) or [Calico](https://www.tigera.io/project-calico/){: external} rules.
-- Connect to {{site.data.keyword.registryshort_notm}} without a proxy.
-- Use IP addresses that are in your allowlist.
-- Ensure that your [context-based restrictions](/docs/Registry?topic=Registry-registry-cbr&interface=ui) give you access to {{site.data.keyword.registryshort_notm}}.
+- **Scenario A.** Check your [firewall](/docs/Registry?topic=Registry-troubleshoot-firewall) or [Calico](https://www.tigera.io/project-calico/){: external} rules.
+- **Scenario B.** Connect to {{site.data.keyword.registryshort_notm}} without a proxy.
+- **Scenario C.** Use IP addresses that are in your allowlist.
+- **Scenario D.** Ensure that your [context-based restrictions](/docs/Registry?topic=Registry-registry-cbr&interface=ui) give you access to {{site.data.keyword.registryshort_notm}}.
