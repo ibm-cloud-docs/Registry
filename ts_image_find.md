@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-02-08"
+  years: 2023, 2024
+lastupdated: "2024-04-05"
 
 keywords: registry, namespace, find, image, region
 
@@ -28,11 +28,11 @@ When you try to find your image or your namespace, you can't find it.
 The following alternatives are possible causes:
 {: tsCauses}
 
-- You are looking in the wrong region. Namespaces are region specific and you might be targeting the wrong region.
-- The image or namespace was deleted.
+- **Scenario A.** You are looking in the wrong region. Namespaces are region specific and you might be targeting the wrong region.
+- **Scenario B.** The image or namespace was deleted.
 
 You can fix this problem in the following ways:
 {: tsResolve}
 
-- Check that you're using the correct region. To change the region, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
-- Check your instance of {{site.data.keyword.at_full_notm}} to see whether the image or namespace was deleted. For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
+- **Scenario A.** Check that you're using the correct region. To change the region, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+- **Scenario B.** Check your instance of {{site.data.keyword.at_full_notm}} to see whether the image or namespace was deleted. For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).

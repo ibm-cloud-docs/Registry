@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-02-07"
+  years: 2023, 2024
+lastupdated: "2024-04-05"
 
 keywords: registry, slow, performance, image, pull
 
@@ -28,13 +28,13 @@ When you try to pull an image, it takes a long time.
 The following alternatives are possible causes:
 {: tsCauses}
 
-- You are using a large image.
-- You are pulling your image over a long distance.
-- You have a poor connection.
+- **Scenario A.** You are using a large image.
+- **Scenario B.** You are pulling your image over a long distance.
+- **Scenario C.** You have a poor connection.
 
 You can fix this problem in the following ways:
 {: tsResolve}
 
-- Make your image smaller.
-- Store and pull your images in the same location.
-- If you're using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_full}} Container Platform, you can pull images over the private network to get a faster speed.
+- **Scenario A.** Make your image smaller.
+- **Scenario B.** Store and pull your images in the same location.
+- **Scenario C.** If you're using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_full}} Container Platform, you can pull images over the private network to get a faster speed.
