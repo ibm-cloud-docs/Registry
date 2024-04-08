@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-05"
+lastupdated: "2024-04-08"
 
 keywords: registry, slow, performance, image, pull
 
@@ -28,8 +28,8 @@ When you try to pull an image, it takes a long time.
 The following alternatives are possible causes:
 {: tsCauses}
 
-- **Scenario A.** You are using a large image.
-- **Scenario B.** You are pulling your image over a long distance.
+- **Scenario A.** You're using a large image.
+- **Scenario B.** You're pulling your image over a long distance.
 - **Scenario C.** You have a poor connection.
 
 You can fix this problem in the following ways:

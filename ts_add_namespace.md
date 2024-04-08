@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-05"
+lastupdated: "2024-04-08"
 
 keywords: registry, namespace, value, characters, delete
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 Setting up a namespace fails in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-When you run `ibmcloud cr namespace-add`, you're unable to set your entered value as the namespace.
+When you run `ibmcloud cr namespace-add`, you are unable to set your entered value as the namespace.
 {: tsSymptoms}
 
 The following alternatives are possible causes:
