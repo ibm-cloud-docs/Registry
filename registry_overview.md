@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-04-08"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -26,7 +26,7 @@ A Docker image is the basis for every container that you create. An image is cre
 
 When you push images to {{site.data.keyword.registryshort}}, you benefit from the built-in Vulnerability Advisor features that scan for potential security issues and vulnerabilities. Vulnerability Advisor checks for vulnerable packages in specific Docker base images, and known vulnerabilities in app configuration settings. When vulnerabilities are found, information about the vulnerability is provided. You can use this information to resolve security issues so that containers are not deployed from vulnerable images.
 
-Review the following table to find an overview of benefits of using {{site.data.keyword.registryshort}}.
+Review the following table to find an overview of the benefits of using {{site.data.keyword.registryshort}}.
 
 | Benefit | Description |
 |---------|-------------|
