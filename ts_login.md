@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-05"
+lastupdated: "2024-04-08"
 
 keywords: registry, log in, login fails, container-registry, CLI plug-in, login credentials, Docker
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Logging in to {{site.data.keyword.registrylong}} fails.
+You try to log in to {{site.data.keyword.registrylong}}, but the log in command fails.
 {: shortdesc}
 
 The [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command fails.

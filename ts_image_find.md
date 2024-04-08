@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-05"
+lastupdated: "2024-04-08"
 
 keywords: registry, namespace, find, image, region
 
@@ -28,7 +28,7 @@ When you try to find your image or your namespace, you can't find it.
 The following alternatives are possible causes:
 {: tsCauses}
 
-- **Scenario A.** You are looking in the wrong region. Namespaces are region specific and you might be targeting the wrong region.
+- **Scenario A.** You're looking in the wrong region. Namespaces are region specific and you might be targeting the wrong region.
 - **Scenario B.** The image or namespace was deleted.
 
 You can fix this problem in the following ways:
