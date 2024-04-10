@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-04-10"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -95,8 +95,8 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | |
-| `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | |
+| `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | False |
+| `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | False |
 {: caption="Table 7. Actions that generate events for your authorization" caption-side="bottom"}
 
 ### Actions that generate events for images
@@ -106,13 +106,13 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.image.bulkdelete` | Delete multiple images from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. | True |
 | `container-registry.image.delete` | Delete an image from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. | True |
-| `container-registry.image.inspect` | Display details about an image. | |
-| `container-registry.image.list` | List the images in your {{site.data.keyword.IBM_notm}} account. | |
+| `container-registry.image.inspect` | Display details about an image. | False |
+| `container-registry.image.list` | List the images in your {{site.data.keyword.IBM_notm}} account. | False |
 | `container-registry.image.pull` | Pull an image from {{site.data.keyword.registryshort}}. | True |
 | `container-registry.image.push` | Push an image to {{site.data.keyword.registryshort}}. | True |
-| `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registryshort}} image. | |
-| `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. | |
-| `container-registry.manifest.inspect` | View the contents of the manifest for an image. | |
+| `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registryshort}} image. | False |
+| `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. | False |
+| `container-registry.manifest.inspect` | View the contents of the manifest for an image. | False |
 {: caption="Table 8. Actions that generate events for images" caption-side="bottom"}
 
 ### Actions that generate events for namespaces
@@ -120,9 +120,9 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registryshort}}.  \n  \n Assign a {{site.data.keyword.registryshort}} namespace to a resource group. | |
-| `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registryshort}}. | |
-| `container-registry.namespace.list` | List the {{site.data.keyword.registryshort}} namespaces in your {{site.data.keyword.IBM_notm}} account. | |
+| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registryshort}}.  \n  \n Assign a {{site.data.keyword.registryshort}} namespace to a resource group. | False |
+| `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registryshort}}. | False |
+| `container-registry.namespace.list` | List the {{site.data.keyword.registryshort}} namespaces in your {{site.data.keyword.IBM_notm}} account. | False |
 {: caption="Table 9. Actions that generate events for namespaces" caption-side="bottom"}
 
 ### Actions that generate events for plans
@@ -130,8 +130,8 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.plan.get` | Display information about the current pricing plan. | |
-| `container-registry.plan.set` | Upgrade to the standard plan. | |
+| `container-registry.plan.get` | Display information about the current pricing plan. | False |
+| `container-registry.plan.set` | Upgrade to the standard plan. | False |
 {: caption="Table 10. Actions that generate events for plans" caption-side="bottom"}
 
 ### Actions that generate events for quotas
@@ -139,8 +139,8 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.quota.get` | Display the current quotas for traffic and storage, and the usage information against those quotas. | |
-| `container-registry.quota.set` | Modify the quotas. Quota settings must be managed separately for your account in each registry instance. You can set quota limits for storage in your free or standard plan. | |
+| `container-registry.quota.get` | Display the current quotas for traffic and storage, and the usage information against those quotas. | False |
+| `container-registry.quota.set` | Modify the quotas. Quota settings must be managed separately for your account in each registry instance. You can set quota limits for storage in your free or standard plan. | False |
 {: caption="Table 11. Actions that generate events for quotas" caption-side="bottom"}
 
 ### Actions that generate events for retention policies
@@ -148,9 +148,9 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.retention.analyze` | List the images that are deleted if you apply a specific retention policy. | |
-| `container-registry.retention.list` | List the image retention policies for your account. | |
-| `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registryshort}} by applying specified criteria. | |
+| `container-registry.retention.analyze` | List the images that are deleted if you apply a specific retention policy. | False |
+| `container-registry.retention.list` | List the image retention policies for your account. | False |
+| `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registryshort}} by applying specified criteria. | False |
 {: caption="Table 12. Actions that generate events for retention policies" caption-side="bottom"}
 
 ### Actions that generate events for settings
@@ -158,8 +158,8 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.settings.get` | Get registry service settings for the targeted account, such as whether platform metrics are enabled. | |
-| `container-registry.settings.set` | Update registry service settings for the targeted account, such as enabling platform metrics. | |
+| `container-registry.settings.get` | Get registry service settings for the targeted account, such as whether platform metrics are enabled. | False |
+| `container-registry.settings.set` | Update registry service settings for the targeted account, such as enabling platform metrics. | False |
 {: caption="Table 13. Actions that generate events for settings" caption-side="bottom"}
 
 ### Actions that generate events for signing images
@@ -177,8 +177,8 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.trash.list` | Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. | |
-| `container-registry.trash.restore` | Restore a deleted image from the trash. If the deleted image is signed, the signature is restored too. | |
+| `container-registry.trash.list` | Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. | False |
+| `container-registry.trash.restore` | Restore a deleted image from the trash. If the deleted image is signed, the signature is restored too. | False |
 {: caption="Table 15. Actions that generate events for trash" caption-side="bottom"}
 
 ### Actions that generate events for vulnerabilities
@@ -186,10 +186,10 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability report](#at_events_analyze_report_list). | |
-| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability status](#at_events_analyze_status_list). | |
-| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability report](#at_events_analyze_report_read). | |
-| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability status](#at_events_analyze_status_read). | |
+| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability report](#at_events_analyze_report_list). | False |
+| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability status](#at_events_analyze_status_list). | False |
+| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability report](#at_events_analyze_report_read). | False |
+| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability status](#at_events_analyze_status_read). | False |
 {: caption="Table 16. Actions that generate events for vulnerabilities" caption-side="bottom"}
 
 ### Actions that generate events for exemption policies
@@ -197,8 +197,8 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | |
-| `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. | |
+| `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | False |
+| `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. | False |
 {: caption="Table 17. Actions that generate events for Vulnerability Advisor exemption policies" caption-side="bottom"}
 
 ## Analyzing Activity Tracker events
