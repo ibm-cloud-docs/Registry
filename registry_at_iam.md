@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-13"
+  years: 2020, 2024
+lastupdated: "2024-04-10"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -62,7 +62,7 @@ Review the following account API methods, their required actions in {{site.data.
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
-| Return any published system messages. | `GET /api/v1/messages` | | |
+| Return any published system messages. | `GET /api/v1/messages` | Not applicable | Not applicable |
 {: caption="Table 3. Messages" caption-side="bottom"}
 
 ### Namespace API methods
@@ -152,17 +152,17 @@ Review the following account API methods, their required actions in {{site.data.
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
-| List account-level exemptions. | `GET /va/api/v4/exempt/image` | `container-registry.exemption.list` | |
-| Get an account-level exemption. | `GET /va/api/v4/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.list` | |
+| List account-level exemptions. | `GET /va/api/v4/exempt/image` | `container-registry.exemption.list` | Not applicable |
+| Get an account-level exemption. | `GET /va/api/v4/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.list` | Not applicable |
 | Create or update an account-level exemption. | `POST /va/api/v4/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.create` |
 | Delete an account-level exemption. | `DELETE /va/api/v4/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.delete` |
-| List resource exemptions. | `GET /va/api/v4/exempt/image/{resource}` | `container-registry.exemption.list` | |
-| Get details of a resource exemption. | `GET /va/api/v4/exempt/image/{resource}/issue/{issueType}/{issueID}` | `container-registry.exemption.list` | |
+| List resource exemptions. | `GET /va/api/v4/exempt/image/{resource}` | `container-registry.exemption.list` | Not applicable |
+| Get details of a resource exemption. | `GET /va/api/v4/exempt/image/{resource}/issue/{issueType}/{issueID}` | `container-registry.exemption.list` | Not applicable |
 | Create or update a resource exemption. | `POST /va/api/v4/exempt/image/{resource}/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.create` |
 | Delete a resource exemption. | `DELETE /va/api/v4/exempt/image/{resource}/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.delete` |
-| List the types of exemption. | `GET /va/api/v4/exempt/types` | | |
-| List all exemptions. | `GET /va/api/v4/exemptions/account` | `container-registry.exemption.list` | |
+| List the types of exemption. | `GET /va/api/v4/exempt/types` | Not applicable | Not applicable |
+| List all exemptions. | `GET /va/api/v4/exemptions/account` | `container-registry.exemption.list` | Not applicable |
 | Delete all exemptions. | `POST /va/api/v4/exemptions/deleteAll` | `container-registry.exemption.manager` | `container-registry.exemption.delete` |
-| List image exemptions. | `GET /va/api/v4/exemptions/image/{resource}` | `container-registry.exemption.list` | |
-| List exemptions for images. | `POST /va/api/v4/exemptions/images` | `container-registry.exemption.list` | |
+| List image exemptions. | `GET /va/api/v4/exemptions/image/{resource}` | `container-registry.exemption.list` | Not applicable |
+| List exemptions for images. | `POST /va/api/v4/exemptions/images` | `container-registry.exemption.list` | Not applicable |
 {: caption="Table 12. Exemptions for version 4" caption-side="bottom"}
