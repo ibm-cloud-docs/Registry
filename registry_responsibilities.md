@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-04-10"
+lastupdated: "2024-04-11"
 
 keywords: Responsibilities, change management, identity and access management, incident and operations management, security and regulation compliance, disaster recovery, responsibility, access
 
@@ -82,7 +82,14 @@ Security and regulation compliance includes tasks such as security controls impl
 ## Disaster recovery
 {: #disaster-recovery}
 
-Disaster recovery includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and fail over on disaster events. For more information, see [High availability for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr) and [Business continuity and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-bc-dr).
+Disaster recovery includes tasks such as the following tasks:
+- Providing dependencies on disaster recovery sites
+- Provisioning disaster recovery environments
+- Backing up data and configuration
+- Replicating data and configuration to the disaster recovery environment
+- Fail over on disaster events
+
+For more information, see [High availability for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr) and [Business continuity and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-bc-dr).
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |------|-------------------------------------------------|-----------------------|
