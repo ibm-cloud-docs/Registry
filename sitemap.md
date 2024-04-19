@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-04-02"
+lastupdated: "2024-04-19"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -14,6 +14,7 @@ subcollection: Registry
 
 # Site map
 {: #sitemap}
+
 
 
 
@@ -652,8 +653,6 @@ subcollection: Registry
         * [One pool for the cluster in Dallas](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-14)
 
         * [One pool for the cluster in London](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-15)
-
-        * [And one pool with both clusters](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-16)
 
     * [Create the Global Load Balancer](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-17)
 
