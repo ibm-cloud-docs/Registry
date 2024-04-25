@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-09-13"
+  years: 2017, 2024
+lastupdated: "2024-04-25"
 
 keywords: Docker, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, skopeo, podman, Red Hat signatures, sign images, images, signatures, cli
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Signing images for trusted content
+# Signing images for trusted content in {{site.data.keyword.registryshort_notm}}
 {: #registry_trustedcontent}
 
 {{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace.

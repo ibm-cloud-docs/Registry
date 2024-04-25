@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-04-25"
 
 keywords: registry, namespace, find, image, region
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I find my image or my namespace?
+# Why can't I find my image or my namespace in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-image-find}
 {: troubleshoot}
 {: support}

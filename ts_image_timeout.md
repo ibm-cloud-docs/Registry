@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-01-31"
+  years: 2017, 2024
+lastupdated: "2024-04-25"
 
 keywords: registry, list, images, timeout, account
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why is it timing out when I list images?
+# Why is it timing out when I list images in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-image-timeout}
 {: troubleshoot}
 {: support}

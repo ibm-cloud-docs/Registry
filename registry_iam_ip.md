@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-12-14"
+  years: 2021, 2024
+lastupdated: "2024-04-25"
 
 keywords: access restrictions, IP addresses, access, public, private, network
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using IAM IP address access restrictions
+# Using IAM IP address access restrictions in {{site.data.keyword.registryshort_notm}}
 {: #registry_iam_ip}
 
 You can enable IAM IP address access restrictions when you're using {{site.data.keyword.registrylong}}.

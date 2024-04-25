@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-10-27"
+  years: 2021, 2024
+lastupdated: "2024-04-25"
 
 keywords: Portieris, image security, Portieris policies, installing Portieris, security, removing Portieris, policies, cluster
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Enforcing container image security by using Portieris
+# Enforcing container image security in {{site.data.keyword.registryshort_notm}} by using Portieris
 {: #security_enforce_portieris}
 
 You can use [Portieris](https://github.com/IBM/portieris){: external} to enforce image security policies in {{site.data.keyword.registrylong}}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-04-25"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Adding images to your namespace
+# Adding images to your namespace in {{site.data.keyword.registryshort_notm}}
 {: #registry_images_}
 
 You can securely store and share Docker images with other users by adding images to your [namespace](#x2031005){: term} in {{site.data.keyword.registrylong}}.

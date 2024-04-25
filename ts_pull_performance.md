@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-04-25"
 
 keywords: registry, slow, performance, image, pull
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why is pulling images slow?
+# Why is pulling images in {{site.data.keyword.registryshort_notm}} slow?
 {: #troubleshoot-pull-performance}
 {: troubleshoot}
 {: support}
@@ -35,6 +35,6 @@ The following alternatives are possible causes:
 You can fix this problem in the following ways:
 {: tsResolve}
 
-- **Scenario A.** Make your image smaller.
+- **Scenario A.** Reduce the size of your image.
 - **Scenario B.** Store and pull your images in the same location.
 - **Scenario C.** If you're using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_full}} Container Platform, you can pull images over the private network to get a faster speed.

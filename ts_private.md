@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-02"
+lastupdated: "2024-04-25"
 
 keywords: error, iam, access denied, access, private network,
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting errors about using a private network?
+# Why am I getting errors about using a private network in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-private}
 {: troubleshoot}
 {: support}

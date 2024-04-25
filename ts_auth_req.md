@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-04-25"
 
 keywords: registry, access, authorization required, error, API key, client, token, region, CRG0014E
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting `Authorization required` errors?
+# Why am I getting `Authorization required` errors in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-auth-req}
 {: troubleshoot}
 {: support}

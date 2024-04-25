@@ -16,9 +16,11 @@ toc:
       - topic: getting-started.md
         navtitle: Getting started with Container Registry
       - topic: registry_overview.md
+        navtitle: About Container Registry
       - topic: registry_architecture.md
         navtitle: Container Registry architecture and workload
-      - registry_public_images.md
+      - topic: registry_public_images.md
+        navtitle: Public IBM images
       - link:
           label: What are containers?
           href: https://www.ibm.com/topics/containers
@@ -30,11 +32,14 @@ toc:
           - registry_notices_wildcard_domains.md
           - registry_notices_va_v4.md
           - registry_notices_vpe.md
-          - registry_notices_ip_address.md
+          - topic: registry_notices_ip_address.md
+            navtitle: Changes to private IP addresses from 15 December 2022
           - registry_notices_lists.md
           - registry_notices_iam_private_network.md
-          - registry_notices_iam_policy.md
-          - registry_notices_docker.md
+          - topic: registry_notices_iam_policy.md
+            navtitle: IAM access policies are required from 5 July 2022
+          - topic: registry_notices_docker.md
+            navtitle: Minimum supported Docker version from 1 March 2022
       - topic: registry_release_notes.md
         navtitle: Release notes
   - navgroup:
@@ -52,12 +57,17 @@ toc:
   - navgroup:
       id: howto
       topics:
-      - registry_setup_cli_namespace.md
+      - topic: registry_setup_cli_namespace.md
+        navtitle: Setting up the CLI and namespace
       - registry_rhos.md
-      - registry_images_.md
-      - registry_helm_charts.md
-      - registry_retention.md
-      - registry_quota.md
+      - topic: registry_images_.md
+        navtitle: Adding images to your namespace
+      - topic: registry_helm_charts.md
+        navtitle: Using Helm charts
+      - topic: registry_retention.md
+        navtitle: Cleaning up your namespaces
+      - topic: registry_quota.md
+        navtitle: Managing quota limits for storage and pull traffic
       - topicgroup:
           label: Managing user access
           topics:
@@ -69,23 +79,26 @@ toc:
             navtitle: Defining IAM access policies
       - va_index.md
       - topic: terraform.md
-        navtitle: Setting up Terraform for Container Registry
+        navtitle: Setting up Terraform
       - topicgroup:
           label: Enhancing security
           topics:
           - topic: manage-scc.md
             navtitle: Managing security and compliance
           - topic: registry_vpe.md
-            navtitle: Using VPE for VPC to privately connect
-          - registry_private.md
+            navtitle: Using VPE for VPC to connect privately
+          - topic: registry_private.md
+            navtitle: Securing your connection
           - topic: registry_encrypt_images.md
             navtitle: Encrypting images for content confidentiality
           - topic: delete-data.md
             navtitle: Managing your data
-          - registry_trusted_content.md
+          - topic: registry_trusted_content.md
+            navtitle: Signing images for trusted content
           - topic: registry_iam_ip.md
             navtitle: Using IAM IP address access restrictions
-          - registry_security_enforce_portieris.md
+          - topic: registry_security_enforce_portieris.md
+            navtitle: Enforcing container image security by using Portieris
           - registry_cbr.md
       - topicgroup:
           label: Observability
@@ -96,7 +109,8 @@ toc:
             navtitle: Auditing events
           - topic: registry_logs.md
             navtitle: Analyzing logs
-          - registry_at_iam.md
+          - topic: registry_at_iam.md
+            navtitle: IAM and {{site.data.keyword.at_short}} actions by API method
   - navgroup:
       id: reference
       topics:
@@ -104,8 +118,10 @@ toc:
           label: Container Registry CLI
           topics:
           - container-registry-cli.md
-          - registry_cli_list.md
-          - registry_change_log.md
+          - topic: registry_cli_list.md
+            navtitle: Formatting and filtering the CLI output
+          - topic: registry_change_log.md
+            navtitle: CLI change log
       - topicgroup:
           label: High availability and disaster recovery
           topics:
@@ -152,41 +168,69 @@ toc:
               - ts_login.md
               - ts_login_expire.md
               - ts_get_started.md
-              - ts_login_error.md
-              - ts_docker_mac.md
+              - topic: ts_login_error.md
+                navtitle: Why do commands fail saying they're not registered?
+              - topic: ts_docker_mac.md
+                navtitle: Why is `docker login` on my Mac failing?
           - topicgroup:
               label: Troubleshooting pull and push errors
               topics:
-              - ts_push_pull_docker.md
-              - ts_pull_performance.md
-              - ts_auth_req.md
-              - ts_unauthorized_ce.md
-              - ts_cosign_podman.md
-              - ts_access_denied.md
-              - ts_resource.md
-              - ts_scope.md
-              - ts_quota.md
-              - ts_private.md
-              - ts_forbidden_ce.md
+              - topic: ts_push_pull_docker.md
+                navtitle: Why can't I push or pull a Docker image?
+              - topic: ts_pull_performance.md
+                navtitle: Why is pulling images slow?
+              - topic: ts_auth_req.md
+                navtitle: Why am I getting `Authorization required` errors?
+              - topic: ts_unauthorized_ce.md
+                navtitle: Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}}?
+              - topic: ts_cosign_podman.md
+                navtitle: Why am I having problems when I try to pull an image with `cosign` when I'm using Podman?
+              - topic: ts_access_denied.md
+                navtitle: Why am I getting `Access denied` errors?
+              - topic: ts_resource.md
+                navtitle: Why am I getting errors for a resource?
+              - topic: ts_scope.md
+                navtitle: Why am I getting errors about insufficient scope?
+              - topic: ts_quota.md
+                navtitle: Why am I getting errors about my quota?
+              - topic: ts_private.md
+                navtitle: Why am I getting errors about using a private network?
+              - topic: ts_forbidden_ce.md
+                navtitle: Why am I getting a `Forbidden` error when I'm using {{site.data.keyword.codeengineshort}}?
               - include: ../containers/ts-app-02-imgpull.md
           - topicgroup:
               label: Troubleshooting CLI commands
               topics:
-              - ts_add_namespace.md
-              - ts_namespace_auth.md
-              - ts_image_find.md
-              - ts_namespace_resource_list.md
-              - ts_image_timeout.md
-              - ts_docker_latest.md
-              - ts_image_rm.md
-              - ts_image_list_retention.md
-              - ts_image_restore.md
-              - ts_image_restore_digest.md
-              - ts_manifest_unknown.md
-              - ts_manifest_error_type.md
-              - ts_manifest_error_version.md
-              - ts_manifest_list_error.md
-              - ts_va_version_error.md
+              - topic: ts_add_namespace.md
+                navtitle: Why can't I add a namespace?
+              - topic: ts_namespace_auth.md
+                navtitle: When I create a namespace, why aren't I authorized to access the specified resource?
+              - topic: ts_image_find.md
+                navtitle: Why can't I find my image or my namespace?
+              - topic: ts_namespace_resource_list.md
+                navtitle: Why don't all my namespaces show in the Resource list?
+              - topic: ts_image_timeout.md
+                navtitle: Why is it timing out when I list images?
+              - topic: ts_docker_latest.md
+                navtitle: Why can't I pull the newest image by using the `latest` tag?
+              - topic: ts_image_rm.md
+                navtitle: Why do all the tags get deleted when I delete an image?
+              - topic: ts_image_list_retention.md
+                navtitle: Why doesn't the retention command show all the images?
+              - topic: ts_image_restore.md
+                navtitle: Why do I get an error when I'm restoring an image?
+              - topic: ts_image_restore_digest.md
+                navtitle: Why aren't all the tags restored when I restore by digest?
+              - topic: ts_manifest_unknown.md
+                navtitle: Why do I get a manifest unknown error?
+              - topic: ts_manifest_error_type.md
+                navtitle: Why do I get a manifest type error when I tag my image?
+              - topic: ts_manifest_error_version.md
+                navtitle: Why do I get a manifest version error?
+              - topic: ts_manifest_list_error.md
+                navtitle: Why do I get a manifest list invalid error?
+              - topic: ts_va_version_error.md
+                navtitle: Why do I get an error about an invalid version of Vulnerability Advisor being specified?
           - topicgroup:
               label: Troubleshooting networking
               topics:
@@ -195,8 +239,10 @@ toc:
           - topicgroup:
               label: Troubleshooting Portieris
               topics:
-              - ts_pods.md
+              - topic: ts_pods.md
+                navtitle: Why don't my pods restart after my workers are down?
       - topic: registry_faq.md
         navtitle: Frequently asked questions (FAQs)
       - registry_help_support.md
-      - sitemap.md
+      - topic: sitemap.md
+        navtitle: Site map

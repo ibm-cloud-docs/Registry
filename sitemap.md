@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-25"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -12,9 +12,8 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Site map
+# Site map for {{site.data.keyword.registryshort_notm}}
 {: #sitemap}
-
 
 
 
@@ -41,11 +40,11 @@ subcollection: Registry
 * [Next steps in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started#gs_get_start_next)
 
 
-## About {{site.data.keyword.registryshort_notm}}
-{: #sitemap_about_}
+## About Container Registry
+{: #sitemap_about_container_registry}
 
 
-[About {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_overview#registry_overview)
+[About Container Registry](/docs/Registry?topic=Registry-registry_overview#registry_overview)
 
 * [Service plans](/docs/Registry?topic=Registry-registry_overview#registry_plans)
 
@@ -121,11 +120,11 @@ subcollection: Registry
 * [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
 
 
-## Public {{site.data.keyword.IBM_notm}} images
-{: #sitemap_public_images}
+## Public IBM images
+{: #sitemap_public_ibm_images}
 
 
-[Public {{site.data.keyword.IBM_notm}} images](/docs/Registry?topic=Registry-public_images#public_images)
+[Public IBM images](/docs/Registry?topic=Registry-public_images#public_images)
 
 * [Accessing the public IBM images by using the CLI](/docs/Registry?topic=Registry-public_images#public_images_cli)
 
@@ -671,11 +670,11 @@ subcollection: Registry
 * [Related content](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-7)
 
 
-## Setting up the {{site.data.keyword.registryshort}} CLI and namespace
+## Setting up the CLI and namespace
 {: #sitemap_setting_up_the_cli_and_namespace}
 
 
-[Setting up the {{site.data.keyword.registryshort}} CLI and namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace)
+[Setting up the CLI and namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace)
 
 * [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)
 
@@ -909,11 +908,11 @@ subcollection: Registry
     * [Setting exemption policies by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_managing_policy_cli)
 
 
-## Setting up Terraform for Container Registry
-{: #sitemap_setting_up_terraform_for_container_registry}
+## Setting up Terraform
+{: #sitemap_setting_up_terraform}
 
 
-[Setting up Terraform for Container Registry](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-setup)
+[Setting up Terraform](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-setup)
 
 * [Installing Terraform and creating a {{site.data.keyword.registryshort}} namespace](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-install)
 
@@ -926,7 +925,7 @@ subcollection: Registry
 
 [Managing security and compliance](/docs/Registry?topic=Registry-manage-security-compliance#manage-security-compliance)
 
-[Using VPE for VPC to privately connect](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
+[Using VPE for VPC to connect privately](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
 
 * [Before you begin](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_prereqs)
 
@@ -936,7 +935,7 @@ subcollection: Registry
 
     * [Configuring an endpoint gateway](/docs/Registry?topic=Registry-registry_vpe#registry_endpoint-gateway-servicename)
 
-[Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private#registry_private)
+[Securing your connection](/docs/Registry?topic=Registry-registry_private#registry_private)
 
 * [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images)
 
@@ -1424,7 +1423,7 @@ subcollection: Registry
 
     * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
 
-[{{site.data.keyword.registryshort}} CLI change log](/docs/Registry?topic=Registry-registry_cli_change_log#registry_cli_change_log)
+[CLI change log](/docs/Registry?topic=Registry-registry_cli_change_log#registry_cli_change_log)
 
 * [Version 1.3.7](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-137)
 
@@ -1572,9 +1571,9 @@ subcollection: Registry
 
 [Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started#troubleshoot-get-started)
 
-[Why do commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
+[Why do commands fail saying they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
-[Why is Docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
+[Why is `docker login` on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 
 
 ### Troubleshooting pull and push errors
@@ -1624,7 +1623,7 @@ subcollection: Registry
 
 [Why can't I find my image or my namespace?](/docs/Registry?topic=Registry-troubleshoot-image-find#troubleshoot-image-find)
 
-[Why don't all my namespaces show in the **Resource list**?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
+[Why don't all my namespaces show in the Resource list?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
 
 [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout#troubleshoot-image-timeout)
 
@@ -1653,7 +1652,7 @@ subcollection: Registry
 {: #sitemap_troubleshooting_networking}
 
 
-[Why can't I access the registry through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall#troubleshoot-firewall)
+[Why can't I access {{site.data.keyword.registryshort_notm}} through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall#troubleshoot-firewall)
 
 [Why can't I connect to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-connect#troubleshoot-connect)
 
@@ -1673,47 +1672,47 @@ subcollection: Registry
 
 * [Frequently asked questions about {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_faq#registry_faq_registry)
 
-    * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
+    * [How do you list public images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
 
-    * [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
+    * [What tools can I use to build and push images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
-    * [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
+    * [How many namespaces can you have in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
-    * [Can I rename a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_rename)
+    * [Can I rename a namespace in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_rename)
 
-    * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
+    * [Do images in the trash count toward my quota in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 
-    * [How do I find the image digest?](/docs/Registry?topic=Registry-registry_faq#faq_digest)
+    * [How do I find the image digest in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_digest)
 
-    * [How do I use digests to work with images?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
+    * [How do I use digests to work with images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
 
-    * [How do I list images that are more than a year old?](/docs/Registry?topic=Registry-registry_faq#faq_images_year_old)
+    * [How do I list images that are more than a year old in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_images_year_old)
 
-    * [How do you use access control?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
+    * [How do you use access control in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
-    * [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
+    * [How can I share an image with many users in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
 
-    * [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
+    * [Do I have any untagged images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
 
-    * [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
+    * [Do I need untagged images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
 
-    * [What are eligible images?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
+    * [What are eligible images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
 
-    * [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
+    * [What regions are available in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 
 * [Frequently asked questions about Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq#registry_faq_va)
 
     * [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq#faq_va_cost)
 
-    * [Can images from other registries be scanned?](/docs/Registry?topic=Registry-registry_faq#faq_va_reg)
+    * [Can images from other registries be scanned by Vulnerability Advisor?](/docs/Registry?topic=Registry-registry_faq#faq_va_reg)
 
     * [How is a Vulnerability Advisor scan triggered?](/docs/Registry?topic=Registry-registry_faq#faq_va_trigger_scan)
 
     * [Why doesn't my image scan in Vulnerability Advisor v4?](/docs/Registry?topic=Registry-registry_faq#faq_va_v4_scan)
 
-    * [Why doesn't a new image scan?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
+    * [Why doesn't a new image scan in Vulnerability Advisor?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
 
-    * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
+    * [How often are the security notices updated in Vulnerability Advisor?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
 
     * [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-04-25"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -22,7 +22,7 @@ Use {{site.data.keyword.registrylong}} to store and access private container ima
 
 ![Diagram showing how you can interact with IBM Cloud Container Registry.](images/about_container_registry_v2.svg "Diagram showing how you can interact with {{site.data.keyword.registryshort}}. {{site.data.keyword.registryshort}} contains both private and public namespaces, and APIs to interact with the service. Your local image store interacts with both {{site.data.keyword.registryshort}} and other registries, which in turn interact with your Kubernetes cluster. The {{site.data.keyword.cloud_notm}} web GUI ({{site.data.keyword.cloud_notm}} console) interacts with the {{site.data.keyword.registryshort}} API to list images. The {{site.data.keyword.registryshort}} CLI interacts with the API to list, inspect, and remove images, create namespaces, and perform other administrative functions."){: caption="Figure 1. How {{site.data.keyword.registryshort}} interacts with your images" caption-side="bottom"}{: external download="../images/about_container_registry_v2.svg"}
 
-A Docker image is the basis for every container that you create. An image is created from a [Dockerfile](#x9860414){: term}, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the configuration of the app, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry). By using {{site.data.keyword.registryshort}}, only users with access to your {{site.data.keyword.cloud_notm}} account can access your images.
+A Docker image is the basis for every container that you create. An image is created from a [Dockerfile](#x9860414){: term}, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the configuration of the app, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a group of users (private registry). By using {{site.data.keyword.registryshort}}, only users with access to your {{site.data.keyword.cloud_notm}} account can access your images.
 
 When you push images to {{site.data.keyword.registryshort}}, you benefit from the built-in Vulnerability Advisor features that scan for potential security issues and vulnerabilities. Vulnerability Advisor checks for vulnerable packages in specific Docker base images, and known vulnerabilities in app configuration settings. When vulnerabilities are found, information about the vulnerability is provided. You can use this information to resolve security issues so that containers are not deployed from vulnerable images.
 
@@ -274,7 +274,7 @@ A collection of repositories that store your container images in {{site.data.key
 
 A registry namespace is made up of one or more repositories.
 
-When you set up your own namespace in {{site.data.keyword.registryshort}}, the namespace is appended to the registry URL, `<region>.icr.io/my_namespace`. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Every user in your {{site.data.keyword.cloud_notm}} account can view and work with images that are stored in your registry namespace.
+When you set up your own namespace in {{site.data.keyword.registryshort}}, the namespace is appended to the registry URL `<region>.icr.io/my_namespace`. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Every user in your {{site.data.keyword.cloud_notm}} account can view and work with images that are stored in your registry namespace.
 
 You can have 100 namespaces in each region.
 {: note}
@@ -286,7 +286,7 @@ Namespaces that are assigned to a resource group show in the **Resource list** p
 ### Repository
 {: #overview_elements_repository}
 
-A collection of related container images in the container registry that are distinguished by tag or digest only.
+A collection of related container images in the {{site.data.keyword.registryshort}} that are distinguished by tag or digest only.
 
 Repository is often used interchangeably with container image, but a repository potentially holds multiple tagged variants of a container image.
 

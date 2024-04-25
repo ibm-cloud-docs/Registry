@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-25"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IAM and {{site.data.keyword.at_short}} actions by API method
+# IAM and {{site.data.keyword.at_short}} actions by API method for {{site.data.keyword.registryshort_notm}}
 {: #registry_at_iam}
 
 When you use {{site.data.keyword.registrylong}} through the command line or console, the service calls application programming interface (API) methods to complete your requests.

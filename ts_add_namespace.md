@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-04-25"
 
 keywords: registry, namespace, value, characters, delete
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I add a namespace?
+# Why can't I add a namespace in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-add-namespace}
 {: troubleshoot}
 {: support}

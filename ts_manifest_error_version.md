@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-04-25"
 
 keywords: error, registry, manifest version, manifest version error, tag, image, the manifest version for this image is not supported for tagging, CRI0301E
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get a manifest version error?
+# Why do I get a manifest version error in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-manifest-error-version}
 {: troubleshoot}
 {: support}

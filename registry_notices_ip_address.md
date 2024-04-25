@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-07"
+  years: 2022, 2024
+lastupdated: "2024-04-25"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, ip address
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Changes to private IP addresses from 15 December 2022
+# Changes to private IP addresses for {{site.data.keyword.registryshort_notm}} from 15 December 2022
 {: #registry_notices_ip_address}
 
 The {{site.data.keyword.registrylong}} private IP addresses that were replaced on 5 July 2022 are being decommissioned on 15 December 2022.
@@ -35,5 +35,3 @@ You must ensure that any cluster workers that have not been reloaded, replaced, 
 If you have any other custom configuration that uses the old {{site.data.keyword.registryshort}} private IP addresses, such as for firewall rules or Calico policies, ensure that you update your configuration to use the new {{site.data.keyword.registryshort}} IP addresses and remove the old IP addresses. Both the old and new private IP addresses are documented in the {{site.data.keyword.containerlong_notm}} documentation, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 The {{site.data.keyword.containerlong_notm}} [Calico policy samples](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external} will be updated to remove the old IP addresses on 15 December 2022. If you use these samples, ensure that you pull in the most recent samples after this date.
-
-
