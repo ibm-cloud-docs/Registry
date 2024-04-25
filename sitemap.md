@@ -1571,7 +1571,7 @@ subcollection: Registry
 
 [Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started#troubleshoot-get-started)
 
-[Why do commands fail saying they are not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
+[Why do commands fail saying they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
 [Why is `docker login` on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 

@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do {{site.data.keyword.registryshort_notm}} commands fail saying they are not registered?
+# Why do {{site.data.keyword.registryshort_notm}} commands fail saying they're not registered?
 {: #troubleshoot-login-error}
 {: troubleshoot}
 {: support}

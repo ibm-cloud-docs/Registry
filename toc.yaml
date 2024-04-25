@@ -169,7 +169,7 @@ toc:
               - ts_login_expire.md
               - ts_get_started.md
               - topic: ts_login_error.md
-                navtitle: Why do commands fail saying they are not registered?
+                navtitle: Why do commands fail saying they're not registered?
               - topic: ts_docker_mac.md
                 navtitle: Why is `docker login` on my Mac failing?
           - topicgroup:
