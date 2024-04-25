@@ -1725,11 +1725,11 @@ subcollection: Registry
     * [Does Vulnerability Advisor have versions?](/docs/Registry?topic=Registry-registry_faq#faq_va_versions)
 
 
-## Getting help and support for {{site.data.keyword.registryshort_notm}}
-{: #sitemap_getting_help_and_support_for_}
+## Getting help and support
+{: #sitemap_getting_help_and_support}
 
 
-[Getting help and support for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-help-and-support#help-and-support)
+[Getting help and support](/docs/Registry?topic=Registry-help-and-support#help-and-support)
 
 * [Providing support case details](/docs/Registry?topic=Registry-help-and-support#support-case-details)
 
