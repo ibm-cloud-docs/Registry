@@ -23,7 +23,7 @@ Frequently asked questions (FAQs) about {{site.data.keyword.registrylong}} and V
 ## Frequently asked questions about {{site.data.keyword.registryshort_notm}}
 {: #registry_faq_registry}
 
-### How do you list public images in {{site.data.keyword.registryshort_notm}}?
+### How do you list public images?
 {: #faq_list_public_images}
 {: faq}
 
@@ -39,19 +39,19 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-### What tools can I use to build and push images in {{site.data.keyword.registryshort_notm}}?
+### What tools can I use to build and push images?
 {: #faq_tools}
 {: faq}
 
 You can use Docker and non-Docker tools to build and push images to the registry. You can use non-Docker tools that support [OCI container image](#x9860419){: term} format and protocol. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
-### How many namespaces can you have in {{site.data.keyword.registryshort_notm}}?
+### How many namespaces can you have?
 {: #faq_namespace}
 {: faq}
 
 You can have 100 registry namespaces in each region.
 
-### Can I rename a namespace in {{site.data.keyword.registryshort_notm}}?
+### Can I rename a namespace?
 {: #faq_namespace_rename}
 {: faq}
 
@@ -69,13 +69,13 @@ done
 ```
 {: codeblock}
 
-### Do images in the trash count toward my quota in {{site.data.keyword.registryshort_notm}}?
+### Do images in the trash count toward my quota?
 {: #faq_trash}
 {: faq}
 
 Images that are in the trash don't count toward your quota.
 
-### How do I find the image digest in {{site.data.keyword.registryshort_notm}}?
+### How do I find the image digest?
 {: #faq_digest}
 {: faq}
 
@@ -101,7 +101,7 @@ When you're using the digest to identify an image, always use the long format.
     If you run the `ibmcloud cr image-list` command without the `--no-trunc` option, you see the truncated format of the digest.
     {: note}
 
-### How do I use digests to work with images in {{site.data.keyword.registryshort_notm}}?
+### How do I use digests to work with images?
 {: #faq_digest_use}
 {: faq}
 
@@ -109,7 +109,7 @@ The [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_d
 
 To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
 
-### How do I list images that are more than a year old in {{site.data.keyword.registryshort_notm}}?
+### How do I list images that are more than a year old?
 {: #faq_images_year_old}
 {: faq}
 
@@ -121,13 +121,13 @@ ibmcloud cr digests --format '{{ if (lt .Created '$year')}}{{.Repository}}:{{.Di
 ```
 {: pre}
 
-### How do you use access control in {{site.data.keyword.registryshort_notm}}?
+### How do you use access control?
 {: #faq_access_control}
 {: faq}
 
 You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) policies to control access to your namespaces in {{site.data.keyword.registrylong_notm}}. For more information, see [Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial](/docs/Registry?topic=Registry-iam_access) and [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
-### How can I share an image with many users in {{site.data.keyword.registryshort_notm}}?
+### How can I share an image with many users?
 {: #faq_share_image}
 {: faq}
 
@@ -135,13 +135,13 @@ You can create an {{site.data.keyword.cloud_notm}} account and invite all the us
 
 For more information, see [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 
-### Do I have any untagged images in {{site.data.keyword.registryshort_notm}}?
+### Do I have any untagged images?
 {: #faq_untagged_image_1}
 {: faq}
 
 To find out whether you have any [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, list your images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. Untagged images have a hyphen (-) in the **Tags** column.
 
-### Do I need untagged images in {{site.data.keyword.registryshort_notm}}?
+### Do I need untagged images?
 {: #faq_untagged_image_2}
 {: faq}
 
@@ -150,7 +150,7 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 - The image was deployed by using the digest as the reference. For example, {{site.data.keyword.codeenginefull_notm}} does resolve and use an image digest when it is serving applications, see [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app&interface=ui).
 - The image reference was mutated by a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
 
-### What are eligible images in {{site.data.keyword.registryshort_notm}}?
+### What are eligible images?
 {: #faq_eligible_image}
 {: faq}
 
@@ -162,7 +162,7 @@ Images created before `2013-01-19T00:13:39Z` are excluded from retention policy 
 
 For more information, see [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan).
 
-### What regions are available in {{site.data.keyword.registryshort_notm}}?
+### What regions are available?
 {: #faq_regions}
 {: faq}
 

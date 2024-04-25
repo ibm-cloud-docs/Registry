@@ -149,7 +149,7 @@ subcollection: Registry
 
 * [What actions you must take by 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_action)
 
-[Upcoming public networking changes for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
+[Upcoming public networking changes](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
 
 [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_va_v4)
 
@@ -1104,7 +1104,7 @@ subcollection: Registry
 
 * [Where to look for {{site.data.keyword.la_full_notm}} logs](/docs/Registry?topic=Registry-registry_logs#registry_logs_region)
 
-[IAM and {{site.data.keyword.at_short}} actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
+[IAM and Activity Tracker actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
 
 * [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg)
 
@@ -1573,7 +1573,7 @@ subcollection: Registry
 
 [Why do commands fail saying they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
-[Why is `docker login` on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
+[Why is docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 
 
 ### Troubleshooting pull and push errors
@@ -1584,7 +1584,7 @@ subcollection: Registry
 
 [Why is pulling images slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance#troubleshoot-pull-performance)
 
-[Why am I getting `Authorization required` errors?](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req)
+[Why am I getting Authorization required errors?](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req)
 
 * [Scenario A. You're trying to push or pull an image](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req-push-pull)
 
@@ -1592,11 +1592,11 @@ subcollection: Registry
 
 * [Scenario C. You're trying to use the API](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req-api)
 
-[Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce#troubleshoot-unauthorized-ce)
+[Why am I getting an Unauthorized error when I'm using Code Engine?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce#troubleshoot-unauthorized-ce)
 
-[Why am I having problems when I try to pull an image with `cosign` when I'm using Podman?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman#troubleshoot-cosign-podman)
+[Why am I having problems when I try to pull an image with cosign when I'm using Podman?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman#troubleshoot-cosign-podman)
 
-[Why am I getting `Access denied` errors?](/docs/Registry?topic=Registry-troubleshoot-access-denied#troubleshoot-access-denied)
+[Why am I getting Access denied errors?](/docs/Registry?topic=Registry-troubleshoot-access-denied#troubleshoot-access-denied)
 
 [Why am I getting errors for a resource?](/docs/Registry?topic=Registry-troubleshoot-resource#troubleshoot-resource)
 
@@ -1606,7 +1606,7 @@ subcollection: Registry
 
 [Why am I getting errors about using a private network?](/docs/Registry?topic=Registry-troubleshoot-private#troubleshoot-private)
 
-[Why am I getting a `Forbidden` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce#troubleshoot-forbidden-ce)
+[Why am I getting a Forbidden error when I'm using Code Engine?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce#troubleshoot-forbidden-ce)
 
 [Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull#ts-app-image-pull)
 
@@ -1627,7 +1627,7 @@ subcollection: Registry
 
 [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout#troubleshoot-image-timeout)
 
-[Why can't I pull the newest image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest#troubleshoot-docker-latest)
+[Why can't I pull the newest image by using the latest tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest#troubleshoot-docker-latest)
 
 [Why do all the tags get deleted when I delete an image?](/docs/Registry?topic=Registry-troubleshoot-image-rm#troubleshoot-image-rm)
 
@@ -1672,33 +1672,33 @@ subcollection: Registry
 
 * [Frequently asked questions about {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_faq#registry_faq_registry)
 
-    * [How do you list public images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
+    * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
 
-    * [What tools can I use to build and push images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
+    * [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
-    * [How many namespaces can you have in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
+    * [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
-    * [Can I rename a namespace in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_rename)
+    * [Can I rename a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_rename)
 
-    * [Do images in the trash count toward my quota in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
+    * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 
-    * [How do I find the image digest in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_digest)
+    * [How do I find the image digest?](/docs/Registry?topic=Registry-registry_faq#faq_digest)
 
-    * [How do I use digests to work with images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
+    * [How do I use digests to work with images?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
 
-    * [How do I list images that are more than a year old in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_images_year_old)
+    * [How do I list images that are more than a year old?](/docs/Registry?topic=Registry-registry_faq#faq_images_year_old)
 
-    * [How do you use access control in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
+    * [How do you use access control?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
-    * [How can I share an image with many users in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
+    * [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
 
-    * [Do I have any untagged images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
+    * [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
 
-    * [Do I need untagged images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
+    * [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
 
-    * [What are eligible images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
+    * [What are eligible images?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
 
-    * [What regions are available in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
+    * [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 
 * [Frequently asked questions about Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq#registry_faq_va)
 
