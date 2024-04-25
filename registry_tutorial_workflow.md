@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-04-25"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -28,7 +28,7 @@ Use this tutorial to find out about the basic functions of both {{site.data.keyw
 
 These two services are pre-integrated and work together seamlessly in {{site.data.keyword.cloud_notm}}, and their features provide a robust but straightforward workflow for users of containers. You can use these services to store your container images, ensure the security of your images and Kubernetes clusters, control the images that you can use to deploy to your clusters, and more.
 
-Much of the information that is provided in this tutorial is available in greater detail in the "How To" sections of the documentation. This tutorial combines all those tasks into a workflow that helps you to use {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor. To learn more about each task, click the relevant link.
+Much of the information that is provided in this tutorial is available in greater detail in the "How To" section of the documentation. This tutorial combines all those tasks into a workflow that helps you to use {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor. To learn more about each task, click the relevant link.
 
 ## Objectives
 {: #registry_tutorial_workflow_objectives}
@@ -194,7 +194,7 @@ Throughout this tutorial, replace `<my_cluster>` with the name of your free Kube
     ```
     {: pre}
 
-    If you see "Hello, world!", you're good to go.
+    If you see "Hello, world!" you're good to go.
 
 ## Secure your images and clusters
 {: #registry_tutorial_workflow_secure}
@@ -294,7 +294,7 @@ Despite the vulnerability that is present in your image, you're still able to de
     ```
     {: screen}
 
-    The Vulnerability Advisor verdict is subject to any [exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy) that you create. If you want to use an image that Vulnerability Advisor considers vulnerable, you can exempt one, or more vulnerabilities so that Vulnerability Advisor doesn't consider them in its verdict. You can see whether an issue is exempted by looking at the `Policy Status` column in the output of the `ibmcloud cr va` command, and you can also list your exemptions by running the [`ibmcloud cr exemption-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list) command.
+    The Vulnerability Advisor verdict is subject to any [exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy) that you create. If you want to use an image that Vulnerability Advisor considers vulnerable, you can exempt one or more vulnerabilities so that Vulnerability Advisor doesn't consider them in its verdict. You can see whether an issue is exempted by looking at the `Policy Status` column in the output of the `ibmcloud cr va` command, and you can also list your exemptions by running the [`ibmcloud cr exemption-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list) command.
     {: note}
 
 ### Resolve vulnerabilities in your image
@@ -360,7 +360,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 {: #registry_tutorial_workflow_deploy_nondefault_namespaces}
 {: step}
 
-An {{site.data.keyword.containerlong_notm}} cluster can automatically pull images from {{site.data.keyword.registrylong_notm}} to the `default` Kubernetes namespace. However, if you want to deploy to namespaces other than `default`, you must take extra steps.
+An {{site.data.keyword.containerlong_notm}} cluster can automatically pull images from {{site.data.keyword.registrylong_notm}} to the `default` Kubernetes namespace. However, if you want to deploy to namespaces other than `default`, you must take further steps.
 
 Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different. For more information about {{site.data.keyword.registrylong_notm}} namespaces, see [Registry namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace). For more information about Kubernetes namespaces, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external}.
 {: tip}

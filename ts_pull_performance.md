@@ -35,6 +35,6 @@ The following alternatives are possible causes:
 You can fix this problem in the following ways:
 {: tsResolve}
 
-- **Scenario A.** Make your image smaller.
+- **Scenario A.** Reduce the size of your image.
 - **Scenario B.** Store and pull your images in the same location.
 - **Scenario C.** If you're using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_full}} Container Platform, you can pull images over the private network to get a faster speed.
