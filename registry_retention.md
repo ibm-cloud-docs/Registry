@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-02"
+lastupdated: "2024-04-25"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Cleaning up your namespaces
+# Cleaning up your namespaces in {{site.data.keyword.registryshort_notm}}
 {: #registry_retention}
 
 You can clean up your [namespace](#x2031005){: term} by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registrylong}}.

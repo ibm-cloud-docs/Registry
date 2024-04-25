@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-04-25"
 
 keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error, image, repository, CRI0304E
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get a manifest list invalid error?
+# Why do I get a manifest list invalid error in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-manifest-list-error}
 {: troubleshoot}
 {: support}

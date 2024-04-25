@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-02"
+lastupdated: "2024-04-25"
 
 keywords: registry, image, retention, distroless, list, creation date
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why doesn't the retention command show all the images?
+# Why doesn't the retention command show all the images in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-image-list-retention}
 {: troubleshoot}
 {: support}

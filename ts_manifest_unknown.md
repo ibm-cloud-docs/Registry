@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-01-31"
+  years: 2022, 2024
+lastupdated: "2024-04-25"
 
 keywords: error, registry, manifest unknown, manifest, manifest unknown error
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get a manifest unknown error?
+# Why do I get a manifest unknown error in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-manifest-unknown}
 {: troubleshoot}
 {: support}

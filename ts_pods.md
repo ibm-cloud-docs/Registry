@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-04-25"
 
 keywords: pods, worker, cluster workers, portieris, webhook
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why don't my pods restart after my workers are down?
+# Why don't my pods restart after my workers are down when I'm using {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-pods}
 {: troubleshoot}
 {: support}

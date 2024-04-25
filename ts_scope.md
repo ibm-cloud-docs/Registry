@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-03"
+lastupdated: "2024-04-25"
 
 keywords: error, iam, access denied, access, insufficient scope, scope
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting errors about insufficient scope?
+# Why am I getting errors about insufficient scope in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-scope}
 {: troubleshoot}
 {: support}

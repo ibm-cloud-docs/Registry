@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-04-13"
+  years: 2023, 2024
+lastupdated: "2024-04-25"
 
 keywords: error, registry, access, error, code engine, forbidden
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting a `Forbidden` error when I'm using {{site.data.keyword.codeengineshort}}?
+# Why am I getting a `Forbidden` error accessing {{site.data.keyword.registryshort_notm}} when I'm using {{site.data.keyword.codeengineshort}}?
 {: #troubleshoot-forbidden-ce}
 {: troubleshoot}
 {: support}

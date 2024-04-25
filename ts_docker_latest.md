@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-04-25"
 
-keywords: docker, latest, image, tag, latest tag
+keywords: docker, latest, image, tag, latest tag, most recent
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I pull the newest image by using the `latest` tag?
+# Why can't I pull the newest image by using the `latest` tag in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-docker-latest}
 {: troubleshoot}
 {: support}

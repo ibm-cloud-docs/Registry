@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-18"
+  years: 2020, 2024
+lastupdated: "2024-04-25"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -17,7 +17,7 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Encrypting images for content confidentiality
+# Encrypting images for content confidentiality in {{site.data.keyword.registryshort_notm}}
 {: #registry_encrypt}
 {: toc-content-type="tutorial"}
 {: toc-services="key-protect"}

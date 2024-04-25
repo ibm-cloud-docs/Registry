@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-06-20"
+  years: 2017, 2024
+lastupdated: "2024-04-25"
 
 keywords: registry, delete, image, tag, ibmcloud cr image-rm
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do all the tags get deleted when I delete an image?
+# Why do all the tags get deleted when I delete an image in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-image-rm}
 {: troubleshoot}
 {: support}

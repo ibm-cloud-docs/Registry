@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-04-13"
+  years: 2018, 2024
+lastupdated: "2024-04-25"
 
 keywords: Public IBM images, images, accessing images, container images, public images, cli
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Public {{site.data.keyword.IBM_notm}} images
+# Public {{site.data.keyword.IBM_notm}} images available in {{site.data.keyword.registryshort_notm}}
 {: #public_images}
 
 You can access the images that are provided by {{site.data.keyword.IBM_notm}} by using the {{site.data.keyword.registrylong}} command line.
@@ -52,5 +52,3 @@ To list the public images, complete the following steps.
     ibmcloud cr images --include-ibm
     ```
     {: pre}
-
-

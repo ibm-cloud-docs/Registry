@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-09-13"
+  years: 2017, 2024
+lastupdated: "2024-04-25"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Formatting and filtering the CLI output
+# Formatting and filtering the {{site.data.keyword.registryshort_notm}} CLI output
 {: #registry_cli_list}
 
 You can format and filter the {{site.data.keyword.registrylong}} CLI output for supported {{site.data.keyword.registrylong_notm}} commands.

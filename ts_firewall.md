@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-01-27"
+  years: 2017, 2024
+lastupdated: "2024-04-25"
 
 keywords: registry, firewall, custom firewall, network, network traffic
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I access the registry through a custom firewall?
+# Why can't I access {{site.data.keyword.registryshort_notm}} through a custom firewall?
 {: #troubleshoot-firewall}
 {: troubleshoot}
 {: support}

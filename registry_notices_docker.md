@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-04-13"
+  years: 2022, 2024
+lastupdated: "2024-04-25"
 
 keywords: IBM Cloud Container Registry notices, support, docker, version, minimum
 
@@ -12,10 +12,8 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Minimum supported Docker version from 1 March 2022
+# Minimum supported Docker version that is supported by {{site.data.keyword.registryshort_notm}} from 1 March 2022
 {: #registry_notices_docker}
 
 From 1 March 2022, the minimum version of Docker Engine that is supported by {{site.data.keyword.registrylong}} is v17.07, or later.
 {: shortdesc}
-
-

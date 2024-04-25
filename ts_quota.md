@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-03"
+lastupdated: "2024-04-25"
 
 keywords: error, iam, access denied, access, quota, pull traffic quota, image storage quota
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting errors about my quota?
+# Why am I getting errors about my quota in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-quota}
 {: troubleshoot}
 {: support}
