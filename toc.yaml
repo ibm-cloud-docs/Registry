@@ -29,7 +29,8 @@ toc:
           topics:
           - registry_notices.md
           - registry_notices_va_v3.md
-          - registry_notices_wildcard_domains.md
+          - topic: registry_notices_wildcard_domains.md
+            navtitle: Upcoming public networking changes
           - registry_notices_va_v4.md
           - registry_notices_vpe.md
           - topic: registry_notices_ip_address.md
@@ -110,7 +111,7 @@ toc:
           - topic: registry_logs.md
             navtitle: Analyzing logs
           - topic: registry_at_iam.md
-            navtitle: IAM and {{site.data.keyword.at_short}} actions by API method
+            navtitle: IAM and Activity Tracker actions by API method
   - navgroup:
       id: reference
       topics:
@@ -171,7 +172,7 @@ toc:
               - topic: ts_login_error.md
                 navtitle: Why do commands fail saying they're not registered?
               - topic: ts_docker_mac.md
-                navtitle: Why is `docker login` on my Mac failing?
+                navtitle: Why is docker login on my Mac failing?
           - topicgroup:
               label: Troubleshooting pull and push errors
               topics:
@@ -180,13 +181,13 @@ toc:
               - topic: ts_pull_performance.md
                 navtitle: Why is pulling images slow?
               - topic: ts_auth_req.md
-                navtitle: Why am I getting `Authorization required` errors?
+                navtitle: Why am I getting Authorization required errors?
               - topic: ts_unauthorized_ce.md
-                navtitle: Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}}?
+                navtitle: Why am I getting an Unauthorized error when I'm using Code Engine?
               - topic: ts_cosign_podman.md
-                navtitle: Why am I having problems when I try to pull an image with `cosign` when I'm using Podman?
+                navtitle: Why am I having problems when I try to pull an image with cosign when I'm using Podman?
               - topic: ts_access_denied.md
-                navtitle: Why am I getting `Access denied` errors?
+                navtitle: Why am I getting Access denied errors?
               - topic: ts_resource.md
                 navtitle: Why am I getting errors for a resource?
               - topic: ts_scope.md
@@ -196,7 +197,7 @@ toc:
               - topic: ts_private.md
                 navtitle: Why am I getting errors about using a private network?
               - topic: ts_forbidden_ce.md
-                navtitle: Why am I getting a `Forbidden` error when I'm using {{site.data.keyword.codeengineshort}}?
+                navtitle: Why am I getting a Forbidden error when I'm using Code Engine?
               - include: ../containers/ts-app-02-imgpull.md
           - topicgroup:
               label: Troubleshooting CLI commands
@@ -212,7 +213,7 @@ toc:
               - topic: ts_image_timeout.md
                 navtitle: Why is it timing out when I list images?
               - topic: ts_docker_latest.md
-                navtitle: Why can't I pull the newest image by using the `latest` tag?
+                navtitle: Why can't I pull the newest image by using the latest tag?
               - topic: ts_image_rm.md
                 navtitle: Why do all the tags get deleted when I delete an image?
               - topic: ts_image_list_retention.md
