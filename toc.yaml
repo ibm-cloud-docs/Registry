@@ -183,7 +183,7 @@ toc:
               - topic: ts_auth_req.md
                 navtitle: Why am I getting Authorization required errors?
               - topic: ts_unauthorized_ce.md
-                navtitle: Why am I getting an Unauthorized error when I'm using Code Engine?
+                navtitle: Why am I getting an Unauthorized error when I use Code Engine?
               - topic: ts_cosign_podman.md
                 navtitle: Why am I having problems when I try to pull an image with cosign when I'm using Podman?
               - topic: ts_access_denied.md
@@ -205,13 +205,13 @@ toc:
               - topic: ts_add_namespace.md
                 navtitle: Why can't I add a namespace?
               - topic: ts_namespace_auth.md
-                navtitle: When I create a namespace, why aren't I authorized to access the specified resource?
+                navtitle: Why aren't I authorized to access a specified resource?
               - topic: ts_image_find.md
                 navtitle: Why can't I find my image or my namespace?
               - topic: ts_namespace_resource_list.md
                 navtitle: Why don't all my namespaces show in the Resource list?
               - topic: ts_image_timeout.md
-                navtitle: Why is it timing out when I list images?
+                navtitle: Why does it time out when I list images?
               - topic: ts_docker_latest.md
                 navtitle: Why can't I pull the newest image by using the latest tag?
               - topic: ts_image_rm.md

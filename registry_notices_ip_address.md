@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, ip address
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Changes to private IP addresses for {{site.data.keyword.registryshort_notm}} from 15 December 2022
+# Changes to private IP addresses for {{site.data.keyword.registryshort}} from 15 December 2022
 {: #registry_notices_ip_address}
 
 The {{site.data.keyword.registrylong}} private IP addresses that were replaced on 5 July 2022 are being decommissioned on 15 December 2022.

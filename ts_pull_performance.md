@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 keywords: registry, slow, performance, image, pull
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why is pulling images in {{site.data.keyword.registryshort_notm}} slow?
+# Why is pulling images in {{site.data.keyword.registryshort}} slow?
 {: #troubleshoot-pull-performance}
 {: troubleshoot}
 {: support}

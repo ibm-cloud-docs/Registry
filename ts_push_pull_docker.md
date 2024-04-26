@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I push or pull a Docker image when I'm using {{site.data.keyword.registryshort_notm}}?
+# Why can't I push or pull a Docker image when I use {{site.data.keyword.registryshort}}?
 {: #troubleshoot-push-pull-docker}
 {: troubleshoot}
 {: support}

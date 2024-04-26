@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -36,17 +36,17 @@ Troubleshoot logging in problems.
 - [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire)
 - [Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started)
 - [Why do {{site.data.keyword.registryshort}} commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error)
-- [macOS]{: tag-macos} [Why is `docker login` on my Mac failing when I'm using {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-docker-mac)
+- [macOS]{: tag-macos} [Why is `docker login` on my Mac failing when I use {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-docker-mac)
 
 ### Troubleshooting pull and push errors
 {: #gettinghelp_ts_pull_push}
 
 Troubleshoot pull and push problems.
 
-- [Why can't I push or pull a Docker image when I'm using {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker)
+- [Why can't I push or pull a Docker image when I use {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker)
 - [Why is pulling images in {{site.data.keyword.registryshort}} so slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance)
 - [Why am I getting `Authorization required` errors in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-auth-req)
-    - [Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}} with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce)
+    - [Why am I getting an `Unauthorized` error when I use {{site.data.keyword.codeengineshort}} with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce)
     - [Why am I having problems when I try to pull an image with `cosign` when I'm using Podman in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman)
 - [Why am I getting `Access denied` errors in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-access-denied)
     - [Why am I getting errors for a resource in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-resource)
@@ -62,10 +62,10 @@ Troubleshoot pull and push problems.
 Troubleshoot CLI command problems.
 
 - [Why can't I add a namespace in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-add-namespace)
-- [When I create a namespace, why aren't I authorized to access the specified resource in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth)
+- [Why aren't I authorized to access a specified resource in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth)
 - [Why can't I find my image or my namespace in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-image-find)
-- [Why don't all my namespaces show in the Resource list in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list)
-- [Why is it timing out when I list images in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
+- [Why don't all my namespaces show in the resource list in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list)
+- [Why does it time out when I list images in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
 - [Why can't I pull the newest image by using the `latest` tag in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
 - [Why do all the tags get deleted when I delete an image in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-image-rm)
 - [Why doesn't the retention command show all the images in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention)
@@ -90,4 +90,4 @@ Troubleshoot networking problems.
 
 Troubleshoot Portieris problems.
 
-- [Why don't my pods restart after my workers are down when I'm using {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-pods)
+- [Why don't my pods restart after my workers are down when I use {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-pods)
