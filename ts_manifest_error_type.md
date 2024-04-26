@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 keywords: error, registry, manifest type, tag, image, the manifest type for this image is not supported for tagging, CRI0302E
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get a manifest type error when I tag my image in {{site.data.keyword.registryshort_notm}}?
+# Why do I get a manifest type error when I tag my image in {{site.data.keyword.registryshort}}?
 {: #troubleshoot-manifest-error-type}
 {: troubleshoot}
 {: support}

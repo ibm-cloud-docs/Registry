@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 keywords: error, problem, registry, docker login, mac, credentials, error saving credentials, error storing credentials, user name or passphrase you entered is not correct
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why is `docker login` on my Mac failing when I'm using {{site.data.keyword.registryshort_notm}}?
+# Why is `docker login` on my Mac failing when I use {{site.data.keyword.registryshort}}?
 {: #troubleshoot-docker-mac}
 {: troubleshoot}
 {: support}

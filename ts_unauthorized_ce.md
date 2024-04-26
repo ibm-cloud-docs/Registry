@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 keywords: error, registry, access, unauthorized, error, code engine, unauthorized
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting an `Unauthorized` error when I'm using {{site.data.keyword.codeengineshort}} with {{site.data.keyword.registryshort_notm}}?
+# Why am I getting an `Unauthorized` error when I use {{site.data.keyword.codeengineshort}} with {{site.data.keyword.registryshort}}?
 {: #troubleshoot-unauthorized-ce}
 {: troubleshoot}
 {: support}

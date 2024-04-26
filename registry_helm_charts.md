@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using Helm charts in {{site.data.keyword.registryshort_notm}}
+# Using Helm charts in {{site.data.keyword.registryshort}}
 {: #registry_helm_charts}
 
 You can securely store and share Helm charts with other users in {{site.data.keyword.registrylong}}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 keywords: registry, namespaces, resource list, resource group, console
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why don't all my namespaces show in the Resource list in {{site.data.keyword.registryshort_notm}}?
+# Why don't all my namespaces show in the resource list in {{site.data.keyword.registryshort}}?
 {: #troubleshoot-namespace-resource-list}
 {: troubleshoot}
 {: support}
