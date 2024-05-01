@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-01"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -68,6 +68,7 @@ The following table shows the backup locations.
 | `jp-osa` | `jp-osa` | `jp-tok` |
 | `us-south` | `us-south` | `us-east` |
 {: caption="Table 2. Backup locations" caption-side="bottom"}
+{: #table_backup_locations}
 
 ### What data is backed up or replicated?
 {: #bc-dr_backup}
