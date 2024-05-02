@@ -1594,7 +1594,7 @@ subcollection: Registry
 
 [Why am I getting an Unauthorized error when I use Code Engine?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce#troubleshoot-unauthorized-ce)
 
-[Why am I having problems when I try to pull an image with cosign when I'm using Podman?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman#troubleshoot-cosign-podman)
+[Why have I got a problem pulling an image with `cosign` when I use Podman?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman#troubleshoot-cosign-podman)
 
 [Why am I getting Access denied errors?](/docs/Registry?topic=Registry-troubleshoot-access-denied#troubleshoot-access-denied)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-02"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -74,7 +74,7 @@ Pull traffic across public connections counts toward usage and quota. Pull traff
 The following example is for pushing images:
 :   You push an image to your namespace that is based on the Ubuntu image. The Ubuntu image contains several layers. Because you do not have these layers in your account yet, the amount of storage that these layers require is added to your monthly usage.
 
-    Later, you create a second image that is based on the Ubuntu image. You change the Ubuntu base image, such as by adding more commands or files to your Dockerfile. Each change represents a new image layer. When you push the second image, {{site.data.keyword.registryshort}} recognizes that all layers of the base Ubuntu image are already stored in your account. You're not charged for storing these layers a second time, even if you pushed your image to another namespace. {{site.data.keyword.registryshort}} determines the size of all new layers and adds the amount of storage to your monthly usage.
+    Later, you create a second image that is based on the Ubuntu image. You change the Ubuntu base image, such as by adding more commands or files to your Dockerfile. Each change represents a new image layer. When you push the second image, {{site.data.keyword.registryshort}} recognizes that all layers of the base Ubuntu image are already stored in your account. You're not charged for storing these layers a second time, even if you pushed your image to another namespace. {{site.data.keyword.registryshort}} determines the proportions of all new layers and adds the amount of storage to your monthly usage.
 
 ### Billing for storage and pull traffic
 {: #registry_billing_traffic}
@@ -102,7 +102,7 @@ Pull traffic across public connections counts toward usage and quota. Pull traff
 {: important}
 
 The following example is for the standard plan:
-:   In the month, you pulled images that contain layers with a total size of 14 GB. Your monthly usage is calculated as shown in the following example:
+:   In the month, you pulled images that contain layers that total 14 GB. Your monthly usage is calculated as shown in the following example:
 
     In the standard plan, the first 5 GB per month is free, so you get charged for 9 GB (14 GB - 5 GB).
 
@@ -121,9 +121,9 @@ When you reach or exceed the quota limits for your plan, you can't push any imag
 - If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/Registry?topic=Registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
 
 The following example is for the standard plan:
-:   Your current quota limit for storage is set to 1 GB. All private images that are stored in the namespaces of your {{site.data.keyword.cloud_notm}} account already use 900 MB of this storage. You have 100 MB storage available until you reach your quota limit. One user wants to push an image with a size of 2 GB on the local computer. Because the quota limit is not yet reached, {{site.data.keyword.registryshort}} allows the user to push this image.
+:   Your current quota limit for storage is set to 1 GB. All private images that are stored in the namespaces of your {{site.data.keyword.cloud_notm}} account already use 900 MB of this storage. You have 100 MB storage available until you reach your quota limit. One user wants to push an image that is 2 GB on the local computer. Because the quota limit is not yet reached, {{site.data.keyword.registryshort}} allows the user to push this image.
 
-    After the push, {{site.data.keyword.registryshort}} determines the actual size of the image in your namespace, which can vary from the size on your local computer, and checks whether the limit for storage is reached. In this example, the storage usage increases from 900 MB by 2 GB. With your current quota limit set to 1 GB, {{site.data.keyword.registryshort}} prevents you from pushing more images to the namespace.
+    After the push, {{site.data.keyword.registryshort}} determines the actual proportions of the image in your namespace, which can vary from the proportions on your local computer, and checks whether the limit for storage is reached. In this example, the storage usage increases from 900 MB by 2 GB. With your current quota limit set to 1 GB, {{site.data.keyword.registryshort}} prevents you from pushing more images to the namespace.
 
 #### Pull traffic quota limits
 {: #registry_quota_limits_pull_traffic}
@@ -138,7 +138,7 @@ Pull traffic across public connections counts toward usage and quota. Pull traff
 {: important}
 
 The following example is for the standard plan:
-:   In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull an image from your namespace with a size of 1 GB. Because the quota limit is not yet reached, {{site.data.keyword.registryshort}} allows the user to pull this image.
+:   In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull a 1 GB image from your namespace. Because the quota limit is not yet reached, {{site.data.keyword.registryshort}} allows the user to pull this image.
 
     After the image is pulled, {{site.data.keyword.registryshort}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registryshort}} prevents you from pulling images from your namespace.
 

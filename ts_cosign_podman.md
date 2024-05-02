@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-02"
 
 keywords: error, cosign, Podman, pulling, image
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I having problems when I try to pull an image with `cosign` when I'm using Podman in {{site.data.keyword.registryshort_notm}}?
+# Why have I got a problem pulling an image with `cosign` when I use Podman in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-cosign-podman}
 {: troubleshoot}
 {: support}

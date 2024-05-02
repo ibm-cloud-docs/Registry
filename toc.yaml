@@ -185,7 +185,7 @@ toc:
               - topic: ts_unauthorized_ce.md
                 navtitle: Why am I getting an Unauthorized error when I use Code Engine?
               - topic: ts_cosign_podman.md
-                navtitle: Why am I having problems when I try to pull an image with cosign when I'm using Podman?
+                navtitle: Why have I got a problem pulling an image with `cosign` when I use Podman?
               - topic: ts_access_denied.md
                 navtitle: Why am I getting Access denied errors?
               - topic: ts_resource.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-26"
+lastupdated: "2024-05-02"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -47,7 +47,7 @@ Troubleshoot pull and push problems.
 - [Why is pulling images in {{site.data.keyword.registryshort}} so slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance)
 - [Why am I getting `Authorization required` errors in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-auth-req)
     - [Why am I getting an `Unauthorized` error when I use {{site.data.keyword.codeengineshort}} with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce)
-    - [Why am I having problems when I try to pull an image with `cosign` when I'm using Podman in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman)
+    - [Why have I got a problem pulling an image with `cosign` when I use Podman in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-cosign-podman)
 - [Why am I getting `Access denied` errors in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-access-denied)
     - [Why am I getting errors for a resource in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-resource)
     - [Why am I getting errors about insufficient scope in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-scope)

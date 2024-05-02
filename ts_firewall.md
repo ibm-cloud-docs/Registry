@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-02"
 
 keywords: registry, firewall, custom firewall, network, network traffic
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 Accessing {{site.data.keyword.registrylong}} fails when you have a custom firewall.
 {: shortdesc}
 
-You have an extra firewall in your development environment with custom settings for inbound and outbound network traffic. When you try to access {{site.data.keyword.registrylong_notm}}, the connection fails.
+You have a supplementary firewall in your development environment with custom settings for inbound and outbound network traffic. When you try to access {{site.data.keyword.registrylong_notm}}, the connection fails.
 {: tsSymptoms}
 
 Your custom firewall requires certain network groups to be open for inbound and outbound network traffic to allow communication to and from the registry.
