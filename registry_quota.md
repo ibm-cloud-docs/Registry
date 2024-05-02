@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-02"
 
 keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
@@ -119,7 +119,7 @@ From 1 February 2022, both [tagged](/docs/Registry?topic=Registry-registry_overv
 
 To free up image storage in your {{site.data.keyword.cloud_notm}} account, complete the following steps.
 
-Depending on the size of the image, it might take a while for the image to be removed and for the storage to be available.
+Depending on the proportions of the image, it might take a while for the image to be removed and for the storage to be available.
 {: note}
 
 1. Find the names of the images that you want to remove.

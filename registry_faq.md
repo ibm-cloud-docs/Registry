@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-02"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -208,7 +208,7 @@ see https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-su
 ```
 {: screen}
 
-You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes within the first few minutes after you add the image to the registry. The time that it takes to complete depends on variables like the image size and the amount of traffic that the registry is receiving.
+You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes within the first few minutes after you add the image to the registry. The time that it takes to complete depends on variables like the proportions of the image and the amount of traffic that the registry is receiving.
 
 If you get this message as part of a build pipeline and you see this error regularly, try adding some retry logic that contains a short pause.
 

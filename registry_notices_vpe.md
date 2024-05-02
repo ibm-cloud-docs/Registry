@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-12-15"
+  years: 2022, 2024
+lastupdated: "2024-05-02"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vpe
 
@@ -28,9 +28,9 @@ If you create a new {{site.data.keyword.registryshort}} VPE gateway after 11 Nov
 ## How you benefit from this change
 {: #registry_notices_vpe_benefit}
 
-{{site.data.keyword.registryshort}} VPEs are being updated so that they can access all {{site.data.keyword.registryshort}} service regions by using a single VPE gateway. Previously, a {{site.data.keyword.registryshort}} VPE gateway provided access to {{site.data.keyword.registryshort}} only in the region in which the VPC and VPE gateway existed. If a user wanted to access another {{site.data.keyword.registryshort}} region, they had to use the private registry domain names (for example, `private.us.icr.io`) and required extra VPC configuration for these domains.
+{{site.data.keyword.registryshort}} VPEs are being updated so that they can access all {{site.data.keyword.registryshort}} service regions by using a single VPE gateway. Previously, a {{site.data.keyword.registryshort}} VPE gateway provided access to {{site.data.keyword.registryshort}} only in the region in which the VPC and VPE gateway existed. If a user wanted to access another {{site.data.keyword.registryshort}} region, the user had to use the private registry domain names (for example, `private.us.icr.io`) and required more VPC configuration for these domains.
 
-With the new VPE version, VPC users can privately access all {{site.data.keyword.registryshort}} regions by using a single {{site.data.keyword.registryshort}} VPE gateway that uses a public domain name (for example, `us.icr.io`) regardless of the region in which the VPE gateway exists and without having to provide extra configuration.
+With the new VPE version, VPC users can privately access all {{site.data.keyword.registryshort}} regions by using a single {{site.data.keyword.registryshort}} VPE gateway that uses a public domain name (for example, `us.icr.io`) regardless of the region in which the VPE gateway exists and without having to provide more configuration.
 
 Additionally, the new version of the VPE is in line with previous changes to private networking within {{site.data.keyword.registryshort}} where the real source IP addresses of requests to the {{site.data.keyword.registryshort}} are now maintained.
 
