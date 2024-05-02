@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-26"
+lastupdated: "2024-05-02"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -33,7 +33,7 @@ Encryption is supported in {{site.data.keyword.registrylong_notm}} and complies 
 - [`opencontainers/image-spec`](https://github.com/opencontainers/image-spec){: external}
 - [`opencontainers/artifacts`](https://github.com/opencontainers/artifacts/pull/15){: external}
 
-For more information about encrypting images, see [Advancing container image security with encrypted container images](https://developer.ibm.com/articles/advancing-image-security-encrypted-container-images/){: external} and [Advancing image security and compliance through Container Image Encryption](https://www.youtube.com/watch?v=dYXhAxxPkqA){: external}.
+For more information about encrypting images, see [Encrypted container images for container image security at rest](https://developer.ibm.com/articles/encrypted-container-images-for-container-image-security-at-rest/){: external} and [Advancing image security and compliance through Container Image Encryption](https://www.youtube.com/watch?v=dYXhAxxPkqA){: external}.
 
 ## Before you begin
 {: #registry_encrypt_prereqs}

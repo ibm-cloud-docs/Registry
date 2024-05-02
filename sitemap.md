@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-04-26"
+lastupdated: "2024-05-02"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1623,7 +1623,7 @@ subcollection: Registry
 
 [Why can't I find my image or my namespace?](/docs/Registry?topic=Registry-troubleshoot-image-find#troubleshoot-image-find)
 
-[Why don't all my namespaces show in the Resource list?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
+[Why don't all my namespaces show in the resource list?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
 
 [Why does it time out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout#troubleshoot-image-timeout)
 

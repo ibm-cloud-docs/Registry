@@ -209,7 +209,7 @@ toc:
               - topic: ts_image_find.md
                 navtitle: Why can't I find my image or my namespace?
               - topic: ts_namespace_resource_list.md
-                navtitle: Why don't all my namespaces show in the Resource list?
+                navtitle: Why don't all my namespaces show in the resource list?
               - topic: ts_image_timeout.md
                 navtitle: Why does it time out when I list images?
               - topic: ts_docker_latest.md
