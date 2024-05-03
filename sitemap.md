@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-03"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1672,13 +1672,21 @@ subcollection: Registry
 
 * [Frequently asked questions about {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_faq#registry_faq_registry)
 
-    * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
+    * [Where is the reference documentation for {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_ref_docs)
 
-    * [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
+    * [How do I set up the {{site.data.keyword.registryshort}} CLI?](/docs/Registry?topic=Registry-registry_faq#faq_setup_cli)
 
     * [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
     * [Can I rename a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_rename)
+
+    * [Why don't I have authorization to create a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_auth_namespace)
+
+    * [How do I list image names?](/docs/Registry?topic=Registry-registry_faq#faq_list_images)
+
+    * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
+
+    * [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
     * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 
@@ -1686,11 +1694,13 @@ subcollection: Registry
 
     * [How do I use digests to work with images?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
 
+    * [Why can't I push the image into {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_push_images)
+
     * [How do I list images that are more than a year old?](/docs/Registry?topic=Registry-registry_faq#faq_images_year_old)
 
     * [How do you use access control?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
-    * [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
+    * [How can I share access to an image?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
 
     * [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
 
@@ -1700,7 +1710,15 @@ subcollection: Registry
 
     * [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 
+    * [How do I get the `docker pull` command to return the most recent version?](/docs/Registry?topic=Registry-registry_faq#faq_docker_pull)
+
+    * [Why do my pods fail with an `ImagePullBackOff` error?](/docs/Registry?topic=Registry-registry_faq#faq_imagepullbackoff)
+
+    * [Why am I getting an exceeded quota error?](/docs/Registry?topic=Registry-registry_faq#faq_quota_error)
+
 * [Frequently asked questions about Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq#registry_faq_va)
+
+    * [How do I manage vulnerabilities?](/docs/Registry?topic=Registry-registry_faq#faq_va_vuln)
 
     * [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq#faq_va_cost)
 
