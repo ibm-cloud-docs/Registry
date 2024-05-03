@@ -12,6 +12,18 @@
         "using access control in CR",
         "use access control in icr"
       ],
+      "faq_auth_namespace": [
+        "not authorized to create a namespace in container registry",
+        "not authorized to create a namespace in icr",
+        "add namespace needs Manager role in Container Registry",
+        "work with namespace needs Manager role container registry",
+        "add namespace needs Manager role CR",
+        "user permissions for namespaces in Container Registry",
+        "authorize namespaces Container Registry",
+        "authorization for namespaces for container registry",
+        "user permissions for namespaces in CR",
+        "user permissions for namespaces in icr"
+      ],
       "faq_digest": [
         "find digest in container registry",
         "find long format of image digest in CR",
@@ -35,6 +47,17 @@
         "use the long digest in CR",
         "using the long digest in container registry"
       ],
+      "faq_docker_pull": [
+        "find the most recent image in container registry",
+        "find the most recent image in icr",
+        "get the most recent image in CR",
+        "use docker pull command to find the most recent image in container registry",
+        "use ibmcloud cr image-list command to find the most recent image in icr",
+        "using the latest tag to find most recent images in container registry",
+        "don't use latest tag to find the most recent image in icr",
+        "find the newest image in CR",
+        "get the newest image in container registry"
+      ],
       "faq_eligible_image": [
         "clean up images container registry",
         "cleaning up images container registry",
@@ -46,6 +69,18 @@
         "using retention policies to clean up images in CR",
         "use retention policies to clean up images in icr",
         "images excluded from retention policy in Container Registry"
+      ],
+      "faq_imagepullbackoff": [
+        "pods fail with imagepullbackoff error in icr",
+        "pods fail with imagepullbackoff error in container registry",
+        "pods stop working with imagepullbackoff error in CR",
+        "pods crash with imagepullbackoff error in icr",
+        "pods break with imagepullbackoff error in CR",
+        "pods stop working with imagepullbackoff error in container registry",
+        "imagepullbackoff error in icr",
+        "pods failing with imagepullbackoff error in CR",
+        "pods breaking with imagepullbackoff error in icr",
+        "imagepullbackoff error in container registry"
       ],
       "faq_images_year_old": [
         "list images more than a year old in icr",
@@ -59,15 +94,27 @@
         "list old images on linux in icr",
         "list old images on macOS in container registry"
       ],
+      "faq_list_images": [
+        "command to list images Container Registry",
+        "list images CR",
+        "list image names CR",
+        "list image names Container Registry",
+        "list tagged images in icr",
+        "list untagged images in Container Registry",
+        "command to list image digests in Container Registry",
+        "find image names in Container Registry",
+        "view image names on Container Registry",
+        "listing images for icr"
+      ],
       "faq_list_public_images": [
         "list public images Container Registry",
         "get public image CR",
-        "target global for CR",
-        "set container registry region in icr",
-        "CLI command list images in Container Registry",
-        "IBM images list in Container Registry",
-        "find available images on Container Registry",
-        "view the images on Container Registry list",
+        "find public images for CR",
+        "get pulic images in icr",
+        "CLI command list public images in Container Registry",
+        "IBM public images list in Container Registry",
+        "find available public images on Container Registry",
+        "view the public images on Container Registry list",
         "listing public images for icr"
       ],
       "faq_namespace": [
@@ -91,6 +138,37 @@
         "transfer data to new namespace in icr",
         "transferring data to new namespace in container registry"
       ],
+      "faq_push_images": [
+        "problems pushing pulling images in icr",
+        "problems pushing pulling images in Container Registry",
+        "issues pushing images in Container Registry",
+        "issues pulling images in CR",
+        "can't push images in Container Registry",
+        "can't pull images in CR",
+        "cannot push or pull images in icr",
+        "difficulty pushing pulling images in container registry"
+      ],
+      "faq_quota_error": [
+        "exceed quota error in icr",
+        "exceed quota error in Container Registry",
+        "exceeded storage quota error in Container Registry",
+        "exceeded pull traffic quota error in CR",
+        "error about quota in Container Registry",
+        "quota allowances in CR",
+        "error about using more than my quota in icr",
+        "over quota in container registry"
+      ],
+      "faq_ref_docs": [
+        "container registry reference",
+        "reference docs registry CR",
+        "docs for Container Registry",
+        "documentation for CR",
+        "about icr",
+        "about container registry",
+        "overview container registry",
+        "cli container registry",
+        "cli icr"
+      ],
       "faq_regions": [
         "container registry regions",
         "global registry images CR",
@@ -102,15 +180,26 @@
         "regions available in container registry",
         "regions available in icr"
       ],
+      "faq_setup_cli": [
+        "container registry set up cli",
+        "set up cli CR",
+        "set up command line for Container Registry",
+        "set up command line for CR",
+        "set up cli for icr",
+        "container registry install cli",
+        "install cr cli",
+        "set up icr",
+        "install icr"
+      ],
       "faq_share_image": [
-        "share image in container registry",
+        "share access to image in container registry",
         "sharing image in container registry",
-        "share container images in icr",
+        "share access to container images in icr",
         "sharing container images in CR",
         "share images with users in icr",
         "sharing images with users in container registry",
-        "use access policies share private container images in icr",
-        "using access policies share private container images in CR",
+        "use IAM access policies share private container images in icr",
+        "using IAM access policies share private container images in CR",
         "sharing images in container registry with other users"
       ],
       "faq_tools": [
@@ -230,6 +319,18 @@
         "scanning images not working in container registry",
         "image not scanning in VA version 4 in icr",
         "image isn't scanning in version 4 in CR"
+      ],
+      "faq_va_vuln": [
+        "how can I manage vulnerabilities with icr",
+        "how can I manage image security with container registry",
+        "how do I manage vulnerabilities with icr",
+        "how do I manage image security with container registry",
+        "what can I use to manage vulnerabilities in CR",
+        "what can I use to manage image security in container registry",
+        "image security icr",
+        "manage vulnerable images with container registry",
+        "control vulnerable images with icr",
+        "find image vulnerabilities with CR"
       ],
        "troubleshoot-access-denied": [
         "get access denied errors although I have IAM access in container registry",
