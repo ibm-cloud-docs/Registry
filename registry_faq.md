@@ -151,7 +151,7 @@ To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs
 
 You might have issues when you are pulling or pushing images to {{site.data.keyword.registryshort}} because of various reasons such as exceeding the image storage or pull traffic quota, or invalid credentials. To resolve this issue, log in to {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.registrylong_notm}} CLI, review quota limits and usage, and consider upgrading to a standard plan if you are on a free plan.
 
-For more information, see [Why can't I push or pull a Docker image when I use {{site.data.keyword.registryshort}}?](docs/Registry?topic=Registry-troubleshoot-push-pull-docker) for assistance.
+For more information, see [Why can't I push or pull a Docker image when I use {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker) for assistance.
 
 ### How do I list images that are more than a year old?
 {: #faq_images_year_old}
