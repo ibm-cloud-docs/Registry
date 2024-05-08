@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-05-08"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -28,7 +28,7 @@ If you have an {{site.data.keyword.vpc_short}} instance and want to connect the 
 When you connect to {{site.data.keyword.registryshort_notm}} from the {{site.data.keyword.cloud_notm}} console, you must go through a browser in your VPC to ensure that the connection goes through the {{site.data.keyword.registryshort_notm}} VPE gateway.
 {: important}
 
-For VPE gateways created before 11 November 2022, you must ensure that the canonical domain name for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
+For VPE gateways created before 11 November 2022, you must ensure that the canonical domain name for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the domain, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
 
 For VPE gateways created after 11 November 2022, this additional configuration is not required because the domain name resolution is now handled automatically by the VPE gateway.
 
@@ -61,7 +61,7 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Toronto (`ca-tor`)
 - Washington (`us-east`)
 
-You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. For VPE gateways created after 11 November 2022, you can pull images from any other {{site.data.keyword.registryshort_notm}} region by using the public hostnames, such as `uk.icr.io`. For VPE gateways created before 11 November 2022, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must enable classic access, see [Creating a classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#create-a-classic-access-vpc) and use private hostnames, such as `private.uk.icr.io`.
+You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. For VPE gateways created after 11 November 2022, you can pull images from any other {{site.data.keyword.registryshort_notm}} region by using the public domains, such as `uk.icr.io`. For VPE gateways created before 11 November 2022, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must enable classic access, see [Creating a classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#create-a-classic-access-vpc) and use private domains, such as `private.uk.icr.io`.
 {: important}
 
 ## Setting up a VPE for {{site.data.keyword.registrylong_notm}}
@@ -85,9 +85,9 @@ You can create VPE gateways in the following locations: `ap-north`, `ap-south`, 
 | Global `us-east` | `crn:v1:bluemix:public:container-registry:us-east:::endpoint:icr.io` |
 {: caption="Table 1. Region availability and cloud resource names for connecting {{site.data.keyword.registryshort_notm}} over private {{site.data.keyword.cloud_notm}} networks" caption-side="bottom"}
 
-For VPE gateways that were created before 11 November 2022, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must use hostnames, such as `private.uk.icr.io`. For more information about private {{site.data.keyword.registryshort_notm}} networks, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
+For VPE gateways that were created before 11 November 2022, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must use domains, such as `private.uk.icr.io`. For more information about private {{site.data.keyword.registryshort_notm}} networks, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
 
-For VPE gateways that are created after 11 November 2022, you can pull images from any other {{site.data.keyword.registryshort_notm}} region by using the public hostnames, such as `uk.icr.io`.
+For VPE gateways that are created after 11 November 2022, you can pull images from any other {{site.data.keyword.registryshort_notm}} region by using the public domains, such as `uk.icr.io`.
 
 ### Configuring an endpoint gateway
 {: #registry_endpoint-gateway-servicename}
