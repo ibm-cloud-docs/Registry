@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-05-03"
+lastupdated: "2024-05-09"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -945,7 +945,7 @@ subcollection: Registry
 
     * [Pushing and pulling images](/docs/Registry?topic=Registry-registry_private#registry_private_images_push)
 
-* [Enforcing access to your account over a private network](/docs/Registry?topic=Registry-registry_private#registry_private_account)
+* [Enforcing access to your account](/docs/Registry?topic=Registry-registry_private#registry_private_account)
 
 [Encrypting images for content confidentiality](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt)
 
