@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-18"
+  years: 2020, 2024
+lastupdated: "2024-05-09"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry, private network, image, connection, service endpoint, account, services
 
@@ -18,7 +18,7 @@ subcollection: Registry
 You can use private network connections to securely route your data in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-If you use cloud-based services for production workloads, you can use a secure private connection so that you ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the private {{site.data.keyword.cloud_notm}} network.
+If you use cloud-based services for production workloads, you can use a secure private connection so that you can ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the private {{site.data.keyword.cloud_notm}} network.
 
 Service endpoints make it easier to securely route network traffic between different {{site.data.keyword.cloud_notm}} services and your registry over the private {{site.data.keyword.cloud_notm}} network. This network routing ensures that your data doesn't go over the public internet.
 
@@ -75,36 +75,7 @@ docker login -u iamapikey -p <apikey> <private_registry_domain>
 
 For more information, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).
 
-## Enforcing access to your account over a private network
+## Enforcing access to your account
 {: #registry_private_account}
 
-You can prevent or allow image pulls or pushes over public network connections for your account by using the [`ibmcloud cr private-only`](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only) command.
-
-You can also use this command to check whether the use of private connections is set for your account.
-
-After you enable the use of private connections on your account, any attempts to pull and push images or access signatures over the public network are rejected.
-{: important}
-
-Because the use of private connections doesn't apply to the management API, you can still use the CLI over a public connection.
-{: tip}
-
-- To prevent image pulls or pushes over public network connections for your account, run the following command.
-
-    ```txt
-    ibmcloud cr private-only --enable
-    ```
-    {: pre}
-
-- To reinstate image pulls or pushes over public network connections for your account, run the following command.
-
-    ```txt
-    ibmcloud cr private-only --disable
-    ```
-    {: pre}
-
-- To check whether the use of public connections is prevented for image pushes or pulls in your account, run the following command.
-
-    ```txt
-    ibmcloud cr private-only --status
-    ```
-    {: pre}
+You can prevent image pulls or pushes from IP addresses outside of certain network zones, including VPCs and private networks, by using [IAM context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
