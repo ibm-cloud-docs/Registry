@@ -175,7 +175,7 @@ subcollection: Registry
 
 [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
 
-* [Action required now](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
+* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
 
 [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 

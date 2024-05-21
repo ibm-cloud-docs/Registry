@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-26"
+lastupdated: "2024-05-21"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -34,7 +34,7 @@ When you run commands to push or pull Docker images, you receive an error messag
 The following alternatives are possible causes:
 {: tsCauses}
 
-For scenarios A, B, and C:
+For scenarios A, B, and C complete the following checks:
 
 - Docker is not installed.
 - The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
@@ -43,7 +43,7 @@ For scenarios A, B, and C:
 You can fix this problem in the following ways:
 {: tsResolve}
 
-For scenarios A, B, and C:
+For scenarios A, B, and C complete the following checks:
 
 - [Ensure that Docker is installed on your computer](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install).
 - Check your Docker installation path.
