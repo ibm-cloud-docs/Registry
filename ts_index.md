@@ -53,7 +53,7 @@ Troubleshoot pull and push problems.
     - [Why am I getting errors about insufficient scope in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-scope)
     - [Why am I getting errors about my quota in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-quota)
     - [Why am I getting errors about using a private network in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-private)
-    - [Why am I getting a `Forbidden` when I try to access {{site.data.keyword.registryshort}} when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce)
+    - [Why am I getting a `Forbidden` error when I try to access {{site.data.keyword.registryshort}} when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce)
     - [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull)
 
 ### Troubleshooting CLI commands

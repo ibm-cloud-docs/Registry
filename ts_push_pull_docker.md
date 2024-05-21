@@ -34,7 +34,7 @@ When you run commands to push or pull Docker images, you receive an error messag
 The following alternatives are possible causes:
 {: tsCauses}
 
-For scenarios A, B, and C complete the following checks:
+For scenarios A, B, and C the following alternatives are possible causes:
 
 - Docker is not installed.
 - The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
@@ -43,7 +43,7 @@ For scenarios A, B, and C complete the following checks:
 You can fix this problem in the following ways:
 {: tsResolve}
 
-For scenarios A, B, and C complete the following checks:
+For scenarios A, B, and C complete the following tasks:
 
 - [Ensure that Docker is installed on your computer](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install).
 - Check your Docker installation path.
