@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-05-21"
+lastupdated: "2024-05-22"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -52,15 +52,7 @@ subcollection: Registry
 
     * [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic)
 
-        * [Storage charges](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic_storage)
-
-        * [Pull traffic charges](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic_pull_traffic)
-
     * [Quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits)
-
-        * [Storage quota limits](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits_storage)
-
-        * [Pull traffic quota limits](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits_pull_traffic)
 
     * [Cost of {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_overview#registry_cost)
 
@@ -96,11 +88,7 @@ subcollection: Registry
 
     * [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global)
 
-        * [Targeting the global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global_target)
-
     * [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local)
-
-        * [Targeting a local region](/docs/Registry?topic=Registry-registry_overview#registry_regions_local_target)
 
 * [Supported clients](/docs/Registry?topic=Registry-registry_overview#support_clients)
 
@@ -585,10 +573,6 @@ subcollection: Registry
 
     * [VMs, containers, and Kubernetes](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-4)
 
-        * [Virtual machines vs containers](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-5)
-
-        * [Kubernetes orchestration](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-6)
-
     * [What IBM is doing for you](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-7)
 
 * [Sizing clusters](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-sizing_clusters)
@@ -648,10 +632,6 @@ subcollection: Registry
     * [Configure Health Check for the Global Load Balancer](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-12)
 
     * [Define Origin Pools](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-13)
-
-        * [One pool for the cluster in Dallas](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-14)
-
-        * [One pool for the cluster in London](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-15)
 
     * [Create the Global Load Balancer](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-17)
 
@@ -827,14 +807,6 @@ subcollection: Registry
     * [Creating a user API key manually](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey_create)
 
     * [Using client software to authenticate in automation](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth)
-
-        * [Using Buildah to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_buildah)
-
-        * [Using Docker to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker)
-
-        * [Using Podman to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_podman)
-
-        * [Using Skopeo to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_other_example_skopeo)
 
 * [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive)
 
@@ -1087,14 +1059,6 @@ subcollection: Registry
 * [Analyzing Activity Tracker events](/docs/Registry?topic=Registry-at_events#at_events_analyze)
 
     * [Request data for vulnerability events](/docs/Registry?topic=Registry-at_events#at_events_vuln_events)
-
-        * [Request data for the account vulnerability report](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_list)
-
-        * [Request data for the account vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)
-
-        * [Request and response data for the vulnerability report](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_read)
-
-        * [Request and response data for the vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
 
     * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
 
@@ -1733,12 +1697,6 @@ subcollection: Registry
     * [How often are the security notices updated in Vulnerability Advisor?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
 
     * [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
-
-        * [Alpine package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_alpine)
-
-        * [Debian and Ubuntu package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_debian_ubuntu)
-
-        * [{{site.data.keyword.redhat_notm}} and CentOS package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)
 
     * [Does Vulnerability Advisor have versions?](/docs/Registry?topic=Registry-registry_faq#faq_va_versions)
 
