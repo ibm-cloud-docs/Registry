@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2023-03-31"
+  years: 2022, 2024
+lastupdated: "2024-05-21"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -28,7 +28,7 @@ From 5 July 2022 (23 June 2022 for the `br-sao` and `ca-tor` regions), when conn
 
 This change improves the security of {{site.data.keyword.registrylong_notm}}. With this change, you can configure real, account specific, private client IP addresses in IAM restricted IP lists, instead of the documented list of shared IP addresses. You must now allow private subnet and IP addresses of your own hosts (for example, worker nodes in a classic {{site.data.keyword.containerlong_notm}} cluster or the egress IP of a VPC network).
 
-Also, as part of this change, the {{site.data.keyword.registrylong_notm}} service private IP addressees changed, which might require updates to your firewall configuration.
+Also, as part of this change, the {{site.data.keyword.registrylong_notm}} service private IP addresses changed, which might require updates to your firewall configuration.
 
 If you use [Calico](https://www.tigera.io/project-calico/){: external}, the samples are updated to take account of the change.
 
@@ -52,7 +52,7 @@ You are impacted if you are accessing {{site.data.keyword.registryshort}} over t
 
 You are accessing {{site.data.keyword.registryshort}} over the private network if one of the following statements is true:
 
-- You're using one of the `private.*` domains, for example, `private.us.icr.io`.
+- You're using one of the `private.*` domains, for example `private.us.icr.io`.
 - You're using an {{site.data.keyword.containerlong_notm}} cluster in a [configuration](/docs/containers?topic=containers-registry#cluster_registry_auth_private) that automatically talks to the registry over a private connection.
 - You're accessing {{site.data.keyword.registryshort}} through a virtual private cloud (VPC) virtual private endpoint gateway (VPE gateway).
 - You're using the {{site.data.keyword.registryshort}} private IP addresses for configuring network access, for example, in firewalls or Access Control Lists (ACL).
