@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-28"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -312,6 +312,12 @@ You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Re
 The default instance of {{site.data.keyword.registryshort}} is the global registry. The global registry doesn't include a region in its [domain name](#overview_elements_domain_name) (`icr.io`).
 
 Use the global instance of the registry unless you have a specific requirement, for example, data sovereignty, to store your data in a particular region. In which case, you can use {{site.data.keyword.registryshort}} in [local regions](#registry_regions_local).
+
+Each region is backed up in a different region. For example, the images that are stored in the {{site.data.keyword.registrylong_notm}} registry `Frankfurt(eu-de)` are replicated over the six data centers across `Frankfurt(eu-de)` and `London(eu-gb)` regions.
+
+The following table shows you the backup locations. For more information about {{site.data.keyword.registryshort}} backup locations, see [Does the service replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_replicate_data) for assistance.
+
+{{registry_bc_dr.md#table_backup_locations}}
 
 All registry artifacts are scoped to the specific registry instance (one of the regional registries or the global registry) that you're currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for your account in each registry instance.
 
