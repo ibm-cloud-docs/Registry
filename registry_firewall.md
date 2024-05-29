@@ -18,6 +18,9 @@ subcollection: Registry
 To permit worker nodes to communicate with {{site.data.keyword.registrylong}}, allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} [regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 {: shortdesc}
 
+If you are using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong}}, by default the connection to {{site.data.keyword.registryshort}} is private. Therefore, you don't need to allow public access to {{site.data.keyword.registryshort}}. For more information about private connectivity, see [Private network connection to `icr.io` registries](/docs/containers?topic=containers-registry#cluster_registry_auth_private).
+{: note}
+
 You can configure your firewall to allow connections to {{site.data.keyword.registryshort}} by using a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains listed in the following table.
 
 When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any allowlist restrictions that are based on IP addresses in place. If you have any concerns about opening your allowlist, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private {{site.data.keyword.cloud_notm}} network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private). Note that IP address lists are not provided because they can change frequently.
