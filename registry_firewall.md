@@ -57,4 +57,4 @@ Users that are located in China must also allow the following domains:
 - `dd5-icr.ibm-zh.com`
 - `dd7-icr.ibm-zh.com`
 
-You can also add wildcard characters to domains in your allowlist, for example `*.icr.io` and `*.ibm-zh.com`.</staging>
+You can also add wildcard characters to domains in your allowlist, for example `*.icr.io` and `*.ibm-zh.com`.
