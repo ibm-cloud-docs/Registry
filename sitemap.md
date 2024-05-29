@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-05-22"
+lastupdated: "2024-05-29"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1021,6 +1021,10 @@ subcollection: Registry
 
     * [Creating rules by using the API](/docs/Registry?topic=Registry-registry-cbr&interface=api#registry-cbr_rules_api)
 
+[Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall#registry_firewall)
+
+* [Using a public network to access {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_firewall#registry_firewall_public)
+
 
 ## Observability
 {: #sitemap_observability}
@@ -1675,6 +1679,8 @@ subcollection: Registry
     * [Where is the reference documentation for {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_ref_docs)
 
     * [How do I set up the {{site.data.keyword.registryshort}} CLI?](/docs/Registry?topic=Registry-registry_faq#faq_setup_cli)
+
+    * [How do I configure my firewall to allow connections to {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_firewall)
 
     * [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 

@@ -70,6 +70,18 @@
         "use retention policies to clean up images in icr",
         "images excluded from retention policy in Container Registry"
       ],
+      "faq_firewall": [
+        "configure firewall to allow connections to container registry",
+        "set up firewall to allow connections to container registry",
+        "configuring firewall to allow connections to icr",
+        "setting up firewall to allow connections to icr",
+        "configure firewall to connect to CR",
+        "change firewall to connect to container registry",
+        "update firewall connecting to container registry",
+        "changing firewall to connect to CR",
+        "updating firewall to allow access to icr",
+        "access Container Registry through firewall"
+      ],
       "faq_imagepullbackoff": [
         "pods fail with imagepullbackoff error in icr",
         "pods fail with imagepullbackoff error in container registry",

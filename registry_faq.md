@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-05-03"
+lastupdated: "2024-05-29"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -42,6 +42,12 @@ To set up the {{site.data.keyword.registrylong_notm}} CLI, use the following ste
 Now you can use the {{site.data.keyword.registrylong_notm}} CLI to manage your registry and its resources for your {{site.data.keyword.cloud_notm}} account.
 
 For more information, see [Setting up the {{site.data.keyword.registryshort}} CLI and namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace) and [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
+
+### How do I configure my firewall to allow connections to {{site.data.keyword.registryshort}}?
+{: #faq_firewall}
+{: faq}
+
+You can use a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains listed in [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall) or use a [virtual private network (VPN)](/docs/iaas-vpn?topic=iaas-vpn-getting-started).
 
 ### How many namespaces can you have?
 {: #faq_namespace}
