@@ -1023,8 +1023,6 @@ subcollection: Registry
 
 [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall#registry_firewall)
 
-* [Using a public network to access {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_firewall#registry_firewall_public)
-
 
 ## Observability
 {: #sitemap_observability}
