@@ -39,22 +39,3 @@ In addition to the following regional subdomains, you must also allow traffic fr
 | US South | `us.icr.io` Deprecated: `registry.ng.bluemix.net` |
 {: caption="Table 1. Addresses for {{site.data.keyword.registryshort}} traffic" caption-side="bottom"}
 {: #table_registry_traffic_addresses}
-
-## Using a public network to access {{site.data.keyword.registryshort}}
-{: #registry_firewall_public}
-
-If you use a public network to access the {{site.data.keyword.registryshort}} by using the domain `icr.io`, you must add the following domains to your firewall rules:
-
-- `dd0.icr.io`
-- `dd2.icr.io`
-- `dd4.icr.io`
-- `dd6.icr.io`
-
-Users that are located in China must also allow the following domains:
-
-- `dd1-icr.ibm-zh.com`
-- `dd3-icr.ibm-zh.com`
-- `dd5-icr.ibm-zh.com`
-- `dd7-icr.ibm-zh.com`
-
-You can also add wildcard characters to domains in your allowlist, for example `*.icr.io` and `*.ibm-zh.com`.
