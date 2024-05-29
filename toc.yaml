@@ -101,6 +101,7 @@ toc:
           - topic: registry_security_enforce_portieris.md
             navtitle: Enforcing container image security by using Portieris
           - registry_cbr.md
+          - registry_firewall.md
       - topicgroup:
           label: Observability
           topics:
