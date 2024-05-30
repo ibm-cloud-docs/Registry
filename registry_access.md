@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-05-30"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -89,6 +89,7 @@ Clients require an API key and a domain, replace `<apikey>` with your API key an
 | `uk-south` | `uk.icr.io` |
 | `us-south` | `us.icr.io` |
 {: caption="Table 1. Registry domains" caption-side="bottom"}
+{: #table_registry_access_domains}
 
 For more information about how to use {{site.data.keyword.registrylong_notm}} in a {{site.data.keyword.contdelivery_short}} pipeline, see [Using a private image registry](/docs/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
 

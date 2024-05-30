@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-01"
+lastupdated: "2024-05-30"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -37,6 +37,7 @@ For more information about your responsibilities when you're using {{site.data.k
 | Recovery point objective (RPO) | 48 hours |
 | Recovery time objective (RTO) | 24 hours |
 {: caption="Table 1. RPO and RTO for {{site.data.keyword.registryshort}}" caption-side="bottom"}
+{: #table_registry_bc_dr_rpo_rto}
 
 ## Locations for service availability
 {: #bc-dr-locations}
@@ -68,7 +69,7 @@ The following table shows the backup locations.
 | `jp-osa` | `jp-osa` | `jp-tok` |
 | `us-south` | `us-south` | `us-east` |
 {: caption="Table 2. Backup locations" caption-side="bottom"}
-{: #table_backup_locations}
+{: #table_registry_bc_dr_backup_locations}
 
 ### What data is backed up or replicated?
 {: #bc-dr_backup}

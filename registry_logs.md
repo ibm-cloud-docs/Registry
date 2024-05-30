@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-05-30"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -38,6 +38,7 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you'
 | `Sao Paulo (br-sao)` | Yes |
 | `Toronto (ca-tor)` | Yes |
 {: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Americas locations" caption-side="bottom"}
+{: #table_registry_logs_service_americas}
 
 | Locations in Asia Pacific | Are platform services logs available? |
 |---------------------------|---------------------------------------|
@@ -45,6 +46,7 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you'
 | `Sydney (au-syd)` | Yes |
 | `Tokyo (jp-tok)` | Yes |
 {: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Asia Pacific locations" caption-side="bottom"}
+{: #table_registry_logs_service_ap}
 
 | Locations in Europe | Are platform services logs available? |
 |---------------------|---------------------------------------|
@@ -52,11 +54,13 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you'
 | `London (eu-gb)` | Yes |
 | `Madrid (eu-es)` | Yes |
 {: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Europe locations" caption-side="bottom"}
+{: #table_registry_logs_service_europe}
 
 | Location for Global | Are platform services logs available? |
 |---------------------|---------------------------------------|
 | `Global` | Yes |
 {: caption="Table 4. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs for Global" caption-side="bottom"}
+{: #table_registry_logs_service_global}
 
 For more information about where to see {{site.data.keyword.registryshort_notm}} service logs, see [Where to look for {{site.data.keyword.la_full_notm}} logs](#registry_logs_region).
 
@@ -81,6 +85,7 @@ The following table shows the location of {{site.data.keyword.la_full_notm}} log
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
 {: caption="Table 5. Location of {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
+{: #table_registry_logs_location}
 
 The following table shows the location of global registry {{site.data.keyword.la_full_notm}} logs.
 
@@ -88,3 +93,4 @@ The following table shows the location of global registry {{site.data.keyword.la
 |----------|-----------------|-----------------------------------------------------|
 | Global | `icr.io` | `Dallas (us-south)` |
 {: caption="Table 6. Location of global registry {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
+{: #table_registry_logs_location_global}
