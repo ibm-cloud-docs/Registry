@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-05-30"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -97,6 +97,7 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 | Red Hat&reg; Enterprise Linux&reg; (RHEL) | RHEL/UBI 7, RHEL/UBI 8, and RHEL/UBI 9 | [{{site.data.keyword.redhat_notm}} Security Data API](https://access.redhat.com/labsinfo/securitydataapi){: external}. |
 | Ubuntu | All stable versions with vendor security support. | [Ubuntu CVE Tracker](https://launchpad.net/ubuntu-cve-tracker){: external}. |
 {: caption="Table 1. Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
+{: #table_registry_vpe_docker_images}
 
 ### Configuration issues
 {: #app_configurations}

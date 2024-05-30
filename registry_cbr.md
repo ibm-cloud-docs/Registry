@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-30"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -47,6 +47,7 @@ For example, if your image is in the format `uk.icr.io/<my_project>/<my_image>:l
 | `Resource Type` | `string equals` | `namespace` |
 | `Resource Name` | `string equals` | `<my_project>` |
 {: caption="Table 1. Example attribute types" caption-side="bottom"}
+{: #table_registry_cbr_attributes}
 
 The **Resource Name** value is a namespace, as shown by the [`ibmcloud cr namespace-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list) command.
 

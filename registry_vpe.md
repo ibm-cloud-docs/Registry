@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-05-08"
+lastupdated: "2024-05-30"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -84,6 +84,7 @@ You can create VPE gateways in the following locations: `ap-north`, `ap-south`, 
 | `us-south` | `crn:v1:bluemix:public:container-registry:us-south:::endpoint:us.icr.io` |
 | Global `us-east` | `crn:v1:bluemix:public:container-registry:us-east:::endpoint:icr.io` |
 {: caption="Table 1. Region availability and cloud resource names for connecting {{site.data.keyword.registryshort_notm}} over private {{site.data.keyword.cloud_notm}} networks" caption-side="bottom"}
+{: #table_registry_vpe}
 
 For VPE gateways that were created before 11 November 2022, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must use domains, such as `private.uk.icr.io`. For more information about private {{site.data.keyword.registryshort_notm}} networks, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
 

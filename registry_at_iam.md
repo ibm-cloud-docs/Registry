@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-30"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -42,6 +42,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Get authorization options for the targeted account. | `GET /api/v1/auth` | `container-registry.auth.get`  | `container-registry.auth.get`  |
 | Update authorization options for the targeted account. | `PATCH /api/v1/auth` | `container-registry.auth.set` | `container-registry.auth.set`  |
 {: caption="Table 1. Auth" caption-side="bottom"}
+{: #table_registry_at_iam_auth}
 
 ### Image API methods
 {: #registry_at_iam_reg_images}
@@ -56,6 +57,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Inspect an image. | `GET /api/v1/images/{image}/json` | `container-registry.image.inspect` | `container-registry.image.inspect` |
 | Get the image manifest. | `GET /api/v1/images/{image}/manifest` | `container-registry.image.inspect` | `container-registry.manifest.inspect` |
 {: caption="Table 2. Images" caption-side="bottom"}
+{: #table_registry_at_iam_images}
 
 ### Message API methods
 {: #registry_at_iam_reg_messages}
@@ -64,6 +66,7 @@ Review the following account API methods, their required actions in {{site.data.
 |-------------------------------------------|------------------------|---------------|------------|
 | Return any published system messages. | `GET /api/v1/messages` | Not applicable | Not applicable |
 {: caption="Table 3. Messages" caption-side="bottom"}
+{: #table_registry_at_iam_messages}
 
 ### Namespace API methods
 {: #registry_at_iam_reg_namespace}
@@ -76,6 +79,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Assign a namespace. | `PATCH /api/v1/namespaces/{namespace}` | `container-registry.namespace.create` | `container-registry.namespace.update` |
 | Delete a namespace. | `DELETE /api/v1/namespaces/{namespace}` | `container-registry.namespace.delete` | `container-registry.namespace.delete` |
 {: caption="Table 4. Namespaces" caption-side="bottom"}
+{: #table_registry_at_iam_namespaces}
 
 ### Plan API methods
 {: #registry_at_iam_reg_plans}
@@ -85,6 +89,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Get plans for the targeted account. | `GET /api/v1/plans` | `container-registry.plan.get` | `container-registry.plan.get` |
 | Update plans for the targeted account. | `PATCH /api/v1/plans` | `container-registry.plan.set` | `container-registry.plan.set` |
 {: caption="Table 5. Plans" caption-side="bottom"}
+{: #table_registry_at_iam_plans}
 
 ### Quota API methods
 {: #registry_at_iam_reg_quota}
@@ -94,6 +99,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Get the quotas for the targeted account. | `GET /api/v1/quotas` | `container-registry.quota.get` | `container-registry.quota.get` |
 | Update the quotas for the targeted account. | `PATCH /api/v1/quotas` | `container-registry.quota.set` | `container-registry.quota.set` |
 {: caption="Table 6. Quotas" caption-side="bottom"}
+{: #table_registry_at_iam_quotas}
 
 ### Retention API methods
 {: #registry_at_iam_reg_retention}
@@ -105,6 +111,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Analyze a retention policy, and get a list of what would be deleted by it. | `POST /api/v1/retentions/analyze` | `container-registry.retention.analyze`  | `container-registry.retention.analyze`  |
 | Get the retention policy for the specified namespace. | `GET /api/v1/retentions/{namespace}` | `container-registry.retention.get` | `container-registry.retention.get`  |
 {: caption="Table 7. Retentions" caption-side="bottom"}
+{: #table_registry_at_iam_retentions}
 
 ### Settings API methods
 {: #registry_at_iam_reg_set}
@@ -114,6 +121,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Get the registry service settings for the targeted account, such as whether platform metrics are enabled. | `GET /api/v1/settings` | `container-registry.settings.get` | `container-registry.settings.get` |
 | Update the registry service settings for the targeted account, such as enabling platform metrics. | `PATCH /api/v1/settings` | `container-registry.settings.set` | `container-registry.settings.set` |
 {: caption="Table 8. Settings" caption-side="bottom"}
+{: #table_registry_at_iam_settings}
 
 ### Tag API methods
 {: #registry_at_iam_reg_tags}
@@ -122,6 +130,7 @@ Review the following account API methods, their required actions in {{site.data.
 |-------------------------------------------|------------------------|---------------|------------|
 | Delete a tag. | `DELETE /api/v1/tags/{image}` | `container-registry.image.delete` | `container-registry.image.untag` |
 {: caption="Table 9. Tags" caption-side="bottom"}
+{: #table_registry_at_iam_tags}
 
 ### Trash API methods
 {: #registry_at_iam_reg_trash}
@@ -132,6 +141,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Restore a digest and all associated tags. | `POST /api/v1/trash/{digest}/restoretags` | `container-registry.image.push` | `container-registry.trash.restore` |
 | Restore a deleted image. | `POST /api/v1/trash/{image}/restore` | `container-registry.image.push` | `container-registry.trash.restore` |
 {: caption="Table 10. Trash" caption-side="bottom"}
+{: #table_registry_at_iam_trash}
 
 ## Vulnerability Advisor API methods
 {: #registry_at_iam_vuln}
@@ -146,6 +156,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Get the vulnerability status. | `GET /va/api/v4/report/image/status/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-status.read` |
 | Get the vulnerability assessment status. | `GET /va/api/v4/report/image/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-report.read` |
 {: caption="Table 11. Report for version 4" caption-side="bottom"}
+{: #table_registry_at_iam_v4_report}
 
 ### Exemption API methods
 {: #registry_at_iam_vuln_exempt}
@@ -166,3 +177,4 @@ Review the following account API methods, their required actions in {{site.data.
 | List the image exemptions. | `GET /va/api/v4/exemptions/image/{resource}` | `container-registry.exemption.list` | Not applicable |
 | List the exemptions for images. | `POST /va/api/v4/exemptions/images` | `container-registry.exemption.list` | Not applicable |
 {: caption="Table 12. Exemptions for version 4" caption-side="bottom"}
+{: #table_registry_at_iam_v4_exempt}

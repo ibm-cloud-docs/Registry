@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-28"
+lastupdated: "2024-05-30"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -34,6 +34,7 @@ Review the following table to find an overview of the benefits of using {{site.d
 | Image security compliance with Vulnerability Advisor. | Benefit from automatic scanning of images in your namespace.  \n  \n Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised. |
 | Quota limits for storage and pull traffic. | Benefit from free storage and pull traffic to your private images until you reach your free quota.  \n  \n Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level. |
 {: caption="Table 1. {{site.data.keyword.registryshort}} benefits" caption-side="bottom"}
+{: #table_registry_overview_benefits}
 
 ## Service plans
 {: #registry_plans}
@@ -54,6 +55,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 | Pull traffic. | 5 GB per month | Unlimited |
 | Billing. | If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog).  \n  \n **Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog). If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing](#registry_plan_billing). |
 {: caption="Table 2. {{site.data.keyword.registryshort}} plans" caption-side="bottom"}
+{: #table_registry_overview_plans}
 
 ## Quota limits and billing
 {: #registry_plan_billing}
@@ -317,7 +319,7 @@ Each region is backed up in a different region. For example, the images that are
 
 The following table shows you the backup locations. For more information about {{site.data.keyword.registryshort}} backup locations, see [Does the service replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_replicate_data) for assistance.
 
-{{registry_bc_dr.md#table_backup_locations}}
+{{registry_bc_dr.md#table_registry_bc_dr_backup_locations}}
 
 All registry artifacts are scoped to the specific registry instance (one of the regional registries or the global registry) that you're currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for your account in each registry instance.
 
@@ -332,6 +334,7 @@ The global instance of {{site.data.keyword.registryshort}} is available by using
 |----------|-------------|----------------------|-----------------------|
 | Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
 {: caption="Table 3. Domain name for the global registry" caption-side="bottom"}
+{: #table_registry_overview_domain_name_global}
 
 To learn about connecting to {{site.data.keyword.registryshort}} by using the private domain names, see [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
@@ -372,6 +375,7 @@ Regional instances of {{site.data.keyword.registryshort}} are available by using
 | `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |
 | `us-south` | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
 {: caption="Table 4. Domain names for local regions" caption-side="bottom"}
+{: #table_registry_overview_domain_name_local}
 
 To learn about connecting to {{site.data.keyword.registryshort}} by using the private domain names, see [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
