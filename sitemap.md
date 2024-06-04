@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-05-31"
+lastupdated: "2024-06-04"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -876,6 +876,12 @@ subcollection: Registry
 
 * [Creating policies](/docs/Registry?topic=Registry-user#create)
 
+* [Setting up region-based policies for IAM](/docs/Registry?topic=Registry-user#create_region_policy_iam)
+
+    * [Region-based user policies](/docs/Registry?topic=Registry-user#create_region_policy_user)
+
+    * [Region-based service ID policies](/docs/Registry?topic=Registry-user#create_region_policy_service)
+
 
 ## Managing image security with Vulnerability Advisor
 {: #sitemap_managing_image_security_with_vulnerability_advisor}
@@ -1020,6 +1026,8 @@ subcollection: Registry
     * [Creating rules by using the CLI](/docs/Registry?topic=Registry-registry-cbr&interface=cli#registry-cbr_rules_cli)
 
     * [Creating rules by using the API](/docs/Registry?topic=Registry-registry-cbr&interface=api#registry-cbr_rules_api)
+
+* [Setting up region-based policies for context-based restrictions](/docs/Registry?topic=Registry-registry-cbr&interface=api#registry-cbr_region_policy)
 
 [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall#registry_firewall)
 
