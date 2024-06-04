@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-06-04"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -11,6 +11,7 @@ subcollection: Registry
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Protecting {{site.data.keyword.registryshort}} resources with context-based restrictions
 {: #registry-cbr}
@@ -105,3 +106,22 @@ To create rules in the API, see the [API docs](/apidocs/context-based-restrictio
 
 After you create a rule, it might take up to 10 minutes to before you can update that rule due to IAM TTL response caching.
 {: note}
+
+## Setting up region-based policies for context-based restrictions
+{: #registry-cbr_region_policy}
+
+For all regions other than `global` you can use the region field when you create a rule. So for example, in the CLI for `us-south` you use the `--region us-south` option. However, because `global` is a geography and not a region you must omit the `--region` option and add `geography=global` into the `--resource-attributes` field.
+
+The following example shows the command in `us-south`, where `<description>` is the description, `<accountId>` is your {{site.data.keyword.cloud_notm}} account ID, `<namespace>` is the namespace, and `<networkZoneId>` is the network zone ID:
+
+```txt
+ibmcloud cbr rule-create --description "<description>" --resource-attributes "accountId=<accountId>,serviceName=container-registry,resourceType=namespace,resource=<namespace>" --context-attributes networkZoneId=<networkZoneId> --output json --region us-south
+```
+{: pre}
+
+The following example shows the command in `global`, where `<description>` is the description, `<accountId>` is your {{site.data.keyword.cloud_notm}} account ID, `<namespace>` is the namespace, and `<networkZoneId>` is the network zone ID:
+
+```txt
+ibmcloud cbr rule-create --description "<description>" --resource-attributes "accountId=<accountId>,serviceName=container-registry,resourceType=namespace,resource=<namespace>,geography=global" --context-attributes networkZoneId=<networkZoneId>
+```
+{: pre}
