@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-06-04"
+lastupdated: "2024-06-26"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -143,6 +143,12 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
+[Important firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
+
+* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_know)
+
+* [What actions you must take by 4 September 2024](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_actions)
+
 [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#registry_notices_va_v3)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_change)
@@ -205,6 +211,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [26 June 2024](/docs/Registry?topic=Registry-registry_release_notes#registry-26jun2024)
+
+    * [Firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_release_notes#26jun2024_firewall)
 
 * [15 March 2024](/docs/Registry?topic=Registry-registry_release_notes#registry-15mar2024)
 

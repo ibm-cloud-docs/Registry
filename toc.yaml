@@ -28,6 +28,7 @@ toc:
           label: Notifications
           topics:
           - registry_notices.md
+          - registry_notices_firewall.md
           - registry_notices_va_v3.md
           - topic: registry_notices_wildcard_domains.md
             navtitle: Upcoming public networking changes
