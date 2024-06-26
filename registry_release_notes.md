@@ -21,6 +21,15 @@ content-type: release-note
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
 
+## 26 June 2024
+{: #registry-26jun2024}
+{: release-note}
+
+Firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`) {: #26jun2024_firewall}
+:   To ensure continued global performance for `icr.io` in {{site.data.keyword.registrylong}}, a content delivery network (CDN) is being enabled that means that you might have to adjust your firewall settings. If you need to adjust your firewall settings, you must adjust them by 4 September 2024.
+
+    For more information, see [Important firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_notices_firewall).
+
 ## 15 March 2024
 {: #registry-15mar2024}
 {: release-note}
