@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-07-02"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -10,13 +10,14 @@ subcollection: Registry
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
-
-# Analyzing logs for {{site.data.keyword.registryshort_notm}}
+{{site.data.keyword.attribute-definition-list}}# Analyzing logs for {{site.data.keyword.registryshort_notm}}
 {: #registry_logs}
 
 {{site.data.keyword.registrylong}} generates platform services logs that are displayed in your logging instances.
 {: shortdesc}
+
+As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.la_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Logging is the same for both services. For information about migrating from {{site.data.keyword.la_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro). For more information about using {{site.data.keyword.logs_full_notm}} with {{site.data.keyword.registrylong_notm}}, see [Logging for {{site.data.keyword.registryshort_notm}}(/docs/Registry?topic=Registry-logging)].
+{: deprecated}
 
 For more information about how to configure logging instances to receive platform services logs, see [Configuring {{site.data.keyword.cloud_notm}} platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs). For more information about {{site.data.keyword.loganalysislong_notm}}, see [Getting started with {{site.data.keyword.loganalysislong_notm}}](/docs/log-analysis?topic=log-analysis-getting-started).
 

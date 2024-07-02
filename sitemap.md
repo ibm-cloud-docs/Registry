@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-02"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1117,8 +1117,6 @@ subcollection: Registry
         * [Request and response data for the vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
 
     * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
-
-[Analyzing logs](/docs/Registry?topic=Registry-registry_logs#registry_logs)
 
 * [Locations of platform services logs](/docs/Registry?topic=Registry-registry_logs#registry_logs_locations)
 
