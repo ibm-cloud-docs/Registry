@@ -21,7 +21,7 @@ To ensure continued worldwide performance for global registry (`icr.io`) in {{si
 ## What you need to know about this change
 {: #registry_notices_firewall_know}
 
-If you use domain-based firewall rules, you must add the following domains. The domains accommodate future changes that might issue a redirect for certain requests such as an image layer download for traffic optimization. Regional registries are not impacted. For more information about regional registries, see, [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+If you use domain-based firewall rules, you must add the following domains. The domains accommodate future changes that might issue a redirect for certain requests such as an image layer download for traffic optimization. Regional registries are not impacted. For more information about regional registries, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 ## What actions you must take by 4 September 2024
 {: #registry_notices_firewall_actions}
