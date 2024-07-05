@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-04"
+lastupdated: "2024-07-05"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -530,8 +530,6 @@ Support for {{site.data.keyword.redhat_notm}} signatures is available {: #4dec20
 
 {{site.data.keyword.la_full_notm}} platform services logs are available {: #25oct2019_logs}
 :   {{site.data.keyword.registryshort}} generates platform services logs that are displayed in your logging instances.
-
-    For more information, see [{{site.data.keyword.la_full_notm}} platform services logs](/docs/Registry?topic=Registry-registry_logs).
 
 ## 14 October 2019
 {: #registry-14oct2019}

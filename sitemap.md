@@ -1118,11 +1118,21 @@ subcollection: Registry
 
     * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
 
-[Analyzing logs](/docs/Registry?topic=Registry-registry_logs#registry_logs)
+[Logging](/docs/Registry?topic=Registry-registry_logs#registry_logs)
 
-* [Locations of platform services logs](/docs/Registry?topic=Registry-registry_logs#registry_logs_locations)
+* [Locations where platform logs are generated](/docs/Registry?topic=Registry-registry_logs#log-locations)
 
-* [Where to look for {{site.data.keyword.la_full_notm}} logs](/docs/Registry?topic=Registry-registry_logs#registry_logs_region)
+* [Locations where logs are sent to {{site.data.keyword.la_full_notm}}](/docs/Registry?topic=Registry-registry_logs#la-legacy-locations)
+
+* [Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}](/docs/Registry?topic=Registry-registry_logs#lr-locations)
+
+* [Platform logs that are generated](/docs/Registry?topic=Registry-registry_logs#log-platform)
+
+* [Viewing logs](/docs/Registry?topic=Registry-registry_logs#log-viewing)
+
+    * [Launching {{site.data.keyword.logs_full_notm}} from the Observability page](/docs/Registry?topic=Registry-registry_logs#log-launch-standalone)
+
+* [Fields by log type](/docs/Registry?topic=Registry-registry_logs#log-fields)
 
 [IAM and Activity Tracker actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
 

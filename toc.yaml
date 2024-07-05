@@ -111,7 +111,7 @@ toc:
           - topic: registry_at_events.md
             navtitle: Auditing events
           - topic: registry_logs.md
-            navtitle: Analyzing logs
+            navtitle: Logging
           - topic: registry_at_iam.md
             navtitle: IAM and Activity Tracker actions by API method
   - navgroup:
