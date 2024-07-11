@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-07-11"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -20,7 +20,7 @@ When you use {{site.data.keyword.registrylong}} through the command line or cons
 
 You might need certain permissions to call these API methods, and you can track the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
 
-Review the following list of {{site.data.keyword.iamshort}} (IAM) actions and {{site.data.keyword.at_full_notm}} events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
+Review the following list of {{site.data.keyword.iamshort}} (IAM) actions and {{site.data.keyword.at_full_notm}}  events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
 
 For more information, see the following topics:
 
