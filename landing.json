@@ -1,7 +1,7 @@
 {
     "title": "Container Registry docs",
     "lastupdated": "2023-03-09",
-    "introduction": "Find out about how you can use Container Registry to provide a multi-tenant private image registry that you can use to store and share your container images with users in your IBM Cloud account. Click the tiles on this page to explore more information about Container Registry.",
+    "introduction": "Find out about how you can use Container Registry to provide a multi-tenant private image registry that you can use to store and share your container images with users in your IBM Cloud account. Click the tiles to explore more information about Container Registry.",
     "section_devtools": {
       "api": "/apidocs/container-registry",
       "cli": "/docs/Registry?topic=Registry-containerregcli",

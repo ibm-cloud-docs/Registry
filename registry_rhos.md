@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-18"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords: External registry, private registry, Red Hat OpenShift, Red Hat, clusters, Red Hat OpenShift Container Platform, container platform, internal registry, images
 
@@ -18,7 +18,7 @@ subcollection: Registry
 You can add value to your {{site.data.keyword.redhat_openshift_full}} Container Platform clusters by using {{site.data.keyword.registrylong}} even where an internal registry is already provided.
 {: shortdesc}
 
-For example, if you have multiple clusters, {{site.data.keyword.registryshort}} integrates conveniently with {{site.data.keyword.redhat_openshift_notm}} Container Platform clusters so that you can build, share, synchronize, and scan image assets across clusters. For more information, see [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options).
+For example, if you have multiple clusters, {{site.data.keyword.registryshort_notm}} integrates conveniently with {{site.data.keyword.redhat_openshift_notm}} Container Platform clusters so that you can build, share, synchronize, and scan image assets across clusters. For more information, see [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options).
 
 You can set up {{site.data.keyword.registryshort}} to work with the internal registry of [{{site.data.keyword.openshiftlong_notm}}](#registry_rhos_rhoks) or [other {{site.data.keyword.redhat_openshift_notm}} Container Platform providers](#registry_rhos_os).
 

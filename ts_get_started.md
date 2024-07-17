@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-01-08"
+  years: 2024, 2024
+lastupdated: "2024-07-17"
 
 keywords: iam, access, policy, permission, access policy
 
@@ -33,4 +33,4 @@ Ask your administrator to add you to an existing access policy, or create an acc
 
 If you send the following text to your administrator, it might help them to set up the correct IAM service access role permissions. Replace `<account_name>` with the name of the account that you want to access.
 
-*I need to have the Manager service access role on `container-registry` in the account `<account_name>` so that I can manage the {{site.data.keyword.registrylong_notm}} service. (You might need to justify this request in more detail by specifying the actions that you require regarding [service access roles](/docs/Registry?topic=Registry-iam&interface=ui#service_access_roles)). You can grant me the Manager role with the `ibmcloud iam user-policy-create $MYUSER --roles Manager --service-name container-registry` command, but you can also use other indirect ways to grant permissions consistently, for example by using access groups and templates, according to the account policy. For more information about assigning access, see [Assigning access to Container Registry in the console](/docs/Registry?topic=Registry-iam&interface=ui#registry_iam_assign-access-console).*
+*I need to have the Manager service access role on `container-registry` in the account `<account_name>` so that I can manage the {{site.data.keyword.registrylong_notm}} service. (You might need to justify this request in more detail by specifying the actions that you require regarding [service access roles](/docs/Registry?topic=Registry-iam&interface=ui#service_access_roles)). You can grant me the Manager role with the `ibmcloud iam user-policy-create $MYUSER --roles Manager --service-name container-registry` command, but you can also use other indirect ways to grant permissions consistently, for example by using access groups and templates, according to the account policy. For more information about assigning access, see [Assigning access to {{site.data.keyword.registryshort}} in the console](/docs/Registry?topic=Registry-iam&interface=ui#registry_iam_assign-access-console).*

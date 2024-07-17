@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-05"
+lastupdated: "2024-07-17"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -909,7 +909,7 @@ subcollection: Registry
 
     * [Configuration issues](/docs/Registry?topic=Registry-va_index#app_configurations)
 
-* [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index#va_set_version)
+* [Setting the version of Vulnerability Advisor](/docs/Registry?topic=Registry-va_index#va_set_version)
 
 * [Reviewing a vulnerability report](/docs/Registry?topic=Registry-va_index#va_reviewing)
 

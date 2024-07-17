@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-06-07"
+  years: 2023, 2024
+lastupdated: "2024-07-17"
 
 keywords: IBM Cloud Container Registry notices, vulnerability advisor, change, update, actions, sdk, code, api, cli, version 4, version 3
 
@@ -26,9 +26,9 @@ Vulnerability Advisor version 3 is being deprecated as the default on 19 June 20
 
 If you use the {{site.data.keyword.cloud_notm}} console to access Vulnerability Advisor, no action is required. The {{site.data.keyword.cloud_notm}} console is automatically updated to Vulnerability Advisor version 4.
 
-If you use the {{site.data.keyword.cloud_notm}} CLI and you want to use version 4 as the default, you must update the {{site.data.keyword.registryshort}} CLI plug-in to version 1.0.0, or later, by 19 June 2023. Updating the {{site.data.keyword.registryshort}} CLI plug-in to version 1.0.0, or later, enables the `ibmcloud cr va` command and the `--va` option on the `ibmcloud cr images` and `ibmcloud cr digests` commands to work with Vulnerability Advisor version 4.
+If you use the {{site.data.keyword.cloud_notm}} CLI and you want to use version 4 as the default, you must update the {{site.data.keyword.registryshort}} CLI plug-in to version 1.0.0, or later, by 19 June 2023. Updating the {{site.data.keyword.registryshort}} CLI plug-in to 1.0.0, or later, enables the `ibmcloud cr va` command and the `--va` option on the `ibmcloud cr images` and `ibmcloud cr digests` commands to work with Vulnerability Advisor version 4.
 
-On 19 June 2023, when the default changes to Vulnerability Advisor version 4, the {{site.data.keyword.registryshort}} CLI automatically starts to use this version unless the `ibmcloud cr va-version-set v3` command was run, in which case Vulnerability Advisor version 3 continues to be used. You can use the `ibmcloud cr va-version` command to determine which Vulnerability Advisor version is being used and the `ibmcloud cr va-version-set v4` command to switch to Vulnerability Advisor version 4. When Vulnerability Advisor version 3 reaches its end of support date, any {{site.data.keyword.registryshort}} CLI commands that access Vulnerability Advisor version 3 cease to work. An end of support date is not available yet.
+On 19 June 2023, when the default changes to Vulnerability Advisor version 4, the {{site.data.keyword.registryshort}} CLI automatically starts to use this version unless the `ibmcloud cr va-version-set v3` command was run, in which case Vulnerability Advisor version 3 continues to be used. You can use the `ibmcloud cr va-version` command to determine which Vulnerability Advisor version is in use and the `ibmcloud cr va-version-set v4` command to switch to Vulnerability Advisor version 4. When Vulnerability Advisor version 3 reaches its end of support date, any {{site.data.keyword.registryshort}} CLI commands that access Vulnerability Advisor version 3 cease to work. An end of support date is not available yet.
 
 If you use the Vulnerability Advisor REST API to access Vulnerability Advisor, you must update your client call from `/va/api/v3` APIs to `/va/api/v4` APIs.
 

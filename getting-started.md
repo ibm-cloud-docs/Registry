@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-08"
+lastupdated: "2024-07-17"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -36,7 +36,7 @@ Do not put personal information in your container images, namespace names, descr
 
 Install the {{site.data.keyword.cloud_notm}} CLI so that you can run the {{site.data.keyword.cloud_notm}} `ibmcloud` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 
-The following instructions assume that you’re in your own account with permission to do everything. If you find that you can't run the commands and you’re a member of an account that is owned and administered by someone else, you might lack the correct permissions to configure and operate the {{site.data.keyword.registryshort}} service. In which case, you must ask your administrator to give you the required IAM service access role permissions. For more information, see [Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started).
+The following instructions assume that you’re in your own account with permission to do everything. If you find that you can't run the commands and you’re a member of an account that is owned and administered by someone else, you might lack the correct permissions to configure and operate the {{site.data.keyword.registryshort}} service. In which case, you must ask your administrator to give you the required IAM service access role permissions. For more information, see [Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started)
 {: note}
 
 ## Install the {{site.data.keyword.registryshort_notm}} CLI
@@ -129,7 +129,7 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_el
       ```
       {: pre}
 
-      If you have problem when you try to pull a Docker image, see [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker) for assistance. If you can't pull the most recent image by using the `latest` tag, see [Why can't I pull the newest image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest) for assistance.
+      If you have a problem when you try to pull a Docker image, see [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker) for assistance. If you can't pull the most recent image by using the `latest` tag, see [Why can't I pull the newest image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest) for assistance.
       {: tip}
 
     - If you are using Podman, run the following command.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-05"
+lastupdated: "2024-07-17"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -153,7 +153,7 @@ Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} pl
 
     If you want to continue to use version 3, you don't need to do anything.
 
-    If you want to use version 4 to run the `ibmcloud cr va`, `ibmcloud cr image-list`, or `ibmcloud cr image-digests` commands, see [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
+    If you want to use version 4 to run the `ibmcloud cr va`, `ibmcloud cr image-list`, or `ibmcloud cr image-digests` commands, see [Setting the version of Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
 
     For more information about Vulnerability Advisor, see [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#about). For more information about Vulnerability Advisor API 4, see [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/vulnerability-advisor).
 
@@ -164,7 +164,7 @@ New commands for setting and checking the Vulnerability Advisor version are avai
 
     If you want to use version 4, you can set the version by running the [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) command.
 
-    For more information about setting the version by using the `ibmcloud cr va-version-set` command, see [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) and [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
+    For more information about setting the version by using the `ibmcloud cr va-version-set` command, see [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) and [Setting the version of Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
 
     To find out which version of Vulnerability Advisor that you're running, see [`ibmcloud cr va-version`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version).
 

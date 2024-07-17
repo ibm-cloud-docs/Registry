@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-12-18"
+  years: 2021, 2024
+lastupdated: "2024-07-17"
 
 keywords: registry, login, push, pull, iam session, iam
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Logging in to {{site.data.keyword.registrylong}} by using the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command is subject to IAM login session limits.
+Logging in to {{site.data.keyword.registrylong}} by using the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command is subject to {{site.data.keyword.iamshort}} (IAM) login session limits.
 {: shortdesc}
 
 Pushes and pulls to the registry fail after a period of inactivity. The following example is a typical scenario:
