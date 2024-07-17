@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-02"
+lastupdated: "2024-07-17"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -44,7 +44,7 @@ Install the `container-registry` CLI plug-in so that you can use the command lin
 
 2. Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo` or as root.
 
-{{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+{{site.data.keyword.registrylong_notm}} supports Docker and other clients. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 {: tip}
 
 You can now [set up your own namespace](#registry_namespace_setup) in {{site.data.keyword.registrylong_notm}}.
@@ -75,7 +75,7 @@ ibmcloud plugin update container-registry
 
 To update version 0.1 of the {{site.data.keyword.registryshort}} CLI, run the following command, where `<version_number>` is the number of the version of the CLI.
 
-Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
+Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated. For more information, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
 {: deprecated}
 
 ```txt

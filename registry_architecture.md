@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-18"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
@@ -33,7 +33,7 @@ Segmentation of data within {{site.data.keyword.registrylong_notm}} is achieved 
 
 You can control access to [namespaces](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace) within the account by using {{site.data.keyword.iamshort}} (IAM) access policies. Storage in {{site.data.keyword.cos_full_notm}} is not segmented, but user accounts do not have direct access to the {{site.data.keyword.cos_full_notm}} that contains the image data. For more information, see [Managing IAM access for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam).
 
-All traffic to the registry, and from the service to {{site.data.keyword.registrylong_notm}} dependencies is encrypted in transit. No additional network level segmentation of traffic is provided. The control plane and data plane are not separated from each other.
+All traffic to the registry, and from the service to {{site.data.keyword.registrylong_notm}} dependencies is encrypted in transit. No additional network-level segmentation of traffic is provided. The control plane and data plane are not separated from each other.
 
 ## Private connections
 {: #registry_architecture_private_connections}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-07-17"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -104,7 +104,7 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 
 Configuration issues are not supported in Vulnerability Advisor version 4.
 
-## Setting the Vulnerability Advisor version
+## Setting the version of Vulnerability Advisor
 {: #va_set_version}
 
 To retrieve results from version 4, run the following [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) command. The only valid value is `v4`.

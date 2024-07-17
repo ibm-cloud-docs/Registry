@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-01-02"
+lastupdated: "2024-07-17"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -46,7 +46,7 @@ Add a second user to your account and grant them the ability to configure {{site
 
 1. Add User B to User A's account.
 
-    1. Log in to User A's account, by running the following command.
+    1. Log in to User A's account by running the following command.
 
         ```txt
         ibmcloud login
@@ -279,7 +279,7 @@ Create some namespaces with sample images, and grant access to them. You create 
         ```
         {: pre}
 
-        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+        {{site.data.keyword.registrylong_notm}} supports Docker and other clients. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
         {: tip}
 
         If you have a problem when you try to log in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
@@ -331,7 +331,7 @@ Create some namespaces with sample images, and grant access to them. You create 
         ```
         {: pre}
 
-        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+        {{site.data.keyword.registrylong_notm}} supports Docker and other clients. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
         {: tip}
 
     5. Pull the image by running the following command.
@@ -452,7 +452,7 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
         ```
         {: pre}
 
-        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating).
+        {{site.data.keyword.registrylong_notm}} supports Docker and other clients. To log in by using other clients, see [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating).
         {: tip}
 
     2. Pull your image by running the following command.
@@ -489,7 +489,7 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
         ```
         {: pre}
 
-        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+        {{site.data.keyword.registrylong_notm}} supports Docker and other clients. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
         {: tip}
 
     2. List your service policies by running the following command.

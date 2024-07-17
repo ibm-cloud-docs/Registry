@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-10-11"
+  years: 2023, 2024
+lastupdated: "2024-07-17"
 
 keywords: IBM Cloud Container Registry notices, vulnerability advisor, change, update, actions, sdk, code, api, cli, version 4, version 3
 
@@ -23,7 +23,7 @@ The version of the Vulnerability Advisor component of {{site.data.keyword.regist
 
 If you use the {{site.data.keyword.cloud_notm}} console to access Vulnerability Advisor, no action is required. The {{site.data.keyword.cloud_notm}} console is automatically updated to Vulnerability Advisor version 4.
 
-If you use the {{site.data.keyword.cloud_notm}} CLI, you must update the `container-registry` CLI plug-in to version 1.0.0, or later, by 13 November 2023. Updating the `container-registry` CLI plug-in to version 1.0.0, or later, enables the `ibmcloud cr va` command and the `--va` option on the `ibmcloud cr images` and `ibmcloud cr digests` commands to work with Vulnerability Advisor version 4. On 13 November 2023, any {{site.data.keyword.registryshort}} CLI commands that access Vulnerability Advisor version 3 cease to work.
+If you use the {{site.data.keyword.cloud_notm}} CLI, you must update the `container-registry` CLI plug-in to version 1.0.0, or later, by 13 November 2023. Updating the `container-registry` CLI plug-in to 1.0.0, or later, enables the `ibmcloud cr va` command and the `--va` option on the `ibmcloud cr images` and `ibmcloud cr digests` commands to work with Vulnerability Advisor version 4. On 13 November 2023, any {{site.data.keyword.registryshort}} CLI commands that access Vulnerability Advisor version 3 cease to work.
 
 If you have explicitly run the `ibmcloud cr va-version-set v3` command previously, you must set the version to version 4.
 

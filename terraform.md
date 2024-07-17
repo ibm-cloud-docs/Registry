@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-12-19"
+  years: 2021, 2024
+lastupdated: "2024-07-17"
 
 keywords: Terraform for IBM Cloud Container Registry, terraform, namespace, cli, image, resource
 
@@ -18,7 +18,7 @@ subcollection: Registry
 Terraform on {{site.data.keyword.cloud}} enables predictable and consistent provisioning of {{site.data.keyword.cloud_notm}} services so that you can rapidly build complex, multitiered cloud environments that follow Infrastructure as Code (IaC) principles. Similar to using the {{site.data.keyword.cloud_notm}} CLI or API and SDKs, you can automate the provisioning, update, and deletion of your {{site.data.keyword.registrylong}} instances by using HashiCorp Configuration Language (HCL).
 {: shortdesc}
 
-Are you looking for a managed Terraform on {{site.data.keyword.cloud_notm}} solution? Try out [{{site.data.keyword.bplong_notm}}](/docs/schematics?topic=schematics-getting-started). With {{site.data.keyword.bpshort}}, you can use the Terraform scripting language that you are familiar with, but you don't need to worry about setting up and maintaining the Terraform command line and the {{site.data.keyword.cloud_notm}} Provider plug-in. {{site.data.keyword.bpshort}} also provides pre-defined Terraform templates that you can install from the {{site.data.keyword.cloud_notm}} catalog.
+Are you looking for a managed Terraform on {{site.data.keyword.cloud_notm}} solution? Try out [{{site.data.keyword.bplong_notm}}](/docs/schematics?topic=schematics-getting-started). With {{site.data.keyword.bpshort}}, you can use the Terraform scripting language, but you don't need to worry about setting up and maintaining the Terraform command line and the {{site.data.keyword.cloud_notm}} Provider plug-in. {{site.data.keyword.bpshort}} also provides pre-defined Terraform templates that you can install from the {{site.data.keyword.cloud_notm}} catalog.
 {: tip}
 
 ## Installing Terraform and creating a {{site.data.keyword.registryshort}} namespace
@@ -28,7 +28,7 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 
 1. To install the Terraform CLI and configure the {{site.data.keyword.cloud_notm}} Provider plug-in for Terraform, follow the [Terraform on {{site.data.keyword.cloud_notm}} getting started tutorial](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started). The plug-in abstracts the {{site.data.keyword.cloud_notm}} APIs that are used to provision, update, or delete {{site.data.keyword.registryshort}} resources.
 
-2. Create a Terraform configuration file that is named `main.tf`. In this file, you add the configuration to create a {{site.data.keyword.registryshort}} namespace and to assign a user an IAM [access policy](#x2853407){: term} in Identity and Access Management (IAM) for that namespace by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language){: external}.
+2. Create a Terraform configuration file that is named `main.tf`. Add the configuration to create a {{site.data.keyword.registryshort}} namespace and to assign a user an IAM [access policy](#x2853407){: term} in {{site.data.keyword.iamshort}} (IAM) for that namespace by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language){: external}.
 
     The following example creates a namespace in the default [resource group](#x2161955){: term} with a name of your choice and attaches an image retention policy to that namespace that retains 10 images. To retrieve the ID of the default resource group, the `ibm_resource_group` data source is used. Then, the user `user@ibm.com` is assigned the Manager role in the IAM access policy for the namespace for a particular region. The region is retrieved from the `terraform.tfvars` file that you created in step 1.
 
