@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-07-18"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -107,7 +107,7 @@ ibmcloud plugin uninstall container-registry
 ## Planning namespaces
 {: #registry_setup_cli_namespace_plan}
 
-{{site.data.keyword.registrylong_notm}} provides a multi-tenant private image [registry](#x2064940){: term} that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry namespace.
+{{site.data.keyword.registrylong_notm}} provides a multi-tenant private image [registry](#x2064940){: term} that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can store and share your Docker images in this registry by setting up a registry namespace.
 
 Namespaces are created in a resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used. However, you can still set permissions for the namespace at the account level or in the namespace itself. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.
 
