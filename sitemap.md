@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-07-22"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -204,6 +204,84 @@ subcollection: Registry
 * [What if I did not implement the changes in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
 [Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
+
+[{{site.data.keyword.registryshort}} is ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions)
+
+* [What are exemptions?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_desc)
+
+* [What is the current behavior?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_behavior)
+
+* [Which regions currently replicate exemptions?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_replicate)
+
+* [Do I have any exemptions?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_own)
+
+* [How does this change affect me?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_affect)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_announce)
+
+[{{site.data.keyword.registryshort}} to bill for storage used by untagged images from 1 February 2022](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing)
+
+* [What are untagged images?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_untagged_image)
+
+* [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_untagged_image_own)
+
+* [Do I need untagged images?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_untagged_image_need)
+
+* [How does this change affect me?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_affect)
+
+* [How can I remove untagged images?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_untagged_image_remove)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_announce)
+
+[{{site.data.keyword.registryshort}} discontinues registry tokens for authentication](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
+
+* [What actions you must take by 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_action)
+
+* [Learn more](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_learn)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_announce)
+
+[{{site.data.keyword.registryshort}} is deprecating container builds](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds)
+
+* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_know)
+
+* [What actions you must take by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_action)
+
+* [Learn more](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_learn)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_announce)
+
+[Announcing the end of {{site.data.keyword.registryshort}} support for UAA tokens from 12 August 2020](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token)
+
+* [Next steps to use IAM for authentication](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token_next)
+
+* [Summary](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token_summary)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token_announce)
+
+[{{site.data.keyword.registryshort}} introduces retention policies](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention)
+
+* [Setting retention policies in the CLI](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention_cli)
+
+* [Learn more](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention_learn)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention_announce)
+
+[Registry token creation is discontinued from 1 July 2019](/docs/Registry?topic=Registry-registry_notices_token#registry_notices_token)
+
+* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_token#registry_notices_token_affect)
+
+* [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_token#registry_notices_token_benefit)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_token#registry_notices_token_announce)
+
+[Introducing new {{site.data.keyword.registryshort}} domain names from 25 February 2019](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names)
+
+* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names_know)
+
+* [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names_benefit)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names_announce)
 
 
 ## Release notes

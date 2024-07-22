@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-22"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, iam
 
@@ -32,3 +32,11 @@ Notifications about changes.
 - [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
 - [IAM access policies are required for {{site.data.keyword.registryshort}} from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
 - [Minimum supported Docker version that is supported by {{site.data.keyword.registryshort}} from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker).
+- [{{site.data.keyword.registryshort}} is ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions)
+- [{{site.data.keyword.registryshort}} to bill for storage used by untagged images from 1 February 2022](/docs/Registry?topic=Registry-registry_notices_billing)
+- [{{site.data.keyword.registryshort}} discontinues registry tokens for authentication](/docs/Registry?topic=Registry-registry_notices_token_auth)
+- [{{site.data.keyword.registryshort}} is deprecating container builds](/docs/Registry?topic=Registry-registry_notices_container_builds)
+- [Announcing the end of {{site.data.keyword.registryshort}} support for UAA tokens from 12 August 2020](/docs/Registry?topic=Registry-registry_notices_uaa_token)
+- [{{site.data.keyword.registryshort}} introduces retention policies](/docs/Registry?topic=Registry-registry_notices_retention)
+- [Registry token creation is discontinued from 1 July 2019](/docs/Registry?topic=Registry-registry_notices_token)
+- [Introducing new {{site.data.keyword.registryshort}} domain names from 25 February 2019](/docs/Registry?topic=Registry-registry_notices_domain_names)
