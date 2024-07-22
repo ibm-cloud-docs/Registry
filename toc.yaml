@@ -42,6 +42,14 @@ toc:
             navtitle: IAM access policies are required from 5 July 2022
           - topic: registry_notices_docker.md
             navtitle: Minimum supported Docker version from 1 March 2022
+          - registry_notices_exemptions.md
+          - registry_notices_billing.md
+          - registry_notices_token_auth.md
+          - registry_notices_container_builds.md
+          - registry_notices_uaa_token.md
+          - registry_notices_retention.md
+          - registry_notices_token.md
+          - registry_notices_domain_names.md
       - topic: registry_release_notes.md
         navtitle: Release notes
   - navgroup:
