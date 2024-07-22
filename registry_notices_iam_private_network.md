@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-21"
+lastupdated: "2024-07-22"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -77,3 +77,8 @@ For more information about the new and current {{site.data.keyword.registryshort
 
 - For {{site.data.keyword.containerlong_notm}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 - For {{site.data.keyword.openshiftlong}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
+
+## Original announcement
+{: #registry_notices_iam_pivate_network_announce}
+
+The original announcement that this notification mirrors is [Source IP Preservation for Private Connections to {{site.data.keyword.registrylong_notm}}](https://www.ibm.com/blog/announcement/source-ip-preservation-for-private-connections-to-ibm-cloud-container-registry/){: external} and it was published on 7 April 2022.

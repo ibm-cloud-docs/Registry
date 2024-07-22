@@ -193,6 +193,8 @@ subcollection: Registry
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_action)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_announce)
+
 [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
 * [What are the changes?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
