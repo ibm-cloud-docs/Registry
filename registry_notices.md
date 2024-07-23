@@ -34,6 +34,7 @@ Notifications about changes.
 - [Minimum supported Docker version that is supported by {{site.data.keyword.registryshort}} from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker).
 - [{{site.data.keyword.registryshort}} is ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions)
 - [{{site.data.keyword.registryshort}} to bill for storage used by untagged images from 1 February 2022](/docs/Registry?topic=Registry-registry_notices_billing)
+- [Changes to the public IP addresses for {{site.data.keyword.registryshort}} from 13 September 2021](/docs/Registry?topic=Registry-registry_notices_public_ip_address)
 - [{{site.data.keyword.registryshort}} discontinues registry tokens for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth)
 - [{{site.data.keyword.registryshort}} is deprecating container builds - take action by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds)
 - [Announcing the end of {{site.data.keyword.registryshort}} support for UAA tokens from 12 August 2020](/docs/Registry?topic=Registry-registry_notices_uaa_token)
