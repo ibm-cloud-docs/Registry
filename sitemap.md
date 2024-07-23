@@ -179,6 +179,8 @@ subcollection: Registry
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_actions)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_announce)
+
 [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
