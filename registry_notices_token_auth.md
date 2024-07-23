@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-07-23"
 
 keywords: IBM Cloud Container Registry notices, notices, registry tokens, authentication
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort}} discontinues registry tokens for authentication
+# {{site.data.keyword.registryshort}} discontinues registry tokens for authentication on 19 August 2021
 {: #registry_notices_token_auth}
 
 From 19 August 2021, any {{site.data.keyword.registrylong}} pulls that use registry tokens will stop working, including pulls from [{{site.data.keyword.containerlong_notm}}](https://www.ibm.com/products/kubernetes-service){: external} and [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/products/openshift){: external}. Any {{site.data.keyword.registrylong_notm}} pushes that use registry tokens from CI pipelines will also stop working.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-07-23"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -155,13 +155,19 @@ subcollection: Registry
 
 * [What actions you must take by 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_action)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v3#registry_notices_announce)
+
 [Upcoming public networking changes](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_announce)
 
 [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_va_v4)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_change)
 
 * [What actions you must take by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_action)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_announce)
 
 [Changes to {{site.data.keyword.registryshort_notm}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
 
@@ -173,15 +179,21 @@ subcollection: Registry
 
 * [What actions you must take](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_actions)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_announce)
+
 [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_know)
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_actions)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_announce)
+
 [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_announce)
 
 [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
@@ -193,6 +205,8 @@ subcollection: Registry
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_action)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_announce)
+
 [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
 * [What are the changes?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
@@ -203,7 +217,11 @@ subcollection: Registry
 
 * [What if I did not implement the changes in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_announce)
+
 [Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_announce)
 
 [{{site.data.keyword.registryshort}} is ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions)
 
@@ -233,7 +251,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_announce)
 
-[{{site.data.keyword.registryshort}} discontinues registry tokens for authentication](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
+[{{site.data.keyword.registryshort}} discontinues registry tokens for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
 
 * [What actions you must take by 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_action)
 
@@ -241,7 +259,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_announce)
 
-[{{site.data.keyword.registryshort}} is deprecating container builds](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds)
+[{{site.data.keyword.registryshort}} is deprecating container builds - take action by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_know)
 
@@ -259,7 +277,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token_announce)
 
-[{{site.data.keyword.registryshort}} introduces retention policies](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention)
+[{{site.data.keyword.registryshort}} introduces retention policies from 23 September 2019](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention)
 
 * [Setting retention policies in the CLI](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention_cli)
 
