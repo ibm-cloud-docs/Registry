@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-07-23"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vpe
 
@@ -75,3 +75,8 @@ If you are using a {{site.data.keyword.registryshort}} VPE gateway that was crea
     2. Create a VPE gateway for {{site.data.keyword.registryshort}} in the required VPC, see [Creating an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui). If you’re using the CLI, you might want to refer to the {{site.data.keyword.registryshort}} VPE CRNs. For more information, see [Setting up a VPE for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoint_setup).
 
     3. Remove the VPE gateway that was created before 11 November 2022, see [Deleting an endpoint gateway](/docs/vpc?topic=vpc-vpe-deleting-ui-cli-api&interface=ui).
+
+## Original announcement
+{: #registry_notices_announce}
+
+The original announcement was published on 11 November 2022.

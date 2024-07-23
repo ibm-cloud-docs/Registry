@@ -155,13 +155,19 @@ subcollection: Registry
 
 * [What actions you must take by 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_action)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v3#registry_notices_announce)
+
 [Upcoming public networking changes](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_announce)
 
 [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_va_v4)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_change)
 
 * [What actions you must take by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_action)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_announce)
 
 [Changes to {{site.data.keyword.registryshort_notm}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
 
@@ -172,6 +178,8 @@ subcollection: Registry
 * [Understanding if you are impacted by this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_impact)
 
 * [What actions you must take](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_actions)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_announce)
 
 [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address)
 
