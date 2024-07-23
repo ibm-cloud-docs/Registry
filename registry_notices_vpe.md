@@ -77,6 +77,6 @@ If you are using a {{site.data.keyword.registryshort}} VPE gateway that was crea
     3. Remove the VPE gateway that was created before 11 November 2022, see [Deleting an endpoint gateway](/docs/vpc?topic=vpc-vpe-deleting-ui-cli-api&interface=ui).
 
 ## Original announcement
-{: #registry_notices_announce}
+{: #registry_notices_vpe_announce}
 
 The original announcement was published on 11 November 2022.

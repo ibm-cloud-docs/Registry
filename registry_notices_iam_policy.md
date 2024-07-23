@@ -65,6 +65,6 @@ If the changes affect you, you must create IAM [access policies](/docs/Registry?
 To recover any access that is lost, follow the steps in [Prepare for the changes](#notices_iam_policy_prepare).
 
 ## Original announcement
-{: #registry_notices_announce}
+{: #registry_notices_iam_policy_announce}
 
 The original announcement was published on 9 February 2022.

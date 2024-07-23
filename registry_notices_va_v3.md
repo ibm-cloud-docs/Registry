@@ -56,6 +56,6 @@ To update to Vulnerability Advisor version 4, complete the following steps:
 5. Ensure that you are using version 1.0.0, or later, of the SDK, see [`container-registry-go-sdk`](https://github.com/IBM/container-registry-go-sdk/releases){: external}.
 
 ## Original announcement
-{: #registry_notices_announce}
+{: #registry_notices_va_v3_announce}
 
 The original announcement was published on 11 October 2023.
