@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-07-23"
 
 keywords: IBM Cloud Container Registry notices, notices, retention policies
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort}} introduces retention policies
+# {{site.data.keyword.registryshort}} introduces retention policies from 23 September 2019
 {: #registry_notices_retention}
 
 {{site.data.keyword.registrylong}} retention policies help keep your registry namespaces in check by retaining only the images that are important to you.

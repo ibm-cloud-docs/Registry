@@ -251,7 +251,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_announce)
 
-[{{site.data.keyword.registryshort}} discontinues registry tokens for authentication](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
+[{{site.data.keyword.registryshort}} discontinues registry tokens for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
 
 * [What actions you must take by 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_action)
 
@@ -259,7 +259,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_announce)
 
-[{{site.data.keyword.registryshort}} is deprecating container builds](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds)
+[{{site.data.keyword.registryshort}} is deprecating container builds - take action by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_know)
 
@@ -277,7 +277,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token_announce)
 
-[{{site.data.keyword.registryshort}} introduces retention policies](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention)
+[{{site.data.keyword.registryshort}} introduces retention policies from 23 September 2019](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention)
 
 * [Setting retention policies in the CLI](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention_cli)
 
