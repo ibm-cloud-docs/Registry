@@ -23,7 +23,7 @@ The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cl
 ## What you need to know about this change
 {: #registry_notices_container_builds_know}
 
-It is common to use the `ibmcloud cr build` command in a DevOps pipeline. In [{{site.data.keyword.contdelivery_full}}](https://www.ibm.com/products/continuous-delivery){: external}, you can use either [Classic pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-deliverypipeline_about) or [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-tekton-pipelines) to build container images, but you must update existing pipelines to replace the `ibmcloud cr build` command.
+It is common to use the `ibmcloud cr build` command in a DevOps pipeline. In [{{site.data.keyword.contdelivery_short}}](https://www.ibm.com/products/continuous-delivery){: external}, you can use either [Classic pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-deliverypipeline_about) or [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-tekton-pipelines) to build container images, but you must update existing pipelines to replace the `ibmcloud cr build` command.
 
 The {{site.data.keyword.registryshort}} job type in a Classic pipeline uses the `ibmcloud cr build` command from the job's build script. Several of the toolchain templates use this script to build container images. An alternative, which uses [moby buildkit](https://github.com/moby/buildkit){: external} instead of the `ibmcloud cr build` command, is under development. This alternative will be available before the `ibmcloud cr build` command is removed from {{site.data.keyword.registryshort}}. Detailed instructions for migrating your pipeline will be available then. For more information about building container images, including migration steps when they are available, see [Building container images](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images).
 
@@ -37,7 +37,7 @@ By 6 September 2021, users of {{site.data.keyword.registrylong_notm}} will need 
 ## Learn more
 {: #registry_notices_container_builds_learn}
 
-For more information about migrating your existing pipelines, see the {{site.data.keyword.contdelivery_full}} documentation about [building container images](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images), or [get started with the {{site.data.keyword.contdelivery_full}} service](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started).
+For more information about migrating your existing pipelines, see the {{site.data.keyword.contdelivery_short}} documentation about [building container images](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images), or [get started with the {{site.data.keyword.contdelivery_short}} service](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started).
 
 ## Original announcement
 {: #registry_notices_container_builds_announce}
