@@ -251,6 +251,16 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_announce)
 
+[Changes to the public IP addresses for {{site.data.keyword.registryshort}} from 13 September 2021](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address)
+
+* [What you need to know:](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_know)
+
+* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_action)
+
+* [When the changes take effect](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_change)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_announce)
+
 [{{site.data.keyword.registryshort}} discontinues registry tokens for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
 
 * [What actions you must take by 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_action)

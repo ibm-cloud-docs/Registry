@@ -44,6 +44,7 @@ toc:
             navtitle: Minimum supported Docker version from 1 March 2022
           - registry_notices_exemptions.md
           - registry_notices_billing.md
+          - registry_notices_public_ip_address.md
           - registry_notices_token_auth.md
           - registry_notices_container_builds.md
           - registry_notices_uaa_token.md
