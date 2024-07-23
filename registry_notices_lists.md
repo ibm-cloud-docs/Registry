@@ -32,6 +32,6 @@ If you require security status with your list, add the `--restrict` option when 
 If you are an API user and require security status with your list, ensure that you are restricting the repositories that you are requesting to ensure that you receive list results quickly and reliably.
 
 ## Original announcement
-{: #registry_notices_announce}
+{: #registry_notices_lists_announce}
 
 The original announcement was published on 3 August 2022.

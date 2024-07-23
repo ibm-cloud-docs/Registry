@@ -155,11 +155,11 @@ subcollection: Registry
 
 * [What actions you must take by 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_action)
 
-* [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v3#registry_notices_announce)
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v3#registry_notices_va_v3_announce)
 
 [Upcoming public networking changes](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
 
-* [Original announcement](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_announce)
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains_announce)
 
 [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_va_v4)
 
@@ -167,7 +167,7 @@ subcollection: Registry
 
 * [What actions you must take by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_action)
 
-* [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_announce)
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_va_v4_announce)
 
 [Changes to {{site.data.keyword.registryshort_notm}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
 
@@ -179,7 +179,7 @@ subcollection: Registry
 
 * [What actions you must take](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_actions)
 
-* [Original announcement](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_announce)
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_announce)
 
 [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address)
 
@@ -187,13 +187,13 @@ subcollection: Registry
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_actions)
 
-* [Original announcement](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_announce)
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_announce)
 
 [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
 
-* [Original announcement](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_announce)
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_announce)
 
 [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
@@ -217,11 +217,11 @@ subcollection: Registry
 
 * [What if I did not implement the changes in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
-* [Original announcement](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_announce)
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy_announce)
 
 [Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
-* [Original announcement](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_announce)
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker_announce)
 
 [{{site.data.keyword.registryshort}} is ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions)
 

@@ -37,6 +37,6 @@ If you have any other custom configuration that uses the old {{site.data.keyword
 The {{site.data.keyword.containerlong_notm}} [Calico policy samples](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external} will be updated to remove the old IP addresses on 15 December 2022. If you use these samples, ensure that you pull in the most recent samples after this date.
 
 ## Original announcement
-{: #registry_notices_announce}
+{: #registry_notices_ip_address_announce}
 
 The original announcement was published on 2 November 2022.

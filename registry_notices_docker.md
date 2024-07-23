@@ -19,6 +19,6 @@ From 1 March 2022, the minimum version of Docker Engine that is supported by {{s
 {: shortdesc}
 
 ## Original announcement
-{: #registry_notices_announce}
+{: #registry_notices_docker_announce}
 
 The original announcement was published on 1 March 2022.

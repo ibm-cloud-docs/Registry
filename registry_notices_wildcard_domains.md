@@ -21,6 +21,6 @@ This advice is a change from existing advice that states that you must allow onl
 {: note}
 
 ## Original announcement
-{: #registry_notices_announce}
+{: #registry_notices_wildcard_domains_announce}
 
 The original announcement was published on 15 June 2023.
