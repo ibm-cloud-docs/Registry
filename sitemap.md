@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-07-23"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -183,6 +183,8 @@ subcollection: Registry
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_announce)
+
 [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
@@ -205,7 +207,11 @@ subcollection: Registry
 
 * [What if I did not implement the changes in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_announce)
+
 [Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_announce)
 
 [{{site.data.keyword.registryshort}} is ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-07-23"
 
 keywords: IBM Cloud Container Registry notices, notices, billing, untagged images
 
@@ -36,7 +36,7 @@ If you have active containers that are running untagged images, you need the unt
 ## How does this change affect me?
 {: #registry_notices_billing_affect}
 
-If you have many untagged images, you might see an increase in the bill for [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/products/container-registry){: external}. You can mitigate this extra cost by deleting any untagged images that you do not require.
+If you have many untagged images, you might see an increase in the bill for [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/products/container-registry){: external}. You can mitigate this cost by deleting any untagged images that you do not require.
 
 ## How can I remove untagged images?
 {: #registry_notices_billing_untagged_image_remove}
