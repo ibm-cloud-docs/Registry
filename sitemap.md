@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-25"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -143,7 +143,7 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
-[Important firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
+[Important firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registryshort}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_know)
 
