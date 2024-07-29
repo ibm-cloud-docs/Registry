@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-29"
 
 keywords: IBM Cloud Container Registry notices, notices, container builds
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort}} is deprecating container builds - take action by 6 September 2021
+# {{site.data.keyword.registryshort}} is deprecating container builds - act by 6 September 2021
 {: #registry_notices_container_builds}
 
 The container build capability of {{site.data.keyword.registrylong}} is deprecated and is being replaced by {{site.data.keyword.contdelivery_full}} capabilities. You must take action by 6 September 2021.
@@ -32,7 +32,7 @@ The {{site.data.keyword.contdelivery_short}} service also provides several Tekto
 ## What actions you must take by 6 September 2021
 {: #registry_notices_container_builds_action}
 
-By 6 September 2021, users of {{site.data.keyword.registrylong_notm}} will need to add the `–accept-deprecation` option to the `ibmcloud cr build` command. The new option is available in the container-registry plug-in version 0.1.543 and will be required for continued operation from 6 September 2021 onward. {{site.data.keyword.registrylong_notm}} container build service will have an end of service date of 5 October 2021.
+By 6 September 2021, users of {{site.data.keyword.registrylong_notm}} will need to add the `–accept-deprecation` option to the `ibmcloud cr build` command. The new option is available in the container-registry plug-in version 0.1.543 and will be required for continued operation from 6 September 2021 onward. {{site.data.keyword.registrylong_notm}} container build service will have an end of support date of 5 October 2021.
 
 ## Learn more
 {: #registry_notices_container_builds_learn}

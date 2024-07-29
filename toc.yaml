@@ -45,12 +45,15 @@ toc:
           - registry_notices_exemptions.md
           - registry_notices_billing.md
           - registry_notices_public_ip_address.md
+          - registry_notices_notaryv1.md
           - registry_notices_token_auth.md
           - registry_notices_container_builds.md
           - registry_notices_uaa_token.md
           - registry_notices_retention.md
           - registry_notices_token.md
           - registry_notices_domain_names.md
+          - registry_notices_va_v2_dep.md
+          - registry_notices_ibcr.md
       - topic: registry_release_notes.md
         navtitle: Release notes
   - navgroup:
