@@ -37,7 +37,7 @@ Notifications about changes.
 - [Changes to the public IP addresses for {{site.data.keyword.registryshort}} from 13 September 2021](/docs/Registry?topic=Registry-registry_notices_public_ip_address)
 - [Using Notary v1 for signing images in {{site.data.keyword.registryshort}} is deprecated from 8 July 2021](/docs/Registry?topic=Registry-registry_notices_notaryv1)
 - [{{site.data.keyword.registryshort}} discontinues registry tokens for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth)
-- [{{site.data.keyword.registryshort}} is deprecating container builds - take action by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds)
+- [{{site.data.keyword.registryshort}} is deprecating container builds - act by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds)
 - [Announcing the end of {{site.data.keyword.registryshort}} support for UAA tokens from 12 August 2020](/docs/Registry?topic=Registry-registry_notices_uaa_token)
 - [{{site.data.keyword.registryshort}} introduces retention policies from 23 September 2019](/docs/Registry?topic=Registry-registry_notices_retention)
 - [Registry token creation is discontinued from 1 July 2019](/docs/Registry?topic=Registry-registry_notices_token)

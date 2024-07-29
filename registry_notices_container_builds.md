@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-29"
 
 keywords: IBM Cloud Container Registry notices, notices, container builds
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort}} is deprecating container builds - take action by 6 September 2021
+# {{site.data.keyword.registryshort}} is deprecating container builds - act by 6 September 2021
 {: #registry_notices_container_builds}
 
 The container build capability of {{site.data.keyword.registrylong}} is deprecated and is being replaced by {{site.data.keyword.contdelivery_full}} capabilities. You must take action by 6 September 2021.
