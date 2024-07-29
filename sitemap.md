@@ -261,6 +261,10 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_announce)
 
+[Using Notary v1 for signing images in {{site.data.keyword.registryshort}} is deprecated from 8 July 2021](/docs/Registry?topic=Registry-registry_notices_notaryv1#registry_notices_notaryv1)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_notaryv1#registry_notices_notaryv1_announce)
+
 [{{site.data.keyword.registryshort}} discontinues registry tokens for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
 
 * [What actions you must take by 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_action)
@@ -310,6 +314,10 @@ subcollection: Registry
 * [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names_benefit)
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names_announce)
+
+[{{site.data.keyword.registrylong_notm}} is available as of 27 June 2017](/docs/Registry?topic=Registry-registry_notices_ibcr#registry_notices_ibcr)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_ibcr#registry_notices_ibcr_announce)
 
 
 ## Release notes
