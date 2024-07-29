@@ -42,4 +42,5 @@ Notifications about changes.
 - [{{site.data.keyword.registryshort}} introduces retention policies from 23 September 2019](/docs/Registry?topic=Registry-registry_notices_retention)
 - [Registry token creation is discontinued from 1 July 2019](/docs/Registry?topic=Registry-registry_notices_token)
 - [Introducing new {{site.data.keyword.registryshort}} domain names from 25 February 2019](/docs/Registry?topic=Registry-registry_notices_domain_names)
+- [Vulnerability Advisor version 2 API is being discontinued on 8 January 2019](/docs/Registry?topic=Registry-registry_notices_va_v2_dep)
 - [{{site.data.keyword.registrylong_notm}} is available as of 27 June 2017](/docs/Registry?topic=Registry-registry_notices_ibcr)
