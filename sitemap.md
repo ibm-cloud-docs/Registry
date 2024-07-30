@@ -143,11 +143,29 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
+    * [Year of original announcement: 2024](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2024)
+
+    * [Year of original announcement: 2023](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2023)
+
+    * [Year of original announcement: 2022](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2022)
+
+    * [Year of original announcement: 2021](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2021)
+
+    * [Year of original announcement: 2020](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2020)
+
+    * [Year of original announcement: 2019](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2019)
+
+    * [Year of original announcement: 2018](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2018)
+
+    * [Year of original announcement: 2017](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2017)
+
 [Important firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registryshort}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_know)
 
 * [What actions you must take by 4 September 2024](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_actions)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_announce)
 
 [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#registry_notices_va_v3)
 
