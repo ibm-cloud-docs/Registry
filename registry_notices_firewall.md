@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-25"
+lastupdated: "2024-07-30"
 
 keywords: IBM Cloud Container Registry notices, firewall, cdn, domain-based firewall, domains, icr.io, notices, content delivery network
 
@@ -41,3 +41,8 @@ If you are located in China, you must also allow the following domains by 4 Sept
 - `dd7-icr.ibm-zh.com`
 
 For more information about {{site.data.keyword.registryshort}} public access and firewall rules, see [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall).
+
+## Original announcement
+{: #registry_notices_firewall_announce}
+
+The original announcement that this notification mirrors is [Important firewall changes for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`)](https://cloud.ibm.com/notifications?selected=1719845157325){: external} and it was published on 1 July 2024.
