@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-07-30"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, iam
 
@@ -34,6 +34,7 @@ Notifications about changes.
 - [Minimum supported Docker version that is supported by {{site.data.keyword.registryshort}} from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker).
 - [{{site.data.keyword.registryshort}} is ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions)
 - [{{site.data.keyword.registryshort}} to bill for storage used by untagged images from 1 February 2022](/docs/Registry?topic=Registry-registry_notices_billing)
+- [Support for the {{site.data.keyword.registrylong_notm}} container build service ends on 5 October 2021](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos)
 - [Changes to the public IP addresses for {{site.data.keyword.registryshort}} from 13 September 2021](/docs/Registry?topic=Registry-registry_notices_public_ip_address)
 - [Using Notary v1 for signing images in {{site.data.keyword.registryshort}} is deprecated from 8 July 2021](/docs/Registry?topic=Registry-registry_notices_notaryv1)
 - [{{site.data.keyword.registryshort}} discontinues registry tokens for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth)
@@ -43,4 +44,5 @@ Notifications about changes.
 - [Registry token creation is discontinued from 1 July 2019](/docs/Registry?topic=Registry-registry_notices_token)
 - [Introducing new {{site.data.keyword.registryshort}} domain names from 25 February 2019](/docs/Registry?topic=Registry-registry_notices_domain_names)
 - [Vulnerability Advisor version 2 API is being discontinued on 8 January 2019](/docs/Registry?topic=Registry-registry_notices_va_v2_dep)
+- [{{site.data.keyword.registryshort_notm}} supports IAM access policies](/docs/Registry?topic=Registry-registry_notices_iam_support)
 - [{{site.data.keyword.registrylong_notm}} is available as of 27 June 2017](/docs/Registry?topic=Registry-registry_notices_ibcr)
