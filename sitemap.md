@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-07-30"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -251,6 +251,14 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_announce)
 
+[Support for the {{site.data.keyword.registrylong_notm}} container build service ends on 5 October 2021](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos)
+
+* [What you need to know](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos_what)
+
+* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos_action)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos_announce)
+
 [Changes to the public IP addresses for {{site.data.keyword.registryshort}} from 13 September 2021](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address)
 
 * [What you need to know:](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_know)
@@ -322,6 +330,10 @@ subcollection: Registry
 * [End of Support Date: 8 January 2019](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep_eos)
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep_announce)
+
+[{{site.data.keyword.registryshort_notm}} supports IAM access policies](/docs/Registry?topic=Registry-registry_notices_iam_support#registry_notices_iam_support)
+
+* [Original announcement](/docs/Registry?topic=Registry-registry_notices_iam_support#registry_notices_iam_support_announce)
 
 [{{site.data.keyword.registrylong_notm}} is available as of 27 June 2017](/docs/Registry?topic=Registry-registry_notices_ibcr#registry_notices_ibcr)
 
