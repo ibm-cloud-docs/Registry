@@ -610,7 +610,7 @@ Remove tags from images {: #13jun2019_tags}
 {: release-note}
 
 End of support for Container Scanner {: #13may2019_cs}
-:   Container Scanner is now deprecated and is no longer usable.
+:   Container Scanner is now discontinued and is no longer usable.
 
 ## 2 April 2019
 {: #registry-2apr2019}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-30"
+lastupdated: "2024-08-01"
 
 keywords: IBM Cloud Container Registry notices, notices, container builds, end of support, eos, ibmcloud cr build
 
@@ -26,7 +26,7 @@ Container builds that use the `ibmcloud cr build` CLI command or the API stop wo
 ## What actions you need to take
 {: #registry_notices_cont_builds_eos_action}
 
-As of 6 September 2021, you must add the `--accept-deprecation` option to any container builds that use the `ibmcloud cr build` command. The `--accept-deprecation` option is available in the container-registry plug-in version v0.1.543 and is required for all container builds after 6 September 2021.
+As of 6 September 2021, you must add the `--accept-deprecation` option to any container builds that use the `ibmcloud cr build` command. The `--accept-deprecation` option is available in the container-registry plug-in version v0.1.543. Version 0.1.543 is required for all container builds after 6 September 2021.
 
 On or before the end of support date of 5 October 2021, you must replace the build mechanism for any container builds that use the `ibmcloud cr build` command or the build API. For more information, see [{{site.data.keyword.registrylong_notm}} is deprecating container builds - act by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds).
 

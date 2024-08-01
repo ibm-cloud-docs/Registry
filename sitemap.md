@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-30"
+lastupdated: "2024-08-01"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -143,21 +143,21 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
-    * [Year of original announcement: 2024](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2024)
+    * [2024](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2024)
 
-    * [Year of original announcement: 2023](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2023)
+    * [2023](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2023)
 
-    * [Year of original announcement: 2022](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2022)
+    * [2022](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2022)
 
-    * [Year of original announcement: 2021](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2021)
+    * [2021](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2021)
 
-    * [Year of original announcement: 2020](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2020)
+    * [2020](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2020)
 
-    * [Year of original announcement: 2019](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2019)
+    * [2019](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2019)
 
-    * [Year of original announcement: 2018](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2018)
+    * [2018](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2018)
 
-    * [Year of original announcement: 2017](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2017)
+    * [2017](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2017)
 
 [Important firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registryshort}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
 
@@ -345,7 +345,7 @@ subcollection: Registry
 
 * [What is changing?](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep_change)
 
-* [End of Support Date: 8 January 2019](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep_eos)
+* [End of support Date: 8 January 2019](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep_eos)
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep_announce)
 

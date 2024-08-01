@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-08-01"
 
 keywords: registry, image, retention, distroless, list, creation date
 
@@ -31,7 +31,7 @@ You might have [Cloud Native Buildpacks](https://buildpacks.io/){: external} or 
 Images created before `2013-01-19T00:13:39Z` are excluded from retention policy evaluation.
 {: note}
 
-You can delete the image manually by running the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command, see [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
+You can delete the image manually by running the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command. For more information, see [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
 {: tsResolve}
 
 To check the creation date of an image, you can run the [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect) command. If the image doesn't have a creation date, the date is shown in the `ibmcloud cr image-inspect` output as `1970-01-01`, and the image is excluded from the results for `ibmcloud cr retention-run`.
