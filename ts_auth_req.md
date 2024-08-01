@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-08-01"
 
 keywords: registry, access, authorization required, error, API key, client, token, region, CRG0014E
 
@@ -77,7 +77,7 @@ To check which region you're logged in to, run the [`ibmcloud cr region`](/docs/
 
 You can fix this problem in the following way:
 
-If your image is in a different region of {{site.data.keyword.registryshort}}, you must log in to {{site.data.keyword.cloud_notm}} in the correct region by running the following commands:
+If your image is in a different region of {{site.data.keyword.registryshort}}, you must log in to {{site.data.keyword.cloud_notm}} in the correct region by running the following commands.
 
 1. `ibmcloud cr region-set <region>`, where `<region>` is the name of the region, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 2. `ibmcloud cr login`

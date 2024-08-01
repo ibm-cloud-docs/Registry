@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-08-01"
 
 keywords: IBM Cloud Container Registry notices, domain names, notices
 
@@ -30,7 +30,7 @@ You can now use IAM policies for more control over access to your registry resou
 {: caption="Table 1. New domain names" caption-side="bottom"}
 {: #table_registry_domain_names_new}
 
-The new domain names are available in the console and the CLI beginning 25 February 2019. You can use the new `icr.io` domain names now. The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being. An unsupported date will be announced later.
+The new domain names are available in the console and the CLI beginning 25 February 2019. You can use the new `icr.io` domain names now. The existing `bluemix.net` domain names are deprecated, but you can continue to use them. An end of support date is not available yet.
 
 ## What you need to know about this change
 {: #registry_notices_domain_names_know}
