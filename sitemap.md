@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-02"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -269,7 +269,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_announce)
 
-[Support for the {{site.data.keyword.registrylong_notm}} container build service ends on 5 October 2021](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos)
+[Support for the {{site.data.keyword.registryshort}} container build service ends on 5 October 2021](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos)
 
 * [What you need to know](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos_what)
 
