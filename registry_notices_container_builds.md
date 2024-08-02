@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-02"
 
 keywords: IBM Cloud Container Registry notices, notices, container builds
 
@@ -18,7 +18,7 @@ subcollection: Registry
 The container build capability of {{site.data.keyword.registrylong}} is deprecated and is being replaced by {{site.data.keyword.contdelivery_full}} capabilities. You must take action by 6 September 2021.
 {: shortdesc}
 
-The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to [{{site.data.keyword.registryshort}}](https://www.ibm.com/products/container-registry){: external}, is now deprecated. To build images and push them to {{site.data.keyword.registryshort}} from the command line, a tool like [Docker](https://docs.docker.com/engine/reference/commandline/cli/){: external} can be used instead.
+The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/products/container-registry){: external}, is now deprecated. To build images and push them to {{site.data.keyword.registryshort}} from the command line, a tool like [Docker](https://docs.docker.com/engine/reference/commandline/cli/){: external} can be used instead.
 
 ## What you need to know about this change
 {: #registry_notices_container_builds_know}
@@ -32,7 +32,7 @@ The {{site.data.keyword.contdelivery_short}} service also provides several Tekto
 ## What actions you must take by 6 September 2021
 {: #registry_notices_container_builds_action}
 
-By 6 September 2021, users of {{site.data.keyword.registrylong_notm}} will need to add the `–accept-deprecation` option to the `ibmcloud cr build` command. The new option is available in the container-registry plug-in version 0.1.543 and will be required for continued operation from 6 September 2021 onward. {{site.data.keyword.registrylong_notm}} container build service has an end of support date of 5 October 2021.
+By 6 September 2021, users of {{site.data.keyword.registryshort}} will need to add the `–accept-deprecation` option to the `ibmcloud cr build` command. The new option is available in the container-registry plug-in version 0.1.543 and will be required for continued operation from 6 September 2021 onward. {{site.data.keyword.registryshort}} container build service has an end of support date of 5 October 2021.
 
 ## Learn more
 {: #registry_notices_container_builds_learn}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-08-02"
 
 keywords: IBM Cloud Container Registry notices, notices, public IP address, IP addresses
 
@@ -26,7 +26,7 @@ Any public internet-facing firewall rules that are based on published IP address
 ## What actions you need to take
 {: #registry_notices_public_ip_address_action}
 
-If you connect to {{site.data.keyword.registrylong_notm}} by using the public internet and you have your own firewalls that have rules that allow access that is based on previously published IP address ranges, you must remove them. You do not need to change rules that are based on the use of domain names.
+If you connect to {{site.data.keyword.registryshort}} by using the public internet and you have your own firewalls that have rules that allow access that is based on previously published IP address ranges, you must remove them. You do not need to change rules that are based on the use of domain names.
 
 If you are concerned about removing firewall restrictions, consider the use of rules that are based on domain names or you can adopt private networking. For more information, see [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_private).
 

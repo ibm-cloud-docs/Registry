@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-02"
 
 keywords: IBM Cloud Container Registry notices, domain names, notices
 
@@ -35,7 +35,7 @@ The new domain names are available in the console and the CLI beginning 25 Febru
 ## What you need to know about this change
 {: #registry_notices_domain_names_know}
 
-This change affects containers that run images from {{site.data.keyword.registrylong_notm}}. To pull {{site.data.keyword.registryshort}} images for your deployments in [{{site.data.keyword.containerlong_notm}}](https://www.ibm.com/products/kubernetes-service){: external} clusters, your clusters must be authorized to pull from the domain name that the image uses:
+This change affects containers that run images from {{site.data.keyword.registryshort}}. To pull {{site.data.keyword.registryshort}} images for your deployments in [{{site.data.keyword.containerlong_notm}}](https://www.ibm.com/products/kubernetes-service){: external} clusters, your clusters must be authorized to pull from the domain name that the image uses:
 
 - Existing clusters have pull secrets that use a registry token to authorize access to images from the `bluemix.net` domain name for the global registry and the regional registry from the region that the cluster is in. To pull images from the new `icr.io` domain name, you must act now.
 - New clusters have pull secrets for both registry token access to `bluemix.net` domains as well as IAM API keys for access to `icr.io` domains. By default, you can pull images from the new `icr.io` domain in any registry region.
