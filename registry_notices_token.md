@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-08-20"
 
 keywords: IBM Cloud Container Registry notices, notices, registry tokens,
 
@@ -18,7 +18,7 @@ subcollection: Registry
 To facilitate the migration to IAM and the new `icr.io` domains, {{site.data.keyword.registrylong}} will not allow the creation of registry tokens from 1 July 2019.
 {: shortdesc}
 
-Recently, the new [{{site.data.keyword.registryshort}}](https://www.ibm.com/products/container-registry){: external} `icr.io` domain names were introduced. With this change, it was announced that an IAM API key, rather than a registry token, needs to be stored in an image pull secret in order to pull images from the new registry domains. In accordance with this change, and to facilitate migration to the new domains, the creation of registry tokens is discontinued on 1 July 2019.
+Recently, the new [{{site.data.keyword.registryshort}}](https://www.ibm.com/products/container-registry){: external} `icr.io` domain names were introduced. With this change, it was announced that an IAM API key, rather than a registry token, needs to be stored in an image pull secret so that you can pull images from the new registry domains. In accordance with this change, and to facilitate migration to the new domains, the creation of registry tokens is discontinued on 1 July 2019.
 
 New clusters are deployed that have both pull secrets that access `bluemix.net` domains with a registry token and pull secrets that access `icr.io` domains with an IAM API key. Moving forward, all new clusters will be deployed with IAM API key pull secrets only, and you are unable to create new registry tokens with `ibmcloud cr token-add`. These changes mean that new clusters must pull images from the `icr.io` domains. Registry tokens are deprecated and anyone with questions about registry tokens must consult IAM.
 
