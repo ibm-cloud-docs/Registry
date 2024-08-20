@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-02"
+lastupdated: "2024-08-20"
 
 keywords: IBM Cloud Container Registry notices, notices, container builds
 
@@ -15,17 +15,17 @@ subcollection: Registry
 # {{site.data.keyword.registryshort}} is deprecating container builds - act by 6 September 2021
 {: #registry_notices_container_builds}
 
-The container build capability of {{site.data.keyword.registrylong}} is deprecated and is being replaced by {{site.data.keyword.contdelivery_full}} capabilities. You must take action by 6 September 2021.
+The container build capability of {{site.data.keyword.registrylong}} is deprecated and is being replaced by {{site.data.keyword.contdelivery_full}} capabilities. You must act by 6 September 2021.
 {: shortdesc}
 
-The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/products/container-registry){: external}, is now deprecated. To build images and push them to {{site.data.keyword.registryshort}} from the command line, a tool like [Docker](https://docs.docker.com/engine/reference/commandline/cli/){: external} can be used instead.
+The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/products/container-registry){: external}, is now deprecated. To build images and push them to {{site.data.keyword.registryshort}} from the command line, a tool like [Docker](https://docs.docker.com/reference/cli/docker/){: external} can be used instead.
 
 ## What you need to know about this change
 {: #registry_notices_container_builds_know}
 
 It is common to use the `ibmcloud cr build` command in a DevOps pipeline. In [{{site.data.keyword.contdelivery_short}}](https://www.ibm.com/products/continuous-delivery){: external}, you can use either [Classic pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-deliverypipeline_about) or [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-tekton-pipelines) to build container images, but you must update existing pipelines to replace the `ibmcloud cr build` command.
 
-The {{site.data.keyword.registryshort}} job type in a Classic pipeline uses the `ibmcloud cr build` command from the job's build script. Several of the toolchain templates use this script to build container images. An alternative, which uses [moby buildkit](https://github.com/moby/buildkit){: external} instead of the `ibmcloud cr build` command, is under development. This alternative will be available before the `ibmcloud cr build` command is removed from {{site.data.keyword.registryshort}}. Detailed instructions for migrating your pipeline will be available then. For more information about building container images, including migration steps when they are available, see [Building container images](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images).
+The {{site.data.keyword.registryshort}} job type in a Classic pipeline uses the `ibmcloud cr build` command from the job's build script. Several of the toolchain templates use this script to build container images. An alternative, which uses [Moby BuildKit](https://github.com/moby/buildkit){: external} instead of the `ibmcloud cr build` command, is under development. This alternative will be available before the `ibmcloud cr build` command is removed from {{site.data.keyword.registryshort}}. Detailed instructions for migrating your pipeline will be available then. For more information about building container images, including migration steps when they are available, see [Building container images](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images).
 
 The {{site.data.keyword.contdelivery_short}} service also provides several Tekton tasks that you can reference from your Tekton pipelines to build container images. If you use the `ibmcloud cr build` command directly or reference the provided [`icr-cr-build`](https://github.com/open-toolchain/tekton-catalog/blob/master/container-registry/README.md#icr-cr-build){: external} task, you can migrate to one of three other [Tekton](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) tasks to build container images.
 
