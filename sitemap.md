@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-08-08"
+lastupdated: "2024-08-22"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -17,11 +17,11 @@ subcollection: Registry
 
 
 
-## Getting started with Container Registry
-{: #sitemap_getting_started_with_container_registry}
+## Getting started
+{: #sitemap_getting_started}
 
 
-[Getting started with Container Registry](/docs/Registry?topic=Registry-getting-started#getting-started)
+[Getting started](/docs/Registry?topic=Registry-getting-started#getting-started)
 
 * [Before you begin](/docs/Registry?topic=Registry-getting-started#gs_registry_prereqs)
 
@@ -40,11 +40,11 @@ subcollection: Registry
 * [Next steps in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started#gs_get_start_next)
 
 
-## About Container Registry
-{: #sitemap_about_container_registry}
+## About {{site.data.keyword.registryshort_notm}}
+{: #sitemap_about_}
 
 
-[About Container Registry](/docs/Registry?topic=Registry-registry_overview#registry_overview)
+[About {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_overview#registry_overview)
 
 * [Service plans](/docs/Registry?topic=Registry-registry_overview#registry_plans)
 
@@ -109,11 +109,11 @@ subcollection: Registry
     * [Support for other clients](/docs/Registry?topic=Registry-registry_overview#clients)
 
 
-## Container Registry architecture and workload
-{: #sitemap_container_registry_architecture_and_workload}
+## Architecture and workload
+{: #sitemap_architecture_and_workload}
 
 
-[Container Registry architecture and workload](/docs/Registry?topic=Registry-registry_architecture#registry_architecture)
+[Architecture and workload](/docs/Registry?topic=Registry-registry_architecture#registry_architecture)
 
 * [Segmentation of data](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segment)
 
@@ -139,7 +139,7 @@ subcollection: Registry
 {: #sitemap_notifications}
 
 
-[Notifications about {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
+[Notifications](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
@@ -159,7 +159,7 @@ subcollection: Registry
 
     * [2017](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2017)
 
-[Important firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registryshort}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
+[Firewall changes from 4 September 2024 for users that pull images from global](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_know)
 
@@ -175,7 +175,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v3#registry_notices_va_v3_announce)
 
-[Upcoming public networking changes](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
+[Upcoming public networking changes from 15 June 2023](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains_announce)
 
@@ -187,7 +187,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v4#registry_notices_va_v4_announce)
 
-[Changes to {{site.data.keyword.registryshort_notm}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
+[Changes to VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_know)
 
@@ -207,13 +207,13 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_announce)
 
-[{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
+[Container Registry CLI stops returning security status results in lists from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_announce)
 
-[{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
+[Private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
 
@@ -241,7 +241,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker_announce)
 
-[{{site.data.keyword.registryshort}} is ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions)
+[Ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions)
 
 * [What are exemptions?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_desc)
 
@@ -255,7 +255,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_announce)
 
-[{{site.data.keyword.registryshort}} to bill for storage used by untagged images from 1 February 2022](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing)
+[Billing for storage used by untagged images from 1 February 2022](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing)
 
 * [What are untagged images?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_untagged_image)
 
@@ -269,7 +269,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_announce)
 
-[Support for the {{site.data.keyword.registryshort}} container build service ends on 5 October 2021](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos)
+[Support for the container build service ends on 5 October 2021](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos)
 
 * [What you need to know](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos_what)
 
@@ -277,7 +277,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos_announce)
 
-[Changes to the public IP addresses for {{site.data.keyword.registryshort}} from 13 September 2021](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address)
+[Changes to public IP addresses from 13 September 2021](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address)
 
 * [What you need to know:](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_know)
 
@@ -287,11 +287,11 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_announce)
 
-[Using Notary v1 for signing images in {{site.data.keyword.registryshort}} is deprecated from 8 July 2021](/docs/Registry?topic=Registry-registry_notices_notaryv1#registry_notices_notaryv1)
+[Using Notary v1 for signing images is deprecated from 8 July 2021](/docs/Registry?topic=Registry-registry_notices_notaryv1#registry_notices_notaryv1)
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_notaryv1#registry_notices_notaryv1_announce)
 
-[{{site.data.keyword.registryshort}} discontinues registry tokens for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
+[Registry tokens discontinued for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
 
 * [What actions you must take by 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_action)
 
@@ -299,7 +299,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_announce)
 
-[{{site.data.keyword.registryshort}} is deprecating container builds - act by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds)
+[Deprecation of container builds - act by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_know)
 
@@ -309,7 +309,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_announce)
 
-[Announcing the end of {{site.data.keyword.registryshort}} support for UAA tokens from 12 August 2020](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token)
+[End of support for UAA tokens from 12 August 2020](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token)
 
 * [Next steps to use IAM for authentication](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token_next)
 
@@ -317,7 +317,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token_announce)
 
-[{{site.data.keyword.registryshort}} introduces retention policies from 23 September 2019](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention)
+[Introducing retention policies from 23 September 2019](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention)
 
 * [Setting retention policies in the CLI](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention_cli)
 
@@ -333,7 +333,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_token#registry_notices_token_announce)
 
-[Introducing new {{site.data.keyword.registryshort}} domain names from 25 February 2019](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names)
+[Introducing new domain names from 25 February 2019](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names_know)
 
@@ -349,11 +349,11 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep_announce)
 
-[{{site.data.keyword.registryshort_notm}} supports IAM access policies](/docs/Registry?topic=Registry-registry_notices_iam_support#registry_notices_iam_support)
+[Support for IAM access policies](/docs/Registry?topic=Registry-registry_notices_iam_support#registry_notices_iam_support)
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_iam_support#registry_notices_iam_support_announce)
 
-[{{site.data.keyword.registrylong_notm}} is available as of 27 June 2017](/docs/Registry?topic=Registry-registry_notices_ibcr#registry_notices_ibcr)
+[IBM Cloud Container Registry is available](/docs/Registry?topic=Registry-registry_notices_ibcr#registry_notices_ibcr)
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_ibcr#registry_notices_ibcr_announce)
 
@@ -1173,7 +1173,7 @@ subcollection: Registry
 
 * [Uninstalling Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#uninstall_portieris)
 
-[Protecting {{site.data.keyword.registryshort}} resources with context-based restrictions](/docs/Registry?topic=Registry-registry-cbr#registry-cbr)
+[Protecting resources with context-based restrictions](/docs/Registry?topic=Registry-registry-cbr#registry-cbr)
 
 * [How {{site.data.keyword.registryshort}} integrates with context-based restrictions](/docs/Registry?topic=Registry-registry-cbr#registry-cbr_overview)
 
@@ -1321,7 +1321,7 @@ subcollection: Registry
 {: #sitemap_container_registry_cli}
 
 
-[{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-containerregcli#containerregcli)
+[CLI](/docs/Registry?topic=Registry-containerregcli#containerregcli)
 
 * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#containerregcli_prereq)
 

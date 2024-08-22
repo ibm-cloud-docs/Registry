@@ -14,11 +14,10 @@ toc:
       id: learn
       topics:
       - topic: getting-started.md
-        navtitle: Getting started with Container Registry
-      - topic: registry_overview.md
-        navtitle: About Container Registry
+        navtitle: Getting started
+      - registry_overview.md
       - topic: registry_architecture.md
-        navtitle: Container Registry architecture and workload
+        navtitle: Architecture and workload
       - topic: registry_public_images.md
         navtitle: Public IBM images
       - link:
@@ -27,35 +26,52 @@ toc:
       - topicgroup:
           label: Notifications
           topics:
-          - registry_notices.md
-          - registry_notices_firewall.md
+          - topic: registry_notices.md
+            navtitle: Notifications
+          - topic: registry_notices_firewall.md
+            navtitle: Firewall changes from 4 September 2024 for users that pull images from global
           - registry_notices_va_v3.md
           - topic: registry_notices_wildcard_domains.md
-            navtitle: Upcoming public networking changes
+            navtitle: Upcoming public networking changes from 15 June 2023
           - registry_notices_va_v4.md
-          - registry_notices_vpe.md
+          - topic: registry_notices_vpe.md
+            navtitle: Changes to VPE gateways from 11 November 2022
           - topic: registry_notices_ip_address.md
             navtitle: Changes to private IP addresses from 15 December 2022
-          - registry_notices_lists.md
-          - registry_notices_iam_private_network.md
+          - topic: registry_notices_lists.md
+            navtitle: Container Registry CLI stops returning security status results in lists from version 1.0.0
+          - topic: registry_notices_iam_private_network.md
+            navtitle: Private IP addresses changed on 5 July 2022
           - topic: registry_notices_iam_policy.md
             navtitle: IAM access policies are required from 5 July 2022
           - topic: registry_notices_docker.md
             navtitle: Minimum supported Docker version from 1 March 2022
-          - registry_notices_exemptions.md
-          - registry_notices_billing.md
-          - registry_notices_cont_builds_eos.md
-          - registry_notices_public_ip_address.md
-          - registry_notices_notaryv1.md
-          - registry_notices_token_auth.md
-          - registry_notices_container_builds.md
-          - registry_notices_uaa_token.md
-          - registry_notices_retention.md
+          - topic: registry_notices_exemptions.md
+            navtitle: Ending exemption synchronization across regions on 31 January 2022
+          - topic: registry_notices_billing.md
+            navtitle: Billing for storage used by untagged images from 1 February 2022
+          - topic: registry_notices_cont_builds_eos.md
+            navtitle: Support for the container build service ends on 5 October 2021
+          - topic: registry_notices_public_ip_address.md
+            navtitle: Changes to public IP addresses from 13 September 2021
+          - topic: registry_notices_notaryv1.md
+            navtitle: Using Notary v1 for signing images is deprecated from 8 July 2021
+          - topic: registry_notices_token_auth.md
+            navtitle: Registry tokens discontinued for authentication on 19 August 2021
+          - topic: registry_notices_container_builds.md
+            navtitle: Deprecation of container builds - act by 6 September 2021
+          - topic: registry_notices_uaa_token.md
+            navtitle: End of support for UAA tokens from 12 August 2020
+          - topic: registry_notices_retention.md
+            navtitle: Introducing retention policies from 23 September 2019
           - registry_notices_token.md
-          - registry_notices_domain_names.md
+          - topic: registry_notices_domain_names.md
+            navtitle: Introducing new domain names from 25 February 2019
           - registry_notices_va_v2_dep.md
-          - registry_notices_iam_support.md
-          - registry_notices_ibcr.md
+          - topic: registry_notices_iam_support.md
+            navtitle: Support for IAM access policies
+          - topic: registry_notices_ibcr.md
+            navtitle: IBM Cloud Container Registry is available
       - topic: registry_release_notes.md
         navtitle: Release notes
   - navgroup:
@@ -115,7 +131,8 @@ toc:
             navtitle: Using IAM IP address access restrictions
           - topic: registry_security_enforce_portieris.md
             navtitle: Enforcing container image security by using Portieris
-          - registry_cbr.md
+          - topic: registry_cbr.md
+            navtitle: Protecting resources with context-based restrictions
           - registry_firewall.md
       - topicgroup:
           label: Observability
@@ -134,7 +151,8 @@ toc:
       - topicgroup:
           label: Container Registry CLI
           topics:
-          - container-registry-cli.md
+          - topic: container-registry-cli.md
+            navtitle: CLI
           - topic: registry_cli_list.md
             navtitle: Formatting and filtering the CLI output
           - topic: registry_change_log.md
