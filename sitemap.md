@@ -207,7 +207,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_announce)
 
-[CLI stops returning security status results in lists from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
+[Container Registry CLI stops returning security status results in lists from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
 
@@ -241,7 +241,7 @@ subcollection: Registry
 
 * [Original announcement](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker_announce)
 
-[Ending exemption synchronization across regions on 31 Janaury 2022](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions)
+[Ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions)
 
 * [What are exemptions?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_desc)
 

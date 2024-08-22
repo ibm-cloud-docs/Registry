@@ -39,7 +39,7 @@ toc:
           - topic: registry_notices_ip_address.md
             navtitle: Changes to private IP addresses from 15 December 2022
           - topic: registry_notices_lists.md
-            navtitle: CLI stops returning security status results in lists from version 1.0.0
+            navtitle: Container Registry CLI stops returning security status results in lists from version 1.0.0
           - topic: registry_notices_iam_private_network.md
             navtitle: Private IP addresses changed on 5 July 2022
           - topic: registry_notices_iam_policy.md
@@ -47,7 +47,7 @@ toc:
           - topic: registry_notices_docker.md
             navtitle: Minimum supported Docker version from 1 March 2022
           - topic: registry_notices_exemptions.md
-            navtitle: Ending exemption synchronization across regions on 31 Janaury 2022
+            navtitle: Ending exemption synchronization across regions on 31 January 2022
           - topic: registry_notices_billing.md
             navtitle: Billing for storage used by untagged images from 1 February 2022
           - topic: registry_notices_cont_builds_eos.md
