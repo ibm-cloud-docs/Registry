@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-08-28"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -197,7 +197,7 @@ To upgrade your service plan, complete the following steps.
 
 Information about the terms that are used in {{site.data.keyword.registrylong_notm}}.
 
-To learn more about Docker-specific terms, see [Docker glossary](https://docs.docker.com/glossary/){: external}.
+To learn more about Docker-specific terms, see [Docker glossary](https://docs.docker.com/reference/glossary/){: external}.
 
 ### Container image
 {: #overview_elements_container_image}
