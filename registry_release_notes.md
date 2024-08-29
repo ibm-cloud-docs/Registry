@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-29"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -756,7 +756,7 @@ Build Docker images {: #29sep2017_docker}
 {: release-note}
 
 Graphical user interface released {: #24aug2017_gui}
-:   The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the catalog, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog).
+:   The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the catalog, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/containers/registry/catalog).
 
 ## 27 June 2017
 {: #registry-27jun2017}
