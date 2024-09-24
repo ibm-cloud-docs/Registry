@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-08-22"
+lastupdated: "2024-09-24"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1607,6 +1607,8 @@ subcollection: Registry
 
 [CLI change log](/docs/Registry?topic=Registry-registry_cli_change_log#registry_cli_change_log)
 
+* [Version 1.3.11](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-1311)
+
 * [Version 1.3.10](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-1310)
 
 * [Version 1.3.8](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-138)
@@ -1938,4 +1940,3 @@ subcollection: Registry
 [Getting help and support](/docs/Registry?topic=Registry-help-and-support#help-and-support)
 
 * [Providing support case details](/docs/Registry?topic=Registry-help-and-support#support-case-details)
-
