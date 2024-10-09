@@ -96,7 +96,7 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 | GoogleContainerTools distroless | All stable versions with vendor security support. | [GoogleContainerTools distroless](https://github.com/GoogleContainerTools/distroless){: external} |
 | Red Hat&reg; Enterprise Linux&reg; (RHEL) | RHEL/UBI 7, RHEL/UBI 8, and RHEL/UBI 9 | [{{site.data.keyword.redhat_notm}} Security Data API](https://docs.redhat.com/en/documentation/red_hat_security_data_api/1.0/html/red_hat_security_data_api/index){: external}. |
 | Ubuntu | All stable versions with vendor security support. | [Ubuntu CVE Tracker](https://launchpad.net/ubuntu-cve-tracker){: external}. |
-{: caption="Table 1. Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
+{: caption="Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
 {: #table_registry_vpe_docker_images}
 
 ### Configuration issues

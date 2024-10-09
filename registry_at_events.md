@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-10-09"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -30,7 +30,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | `Dallas (us-south)` | Yes |
 | `Sao Paulo (br-sao)` | Yes |
 | `Toronto (ca-tor)` | Yes |
-{: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Americas locations" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Americas locations" caption-side="bottom"}
 {: #table_registry_at_event_collection_americas}
 
 | Locations in Asia Pacific | Service events available |
@@ -38,7 +38,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | `Osaka (jp-osa)` | Yes |
 | `Sydney (au-syd)` | Yes |
 | `Tokyo (jp-tok)` | Yes |
-{: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Asia Pacific locations" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Asia Pacific locations" caption-side="bottom"}
 {: #table_registry_at_event_collection_ap}
 
 | Locations in Europe | Service events available |
@@ -46,13 +46,13 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | `Frankfurt (eu-de)` | Yes |
 | `London (eu-gb)` | Yes |
 | `Madrid (eu-es)` | Yes |
-{: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Europe locations" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Europe locations" caption-side="bottom"}
 {: #table_registry_at_event_collection_europe}
 
 | Location for Global | Service events available |
 |---------------------|--------------------------|
 | `Global` | Yes |
-{: caption="Table 4. The automatic collection of {{site.data.keyword.registryshort_notm}} service events for Global" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events for Global" caption-side="bottom"}
 {: #table_registry_at_event_collection_global}
 
 For more information about where to see {{site.data.keyword.registryshort_notm}} events, see [Where to look for events](#ui).
@@ -80,7 +80,7 @@ The following table shows the location of {{site.data.keyword.at_full_notm}} eve
 | `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
-{: caption="Table 5. Location of {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
+{: caption="Location of {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 {: #table_registry_at_event_location}
 
 The following table shows the location of global registry {{site.data.keyword.at_full_notm}} events.
@@ -88,7 +88,7 @@ The following table shows the location of global registry {{site.data.keyword.at
 | Registry | Global registry | Location of {{site.data.keyword.at_full_notm}} events |
 |----------|-----------------|-------------------------------------------------------|
 | `Global` | `icr.io` | `Dallas (us-south)` |
-{: caption="Table 6. Location of global registry {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
+{: caption="Location of global registry {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 {: #table_registry_at_event_location_global}
 
 ## API methods
@@ -103,7 +103,7 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | False |
 | `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | False |
-{: caption="Table 7. Actions that generate events for your authorization" caption-side="bottom"}
+{: caption="Actions that generate events for your authorization" caption-side="bottom"}
 {: #table_registry_at_event_actions_auth}
 
 ### Actions that generate events for images
@@ -120,7 +120,7 @@ The following tables list the API methods that generate an event when they are c
 | `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registryshort}} image. | False |
 | `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. | False |
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | False |
-{: caption="Table 8. Actions that generate events for images" caption-side="bottom"}
+{: caption="Actions that generate events for images" caption-side="bottom"}
 {: #table_registry_at_event_actions_images}
 
 ### Actions that generate events for namespaces
@@ -131,7 +131,7 @@ The following tables list the API methods that generate an event when they are c
 | `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registryshort}}.  \n  \n Assign a {{site.data.keyword.registryshort}} namespace to a resource group. | False |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registryshort}}. | False |
 | `container-registry.namespace.list` | List the {{site.data.keyword.registryshort}} namespaces in your {{site.data.keyword.IBM_notm}} account. | False |
-{: caption="Table 9. Actions that generate events for namespaces" caption-side="bottom"}
+{: caption="Actions that generate events for namespaces" caption-side="bottom"}
 {: #table_registry_at_event_actions_namespaces}
 
 ### Actions that generate events for plans
@@ -141,7 +141,7 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.plan.get` | Display information about the current pricing plan. | False |
 | `container-registry.plan.set` | Upgrade to the standard plan. | False |
-{: caption="Table 10. Actions that generate events for plans" caption-side="bottom"}
+{: caption="Actions that generate events for plans" caption-side="bottom"}
 {: #table_registry_at_event_actions_plans}
 
 ### Actions that generate events for quotas
@@ -151,7 +151,7 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.quota.get` | Display the current quotas for traffic and storage, and the usage information against those quotas. | False |
 | `container-registry.quota.set` | Modify the quotas. Quota settings must be managed separately for your account in each registry instance. You can set quota limits for storage in your free or standard plan. | False |
-{: caption="Table 11. Actions that generate events for quotas" caption-side="bottom"}
+{: caption="Actions that generate events for quotas" caption-side="bottom"}
 {: #table_registry_at_event_actions_quotas}
 
 ### Actions that generate events for retention policies
@@ -162,7 +162,7 @@ The following tables list the API methods that generate an event when they are c
 | `container-registry.retention.analyze` | List the images that are deleted if you apply a specific retention policy. | False |
 | `container-registry.retention.list` | List the image retention policies for your account. | False |
 | `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registryshort}} by applying specified criteria. | False |
-{: caption="Table 12. Actions that generate events for retention policies" caption-side="bottom"}
+{: caption="Actions that generate events for retention policies" caption-side="bottom"}
 {: #table_registry_at_event_actions_retention_policy}
 
 ### Actions that generate events for settings
@@ -172,7 +172,7 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.settings.get` | Get registry service settings for the targeted account, such as whether platform metrics are enabled. | False |
 | `container-registry.settings.set` | Update registry service settings for the targeted account, such as enabling platform metrics. | False |
-{: caption="Table 13. Actions that generate events for settings" caption-side="bottom"}
+{: caption="Actions that generate events for settings" caption-side="bottom"}
 {: #table_registry_at_event_actions_settings}
 
 ### Actions that generate events for signing images
@@ -183,7 +183,7 @@ The following tables list the API methods that generate an event when they are c
 | `container-registry.signature.delete` | Delete a signature from an image in {{site.data.keyword.registryshort}}. | True |
 | `container-registry.signature.read` | Read a signature from an image in {{site.data.keyword.registryshort}}. | True |
 | `container-registry.signature.write` | Write a signature to an image in {{site.data.keyword.registryshort}}. | True |
-{: caption="Table 14. Actions that generate events for signing images" caption-side="bottom"}
+{: caption="Actions that generate events for signing images" caption-side="bottom"}
 {: #table_registry_at_event_actions_signing}
 
 ### Actions that generate events for trash
@@ -193,7 +193,7 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.trash.list` | Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. | False |
 | `container-registry.trash.restore` | Restore a deleted image from the trash. If the deleted image is signed, the signature is restored too. | False |
-{: caption="Table 15. Actions that generate events for trash" caption-side="bottom"}
+{: caption="Actions that generate events for trash" caption-side="bottom"}
 {: #table_registry_at_event_actions_trash}
 
 ### Actions that generate events for vulnerabilities
@@ -205,7 +205,7 @@ The following tables list the API methods that generate an event when they are c
 | `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability status](#at_events_analyze_status_list). | False |
 | `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability report](#at_events_analyze_report_read). | False |
 | `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability status](#at_events_analyze_status_read). | False |
-{: caption="Table 16. Actions that generate events for vulnerabilities" caption-side="bottom"}
+{: caption="Actions that generate events for vulnerabilities" caption-side="bottom"}
 {: #table_registry_at_event_actions_vuln}
 
 ### Actions that generate events for exemption policies
@@ -215,7 +215,7 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | False |
 | `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. | False |
-{: caption="Table 17. Actions that generate events for Vulnerability Advisor exemption policies" caption-side="bottom"}
+{: caption="Actions that generate events for Vulnerability Advisor exemption policies" caption-side="bottom"}
 {: #table_registry_at_event_actions_va_exemptions}
 
 ## Analyzing Activity Tracker events
@@ -249,7 +249,7 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
 | `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
-{: caption="Table 18. Custom event fields for {{site.data.keyword.registryshort_notm}} account vulnerability reports list" caption-side="bottom"}
+{: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} account vulnerability reports list" caption-side="bottom"}
 {: #table_registry_at_event_va_custom_reports_list}
 
 For more information about the action `container-registry.account-vulnerability-report.list`, see [Get the vulnerability assessment for all images](/apidocs/vulnerability-advisor#accountreportquerypath) in the API documentation.
@@ -266,7 +266,7 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
 | `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
-{: caption="Table 19. Custom event fields for {{site.data.keyword.registryshort_notm}} account vulnerability status list" caption-side="bottom"}
+{: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} account vulnerability status list" caption-side="bottom"}
 {: #table_registry_at_event_va_custom_status_list}
 
 For more information about the action `container-registry.account-vulnerability-status.list`, see [Get vulnerability assessment status for all images](/apidocs/vulnerability-advisor#accountstatusquerypath) in the API documentation.
@@ -283,7 +283,7 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n The following constraint applies: The value must match the regular expression `.*`. |
 | `responseData.id` | String | The unique ID of the report. |
 | `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/vulnerability-advisor#vulnerability-report-status-codes) in the API documentation. |
-{: caption="Table 20. Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability reports read" caption-side="bottom"}
+{: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability reports read" caption-side="bottom"}
 {: #table_registry_at_event_va_custom_reports_read}
 
 For more information, see [Get vulnerability assessment status](/apidocs/vulnerability-advisor#imagereportquerypath) in the API documentation.
@@ -299,7 +299,7 @@ The following table lists the fields that are available through the `requestData
 |---------------------|------|-------------|
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n The following constraint applies: The value must match the regular expression `.*`. |
 | `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/vulnerability-advisor#vulnerability-report-status-codes) in the API documentation.
-{: caption="Table 21. Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability status read" caption-side="bottom"}
+{: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability status read" caption-side="bottom"}
 {: #table_registry_at_event_va_custom_status_read}
 
 For more information, see [Get vulnerability status](/apidocs/vulnerability-advisor#imagestatusquerypath) in the API documentation.
@@ -320,5 +320,5 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.repository` | String | The name of the repository for which you want to see image signing reports. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.signatureMethod` | String | Displays the technology that is used to sign the image, such as [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external}. |
 | `requestData.RequestParameters.signatureObject` | String | Specifies the object type upon which a signing operation is performed, for example, `image`. |
-{: caption="Table 22. Custom event fields for {{site.data.keyword.registryshort_notm}} signing" caption-side="bottom"}
+{: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} signing" caption-side="bottom"}
 {: #table_registry_at_event_custom_sign}

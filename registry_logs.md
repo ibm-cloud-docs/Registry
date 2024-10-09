@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-09-05"
+lastupdated: "2024-10-09"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -35,7 +35,7 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 | `Dallas (us-south)` | [Yes]{: tag-green} |
 | `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Toronto (ca-tor)` | [Yes]{: tag-green} |
-{: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Americas locations" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Americas locations" caption-side="bottom"}
 {: #table_registry_logs_service_americas}
 
 | Locations in Asia Pacific | Are platform services logs available? |
@@ -43,7 +43,7 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
-{: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Asia Pacific locations" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Asia Pacific locations" caption-side="bottom"}
 {: #table_registry_logs_service_ap}
 
 | Locations in Europe | Are platform services logs available? |
@@ -51,13 +51,13 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 | `Frankfurt (eu-de)` | [Yes]{: tag-green} |
 | `London (eu-gb)` | [Yes]{: tag-green} |
 | `Madrid (eu-es)` | [Yes]{: tag-green} |
-{: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Europe locations" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Europe locations" caption-side="bottom"}
 {: #table_registry_logs_service_europe}
 
 | Location for Global | Are platform services logs available? |
 |---------------------|---------------------------------------|
 | `Global` | [Yes]{: tag-green} |
-{: caption="Table 4. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs for Global" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs for Global" caption-side="bottom"}
 {: #table_registry_logs_service_global}
 
 For more information about where to see {{site.data.keyword.registryshort_notm}} service logs if you are using {{site.data.keyword.logs_routing_full_notm}}, see [Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}](#lr-locations).
@@ -85,7 +85,7 @@ The following table shows the location of {{site.data.keyword.la_full_notm}} log
 | `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
-{: caption="Table 5. Location of {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
+{: caption="Location of {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
 {: #table_registry_logs_location}
 
 The following table shows the location of global registry {{site.data.keyword.la_full_notm}} logs.
@@ -93,7 +93,7 @@ The following table shows the location of global registry {{site.data.keyword.la
 | Registry | Global registry | Location of {{site.data.keyword.la_full_notm}} logs |
 |----------|-----------------|-----------------------------------------------------|
 | Global | `icr.io` | `Dallas (us-south)` |
-{: caption="Table 6. Location of global registry {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
+{: caption="Location of global registry {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
 {: #table_registry_logs_location_global}
 
 ## Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}
@@ -104,7 +104,7 @@ The following table shows the location of global registry {{site.data.keyword.la
 | Dallas (`us-south`) | Washington (`us-east`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|------------------------|--------------------|----------------------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} |
-{: caption="Table 7. Regions where platform logs are sent in Americas locations" caption-side="top"}
+{: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #logr-table-1}
 {: tab-title="Americas"}
 {: tab-group="lr"}
@@ -114,7 +114,7 @@ The following table shows the location of global registry {{site.data.keyword.la
 | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
 |------------------|-------------------|------------------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
-{: caption="Table 7. Regions where platform logs are sent in Asia Pacific locations" caption-side="top"}
+{: caption="Regions where platform logs are sent in Asia Pacific locations" caption-side="top"}
 {: #logr-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="lr"}
@@ -124,7 +124,7 @@ The following table shows the location of global registry {{site.data.keyword.la
 | Frankfurt (`eu-de`) | London (`eu-gb`) | Madrid (`eu-es`) |
 |---------------------|------------------|------------------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
-{: caption="Table 7. Regions where platform logs are sent in Europe locations" caption-side="top"}
+{: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
 {: #logrr-table-3}
 {: tab-title="Europe"}
 {: tab-group="lr"}
@@ -159,5 +159,5 @@ The following fields are included in the log record.
 | `logSourceCRN`    | Required   | Defines the account and flow log instance where the log is published. |
 | `saveServiceCopy` | Required   | Defines whether IBM saves a copy of the record for operational purposes. |
 | `message`         | Required   | Description of the log that is generated. |
-{: caption="Table 8. Log record fields" caption-side="bottom"}
+{: caption="Log record fields" caption-side="bottom"}
 {: #table_at_log_records}
