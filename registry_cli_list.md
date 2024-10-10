@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-10-09"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -111,7 +111,7 @@ Review the following table to find available Go template options and data types 
 | `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tags` | Array of strings | Displays the tags for the image. |
-{: caption="Table 1. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list image digests" caption-side="bottom"}
+{: caption="Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list image digests" caption-side="bottom"}
 {: #table_registry_cli_list_image_digests}
 
 ## Go template options for `ibmcloud cr image-list`
@@ -129,7 +129,7 @@ Review the following table to find available Go template options and data types 
 | `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tag` | String | Displays the tag for the image. |
-{: caption="Table 2. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list images" caption-side="bottom"}
+{: caption="Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list images" caption-side="bottom"}
 {: #table_registry_cli_list_images}
 
 ## Go template options for `ibmcloud cr image-inspect`
@@ -154,7 +154,7 @@ Review the following table to find available Go template options and data types 
 | `RootFS` | Object | Displays metadata that describes the root file system for the image. For more information, see [`RootFS` field details](#registry_cli_list_imageinspect_rootfs). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `VirtualSize` | Integer (64 bit) | Displays the sum of the size of each layer in the image in bytes. |
-{: caption="Table 3. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to inspect images" caption-side="bottom"}
+{: caption="Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to inspect images" caption-side="bottom"}
 {: #table_registry_cli_list_image_inspect}
 
 ### `Config` field details
@@ -187,7 +187,7 @@ Review the following table to find available Go template options and data types 
 | `User` | String | Displays the user that runs commands inside the container where the image is used. |
 | `Volumes` | Key-Value map | Displays the list of volume mounts that are mounted to a container. |
 | `WorkingDir` | String | Displays the working directory inside the container where specified commands are run. |
-{: caption="Table 4. Available fields and data types in Config" caption-side="bottom"}
+{: caption="Available fields and data types in Config" caption-side="bottom"}
 {: #table_registry_cli_list_config}
 
 ### `Healthcheck` field details
@@ -199,7 +199,7 @@ Review the following table to find available Go template options and data types 
 | `Retries` | Integer | Displays the number of consecutive failures that are needed to consider a container as not working correctly. |
 | `Test` | Array of strings | Displays how to run the health check test. The following options are available.  \n - `{}` inherit the health check.  \n - `{"NONE"}` the health check is disabled.  \n - `{"CMD", args...}` exec arguments directly.  \n - `{"CMD-SHELL", command}` run the command with the system's default shell. |
 | `Timeout` | Integer (64 bit) | Displays the time to wait, in nanoseconds, before the health check fails. |
-{: caption="Table 5. Available fields and data types in Healthcheck" caption-side="bottom"}
+{: caption="Available fields and data types in Healthcheck" caption-side="bottom"}
 {: #table_registry_cli_list_healthcheck}
 
 ### `RootFS` field details
@@ -210,5 +210,5 @@ Review the following table to find available Go template options and data types 
 | `BaseLayer` | String | Displays the descriptor for the base layer in the image. |
 | `Layers` | Array of strings | Displays the descriptors of each image layer. |
 | `Type` | String | Displays the type of file system. |
-{: caption="Table 6. Available fields and data types in RootFS" caption-side="bottom"}
+{: caption="Available fields and data types in RootFS" caption-side="bottom"}
 {: #table_registry_cli_list_rootfs}

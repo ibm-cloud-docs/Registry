@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-10-09"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -20,7 +20,7 @@ Use {{site.data.keyword.registrylong}} to store and access private container ima
 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, scalable, and encrypted private image [registry](#x2064940){: term} that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can use {{site.data.keyword.registryshort}} by setting up your own image [namespace](#x2031005){: term} and pushing container images to your namespace.
 
-![Diagram showing how you can interact with IBM Cloud Container Registry.](images/about_container_registry_v2.svg "Diagram showing how you can interact with {{site.data.keyword.registryshort}}. {{site.data.keyword.registryshort}} contains both private and public namespaces, and APIs to interact with the service. Your local image store interacts with both {{site.data.keyword.registryshort}} and other registries, which in turn interact with your Kubernetes cluster. The {{site.data.keyword.cloud_notm}} web GUI ({{site.data.keyword.cloud_notm}} console) interacts with the {{site.data.keyword.registryshort}} API to list images. The {{site.data.keyword.registryshort}} CLI interacts with the API to list, inspect, and remove images, create namespaces, and perform other administrative functions."){: caption="Figure 1. How {{site.data.keyword.registryshort}} interacts with your images" caption-side="bottom"}{: external download="../images/about_container_registry_v2.svg"}
+![Diagram showing how you can interact with IBM Cloud Container Registry.](images/about_container_registry_v2.svg "Diagram showing how you can interact with {{site.data.keyword.registryshort}}. {{site.data.keyword.registryshort}} contains both private and public namespaces, and APIs to interact with the service. Your local image store interacts with both {{site.data.keyword.registryshort}} and other registries, which in turn interact with your Kubernetes cluster. The {{site.data.keyword.cloud_notm}} web GUI ({{site.data.keyword.cloud_notm}} console) interacts with the {{site.data.keyword.registryshort}} API to list images. The {{site.data.keyword.registryshort}} CLI interacts with the API to list, inspect, and remove images, create namespaces, and perform other administrative functions."){: caption="How {{site.data.keyword.registryshort}} interacts with your images" caption-side="bottom"}{: external download="../images/about_container_registry_v2.svg"}
 
 A Docker image is the basis for every container that you create. An image is created from a [Dockerfile](#x9860414){: term}, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the configuration of the app, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a group of users (private registry). By using {{site.data.keyword.registryshort}}, only users with access to your {{site.data.keyword.cloud_notm}} account can access your images.
 
@@ -33,7 +33,7 @@ Review the following table to find an overview of the benefits of using {{site.d
 | Highly available and scalable private registry. | Set up your own image namespace in a multi-tenant, highly available, scalable, encrypted private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.  \n  \n Store your private Docker images and share them with users in your {{site.data.keyword.cloud_notm}} account. |
 | Image security compliance with Vulnerability Advisor. | Benefit from automatic scanning of images in your namespace.  \n  \n Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised. |
 | Quota limits for storage and pull traffic. | Benefit from free storage and pull traffic to your private images until you reach your free quota.  \n  \n Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level. |
-{: caption="Table 1. {{site.data.keyword.registryshort}} benefits" caption-side="bottom"}
+{: caption="{{site.data.keyword.registryshort}} benefits" caption-side="bottom"}
 {: #table_registry_overview_benefits}
 
 ## Service plans
@@ -54,7 +54,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 | Amount of storage for images. | 500 MB | Unlimited |
 | Pull traffic. | 5 GB per month | Unlimited |
 | Billing. | If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/containers/registry/catalog).  \n  \n **Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/containers/registry/catalog). If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing](#registry_plan_billing). |
-{: caption="Table 2. {{site.data.keyword.registryshort}} plans" caption-side="bottom"}
+{: caption="{{site.data.keyword.registryshort}} plans" caption-side="bottom"}
 {: #table_registry_overview_plans}
 
 ## Quota limits and billing
@@ -333,7 +333,7 @@ The global instance of {{site.data.keyword.registryshort}} is available by using
 | Registry | Domain name | Private domain name | Deprecated domain name |
 |----------|-------------|----------------------|-----------------------|
 | Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
-{: caption="Table 3. Domain name for the global registry" caption-side="bottom"}
+{: caption="Domain name for the global registry" caption-side="bottom"}
 {: #table_registry_overview_domain_name_global}
 
 To learn about connecting to {{site.data.keyword.registryshort}} by using the private domain names, see [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images).
@@ -374,7 +374,7 @@ Regional instances of {{site.data.keyword.registryshort}} are available by using
 | `jp-osa` | `jp2.icr.io` | `private.jp2.icr.io` | Not applicable |
 | `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |
 | `us-south` | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
-{: caption="Table 4. Domain names for local regions" caption-side="bottom"}
+{: caption="Domain names for local regions" caption-side="bottom"}
 {: #table_registry_overview_domain_name_local}
 
 To learn about connecting to {{site.data.keyword.registryshort}} by using the private domain names, see [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images).

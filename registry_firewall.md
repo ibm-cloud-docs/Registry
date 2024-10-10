@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-10-09"
 
 keywords: IBM Cloud Container Registry, firewall, access, communicate, domains, subdomains, traffic, allowlist
 
@@ -40,5 +40,5 @@ In addition to the following regional subdomains, you must also allow traffic fr
 | Toronto | `ca.icr.io` | Not applicable |
 | UK South | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
 | US South | `us.icr.io` | `registry.ng.bluemix.net` |
-{: caption="Table 1. Addresses for {{site.data.keyword.registryshort}} traffic" caption-side="bottom"}
+{: caption="Addresses for {{site.data.keyword.registryshort}} traffic" caption-side="bottom"}
 {: #table_registry_firewall_traffic_addresses}

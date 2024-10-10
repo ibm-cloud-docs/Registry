@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-09-11"
+lastupdated: "2024-10-09"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -44,7 +44,7 @@ Do not put personal information in your charts (for example, in namespace names 
 
 You can pull (download) a chart from any private or public [registry](#x2064940){: term} source or Helm repository, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 
-![Pull a chart from a private or public registry or Helm repository to your computer.](images/pulling_images_mul.svg "You can pull a chart from {{site.data.keyword.registrylong_notm}} or from any private or public registry source or Helm repository to your local computer."){: caption="Figure 1. Pulling charts from another registry" caption-side="bottom"}{: external download="../images/pulling_images_mul.svg"}
+![Pull a chart from a private or public registry or Helm repository to your computer.](images/pulling_images_mul.svg "You can pull a chart from {{site.data.keyword.registrylong_notm}} or from any private or public registry source or Helm repository to your local computer."){: caption="Pulling charts from another registry" caption-side="bottom"}{: external download="../images/pulling_images_mul.svg"}
 
 Before you begin, complete the following tasks.
 
@@ -97,7 +97,7 @@ After you pull a chart for your [namespace](/docs/Registry?topic=Registry-regist
 
 You can push (upload) a chart to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your chart with other users.
 
-![Push a chart from your computer to {{site.data.keyword.registrylong_notm}}.](images/pushing_images_mul.svg "You can push (upload) a chart from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your chart with other users."){: caption="Figure 2. Pushing charts to your namespace" caption-side="bottom"}{: external download="../images/pushing_images_mul.svg"}
+![Push a chart from your computer to {{site.data.keyword.registrylong_notm}}.](images/pushing_images_mul.svg "You can push (upload) a chart from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your chart with other users."){: caption="Pushing charts to your namespace" caption-side="bottom"}{: external download="../images/pushing_images_mul.svg"}
 
 Before you begin, complete the following tasks.
 
@@ -145,7 +145,7 @@ After you push your chart to {{site.data.keyword.registrylong_notm}}, you can [i
 
 You can pull a chart from a registry in one region and push it to a registry in another region so that you can share the chart with users in both regions.
 
-![Copying charts between registries.](images/copying_images_mul.svg "You can pull a chart from a registry in one region and push it to a registry in another region."){: caption="Figure 3. Copying charts between registries" caption-side="bottom"}{: external download="../images/copying_images_mul.svg"}
+![Copying charts between registries.](images/copying_images_mul.svg "You can pull a chart from a registry in one region and push it to a registry in another region."){: caption="Copying charts between registries" caption-side="bottom"}{: external download="../images/copying_images_mul.svg"}
 
 Before you begin, complete the following tasks.
 

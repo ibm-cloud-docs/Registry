@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-10-09"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -44,7 +44,7 @@ The tutorial has the following objectives.
 This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
 - [{{site.data.keyword.registrylong_notm}}](https://cloud.ibm.com/registry/repos)
-- [{{site.data.keyword.containerlong_notm}}](https://cloud.ibm.com/kubernetes/catalog/about)
+- [{{site.data.keyword.containerlong_notm}}](https://cloud.ibm.com/containers/cluster-management/catalog/about)
 
 ## Before you begin
 {: #registry_tutorial_workflow_prereqs}
