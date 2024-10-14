@@ -1,32 +1,63 @@
 {
-    "title": "Container Registry docs",
-    "lastupdated": "2023-03-09",
-    "introduction": "Find out about how you can use Container Registry to provide a multi-tenant private image registry that you can use to store and share your container images with users in your IBM Cloud account. Click the tiles to explore more information about Container Registry.",
-    "section_devtools": {
-      "api": "/apidocs/container-registry",
-      "cli": "/docs/Registry?topic=Registry-containerregcli",
-      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace"
-    },
-    "section_recommended": [
+  "version": 2,
+  "title": "IBM Cloud Container Registry",
+  "introduction": "Find out about how you can use Container Registry to provide a multi-tenant private image registry that you can use to store and share your container images with users in your IBM Cloud account. Click the tiles to explore more information about Container Registry.",
+  "product_page": "https://www.ibm.com/products/container-registry",
+  "console_page": "/containers/registry/overview",
+  "section_topics": {
+    "title": "Welcome to the IBM Cloud Container Registry docs",
+    "description": "Explore popular topics to help you get started.",
+    "links": [
       {
-        "title": "Getting started with IBM Cloud Container Registry",
-        "description": "Install the Container Registry CLI, set up your own image namespace, and push container images to your namespace.",
+        "title": "Getting started with Container Registry",
         "href": "/docs/Registry?topic=Registry-getting-started"
       },
       {
-        "title": "About IBM Cloud Container Registry",
-        "description": "Find out about Container Registry.",
+        "title": "About Container Registry",
         "href": "/docs/Registry?topic=Registry-registry_overview"
       },
       {
-        "title": "IBM Cloud Container Registry and Vulnerability Advisor workflow tutorial",
-        "description": "Find out about the basic functions of both IBM Cloud Container Registry and Vulnerability Advisor. These services are pre-integrated and work together seamlessly in IBM Cloud, and their features provide a robust but straightforward workflow for users of containers.",
-        "href": "/docs/Registry?topic=Registry-registry_tutorial_workflow"
+        "title": "Managing IAM access for Container Registry",
+        "href": "docs/Registry?topic=Registry-iam&interface=ui"
+      },
+      {
+        "title": "Logging for Container Registry",
+        "href": "/docs/Registry?topic=Registry-registry_logs"
+      },
+      {
+        "title": "Auditing events for Container Registry",
+        "href": "/docs/Registry?topic=Registry-at_events"
+      },
+      {
+        "title": "Your responsibilities when you are using Container Registry",
+        "href": "/docs/Registry?topic=Registry-registry_responsibilities"
+      },
+      {
+        "title": "Frequently asked questions about Container Registry and Vulnerability Advisor",
+        "href": "/docs/Registry?topic=Registry-registry_faq"
       }
-    ],
-    "section_learn": {
-      "developer": "https://developer.ibm.com/?q=IBM%20cloud%20container%20registry",
-      "training": "https://www.ibm.com/training/search?query=container%20registry#",
-      "community": "https://community.ibm.com/community/user/cloud/home"
+    ]
+  },
+  "section_highlights": [
+    {
+      "title": "Migrating container images between different namespaces in the same IBM Cloud Container Registry region",
+      "description": "A common question that is asked is about how to migrate images between namespaces in IBM Cloud Container Registry more easily.",
+      "href": "https://community.ibm.com/community/user/cloud/blogs/jack-baines/2024/03/20/migrating-container-images-between-different-names",
+      "type": "blog"
+    },
+    {
+      "title": "IBM Cloud Container Registry with Vulnerability Advisor",
+      "description": "This course covers IBM Cloud Container Registry and its capabilities, namespaces, and Vulnerability Advisor basics.",
+      "href": "https://www.ibm.com/training/course/ibm-cloud-container-registry-with-vulnerability-advisor-DL70356G",
+      "type": "training"
     }
+  ],
+  "section_devtools": {
+    "api": "/apidocs/container-registry",
+    "cli": "/docs/Registry?topic=Registry-containerregcli",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace"
+  },
+  "section_updates": {
+    "view_more": "/docs/Registry?topic=Registry-registry_release_notes"
+  }
 }
