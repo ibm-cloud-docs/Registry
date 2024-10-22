@@ -5,8 +5,6 @@
   "product_page": "https://www.ibm.com/products/container-registry",
   "console_page": "/containers/registry/overview",
   "section_topics": {
-    "title": "Welcome to the IBM Cloud Container Registry docs",
-    "description": "Explore popular topics to help you get started.",
     "links": [
       {
         "title": "Getting started with Container Registry",
@@ -18,7 +16,7 @@
       },
       {
         "title": "Managing IAM access for Container Registry",
-        "href": "docs/Registry?topic=Registry-iam&interface=ui"
+        "href": "/docs/Registry?topic=Registry-iam&interface=ui"
       },
       {
         "title": "Logging for Container Registry",
