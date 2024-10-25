@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-09-24"
+lastupdated: "2024-10-25"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1224,39 +1224,27 @@ subcollection: Registry
 
     * [`Storage`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_storage)
 
-[Auditing events](/docs/Registry?topic=Registry-at_events#at_events)
+[Activity tracking events](/docs/Registry?topic=Registry-at_events#at_events)
 
-* [Locations of service events](/docs/Registry?topic=Registry-at_events#at_events_locations)
+* [Locations where activity tracking events are generated](/docs/Registry?topic=Registry-at_events#at-locations)
 
-* [Where to look for events](/docs/Registry?topic=Registry-at_events#ui)
+* [Locations where activity tracking events are sent to {{site.data.keyword.at_full_notm}} hosted event search](/docs/Registry?topic=Registry-at_events#at-legacy-locations)
 
-    * [{{site.data.keyword.at_full_notm}} events](/docs/Registry?topic=Registry-at_events#ui_at)
+* [Locations where activity tracking events are sent by {{site.data.keyword.atracker_full_notm}}](/docs/Registry?topic=Registry-at_events#atracker-locations)
 
-* [API methods](/docs/Registry?topic=Registry-at_events#at_events_api_methods)
+* [Viewing activity tracking events for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-at_events#at-viewing)
 
-    * [Actions that generate events for authorization](/docs/Registry?topic=Registry-at_events#at_events_api_methods_auth)
+    * [Launching {{site.data.keyword.logs_full_notm}} from the Observability page](/docs/Registry?topic=Registry-at_events#at-launch-standalone)
 
-    * [Actions that generate events for images](/docs/Registry?topic=Registry-at_events#at_events_api_methods_images)
+* [Account management events](/docs/Registry?topic=Registry-at_events#at_actions_account)
 
-    * [Actions that generate events for namespaces](/docs/Registry?topic=Registry-at_events#at_events_api_methods_namespaces)
+* [Events for images](/docs/Registry?topic=Registry-at_events#at_actions_images)
 
-    * [Actions that generate events for plans](/docs/Registry?topic=Registry-at_events#at_events_api_methods_plan)
+* [Events for namespaces](/docs/Registry?topic=Registry-at_events#at_actions_namespaces)
 
-    * [Actions that generate events for quotas](/docs/Registry?topic=Registry-at_events#at_events_api_methods_quota)
+* [Events for vulnerabilities](/docs/Registry?topic=Registry-at_events#at_actions_vuln)
 
-    * [Actions that generate events for retention policies](/docs/Registry?topic=Registry-at_events#at_events_api_methods_retention)
-
-    * [Actions that generate events for settings](/docs/Registry?topic=Registry-at_events#at_events_api_methods_setting)
-
-    * [Actions that generate events for signing images](/docs/Registry?topic=Registry-at_events#at_events_api_methods_sign)
-
-    * [Actions that generate events for trash](/docs/Registry?topic=Registry-at_events#at_events_api_methods_trash)
-
-    * [Actions that generate events for vulnerabilities](/docs/Registry?topic=Registry-at_events#at_events_api_methods_vuln)
-
-    * [Actions that generate events for exemption policies](/docs/Registry?topic=Registry-at_events#at_events_api_methods_exemptions)
-
-* [Analyzing Activity Tracker events](/docs/Registry?topic=Registry-at_events#at_events_analyze)
+* [Analyzing {{site.data.keyword.registryshort}} activity tracking events](/docs/Registry?topic=Registry-at_events#at_events_iam_analyze)
 
     * [Request data for vulnerability events](/docs/Registry?topic=Registry-at_events#at_events_vuln_events)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-25"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -12,15 +12,18 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IAM and {{site.data.keyword.at_short}} actions by API method for {{site.data.keyword.registryshort_notm}}
+# IAM and {{site.data.keyword.at_short}} or {{site.data.keyword.logs_full_notm}} actions by API method for {{site.data.keyword.registryshort_notm}}
 {: #registry_at_iam}
 
 When you use {{site.data.keyword.registrylong}} through the command line or console, the service calls application programming interface (API) methods to complete your requests.
 {: shortdesc}
 
-You might need certain permissions to call these API methods, and you can track the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
+As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For more information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+{: deprecated}
 
-Review the following list of {{site.data.keyword.iamshort}} (IAM) actions and {{site.data.keyword.at_full_notm}} events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
+You might need certain permissions to call these API methods, and you can track the requests that you make with an {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} instance.
+
+Review the following list of {{site.data.keyword.iamshort}} (IAM) actions and {{site.data.keyword.at_full_notm}}  or {{site.data.keyword.logs_full_notm}} events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
 
 For more information, see the following topics:
 
@@ -32,7 +35,7 @@ For more information, see the following topics:
 ## {{site.data.keyword.registryshort_notm}}
 {: #registry_at_iam_reg}
 
-Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.registryshort_notm}}.
+Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.registryshort_notm}}.
 
 ### Authorization API methods
 {: #registry_at_iam_reg_auth}

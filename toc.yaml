@@ -140,7 +140,7 @@ toc:
           - topic: registry_monitor.md
             navtitle: Monitoring metrics
           - topic: registry_at_events.md
-            navtitle: Auditing events
+            navtitle: Activity tracking events
           - topic: registry_logs.md
             navtitle: Logging
           - topic: registry_at_iam.md
