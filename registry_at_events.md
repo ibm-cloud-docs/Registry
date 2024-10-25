@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-25"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -12,58 +12,67 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Auditing events for {{site.data.keyword.registryshort_notm}}
+# Activity tracking events for {{site.data.keyword.registryshort_notm}}
 {: #at_events}
 
-Use {{site.data.keyword.at_full}} to track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, generate activity tracking events.
 {: shortdesc}
 
-The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [Getting started with {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started) and [About {{site.data.keyword.at_short}} in {{site.data.keyword.cloud_notm}}](/docs/activity-tracker?topic=activity-tracker-about).
+Activity tracking events report on activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 
-## Locations of service events
-{: #at_events_locations}
+You can use {{site.data.keyword.atracker_full_notm}}, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about).
+
+You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+
+As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For more information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+{: important}
+
+## Locations where activity tracking events are generated
+{: #at-locations}
 
 You can track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service. The following tables list the locations where the automatic collection of {{site.data.keyword.registryshort_notm}} service events is enabled.
 
 | Locations in Americas | Service events available |
 |-----------------------|--------------------------|
-| `Dallas (us-south)` | Yes |
-| `Sao Paulo (br-sao)` | Yes |
-| `Toronto (ca-tor)` | Yes |
+| `Dallas (us-south)` | [Yes]{: tag-green} |
+| `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
+| `Toronto (ca-tor)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Americas locations" caption-side="bottom"}
 {: #table_registry_at_event_collection_americas}
 
 | Locations in Asia Pacific | Service events available |
 |---------------------------|--------------------------|
-| `Osaka (jp-osa)` | Yes |
-| `Sydney (au-syd)` | Yes |
-| `Tokyo (jp-tok)` | Yes |
+| `Osaka (jp-osa)` | [Yes]{: tag-green} |
+| `Sydney (au-syd)` | [Yes]{: tag-green} |
+| `Tokyo (jp-tok)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Asia Pacific locations" caption-side="bottom"}
 {: #table_registry_at_event_collection_ap}
 
 | Locations in Europe | Service events available |
 |---------------------|--------------------------|
-| `Frankfurt (eu-de)` | Yes |
-| `London (eu-gb)` | Yes |
-| `Madrid (eu-es)` | Yes |
+| `Frankfurt (eu-de)` | [Yes]{: tag-green} |
+| `London (eu-gb)` | [Yes]{: tag-green} |
+| `Madrid (eu-es)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Europe locations" caption-side="bottom"}
 {: #table_registry_at_event_collection_europe}
 
 | Location for Global | Service events available |
 |---------------------|--------------------------|
-| `Global` | Yes |
+| `Global` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events for Global" caption-side="bottom"}
 {: #table_registry_at_event_collection_global}
 
-For more information about where to see {{site.data.keyword.registryshort_notm}} events, see [Where to look for events](#ui).
+For more information about where to see {{site.data.keyword.registryshort_notm}} events, see [Viewing activity tracking events for {{site.data.keyword.registryshort}}](#at-viewing).
 
-For more information about the locations where {{site.data.keyword.cloud_notm}} services are enabled to automatically collect events, see [{{site.data.keyword.cloud_notm}} services that generate {{site.data.keyword.at_short}} events by location](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations).
+## Locations where activity tracking events are sent to {{site.data.keyword.at_full_notm}} hosted event search
+{: #at-legacy-locations}
 
-## Where to look for events
-{: #ui}
 
-### {{site.data.keyword.at_full_notm}} events
-{: #ui_at}
+
+As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For more information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+{: deprecated}
+
+{{site.data.keyword.registryshort}} sends activity tracking events to {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following tables.
 
 The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which a {{site.data.keyword.registryshort}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
 
@@ -81,7 +90,7 @@ The following table shows the location of {{site.data.keyword.at_full_notm}} eve
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
 {: caption="Location of {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
-{: #table_registry_at_event_location}
+{: #table_at_legacy_locations_view}
 
 The following table shows the location of global registry {{site.data.keyword.at_full_notm}} events.
 
@@ -89,137 +98,142 @@ The following table shows the location of global registry {{site.data.keyword.at
 |----------|-----------------|-------------------------------------------------------|
 | `Global` | `icr.io` | `Dallas (us-south)` |
 {: caption="Location of global registry {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
-{: #table_registry_at_event_location_global}
+{: #table_at_legacy_locations_view_global}
 
-## API methods
-{: #at_events_api_methods}
+## Locations where activity tracking events are sent by {{site.data.keyword.atracker_full_notm}}
+{: #atracker-locations}
 
-The following tables list the API methods that generate an event when they are called.
+{{site.data.keyword.registryshort}} sends activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following tables.
 
-### Actions that generate events for authorization
-{: #at_events_api_methods_auth}
+| Dallas (`us-south`) | Washington (`us-east`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
+|---------------------|------------------------|--------------------|----------------------|
+| [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} |
+{: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
+{: #atracker-table-1}
+{: tab-title="Americas"}
+{: tab-group="atracker"}
+{: class="simple-tab-table"}
+{: row-headers}
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | False |
-| `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | False |
-{: caption="Actions that generate events for your authorization" caption-side="bottom"}
-{: #table_registry_at_event_actions_auth}
+| Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
+|------------------|-------------------|------------------|
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+{: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
+{: #atracker-table-2}
+{: tab-title="Asia Pacific"}
+{: tab-group="atracker"}
+{: class="simple-tab-table"}
+{: row-headers}
 
-### Actions that generate events for images
-{: #at_events_api_methods_images}
+| Frankfurt (`eu-de`) | London (`eu-gb`) | Madrid (`eu-es`) |
+|---------------------|------------------|------------------|
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+{: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
+{: #atracker-table-3}
+{: tab-title="Europe"}
+{: tab-group="atracker"}
+{: class="simple-tab-table"}
+{: row-headers}
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.image.bulkdelete` | Delete multiple images from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. | True |
-| `container-registry.image.delete` | Delete an image from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. | True |
-| `container-registry.image.inspect` | Display details about an image. | False |
-| `container-registry.image.list` | List the images in your {{site.data.keyword.IBM_notm}} account. | False |
-| `container-registry.image.pull` | Pull an image from {{site.data.keyword.registryshort}}. | True |
-| `container-registry.image.push` | Push an image to {{site.data.keyword.registryshort}}. | True |
-| `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registryshort}} image. | False |
-| `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. | False |
-| `container-registry.manifest.inspect` | View the contents of the manifest for an image. | False |
-{: caption="Actions that generate events for images" caption-side="bottom"}
-{: #table_registry_at_event_actions_images}
+## Viewing activity tracking events for {{site.data.keyword.registryshort}}
+{: #at-viewing}
 
-### Actions that generate events for namespaces
-{: #at_events_api_methods_namespaces}
+You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registryshort}}.  \n  \n Assign a {{site.data.keyword.registryshort}} namespace to a resource group. | False |
-| `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registryshort}}. | False |
-| `container-registry.namespace.list` | List the {{site.data.keyword.registryshort}} namespaces in your {{site.data.keyword.IBM_notm}} account. | False |
-{: caption="Actions that generate events for namespaces" caption-side="bottom"}
-{: #table_registry_at_event_actions_namespaces}
+### Launching {{site.data.keyword.logs_full_notm}} from the Observability page
+{: #at-launch-standalone}
 
-### Actions that generate events for plans
-{: #at_events_api_methods_plan}
+For information about launching the {{site.data.keyword.logs_full_notm}} UI, see [Launching the UI in the {{site.data.keyword.logs_full_notm}} documentation](/docs/cloud-logs?topic=cloud-logs-instance-launch).
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.plan.get` | Display information about the current pricing plan. | False |
-| `container-registry.plan.set` | Upgrade to the standard plan. | False |
-{: caption="Actions that generate events for plans" caption-side="bottom"}
-{: #table_registry_at_event_actions_plans}
+## Account management events
+{: #at_actions_account}
 
-### Actions that generate events for quotas
-{: #at_events_api_methods_quota}
+Actions that generate account management events for authorization, plans, quotas, and settings.
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.quota.get` | Display the current quotas for traffic and storage, and the usage information against those quotas. | False |
-| `container-registry.quota.set` | Modify the quotas. Quota settings must be managed separately for your account in each registry instance. You can set quota limits for storage in your free or standard plan. | False |
-{: caption="Actions that generate events for quotas" caption-side="bottom"}
-{: #table_registry_at_event_actions_quotas}
+| Action | Description |
+|--------|-------------|
+| `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. |
+| `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. |
+| `container-registry.plan.get` | Display information about the current pricing plan. |
+| `container-registry.plan.set` | Upgrade to the standard plan. |
+| `container-registry.quota.get` | Display the current quotas for traffic and storage, and the usage information against those quotas. |
+| `container-registry.quota.set` | Modify the quotas. Quota settings must be managed separately for your account in each registry instance. You can set quota limits for storage in your free or standard plan. |
+| `container-registry.settings.get` | Get registry service settings for the targeted account, such as whether platform metrics are enabled. |
+| `container-registry.settings.set` | Update registry service settings for the targeted account, such as enabling platform metrics. |
+{: caption="Actions that generate account management events" caption-side="bottom"}
+{: #table_account_mgmt_events}
 
-### Actions that generate events for retention policies
-{: #at_events_api_methods_retention}
+## Events for images
+{: #at_actions_images}
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.retention.analyze` | List the images that are deleted if you apply a specific retention policy. | False |
-| `container-registry.retention.list` | List the image retention policies for your account. | False |
-| `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registryshort}} by applying specified criteria. | False |
-{: caption="Actions that generate events for retention policies" caption-side="bottom"}
-{: #table_registry_at_event_actions_retention_policy}
+The following table shows actions that generate management and data events for images.
 
-### Actions that generate events for settings
-{: #at_events_api_methods_setting}
+| Action | Description |
+|--------|-------------|
+| `container-registry.image.inspect` | Display details about an image. |
+| `container-registry.image.list` | List the images in your {{site.data.keyword.IBM_notm}} account. |
+| `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registryshort}} image. |
+| `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. |
+| `container-registry.manifest.inspect` | View the contents of the manifest for an image. |
+| `container-registry.retention.analyze` | List the images that are deleted if you apply a specific retention policy. |
+| `container-registry.retention.list` | List the image retention policies for your account. |
+| `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registryshort}} by applying specified criteria. |
+| `container-registry.trash.list` | Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. |
+| `container-registry.trash.restore` | Restore a deleted image from the trash. If the deleted image is signed, the signature is restored too. |
+{: caption="Management events for images" caption-side="bottom"}
+{: #images-table-1}
+{: tab-title="Management events"}
+{: tab-group="images"}
+{: class="simple-tab-table"}
+{: row-headers}
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.settings.get` | Get registry service settings for the targeted account, such as whether platform metrics are enabled. | False |
-| `container-registry.settings.set` | Update registry service settings for the targeted account, such as enabling platform metrics. | False |
-{: caption="Actions that generate events for settings" caption-side="bottom"}
-{: #table_registry_at_event_actions_settings}
+| Action | Description |
+|--------|-------------|
+| `container-registry.image.bulkdelete` | Delete multiple images from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. |
+| `container-registry.image.delete` | Delete an image from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. |
+| `container-registry.image.pull` | Pull an image from {{site.data.keyword.registryshort}}. |
+| `container-registry.image.push` | Push an image to {{site.data.keyword.registryshort}}. |
+| `container-registry.signature.delete` | Delete a signature from an image in {{site.data.keyword.registryshort}}. |
+| `container-registry.signature.read` | Read a signature from an image in {{site.data.keyword.registryshort}}. |
+| `container-registry.signature.write` | Write a signature to an image in {{site.data.keyword.registryshort}}. |
+{: caption="Data events for images" caption-side="bottom"}
+{: #images-table-2}
+{: tab-title="Data events"}
+{: tab-group="images"}
+{: class="simple-tab-table"}
+{: row-headers}
 
-### Actions that generate events for signing images
-{: #at_events_api_methods_sign}
+## Events for namespaces
+{: #at_actions_namespaces}
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.signature.delete` | Delete a signature from an image in {{site.data.keyword.registryshort}}. | True |
-| `container-registry.signature.read` | Read a signature from an image in {{site.data.keyword.registryshort}}. | True |
-| `container-registry.signature.write` | Write a signature to an image in {{site.data.keyword.registryshort}}. | True |
-{: caption="Actions that generate events for signing images" caption-side="bottom"}
-{: #table_registry_at_event_actions_signing}
+The following table shows actions that generate management events for namespaces.
 
-### Actions that generate events for trash
-{: #at_events_api_methods_trash}
+| Action | Description |
+|--------|-------------|
+| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registryshort}}. |
+| `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registryshort}}. |
+| `container-registry.namespace.list` | List the {{site.data.keyword.registryshort}} namespaces in your {{site.data.keyword.IBM_notm}} account. |
+{: caption="Management events for namespaces" caption-side="bottom"}
+{: #table_events_namespaces}
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.trash.list` | Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. | False |
-| `container-registry.trash.restore` | Restore a deleted image from the trash. If the deleted image is signed, the signature is restored too. | False |
-{: caption="Actions that generate events for trash" caption-side="bottom"}
-{: #table_registry_at_event_actions_trash}
+## Events for vulnerabilities
+{: #at_actions_vuln}
 
-### Actions that generate events for vulnerabilities
-{: #at_events_api_methods_vuln}
+The following table shows actions that generate management events for vulnerabilities and Vulnerability Advisor exemption policies.
 
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability report](#at_events_analyze_report_list). | False |
-| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability status](#at_events_analyze_status_list). | False |
-| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability report](#at_events_analyze_report_read). | False |
-| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability status](#at_events_analyze_status_read). | False |
-{: caption="Actions that generate events for vulnerabilities" caption-side="bottom"}
-{: #table_registry_at_event_actions_vuln}
+| Action | Description |
+|--------|-------------|
+| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability report](#at_events_analyze_report_list). |
+| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability status](#at_events_analyze_status_list). |
+| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability report](#at_events_analyze_report_read). |
+| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability status](#at_events_analyze_status_read). |
+| `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. |
+| `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. |
+{: caption="Management events for vulnerabilities" caption-side="bottom"}
+{: #table_events_vulnerabilities}
 
-### Actions that generate events for exemption policies
-{: #at_events_api_methods_exemptions}
-
-| Action | Description | Data Event |
-|--------|-------------|------------|
-| `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | False |
-| `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. | False |
-{: caption="Actions that generate events for Vulnerability Advisor exemption policies" caption-side="bottom"}
-{: #table_registry_at_event_actions_va_exemptions}
-
-## Analyzing Activity Tracker events
-{: #at_events_analyze}
+## Analyzing {{site.data.keyword.registryshort}} activity tracking events
+{: #at_events_iam_analyze}
 
 The following fields are populated as described, depending on how you populate the request:
 
