@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-26"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -57,7 +57,7 @@ If you deploy a workload that pulls an image from {{site.data.keyword.registrysh
 
 You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users.
 
-![Push an image from your computer to {{site.data.keyword.registrylong_notm}}.](images/pushing_images_mul.svg "You can push (upload) an image from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users."){: caption="Pushing Docker images to your namespace" caption-side="bottom"}{: external download="../images/pushing_images_mul.svg"}
+![Push an image from your computer to {{site.data.keyword.registrylong_notm}}.](images/pushing_images_mul.svg "Push (upload) an image from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users."){: caption="Push Docker images to your namespace" caption-side="bottom"}{: external download="../images/pushing_images_mul.svg"}
 
 Before you begin, complete the following tasks.
 
@@ -104,7 +104,7 @@ After you push your image to {{site.data.keyword.registrylong_notm}}, you can do
 
 You can pull an image from a registry in one region and push it to a registry in another region so that you can share the image with users in both regions.
 
-![Copying images between registries.](images/copying_images_mul.svg "You can pull an image from a registry in one region and push it to a registry in another region."){: caption="Copying images between registries" caption-side="bottom"}{: external download="../images/copying_images_mul.svg"}
+![Copying images between registries.](images/copying_images_mul.svg "Pull an image from a registry in one region and push it to a registry in another region."){: caption="Copying images between registries" caption-side="bottom"}{: external download="../images/copying_images_mul.svg"}
 
 Before you begin, complete the following tasks.
 
@@ -400,8 +400,8 @@ You can restore an image from the trash by running the [`ibmcloud cr image-resto
 
 You can restore images by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use the following options:
 
-- `<repo>@<digest>`, which restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring images by digest](#registry_images_restore_digest).
-- `<repo>:<tag>`, which restores the tag, see [Restoring images by tag](#registry_images_restore_tag).
+- `<repo>@<digest>` restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring images by digest](#registry_images_restore_digest).
+- `<repo>:<tag>` restores the tag, see [Restoring images by tag](#registry_images_restore_tag).
 
 ### Restoring images by digest
 {: #registry_images_restore_digest}
@@ -455,7 +455,7 @@ To restore an image by tag from the trash, complete the following steps:
 
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
-3. For the image that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
+3. For the image that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This section of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
 4. For the image that you want to restore, make a note of the tag, `<tag>`.
 5. Run the following command to restore the image to your repository, where `<dns>/<namespace>/<repo>` is the name of the image that you want to restore and `<tag>` is the tag.
 

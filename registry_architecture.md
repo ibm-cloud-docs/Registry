@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-26"
 
 keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # {{site.data.keyword.registrylong_notm}} architecture and workload
 {: #registry_architecture}
 
-{{site.data.keyword.registrylong}} is a multi-tenant, highly available, scalable, and encrypted private image [registry](#x2064940){: term} that is hosted and managed by {{site.data.keyword.IBM_notm}}.
+{{site.data.keyword.registrylong}} is a multi-tenant, highly available, scalable, and encrypted private image [registry](#x2064940){: term} that's hosted and managed by {{site.data.keyword.IBM_notm}}.
 {: shortdesc}
 
 Both the control plane (management of images and configuration) and data plane (pushing and pulling your images) are multi-tenant. All parts of the service are hosted in an {{site.data.keyword.IBM_notm}} service account, which is not shared with users or other services.
@@ -24,7 +24,7 @@ In each regional instance of the [registry](/docs/Registry?topic=Registry-regist
 
 {{site.data.keyword.registrylong_notm}} runs in {{site.data.keyword.containerlong_notm}} clusters, and uses {{site.data.keyword.cos_full_notm}} to store images. Image data in {{site.data.keyword.cos_full_notm}} is encrypted at rest.
 
-![Diagram showing deployment.](images/container_registry_architecture_mul.svg "Diagram showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Diagram showing deployment" caption-side="bottom"}{: external download="../images/container_registry_architecture_mul.svg"}
+![Diagram showing deployment.](images/container_registry_architecture_mul.svg "Diagram that shows deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Diagram showing deployment" caption-side="bottom"}{: external download="../images/container_registry_architecture_mul.svg"}
 
 ## Segmentation of data
 {: #registry_architecture_segment}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-26"
 
 keywords: IBM Cloud Container Registry, firewall, access, communicate, domains, subdomains, traffic, allowlist
 
@@ -23,7 +23,7 @@ If you are using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword
 
 You can configure your firewall to allow connections to {{site.data.keyword.registryshort}} by using a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains listed in the following table.
 
-When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any allowlist restrictions that are based on IP addresses in place. If you have any concerns about opening your allowlist, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private {{site.data.keyword.cloud_notm}} network, see [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_private). Note that IP address lists are not provided because they can change frequently.
+When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any allowlist restrictions that are based on IP addresses in place. If you are concerned about opening your allowlist, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private {{site.data.keyword.cloud_notm}} network, see [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_private). Note that IP address lists are not provided because they can change frequently.
 {: important}
 
 In addition to the following regional subdomains, you must also allow traffic from your worker nodes to port `443` on all subdomains of `icr.io` in case of redirection to other subdomains for delivery optimization. You must allow `TCP port 443 FROM <each_worker_node_publicIP> TO *.icr.io`, where `<each_worker_node_publicIP>` is the public IP address for each worker node. If you use the deprecated domain names, you must allow those domains too.

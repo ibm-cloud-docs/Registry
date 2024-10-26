@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-26"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -140,7 +140,7 @@ If your image does not meet the requirements that are set by your organization's
 {: support}
 {: ui}
 
-You can review the security of Docker images that are stored in your namespaces in {{site.data.keyword.registrylong_notm}} by using the {{site.data.keyword.cloud_notm}} console. Version 4 does not support viewing vulnerability reports in the console, but you can use the CLI or the API.
+You can review the security of the Docker images that are stored in your namespaces in {{site.data.keyword.registryshort}} by using the {{site.data.keyword.cloud_notm}} console. Version 4 does not support viewing vulnerability reports in the console, but you can use the CLI or the API.
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 2. Click the **Navigation menu** icon, then click **Container Registry**.
@@ -175,7 +175,7 @@ You can review the security of Docker images that are stored in your namespaces 
 
 2. Check the status in the **SECURITY STATUS** column.
     - `No Issues` No security issues were found.
-    - `<X> Issues` The number of potential security issues or vulnerabilities that are found, where `<X>` is the number of issues.
+    - `<X> Issues` The potential security issues or vulnerabilities that are found, where `<X>` is the number of issues.
     - `Scanning` The image is being scanned and the final vulnerability status is not determined.
     - `Unsupported OS` The scan found no supported operating system (OS) distribution and no active configuration issues.
 
@@ -188,7 +188,7 @@ You can review the security of Docker images that are stored in your namespaces 
 
     In the CLI output, you can view the following information about the configuration issues.
     - `Security practice` A description of the vulnerability.
-    - `Corrective action` Details about how to fix the vulnerability.
+    - `Corrective action` Information about how to fix the vulnerability.
 
 ## Setting organizational exemption policies
 {: #va_managing_policy}
