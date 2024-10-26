@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-26"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -23,7 +23,7 @@ You can use {{site.data.keyword.cloud}} virtual private endpoints (VPE) for Virt
 
 VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all [availability zones](#x7018171){: term} of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addresses within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
 
-If you have an {{site.data.keyword.vpc_short}} instance and want to connect the VPC instance to {{site.data.keyword.registrylong_notm}} for your {{site.data.keyword.registryshort_notm}} services, you can create a VPE gateway for your VPC to access {{site.data.keyword.registrylong_notm}} within your VPC network. Any connections to {{site.data.keyword.registrylong_notm}} that originate from within the VPC automatically go through the {{site.data.keyword.registryshort_notm}} VPE gateway, if one exists. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
+If you have an {{site.data.keyword.vpc_short}} instance and you want to connect the VPC instance to {{site.data.keyword.registrylong_notm}} for your {{site.data.keyword.registryshort_notm}} services, you can create a VPE gateway for your VPC to access {{site.data.keyword.registrylong_notm}} within your VPC network. Any connections to {{site.data.keyword.registrylong_notm}} that originate from within the VPC automatically go through the {{site.data.keyword.registryshort_notm}} VPE gateway, if one exists. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
 
 When you connect to {{site.data.keyword.registryshort_notm}} from the {{site.data.keyword.cloud_notm}} console, you must go through a browser in your VPC to ensure that the connection goes through the {{site.data.keyword.registryshort_notm}} VPE gateway.
 {: important}
@@ -69,7 +69,7 @@ You can create a VPE gateway for your local {{site.data.keyword.registryshort_no
 
 When you create a VPE gateway by using the CLI or API, you must specify the [cloud resource name (CRN)](#x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
-You can create VPE gateways in the following locations: `ap-north`, `ap-south`, `br-sao`, `ca-tor`, `eu-central`, `eu-es`, `jp-osa`, `uk-south`, `us-south`, and `us-east` (global registry).
+You can create VPE gateways in these locations: `ap-north`, `ap-south`, `br-sao`, `ca-tor`, `eu-central`, `eu-es`, `jp-osa`, `uk-south`, `us-south`, and `us-east` (global registry).
 
 | Registry region | Cloud resource name (CRN) |
 |-----------------|---------------------------|
@@ -83,7 +83,7 @@ You can create VPE gateways in the following locations: `ap-north`, `ap-south`, 
 | `uk-south` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:uk.icr.io` |
 | `us-south` | `crn:v1:bluemix:public:container-registry:us-south:::endpoint:us.icr.io` |
 | Global `us-east` | `crn:v1:bluemix:public:container-registry:us-east:::endpoint:icr.io` |
-{: caption="Region availability and cloud resource names for connecting {{site.data.keyword.registryshort_notm}} over private {{site.data.keyword.cloud_notm}} networks" caption-side="bottom"}
+{: caption="Region availability and cloud resource names (CRNs) for connecting {{site.data.keyword.registryshort_notm}} over private {{site.data.keyword.cloud_notm}} networks" caption-side="bottom"}
 {: #table_registry_vpe}
 
 For VPE gateways that were created before 11 November 2022, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must use domains, such as `private.uk.icr.io`. For more information about private {{site.data.keyword.registryshort_notm}} networks, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).

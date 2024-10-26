@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-26"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -52,9 +52,9 @@ This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 Before you begin, complete the following tasks:
 
 - [Install Git](https://git-scm.com/){: external}.
-- [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository.
+- [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script that installs `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository.
 - [Create a cluster](/docs/containers?topic=containers-clusters).
-- Ensure that you have the correct access permissions for adding and removing [namespaces](#x2031005){: term}, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+- Ensure that you have the correct access permissions to add and remove [namespaces](#x2031005){: term}, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}
@@ -256,7 +256,7 @@ Despite the vulnerability that is present in your image, you're still able to de
 
 2. The [Portieris default policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris) are too restrictive for this tutorial because they involve [image signing](/docs/Registry?topic=Registry-registry_trustedcontent). Therefore, you must create custom policies. View the `security.yaml` file in the [GitHub repository](https://github.com/IBM/registry-va-workflow){: external}, and read about customizing [policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris) to understand this file's contents. In short, this policy requires all images in your namespace to have no issues reported by Vulnerability Advisor.
 
-3. Update the following text in the `security.yaml` file by replacing `<my_namespace>` with your namespace:
+3. Update the following text in the `security.yaml` file, where `<my_namespace>` is your namespace:
 
     ```txt
     repositories:

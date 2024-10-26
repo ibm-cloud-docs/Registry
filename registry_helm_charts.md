@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-26"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -44,7 +44,7 @@ Do not put personal information in your charts (for example, in namespace names 
 
 You can pull (download) a chart from any private or public [registry](#x2064940){: term} source or Helm repository, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 
-![Pull a chart from a private or public registry or Helm repository to your computer.](images/pulling_images_mul.svg "You can pull a chart from {{site.data.keyword.registrylong_notm}} or from any private or public registry source or Helm repository to your local computer."){: caption="Pulling charts from another registry" caption-side="bottom"}{: external download="../images/pulling_images_mul.svg"}
+![Pull a chart from a private or public registry or Helm repository to your computer.](images/pulling_images_mul.svg "You can pull a chart from {{site.data.keyword.registrylong_notm}} or from any private or public registry source or Helm repository to your local computer."){: caption="Pull charts from another registry" caption-side="bottom"}{: external download="../images/pulling_images_mul.svg"}
 
 Before you begin, complete the following tasks.
 
@@ -97,7 +97,7 @@ After you pull a chart for your [namespace](/docs/Registry?topic=Registry-regist
 
 You can push (upload) a chart to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your chart with other users.
 
-![Push a chart from your computer to {{site.data.keyword.registrylong_notm}}.](images/pushing_images_mul.svg "You can push (upload) a chart from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your chart with other users."){: caption="Pushing charts to your namespace" caption-side="bottom"}{: external download="../images/pushing_images_mul.svg"}
+![Push a chart from your computer to {{site.data.keyword.registrylong_notm}}.](images/pushing_images_mul.svg "You can push (upload) a chart from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your chart with other users."){: caption="Push charts to your namespace" caption-side="bottom"}{: external download="../images/pushing_images_mul.svg"}
 
 Before you begin, complete the following tasks.
 
@@ -145,7 +145,7 @@ After you push your chart to {{site.data.keyword.registrylong_notm}}, you can [i
 
 You can pull a chart from a registry in one region and push it to a registry in another region so that you can share the chart with users in both regions.
 
-![Copying charts between registries.](images/copying_images_mul.svg "You can pull a chart from a registry in one region and push it to a registry in another region."){: caption="Copying charts between registries" caption-side="bottom"}{: external download="../images/copying_images_mul.svg"}
+![Copying charts between registries.](images/copying_images_mul.svg "Pull a chart from a registry in one region and push it to a registry in another region."){: caption="Copying charts between registries" caption-side="bottom"}{: external download="../images/copying_images_mul.svg"}
 
 Before you begin, complete the following tasks.
 
@@ -267,14 +267,14 @@ To find out which charts are in the trash, you can use the [`ibmcloud cr trash-l
 To list the charts in the trash, complete the following steps.
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
-2. List the charts in the trash by running the following command.
+2. You can list the charts in the trash by running the following command.
 
     ```txt
     ibmcloud cr trash-list
     ```
     {: pre}
 
-3. List only the charts in the trash for the namespace that you are interested in by running the following command, where `<namespace>` is your namespace.
+3. You can list only the charts in the trash for the namespace that you are interested in by running the following command, where `<namespace>` is your namespace.
 
     ```txt
     ibmcloud cr trash-list --restrict <namespace>
@@ -292,8 +292,8 @@ You can restore a chart from the trash by running the [`ibmcloud cr image-restor
 
 You can restore the charts by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use the following options:
 
-- `<repo>@<digest>`, which restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring charts by digest](#registry_helm_charts_restore_digest).
-- `<repo>:<tag>`, which restores the tag, see [Restoring charts by tag](#registry_helm_charts_restore_tag).
+- `<repo>@<digest>` restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring charts by digest](#registry_helm_charts_restore_digest).
+- `<repo>:<tag>` restores the tag, see [Restoring charts by tag](#registry_helm_charts_restore_tag).
 
 ### Restoring charts by digest
 {: #registry_helm_charts_restore_digest}
@@ -347,7 +347,7 @@ To restore a chart by tag from the trash, complete the following steps.
 
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
-3. For the chart that you want to restore make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
+3. For the chart that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This section of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
 4. For the chart that you want to restore, make a note of the tag `<tag>`.
 5. Run the following command to restore the chart to your repository, where `<dns>/<namespace>/<repo>` is the name of the chart that you want to restore and `<tag>` is the tag.
 
