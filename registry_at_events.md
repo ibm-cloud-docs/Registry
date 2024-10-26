@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-25"
+lastupdated: "2024-10-26"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -62,7 +62,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events for Global" caption-side="bottom"}
 {: #table_registry_at_event_collection_global}
 
-For more information about where to see {{site.data.keyword.registryshort_notm}} events, see [Viewing activity tracking events for {{site.data.keyword.registryshort}}](#at-viewing).
+For more information about where to find {{site.data.keyword.registryshort_notm}} events, see [Viewing activity tracking events for {{site.data.keyword.registryshort}}](#at-viewing).
 
 ## Locations where activity tracking events are sent to {{site.data.keyword.at_full_notm}} hosted event search
 {: #at-legacy-locations}
@@ -72,7 +72,7 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For more information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 {: deprecated}
 
-{{site.data.keyword.registryshort}} sends activity tracking events to {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following tables.
+{{site.data.keyword.registryshort}} sends activity tracking events to the {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following tables.
 
 The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which a {{site.data.keyword.registryshort}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
 

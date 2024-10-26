@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-25"
+lastupdated: "2024-10-26"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -23,7 +23,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 You might need certain permissions to call these API methods, and you can track the requests that you make with an {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} instance.
 
-Review the following list of {{site.data.keyword.iamshort}} (IAM) actions and {{site.data.keyword.at_full_notm}}  or {{site.data.keyword.logs_full_notm}} events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
+Review the following {{site.data.keyword.iamshort}} (IAM) actions and {{site.data.keyword.at_full_notm}}  or {{site.data.keyword.logs_full_notm}} events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
 
 For more information, see the following topics:
 
