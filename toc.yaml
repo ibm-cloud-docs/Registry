@@ -164,6 +164,8 @@ toc:
             navtitle: High availability
           - topic: registry_bc_dr.md
             navtitle: Business continuity and disaster recovery
+          - topic: registry_data_portability.md
+            navtitle: Understanding data portability
       - topic: registry_responsibilities.md
         navtitle: Your responsibilities
       - link:
