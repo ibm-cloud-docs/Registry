@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-11-14"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -91,7 +91,7 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_el
     If you have a problem when you try to create a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
     {: tip}
 
-3. To ensure that your namespace is created, run the `ibmcloud cr namespace-list` command.
+3. To help ensure that your namespace is created, run the `ibmcloud cr namespace-list` command.
 
     ```txt
     ibmcloud cr namespace-list -v
@@ -262,6 +262,7 @@ You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed you
 
 ## Next steps in {{site.data.keyword.registryshort_notm}}
 {: #gs_get_start_next}
+
 
 - [Manage image security with Vulnerability Advisor.](/docs/Registry?topic=Registry-va_index&interface=ui)
 - [Review your service plans.](/docs/Registry?topic=Registry-registry_overview#registry_plans)
