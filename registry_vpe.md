@@ -62,6 +62,7 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Washington (`us-east`)
 
 You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. For VPE gateways created after 11 November 2022, you can pull images from any other {{site.data.keyword.registryshort_notm}} region by using the public domains, such as `uk.icr.io`. For VPE gateways created before 11 November 2022, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must enable classic access, see [Creating a classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#create-a-classic-access-vpc) and use private domains, such as `private.uk.icr.io`.
+{: important}
 
 ## Setting up a VPE for {{site.data.keyword.registrylong_notm}}
 {: #registry_vpe_endpoint_setup}
