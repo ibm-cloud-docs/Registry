@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-11-21"
+lastupdated: "2024-11-26"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI, vulnerabilities, what's new in CLI
 
@@ -22,6 +22,16 @@ For more information about how to update the {{site.data.keyword.registryshort}}
 
 Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
 {: deprecated}
+
+## Version 1.3.12
+{: #cli-change-logv1-1312}
+
+Version 1.3.12 of the CLI was released on 21 November 2024.
+
+This release has the following changes:
+
+- Remediates vulnerabilities.
+- Updates the information messages.
 
 ## Version 1.3.11
 {: #cli-change-logv1-1311}
