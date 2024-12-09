@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-11-26"
+lastupdated: "2024-12-09"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -363,6 +363,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [9 December 2024](/docs/Registry?topic=Registry-registry_release_notes#registry-09dec2024)
+
+    * Content delivery network (CDN) enabled for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`) over a public network
 
 * [26 June 2024](/docs/Registry?topic=Registry-registry_release_notes#registry-26jun2024)
 
