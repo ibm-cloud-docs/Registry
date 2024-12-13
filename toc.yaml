@@ -157,6 +157,7 @@ toc:
             navtitle: Formatting and filtering the CLI output
           - topic: registry_change_log.md
             navtitle: CLI change log
+      - service-dependency.md
       - topicgroup:
           label: High availability and disaster recovery
           topics:
