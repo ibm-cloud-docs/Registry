@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-12-13"
+lastupdated: "2024-12-19"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -132,7 +132,7 @@ subcollection: Registry
 ## What are containers?
 {: #sitemap_what-are-containers}
 
-[What are containers?](https://www.ibm.com/topics/containers){: external}
+[What are containers?](https://www.ibm.com/think/topics/containers){: external}
 
 
 ## Notifications
