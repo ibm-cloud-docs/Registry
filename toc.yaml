@@ -22,7 +22,7 @@ toc:
         navtitle: Public IBM images
       - link:
           label: What are containers?
-          href: https://www.ibm.com/topics/containers
+          href: https://www.ibm.com/think/topics/containers
       - topicgroup:
           label: Notifications
           topics:
