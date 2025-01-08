@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2024
+  years: 2024, 2025
 lastupdated: "2025-01-08"
 
 keywords:
@@ -129,7 +129,7 @@ This table can be used to answer the following questions:
    :   No function impacted.
 
    operations
-   :   Monitoring, troubleshooting, etc of the service and service instances.
+   :   Monitoring, troubleshooting, and so on of the service and service instances.
 
    security compliance
    :   Vulnerability management and other security and compliance management of the service and service instances.
