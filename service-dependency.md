@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-12-13"
+lastupdated: "2025-01-08"
 
 keywords:
 
@@ -42,8 +42,8 @@ The following table provides the dependency listing of this service following a 
 | IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud - containers-kubernetes | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
 | Akamai | Availability, Security compliance | No | Both |  external  |
-| IBM Cloud Classic Infrastructure Resource Management | Availability, Change management, Instance control | No | Both |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
-| IBM Cloud Identity and Access Management | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| IBM Cloud Classic Infrastructure Resource Management | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
+| IBM Cloud Identity and Access Management | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
 | IBM Cloud Object Storage | Availability, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
 | IBM Cloud Service Endpoints | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 | IBM Cloudant for IBM Cloud | Availability, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
@@ -60,10 +60,10 @@ The following table provides the dependency listing of this service following a 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control, Operations, Security compliance | No | Both |  Same data center  |
-| IBM Cloud Global Search and Tagging | Availability, Instance control | No | Both |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| IBM Cloud Global Search and Tagging | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
 | IBM Key Protect for IBM Cloud | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
 | PagerDuty | Availability, Operations, Security compliance | No | Both |  external  |
-| IBM Cloud Console | Availability | No | Both |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| IBM Cloud Console | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
 {: row-headers}
 {: caption="IBM Cloud Container Registry service dependency information - Significant dependencies" caption-side="top"}
 {: tab-title="Significant dependencies"}
@@ -78,8 +78,8 @@ The following table provides the dependency listing of this service following a 
 | IBM Log Analysis & IBM Cloud Activity Tracker| Operations, Security compliance | No | Both |  Same region  |
 | IBM Log Analysis Log Routing| none | No | Both |  Same region  |
 | IBM Cloud Metrics Routing| none | No | Both |  Same region  |
-| SOS Container Security| Security compliance | No | Both |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
-| IBM Cloud Business Support Services| none | No | Both |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| SOS Container Security| Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
+| IBM Cloud Business Support Services| none | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
 | IBM Cloud Activity Tracker event routing| Security compliance | No | Both |  Same region  |
 | Canonical Ubuntu Vulnerabilities Databases| none | No | Both |  external  |
 | Debian Vulnerabilities Databases| none | No | Both |  external  |
