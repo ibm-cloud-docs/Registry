@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-12-09"
+  years: 2019, 2025
+lastupdated: "2025-01-14"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -25,7 +25,7 @@ What's new in {{site.data.keyword.registrylong}} and Vulnerability Advisor. The 
 {: #registry-09dec2024}
 {: release-note}
 
-Content delivery network (CDN) enabled for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`) over a public network
+Content delivery network (CDN) enabled for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`) over a public network {: #09dec2024_cdn}
 :   To ensure continued worldwide performance for global registry (`icr.io`) in {{site.data.keyword.registrylong_notm}}, a content delivery network (CDN) is now enabled.
 
 ## 26 June 2024
