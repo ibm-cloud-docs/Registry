@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-11-19"
+  years: 2021, 2025
+lastupdated: "2025-01-15"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -11,6 +11,7 @@ subcollection: Registry
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Using VPEs for VPC to privately connect to {{site.data.keyword.registryshort_notm}}
 {: #registry_vpe}
