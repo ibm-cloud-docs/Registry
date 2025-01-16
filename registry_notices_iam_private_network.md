@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-08-02"
+  years: 2022, 2025
+lastupdated: "2025-01-16"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -28,7 +28,7 @@ From 5 July 2022 (23 June 2022 for the `br-sao` and `ca-tor` regions), when conn
 
 This change improves the security of {{site.data.keyword.registrylong_notm}}. With this change, you can configure real, account specific, private client IP addresses in IAM restricted IP lists, instead of the documented list of shared IP addresses. You must now allow private subnet and IP addresses of your own hosts (for example, worker nodes in a classic {{site.data.keyword.containerlong_notm}} cluster or the egress IP of a VPC network).
 
-Also, as part of this change, the {{site.data.keyword.registryshort}} service private IP addresses changed, which might require updates to your firewall configuration.
+Also, as part of this change, the {{site.data.keyword.registryshort}} private IP addresses changed, which might require updates to your firewall configuration.
 
 If you use [Calico](https://www.tigera.io/project-calico/){: external}, the samples are updated to take account of the change.
 
@@ -41,7 +41,7 @@ You must take the [appropriate actions](#registry_notices_iam_pivate_network_act
 ## How you benefit from this change
 {: #registry_notices_iam_pivate_network_benefit}
 
-This change increases security for any {{site.data.keyword.registryshort}} users that use private connections and IAM restricted IP address lists. After the change, you must configure the restricted IP address list to allow the private subnet and IP addresses of your own host. This change means that you can ensure {{site.data.keyword.registryshort}} OAuth requests originate only from hosts that you own.
+This change increases security for any {{site.data.keyword.registryshort}} users that use private connections and IAM restricted IP address lists. After the change, you must configure the restricted IP address list to allow the private subnet and IP addresses of your own host. This change means that you can ensure that {{site.data.keyword.registryshort}} OAuth requests originate only from hosts that you own.
 
 If you use {{site.data.keyword.at_full_notm}}, you can see the true source IP address in any audit logs, where previously you saw a {{site.data.keyword.registryshort}} owned IP that was private.
 
@@ -52,12 +52,12 @@ You are impacted if you are accessing {{site.data.keyword.registryshort}} over t
 
 You are accessing {{site.data.keyword.registryshort}} over the private network if one of the following statements is true:
 
-- You're using one of the `private.*` domains, for example `private.us.icr.io`.
-- You're using an {{site.data.keyword.containerlong_notm}} cluster in a [configuration](/docs/containers?topic=containers-registry#cluster_registry_auth_private) that automatically talks to the registry over a private connection.
-- You're accessing {{site.data.keyword.registryshort}} through a virtual private cloud (VPC) virtual private endpoint gateway (VPE gateway).
-- You're using the {{site.data.keyword.registryshort}} private IP addresses for configuring network access, for example, in firewalls or Access Control Lists (ACL).
+- You use one of the `private.*` domains, for example `private.us.icr.io`.
+- You use an {{site.data.keyword.containerlong_notm}} cluster in a [configuration](/docs/containers?topic=containers-registry#cluster_registry_auth_private) that automatically talks to the registry over a private connection.
+- You access {{site.data.keyword.registryshort}} through a virtual private cloud (VPC) virtual private endpoint gateway (VPE gateway).
+- You use the {{site.data.keyword.registryshort}} private IP addresses for configuring network access, for example, in firewalls or Access Control Lists (ACL).
 
-If any of the previous statements is true when this change takes effect, the IP addresses in the {{site.data.keyword.at_full_notm}} logs change, but you don't need to do anything unless you are also using IAM IP address access restrictions.
+If any of the previous statements is true when this change takes effect, then the IP addresses in the {{site.data.keyword.at_full_notm}} logs change, but you don't need to do anything unless you are also using IAM IP address access restrictions.
 
 ## What actions you need to take
 {: #registry_notices_iam_pivate_network_action}
