@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-11"
+lastupdated: "2025-01-16"
 
 keywords: data portability
 
@@ -23,18 +23,18 @@ Data portability involves a set of tools and procedures that enable customers to
 
 {{site.data.keyword.cloud_notm}} services provide interfaces and instructions to guide the customer to copy and store the service customer content, including the related configuration, on their own selected location.
 
-The customer is responsible for the use of the exported data and configuration for data portability to other infrastructures, which includes:
+The customer is responsible for the use of the exported data and configuration for data portability to other infrastructures, which includes the following actions:
 
 - The planning and execution for setting up alternative infrastructure on different cloud providers or on-premises software that provide similar capabilities to the {{site.data.keyword.IBM_notm}} services.
-- The planning and execution for the porting of the required application code on the alternative infrastructure, including the adaptation of customer's application code, deployment automation, and so on.
-- The conversion of the exported data and configuration to the format that's required by the alternative infrastructure and adapted applications.
+- The planning and execution for the porting of the required application code on the alternative infrastructure, including the adaptation of customer's application code, deployment automation, and other code.
+- The conversion of the exported data and configuration to the format that is required by the alternative infrastructure and adapted applications.
 
 For more information about your responsibilities for {{site.data.keyword.registrylong}}, see [Your responsibilities](/docs/Registry?topic=Registry-registry_responsibilities).
 
-## Data export procedures
+## Procedures for exporting data
 {: #data-portability-procedures}
 
-{{site.data.keyword.registryshort_notm}} provides the mechanisms to export your content that's uploaded, stored, and processed when you use the service.
+{{site.data.keyword.registryshort_notm}} provides the mechanisms to export the content that is uploaded, stored, and processed by the service.
 
 1. Refer to the new provider's documentation to find out how to name your images.
 
@@ -47,7 +47,7 @@ For more information about your responsibilities for {{site.data.keyword.registr
     ```
     {: pre}
 
-1. Run the following commands for each region where you have container images stored.
+1. Run the following commands for each region in which container images are stored.
 
     a. Set the {{site.data.keyword.cloud_notm}} region.
 
@@ -80,7 +80,7 @@ For more information about your responsibilities for {{site.data.keyword.registr
 ## Exported data formats
 {: #data-portability-data-formats}
 
-Container images are exported from {{site.data.keyword.registryshort_notm}} as either Docker Manifest v2 images or OCI images, depending on what format was used to upload them. No conversion is required to move existing container images to another OCI compliant registry.
+Container images are exported from {{site.data.keyword.registryshort_notm}} as either Docker Manifest v2 images or OCI images, depending on what format was used to upload them. No conversion is required to move existing container images to another OCI-compliant registry.
 
 ## Data ownership
 {: #data-portability-ownership}

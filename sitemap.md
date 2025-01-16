@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-01-16"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1698,7 +1698,7 @@ subcollection: Registry
 
 * [Responsibilities](/docs/Registry?topic=Registry-data_portability#data-portability-responsibilities)
 
-* [Data export procedures](/docs/Registry?topic=Registry-data_portability#data-portability-procedures)
+* [Procedures for exporting data](/docs/Registry?topic=Registry-data_portability#data-portability-procedures)
 
 * [Exported data formats](/docs/Registry?topic=Registry-data_portability#data-portability-data-formats)
 
