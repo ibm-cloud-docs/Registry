@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-26"
+  years: 2024, 2025
+lastupdated: "2025-01-16"
 
 keywords: IBM Cloud Container Registry, firewall, access, communicate, domains, subdomains, traffic, allowlist
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Accessing {{site.data.keyword.registryshort}} through a firewall
 {: #registry_firewall}
 
-To permit worker nodes to communicate with {{site.data.keyword.registrylong}}, allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} [regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+To authorize worker nodes to communicate with {{site.data.keyword.registrylong}}, you must allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} [regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 {: shortdesc}
 
 If you are using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong}}, by default the connection to {{site.data.keyword.registryshort}} is private. Therefore, you don't need to allow public access to {{site.data.keyword.registryshort}}. For more information about private connectivity, see [Private network connection to `icr.io` registries](/docs/containers?topic=containers-registry#cluster_registry_auth_private).
@@ -23,7 +23,7 @@ If you are using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword
 
 You can configure your firewall to allow connections to {{site.data.keyword.registryshort}} by using a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains listed in the following table.
 
-When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any allowlist restrictions that are based on IP addresses in place. If you are concerned about opening your allowlist, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private {{site.data.keyword.cloud_notm}} network, see [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_private). Note that IP address lists are not provided because they can change frequently.
+When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any allowlist restrictions that are based on IP addresses in place. If you are concerned about opening your allowlist, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private {{site.data.keyword.cloud_notm}} network, see [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_private). IP address lists are not provided because they can change frequently.
 {: important}
 
 In addition to the following regional subdomains, you must also allow traffic from your worker nodes to port `443` on all subdomains of `icr.io` in case of redirection to other subdomains for delivery optimization. You must allow `TCP port 443 FROM <each_worker_node_publicIP> TO *.icr.io`, where `<each_worker_node_publicIP>` is the public IP address for each worker node. If you use the deprecated domain names, you must allow those domains too.
