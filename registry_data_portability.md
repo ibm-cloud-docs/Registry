@@ -12,7 +12,6 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Understanding data portability for {{site.data.keyword.registryshort_notm}}
 {: #data_portability}
 
