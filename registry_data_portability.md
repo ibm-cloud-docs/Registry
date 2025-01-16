@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2024
+  years: 2024, 2025
 lastupdated: "2025-01-16"
 
 keywords: data portability
@@ -11,6 +11,7 @@ subcollection: Registry
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Understanding data portability for {{site.data.keyword.registryshort_notm}}
 {: #data_portability}
