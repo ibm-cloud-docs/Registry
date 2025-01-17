@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-25"
+  years: 2023, 2025
+lastupdated: "2025-01-17"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -62,8 +62,7 @@ Context-based restrictions protect only the actions that are associated with the
 
 - [Resource Instance APIs](/apidocs/resource-controller/resource-controller#list-resource-instances)
 - [Resource Keys APIs](/apidocs/resource-controller/resource-controller#list-resource-keys)
-- [Resource Bindings APIs](/apidocs/resource-controller/resource-controller#list-resource-bindings)
-- [Resource Aliases APIs](/apidocs/resource-controller/resource-controller#list-resource-aliases)
+- [Resource Reclamations APIs](/apidocs/resource-controller/resource-controller#list-reclamations)
 - [IAM Policy APIs](/apidocs/iam-policy-management#list-policies)
 - [Global Search APIs](/apidocs/search)
 - Global Tagging [Attach](/apidocs/tagging#attach-tag) and [Detach](/apidocs/tagging#detach-tag) APIs
