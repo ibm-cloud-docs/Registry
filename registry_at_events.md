@@ -45,7 +45,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
-{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Asia Pacific locations" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Asia-Pacific locations" caption-side="bottom"}
 {: #table_registry_at_event_collection_ap}
 
 | Locations in Europe | Service events available |
@@ -118,7 +118,7 @@ The following table shows the location of global registry {{site.data.keyword.at
 | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
 |------------------|-------------------|------------------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
-{: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
+{: caption="Regions where activity tracking events are sent in Asia-Pacific locations" caption-side="top"}
 {: #atracker-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="atracker"}
