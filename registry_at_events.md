@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-26"
+  years: 2018, 2025
+lastupdated: "2025-01-20"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -20,7 +20,7 @@ subcollection: Registry
 
 Activity tracking events report on activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 
-You can use {{site.data.keyword.atracker_full_notm}}, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about).
+You can use {{site.data.keyword.atracker_full_notm}}, which is a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about).
 
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
@@ -140,10 +140,10 @@ The following table shows the location of global registry {{site.data.keyword.at
 
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
-### Launching {{site.data.keyword.logs_full_notm}} from the Observability page
+### Starting {{site.data.keyword.logs_full_notm}} from the Observability page
 {: #at-launch-standalone}
 
-For information about launching the {{site.data.keyword.logs_full_notm}} UI, see [Launching the UI in the {{site.data.keyword.logs_full_notm}} documentation](/docs/cloud-logs?topic=cloud-logs-instance-launch).
+For information about starting the {{site.data.keyword.logs_full_notm}} UI, see [Launching the UI in the {{site.data.keyword.logs_full_notm}} documentation](/docs/cloud-logs?topic=cloud-logs-instance-launch).
 
 ## Account management events
 {: #at_actions_account}
@@ -333,6 +333,6 @@ The following table lists the fields that are available through the `requestData
 |---------------------|------|-------------|
 | `requestData.RequestParameters.repository` | String | The name of the repository for which you want to see image signing reports. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.signatureMethod` | String | Displays the technology that is used to sign the image, such as [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external}. |
-| `requestData.RequestParameters.signatureObject` | String | Specifies the object type upon which a signing operation is performed, for example, `image`. |
+| `requestData.RequestParameters.signatureObject` | String | Specifies the object type upon which a signing operation is implemented, for example, `image`. |
 {: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} signing" caption-side="bottom"}
 {: #table_registry_at_event_custom_sign}
