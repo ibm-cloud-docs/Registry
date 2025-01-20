@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-10-09"
+  years: 2019, 2025
+lastupdated: "2025-01-20"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -43,7 +43,7 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
-{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Asia Pacific locations" caption-side="bottom"}
+{: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Asia-Pacific locations" caption-side="bottom"}
 {: #table_registry_logs_service_ap}
 
 | Locations in Europe | Are platform services logs available? |
@@ -114,7 +114,7 @@ The following table shows the location of global registry {{site.data.keyword.la
 | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
 |------------------|-------------------|------------------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
-{: caption="Regions where platform logs are sent in Asia Pacific locations" caption-side="top"}
+{: caption="Regions where platform logs are sent in Asia-Pacific locations" caption-side="top"}
 {: #logr-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="lr"}

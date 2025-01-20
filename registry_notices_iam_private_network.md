@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-20"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -28,7 +28,7 @@ From 5 July 2022 (23 June 2022 for the `br-sao` and `ca-tor` regions), when conn
 
 This change improves the security of {{site.data.keyword.registrylong_notm}}. With this change, you can configure real, account specific, private client IP addresses in IAM restricted IP lists, instead of the documented list of shared IP addresses. You must now allow private subnet and IP addresses of your own hosts (for example, worker nodes in a classic {{site.data.keyword.containerlong_notm}} cluster or the egress IP of a VPC network).
 
-Also, as part of this change, the {{site.data.keyword.registryshort}} private IP addresses changed, which might require updates to your firewall configuration.
+As part of this change, the {{site.data.keyword.registryshort}} private IP addresses also altered; therefore, updates to your firewall configuration might be required.
 
 If you use [Calico](https://www.tigera.io/project-calico/){: external}, the samples are updated to take account of the change.
 
@@ -57,7 +57,7 @@ You are accessing {{site.data.keyword.registryshort}} over the private network i
 - You access {{site.data.keyword.registryshort}} through a virtual private cloud (VPC) virtual private endpoint gateway (VPE gateway).
 - You use the {{site.data.keyword.registryshort}} private IP addresses for configuring network access, for example, in firewalls or Access Control Lists (ACL).
 
-If any of the previous statements is true when this change takes effect, then the IP addresses in the {{site.data.keyword.at_full_notm}} logs change, but you don't need to do anything unless you are also using IAM IP address access restrictions.
+If any of the previous statements is true when this change takes effect, then the IP addresses in the {{site.data.keyword.at_full_notm}} log change, but you don't need to do anything unless you are also using IAM IP address access restrictions.
 
 ## What actions you need to take
 {: #registry_notices_iam_pivate_network_action}
