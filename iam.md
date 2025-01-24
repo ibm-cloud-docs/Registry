@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-09"
+  years: 2018, 2025
+lastupdated: "2025-01-24"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -426,4 +426,4 @@ resource "ibm_iam_user_policy" "policy" {
 ```
 {: codeblock}
 
-For more information, see [ibm_iam_user_policy](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_user_policy){: external} in the Terraform documentation.
+For more information, see [`ibm_iam_user_policy`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_user_policy){: external} in the Terraform documentation.
