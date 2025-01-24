@@ -199,7 +199,7 @@ Review the following table to find available Go template options and data types 
 | `Retries` | Integer | Displays the number of consecutive failures that are needed to consider a container as not working correctly. |
 | `Test` | Array of strings | Displays how to run the health check test. The following options are available.  \n - `{}` inherit the health check.  \n - `{"NONE"}` the health check is disabled.  \n - `{"CMD", args...}` exec arguments directly.  \n - `{"CMD-SHELL", command}` run the command with the system's default shell. |
 | `Timeout` | Integer (64 bit) | Displays the time to wait, in nanoseconds, before the health check fails. |
-{: caption="Available fields and data types in `Healthcheck`" caption-side="bottom"}
+{: caption="Available fields and data types in Health check" caption-side="bottom"}
 {: #table_registry_cli_list_healthcheck}
 
 ### `RootFS` field details
