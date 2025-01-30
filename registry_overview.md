@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-10-26"
+  years: 2017, 2025
+lastupdated: "2025-01-30"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -418,7 +418,7 @@ If you want to use a region other than your local region, you can target the reg
 
 Docker is required only if you want to push or pull images.
 
-Docker V2 schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, schema 2](https://docs.docker.com/registry/){: external}.
+Docker V2 schema 2 images are supported. Manifest lists are also supported. For more information, see [Registry compatibility](https://distribution.github.io/distribution/about/compatibility/){: external}.
 
 Docker V2 schema 1 images are discontinued and you can't push them to {{site.data.keyword.registryshort}} anymore.
 {: note}
