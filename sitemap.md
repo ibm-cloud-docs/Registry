@@ -1667,7 +1667,7 @@ subcollection: Registry
 
 * [Locations for service availability](/docs/Registry?topic=Registry-ha-dr#ha-locations)
 
-* [Frequently asked questions about high availability](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
+* [FAQ about high availability](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
 
     * [Does {{site.data.keyword.cloud_notm}} replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service)
 
@@ -1681,7 +1681,7 @@ subcollection: Registry
 
 * [Locations for service availability](/docs/Registry?topic=Registry-bc-dr#bc-dr-locations)
 
-* [Frequently asked questions about disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr_faq)
+* [FAQ about disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr_faq)
 
     * [Does the service replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_replicate_data)
 
@@ -1870,13 +1870,13 @@ subcollection: Registry
 [Why don't my pods restart after my workers are down?](/docs/Registry?topic=Registry-troubleshoot-pods#troubleshoot-pods)
 
 
-## Frequently asked questions (FAQs)
-{: #sitemap_frequently_asked_questions_faqs}
+## FAQ
+{: #sitemap_faq}
 
 
-[Frequently asked questions (FAQs)](/docs/Registry?topic=Registry-registry_faq#registry_faq)
+[FAQ](/docs/Registry?topic=Registry-registry_faq#registry_faq)
 
-* [Frequently asked questions about {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_faq#registry_faq_registry)
+* [FAQ for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_faq#registry_faq_registry)
 
     * [Where is the reference documentation for {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_ref_docs)
 
@@ -1924,7 +1924,7 @@ subcollection: Registry
 
     * [Why am I getting an exceeded quota error?](/docs/Registry?topic=Registry-registry_faq#faq_quota_error)
 
-* [Frequently asked questions about Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq#registry_faq_va)
+* [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq#registry_faq_va)
 
     * [How do I manage vulnerabilities?](/docs/Registry?topic=Registry-registry_faq#faq_va_vuln)
 

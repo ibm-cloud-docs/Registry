@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-05-29"
+  years: 2018, 2025
+lastupdated: "2025-01-30"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -14,14 +14,16 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Frequently asked questions about {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor
+# FAQ for {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor
 {: #registry_faq}
 
-Frequently asked questions (FAQs) about {{site.data.keyword.registrylong}} and Vulnerability Advisor.
+Frequently asked questions for {{site.data.keyword.registrylong}} and Vulnerability Advisor.
 {: shortdesc}
 
-## Frequently asked questions about {{site.data.keyword.registryshort_notm}}
+## FAQ for {{site.data.keyword.registryshort_notm}}
 {: #registry_faq_registry}
+
+Frequently asked questions for {{site.data.keyword.registrylong}}.
 
 ### Where is the reference documentation for {{site.data.keyword.registryshort}}?
 {: #faq_ref_docs}
@@ -242,8 +244,10 @@ You exceeded your image storage or pull traffic quota for the current month. Thi
 
 For more information, see [Why am I getting errors about my quota in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-quota) and [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
 
-## Frequently asked questions about Vulnerability Advisor
+## FAQ for Vulnerability Advisor
 {: #registry_faq_va}
+
+Frequently asked questions for Vulnerability Advisor.
 
 ### How do I manage vulnerabilities?
 {: #faq_va_vuln}

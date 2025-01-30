@@ -64,10 +64,10 @@ The SLO is not a warranty and {{site.data.keyword.IBM_notm}} does not issue cred
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
 
-## Frequently asked questions about high availability
+## FAQ about high availability
 {: #ha-dr_faq}
 
-Review the following FAQs about high availability.
+Review the following frequently asked questions about high availability.
 
 ### Does {{site.data.keyword.cloud_notm}} replicate the service?
 {: #ha-dr_service}
