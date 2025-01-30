@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-01-20"
+lastupdated: "2025-01-30"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1646,11 +1646,11 @@ subcollection: Registry
 * [Version 0.1.582](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-log-01582)
 
 
-## Service dependency map for IBM Cloud Container Registry
-{: #sitemap_service_dependency_map_for_ibm_cloud_container_registry}
+## Service dependencies
+{: #sitemap_service_dependencies}
 
 
-[Service dependency map for IBM Cloud Container Registry](/docs/Registry?topic=Registry-service-dependencies#service-dependencies)
+[Service dependencies](/docs/Registry?topic=Registry-service-dependencies#service-dependencies)
 
 
 ## High availability and disaster recovery
