@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-09"
+  years: 2022, 2025
+lastupdated: "2025-01-30"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -44,10 +44,10 @@ For more information about your responsibilities when you're using {{site.data.k
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
 
-## Frequently asked questions about disaster recovery
+## FAQ about disaster recovery
 {: #bc-dr_faq}
 
-Review the following FAQs about disaster recovery.
+Review the following frequently asked questions about disaster recovery.
 
 ### Does the service replicate the data?
 {: #bc-dr_replicate_data}

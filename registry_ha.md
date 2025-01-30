@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-12-18"
+  years: 2018, 2025
+lastupdated: "2025-01-30"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
 
@@ -14,6 +14,8 @@ subcollection: Registry
 
 # High availability for {{site.data.keyword.registryshort_notm}}
 {: #ha-dr}
+
+
 
 The {{site.data.keyword.registrylong}} service is a highly available, regional, service.
 {: shortdesc}
@@ -62,10 +64,10 @@ The SLO is not a warranty and {{site.data.keyword.IBM_notm}} does not issue cred
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
 
-## Frequently asked questions about high availability
+## FAQ about high availability
 {: #ha-dr_faq}
 
-Review the following FAQs about high availability.
+Review the following frequently asked questions about high availability.
 
 ### Does {{site.data.keyword.cloud_notm}} replicate the service?
 {: #ha-dr_service}

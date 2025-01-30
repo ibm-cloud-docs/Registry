@@ -157,7 +157,8 @@ toc:
             navtitle: Formatting and filtering the CLI output
           - topic: registry_change_log.md
             navtitle: CLI change log
-      - service-dependency.md
+      - topic: service-dependency.md
+        navtitle: Service dependencies
       - topicgroup:
           label: High availability and disaster recovery
           topics:
@@ -280,7 +281,7 @@ toc:
               - topic: ts_pods.md
                 navtitle: Why don't my pods restart after my workers are down?
       - topic: registry_faq.md
-        navtitle: Frequently asked questions (FAQs)
+        navtitle: FAQ
       - topic: registry_help_support.md
         navtitle: Getting help and support
       - topic: sitemap.md
