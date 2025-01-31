@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-01-31"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -231,7 +231,7 @@ Typically, a container image is built upon a base image that contains a base ope
 ### Docker V2 container images
 {: #overview_elements_dockerv2_images}
 
-A container image that is compliant with the [Docker: Image Manifest V2, schema 2](https://docs.docker.com/registry/){: external} specification.
+A container image that is compliant with the [Image Manifest Version 2, Schema 2](https://distribution.github.io/distribution/spec/manifest-v2-2/){: external} specification.
 
 The media type for Docker Image Manifest V2, schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
