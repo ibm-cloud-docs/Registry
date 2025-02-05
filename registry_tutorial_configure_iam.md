@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-07-17"
+  years: 2018, 2025
+lastupdated: "2025-02-05"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -69,7 +69,7 @@ Add a second user to your account and grant them the ability to configure {{site
 
         Make a note of the Account ID that is in the parentheses ( ) in the Account row.
 
-2. Prove that User B can target User A's account but can't do anything with {{site.data.keyword.registrylong_notm}} yet.
+2. Prove that User B can target User A's account but cannot do anything with {{site.data.keyword.registrylong_notm}} yet.
 
     1. Log in as User B and target User A's account by running the following command, where `<YourAccountID>` is User A's Account ID.
 
@@ -193,7 +193,7 @@ Create some namespaces with sample images, and grant access to them. You create 
         ```
         {: pre}
 
-2. Prove that User B can't see anything.
+2. Prove that User B cannot see anything.
 
     1. Log in as User B, targeting User A's account by running the following command.
 

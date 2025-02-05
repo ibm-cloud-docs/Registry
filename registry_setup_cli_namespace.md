@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-07-18"
+  years: 2017, 2025
+lastupdated: "2025-02-05"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -136,7 +136,7 @@ Consider the following rules when you choose a namespace:
 Do not put personal information in your namespace names.
 {: important}
 
-After you set your first namespace, you are assigned to the free {{site.data.keyword.registrylong_notm}} service plan unless you [upgrade your plan](/docs/Registry?topic=Registry-registry_overview#registry_plan_upgrade).
+After you set your first namespace, you're assigned to the free {{site.data.keyword.registrylong_notm}} service plan unless you [upgrade your plan](/docs/Registry?topic=Registry-registry_overview#registry_plan_upgrade).
 
 ### User permissions for working with namespaces
 {: #registry_setup_cli_namespace_plan_perm}

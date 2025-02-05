@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-10-26"
+  years: 2019, 2025
+lastupdated: "2025-02-05"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -411,7 +411,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
             ```
             {: pre}
 
-            The `kubectl apply` command completes successfully. However, when you inspect the deployment's [pod](#x8461823){: term} by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image.
+            The `kubectl apply` command successfully completes. However, when you inspect the deployment's [pod](#x8461823){: term} by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image.
 
             You can find the pod name by running `kubectl get pod -n test`.
             {: tip}

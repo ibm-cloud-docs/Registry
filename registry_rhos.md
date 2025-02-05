@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-07-17"
+  years: 2020, 2025
+lastupdated: "2025-02-05"
 
 keywords: External registry, private registry, Red Hat OpenShift, Red Hat, clusters, Red Hat OpenShift Container Platform, container platform, internal registry, images
 
@@ -29,7 +29,7 @@ You can set up {{site.data.keyword.registryshort}} to work with the internal reg
 
 By default, your {{site.data.keyword.openshiftlong_notm}} clusters are set up with an internal registry that stores images locally in your cluster. The clusters are also set up with image pull secrets in the `default` project to pull images that you store in your private {{site.data.keyword.registryshort}} repositories.
 
-You can use either registry separately or in combination. When you set up the {{site.data.keyword.openshiftlong_notm}} internal registry to import images from {{site.data.keyword.registryshort}}, you get the advantage of a private registry that is common to multiple clusters. Another benefit is that copies of the pulled images from {{site.data.keyword.registryshort}} are stored locally on the cluster, therefore reducing latency and external traffic, but you are subject to storage limitations.
+You can use either registry separately or in combination. When you set up the {{site.data.keyword.openshiftlong_notm}} internal registry to import images from {{site.data.keyword.registryshort}}, you get the advantage of a private registry that is common to multiple clusters. Another benefit is that copies of the pulled images from {{site.data.keyword.registryshort}} are stored locally on the cluster, therefore reducing latency and external traffic, but you're subject to storage limitations.
 
 To set up your {{site.data.keyword.openshiftlong_notm}} clusters to use the internal registry in combination with {{site.data.keyword.registryshort}}, see the following topics in the {{site.data.keyword.openshiftlong_notm}} documentation:
 
@@ -54,7 +54,7 @@ To configure {{site.data.keyword.redhat_openshift_notm}} Container Platform to p
 
 1. [Set up image pull secrets to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#other_registry_accounts) for each project that you want to pull images in.
 
-2. [Configure {{site.data.keyword.redhat_openshift_notm}} Container Platform to use the image pull secrets](/docs/openshift?topic=openshift-registry#use_imagePullSecret) by adding the secrets to a service account in each project or by referring to the secret in your [pod](#x8461823){: term} deployment. You are only required to add the secret to the projects that you want to pull to.
+2. [Configure {{site.data.keyword.redhat_openshift_notm}} Container Platform to use the image pull secrets](/docs/openshift?topic=openshift-registry#use_imagePullSecret) by adding the secrets to a service account in each project or by referring to the secret in your [pod](#x8461823){: term} deployment. You're only required to add the secret to the projects that you want to pull to.
 
 ### Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registryshort}}
 {: #registry_rhos_os_push}
