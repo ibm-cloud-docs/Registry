@@ -82,9 +82,6 @@ Packages that contain known vulnerability issues are displayed in the scan resul
 
 Vulnerability Advisor returns vulnerabilities only when a package fix is published by the distributor. Declared vulnerabilities that aren't fixed yet, or are not going to be fixed, are not reported by Vulnerability Advisor. Therefore, if Vulnerability Advisor does not report any vulnerabilities, there might still be a risk in the image.
 
-If you are using a version of a distribution that is now unsupported by the vendor and no security feed data is available from the vendor's security feed, for example, Debian 10 or earlier, Vulnerability Advisor might report `No issues`.
-{: note}
-
 For version 4, the image is indexed the first time that it is pushed. Thereafter, the vulnerability assessment is calculated every time Vulnerability Advisor is queried about that image. Images are scanned only if they have a tag.
 
 The following tables show the supported Docker base images that Vulnerability Advisor checks for vulnerable packages.
@@ -101,6 +98,9 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 | Ubuntu | All stable versions with vendor security support. | [Ubuntu CVE Tracker](https://launchpad.net/ubuntu-cve-tracker){: external}. |
 {: caption="Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
 {: #table_registry_vpe_docker_images}
+
+If you are using an image based on an Operating System Distribution in the preceeding table, but at a version that is unsupported by the vendor and has no security feed data available, for example, Debian 10 and earlier, Vulnerability Advisor might report `No issues` for your image.
+{: note}
 
 ### Configuration issues
 {: #app_configurations}
