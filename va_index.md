@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-10-26"
+  years: 2017, 2025
+lastupdated: "2025-02-06"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -81,6 +81,9 @@ Vulnerability Advisor checks for vulnerable packages in images that are using su
 Packages that contain known vulnerability issues are displayed in the scan results. The possible vulnerabilities are updated daily by using the published security notices for the Docker image types that are listed in the following table. Typically, for a vulnerable package to pass the scan, a later version of the package is required that includes a fix for the vulnerability. The same package can list multiple vulnerabilities, and in this case, a single package update can address multiple vulnerabilities.
 
 Vulnerability Advisor returns vulnerabilities only when a package fix is published by the distributor. Declared vulnerabilities that aren't fixed yet, or are not going to be fixed, are not reported by Vulnerability Advisor. Therefore, if Vulnerability Advisor does not report any vulnerabilities, there might still be a risk in the image.
+
+If you are using a version of a distribution that is now unsupported by the vendor and no security feed data is available from the vendor's security feed, for example, Debian 10 or earlier, Vulnerability Advisor might report `No issues`.
+{: note}
 
 For version 4, the image is indexed the first time that it is pushed. Thereafter, the vulnerability assessment is calculated every time Vulnerability Advisor is queried about that image. Images are scanned only if they have a tag.
 
@@ -188,7 +191,7 @@ You can review the security of Docker images that are stored in your namespaces 
 
     In the CLI output, you can view the following information about the configuration issues.
     - `Security practice` A description of the vulnerability.
-    - `Corrective action` Information about how to fix the vulnerability.
+    - `Corrective action` How to fix the vulnerability.
 
 ## Setting organizational exemption policies
 {: #va_managing_policy}
