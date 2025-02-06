@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-10-26"
+  years: 2017, 2025
+lastupdated: "2025-02-06"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -99,6 +99,9 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 {: caption="Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
 {: #table_registry_vpe_docker_images}
 
+If you are using an image that is based on an Operating System Distribution in the preceding table, but at a version that is unsupported by the vendor and has no security feed data available, for example, Debian 10 or earlier, Vulnerability Advisor might report `No issues` for your image.
+{: note}
+
 ### Configuration issues
 {: #app_configurations}
 
@@ -188,7 +191,7 @@ You can review the security of Docker images that are stored in your namespaces 
 
     In the CLI output, you can view the following information about the configuration issues.
     - `Security practice` A description of the vulnerability.
-    - `Corrective action` Information about how to fix the vulnerability.
+    - `Corrective action` How to fix the vulnerability.
 
 ## Setting organizational exemption policies
 {: #va_managing_policy}
