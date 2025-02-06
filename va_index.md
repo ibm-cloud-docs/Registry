@@ -99,7 +99,7 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 {: caption="Supported Docker base images that Vulnerability Advisor 4 checks for vulnerable packages" caption-side="bottom"}
 {: #table_registry_vpe_docker_images}
 
-If you are using an image based on an Operating System Distribution in the preceeding table, but at a version that is unsupported by the vendor and has no security feed data available, for example, Debian 10 and earlier, Vulnerability Advisor might report `No issues` for your image.
+If you are using an image that is based on an Operating System Distribution in the preceding table, but at a version that is unsupported by the vendor and has no security feed data available, for example, Debian 10 or earlier, Vulnerability Advisor might report `No issues` for your image.
 {: note}
 
 ### Configuration issues
