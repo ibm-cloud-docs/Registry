@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-20"
+lastupdated: "2025-02-07"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -312,7 +312,7 @@ The following table lists the fields that are available through the `requestData
 | Custom Event Fields | Type | Description |
 |---------------------|------|-------------|
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n The following constraint applies: The value must match the regular expression `.*`. |
-| `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/vulnerability-advisor#vulnerability-report-status-codes) in the API documentation.
+| `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/vulnerability-advisor#vulnerability-report-status-codes) in the API documentation. |
 {: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability status read" caption-side="bottom"}
 {: #table_registry_at_event_va_custom_status_read}
 
