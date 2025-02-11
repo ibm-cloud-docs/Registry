@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-02-11"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -653,7 +653,7 @@ Adding IAM API key policies to control access to resources {: #25feb2019_secrets
 
     For more information, see [Understanding how to authorize your cluster to pull images from a registry](/docs/containers?topic=containers-registry#cluster_registry_auth).
 
-New region in ap-north {: #25feb2019_ap-north}
+New region in `ap-north` {: #25feb2019_ap-north}
 :   A new region is available in `ap-north`. You can use the new region by using the domain name `jp.icr.io`.
 
     For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
