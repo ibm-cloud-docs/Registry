@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-02-11"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -628,7 +628,7 @@ subcollection: Registry
 
     * [Adding IAM API key policies to control access to resources](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_secrets)
 
-    * [New region in ap-north](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_ap-north)
+    * [New region in `ap-north`](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_ap-north)
 
 * [21 February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-21feb2019)
 
