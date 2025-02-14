@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-11"
+lastupdated: "2025-02-14"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1013,6 +1013,24 @@ subcollection: Registry
     * [Using Skopeo to access your namespace](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_skopeo)
 
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
+
+[Accessing Container Registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles)
+
+* [Accessing namespaces in automation by using a trusted profile](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_auto)
+
+    * [Creating a trusted profile](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_create)
+
+    * [Creating a service ID API key manually](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_serviceid_apikey_create)
+
+    * [Using client software to authenticate in automation](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth)
+
+        * [Using Buildah to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_buildah)
+
+        * [Using Docker to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_docker)
+
+        * [Using Podman to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_podman)
+
+        * [Using Skopeo to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_skopeo)
 
 [Managing IAM access](/docs/Registry?topic=Registry-iam#iam)
 
