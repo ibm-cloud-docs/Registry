@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-02-11"
+lastupdated: "2025-02-14"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -21,11 +21,20 @@ content-type: release-note
 What's new in {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
 
+## 14 February 2025
+{: #registry-14feb2025}
+{: release-note}
+
+Access {{site.data.keyword.registrylong_notm}} by using trusted profiles {: #14feb2025_trustprof}
+:   You can use trusted profiles to grant different {{site.data.keyword.cloud}} identities access to {{site.data.keyword.registrylong_notm}} resources in your account. Automatically grant federated users access to your account with conditions based on SAML attributes from your corporate directory.
+
+    For more information, see [Accessing {{site.data.keyword.registryshort_notm}} by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles).
+
 ## 9 December 2024
 {: #registry-09dec2024}
 {: release-note}
 
-Content delivery network (CDN) enabled for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`) over a public network {: #09dec2024_cdn}
+Content delivery network (CDN) is enabled for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`) over a public network {: #09dec2024_cdn}
 :   To ensure continued worldwide performance for global registry (`icr.io`) in {{site.data.keyword.registrylong_notm}}, a content delivery network (CDN) is now enabled.
 
 ## 26 June 2024

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-11"
+lastupdated: "2025-02-14"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -364,9 +364,13 @@ subcollection: Registry
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
 
+* [14 February 2025](/docs/Registry?topic=Registry-registry_release_notes#registry-14feb2025)
+
+    * [Access {{site.data.keyword.registrylong_notm}} by using trusted profiles](/docs/Registry?topic=Registry-registry_release_notes#14feb2025_trustprof)
+
 * [9 December 2024](/docs/Registry?topic=Registry-registry_release_notes#registry-09dec2024)
 
-    * [Content delivery network (CDN) enabled for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`) over a public network](/docs/Registry?topic=Registry-registry_release_notes#09dec2024_cdn)
+    * [Content delivery network (CDN) is enabled for users that pull {{site.data.keyword.registrylong_notm}} images from global (`icr.io`) over a public network](/docs/Registry?topic=Registry-registry_release_notes#09dec2024_cdn)
 
 * [26 June 2024](/docs/Registry?topic=Registry-registry_release_notes#registry-26jun2024)
 
@@ -1013,6 +1017,24 @@ subcollection: Registry
     * [Using Skopeo to access your namespace](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_skopeo)
 
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
+
+[Accessing Container Registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles)
+
+* [Accessing namespaces in automation by using a trusted profile](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_auto)
+
+    * [Creating a trusted profile](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_create)
+
+    * [Creating a service ID API key manually](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_serviceid_apikey_create)
+
+    * [Using client software to authenticate in automation](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth)
+
+        * [Using Buildah to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_buildah)
+
+        * [Using Docker to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_docker)
+
+        * [Using Podman to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_podman)
+
+        * [Using Skopeo to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_skopeo)
 
 [Managing IAM access](/docs/Registry?topic=Registry-iam#iam)
 
