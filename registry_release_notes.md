@@ -28,7 +28,7 @@ What's new in {{site.data.keyword.registrylong}} and Vulnerability Advisor. The 
 Access {{site.data.keyword.registrylong_notm}} by using trusted profiles {: #14feb2025_trustprof}
 :   You can use trusted profiles to grant different {{site.data.keyword.cloud}} identities access to {{site.data.keyword.registrylong_notm}} resources in your account. Automatically grant federated users access to your account with conditions based on SAML attributes from your corporate directory.
 
-    For more information, see[Accessing {{site.data.keyword.registryshort_notm}} by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles).
+    For more information, see [Accessing {{site.data.keyword.registryshort_notm}} by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles).
 
 ## 9 December 2024
 {: #registry-09dec2024}
