@@ -15,6 +15,7 @@ subcollection: Registry
 # Using Helm charts in {{site.data.keyword.registryshort}}
 {: #registry_helm_charts}
 
+
 You can securely store and share Helm charts with other users in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
@@ -108,12 +109,14 @@ Before you begin, complete the following tasks.
 
 To upload (push) a chart, complete the following steps:
 
-1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
+1. Log in to the CLI by running the following command, where `<domain>` is the domain name and the username (`-u`) is set to `iamapikey`. To find out more about the domain names, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
     ```txt
-    ibmcloud cr login
+    helm registry login <domain> -u iamapikey
     ```
     {: pre}
+
+    The command then prompts you to input the password, which is the IAM API key.
 
     You must log in if you pull a chart from your private {{site.data.keyword.registrylong_notm}}.
     {: requirement}
