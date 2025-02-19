@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-14"
+lastupdated: "2025-02-18"
 
 keywords: API key, tokens, automating access, access, authentication, Podman, Skopeo, Buildah, Docker, client, authenticate, iam, domain, service id api key, trusted profiles,
 
@@ -98,6 +98,7 @@ buildah login -u <profile_id> -p <apikey> <registry_domain>
 You can use Docker to authenticate with the registry so that you can push and pull images to and from the registry.
 
 Use the API key and [domain](#registry_access_trusted_profiles_apikey_auth) to log in to the registry by running the following Docker command, replace `<profile_id>` with the trusted profile ID, `<apikey>` with the API key, and `<registry_domain>` with the domain:
+
 ```txt
 docker login -u <profile_id> -p <apikey> <registry_domain>
 ```

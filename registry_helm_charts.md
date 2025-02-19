@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-13"
+lastupdated: "2025-02-18"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -14,6 +14,7 @@ subcollection: Registry
 
 # Using Helm charts in {{site.data.keyword.registryshort}}
 {: #registry_helm_charts}
+
 
 You can securely store and share Helm charts with other users in {{site.data.keyword.registrylong}}.
 {: shortdesc}
@@ -108,12 +109,14 @@ Before you begin, complete the following tasks.
 
 To upload (push) a chart, complete the following steps:
 
-1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
+1. Log in to the CLI by running the following command, where `<domain>` is the domain name and the username (`-u`) is set to `iamapikey`. To find out more about the domain names, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
     ```txt
-    ibmcloud cr login
+    helm registry login <domain> -u iamapikey
     ```
     {: pre}
+
+    The command then prompts you to input the password, which is the IAM API key.
 
     You must log in if you pull a chart from your private {{site.data.keyword.registrylong_notm}}.
     {: requirement}
@@ -347,7 +350,7 @@ To restore a chart by tag from the trash, complete the following steps.
 
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
-3. For the chart that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This section of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
+3. For the chart that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
 4. For the chart that you want to restore, make a note of the tag `<tag>`.
 5. Run the following command to restore the chart to your repository, where `<dns>/<namespace>/<repo>` is the name of the chart that you want to restore and `<tag>` is the tag.
 
