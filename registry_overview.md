@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-20"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -20,7 +20,7 @@ Use {{site.data.keyword.registrylong}} to store and access private container ima
 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, scalable, and encrypted private image registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can use {{site.data.keyword.registryshort}} by setting up your own image [namespace](#x2031005){: term} and pushing container images to your namespace.
 
-![Diagram showing how you can interact with IBM Cloud Container Registry.](images/about_container_registry_v2.svg "Diagram showing how you can interact with {{site.data.keyword.registryshort}}. {{site.data.keyword.registryshort}} contains both private and public namespaces, and APIs to interact with the service. Your local image store interacts with both {{site.data.keyword.registryshort}} and other registries, which in turn interact with your Kubernetes cluster. The {{site.data.keyword.cloud_notm}} web GUI ({{site.data.keyword.cloud_notm}} console) interacts with the {{site.data.keyword.registryshort}} API to list images. The {{site.data.keyword.registryshort}} CLI interacts with the API to list, inspect, and remove images, create namespaces, and perform other administrative functions."){: caption="How {{site.data.keyword.registryshort}} interacts with images" caption-side="bottom"}{: external download="../images/about_container_registry_v2.svg"}
+![Diagram showing how IBM Cloud Container Registry interacts with images.](images/about_container_registry_v2.svg "Diagram showing how {{site.data.keyword.registryshort}} interacts with images. {{site.data.keyword.registryshort}} contains both private and public namespaces and APIs to interact with the service. Your local image store interacts with both {{site.data.keyword.registryshort}} and other registries, which in turn interact with your Kubernetes cluster. The {{site.data.keyword.cloud_notm}} GUI ({{site.data.keyword.cloud_notm}} console) interacts with the {{site.data.keyword.registryshort}} API to list images. The {{site.data.keyword.registryshort}} CLI interacts with the API to list, inspect, and remove images, create namespaces, and perform other administrative functions."){: caption="How {{site.data.keyword.registryshort}} interacts with images" caption-side="bottom"}{: external download="../images/about_container_registry_v2.svg"}
 
 A Docker image is the basis for every container that you create. An image is created from a [Dockerfile](#x9860414){: term}, which is a file that contains instructions about how to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the configuration of the app, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a group of users (private registry). By using {{site.data.keyword.registryshort}}, only users with access to your {{site.data.keyword.cloud_notm}} account can access your images.
 
