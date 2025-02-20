@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-10-26"
+  years: 2017, 2025
+lastupdated: "2025-02-19"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -28,7 +28,7 @@ Do not put personal information in your container images, namespace names, descr
 {: help}
 {: support}
 
-You can pull (download) an image from any private or public [registry](#x2064940){: term} source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
+You can pull (download) an image from any private or public [registry](#x2064940){: term} source to your computer, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 
 ![Pull an image from a private or public registry to your computer.](images/pulling_images_mul.svg "You can pull an image from {{site.data.keyword.registrylong_notm}} or from any private or public registry source to your local computer."){: caption="Pulling images from another registry" caption-side="bottom"}{: external download="../images/pulling_images_mul.svg"}
 
@@ -55,7 +55,7 @@ If you deploy a workload that pulls an image from {{site.data.keyword.registrysh
 {: help}
 {: support}
 
-You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users.
+You can push (upload) an image from your computer to your namespace in {{site.data.keyword.registrylong_notm}} to store your image and share it with other users.
 
 ![Push an image from your computer to {{site.data.keyword.registrylong_notm}}.](images/pushing_images_mul.svg "Push (upload) an image from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users."){: caption="Push Docker images to your namespace" caption-side="bottom"}{: external download="../images/pushing_images_mul.svg"}
 
@@ -102,7 +102,7 @@ After you push your image to {{site.data.keyword.registrylong_notm}}, you can do
 {: help}
 {: support}
 
-You can pull an image from a registry in one region and push it to a registry in another region so that you can share the image with users in both regions.
+You can copy images between registries by pulling an image from a registry in one region and pushing it to a registry in another region so that you can share the image with users in both regions.
 
 ![Copying images between registries.](images/copying_images_mul.svg "Pull an image from a registry in one region and push it to a registry in another region."){: caption="Copying images between registries" caption-side="bottom"}{: external download="../images/copying_images_mul.svg"}
 
