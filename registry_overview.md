@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-21"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -288,11 +288,7 @@ Namespaces that are assigned to a resource group show in the **Resource list** p
 ### Repository
 {: #overview_elements_repository}
 
-A collection of related container images in the {{site.data.keyword.registryshort}} that are distinguished by tag or digest only.
-
-Repository is often used interchangeably with container image, but a repository potentially holds multiple tagged variants of a container image.
-
-A repository stores container images, and is itself stored in a registry namespace.
+Stores a collection of related container images. A repository is stored in a namespace. The container images are distinguished by tag or digest only. The term repository is often used interchangeably with container image, but a repository potentially holds multiple tagged variants of a container image.
 
 ### Tag
 {: #overview_elements_tag}
