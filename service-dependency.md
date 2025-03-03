@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-01-08"
+lastupdated: "2025-03-03"
 
 keywords:
 
@@ -75,7 +75,7 @@ The following table provides the dependency listing of this service following a 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | IBM Cloud Monitoring| Operations, Security compliance | No | Both |  Same region  |
-| IBM Log Analysis & IBM Cloud Activity Tracker| Operations, Security compliance | No | Both |  Same region  |
+| IBM Cloud Logs| Operations, Security compliance | No | Both |  Same region  |
 | IBM Log Analysis Log Routing| none | No | Both |  Same region  |
 | IBM Cloud Metrics Routing| none | No | Both |  Same region  |
 | SOS Container Security| Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
