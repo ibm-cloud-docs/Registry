@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-01"
+lastupdated: "2025-03-03"
 
 keywords: IBM Cloud Container Registry notices, notices, uaa tokens
 
@@ -34,7 +34,7 @@ Kubernetes clusters can use image pull secrets to pull images from private regis
 
 On 12 August 2020, UAA tokens will no longer be accepted to authenticate to {{site.data.keyword.registryshort}}. Registry tokens continue to work but are deprecated. An end of support date is not available yet. Ensure that you are not using UAA tokens for authentication and consider removing all uses of registry tokens and migrating fully to IAM. API keys are the recommended approach for automation and pull secrets.
 
-Many benefits exist for using IAM API keys instead of registry tokens. With IAM API keys, you can add IAM policies for more fine-grained control over access. For instance, you can create IAM access policies to restrict permissions to specific registry namespaces so that a cluster can pull images from those namespaces only.
+Many benefits exist for using IAM API keys instead of registry tokens. With IAM API keys, you can add IAM policies for more fine-grained control over access. For example, you can create IAM access policies to restrict permissions to specific registry namespaces so that a cluster can pull images from those namespaces only.
 
 ## Original announcement
 {: #registry_notices_uaa_token_announce}

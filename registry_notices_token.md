@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-20"
+lastupdated: "2025-03-03"
 
 keywords: IBM Cloud Container Registry notices, notices, registry tokens,
 
@@ -32,7 +32,7 @@ However, the old domains and registry tokens will be discontinued as well. To pr
 ## How you benefit from this change
 {: #registry_notices_token_benefit}
 
-With IAM API keys, you can add IAM policies for more fine-grained control over access. For instance, you can create IAM access policies to restrict permissions to specific registry namespaces so that a cluster can pull images from those namespaces only.
+With IAM API keys, you can add IAM policies for more fine-grained control over access. For example, you can create IAM access policies to restrict permissions to specific registry namespaces so that a cluster can pull images from those namespaces only.
 
 ## Original announcement
 {: #registry_notices_token_announce}
