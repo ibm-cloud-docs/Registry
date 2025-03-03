@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-08-02"
+  years: 2022, 2025
+lastupdated: "2025-03-03"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vpe
 
@@ -32,7 +32,7 @@ If you create a new {{site.data.keyword.registryshort}} VPE gateway after 11 Nov
 
 With the new VPE version, VPC users can privately access all {{site.data.keyword.registryshort}} regions by using a single {{site.data.keyword.registryshort}} VPE gateway that uses a public domain name (for example, `us.icr.io`) regardless of the region in which the VPE gateway exists and without having to provide more configuration.
 
-Additionally, the new version of the VPE is in line with previous changes to private networking within {{site.data.keyword.registryshort}} where the real source IP addresses of requests to the {{site.data.keyword.registryshort}} are now maintained.
+Additionally, the new version of the VPE is inline with previous changes to private networking within {{site.data.keyword.registryshort}} where the real source IP addresses of requests to the {{site.data.keyword.registryshort}} are now maintained.
 
 Previously, when connections came in over private networks, including through VPE gateways, the source IP addresses that you saw in {{site.data.keyword.at_full_notm}} and that were configured for IAM restricted IP address lists, were documented {{site.data.keyword.registryshort}} IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
