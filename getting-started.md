@@ -276,7 +276,7 @@ To set up an audit trail, complete the following steps:
 
 For more information about logging, see [About {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-about-cl) and [Logging for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_logs).
 
-For more information about activity events, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about) and [Activity tracking events for Container Registry {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
+For more information about activity events, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about) and [Activity tracking events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
 ## Monitor metrics for {{site.data.keyword.registryshort_notm}}
 {: #gs_registry_monitor}
