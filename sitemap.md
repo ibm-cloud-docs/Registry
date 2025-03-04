@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-14"
+lastupdated: "2025-03-04"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -36,6 +36,10 @@ subcollection: Registry
 * [Push images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing)
 
 * [Verify that the image was pushed](/docs/Registry?topic=Registry-getting-started#gs_registry_images_verify)
+
+* [Set up an audit trail for changes in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started#gs_registry_audit)
+
+* [Monitor metrics for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started#gs_registry_monitor)
 
 * [Next steps in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started#gs_get_start_next)
 
