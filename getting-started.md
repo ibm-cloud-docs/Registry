@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-25"
+lastupdated: "2025-03-04"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -259,6 +259,34 @@ ibmcloud cr image-list
 {: pre}
 
 You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed your first image to your namespace.
+
+## Set up an audit trail for changes in {{site.data.keyword.registryshort_notm}}
+{: #gs_registry_audit}
+{: step}
+{: help}
+{: support}
+
+Create an audit trail for changes in {{site.data.keyword.registryshort_notm}} by capturing activity events from each of your active {{site.data.keyword.registryshort_notm}} regions. Create these activity events in one, or more, instance of {{site.data.keyword.logs_full_notm}}.
+
+To set up an audit trail, complete the following steps:
+
+1. Set up {{site.data.keyword.logs_full_notm}}, see [Getting started with {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-getting-started).
+2. Set up {{site.data.keyword.atracker_full_notm}}, see [Getting started with {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-getting-started).
+3. Configure an {{site.data.keyword.logs_full_notm}} target, see [Configuring an {{site.data.keyword.logs_full_notm}} instance as a target](/docs/atracker?topic=atracker-getting-started-target-cloud-logs).
+
+For more information about logging, see [About {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-about-cl) and [Logging for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_logs).
+
+For more information about activity events, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about) and [Activity tracking events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
+
+## Monitor metrics for {{site.data.keyword.registryshort_notm}}
+{: #gs_registry_monitor}
+{: step}
+{: help}
+{: support}
+
+You can create a {{site.data.keyword.mon_short}} instance in the region that you want to monitor and enable platform metrics for it. Alternatively, you can enable platform metrics on an existing {{site.data.keyword.mon_short}} instance in that region.
+
+For more information about setting up metrics, see [Enabling metrics for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_monitor#registry_enable_platform_metrics) and [Getting started with {{site.data.keyword.mon_short}}](/docs/monitoring?topic=monitoring-getting-started).
 
 ## Next steps in {{site.data.keyword.registryshort_notm}}
 {: #gs_get_start_next}
