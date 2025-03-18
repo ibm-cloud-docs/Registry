@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-03-18"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -56,18 +56,18 @@ All customer data in {{site.data.keyword.registrylong_notm}} is replicated and b
 
 The following table shows the backup locations.
 
-| Environment | Active location | Backup location |
-|-------------|-----------------|-----------------|
-| `ap-north` | `jp-tok` | `au-syd` |
-| `ap-south` | `au-syd` | `jp-tok` |
-| `br-sao` | `br-sao` | `us-south` |
-| `ca-tor` | `ca-tor` | `us-east` (service and policy settings)  \n  \n `ca-mon` (images) |
-| `eu-de` | `eu-de` | `eu-gb` |
-| `eu-es` | `eu-es` | `eu-central` |
-| `eu-gb` | `eu-gb` | `eu-de` |
-| `global` | `us-east` | `us-south` |
-| `jp-osa` | `jp-osa` | `jp-tok` |
-| `us-south` | `us-south` | `us-east` |
+| Environment | Environment that is formerly known as | Active location | Backup location |
+|-------------|---------------------------------------|-----------------|-----------------|
+| `au-syd` | `ap-south` | `au-syd` | `jp-tok` |
+| `br-sao` | Not applicable | `br-sao` | `us-south` |
+| `ca-tor` | Not applicable | `ca-tor` | `us-east` (service and policy settings)  \n  \n `ca-mon` (images) |
+| `eu-de` | `eu-central` | `eu-de` | `eu-gb` |
+| `eu-es` | Not applicable | `eu-es` | `eu-de` |
+| `eu-gb` | `uk-south` | `eu-gb` | `eu-de` |
+| `global` | Not applicable | `us-east` | `us-south` |
+| `jp-osa` | Not applicable | `jp-osa` | `jp-tok` |
+| `jp-tok` | `ap-north` | `jp-tok` | `au-syd` |
+| `us-south` | Not applicable | `us-south` | `us-east` |
 {: caption="Backup locations" caption-side="bottom"}
 {: #table_registry_bc_dr_backup_locations}
 

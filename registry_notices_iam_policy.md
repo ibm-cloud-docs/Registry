@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-08-02"
+  years: 2022, 2025
+lastupdated: "2025-03-18"
 
 keywords: IBM Cloud Container Registry notices, iam access policies, access policies, changes, prepare, iam, policy, region
 
@@ -23,11 +23,13 @@ If you started to use {{site.data.keyword.registryshort}} before the availabilit
 
 Policy-free authorization is being discontinued in the following {{site.data.keyword.registryshort}} regions:
 
-- `us-south (us.icr.io)`
-- `uk-south (uk.icr.io)`
-- `eu-central (de.icr.io)`
-- `ap-south (au.icr.io)`
-- `ap-north (jp.icr.io)`
+- `au-syd`
+- `eu-de`
+- `eu-gb`
+- `jp-tok`
+- `us-south`
+
+For more information about mapping the region name to the domain, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
 Other regions are unaffected because they already require IAM access policies for all accounts.
 

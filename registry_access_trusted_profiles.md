@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-03-18"
 
 keywords: API key, tokens, automating access, access, authentication, Podman, Skopeo, Buildah, Docker, client, authenticate, iam, domain, service id api key, trusted profiles,
 
@@ -56,20 +56,7 @@ Use an API key to log in to the registry by using common clients.
 
 Clients require an API key, username, and a domain, replace `<apikey>` with your API key, `<profile_id>` with the trusted profile ID, and `<registry_domain>` with the domain of the registry where your namespaces are set up.
 
-| Region | `<registry_domain>` |
-|--------|-----------------|
-| `global` | `icr.io` |
-| `ap-north` | `jp.icr.io` |
-| `ap-south` | `au.icr.io` |
-| `br-sao` | `br.icr.io` |
-| `ca-tor` | `ca.icr.io` |
-| `eu-central` | `de.icr.io` |
-| `eu-es` | `es.icr.io` |
-| `jp-osa` | `jp2.icr.io` |
-| `uk-south` | `uk.icr.io` |
-| `us-south` | `us.icr.io` |
-{: caption="Registry domains" caption-side="bottom"}
-{: #table_registry_access_domains}
+{{registry_access.md#table_registry_access_domains}}
 
 For more information about how to use {{site.data.keyword.registrylong_notm}} in a {{site.data.keyword.contdelivery_short}} pipeline, see [Using a private image registry](/docs/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
 
