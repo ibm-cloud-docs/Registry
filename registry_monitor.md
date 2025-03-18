@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-20"
+lastupdated: "2025-03-18"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -113,17 +113,17 @@ The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) i
 
 The following table shows the location of {{site.data.keyword.mon_short}} metrics.
 
-| Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.mon_short}} metrics |
-|------------------------------------|------------------------------|-----------------------------------------------------|
-| `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
-| `ap-south` | `au.icr.io` | `Sydney (au-syd)` |
-| `br-sao` | `br.icr.io` | `Sao Paulo (br-sao)` |
-| `ca-tor` | `ca.icr.io` | `Toronto (ca-tor)` |
-| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
-| `eu-es` | `es.icr.io` | `Madrid (eu-es)` |
-| `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
-| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
-| `us-south` | `us.icr.io` | `Dallas (us-south)` |
+| Region for your account's registry | Region that is formerly known as | Domain name of your registry | Location of {{site.data.keyword.mon_short}} metrics |
+|------------------------------------|----------------------------------|------------------------------|-----------------------------------------------------|
+| `au-syd` | `ap-south` | `au.icr.io` | `Sydney (au-syd)` |
+| `br-sao` | Not applicable | `br.icr.io` | `Sao Paulo (br-sao)` |
+| `ca-tor` | Not applicable | `ca.icr.io` | `Toronto (ca-tor)` |
+| `eu-de` | `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `eu-es` | Not applicable | `es.icr.io` | `Madrid (eu-es)` |
+| `eu-gb` | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
+| `jp-osa` | Not applicable | `jp2.icr.io` | `Osaka (jp-osa)` |
+| `jp-tok` | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
+| `us-south` | Not applicable | `us.icr.io` | `Dallas (us-south)` |
 {: caption="Location of {{site.data.keyword.mon_short}} metrics" caption-side="bottom"}
 {: #table_registry_monitor_metrics_location}
 

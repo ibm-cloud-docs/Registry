@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-07-22"
+  years: 2024, 2025
+lastupdated: "2025-03-18"
 
 keywords: IBM Cloud Container Registry notices, notices, Exemption Synchronization, replicate exemptions, exemptions, regions
 
@@ -11,6 +11,7 @@ subcollection: Registry
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # {{site.data.keyword.registryshort}} is ending exemption synchronization across regions on 31 January 2022
 {: #registry_notices_exemptions}
@@ -35,10 +36,10 @@ In some [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/products/c
 
 Exemptions are currently replicated in the following {{site.data.keyword.cloud_notm}} regions:
 
-- `au-syd` (`ap-south`)
-- `eu-de` (`eu-central`)
-- `eu-gb` (`uk-south`)
-- `jp-tok` (`ap-north`)
+- `au-syd` (formerly known as `ap-south`)
+- `eu-de` (formerly known as `eu-central`)
+- `eu-gb` (formerly known as `uk-south`)
+- `jp-tok` (formerly known as `ap-north`)
 - `us-south`
 - `Global`
 

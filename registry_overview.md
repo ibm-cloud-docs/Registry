@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-21"
+lastupdated: "2025-03-18"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -359,17 +359,17 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 
 Regional instances of {{site.data.keyword.registryshort}} are available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 
-| Local registry region | Domain name | Private domain name | Deprecated domain name |
-|-----------------------|-------------|---------------------|------------------------|
-| `ap-north` | `jp.icr.io` | `private.jp.icr.io` | Not applicable |
-| `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
-| `br-sao` | `br.icr.io` | `private.br.icr.io` | Not applicable |
-| `ca-tor` | `ca.icr.io` | `private.ca.icr.io` | Not applicable |
-| `eu-central` | `de.icr.io` | `private.de.icr.io` | `registry.eu-de.bluemix.net` |
-| `eu-es` | `es.icr.io` | `private.es.icr.io` | Not applicable |
-| `jp-osa` | `jp2.icr.io` | `private.jp2.icr.io` | Not applicable |
-| `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |
-| `us-south` | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
+| Local registry region | Region that is formerly known as | Domain name | Private domain name | Deprecated domain name |
+|-----------------------|----------------------------------|-------------|---------------------|------------------------|
+| `au-syd` | `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
+| `br-sao` | Not applicable | `br.icr.io` | `private.br.icr.io` | Not applicable |
+| `ca-tor` | Not applicable | `ca.icr.io` | `private.ca.icr.io` | Not applicable |
+| `eu-de` | `eu-central` | `de.icr.io` | `private.de.icr.io` | `registry.eu-de.bluemix.net` |
+| `eu-es` | Not applicable | `es.icr.io` | `private.es.icr.io` | Not applicable |
+| `eu-gb` | `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `jp-osa` | Not applicable | `jp2.icr.io` | `private.jp2.icr.io` | Not applicable |
+| `jp-tok` | `ap-north` | `jp.icr.io` | `private.jp.icr.io` | Not applicable |
+| `us-south` | Not applicable | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
 {: caption="Domain names for local regions" caption-side="bottom"}
 {: #table_registry_overview_domain_name_local}
 
@@ -392,10 +392,10 @@ If you want to use a region other than your local region, you can target the reg
     ```
     {: pre}
 
-    For example, to target the `eu-central` region, run the following command.
+    For example, to target the `eu-de` region, run the following command.
 
     ```txt
-    ibmcloud cr region-set eu-central
+    ibmcloud cr region-set eu-de
     ```
     {: pre}
 

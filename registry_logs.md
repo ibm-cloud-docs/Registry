@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-01-20"
+lastupdated: "2025-03-18"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -70,21 +70,21 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.la_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Logging is the same for both services. For information about migrating from {{site.data.keyword.la_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 {: deprecated}
 
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor log entry is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the log, except for `ap-south`. Logs for `ap-south` show in `Tokyo (jp-tok)`.
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor log entry is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the log, except for `au-syd`. Logs for `au-syd` show in `Tokyo (jp-tok)`.
 
 The following table shows the location of {{site.data.keyword.la_full_notm}} logs.
 
-| Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.la_full_notm}} logs |
-|------------------------------------|------------------------------|-----------------------------------------------------|
-| `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
-| `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
-| `br-sao` | `br.icr.io` | `Sao Paulo (br-sao)` |
-| `ca-tor` | `ca.icr.io` | `Toronto (ca-tor)` |
-| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
-| `eu-es` | `es.icr.io` | `Madrid (eu-es)` |
-| `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
-| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
-| `us-south` | `us.icr.io` | `Dallas (us-south)` |
+| Region for your account's registry | Region that is formerly known as  | Domain name of your registry | Location of {{site.data.keyword.la_full_notm}} logs |
+|------------------------------------|-----------------------------------|------------------------------|-----------------------------------------------------|
+| `au-syd` | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
+| `br-sao` | Not applicable | `br.icr.io` | `Sao Paulo (br-sao)` |
+| `ca-tor` | Not applicable | `ca.icr.io` | `Toronto (ca-tor)` |
+| `eu-de` | `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `eu-es` | Not applicable | `es.icr.io` | `Madrid (eu-es)` |
+| `eu-gb` | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
+| `jp-osa` | Not applicable | `jp2.icr.io` | `Osaka (jp-osa)` |
+| `jp-tok` | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
+| `us-south` | Not applicable | `us.icr.io` | `Dallas (us-south)` |
 {: caption="Location of {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
 {: #table_registry_logs_location}
 

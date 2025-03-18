@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-07"
+lastupdated: "2025-03-18"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -74,21 +74,21 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 {{site.data.keyword.registryshort}} sends activity tracking events to the {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following tables.
 
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which a {{site.data.keyword.registryshort}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which a {{site.data.keyword.registryshort}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the event, except for `au-syd`. Events for `au-syd` show in `Tokyo (jp-tok)`.
 
 The following table shows the location of {{site.data.keyword.at_full_notm}} events.
 
-| Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.at_full_notm}} events |
-|------------------------------------|------------------------------|-------------------------------------------------------|
-| `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
-| `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
-| `br-sao` | `br.icr.io` | `Sao Paulo (br-sao)` |
-| `ca-tor` | `ca.icr.io` | `Toronto (ca-tor)` |
-| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
-| `eu-es` | `es.icr.io` | `Madrid (eu-es)` |
-| `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
-| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
-| `us-south` | `us.icr.io` | `Dallas (us-south)` |
+| Region for your account's registry | Region that is formerly known as | Domain name of your registry | Location of {{site.data.keyword.at_full_notm}} events |
+|------------------------------------|----------------------------------|------------------------------|-------------------------------------------------------|
+| `au-syd` | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
+| `br-sao` | Not applicable | `br.icr.io` | `Sao Paulo (br-sao)` |
+| `ca-tor` | Not applicable | `ca.icr.io` | `Toronto (ca-tor)` |
+| `eu-de` | `eu-central`  | `de.icr.io` | `Frankfurt (eu-de)` |
+| `eu-es` | Not applicable | `es.icr.io` | `Madrid (eu-es)` |
+| `eu-gb` | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
+| `jp-osa` | Not applicable | `jp2.icr.io` | `Osaka (jp-osa)` |
+| `jp-tok` | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
+| `us-south` | Not applicable | `us.icr.io` | `Dallas (us-south)` |
 {: caption="Location of {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
 {: #table_at_legacy_locations_view}
 
