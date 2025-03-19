@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-19"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -359,7 +359,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 
 Regional instances of {{site.data.keyword.registryshort}} are available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 
-| Local registry region | Region that is formerly known as | Domain name | Private domain name | Deprecated domain name |
+| Local registry region | Region that was formerly known as | Domain name | Private domain name | Deprecated domain name |
 |-----------------------|----------------------------------|-------------|---------------------|------------------------|
 | `au-syd` | `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
 | `br-sao` | Not applicable | `br.icr.io` | `private.br.icr.io` | Not applicable |

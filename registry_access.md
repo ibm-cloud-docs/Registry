@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-19"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -76,7 +76,7 @@ Use an API key to log in to the registry by using common clients.
 
 Clients require an API key and a domain, replace `<apikey>` with your API key and `<registry_domain>` with the domain of the registry where your namespaces are set up.
 
-| Region | Region that is formerly known as | `<registry_domain>` |
+| Region | Region that was formerly known as | `<registry_domain>` |
 |--------|----------------------------------|---------------------|
 | `global` | Not applicable | `icr.io` |
 | `au-syd` | `ap-south` |`au.icr.io` |

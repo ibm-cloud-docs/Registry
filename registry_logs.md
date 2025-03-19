@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-19"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -74,7 +74,7 @@ The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) i
 
 The following table shows the location of {{site.data.keyword.la_full_notm}} logs.
 
-| Region for your account's registry | Region that is formerly known as  | Domain name of your registry | Location of {{site.data.keyword.la_full_notm}} logs |
+| Region for your account's registry | Region that was formerly known as  | Domain name of your registry | Location of {{site.data.keyword.la_full_notm}} logs |
 |------------------------------------|-----------------------------------|------------------------------|-----------------------------------------------------|
 | `au-syd` | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
 | `br-sao` | Not applicable | `br.icr.io` | `Sao Paulo (br-sao)` |

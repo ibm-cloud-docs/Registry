@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-19"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -113,7 +113,7 @@ The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) i
 
 The following table shows the location of {{site.data.keyword.mon_short}} metrics.
 
-| Region for your account's registry | Region that is formerly known as | Domain name of your registry | Location of {{site.data.keyword.mon_short}} metrics |
+| Region for your account's registry | Region that was formerly known as | Domain name of your registry | Location of {{site.data.keyword.mon_short}} metrics |
 |------------------------------------|----------------------------------|------------------------------|-----------------------------------------------------|
 | `au-syd` | `ap-south` | `au.icr.io` | `Sydney (au-syd)` |
 | `br-sao` | Not applicable | `br.icr.io` | `Sao Paulo (br-sao)` |
