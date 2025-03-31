@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-26"
+  years: 2020, 2025
+lastupdated: "2025-03-31"
 
-keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
+keywords: IBM Cloud, api method, registry, iam, activity tracking, actions, vulnerability, api, image, iam action, targeted account, tag
 
 subcollection: Registry
 
@@ -23,7 +23,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 You might need certain permissions to call these API methods, and you can track the requests that you make with an {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} instance.
 
-Review the following {{site.data.keyword.iamshort}} (IAM) actions and {{site.data.keyword.at_full_notm}}  or {{site.data.keyword.logs_full_notm}} events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
+Review the following {{site.data.keyword.iamshort}} (IAM) actions and {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
 
 For more information, see the following topics:
 
@@ -35,7 +35,7 @@ For more information, see the following topics:
 ## {{site.data.keyword.registryshort_notm}}
 {: #registry_at_iam_reg}
 
-Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.registryshort_notm}}.
+>Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.registryshort_notm}}.
 
 ### Authorization API methods
 {: #registry_at_iam_reg_auth}

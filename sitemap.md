@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-31"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1304,7 +1304,7 @@ subcollection: Registry
 
 * [Fields by log type](/docs/Registry?topic=Registry-registry_logs#log-fields)
 
-[IAM and Activity Tracker actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
+[IAM and activity tracking events by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
 
 * [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg)
 
