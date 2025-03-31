@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-31"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -644,7 +644,7 @@ General Availability of Container Image Security Enforcement {: #2apr2019_cise}
 {: release-note}
 
 {{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registryshort}} {: #14mar2019_at}
-:   Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
+:   Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
