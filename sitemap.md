@@ -1304,7 +1304,7 @@ subcollection: Registry
 
 * [Fields by log type](/docs/Registry?topic=Registry-registry_logs#log-fields)
 
-[IAM and activity tracking actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
+[IAM and activity tracker auditing event actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
 
 * [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg)
 
