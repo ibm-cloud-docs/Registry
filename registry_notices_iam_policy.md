@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-04-01"
 
 keywords: IBM Cloud Container Registry notices, iam access policies, access policies, changes, prepare, iam, policy, region
 
@@ -52,7 +52,7 @@ The policy status setting is specific to each {{site.data.keyword.registryshort}
 
 If the changes affect you, you must create IAM [access policies](/docs/Registry?topic=Registry-user) that apply to each service ID and user ID that accesses images in your {{site.data.keyword.registryshort}} namespaces, or accesses {{site.data.keyword.registryshort}} settings that are associated with your account and region.
 
-1. Identify each service ID and user ID that accesses your {{site.data.keyword.registryshort}} images and settings. You can use [{{site.data.keyword.at_full_notm}}](/docs/Registry?topic=Registry-at_events) to help find this information.
+1. Identify each service ID and user ID that accesses your {{site.data.keyword.registryshort}} images and settings. You can use [{{site.data.keyword.atracker_full_notm}}](/docs/Registry?topic=Registry-at_events) to help find this information.
 2. For each access that is identified in the previous step, [create an IAM access policy](/docs/Registry?topic=Registry-user) that allows the correct access. You can also use access groups to apply policies to IDs.
 3. (Optional) If you want to upgrade the account to use IAM access policy authorization at a more convenient time, rather than on the date of the change, run the [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable) command.
 

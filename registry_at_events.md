@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-31"
+lastupdated: "2025-04-01"
 
 keywords: Track, tracking events, find events, activity tracking for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -23,9 +23,6 @@ Activity tracking events report on activities that change the state of a service
 You can use {{site.data.keyword.atracker_full_notm}}, which is a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about).
 
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
-
-As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For more information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
-{: important}
 
 ## Locations where activity tracking events are generated
 {: #at-locations}
@@ -63,40 +60,6 @@ You can track how users and applications interact with the {{site.data.keyword.r
 {: #table_registry_at_event_collection_global}
 
 For more information about where to find {{site.data.keyword.registryshort_notm}} events, see [Viewing activity tracking events for {{site.data.keyword.registryshort}}](#at-viewing).
-
-## Locations where activity tracking events are sent to {{site.data.keyword.at_full_notm}} hosted event search
-{: #at-legacy-locations}
-
-As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For more information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
-{: deprecated}
-
-{{site.data.keyword.registryshort}} sends activity tracking events to the {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following tables.
-
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which a {{site.data.keyword.registryshort}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the event, except for `au-syd`. Events for `au-syd` show in `Tokyo (jp-tok)`.
-
-The following table shows the location of {{site.data.keyword.at_full_notm}} events.
-
-| Region for your account's registry | Region that was formerly known as | Domain name of your registry | Location of {{site.data.keyword.at_full_notm}} events |
-|------------------------------------|----------------------------------|------------------------------|-------------------------------------------------------|
-| `au-syd` | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
-| `br-sao` | Not applicable | `br.icr.io` | `Sao Paulo (br-sao)` |
-| `ca-tor` | Not applicable | `ca.icr.io` | `Toronto (ca-tor)` |
-| `eu-de` | `eu-central`  | `de.icr.io` | `Frankfurt (eu-de)` |
-| `eu-es` | Not applicable | `es.icr.io` | `Madrid (eu-es)` |
-| `eu-gb` | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
-| `jp-osa` | Not applicable | `jp2.icr.io` | `Osaka (jp-osa)` |
-| `jp-tok` | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
-| `us-south` | Not applicable | `us.icr.io` | `Dallas (us-south)` |
-{: caption="Location of {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
-{: #table_at_legacy_locations_view}
-
-The following table shows the location of global registry {{site.data.keyword.at_full_notm}} events.
-
-| Registry | Global registry | Location of {{site.data.keyword.at_full_notm}} events |
-|----------|-----------------|-------------------------------------------------------|
-| `Global` | `icr.io` | `Dallas (us-south)` |
-{: caption="Location of global registry {{site.data.keyword.at_full_notm}} events" caption-side="bottom"}
-{: #table_at_legacy_locations_view_global}
 
 ## Locations where activity tracking events are sent by {{site.data.keyword.atracker_full_notm}}
 {: #atracker-locations}

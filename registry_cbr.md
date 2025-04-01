@@ -24,10 +24,7 @@ These restrictions work with traditional IAM policies, which are based on identi
 A user must have the Administrator role on the {{site.data.keyword.registryshort}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role for context-based restrictions to create, update, or delete network zones. A user with the Viewer role for the context-based restrictions can add network zones to a rule.
 {: note}
 
-Any {{site.data.keyword.at_full_notm}}, {{site.data.keyword.logs_full_notm}}, or audit log events generated come from the context-based restrictions, not {{site.data.keyword.registryshort}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
-
-As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For more information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
-{: deprecated}
+Any activity tracker auditing events that are generated come from the context-based restrictions, not {{site.data.keyword.registryshort}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
 
 {{site.data.keyword.registryshort}} is a service that is integrated with context-based restrictions. For more information, see [Services that are integrated with context-based restrictions](/docs/account?topic=account-context-restrictions-whatis#cbr-adopters).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-03-03"
+lastupdated: "2025-04-01"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vpe
 
@@ -34,7 +34,7 @@ With the new VPE version, VPC users can privately access all {{site.data.keyword
 
 Additionally, the new version of the VPE is inline with previous changes to private networking within {{site.data.keyword.registryshort}} where the real source IP addresses of requests to the {{site.data.keyword.registryshort}} are now maintained.
 
-Previously, when connections came in over private networks, including through VPE gateways, the source IP addresses that you saw in {{site.data.keyword.at_full_notm}} and that were configured for IAM restricted IP address lists, were documented {{site.data.keyword.registryshort}} IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
+Previously, when connections came in over private networks, including through VPE gateways, the source IP addresses that you saw in the activity tracker auditing events and that were configured for IAM restricted IP address lists, were documented {{site.data.keyword.registryshort}} IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 When you connect to {{site.data.keyword.registryshort}} now, the real IP address of your VPC [Cloud service endpoint source addresses](/docs/vpc?topic=vpc-vpc-behind-the-curtain#cse-source-addresses) is maintained in a request, which means that IAM restricted IP lists can be configured to specifically allow requests from your VPC, which improves security.
 

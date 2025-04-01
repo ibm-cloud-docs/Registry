@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-25"
+  years: 2023, 2025
+lastupdated: "2025-04-01"
 
 keywords: error, iam, access denied, access, resource,
 
@@ -40,8 +40,5 @@ You can fix this problem in the following ways:
 
 - **Scenario B.** Check whether context-based restriction rules are in place. If so, these rules prevent you from accessing resources outside the defined allowed contexts. Adjust the allowed context or rerun your pull from within an allowed context. For more information, see [Protecting {{site.data.keyword.registryshort}} resources with context-based restrictions](/docs/Registry?topic=Registry-registry-cbr&interface=ui).
 
-    To confirm whether a context-based restriction rule caused the `Access denied` error, check {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} for the resource that is being accessed. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor#enabled-access).
+    To confirm whether a context-based restriction rule caused the `Access denied` error, check the instance of {{site.data.keyword.logs_full_notm}} that is configured to receive events from {{site.data.keyword.atracker_full_notm}} for the resource that is being accessed. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor#enabled-access).
     {: tip}
-
-    As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For more information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
-    {: deprecated}
