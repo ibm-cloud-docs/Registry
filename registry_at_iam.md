@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-31"
+lastupdated: "2025-04-01"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracking, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -35,7 +35,7 @@ For more information, see the following topics:
 ## {{site.data.keyword.registryshort_notm}}
 {: #registry_at_iam_reg}
 
->Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.registryshort_notm}}.
+Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} or {{site.data.keyword.logs_full_notm}} for {{site.data.keyword.registryshort_notm}}.
 
 ### Authorization API methods
 {: #registry_at_iam_reg_auth}
