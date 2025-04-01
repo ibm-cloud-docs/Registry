@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-04-01"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -468,7 +468,7 @@ subcollection: Registry
 
 * [17 January 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-17jan2022)
 
-    * [View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_notm}} signing](/docs/Registry?topic=Registry-registry_release_notes#17jan2022_sig)
+    * [View the activity tracker auditing events for {{site.data.keyword.redhat_notm}} signing](/docs/Registry?topic=Registry-registry_release_notes#17jan2022_sig)
 
 * [7 December 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-07dec2021)
 
@@ -586,7 +586,7 @@ subcollection: Registry
 
 * [25 October 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25oct2019)
 
-    * [{{site.data.keyword.la_full_notm}} platform services logs are available](/docs/Registry?topic=Registry-registry_release_notes#25oct2019_logs)
+    * [{{site.data.keyword.logs_full_notm}} platform services logs are available](/docs/Registry?topic=Registry-registry_release_notes#25oct2019_logs)
 
 * [14 October 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-14oct2019)
 
@@ -604,7 +604,7 @@ subcollection: Registry
 
 * [25 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25jul2019)
 
-    * [{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#25jul2019_at)
+    * [{{site.data.keyword.atracker_full_notm}} available for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#25jul2019_at)
 
 * [1 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-1jul2019)
 
@@ -628,7 +628,7 @@ subcollection: Registry
 
 * [14 March 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-14mar2019)
 
-    * [{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#14mar2019_at)
+    * [{{site.data.keyword.atracker_full_notm}} is available for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#14mar2019_at)
 
 * [25 February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019)
 
@@ -656,7 +656,7 @@ subcollection: Registry
 
 * [25 July 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-25jul2018)
 
-    * [{{site.data.keyword.cloudaccesstrailfull_notm}} available for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_release_notes#25jul2018_at)
+    * [{{site.data.keyword.atracker_full_notm}} is available for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_release_notes#25jul2018_at)
 
 * [12 July 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-12jul2018)
 
@@ -1258,8 +1258,6 @@ subcollection: Registry
 
 * [Locations where activity tracking events are generated](/docs/Registry?topic=Registry-at_events#at-locations)
 
-* [Locations where activity tracking events are sent to {{site.data.keyword.at_full_notm}} hosted event search](/docs/Registry?topic=Registry-at_events#at-legacy-locations)
-
 * [Locations where activity tracking events are sent by {{site.data.keyword.atracker_full_notm}}](/docs/Registry?topic=Registry-at_events#atracker-locations)
 
 * [Viewing activity tracking events for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-at_events#at-viewing)
@@ -1292,8 +1290,6 @@ subcollection: Registry
 
 * [Locations where platform logs are generated](/docs/Registry?topic=Registry-registry_logs#log-locations)
 
-* [Locations where logs are sent to {{site.data.keyword.la_full_notm}}](/docs/Registry?topic=Registry-registry_logs#la-legacy-locations)
-
 * [Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}](/docs/Registry?topic=Registry-registry_logs#lr-locations)
 
 * [Platform logs that are generated](/docs/Registry?topic=Registry-registry_logs#log-platform)
@@ -1304,7 +1300,7 @@ subcollection: Registry
 
 * [Fields by log type](/docs/Registry?topic=Registry-registry_logs#log-fields)
 
-[IAM and Activity Tracker actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
+[IAM and activity tracker auditing event actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
 
 * [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg)
 

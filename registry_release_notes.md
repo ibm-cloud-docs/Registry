@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-04-01"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -298,8 +298,8 @@ Storage that is used by untagged images is being charged for {: #01feb2022_billi
 {: #registry-17jan2022}
 {: release-note}
 
-View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_notm}} signing {: #17jan2022_sig}
-:   You can view {{site.data.keyword.at_short}} events for [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} operations.
+View the activity tracker auditing events for {{site.data.keyword.redhat_notm}} signing {: #17jan2022_sig}
+:   You can view the activity tracker auditing events for [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} operations.
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
@@ -548,7 +548,7 @@ Support for {{site.data.keyword.redhat_notm}} signatures is available {: #4dec20
 {: #registry-25oct2019}
 {: release-note}
 
-{{site.data.keyword.la_full_notm}} platform services logs are available {: #25oct2019_logs}
+{{site.data.keyword.logs_full_notm}} platform services logs are available {: #25oct2019_logs}
 :   {{site.data.keyword.registryshort}} generates platform services logs that are displayed in your logging instances.
 
 ## 14 October 2019
@@ -597,8 +597,8 @@ You can restore deleted images from the trash {: #23sep2019_restore_trash}
 {: #registry-25jul2019}
 {: release-note}
 
-{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registryshort}} {: #25jul2019_at}
-:   Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.atracker_full_notm}} available for {{site.data.keyword.registryshort}} {: #25jul2019_at}
+:   Use the {{site.data.keyword.atracker_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
@@ -643,8 +643,8 @@ General Availability of Container Image Security Enforcement {: #2apr2019_cise}
 {: #registry-14mar2019}
 {: release-note}
 
-{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registryshort}} {: #14mar2019_at}
-:   Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.atracker_full_notm}} is available for {{site.data.keyword.registryshort}} {: #14mar2019_at}
+:   Use the {{site.data.keyword.atracker_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
@@ -709,8 +709,8 @@ Exemption policies available in Vulnerability Advisor {: #7aug2018_exemption}
 {: #registry-25jul2018}
 {: release-note}
 
-{{site.data.keyword.cloudaccesstrailfull_notm}} available for Vulnerability Advisor {: #25jul2018_at}
-:   Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.atracker_full_notm}} is available for Vulnerability Advisor {: #25jul2018_at}
+:   Use the {{site.data.keyword.atracker_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
