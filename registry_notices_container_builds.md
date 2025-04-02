@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-08-20"
+  years: 2024, 2025
+lastupdated: "2025-04-02"
 
 keywords: IBM Cloud Container Registry notices, notices, container builds
 
@@ -42,4 +42,4 @@ For more information about migrating your existing pipelines, see the {{site.dat
 ## Original announcement
 {: #registry_notices_container_builds_announce}
 
-The original announcement that this notification mirrors is [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-deprecating-container-builds/){: external} and it was published on 6 October 2020.
+The original announcement was published on 6 October 2020.

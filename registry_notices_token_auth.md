@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-08-02"
+  years: 2024, 2025
+lastupdated: "2025-04-02"
 
 keywords: IBM Cloud Container Registry notices, notices, registry tokens, authentication
 
@@ -37,4 +37,4 @@ For more information about how to automate access to your {{site.data.keyword.re
 ## Original announcement
 {: #registry_notices_token_auth_announce}
 
-The original announcement that this notification mirrors is [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication/){: external} and it was published on 28 May 2021.
+The original announcement was published on 28 May 2021.
