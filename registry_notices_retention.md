@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-07-23"
+  years: 2024, 2025
+lastupdated: "2025-04-02"
 
 keywords: IBM Cloud Container Registry notices, notices, retention policies
 
@@ -112,4 +112,4 @@ Read more about retention policies in the documentation, see [Cleaning up your n
 ## Original announcement
 {: #registry_notices_retention_announce}
 
-The original announcement that this notification mirrors is [{{site.data.keyword.registrylong_notm}} Introduces Retention Policies](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-introduces-retention-policies/){: external} and it was published on 9 October 2019.
+The original announcement was published on 9 October 2019.

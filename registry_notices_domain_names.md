@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-09"
+  years: 2024, 2025
+lastupdated: "2025-04-02"
 
 keywords: IBM Cloud Container Registry notices, domain names, notices
 
@@ -48,4 +48,4 @@ This new method uses an API key to authorize pulling images from the registry. B
 ## Original announcement
 {: #registry_notices_domain_names_announce}
 
-The original announcement that this notification mirrors is [Introducing New {{site.data.keyword.registrylong_notm}} Domain Names](https://www.ibm.com/blog/announcement/introducing-new-ibm-cloud-container-registry-domain-names/){: external} and it was published on 25 February 2019.
+The original announcement was published on 25 February 2019.

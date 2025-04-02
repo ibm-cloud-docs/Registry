@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-02"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -81,4 +81,4 @@ For more information about the new and current {{site.data.keyword.registryshort
 ## Original announcement
 {: #registry_notices_iam_pivate_network_announce}
 
-The original announcement that this notification mirrors is [Source IP Preservation for Private Connections to {{site.data.keyword.registrylong_notm}}](https://www.ibm.com/blog/announcement/source-ip-preservation-for-private-connections-to-ibm-cloud-container-registry/){: external} and it was published on 7 April 2022.
+The original announcement was published on 7 April 2022.

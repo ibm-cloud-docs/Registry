@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2025-03-03"
+  years: 2024, 2025
+lastupdated: "2025-04-02"
 
 keywords: IBM Cloud Container Registry notices, notices, registry tokens,
 
@@ -37,4 +37,4 @@ With IAM API keys, you can add IAM policies for more fine-grained control over a
 ## Original announcement
 {: #registry_notices_token_announce}
 
-The original announcement that this notification mirrors is [Discontinued: Registry Token Creation](https://www.ibm.com/blog/announcement/discontinued-registry-token-creation/){: external} and it was published on 12 June 2019.
+The original announcement was published on 12 June 2019.

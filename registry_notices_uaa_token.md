@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2025-03-03"
+  years: 2024, 2025
+lastupdated: "2025-04-02"
 
 keywords: IBM Cloud Container Registry notices, notices, uaa tokens
 
@@ -39,4 +39,4 @@ Many benefits exist for using IAM API keys instead of registry tokens. With IAM 
 ## Original announcement
 {: #registry_notices_uaa_token_announce}
 
-The original announcement that this notification mirrors is [Announcing the End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/blog/announcement/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens/){: external} and it was published on 3 February 2020.
+The original announcement was published on 3 February 2020.

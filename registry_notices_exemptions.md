@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-04-02"
 
 keywords: IBM Cloud Container Registry notices, notices, Exemption Synchronization, replicate exemptions, exemptions, regions
 
@@ -58,4 +58,4 @@ Beginning 31 January 2022, all regions will require separate exemption managemen
 ## Original announcement
 {: #registry_notices_exemptions_announce}
 
-The original announcement that this notification mirrors is [{{site.data.keyword.registrylong_notm}} Is Ending Exemption Synchronization Across Regions](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-is-ending-exemption-synchronization-across-regions/){: external} and it was published on 20 December 2021.
+The original announcement was published on 20 December 2021.

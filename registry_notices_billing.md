@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-07-23"
+  years: 2024, 2025
+lastupdated: "2025-04-02"
 
 keywords: IBM Cloud Container Registry notices, notices, billing, untagged images
 
@@ -54,4 +54,4 @@ You can remove untagged images individually, collectively, or by using retention
 ## Original announcement
 {: #registry_notices_billing_announce}
 
-The original announcement that this notification mirrors is [{{site.data.keyword.registrylong_notm}} to Bill for Storage Used by Untagged Images](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-to-bill-for-storage-used-by-untagged-images/){: external} and it was published on 2 November 2021.
+The original announcement was published on 2 November 2021.
