@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-03"
+lastupdated: "2025-04-03"
 
 keywords:
 
@@ -42,8 +42,9 @@ The following table provides the dependency listing of this service following a 
 | IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud - containers-kubernetes | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
 | Akamai | Availability, Security compliance | No | Both |  external  |
-| IBM Cloud Classic Infrastructure Resource Management | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
-| IBM Cloud Identity and Access Management | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
+| IBM Cloud Classic Infrastructure Resource Management | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Public IP Address Management | Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Identity and Access Management | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Object Storage | Availability, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
 | IBM Cloud Service Endpoints | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 | IBM Cloudant for IBM Cloud | Availability, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
@@ -60,37 +61,16 @@ The following table provides the dependency listing of this service following a 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control, Operations, Security compliance | No | Both |  Same data center  |
-| IBM Cloud Global Search and Tagging | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
+| IBM Cloud Global Search and Tagging | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Key Protect for IBM Cloud | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
 | PagerDuty | Availability, Operations, Security compliance | No | Both |  external  |
-| IBM Cloud Console | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
+| IBM Cloud Console | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
 {: caption="IBM Cloud Container Registry service dependency information - Significant dependencies" caption-side="top"}
 {: tab-title="Significant dependencies"}
 {: tab-group="service-dependency-data-for-container-registry"}
 {: class="comparison-tab-table"}
 {: #significant-deps}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers details about the dependency. The column headers identify the dependency. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
-
-|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
-|:---|:---|:---|:---|:---|
-| IBM Cloud Monitoring| Operations, Security compliance | No | Both |  Same region  |
-| IBM Cloud Logs| Operations, Security compliance | No | Both |  Same region  |
-| IBM Log Analysis Log Routing| none | No | Both |  Same region  |
-| IBM Cloud Metrics Routing| none | No | Both |  Same region  |
-| SOS Container Security| Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
-| IBM Cloud Business Support Services| none | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform) |
-| IBM Cloud Activity Tracker event routing| Security compliance | No | Both |  Same region  |
-| Canonical Ubuntu Vulnerabilities Databases| none | No | Both |  external  |
-| Debian Vulnerabilities Databases| none | No | Both |  external  |
-| Alpine Linux Vulnerabilities Databases| none | No | Both |  external  |
-| RedHat Vulnerabilities Databases| none | No | Both |  external  |
-{: row-headers}
-{: caption="IBM Cloud Container Registry service dependency information - Minimal dependencies" caption-side="top"}
-{: tab-title="Minimal dependencies"}
-{: tab-group="service-dependency-data-for-container-registry"}
-{: class="comparison-tab-table"}
-{: #minimal-deps}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers details about the dependency. The column headers identify the dependency. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
 
 This table can be used to answer the following questions:
