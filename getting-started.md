@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-04"
+lastupdated: "2025-04-09"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -73,19 +73,19 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_el
     You don't need to log in to {{site.data.keyword.registryshort_notm}} until you want to push an image, see [Step 5: Push images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing).
     {: note}
 
-2. Add a namespace to create your own image [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository). Replace `<my_namespace>` with your preferred namespace.
+2. Add a namespace to create your own image [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository). Replace `MY_NAMESPACE` with your preferred namespace.
 
     The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
     {: requirement}
 
     ```txt
-    ibmcloud cr namespace-add <my_namespace>
+    ibmcloud cr namespace-add MY_NAMESPACE
     ```
     {: pre}
 
     You can put the namespace in a resource group of your choice by using one of the following options.
 
-    - Before you create the namespace, run the [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `<resource_group>` is the resource group.
+    - Before you create the namespace, run the [`ibmcloud target -g RESOURCE_GROUP`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `RESOURCE_GROUP` is the resource group.
     - Specify the resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add) command.
 
     If you have a problem when you try to create a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
@@ -113,16 +113,16 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_el
 
     - Install [Podman](https://podman.io/){: external}.
 
-2. Download (_pull_) the image to your local computer. Replace `<source_image>` with the repository of the image and `<tag>` with the [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) of the image that you want to use, for example, `latest`. For example, depending on the tool that you are using, run one of the following commands.
+2. Download (_pull_) the image to your local computer. Replace `SOURCE_IMAGE` with the repository of the image and `TAG` with the [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) of the image that you want to use, for example, `latest`. For example, depending on the tool that you are using, run one of the following commands.
 
     - If you are using Docker, run the following command.
 
       ```txt
-      docker pull <source_image>:<tag>
+      docker pull SOURCE_IMAGE:TAG
       ```
       {: pre}
 
-      Example, where `<source_image>` is `hello-world` and `<tag>` is `latest`:
+      Example, where `SOURCE_IMAGE` is `hello-world` and `TAG` is `latest`:
 
       ```txt
       docker pull hello-world:latest
@@ -135,11 +135,11 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_el
     - If you are using Podman, run the following command.
 
       ```txt
-      podman pull <source_image>:<tag>
+      podman pull SOURCE_IMAGE:TAG
       ```
       {: pre}
 
-      Example, where `<source_image>` is `hello-world` and `<tag>` is `latest`:
+      Example, where `SOURCE_IMAGE` is `hello-world` and `TAG` is `latest`:
 
       ```txt
       podman pull hello-world:latest
@@ -152,7 +152,7 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_el
 {: help}
 {: support}
 
-To tag the image, replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`. For example, depending on the tool that you are using, run one of the following commands.
+To tag the image, replace `SOURCE_IMAGE` with the repository and `TAG` with the tag of your local image that you pulled earlier. Replace `REGION` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). Replace `MY_NAMESPACE` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `NEW_IMAGE_REPO` and `NEW_TAG`. For example, depending on the tool that you are using, run one of the following commands.
 
 To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region) command.
 {: tip}
@@ -160,11 +160,11 @@ To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?t
 - If you are using Docker, run the following command.
 
     ```txt
-    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
+    docker tag SOURCE_IMAGE:TAG REGION.icr.io/MY_NAMESPACE/NEW_IMAGE_REPO:NEW_TAG
     ```
     {: pre}
 
-    Example, where `<source_image>` is `hello-world`, `<tag>` is `latest`, `<region>` is `uk`, `<my_namespace>` is `namespace1`, `<new_image_repo>` is `hw_repo`, and `<new_tag>` is `1`:
+    Example, where `SOURCE_IMAGE` is `hello-world`, `TAG` is `latest`, `REGION` is `uk`, `MY_NAMESPACE` is `namespace1`, `NEW_IMAGE_REPO` is `hw_repo`, and `NEW_TAG` is `1`:
 
     ```txt
     docker tag hello-world:latest uk.icr.io/namespace1/hw_repo:1
@@ -174,11 +174,11 @@ To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?t
 - If you are using Podman, run the following command.
 
     ```txt
-    podman tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
+    podman tag SOURCE_IMAGE:TAG REGION.icr.io/MY_NAMESPACE/NEW_IMAGE_REPO:NEW_TAG
     ```
     {: pre}
 
-    Example, where `<source_image>` is `hello-world`, `<tag>` is `latest`, `<region>` is `uk`, `<my_namespace>` is `namespace1`, `<new_image_repo>` is `hw_repo`, and `<new_tag>` is `1`:
+    Example, where `SOURCE_IMAGE` is `hello-world`, `TAG` is `latest`, `REGION` is `uk`, `MY_NAMESPACE` is `namespace1`, `NEW_IMAGE_REPO` is `hw_repo`, and `NEW_TAG` is `1`:
 
     ```txt
     podman tag hello-world:latest uk.icr.io/namespace1/hw_repo:1
@@ -212,16 +212,16 @@ To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?t
     If you have a problem when you try to log in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
     {: tip}
 
-2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Replace `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image. For example, depending on the tool that you are using, run one of the following commands.
+2. Upload (_push_) the image to your namespace. Replace `MY_NAMESPACE` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Replace `IMAGE_REPO` and `TAG` with the repository and the tag of the image that you chose when you tagged the image. For example, depending on the tool that you are using, run one of the following commands.
 
     - If you are using Docker, run the following command.
 
       ```txt
-      docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
+      docker push REGION.icr.io/MY_NAMESPACE/IMAGE_REPO:TAG
       ```
       {: pre}
 
-      Example, where `<region>` is `uk`, `<my_namespace>` is `namespace1`, `<image_repo>` is `hw_repo`, and `<tag>` is `1`:
+      Example, where `REGION` is `uk`, `MY_NAMESPACE` is `namespace1`, `IMAGE_REPO` is `hw_repo`, and `TAG` is `1`:
 
       ```txt
       docker push uk.icr.io/namespace1/hw_repo:1
@@ -234,11 +234,11 @@ To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?t
     - If you are using Podman, run the following command.
 
       ```txt
-      podman push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
+      podman push REGION.icr.io/MY_NAMESPACE/IMAGE_REPO:TAG
       ```
       {: pre}
 
-      Example, where `<region>` is `uk`, `<my_namespace>` is `namespace1`, `<image_repo>` is `hw_repo`, and `<tag>` is `1`:
+      Example, where `REGION` is `uk`, `MY_NAMESPACE` is `namespace1`, `IMAGE_REPO` is `hw_repo`, and `TAG` is `1`:
 
       ```txt
       podman push uk.icr.io/namespace1/hw_repo:1

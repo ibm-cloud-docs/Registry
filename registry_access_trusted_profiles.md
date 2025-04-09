@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-04-09"
 
 keywords: API key, tokens, automating access, access, authentication, Podman, Skopeo, Buildah, Docker, client, authenticate, iam, domain, service id api key, trusted profiles,
 
@@ -54,7 +54,7 @@ To create a service ID API key, see [Managing service ID API keys](/docs/account
 
 Use an API key to log in to the registry by using common clients.
 
-Clients require an API key, username, and a domain, replace `<apikey>` with your API key, `<profile_id>` with the trusted profile ID, and `<registry_domain>` with the domain of the registry where your namespaces are set up.
+Clients require an API key, username, and a domain, replace `API_KEY` with your API key, `PROFILE_ID` with the trusted profile ID, and `REGISTRY_DOMAIN` with the domain of the registry where your namespaces are set up.
 
 {{registry_access.md#table_registry_access_domains}}
 
@@ -72,10 +72,10 @@ Examples of how to authenticate automatically with the registry are provided for
 
 You can use Buildah to authenticate with the registry so that you can push and pull images to and from the registry.
 
-Use the API key, profile ID, and [domain](#registry_access_trusted_profiles_apikey_auth) to log in to the registry by running the following Buildah command, replace `<profile_id>` with the trusted profile ID, `<apikey>` with the API key, and `<registry_domain>` with the domain:
+Use the API key, profile ID, and [domain](#registry_access_trusted_profiles_apikey_auth) to log in to the registry by running the following Buildah command, replace `PROFILE_ID` with the trusted profile ID, `API_KEY` with the API key, and `REGISTRY_DOMAIN` with the domain:
 
 ```txt
-buildah login -u <profile_id> -p <apikey> <registry_domain>
+buildah login -u PROFILE_ID -p API_KEY REGISTRY_DOMAIN
 ```
 {: pre}
 
@@ -84,10 +84,10 @@ buildah login -u <profile_id> -p <apikey> <registry_domain>
 
 You can use Docker to authenticate with the registry so that you can push and pull images to and from the registry.
 
-Use the API key and [domain](#registry_access_trusted_profiles_apikey_auth) to log in to the registry by running the following Docker command, replace `<profile_id>` with the trusted profile ID, `<apikey>` with the API key, and `<registry_domain>` with the domain:
+Use the API key and [domain](#registry_access_trusted_profiles_apikey_auth) to log in to the registry by running the following Docker command, replace `PROFILE_ID` with the trusted profile ID, `API_KEY` with the API key, and `REGISTRY_DOMAIN` with the domain:
 
 ```txt
-docker login -u <profile_id> -p <apikey> <registry_domain>
+docker login -u PROFILE_ID -p API_KEY REGISTRY_DOMAIN
 ```
 {: pre}
 
@@ -96,10 +96,10 @@ docker login -u <profile_id> -p <apikey> <registry_domain>
 
 You can use Podman to authenticate with the registry so that you can push and pull images to and from the registry.
 
-Use the API key and [domain](#registry_access_trusted_profiles_apikey_auth) to log in to the registry by running the following Podman command, replace `<profile_id>` with the trusted profile ID, `<apikey>` with the API key, and `<registry_domain>` with the domain:
+Use the API key and [domain](#registry_access_trusted_profiles_apikey_auth) to log in to the registry by running the following Podman command, replace `PROFILE_ID` with the trusted profile ID, `API_KEY` with the API key, and `REGISTRY_DOMAIN` with the domain:
 
 ```txt
-podman login -u <profile_id> -p <apikey> <registry_domain>
+podman login -u PROFILE_ID -p API_KEY REGISTRY_DOMAIN
 ```
 {: pre}
 
@@ -108,9 +108,9 @@ podman login -u <profile_id> -p <apikey> <registry_domain>
 
 You can use Skopeo to authenticate with the registry so that you can push and pull images to and from the registry.
 
-For example, you can use the following Skopeo command to pull an image from Docker Hub and push it to your namespace. Replace `<registry_domain>` with the name of your [domain](#registry_access_trusted_profiles_apikey_auth), `<namespace>` with your namespace, `<profile_id>` with the trusted profile ID, `<apikey>` with your API key:
+For example, you can use the following Skopeo command to pull an image from Docker Hub and push it to your namespace. Replace `REGISTRY_DOMAIN` with the name of your [domain](#registry_access_trusted_profiles_apikey_auth), `NAMESPACE` with your namespace, `PROFILE_ID` with the trusted profile ID, `API_KEY` with your API key:
 
 ```txt
-skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker://<registry_domain>/<namespace>/busybox:latest --dest-creds <profile_id>y:<apikey>
+skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker://REGISTRY_DOMAIN/NAMESPACE/busybox:latest --dest-creds PROFILE_ID:API_KEY
 ```
 {: pre}

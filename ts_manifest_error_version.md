@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-04-25"
+  years: 2017, 2025
+lastupdated: "2025-04-09"
 
 keywords: error, registry, manifest version, manifest version error, tag, image, the manifest version for this image is not supported for tagging, CRI0301E
 
@@ -33,17 +33,17 @@ To resolve the problem, complete the following steps:
 
 1. Upgrade to a supported version of Docker, see [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
-2. Pull the image that you tried to tag by running the following command, where `<source_image>` is your source image name:
+2. Pull the image that you tried to tag by running the following command, where `SOURCE_IMAGE` is your source image name:
 
     ```txt
-    docker pull <source_image>
+    docker pull SOURCE_IMAGE
     ```
     {: pre}
 
 3. To upgrade the manifest version, push the image by running the following command:
 
     ```txt
-    docker push <source_image>
+    docker push SOURCE_IMAGE
     ```
     {: pre}
 

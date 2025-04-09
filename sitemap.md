@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-09"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -496,7 +496,7 @@ subcollection: Registry
 
 * [9 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-09aug2021)
 
-    * [The `ibmcloud cr login` command logs you into the `<region>.icr.io` registry domain only](/docs/Registry?topic=Registry-registry_release_notes#09aug2021_bmx)
+    * [The `ibmcloud cr login` command logs you into the `REGION.icr.io` registry domain only](/docs/Registry?topic=Registry-registry_release_notes#09aug2021_bmx)
 
 * [8 July 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-08jul2021)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-24"
+lastupdated: "2025-04-09"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -105,10 +105,10 @@ For the following {{site.data.keyword.registryshort}} commands, you must have at
 
 To grant a user permission to configure {{site.data.keyword.registryshort}} in your account, you must create a policy that grants one or more of the roles in the following table. When you create your policy, you must not specify a `resource type` or `resource`. Policies for configuring {{site.data.keyword.registryshort}} must not be set at a resource group level.
 
-For example, run the following `ibmcloud iam user-policy-create` command. Where `<user_email>` is the user's email address, `<region>` is the region, and `<roles>` is the role, or roles, that you want the user to have.
+For example, run the following `ibmcloud iam user-policy-create` command. Where `USER_EMAIL` is the user's email address, `REGION` is the region, and `ROLES` is the role, or roles, that you want the user to have.
 
 ```txt
-ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles>
+ibmcloud iam user-policy-create USER_EMAIL --service-name container-registry --region REGION --roles ROLES
 ```
 {: pre}
 
@@ -136,10 +136,10 @@ The following table details actions that are mapped to operations on the service
 
 To grant a user permission to access {{site.data.keyword.registryshort}} content in your account, you must create a policy that grants one or more of the roles in the following table. When you create your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resources in the account. Alternatively, if your namespace is within a resource group, permission can be granted by using an IAM access policy on that resource group.
 
-For example, use the following command to create a user policy. Where `<user_email>` is the user's email address, `<region>` is the region, `<roles>` is the role, or roles, that you want the user to have, and `<namespace_name>` is the name of the namespace.
+For example, use the following command to create a user policy. Where `USER_EMAIL` is the user's email address, `REGION` is the region, `ROLES` is the role, or roles, that you want the user to have, and `NAMESPACE_NAME` is the name of the namespace.
 
 ```txt
-ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles> [--resource-type namespace --resource <namespace_name>]
+ibmcloud iam user-policy-create USER_EMAIL --service-name container-registry --region REGION --roles ROLES [--resource-type namespace --resource NAMESPACE_NAME]
 ```
 {: pre}
 
@@ -173,13 +173,13 @@ You can use one of the following options to assign access in the console:
 {: #registry_iam_assign-access-cli}
 {: cli}
 
-For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the CLI](/docs/account?topic=account-assign-access-resources&interface=cli#access-resources-cli). The following example shows a command for assigning the `Manager` role for {{site.data.keyword.registryshort}}:
+For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the CLI](/docs/account?topic=account-assign-access-resources&interface=cli#access-resources-cli). The following example shows a command for assigning the `Manager` role for {{site.data.keyword.registryshort}} to a user, where `USER_EMAIL` is the user's email address.
 
 Use `container-registry` for the service name.
 {: requirement}
 
 ```bash
-ibmcloud iam user-policy-create <user@example.com> --service-name container-registry --roles Manager
+ibmcloud iam user-policy-create USER_EMAIL --service-name container-registry --roles Manager
 ```
 {: pre}
 
@@ -203,7 +203,7 @@ The following example is for assigning the `Manager` role for {{site.data.keywor
 Use `container-registry` for the service name, and refer to the Role ID values table to ensure that you're using the correct value for the CRN.
 {: requirement}
 
-```curl
+```sh
 curl -X POST 'https://iam.cloud.ibm.com/v1/policies' -H 'Authorization: Bearer $TOKEN' -H 'Content-Type: application/json' -d '{
   "type": "access",
   "description": "Manager role for Container Registry",

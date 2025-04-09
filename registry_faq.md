@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-04-09"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -63,13 +63,13 @@ You can have 100 registry namespaces in each region.
 
 You can't rename a [namespace](#x2031005){: term}. If you want to change the name of the namespace, you must create a namespace with the new name and transfer its data. To transfer its data, you can copy the contents of the existing namespace into the namespace that you created.
 
-If you don't want to transfer data manually, you can create a script for this action by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command. For example, you can use the following script, where `<old_namespace>` is the existing namespace and `<new_namespace>` is the namespace that you created:
+If you don't want to transfer data manually, you can create a script for this action by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command. For example, you can use the following script, where `OLD_NAMESPACE` is the existing namespace and `NEW_NAMESPACE` is the namespace that you created:
 
 ```txt
-IMAGES=$(icr images --restrict <old_namespace> --format "{{ .Repository }}:{{ .Tag }}")
+IMAGES=$(icr images --restrict OLD_NAMESPACE --format "{{ .Repository }}:{{ .Tag }}")
 
 for i in $IMAGES ; do
-   new=$(echo $i | sed "s|/<old_namespace>/|/<new_namespace>/|1")
+   new=$(echo $i | sed "s|/OLD_NAMESPACE/|/NEW_NAMESPACE/|1")
    ibmcloud cr image-tag $i $new
 done
 ```
@@ -315,12 +315,12 @@ To determine the version of a package that is installed in your image, use the r
 #### Alpine package manager commands
 {: #faq_va_package_version_alpine}
 
-On Alpine, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
+On Alpine, to determine the version of a package that is installed in your image, you can use the following commands, where `PACKAGE_NAME` is the name of your package.
 
 - To list the metadata for a specific installed package, run the following command:
 
     ```txt
-    apk info <package_name>
+    apk info PACKAGE_NAME
     ```
     {: pre}
 
@@ -334,17 +334,17 @@ On Alpine, to determine the version of a package that is installed in your image
 #### Debian and Ubuntu package manager commands
 {: #faq_va_package_version_debian_ubuntu}
 
-On Debian and Ubuntu, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
+On Debian and Ubuntu, to determine the version of a package that is installed in your image, you can use the following commands, where `PACKAGE_NAME` is the name of your package.
 
 - To list the metadata for a specific installed package, run either of the following commands:
 
     ```txt
-    apt show <package_name>
+    apt show PACKAGE_NAME
     ```
     {: pre}
 
     ```txt
-    dpkg-query -l <package_name>
+    dpkg-query -l PACKAGE_NAME
     ```
     {: pre}
 
@@ -363,17 +363,17 @@ On Debian and Ubuntu, to determine the version of a package that is installed in
 #### {{site.data.keyword.redhat_notm}} and CentOS package manager commands
 {: #faq_va_package_version_redhat_centos}
 
-On {{site.data.keyword.redhat_openshift_full}} and CentOS, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
+On {{site.data.keyword.redhat_openshift_full}} and CentOS, to determine the version of a package that is installed in your image, you can use the following commands, where `PACKAGE_NAME` is the name of your package.
 
 - To list the metadata for a specific installed package, run either of the following commands:
 
     ```txt
-    rpm -qi <package_name>
+    rpm -qi PACKAGE_NAME
     ```
     {: pre}
 
     ```txt
-    yum info <package_name>
+    yum info PACKAGE_NAME
     ```
     {: pre}
 

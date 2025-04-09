@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-06-04"
+  years: 2018, 2025
+lastupdated: "2025-04-09"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -57,33 +57,33 @@ For all regions other than global you can use the region field when you create a
 ### Region-based user policies
 {: #create_region_policy_user}
 
-The following example shows the command for creating a user policy to assign a role to a user in `us-south`, where `<name@example.com>` is the user ID and `<roles>` is the role or roles that you want to allocate:
+The following example shows the command for creating a user policy to assign a role to a user in `us-south`, where `USER_ID` is the user ID (`name@example.com`) and `ROLES` is the role or roles that you want to allocate:
 
 ```txt
-ibmcloud iam user-policy-create <name@example.com> --roles <roles> --service-name container-registry --region us-south
+ibmcloud iam user-policy-create USER_ID --roles ROLES --service-name container-registry --region us-south
 ```
 {: pre}
 
-The following example shows the command for creating a user policy to assign a role to a user in `global`, where `<name@example.com>` is the user ID and `<roles>` is the role or roles that you want to allocate:
+The following example shows the command for creating a user policy to assign a role to a user in `global`, where `USER_ID` is the user ID (`name@example.com`) and `ROLES` is the role or roles that you want to allocate:
 
 ```txt
-ibmcloud iam user-policy-create <name@example.com> --roles <roles> --service-name container-registry --attributes "geography=global"
+ibmcloud iam user-policy-create USER_ID --roles ROLES --service-name container-registry --attributes "geography=global"
 ```
 {: pre}
 
 ### Region-based service ID policies
 {: #create_region_policy_service}
 
-The following example shows the command for creating a service ID policy in `us-south`, where `<serviceId>` is the service ID and `<roles>` is the role or roles that you want to allocate:
+The following example shows the command for creating a service ID policy in `us-south`, where `SERVICE_ID` is the service ID and `ROLES` is the role or roles that you want to allocate:
 
 ```txt
-ibmcloud iam service-policy-create <serviceId> --roles <roles> --service-name container-registry --region us-south
+ibmcloud iam service-policy-create SERVICE_ID --roles ROLES --service-name container-registry --region us-south
 ```
 {: pre}
 
-The following example shows the command for creating a service ID policy in `global`, where `<serviceId>` is the service ID and `<roles>` is the role or roles that you want to allocate:
+The following example shows the command for creating a service ID policy in `global`, where `SERVICE_ID` is the service ID and `ROLES` is the role or roles that you want to allocate:
 
 ```txt
-ibmcloud iam service-policy-create <serviceId> --roles <roles> --service-name container-registry --attributes "geography=global"
+ibmcloud iam service-policy-create SERVICE_ID --roles ROLES --service-name container-registry --attributes "geography=global"
 ```
 {: pre}

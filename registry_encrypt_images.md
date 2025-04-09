@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-05-02"
+  years: 2020, 2025
+lastupdated: "2025-04-09"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -50,24 +50,24 @@ For more information about encrypting images, see [Encrypted container images fo
 
 Create a public-private key pair by using OpenSSL commands.
 
-1. Create a work directory, for example, `<user_keys>`, in which to store the keys and change to that directory:
+1. Create a work directory, for example, `USER_KEYS`, in which to store the keys and change to that directory:
 
     ```txt
-    mkdir <user_keys>; cd <user_keys>
+    mkdir USER_KEYS; cd USER_KEYS
     ```
     {: pre}
 
-2. Use OpenSSL to create a private key, where `<user>` is the name for your key's identity:
+2. Use OpenSSL to create a private key, where `USER_KEY` is the name for your key's identity:
 
     ```txt
-    openssl genrsa --out <user>Private.pem
+    openssl genrsa --out USER_KEYPrivate.pem
     ```
     {: pre}
 
 3. Create a public key:
 
     ```txt
-    openssl rsa -in <user>Private.pem -pubout -out <user>Pub.pem
+    openssl rsa -in USER_KEYPrivate.pem -pubout -out USER_KEYPub.pem
     ```
     {: pre}
 
@@ -84,7 +84,7 @@ Create a public-private key pair by using OpenSSL commands.
 5. To use this key pair to encrypt images, display the public key by running the following `cat` command:
 
     ```txt
-    cat <user>Pub.pem
+    cat USER_KEYPub.pem
     ```
     {: pre}
 
@@ -108,10 +108,10 @@ Create a public-private key pair by using OpenSSL commands.
 
 Encrypt the image by using the public key and then build a container image by using a [Dockerfile](#x9860414){: term}.
 
-1. Go to the directory where you store your apps, for example, `<my_app>`.
+1. Go to the directory where you store your apps, for example, `MY_APP`.
 
     ```txt
-    cd <my_app>
+    cd MY_APP
     ```
     {: pre}
 
@@ -125,23 +125,23 @@ Encrypt the image by using the public key and then build a container image by us
     ```
     {: pre}
 
-3. Use Buildah to create an unencrypted image by running the following command, where `<namespace>` is your namespace:
+3. Use Buildah to create an unencrypted image by running the following command, where `NAMESPACE` is your namespace:
 
     ```txt
-    buildah bud -t us.icr.io/<namespace>/<my_app> .
+    buildah bud -t us.icr.io/NAMESPACE/MY_APP .
     ```
     {: pre}
 
-    `us.icr.io/<namespace>/<my_app>` is committed to the local image store.
+    `us.icr.io/NAMESPACE/MY_APP` is committed to the local image store.
 
-4. Encrypt the image by using the public key and upload the image to the registry by running the following commands and by specifying the JSON Web Encryption (`jwe`) protocol to encrypt the image, where `<user_keys>/<user>Pub.pem` is the encryption key.
+4. Encrypt the image by using the public key and upload the image to the registry by running the following commands and by specifying the JSON Web Encryption (`jwe`) protocol to encrypt the image, where `USER_KEYS/USER_KEYPub.pem` is the encryption key.
 
     ```txt
-    buildah push --encryption-key jwe:..<user_keys>/<user>Pub.pem us.icr.io/<namespace>/<my_app>
+    buildah push --encryption-key jwe:..USER_KEYS/USER_KEYPub.pem us.icr.io/NAMESPACE/MY_APP
     ```
     {: pre}
 
-    Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an [API key](#x8051010){: term}, you can supply the `—-creds <user_name>` option, where `<user_name>` is the username. If you use the `—-creds <user_name>` the option, when requested, type in the password of the registry credential.
+    Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an [API key](#x8051010){: term}, you can supply the `—-creds <userName>` option, where `<userName>` is the username. If you use the `—-creds <userName>` the option, when requested, type in the password of the registry credential.
     {: tip}
 
     You get a response that informs you that the manifest is written to the image destination, which is the registry.
@@ -157,14 +157,14 @@ Pull the image from the registry and decrypt it by using the private key.
 1. To ensure that you are pulling from the registry and that you are not using the local cache, remove the image locally:
 
     ```txt
-    buildah rmi -f us.icr.io/<namespace>/<my_app>
+    buildah rmi -f us.icr.io/NAMESPACE/MY_APP
     ```
     {: pre}
 
 2. (Optional) You can try to pull the image without providing the decryption key to confirm that the image can't be decrypted:
 
     ```txt
-    buildah pull us.icr.io/<namespace>/<my_app>
+    buildah pull us.icr.io/NAMESPACE/MY_APP
     ```
     {: pre}
 
@@ -177,10 +177,10 @@ Pull the image from the registry and decrypt it by using the private key.
     ```
     {: screen}
 
-3. Use Buildah to pull the image with the decryption key, where `<user_keys>/<user>Private.pem` is the decryption key and `us.icr.io/<namespace>/<my_app>` is the registry:
+3. Use Buildah to pull the image with the decryption key, where `USER_KEYS/USER_KEYPrivate.pem` is the decryption key and `us.icr.io/NAMESPACE/MY_APP` is the registry:
 
     ```txt
-    buildah pull --decryption-key ../<user_keys>/<user>Private.pem us.icr.io/<namespace>/<my_app>
+    buildah pull --decryption-key ../USER_KEYS/USER_KEYPrivate.pem us.icr.io/NAMESPACE/MY_APP
     ```
     {: pre}
 
@@ -189,7 +189,7 @@ Pull the image from the registry and decrypt it by using the private key.
 4. Confirm that the image is stored by running Podman:
 
     ```txt
-    podman run -it us.icr.io/<namespace>/<my_app> /bin/bash
+    podman run -it us.icr.io/NAMESPACE/MY_APP /bin/bash
     ```
     {: pre}
 
@@ -198,13 +198,13 @@ Pull the image from the registry and decrypt it by using the private key.
 
 To use the private key in production, you must safely store and protect the private key. You might also want to manage the public key in the same way to control who can build images. You can use [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-about) to store and protect your keys.
 
-{{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption. You can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can encode the PEM files by running `"openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64"` before you load the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in <user>Private..b64 -out <user>Private.pem"`.
+{{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption. You can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can encode the PEM files by running `"openssl enc -base64 -A -in USER_KEYPrivate.pem -out USER_KEYPrivate.b64"` before you load the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in USER_KEYPrivate..b64 -out USER_KEYPrivate.pem"`.
 
 For more information about how to use {{site.data.keyword.keymanagementservicelong_notm}} to store and protect your keys, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys) and [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys).
 
 As an alternative, you can protect your keys in your own store by using an {{site.data.keyword.keymanagementservicelong_notm}} root key to wrap them. This action means that you must unwrap them again by using {{site.data.keyword.keymanagementservicelong_notm}} and the valid root key.
 
-For example, to wrap keys by using the CLI, run the command `"ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>"` and to unwrap keys, run the command `"ibmcloud kp key unwrap <root_key_id> -p <base64 cyphertext>`, where `<root_key_id>` is the ID of the root key that you are using.
+For example, to wrap keys by using the CLI, run the command `"ibmcloud kp key wrap ROOT_KEY_ID -p <base64 encoded image key>"` and to unwrap keys, run the command `"ibmcloud kp key unwrap ROOT_KEY_ID -p <base64 cyphertext>`, where `ROOT_KEY_ID` is the ID of the root key that you are using.
 
 For more information about how you can protect your keys in your own store by using an {{site.data.keyword.keymanagementservicelong_notm}} root key to wrap them, see [Wrapping keys](/docs/key-protect?topic=key-protect-wrap-keys).
 

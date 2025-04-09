@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-09"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -38,7 +38,7 @@ You can create context-based restrictions for {{site.data.keyword.registrylong_n
 ## Protecting specific resources
 {: #registry-cbr_protect}
 
-When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = YOUR_IMAGE_NAMESPACE`, where `YOUR_IMAGE_NAMESPACE` is the namespace of your image. For more information about rules, see [Creating rules](/docs/account?topic=account-context-restrictions-create&interface=ui#context-restrictions-create-rules).
+When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = <your_image_namespace>`, where `<your_image_namespace>` is the namespace of your image. For more information about rules, see [Creating rules](/docs/account?topic=account-context-restrictions-create&interface=ui#context-restrictions-create-rules).
 
 For example, if your image is in the format `uk.icr.io/<my_project>/<my_image>:latest`, where `<my_project>` is the name of your project and `<my_image>` is the name of the image, the attribute types are as shown in the following table.
 
@@ -111,16 +111,16 @@ After you create a rule, it might take up to 10 minutes to before you can update
 
 For all regions other than `global` you can use the region field when you create a rule. So for example, in the CLI for `us-south` you use the `--region us-south` option. However, because `global` is a geography and not a region you must omit the `--region` option and add `geography=global` into the `--resource-attributes` field.
 
-The following example shows the command in `us-south`, where `<description>` is the description, `<accountId>` is your {{site.data.keyword.cloud_notm}} account ID, `<namespace>` is the namespace, and `<networkZoneId>` is the network zone ID:
+The following example shows the command in `us-south`, where `DESCRIPTION` is the description, `ACCOUNT_ID` is your {{site.data.keyword.cloud_notm}} account ID, `NAMESPACE` is the namespace, and `NETWORK_ZONE_ID` is the network zone ID:
 
 ```txt
-ibmcloud cbr rule-create --description "<description>" --resource-attributes "accountId=<accountId>,serviceName=container-registry,resourceType=namespace,resource=<namespace>" --context-attributes networkZoneId=<networkZoneId> --output json --region us-south
+ibmcloud cbr rule-create --description "DESCRIPTION" --resource-attributes "accountId=ACCOUNT_ID,serviceName=container-registry,resourceType=namespace,resource=NAMESPACE" --context-attributes networkZoneId=NETWORK_ZONE_ID --output json --region us-south
 ```
 {: pre}
 
-The following example shows the command in `global`, where `<description>` is the description, `<accountId>` is your {{site.data.keyword.cloud_notm}} account ID, `<namespace>` is the namespace, and `<networkZoneId>` is the network zone ID:
+The following example shows the command in `global`, where `DESCRIPTION` is the description, `ACCOUNT_ID` is your {{site.data.keyword.cloud_notm}} account ID, `NAMESPACE` is the namespace, and `NETWORK_ZONE_ID` is the network zone ID:
 
 ```txt
-ibmcloud cbr rule-create --description "<description>" --resource-attributes "accountId=<accountId>,serviceName=container-registry,resourceType=namespace,resource=<namespace>,geography=global" --context-attributes networkZoneId=<networkZoneId>
+ibmcloud cbr rule-create --description "DESCRIPTION" --resource-attributes "accountId=ACCOUNT_ID,serviceName=container-registry,resourceType=namespace,resource=NAMESPACE,geography=global" --context-attributes networkZoneId=NETWORK_ZONE_ID
 ```
 {: pre}

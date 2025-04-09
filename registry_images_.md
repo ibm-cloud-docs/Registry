@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-04-09"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -197,10 +197,10 @@ To build your own Docker image, complete the following steps:
         ```
         {: pre}
 
-    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace `<source_image>` and `<tag>` with the image repository and tag that you want to use. If you're using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
+    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace `SOURCE_IMAGE` and `TAG` with the image repository and tag that you want to use. If you're using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
 
         ```txt
-        FROM <source_image>:<tag>
+        FROM SOURCE_IMAGE:TAG
         ```
         {: pre}
 
@@ -215,34 +215,34 @@ To build your own Docker image, complete the following steps:
 
         This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile reference](https://docs.docker.com/reference/dockerfile/){: external}.
 
-3. Decide on a name for your image. The image name must be in the following format, where `<my_namespace>` is your namespace information, `<repo_name>` is the name of your repository, and `<tag>` is the version that you want to use for your image:
+3. Decide on a name for your image. The image name must be in the following format, where `REGION` is the region, `MY_NAMESPACE` is your namespace information, `REPO_NAME` is the name of your repository, and `TAG` is the version that you want to use for your image:
 
     ```txt
-    <region>.icr.io/<my_namespace>/<repo_name>:<tag>
+    REGION.icr.io/MY_NAMESPACE/REPO_NAME:TAG
     ```
     {: pre}
 
     To find your namespace, run the `ibmcloud cr namespace-list` command.
     {: tip}
 
-4. Take note of the path to the directory that contains your Dockerfile. If you run the commands in the following steps while your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
+4. Take note of the path to the directory that contains your Dockerfile. If you run the commands in the following steps while your working directory is set to where your build context is stored, you can replace `DIRECTORY` with a period (.).
 5. Build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}.
 
-    1. Build the image from your Dockerfile on your local computer and tag it with your image name, where `<image_name>` is the name of your image and `<directory>` is the path to the directory.
+    1. Build the image from your Dockerfile on your local computer and tag it with your image name, where `IMAGE_NAME` is the name of your image and `DIRECTORY` is the path to the directory.
 
         ```txt
-        docker build -t <image_name> <directory>
+        docker build -t IMAGE_NAME DIRECTORY
         ```
         {: pre}
 
     2. Optional: Test your image on your local computer before you push it to your namespace.
 
         ```txt
-        docker run <image_name>
+        docker run IMAGE_NAME
         ```
         {: pre}
 
-        Replace `<image_name>` with the name of your image.
+        Replace `IMAGE_NAME` with the name of your image.
 
     3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
@@ -384,10 +384,10 @@ To list the images in the trash, complete the following steps:
     ```
     {: pre}
 
-3. List only the images in the trash for the namespace that you're interested in by running the following command, where `<namespace>` is your namespace:
+3. List only the images in the trash for the namespace that you're interested in by running the following command, where `NAMESPACE` is your namespace:
 
     ```txt
-    ibmcloud cr trash-list --restrict <namespace>
+    ibmcloud cr trash-list --restrict NAMESPACE
     ```
     {: pre}
 
@@ -400,8 +400,8 @@ You can restore an image from the trash by running the [`ibmcloud cr image-resto
 
 You can restore images by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use the following options:
 
-- `<repo>@<digest>` restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring images by digest](#registry_images_restore_digest).
-- `<repo>:<tag>` restores the tag, see [Restoring images by tag](#registry_images_restore_tag).
+- `REPO@DIGEST` restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring images by digest](#registry_images_restore_digest).
+- `REPO:TAG` restores the tag, see [Restoring images by tag](#registry_images_restore_tag).
 
 ### Restoring images by digest
 {: #registry_images_restore_digest}
@@ -423,10 +423,10 @@ To restore an image by digest from the trash, complete the following steps:
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
 3. Note the digest for the image that you want to restore.
-4. Run the following command to restore the image to your repository. Where `<dns>` is the [domain name](/docs/Registry?topic=Registry-registry_overview#overview_elements_domain_name), `<namespace>` is the [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), `<repo>` is the [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), and `<digest>` is the [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) of the image that you want to restore.
+4. Run the following command to restore the image to your repository. Where `DNS` is the [domain name](/docs/Registry?topic=Registry-registry_overview#overview_elements_domain_name), `NAMESPACE` is the [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), `REPO` is the [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), and `DIGEST` is the [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) of the image that you want to restore.
 
     ```txt
-    ibmcloud cr image-restore <dns>/<namespace>/<repo>@<digest>
+    ibmcloud cr image-restore DNS/NAMESPACE/REPO@DIGEST
     ```
     {: pre}
 
@@ -455,12 +455,12 @@ To restore an image by tag from the trash, complete the following steps:
 
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
-3. For the image that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This section of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
-4. For the image that you want to restore, make a note of the tag, `<tag>`.
-5. Run the following command to restore the image to your repository, where `<dns>/<namespace>/<repo>` is the name of the image that you want to restore and `<tag>` is the tag.
+3. For the image that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This section of the digest is `DNS/NAMESPACE/REPO`, where `DNS` is the domain name, `NAMESPACE` is the namespace, and `REPO` is the repository.
+4. For the image that you want to restore, make a note of the tag, `TAG`.
+5. Run the following command to restore the image to your repository, where `DNS/NAMESPACE/REPO` is the name of the image that you want to restore and `TAG` is the tag.
 
     ```txt
-    ibmcloud cr image-restore <dns>/<namespace>/<repo>:<tag>
+    ibmcloud cr image-restore DNS/NAMESPACE/REPO:TAG
     ```
     {: pre}
 
