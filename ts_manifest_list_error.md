@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-04-25"
+  years: 2021, 2025
+lastupdated: "2025-04-09"
 
 keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error, image, repository, CRI0304E
 
@@ -28,11 +28,11 @@ You get the following manifest list invalid error when you try to [tag](/docs/Re
 Manifest lists and OCI Image Indexes contain a list of references to different images, where each image is for a different architecture. When you tag a manifest list or OCI Image Index, {{site.data.keyword.registryshort}} tries to copy the referenced images. When you get this error message, it indicates that one of those referenced images was not found in the registry.
 {: tsCauses}
 
-To understand how to fix this issue, you must work out what images are referenced in the manifest list or OCI Image Index by running the following command:
+To understand how to fix this issue, you must work out what images are referenced in the manifest list or OCI Image Index by running the following command, where `SOURCE_IMAGE` is your source image name:
 {: tsResolve}
 
 ```txt
-ibmcloud cr manifest-inspect <source_image>
+ibmcloud cr manifest-inspect SOURCE_IMAGE
 ```
 {: pre}
 

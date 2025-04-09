@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-04-26"
+  years: 2017, 2025
+lastupdated: "2025-04-09"
 
 keywords: error, registry, manifest type, tag, image, the manifest type for this image is not supported for tagging, CRI0302E
 
@@ -31,23 +31,23 @@ The manifest type is not supported.
 To resolve the problem, complete the following steps:
 {: tsResolve}
 
-1. Pull the image that you tried to tag by running the following command, where `<source_image>` is your source image name:
+1. Pull the image that you tried to tag by running the following command, where `SOURCE_IMAGE` is your source image name:
 
     ```txt
-    docker pull <source_image>
+    docker pull SOURCE_IMAGE
     ```
     {: pre}
 
-2. Tag your local copy of the image that you pulled in the previous step by running the following command, where `<target_image>` is your new image name:
+2. Tag your local copy of the image that you pulled in the previous step by running the following command, where `TARGET_IMAGE` is your new image name:
 
     ```txt
-    docker tag <source_image> <target_image>
+    docker tag SOURCE_IMAGE TARGET_IMAGE
     ```
     {: pre}
 
 3. Push the image that you tagged in the previous step by running the following command:
 
     ```txt
-    docker push <target_image>
+    docker push TARGET_IMAGE
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-09"
 
 keywords: IBM Cloud Container Registry notices, notices, billing, untagged images
 
@@ -43,9 +43,9 @@ If you have many untagged images, you might see an increase in the bill for [{{s
 
 You can remove untagged images individually, collectively, or by using retention policies.
 
--  To remove untagged images individually, run the following command, where `<repository>` is your repository and `<digest>` is your digest:
+-  To remove untagged images individually, run the following command, where `REPOSITORY` is your repository and `DIGEST` is your digest:
 
-    `ibmcloud cr image-rm <repository>@sha256:<digest>`
+    `ibmcloud cr image-rm REPOSITORY@sha256:DIGEST`
 
     For more information, see [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
 - To remove untagged images collectively, you can use the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command. For more information, see [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).

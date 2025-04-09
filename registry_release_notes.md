@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-09"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -355,8 +355,8 @@ Using registry tokens is discontinued {: #19aug2021_remove_tokens}
 {: #registry-09aug2021}
 {: release-note}
 
-The `ibmcloud cr login` command logs you into the `<region>.icr.io` registry domain only {: #09aug2021_bmx}
-:   From version 0.1.541 of the {{site.data.keyword.registryshort_notm}} CLI, the `ibmcloud cr login` command logs you in to the `<region>.icr.io` registry domain only, where `<region>` is your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). If you want to log in to the deprecated domain `registry.<region>.bluemix.net`, use `docker login`, see [Authentication](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth).
+The `ibmcloud cr login` command logs you into the `REGION.icr.io` registry domain only {: #09aug2021_bmx}
+:   From version 0.1.541 of the {{site.data.keyword.registryshort_notm}} CLI, the `ibmcloud cr login` command logs you in to the `REGION.icr.io` registry domain only, where `REGION` is your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). If you want to log in to the deprecated domain `registry.REGION.bluemix.net`, use `docker login`, see [Authentication](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth).
 
 ## 8 July 2021
 {: #registry-08jul2021}

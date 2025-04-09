@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-04-09"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -74,9 +74,9 @@ To create a user API key, see [Managing user API keys](/docs/account?topic=accou
 
 Use an API key to log in to the registry by using common clients.
 
-Clients require an API key and a domain, replace `<apikey>` with your API key and `<registry_domain>` with the domain of the registry where your namespaces are set up.
+Clients require an API key and a domain, replace `API_KEY` with your API key and `REGISTRY_DOMAIN` with the domain of the registry where your namespaces are set up.
 
-| Region | Region that was formerly known as | `<registry_domain>` |
+| Region | Region that was formerly known as | `REGISTRY_DOMAIN` |
 |--------|----------------------------------|---------------------|
 | `global` | Not applicable | `icr.io` |
 | `au-syd` | `ap-south` |`au.icr.io` |
@@ -105,10 +105,10 @@ Examples of how to authenticate automatically with the registry are provided for
 
 You can use Buildah to authenticate with the registry so that you can push and pull images to and from the registry.
 
-Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Buildah command, replace `<apikey>` with the API key and `<registry_domain>` with the domain:
+Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Buildah command, replace `API_KEY` with the API key and `REGISTRY_DOMAIN` with the domain:
 
 ```txt
-buildah login -u iamapikey -p <apikey> <registry_domain>
+buildah login -u iamapikey -p API_KEY REGISTRY_DOMAIN
 ```
 {: pre}
 
@@ -117,10 +117,10 @@ buildah login -u iamapikey -p <apikey> <registry_domain>
 
 You can use Docker to authenticate with the registry so that you can push and pull images to and from the registry.
 
-Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Docker command, replace `<apikey>` with the API key and `<registry_domain>` with the domain:
+Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Docker command, replace `API_KEY` with the API key and `REGISTRY_DOMAIN` with the domain:
 
 ```txt
-docker login -u iamapikey -p <apikey> <registry_domain>
+docker login -u iamapikey -p API_KEY REGISTRY_DOMAIN
 ```
 {: pre}
 
@@ -129,10 +129,10 @@ docker login -u iamapikey -p <apikey> <registry_domain>
 
 You can use Podman to authenticate with the registry so that you can push and pull images to and from the registry.
 
-Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Podman command, replace `<apikey>` with the API key and `<registry_domain>` with the domain:
+Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Podman command, replace `API_KEY` with the API key and `REGISTRY_DOMAIN` with the domain:
 
 ```txt
-podman login -u iamapikey -p <apikey> <registry_domain>
+podman login -u iamapikey -p API_KEY REGISTRY_DOMAIN
 ```
 {: pre}
 
@@ -141,10 +141,10 @@ podman login -u iamapikey -p <apikey> <registry_domain>
 
 You can use Skopeo to authenticate with the registry so that you can push and pull images to and from the registry.
 
-For example, you can use the following Skopeo command to pull an image from Docker Hub and push it to your namespace. Replace `<registry_domain>` with the name of your [domain](#registry_access_apikey_auth), `<namespace>` with your namespace, and `<apikey>` with your API key:
+For example, you can use the following Skopeo command to pull an image from Docker Hub and push it to your namespace. Replace `REGISTRY_DOMAIN` with the name of your [domain](#registry_access_apikey_auth), `NAMESPACE` with your namespace, and `API_KEY` with your API key:
 
 ```txt
-skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker://<registry_domain>/<namespace>/busybox:latest --dest-creds iamapikey:<apikey>
+skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker://REGISTRY_DOMAIN/NAMESPACE/busybox:latest --dest-creds iamapikey:API_KEY
 ```
 {: pre}
 
@@ -165,10 +165,10 @@ Examples of how to access your namespaces interactively are provided for the fol
 
 Log in to the registry by using the Buildah CLI.
 
-You can use the Buildah CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
+You can use the Buildah CLI to log in to the registry by using a bearer token, replace `REGISTRY_DOMAIN` with the [domain](#registry_access_apikey_auth):
 
 ```txt
-ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | buildah login -u iambearer --password-stdin <registry_domain>
+ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | buildah login -u iambearer --password-stdin REGISTRY_DOMAIN
 ```
 {: pre}
 
@@ -188,17 +188,17 @@ You can use the Docker CLI to log in to the registry by using a bearer token:
 
 1. Generate a bearer token by using [`ibmcloud iam oauth-tokens`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_oauth_tokens).
 
-2. Log in to the registry by using the `docker login` command. Replace `<bearer_token>` with your bearer token and `<registry_domain>` with the [domain](#registry_access_apikey_auth):
+2. Log in to the registry by using the `docker login` command. Replace `BEARER_TOKEN` with your bearer token and `REGISTRY_DOMAIN` with the [domain](#registry_access_apikey_auth):
 
     ```txt
-    docker login -u iambearer --password <bearer_token> <registry_domain>
+    docker login -u iambearer --password BEARER_TOKEN REGISTRY_DOMAIN
     ```
     {: pre}
 
 ### Using Podman to access your namespace
 {: #registry_access_interactive_auth_podman}
 
-Log in to the registry and pull an image by using the CLI, where `<image_name>` is the name of the image.
+Log in to the registry and pull an image by using the CLI, where `IMAGE_NAME` is the name of the image.
 
 ```txt
 ibmcloud cr login --client podman
@@ -206,7 +206,7 @@ ibmcloud cr login --client podman
 {: pre}
 
 ```txt
-podman pull <image_name>
+podman pull IMAGE_NAME
 ```
 {: pre}
 
@@ -215,10 +215,10 @@ podman pull <image_name>
 
 Log in to the registry by using the Skopeo CLI.
 
-You can use the Skopeo CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
+You can use the Skopeo CLI to log in to the registry by using a bearer token, replace `REGISTRY_DOMAIN` with the [domain](#registry_access_apikey_auth):
 
 ```txt
-ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | skopeo login -u iambearer --password-stdin <registry_domain>
+ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | skopeo login -u iambearer --password-stdin REGISTRY_DOMAIN
 ```
 {: pre}
 

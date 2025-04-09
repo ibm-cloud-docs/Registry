@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-05-21"
+  years: 2023, 2025
+lastupdated: "2025-04-09"
 
 keywords: error, cosign, Podman, pulling, image
 
@@ -31,9 +31,9 @@ You might need to log in to `cosign` manually.
 You can fix this problem in the following way:
 {: tsResolve}
 
-Use the following command to log in to `cosign`, where `<registry>` is your registry and `<your_api_key>` is your API key.
+Use the following command to log in to `cosign`, where `REGISTRY` is your registry and `YOUR_API_KEY` is your API key.
 
 ```txt
-cosign login <registry> -u iamapikey -p <your_api_key>
+cosign login REGISTRY -u iamapikey -p YOUR_API_KEY
 ```
 {: pre}

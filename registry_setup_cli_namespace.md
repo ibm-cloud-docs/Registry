@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-05"
+lastupdated: "2025-04-09"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -73,13 +73,13 @@ ibmcloud plugin update container-registry
 {: help}
 {: support}
 
-To update version 0.1 of the {{site.data.keyword.registryshort}} CLI, run the following command, where `<version_number>` is the number of the version of the CLI.
+To update version 0.1 of the {{site.data.keyword.registryshort}} CLI, run the following command, where `VERSION_NUMBER` is the number of the version of the CLI.
 
 Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated. For more information, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
 {: deprecated}
 
 ```txt
-ibmcloud plugin install container-registry -v <version_number>
+ibmcloud plugin install container-registry -v VERSION_NUMBER
 ```
 {: pre}
 
@@ -147,10 +147,10 @@ You can control which users can work with namespaces by using IAM roles.
 
 - To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registrylong_notm}} service at the account level, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
-    - To add and assign namespaces, you must also have the Viewer platform role for the resource group in which you want to create the namespace. To assign the Viewer role for a resource group to a user, run the following [`ibmcloud iam user-policy-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, where `<user>` is the name of the user and `<resource_group_id>` is the resource group ID:
+    - To add and assign namespaces, you must also have the Viewer platform role for the resource group in which you want to create the namespace. To assign the Viewer role for a resource group to a user, run the following [`ibmcloud iam user-policy-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, where `USER` is the name of the user and `RESOURCE_GROUP_ID` is the resource group ID:
 
         ```txt
-        ibmcloud iam user-policy-create <user> --roles Viewer --resource-type resource-group --resource <resource_group_id>
+        ibmcloud iam user-policy-create USER --roles Viewer --resource-type resource-group --resource RESOURCE_GROUP_ID
         ```
         {: pre}
 
@@ -216,10 +216,10 @@ To assign an existing namespace to a resource group, complete the following step
 
 3. Assign the namespace to a resource group.
 
-    Replace `<my_resource_group>` with the name or ID of the resource group and `<my_namespace>` with the name of the namespace.
+    Replace `MY_RESOURCE_GROUP` with the name or ID of the resource group and `MY_NAMESPACE` with the name of the namespace.
 
     ```txt
-    ibmcloud cr namespace-assign -g <my_resource_group> <my_namespace>
+    ibmcloud cr namespace-assign -g MY_RESOURCE_GROUP MY_NAMESPACE
     ```
     {: pre}
 
@@ -249,10 +249,10 @@ If you no longer require a registry namespace, you can remove the namespace from
     When you remove a namespace, any images that are stored in that namespace are also deleted. This action cannot be undone.
     {: attention}
 
-    Replace `<my_namespace>` with the namespace that you want to remove.
+    Replace `MY_NAMESPACE` with the namespace that you want to remove.
 
     ```txt
-    ibmcloud cr namespace-rm <my_namespace>
+    ibmcloud cr namespace-rm MY_NAMESPACE
     ```
     {: pre}
 

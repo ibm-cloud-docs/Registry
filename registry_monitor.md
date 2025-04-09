@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-04-09"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -41,10 +41,10 @@ Complete the following steps to create and configure platform metrics for {{site
     ```
     {: pre}
 
-3. Target the [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) where you want to enable metrics by running the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command. Replace `<region>` with the name of the [region](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
+3. Target the [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) where you want to enable metrics by running the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command. Replace `REGION` with the name of the [region](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
     ```txt
-    ibmcloud cr region-set <region>
+    ibmcloud cr region-set REGION
     ```
     {: pre}
 
