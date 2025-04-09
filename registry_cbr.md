@@ -40,13 +40,13 @@ You can create context-based restrictions for {{site.data.keyword.registrylong_n
 
 When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = <your_image_namespace>`, where `<your_image_namespace>` is the namespace of your image. For more information about rules, see [Creating rules](/docs/account?topic=account-context-restrictions-create&interface=ui#context-restrictions-create-rules).
 
-For example, if your image is in the format `uk.icr.io/<myProject>/<myImage>:latest`, where `<my_project>` is the name of your project and `<my_image>` is the name of the image, the attribute types are as shown in the following table.
+For example, if your image is in the format `uk.icr.io/<my_project>/<my_image>:latest`, where `<my_project>` is the name of your project and `<my_image>` is the name of the image, the attribute types are as shown in the following table.
 
 | Attribute type | Operator | Value |
 |----------------|----------|-------|
 | `Region` | `string equals` | `London`|
 | `Resource Type` | `string equals` | `namespace` |
-| `Resource Name` | `string equals` | `my_project` |
+| `Resource Name` | `string equals` | `<my_project>` |
 {: caption="Example attribute types" caption-side="bottom"}
 {: #table_registry_cbr_attributes}
 
