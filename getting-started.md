@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-10"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -152,7 +152,7 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_el
 {: help}
 {: support}
 
-To tag the image, replace `SOURCE_IMAGE` with the repository and `TAG` with the tag of your local image that you pulled earlier. Replace `REGION` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). Replace `MY_NAMESPACE` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `NEW_IMAGE_REPO` and `NEW_TAG`. For example, depending on the tool that you are using, run one of the following commands.
+To tag the image, replace `SOURCE_IMAGE` with the repository and `TAG` with the tag of your local image that you pulled earlier. Replace `REGION` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). Replace `MY_NAMESPACE` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `NEW_IMAGE_REPO` with the name of your image repository and `NEW_TAG` with the tag. For example, depending on the tool that you are using, run one of the following commands.
 
 To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region) command.
 {: tip}

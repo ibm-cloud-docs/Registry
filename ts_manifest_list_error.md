@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-10"
 
 keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error, image, repository, CRI0304E
 
@@ -66,10 +66,10 @@ The output of which is similar to this output:
 ```
 {: screen}
 
-For this output to be valid, the images, with the [digests](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) from the previous output, must exist in the same repository as the manifest list or OCI index that you are trying to tag. To confirm whether one of the images is missing, you can run the following command. Replace `<src_repo>` with the name of your namespace and repository in the format `mynamespace/myrepo`.
+For this output to be valid, the images, with the [digests](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) from the previous output, must exist in the same repository as the manifest list or OCI index that you are trying to tag. To confirm whether one of the images is missing, you can run the following command. Replace `SRC_REPO` with the name of your namespace and repository in the format `mynamespace/myrepo`.
 
 ```txt
-ibmcloud cr digests --restrict <src_repo>
+ibmcloud cr digests --restrict SRC_REPO
 ```
 {: pre}
 
