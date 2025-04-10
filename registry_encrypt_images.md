@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-10"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -141,7 +141,7 @@ Encrypt the image by using the public key and then build a container image by us
     ```
     {: pre}
 
-    Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an [API key](#x8051010){: term}, you can supply the `—-creds <userName>` option, where `<userName>` is the username. If you use the `—-creds <userName>` the option, when requested, type in the password of the registry credential.
+    Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an [API key](#x8051010){: term}, you can supply the `—-creds <username>` option, where `<username>` is the username. If you use the `—-creds <username>` the option, when requested, type in the password of the registry credential.
     {: tip}
 
     You get a response that informs you that the manifest is written to the image destination, which is the registry.
