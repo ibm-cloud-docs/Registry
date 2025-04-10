@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-04-10"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -385,10 +385,10 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 
 If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command. You can run the command with no options to get a list of available regions, or you can specify the region as an option.
 
-1. To run the command with options, replace `<region>` with the name of the [region](#registry_regions_local).
+1. To run the command with options, replace `REGION` with the name of the [region](#registry_regions_local).
 
     ```txt
-    ibmcloud cr region-set <region>
+    ibmcloud cr region-set REGION
     ```
     {: pre}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-05-02"
+  years: 2017, 2025
+lastupdated: "2025-04-10"
 
 keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
@@ -56,13 +56,13 @@ To set a quota, complete the following steps.
     ```
     {: screen}
 
-3. Change the quota limit for storage and pull traffic. To change the pull traffic usage, specify the **traffic** option, and replace `<traffic_quota>` with the value in megabytes that you want to set for the pull traffic quota. If you want to change the amount of storage in your account, specify the **storage** option, and replace `<storage_quota>` with the value in megabytes that you want to set.
+3. Change the quota limit for storage and pull traffic. To change the pull traffic usage, specify the **traffic** option, and replace `TRAFFIC_QUOTA` with the value in megabytes that you want to set for the pull traffic quota. If you want to change the amount of storage in your account, specify the **storage** option, and replace `STORAGE_QUOTA` with the value in megabytes that you want to set.
 
     If you are on the free plan, you cannot set your quota to an amount that exceeds the free tier. The free tier allowance for storage is 512 MB and traffic is 5120 MB.
     {: tip}
 
     ```txt
-    ibmcloud cr quota-set --traffic <traffic_quota> --storage <storage_quota>
+    ibmcloud cr quota-set --traffic TRAFFIC_QUOTA --storage STORAGE_QUOTA
     ```
     {: pre}
 
@@ -139,13 +139,13 @@ Depending on the proportions of the image, it might take a while for the image t
 
 2. You can remove images individually, collectively, or by using retention policies.
 
-   - To remove images individually from your namespace, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default. Deleted images are stored in the trash for 30 days. Images that are in the trash don't count toward your quota.
+   - To remove images individually from your namespace, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command. Replace `IMAGE_NAME` with the name of the image that you want to remove. The name must be in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default. Deleted images are stored in the trash for 30 days. Images that are in the trash don't count toward your quota.
 
         You can remove both tagged and untagged images by using the format `repository@digest`. You can remove only tagged images by using the format `repository:tag`.
         {: note}
 
         ```txt
-        ibmcloud cr image-rm <image_name>
+        ibmcloud cr image-rm IMAGE_NAME
         ```
         {: pre}
 
