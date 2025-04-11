@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-11"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -29,7 +29,7 @@ Frequently asked questions for {{site.data.keyword.registrylong}}.
 {: #faq_ref_docs}
 {: faq}
 
-The reference documentation for {{site.data.keyword.registrylong_notm}} is available in the {{site.data.keyword.cloud_notm}} docs. For more information, see [About {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_overview) and [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-containerregcli).
+The reference documentation for {{site.data.keyword.registrylong_notm}} is available in the {{site.data.keyword.cloud_notm}} documentation. For more information, see [About {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_overview) and [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-containerregcli).
 
 ### How do I set up the {{site.data.keyword.registryshort}} CLI?
 {: #faq_setup_cli}
