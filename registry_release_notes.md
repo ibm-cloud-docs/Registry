@@ -302,6 +302,7 @@ View the activity tracker auditing events for {{site.data.keyword.redhat_notm}} 
 :   You can view the activity tracker auditing events for [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} operations.
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
+
 ## 27 June 2017
 {: #registry-27jun2017}
 {: release-note}
