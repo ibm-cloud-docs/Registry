@@ -80,8 +80,3 @@ For more information about the new and current {{site.data.keyword.registryshort
 
 - For {{site.data.keyword.containerlong_notm}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 - For {{site.data.keyword.openshiftlong}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
-
-## Original announcement
-{: #registry_notices_iam_pivate_network_announce}
-
-The original announcement was published on 7 April 2022.

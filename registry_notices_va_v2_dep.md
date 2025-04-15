@@ -34,8 +34,3 @@ Effective 8 January 2019, version 2 of Vulnerability Advisor’s API will be dis
 - All existing API calls that use version 2 continue to work until the end of support.
 - Any API call that uses version 2 after the end of support fails.
 - Before the end of support, update any automation to use version 3 of the API.
-
-## Original announcement
-{: #registry_notices_va_v2_dep_announce}
-
-The original announcement was published on 4 December 2018.

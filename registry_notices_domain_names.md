@@ -48,8 +48,3 @@ This change affects containers that run images from {{site.data.keyword.registry
 {: #registry_notices_domain_names_benefit}
 
 This new method uses an API key to authorize pulling images from the registry. Because the new `icr.io` domains are authorized by using an IAM API key, you can add IAM policies if you want more control over access. For example, you can change the API key policies in the cluster’s pull secret to pull images from only a certain registry region or namespace.
-
-## Original announcement
-{: #registry_notices_domain_names_announce}
-
-The original announcement was published on 25 February 2019.

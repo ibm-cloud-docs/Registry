@@ -111,8 +111,3 @@ Retention policies are only supported in the CLI.
 {: #registry_notices_retention_learn}
 
 Read more about retention policies in the documentation, see [Cleaning up your namespaces in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_retention), and [update your `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update) to give it a try.
-
-## Original announcement
-{: #registry_notices_retention_announce}
-
-The original announcement was published on 9 October 2019.

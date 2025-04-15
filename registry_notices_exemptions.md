@@ -57,8 +57,3 @@ To find out whether you have any exemptions in a particular region, set the regi
 {: #registry_notices_exemptions_affect}
 
 Beginning 31 January 2022, all regions will require separate exemption management. Any existing exemptions created before this date in the replicated regions are still present after this date. However, any changes from this date must be performed in each region where you want the change to take effect.
-
-## Original announcement
-{: #registry_notices_exemptions_announce}
-
-The original announcement was published on 20 December 2021.

@@ -36,8 +36,3 @@ However, the old domains and registry tokens will be discontinued as well. To pr
 {: #registry_notices_token_benefit}
 
 With IAM API keys, you can add IAM policies for more fine-grained control over access. For example, you can create IAM access policies to restrict permissions to specific registry namespaces so that a cluster can pull images from those namespaces only.
-
-## Original announcement
-{: #registry_notices_token_announce}
-
-The original announcement was published on 12 June 2019.

@@ -38,8 +38,3 @@ Any cluster workers that you have not reloaded, replaced, or rebooted since 5 Ju
 If you have any other custom configuration that uses the old {{site.data.keyword.registryshort}} private IP addresses, such as for firewall rules or Calico policies, you must update your configuration to use the new {{site.data.keyword.registryshort}} IP addresses and remove the old IP addresses. Both the old and new private IP addresses are documented in the {{site.data.keyword.containerlong_notm}} documentation. For more information, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 The {{site.data.keyword.containerlong_notm}} [Calico policy samples](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external} will be updated to remove the old IP addresses on 15 December 2022. If you use these samples, ensure that you pull in the most recent samples after this date.
-
-## Original announcement
-{: #registry_notices_ip_address_announce}
-
-The original announcement was published on 2 November 2022.

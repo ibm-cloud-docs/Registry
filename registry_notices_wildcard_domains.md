@@ -23,8 +23,3 @@ The original announcement was published on 15 June 2023.
 
 This advice is a change from existing advice that states that you must allow only the public domain of the {{site.data.keyword.registryshort}} that you are using.
 {: note}
-
-## Original announcement
-{: #registry_notices_wildcard_domains_announce}
-
-The original announcement was published on 15 June 2023.

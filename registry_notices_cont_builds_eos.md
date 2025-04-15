@@ -34,8 +34,3 @@ As of 6 September 2021, you must add the `--accept-deprecation` option to any co
 On or before the end of support date of 5 October 2021, you must replace the build mechanism for any container builds that use the `ibmcloud cr build` command or the build API. For more information, see [{{site.data.keyword.registryshort}} is deprecating container builds - act by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds).
 
 Changes effective on 05 October 2021.
-
-## Original announcement
-{: #registry_notices_cont_builds_eos_announce}
-
-The original announcement was published on 3 September 2021.

@@ -63,8 +63,3 @@ You can choose whether to update to use version 4, the default, or to continue t
     ibmcloud cr va-version-set v3
     ```
     {: pre}
-
-## Original announcement
-{: #registry_notices_va_v4_announce}
-
-The original announcement was published on 19 May 2023.

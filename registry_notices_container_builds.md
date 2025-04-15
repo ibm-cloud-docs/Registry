@@ -41,8 +41,3 @@ By 6 September 2021, users of {{site.data.keyword.registryshort}} will need to a
 {: #registry_notices_container_builds_learn}
 
 For more information about migrating your existing pipelines, see the {{site.data.keyword.contdelivery_short}} documentation about [building container images](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images), or [get started with the {{site.data.keyword.contdelivery_short}} service](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started).
-
-## Original announcement
-{: #registry_notices_container_builds_announce}
-
-The original announcement was published on 6 October 2020.

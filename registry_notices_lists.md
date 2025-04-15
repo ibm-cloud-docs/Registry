@@ -33,8 +33,3 @@ If you want to continue to receive security status with your list, prepare to up
 If you require security status with your list, add the `--restrict` option when you're using the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands to receive just the information that you require.
 
 If you are an API user and require security status with your list, ensure that you are restricting the repositories that you are requesting to ensure that you receive list results quickly and reliably.
-
-## Original announcement
-{: #registry_notices_lists_announce}
-
-The original announcement was published on 3 August 2022.

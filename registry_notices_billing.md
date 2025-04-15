@@ -53,8 +53,3 @@ You can remove untagged images individually, collectively, or by using retention
     For more information, see [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
 - To remove untagged images collectively, you can use the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command. For more information, see [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).
 - To use retention policies to remove images, including untagged images, see [Cleaning up your namespaces in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_retention).
-
-## Original announcement
-{: #registry_notices_billing_announce}
-
-The original announcement was published on 2 November 2021.

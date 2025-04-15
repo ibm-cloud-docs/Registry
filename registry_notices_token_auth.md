@@ -36,8 +36,3 @@ For more information about how to automate access to your {{site.data.keyword.re
 - [Automating access by using IAM](/docs/Registry?topic=Registry-registry_access)
 - [{{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-registry)
 - [{{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr)
-
-## Original announcement
-{: #registry_notices_token_auth_announce}
-
-The original announcement was published on 28 May 2021.

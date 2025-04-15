@@ -44,8 +44,3 @@ If you are located in China, you must also allow the following domains by 4 Sept
 - `dd7-icr.ibm-zh.com`
 
 For more information about {{site.data.keyword.registryshort}} public access and firewall rules, see [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall).
-
-## Original announcement
-{: #registry_notices_firewall_announce}
-
-The original announcement was published on 1 July 2024.

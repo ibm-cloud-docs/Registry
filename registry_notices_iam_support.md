@@ -26,8 +26,3 @@ If you used {{site.data.keyword.registryshort_notm}} before 4 October 2018, poli
 You can use the `ibmcloud cr iam-policies-enable` command to opt in to fine-grained access control by using IAM. New users are opted in automatically.
 
 For more information, see [Defining IAM access policies for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-user).
-
-## Original announcement
-{: #registry_notices_iam_support_announce}
-
-The original announcement was published on 4 October 2018.

@@ -37,8 +37,3 @@ If you are concerned about removing firewall restrictions, consider the use of r
 {: #registry_notices_public_ip_address_change}
 
 The changes take effect from 13 September 2021.
-
-## Original announcement
-{: #registry_notices_public_ip_address_announce}
-
-The original announcement was published on 18 August 2021.
