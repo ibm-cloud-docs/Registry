@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, domain names, notices
 
@@ -16,6 +16,10 @@ subcollection: Registry
 {: #registry_notices_domain_names}
 
 From 25 February 2019, {{site.data.keyword.registrylong}} is adopting new domain names to align with the rebranding of {{site.data.keyword.cloud_notm}} for a better user experience.
+{: shortdesc}
+
+The original announcement was published on 25 February 2019.
+{: note}
 
 You can now use IAM policies for more control over access to your registry resources. The new domain names are shown by location in the following table:
 
@@ -44,8 +48,3 @@ This change affects containers that run images from {{site.data.keyword.registry
 {: #registry_notices_domain_names_benefit}
 
 This new method uses an API key to authorize pulling images from the registry. Because the new `icr.io` domains are authorized by using an IAM API key, you can add IAM policies if you want more control over access. For example, you can change the API key policies in the cluster’s pull secret to pull images from only a certain registry region or namespace.
-
-## Original announcement
-{: #registry_notices_domain_names_announce}
-
-The original announcement was published on 25 February 2019.

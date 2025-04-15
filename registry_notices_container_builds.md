@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, container builds
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 The container build capability of {{site.data.keyword.registrylong}} is deprecated and is being replaced by {{site.data.keyword.contdelivery_full}} capabilities. You must act by 6 September 2021.
 {: shortdesc}
+
+The original announcement was published on 6 October 2020.
+{: note}
 
 The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/products/container-registry){: external}, is now deprecated. To build images and push them to {{site.data.keyword.registryshort}} from the command line, a tool like [Docker](https://docs.docker.com/reference/cli/docker/){: external} can be used instead.
 
@@ -38,8 +41,3 @@ By 6 September 2021, users of {{site.data.keyword.registryshort}} will need to a
 {: #registry_notices_container_builds_learn}
 
 For more information about migrating your existing pipelines, see the {{site.data.keyword.contdelivery_short}} documentation about [building container images](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images), or [get started with the {{site.data.keyword.contdelivery_short}} service](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started).
-
-## Original announcement
-{: #registry_notices_container_builds_announce}
-
-The original announcement was published on 6 October 2020.

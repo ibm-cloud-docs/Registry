@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vpe
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 If you're using an {{site.data.keyword.registrylong}} virtual private endpoint (VPE) gateway that was created before 11 November 2022, you must re-create your VPE gateway before 15 December 2022. If you use {{site.data.keyword.iamshort}} restricted IP address lists and {{site.data.keyword.registryshort}} VPE gateways, you must also update your restricted IP address lists.
 {: shortdesc}
+
+The original announcement was published on 11 November 2022.
+{: note}
 
 ## What you need to know about this change
 {: #registry_notices_vpe_know}
@@ -75,8 +78,3 @@ If you are using a {{site.data.keyword.registryshort}} VPE gateway that was crea
     2. Create a VPE gateway for {{site.data.keyword.registryshort}} in the required VPC, see [Creating an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui). If you’re using the CLI, you might want to refer to the {{site.data.keyword.registryshort}} VPE CRNs. For more information, see [Setting up a VPE for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoint_setup).
 
     3. Remove the VPE gateway that was created before 11 November 2022, see [Deleting an endpoint gateway](/docs/vpc?topic=vpc-vpe-deleting-ui-cli-api&interface=ui).
-
-## Original announcement
-{: #registry_notices_vpe_announce}
-
-The original announcement was published on 11 November 2022.

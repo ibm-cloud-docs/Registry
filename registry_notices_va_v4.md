@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-07-23"
+  years: 2023, 2025
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, vulnerability advisor, change, update, actions, sdk, code, api, cli, version 4, version 3
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 The Vulnerability Advisor component of {{site.data.keyword.registrylong}} is being updated. From 19 June 2023, Vulnerability Advisor version 3 will be replaced as the default by Vulnerability Advisor version 4.
 {: shortdesc}
+
+The original announcement was published on 19 May 2023.
+{: note}
 
 Vulnerability Advisor version 3 is being deprecated as the default on 19 June 2023. From 19 June 2023, the default will be Vulnerability Advisor version 4. If you have version 3 set as the default, you can continue to use version 3 until the end of support date. An end of support date is not available yet.
 
@@ -60,8 +63,3 @@ You can choose whether to update to use version 4, the default, or to continue t
     ibmcloud cr va-version-set v3
     ```
     {: pre}
-
-## Original announcement
-{: #registry_notices_va_v4_announce}
-
-The original announcement was published on 19 May 2023.

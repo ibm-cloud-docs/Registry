@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, registry tokens,
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 To facilitate the migration to IAM and the new `icr.io` domains, {{site.data.keyword.registrylong}} will not allow the creation of registry tokens from 1 July 2019.
 {: shortdesc}
+
+The original announcement was published on 12 June 2019.
+{: note}
 
 Recently, the new [{{site.data.keyword.registryshort}}](https://www.ibm.com/products/container-registry){: external} `icr.io` domain names were introduced. With this change, it was announced that an IAM API key, rather than a registry token, needs to be stored in an image pull secret so that you can pull images from the new registry domains. In accordance with this change, and to facilitate migration to the new domains, the creation of registry tokens is discontinued on 1 July 2019.
 
@@ -33,8 +36,3 @@ However, the old domains and registry tokens will be discontinued as well. To pr
 {: #registry_notices_token_benefit}
 
 With IAM API keys, you can add IAM policies for more fine-grained control over access. For example, you can create IAM access policies to restrict permissions to specific registry namespaces so that a cluster can pull images from those namespaces only.
-
-## Original announcement
-{: #registry_notices_token_announce}
-
-The original announcement was published on 12 June 2019.
