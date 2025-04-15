@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2025-03-03"
+  years: 2024, 2025
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, IBM Bluemix Container Registry, available, ga
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 The registry has been a part of {{site.data.keyword.containerlong_notm}} since its inception in June 2015. {{site.data.keyword.IBM_notm}} announced that the {{site.data.keyword.registrylong}} is live as a separate offering within the {{site.data.keyword.cloud_notm}} platform.
 {: shortdesc}
+
+The original announcement was published on 28 June 2017.
+{: note}
 
 The registry is your location to safely store and share [Docker](https://docs.docker.com/reference/cli/docker/){: external} images in a multi-tenant, highly available, and scalable private image registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. [Get started](/docs/Registry?topic=Registry-getting-started) by setting up your own image namespace and push Docker images to your namespace.
 

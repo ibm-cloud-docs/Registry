@@ -18,6 +18,9 @@ subcollection: Registry
 From 5 July 2022, to access {{site.data.keyword.registrylong}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies.
 {: shortdesc}
 
+The original announcement was published on 9 February 2022.
+{: note}
+
 If you started to use {{site.data.keyword.registryshort}} before the availability of IAM API key policies in {{site.data.keyword.registryshort}} in February 2019, you must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
 {: important}
 

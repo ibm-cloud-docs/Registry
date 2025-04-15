@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-08-02"
+  years: 2022, 2025
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, support, version, security status, lists
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 From {{site.data.keyword.registrylong}} CLI plug-in version 1.0.0, when you use the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands to list images, they return Vulnerability Advisor security status results only if you use the `--va` option.
 {: shortdesc}
+
+The original announcement was published on 3 August 2022.
+{: note}
 
 The [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) and [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) commands currently return the security status of each image by default. Some users store many images in the registry, and returning security status for every image when listing takes more processing time, which can lead to a poor experience and a reduced limit on the maximum number of images that can be listed.
 

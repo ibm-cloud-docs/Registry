@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, uaa tokens
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 {{site.data.keyword.registrylong}} will not accept UAA tokens for authentication from 12 August 2020.
 {: shortdesc}
+
+The original announcement was published on 3 February 2020.
+{: note}
 
 {{site.data.keyword.registryshort}} supported IAM as its main form of authentication for several years. In parallel, {{site.data.keyword.registryshort}} continued to support UAA and registry tokens as deprecated forms of authentication. On 12 August 2020, UAA tokens will no longer be accepted for authenticating to {{site.data.keyword.registryshort}}. Registry tokens continue to work, but the end of support date for registry tokens is not available yet. All customers who are not already doing so must use IAM for authenticating to {{site.data.keyword.registryshort}}.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, container builds, end of support, eos, ibmcloud cr build
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 As announced on 6 October 2020, the end of support for the {{site.data.keyword.registrylong}} container build service is 5 October 2021.
 {: shortdesc}
+
+The original announcement was published on 3 September 2021.
+{: note}
 
 ## What you need to know
 {: #registry_notices_cont_builds_eos_what}

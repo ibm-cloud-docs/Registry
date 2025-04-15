@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, Exemption Synchronization, replicate exemptions, exemptions, regions
 
@@ -18,6 +18,9 @@ subcollection: Registry
 
 Beginning 31 January 31 2022, Vulnerability Advisor for {{site.data.keyword.registrylong}} will no longer replicate exemptions between {{site.data.keyword.cloud_notm}} regions.
 {: shortdesc}
+
+The original announcement was published on 20 December 2021.
+{: note}
 
 ## What are exemptions?
 {: #registry_notices_exemptions_desc}

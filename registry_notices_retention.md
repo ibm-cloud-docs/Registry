@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-02"
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, retention policies
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 {{site.data.keyword.registrylong}} retention policies help keep your registry namespaces in check by retaining only the images that are important to you.
 {: shortdesc}
+
+The original announcement was published on 9 October 2019.
+{: note}
 
 {{site.data.keyword.registryshort}} now offers retention policies so that you can choose the number of images to retain in each repository in a namespace. You can use retention policies to decrease clutter, help meet storage quotas, and minimize storage costs.
 

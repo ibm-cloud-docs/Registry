@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, billing, untagged images
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 Starting 1 February 2022, {{site.data.keyword.registrylong}} will bill for the storage that is used by untagged images.
 {: shortdesc}
+
+The original announcement was published on 2 November 2021.
+{: note}
 
 ## What are untagged images?
 {: #registry_notices_billing_untagged_image}

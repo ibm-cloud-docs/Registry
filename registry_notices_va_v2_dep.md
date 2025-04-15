@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-08-02"
+  years: 2024, 2025
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, va, v2, deprecation, vulnerability advisor
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 Version 2 of the {{site.data.keyword.registrylong}} Vulnerability Advisor API will be discontinued on 8 January 2019. You must update any automation to use version 3 of the API.
 {: shortdesc}
+
+The original announcement was published on 4 December 2018.
+{: note}
 
 Vulnerability Advisor is a component of the {{site.data.keyword.registrylong_notm}} offering, which scans Docker images that are stored in your registry for known vulnerabilities and configuration issues.
 

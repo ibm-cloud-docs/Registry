@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-08-02"
+  years: 2024, 2025
+lastupdated: "2025-04-15"
 
 keywords: IBM Cloud Container Registry notices, notices, public IP address, IP addresses
 
@@ -17,6 +17,9 @@ subcollection: Registry
 
 From 13 September 2021, {{site.data.keyword.registrylong}} is changing the public IP address ranges that are used to serve images and API requests. Furthermore, the IP address ranges are not being published anymore.
 {: shortdesc}
+
+The original announcement was published on 18 August 2021.
+{: note}
 
 ## What you need to know:
 {: #registry_notices_public_ip_address_know}
