@@ -282,8 +282,11 @@ toc:
               topics:
               - topic: ts_pods.md
                 navtitle: Why don't my pods restart after my workers are down?
-      - topic: registry_faq.md
-        navtitle: FAQ
+      - topicgroup:
+          label: FAQ
+          topics:
+          - registry_faq.md
+          - registry_faq_va.md
       - topic: registry_help_support.md
         navtitle: Getting help and support
       - topic: sitemap.md

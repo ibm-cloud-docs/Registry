@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-04-23"
 
 keywords: support, help, registry, status, support case
 
@@ -18,7 +18,9 @@ subcollection: Registry
 If you experience an issue or have questions when you are using {{site.data.keyword.registrylong}}, use the following resources before you open a support case.
 {: shortdesc}
 
-- Review the [frequently asked questions](/docs/Registry?topic=Registry-registry_faq) in the product documentation.
+- Review the frequently asked questions in the product documentation.
+    - [FAQ for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_faq)
+    - [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va)
 - Review the [troubleshooting documentation](/docs/Registry?topic=Registry-ts_index) to troubleshoot and resolve common issues.
 - Check the status of the {{site.data.keyword.cloud_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 
