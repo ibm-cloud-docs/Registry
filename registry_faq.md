@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-11"
+lastupdated: "2025-04-23"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -14,24 +14,21 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQ for {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor
+# FAQ for {{site.data.keyword.registryshort_notm}}
 {: #registry_faq}
 
-Frequently asked questions for {{site.data.keyword.registrylong}} and Vulnerability Advisor.
+Frequently asked questions for {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-## FAQ for {{site.data.keyword.registryshort_notm}}
-{: #registry_faq_registry}
+For frequently asked questions about Vulnerability Advisor, see [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va).
 
-Frequently asked questions for {{site.data.keyword.registrylong}}.
-
-### Where is the reference documentation for {{site.data.keyword.registryshort}}?
+## Where is the reference documentation for {{site.data.keyword.registryshort}}?
 {: #faq_ref_docs}
 {: faq}
 
 The reference documentation for {{site.data.keyword.registrylong_notm}} is available in the {{site.data.keyword.cloud_notm}} documentation. For more information, see [About {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_overview) and [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-containerregcli).
 
-### How do I set up the {{site.data.keyword.registryshort}} CLI?
+## How do I set up the {{site.data.keyword.registryshort}} CLI?
 {: #faq_setup_cli}
 {: faq}
 
@@ -45,19 +42,19 @@ Now you can use the {{site.data.keyword.registrylong_notm}} CLI to manage your r
 
 For more information, see [Setting up the {{site.data.keyword.registryshort}} CLI and namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace) and [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
 
-### How do I configure my firewall to allow connections to {{site.data.keyword.registryshort}}?
+## How do I configure my firewall to allow connections to {{site.data.keyword.registryshort}}?
 {: #faq_firewall}
 {: faq}
 
 You can use a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains listed in [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall) or use a [virtual private network (VPN)](/docs/iaas-vpn?topic=iaas-vpn-getting-started).
 
-### How many namespaces can you have?
+## How many namespaces can you have?
 {: #faq_namespace}
 {: faq}
 
 You can have 100 registry namespaces in each region.
 
-### Can I rename a namespace?
+## Can I rename a namespace?
 {: #faq_namespace_rename}
 {: faq}
 
@@ -75,7 +72,7 @@ done
 ```
 {: codeblock}
 
-### Why don't I have authorization to create a namespace?
+## Why don't I have authorization to create a namespace?
 {: #faq_auth_namespace}
 {: faq}
 
@@ -83,7 +80,7 @@ You are not authorized to create a namespace in {{site.data.keyword.registrylong
 
 For more information, see [Why aren't I authorized to access a specified resource in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth) and [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
 
-### How do I list image names?
+## How do I list image names?
 {: #faq_list_images}
 {: faq}
 
@@ -91,7 +88,7 @@ To list all the images in your {{site.data.keyword.cloud_notm}} account, you can
 
 For more information, see [`ibmcloud cr image-list` (`ibmcloud cr images`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) and [`ibmcloud cr image-digests` (`ibmcloud cr digests`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests).
 
-### How do you list public images?
+## How do you list public images?
 {: #faq_list_public_images}
 {: faq}
 
@@ -107,19 +104,19 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-### What tools can I use to build and push images?
+## What tools can I use to build and push images?
 {: #faq_tools}
 {: faq}
 
 You can use Docker and non-Docker tools to build and push images to the registry. You can use non-Docker tools that support [OCI container image](#x9860419){: term} format and protocol. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
-### Do images in the trash count toward my quota?
+## Do images in the trash count toward my quota?
 {: #faq_trash}
 {: faq}
 
 Images that are in the trash don't count toward your quota.
 
-### How do I find the image digest?
+## How do I find the image digest?
 {: #faq_digest}
 {: faq}
 
@@ -145,7 +142,7 @@ When you're using the digest to identify an image, always use the long format.
     If you run the `ibmcloud cr image-list` command without the `--no-trunc` option, you see the truncated format of the digest.
     {: note}
 
-### How do I use digests to work with images?
+## How do I use digests to work with images?
 {: #faq_digest_use}
 {: faq}
 
@@ -153,7 +150,7 @@ The [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_d
 
 To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
 
-### Why can't I push the image into {{site.data.keyword.registryshort}}?
+## Why can't I push the image into {{site.data.keyword.registryshort}}?
 {: #faq_push_images}
 {: faq}
 
@@ -161,7 +158,7 @@ You might have issues when you are pulling or pushing images to {{site.data.keyw
 
 For more information, see [Why can't I push or pull a Docker image when I use {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker) for assistance.
 
-### How do I list images that are more than a year old?
+## How do I list images that are more than a year old?
 {: #faq_images_year_old}
 {: faq}
 
@@ -173,13 +170,13 @@ ibmcloud cr digests --format '{{ if (lt .Created '$year')}}{{.Repository}}:{{.Di
 ```
 {: pre}
 
-### How do you use access control?
+## How do you use access control?
 {: #faq_access_control}
 {: faq}
 
 You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) policies to control access to your namespaces in {{site.data.keyword.registrylong_notm}}. For more information, see [Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial](/docs/Registry?topic=Registry-iam_access) and [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
-### How can I share access to an image?
+## How can I share access to an image?
 {: #faq_share_image}
 {: faq}
 
@@ -187,13 +184,13 @@ To access an image, a user must be a member of the {{site.data.keyword.cloud_not
 
 For more information, see [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 
-### Do I have any untagged images?
+## Do I have any untagged images?
 {: #faq_untagged_image_1}
 {: faq}
 
 To find out whether you have any [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, list your images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. Untagged images have a hyphen (-) in the **Tags** column.
 
-### Do I need untagged images?
+## Do I need untagged images?
 {: #faq_untagged_image_2}
 {: faq}
 
@@ -202,7 +199,7 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 - The image was deployed by using the digest as the reference. For example, {{site.data.keyword.codeenginefull_notm}} does resolve and use an image digest when it is serving applications, see [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app&interface=ui).
 - The image reference was mutated by a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
 
-### What are eligible images?
+## What are eligible images?
 {: #faq_eligible_image}
 {: faq}
 
@@ -214,13 +211,13 @@ Images created before `2013-01-19T00:13:39Z` are excluded from retention policy 
 
 For more information, see [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan).
 
-### What regions are available?
+## What regions are available?
 {: #faq_regions}
 {: faq}
 
 To find out more about the regions that are available for {{site.data.keyword.registrylong_notm}}, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
-### How do I get the `docker pull` command to return the most recent version?
+## How do I get the `docker pull` command to return the most recent version?
 {: #faq_docker_pull}
 {: faq}
 
@@ -228,7 +225,7 @@ To find the most recent image, run the `ibmcloud cr image-list` command rather t
 
 For more information, see [Why can't I pull the newest image by using the latest tag in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-docker-latest) for assistance.
 
-### Why do my pods fail with an `ImagePullBackOff` error?
+## Why do my pods fail with an `ImagePullBackOff` error?
 {: #faq_imagepullbackoff}
 {: faq}
 
@@ -236,164 +233,10 @@ Your cluster uses an API key that is stored in an image pull secret to authorize
 
 For more information, see [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull) for assistance.
 
-### Why am I getting an exceeded quota error?
+## Why am I getting an exceeded quota error?
 {: #faq_quota_error}
 {: faq}
 
 You exceeded your image storage or pull traffic quota for the current month. This means that you used more quota than your account allows for the month. To resolve this issue, you can either review your quota limits and increase them as necessary, or if you're on the lite plan upgrade to the standard plan.
 
 For more information, see [Why am I getting errors about my quota in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-quota) and [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
-
-## FAQ for Vulnerability Advisor
-{: #registry_faq_va}
-
-Frequently asked questions for Vulnerability Advisor.
-
-### How do I manage vulnerabilities?
-{: #faq_va_vuln}
-{: faq}
-
-You can use Vulnerability Advisor to manage image security and vulnerabilities.
-
-For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
-
-### How much does Vulnerability Advisor cost?
-{: #faq_va_cost}
-{: faq}
-
-The cost of Vulnerability Advisor is built into the pricing for {{site.data.keyword.registrylong_notm}}. For more information, see [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic).
-
-### Can images from other registries be scanned by Vulnerability Advisor?
-{: #faq_va_reg}
-{: faq}
-
-Vulnerability Advisor scans images from {{site.data.keyword.registrylong_notm}} only.
-
-### How is a Vulnerability Advisor scan triggered?
-{: #faq_va_trigger_scan}
-{: faq}
-
-For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=Registry-va_index&interface=ui#packages).
-
-### Why doesn't my image scan in Vulnerability Advisor v4?
-{: #faq_va_v4_scan}
-{: faq}
-
-If your image isn't being scanned, check that it has a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). In Vulnerability Advisor version 4, images are scanned only if they have a tag.
-
-### Why doesn't a new image scan in Vulnerability Advisor?
-{: #faq_va_new_scan_error}
-{: faq}
-
-If you get the vulnerability report immediately after you add the image to the [registry](#x2064940){: term}, you might receive the following error:
-
-```txt
-BXNVA0009E:  <imagename> has not been scanned. Try again later.
-If this issue persists, contact support for help;
-see https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support
-```
-{: screen}
-
-You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes within the first few minutes after you add the image to the registry. The time that it takes to complete depends on variables like the proportions of the image and the amount of traffic that the registry is receiving.
-
-If you get this message as part of a build pipeline and you see this error regularly, try adding some retry logic that contains a short pause.
-
-If you still see unacceptable performance, contact support, see [Getting help and support for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-help-and-support).
-
-### How often are the security notices updated in Vulnerability Advisor?
-{: #faq_va_update_security_notice}
-{: faq}
-
-Security notices for Vulnerability Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
-
-### Which version of a package is installed in my image?
-{: #faq_va_package_version}
-{: faq}
-
-To determine the version of a package that is installed in your image, use the relevant package manager command for your operating system.
-
-#### Alpine package manager commands
-{: #faq_va_package_version_alpine}
-
-On Alpine, to determine the version of a package that is installed in your image, you can use the following commands, where `PACKAGE_NAME` is the name of your package.
-
-- To list the metadata for a specific installed package, run the following command:
-
-    ```txt
-    apk info PACKAGE_NAME
-    ```
-    {: pre}
-
-- To list all installed packages and their versions, run the following command:
-
-    ```txt
-    apk list
-    ```
-    {: pre}
-
-#### Debian and Ubuntu package manager commands
-{: #faq_va_package_version_debian_ubuntu}
-
-On Debian and Ubuntu, to determine the version of a package that is installed in your image, you can use the following commands, where `PACKAGE_NAME` is the name of your package.
-
-- To list the metadata for a specific installed package, run either of the following commands:
-
-    ```txt
-    apt show PACKAGE_NAME
-    ```
-    {: pre}
-
-    ```txt
-    dpkg-query -l PACKAGE_NAME
-    ```
-    {: pre}
-
-- To list all installed packages and their versions, run either of the following commands:
-
-    ```txt
-    apt list
-    ```
-    {: pre}
-
-    ```txt
-    dpkg-query -W
-    ```
-    {: pre}
-
-#### {{site.data.keyword.redhat_notm}} and CentOS package manager commands
-{: #faq_va_package_version_redhat_centos}
-
-On {{site.data.keyword.redhat_openshift_full}} and CentOS, to determine the version of a package that is installed in your image, you can use the following commands, where `PACKAGE_NAME` is the name of your package.
-
-- To list the metadata for a specific installed package, run either of the following commands:
-
-    ```txt
-    rpm -qi PACKAGE_NAME
-    ```
-    {: pre}
-
-    ```txt
-    yum info PACKAGE_NAME
-    ```
-    {: pre}
-
-- To list all installed packages and their versions, run either of the following commands:
-
-    ```txt
-    rpm -qa
-    ```
-    {: pre}
-
-    ```txt
-    yum list installed
-    ```
-    {: pre}
-
-### Does Vulnerability Advisor have versions?
-{: #faq_va_versions}
-{: faq}
-
-Vulnerability Advisor version 4 is the only version available. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
