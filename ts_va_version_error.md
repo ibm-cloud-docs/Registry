@@ -45,4 +45,4 @@ ibmcloud cr va-version-set v4
 ```
 {: pre}
 
-For more information about how to update to Vulnerability Advisor version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3). For more information about the versions of Vulnerability Advisor, see [Does Vulnerability Advisor have versions?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_versions) and [Setting the version of Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
+For more information about how to update to Vulnerability Advisor version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3). For more information about the versions of Vulnerability Advisor, see [Does Vulnerability Advisor have versions?](/docs/Registry?topic=Registry-registry_faq&interface=ui#faq_va_versions) and [Setting the version of Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
