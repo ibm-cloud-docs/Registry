@@ -1636,6 +1636,8 @@ subcollection: Registry
 
 * [How do I configure my firewall to allow connections to {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_firewall)
 
+* [What is my namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_2)
+
 * [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
 * [Can I rename a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_rename)
