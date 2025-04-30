@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-04-23"
+lastupdated: "2025-04-30"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1661,6 +1661,8 @@ subcollection: Registry
 * [How do you use access control?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
 * [How can I share access to an image?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
+
+* [Can I share a {{site.data.keyword.registryshort}} namespace across {{site.data.keyword.cloud_notm}} accounts?](/docs/Registry?topic=Registry-registry_faq#faq_share_namespace)
 
 * [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
 
