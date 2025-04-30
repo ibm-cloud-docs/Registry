@@ -40,7 +40,7 @@
     {
       "title": "Migrating container images between different namespaces in the same IBM Cloud Container Registry region",
       "description": "A common question that is asked is about how to migrate images between namespaces in IBM Cloud Container Registry more easily.",
-      "href": "https://community.ibm.com/community/user/cloud/blogs/jack-baines/2024/03/20/migrating-container-images-between-different-names",
+      "href": "https://community.ibm.com/community/user/blogs/jack-baines/2024/03/20/migrating-container-images-between-different-names",
       "type": "blog"
     },
     {
