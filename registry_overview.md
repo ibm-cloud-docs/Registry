@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-10"
+lastupdated: "2025-04-30"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -272,11 +272,9 @@ Storage is provided for [OCI container images](#x9860419){: term} (also known as
 ### Registry namespace
 {: #overview_elements_namespace}
 
-A collection of repositories that store your container images in {{site.data.keyword.registryshort}}. The registry namespace is associated with your {{site.data.keyword.cloud_notm}} account. You can have multiple registry namespaces in an account.
+A folder that contains folders or repositories that store your container images in {{site.data.keyword.registryshort}}. The registry namespace is associated with your {{site.data.keyword.cloud_notm}} account. You can have multiple registry namespaces in an account.
 
-A registry namespace is made up of one or more repositories.
-
-When you set up your own namespace in {{site.data.keyword.registryshort}}, the namespace is appended to the registry URL `<region>.icr.io/my_namespace`. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Every user in your {{site.data.keyword.cloud_notm}} account can view and work with images that are stored in your registry namespace.
+When you set up your own namespace in {{site.data.keyword.registryshort}}, the namespace is appended to the registry URL `<region>.icr.io/my_namespace`. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Every user in your {{site.data.keyword.cloud_notm}} account who has the correct IAM permissions, can view and work with images that are stored in your registry namespace.
 
 You can have 100 namespaces in each region.
 {: note}
