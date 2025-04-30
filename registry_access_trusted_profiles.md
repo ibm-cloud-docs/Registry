@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-30"
 
 keywords: API key, tokens, automating access, access, authentication, Podman, Skopeo, Buildah, Docker, client, authenticate, iam, domain, service id api key, trusted profiles,
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Accessing {{site.data.keyword.registrylong_notm}} by using trusted profiles
+# Accessing {{site.data.keyword.registryshort_notm}} by using trusted profiles
 {: #registry_access_trusted_profiles}
 
 You can use trusted profiles to grant different {{site.data.keyword.cloud}} identities access to {{site.data.keyword.registrylong}} resources in your account. Automatically grant federated users access to your account with conditions based on SAML attributes from your corporate directory.
