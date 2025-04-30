@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-23"
+lastupdated: "2025-04-30"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -47,6 +47,14 @@ For more information, see [Setting up the {{site.data.keyword.registryshort}} CL
 {: faq}
 
 You can use a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains listed in [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall) or use a [virtual private network (VPN)](/docs/iaas-vpn?topic=iaas-vpn-getting-started).
+
+## What is my namespace?
+{: #faq_namespace_2}
+{: faq}
+
+To find out the names of your namespaces, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list) command.
+
+For more information about namespaces, see [Registry namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace). To plan your namespaces, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
 
 ## How many namespaces can you have?
 {: #faq_namespace}
@@ -183,6 +191,12 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 To access an image, a user must be a member of the {{site.data.keyword.cloud_notm}} account that owns the images. After the user is added to the account, appropriate IAM policies must be created to assign access.
 
 For more information, see [Defining IAM access policies](/docs/Registry?topic=Registry-user).
+
+## Can I share a {{site.data.keyword.registryshort}} namespace across {{site.data.keyword.cloud_notm}} accounts?
+{: #faq_share_namespace}
+{: faq}
+
+You can't share a {{site.data.keyword.registryshort}} (`icr.io`) namespace across {{site.data.keyword.cloud_notm}} accounts. A namespace is owned by a single {{site.data.keyword.cloud_notm}} account and cannot be shared with multiple accounts.
 
 ## Do I have any untagged images?
 {: #faq_untagged_image_1}
