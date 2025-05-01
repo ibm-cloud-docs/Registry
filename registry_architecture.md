@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-26"
+  years: 2020, 2025
+lastupdated: "2025-04-30"
 
 keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registrylong_notm}} architecture and workload
+# {{site.data.keyword.registryshort_notm}} architecture and workload
 {: #registry_architecture}
 
 {{site.data.keyword.registrylong}} is a multi-tenant, highly available, scalable, and encrypted private image [registry](#x2064940){: term} that's hosted and managed by {{site.data.keyword.IBM_notm}}.

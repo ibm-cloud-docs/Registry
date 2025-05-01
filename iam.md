@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-30"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -37,7 +37,7 @@ Policies enable access to be granted at different levels. Some options include t
 - Access to all IAM-enabled services in your account
 - Access to resources within a resource group
 
-If you want to restrict user access to one or more [namespaces](#x2031005){: term} for an ID that you're using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
+If you want to restrict user access to one or more [namespaces](#x2031005){: term} for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
 
 You can set permissions so that you can configure access to resources within a namespace at the [resource group](#x2161955){: term} level. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
 
@@ -48,7 +48,7 @@ For more information about enabling policies for {{site.data.keyword.registrysho
 
 After you define the scope of the IAM access policy, you assign a role.
 
-If a specific role and its actions don't fit the use case that you're looking to address, you can [create a custom role](/docs/account?topic=account-custom-roles&interface=ui#custom-access-roles) and pick the actions to include.
+If a specific role and its actions don't fit the use case that you are looking to address, you can [create a custom role](/docs/account?topic=account-custom-roles&interface=ui#custom-access-roles) and pick the actions to include.
 
 Review the following tables that outline the actions that each role allows within the {{site.data.keyword.registryshort}} service.
 
@@ -58,7 +58,7 @@ Review the following tables that outline the actions that each role allows withi
 
 For more information about the exact actions that are mapped to each role, see [IAM roles and actions for {{site.data.keyword.registryshort}}](/docs/account?topic=account-iam-service-roles-actions#container-registry-roles).
 
-For more information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+For more information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 ## Context-based restrictions
 {: #iam_cbr}
@@ -77,7 +77,7 @@ The following table details actions that are mapped to platform management roles
 | Viewer | Not supported | Not applicable |
 | Editor | Not supported | Not applicable |
 | Operator | Not supported | Not applicable |
-| Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registryshort}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply) command to configure the pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters). |
+| Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registryshort}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply) command to configure the pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters). |
 {: caption="IAM user roles and actions" caption-side="bottom"}
 {: #table_registry_iam__user_roles}
 
@@ -200,7 +200,7 @@ For step-by-step instructions for assigning, removing, and reviewing access, see
 
 The following example is for assigning the `Manager` role for {{site.data.keyword.registryshort}}:
 
-Use `container-registry` for the service name, and refer to the Role ID values table to ensure that you're using the correct value for the CRN.
+Use `container-registry` for the service name, and refer to the Role ID values table to ensure that you are using the correct value for the CRN.
 {: requirement}
 
 ```sh
