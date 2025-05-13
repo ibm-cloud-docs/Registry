@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-05-13"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -86,14 +86,14 @@ Depending on the service plan that you choose, you are charged for the storage a
 #### Storage charges
 {: #registry_billing_traffic_storage}
 
-Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you're on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you're on the free plan, you can store your images in {{site.data.keyword.registryshort}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
+Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you're on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months each month are free. If you're on the free plan, you can store your images in {{site.data.keyword.registryshort}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
 
 The following example is for the standard plan:
 :   You use 5 GB for exactly half the month and then you push several images to your namespace and use 10 GB for the rest of the month. Your monthly usage is calculated as shown in the following example:
 
     (5 GB x 0.5 (months)) + (10 GB x 0.5 (months)) = 2.5 + 5 = 7.5 GB-Months
 
-    In the standard plan, the first 0.5 GB-Months are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
+    In the standard plan, the first 0.5 GB-Months each month are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
 
 #### Pull traffic charges
 {: #registry_billing_traffic_pull_traffic}
