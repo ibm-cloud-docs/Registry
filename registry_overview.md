@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-05-13"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -93,7 +93,7 @@ The following example is for the standard plan:
 
     (5 GB x 0.5 (months)) + (10 GB x 0.5 (months)) = 2.5 + 5 = 7.5 GB-Months
 
-    In the standard plan, the first 0.5 GB-Months are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
+    In the standard plan, the first 0.5 GB-Months  are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
 
 #### Pull traffic charges
 {: #registry_billing_traffic_pull_traffic}
