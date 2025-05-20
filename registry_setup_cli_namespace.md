@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-01"
+lastupdated: "2025-05-20"
 
-keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
+keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in, delete Container Registry, uninstall Container Registry
 
 subcollection: Registry
 
@@ -95,7 +95,7 @@ ibmcloud plugin install container-registry -v 0.1.584
 {: help}
 {: support}
 
-If you no longer need the `container-registry` CLI plug-in, you can uninstall it.
+If you don't want to use {{site.data.keyword.registryshort}} anymore, you can delete it by uninstalling the `container-registry` plug-in.
 
 To uninstall the `container-registry` CLI plug-in, run the following command:
 
