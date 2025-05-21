@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-06"
+lastupdated: "2025-05-21"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -143,7 +143,7 @@ If your image does not meet the requirements that are set by your organization's
 {: support}
 {: ui}
 
-You can review the security of the Docker images that are stored in your namespaces in {{site.data.keyword.registryshort}} by using the {{site.data.keyword.cloud_notm}} console. Version 4 does not support viewing vulnerability reports in the console, but you can use the CLI or the API.
+You can review the security of the Docker images that are stored in your namespaces in {{site.data.keyword.registryshort}} by using the {{site.data.keyword.cloud_notm}} console.
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 2. Click the **Navigation menu** icon, then click **Container Registry**.
