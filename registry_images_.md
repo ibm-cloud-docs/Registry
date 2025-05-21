@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-05-21"
 
-keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
+keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key, upload images, pull images, push images
 
 subcollection: Registry
 
