@@ -79,7 +79,7 @@ If you still see unacceptable performance, contact support, see [Getting help an
 
 Security notices for Vulnerability Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
 
-## How do I get notified if the security status of an image changes?
+## How do I get notified about the security status of an image?
 {: #faq_va_security_status}
 {: faq}
 
