@@ -1696,7 +1696,7 @@ subcollection: Registry
 
 * [How often are the security notices updated in Vulnerability Advisor?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_update_security_notice)
 
-* [How do I get notified about the security status of an image changes?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_security_status)
+* [How do I get notified if the security status of an image changes?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_security_status)
 
 * [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_package_version)
 
