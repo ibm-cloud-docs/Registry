@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-05-22"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1695,6 +1695,8 @@ subcollection: Registry
 * [Why doesn't a new image scan in Vulnerability Advisor?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_new_scan_error)
 
 * [How often are the security notices updated in Vulnerability Advisor?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_update_security_notice)
+
+* [How do I get notified about the security status of an image changes?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_security_status)
 
 * [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_package_version)
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-23"
+lastupdated: "2025-05-22"
 
-keywords: commands, questions, registry, Vulnerability Advisor, frequently asked questions, image, package manager, security notices, version of a package
+keywords: commands, questions, registry, Vulnerability Advisor, frequently asked questions, image, package manager, security notices, version of a package, notify security status, vulnerabilities
 
 subcollection: Registry
 
@@ -78,6 +78,12 @@ If you still see unacceptable performance, contact support, see [Getting help an
 {: faq}
 
 Security notices for Vulnerability Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
+
+## How do I get notified about the security status of an image changes?
+{: #faq_va_security_status}
+{: faq}
+
+You can see the security status of your images within the Vulnerability Advisor dashboard. You cannot set up notifications.
 
 ## Which version of a package is installed in my image?
 {: #faq_va_package_version}
