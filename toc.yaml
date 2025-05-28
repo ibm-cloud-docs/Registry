@@ -146,7 +146,7 @@ toc:
           - topic: registry_logs.md
             navtitle: Logging
           - topic: registry_at_iam.md
-            navtitle: IAM and activity tracker auditing event actions by API method
+            navtitle: "IAM and activity tracker auditing event actions by API method"
   - navgroup:
       id: reference
       topics:
