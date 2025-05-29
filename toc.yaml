@@ -24,6 +24,7 @@ toc:
           label: What are containers?
           href: https://www.ibm.com/think/topics/containers
       - topicgroup:
+          id: notifications
           label: Notifications
           topics:
           - topic: registry_notices.md
@@ -82,6 +83,7 @@ toc:
       - topic: registry_tutorial_configure_iam.md
         navtitle: Granting access to Container Registry resources tutorial
       - topicgroup:
+          id: solution-tutorials
           label: Solution tutorials
           topics:
           - include: ../solution-tutorials/vm-to-containers-and-kubernetes.md
@@ -101,6 +103,7 @@ toc:
       - topic: registry_quota.md
         navtitle: Managing quota limits for storage and pull traffic
       - topicgroup:
+          id: user-access
           label: Managing user access
           topics:
           - topic: registry_access.md
@@ -115,6 +118,7 @@ toc:
       - topic: terraform.md
         navtitle: Setting up Terraform
       - topicgroup:
+          id: enhancing-security
           label: Enhancing security
           topics:
           - topic: manage-scc.md
@@ -137,6 +141,7 @@ toc:
             navtitle: Protecting resources with context-based restrictions
           - registry_firewall.md
       - topicgroup:
+          id: observability
           label: Observability
           topics:
           - topic: registry_monitor.md
@@ -151,6 +156,7 @@ toc:
       id: reference
       topics:
       - topicgroup:
+          id: container-registry-cli
           label: Container Registry CLI
           topics:
           - topic: container-registry-cli.md
@@ -162,6 +168,7 @@ toc:
       - topic: service-dependency.md
         navtitle: Service dependencies
       - topicgroup:
+          id: high-availability-dr
           label: High availability and disaster recovery
           topics:
           - topic: registry_ha.md
@@ -176,6 +183,7 @@ toc:
           label: Terraform reference
           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace
       - topicgroup:
+          id: api-reference
           label: API reference
           links:
           - link:
@@ -185,6 +193,7 @@ toc:
               label: Vulnerability Advisor 4 for IBM Cloud Container Registry API
               href: https://{DomainName}/apidocs/vulnerability-advisor
       - topicgroup:
+          id: related-links
           label: Related links
           links:
           - link:
@@ -200,10 +209,12 @@ toc:
       id: help
       topics:
       - topicgroup:
+          id: troubleshoot
           label: Troubleshooting
           topics:
           - ts_index.md
           - topicgroup:
+              id: troubleshoot-cli-login
               label: Troubleshooting CLI login
               topics:
               - ts_login.md
@@ -214,6 +225,7 @@ toc:
               - topic: ts_docker_mac.md
                 navtitle: Why is docker login on my Mac failing?
           - topicgroup:
+              id: troubleshoot-pull-push-errors
               label: Troubleshooting pull and push errors
               topics:
               - topic: ts_push_pull_docker.md
@@ -240,6 +252,7 @@ toc:
                 navtitle: Why am I getting a Forbidden error when I'm using Code Engine?
               - include: ../containers/ts-app-02-imgpull.md
           - topicgroup:
+              id: troubleshoot-cli-commands
               label: Troubleshooting CLI commands
               topics:
               - topic: ts_add_namespace.md
@@ -273,16 +286,19 @@ toc:
               - topic: ts_va_version_error.md
                 navtitle: Why do I get an error about an invalid version of Vulnerability Advisor being specified?
           - topicgroup:
+              id: troubleshoot-network
               label: Troubleshooting networking
               topics:
               - ts_firewall.md
               - ts_connect.md
           - topicgroup:
+              id: troubleshoot-portieris
               label: Troubleshooting Portieris
               topics:
               - topic: ts_pods.md
                 navtitle: Why don't my pods restart after my workers are down?
       - topicgroup:
+          id: faq
           label: FAQ
           topics:
           - registry_faq.md
