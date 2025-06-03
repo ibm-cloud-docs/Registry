@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-06-03"
 
 keywords: data portability
 
@@ -49,10 +49,10 @@ For more information about your responsibilities for {{site.data.keyword.registr
 
 1. Run the following commands for each region in which container images are stored.
 
-    a. Set the {{site.data.keyword.cloud_notm}} region.
+    a. Set the {{site.data.keyword.cloud_notm}} region, where `REGION` is the name of the [region](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
     ```sh
-    ibmcloud cr region-set <region>
+    ibmcloud cr region-set REGION
     ```
     {: pre}
 
@@ -63,17 +63,17 @@ For more information about your responsibilities for {{site.data.keyword.registr
     ```
     {: pre}
 
-    c. Tag each image with the name for the new registry.
+    c. Tag each image with the name for the new registry, where `DOMAIN_NAME` is the domain name (for example, `us.icr.io`), `NAMESPACE`is the namespace, `NAME` is the name, and `NEW_IMAGE_NAME` is the new image name.
 
     ```sh
-    docker tag <registry_region>.icr.io/<namespace>/<name> <new_image_name>
+    docker tag DOMAIN_NAME/NAMESPACE/NAME NEW_IMAGE_NAME
     ```
     {: pre}
 
-    d. Push each image to the new registry.
+    d. Push each image to the new registry, where `NEW_IMAGE_NAME` is the new image name.
 
     ```sh
-    docker push <new_image_name>
+    docker push NEW_IMAGE_NAME
     ```
     {: pre}
 
