@@ -58,10 +58,10 @@ If your image isn't being scanned, check that it has a [tag](/docs/Registry?topi
 {: #faq_va_new_scan_error}
 {: faq}
 
-If you get the vulnerability report immediately after you add the image to the [registry](#x2064940){: term}, you might receive the following error, where `<image_name>` is the name of your image:
+If you get the vulnerability report immediately after you add the image to the [registry](#x2064940){: term}, you might receive the following error, where `<imagename>` is the name of your image:
 
 ```txt
-BXNVA0009E:  <image_name> has not been scanned. Try again later.
+BXNVA0009E:  <imagename> has not been scanned. Try again later.
 If this issue persists, contact support for help;
 see https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support
 ```
