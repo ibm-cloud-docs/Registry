@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-21"
+lastupdated: "2025-06-05"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -182,10 +182,10 @@ You can review the security of Docker images that are stored in your namespaces 
     - `Scanning` The image is being scanned and the final vulnerability status is not determined.
     - `Unsupported OS` The scan found no supported operating system (OS) distribution and no active configuration issues.
 
-3. To view the details for the status, review the Vulnerability Advisor report:
+3. To view the details for the status, review the Vulnerability Advisor report by running the following command. Where `REGION` is the region, `MY_NAMESPACE` is your namespace, `MY_IMAGE` is your image, and `TAG` is your tag.
 
     ```txt
-    ibmcloud cr va <region>.icr.io/<my_namespace>/<my_image>:<tag>
+    ibmcloud cr va REGION.icr.io/MY_NAMESPACE/MY_IMAGE:TAG
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-06-05"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -72,7 +72,7 @@ Before you begin, complete the following tasks.
     - Download the Helm chart from a Helm repository:
 
         ```txt
-        helm pull <chart URL | REPO/CHART_NAME --version CHART_VERSION
+        helm pull [CHART_URL | REPO/CHART_NAME] --version CHART_VERSION
         ```
         {: pre}
 
