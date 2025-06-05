@@ -87,7 +87,7 @@ You can pull images from any other {{site.data.keyword.registryshort_notm}} regi
 To configure a VPE gateway, complete the following steps:
 
 1. List the available services, including {{site.data.keyword.cloud_notm}} infrastructure services available (by default) for all VPC users. For more information, see [VPE supported services](/docs/vpc?topic=vpc-vpe-supported-services).
-2. [Create an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway) for {{site.data.keyword.registrylong_notm}} that you want to be privately available to the VPC. To create the VPE gateway by using the CLI, run the following command, where `CRN` is the CRN of the target region as shown in Table 1, `VPC_ID` is the ID of the VPC, and `MY_NAME` is the name of the new endpoint gateway.
+2. [Create an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway) for {{site.data.keyword.registrylong_notm}} that you want to be privately available to the VPC. To create the VPE gateway by using the CLI, run the following command, where `CRN` is the CRN of the target region as shown in the [Region availability and cloud resource names (CRNs) for connecting {{site.data.keyword.registryshort_notm}} over private {{site.data.keyword.cloud_notm}} networks](#table_registry_vpe) table, `VPC_ID` is the ID of the VPC, and `MY_NAME` is the name of the new endpoint gateway.
 
     ```txt
     ibmcloud is endpoint-gateway-create --target CRN --vpc-id VPC_ID --name MY_NAME
