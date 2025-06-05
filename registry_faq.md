@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-06-03"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -46,7 +46,7 @@ For more information, see [Setting up the {{site.data.keyword.registryshort}} CL
 {: #faq_firewall}
 {: faq}
 
-You can use a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains listed in [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall) or use a [virtual private network (VPN)](/docs/iaas-vpn?topic=iaas-vpn-getting-started).
+You can use a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains that are listed in [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall) or use a [virtual private network (VPN)](/docs/iaas-vpn?topic=iaas-vpn-getting-started).
 
 ## What is my namespace?
 {: #faq_namespace_2}
