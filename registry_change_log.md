@@ -20,15 +20,6 @@ In this change log you can learn about what's new in the CLI. You can find out a
 
 For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the container-registry CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 
-## Version 1.3.14
-{: #cli-change-logv1-1314}
-
-Version 1.3.14 of the CLI was released on 6 June 2025.
-
-This release has the following changes:
-
-- Remediates vulnerabilities.
-
 
 ## Version 1.3.13
 {: #cli-change-logv1-1313}
