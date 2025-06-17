@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-06-09"
+lastupdated: "2025-06-17"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -954,6 +954,8 @@ subcollection: Registry
 * [Setting up region-based policies for context-based restrictions](/docs/Registry?topic=Registry-registry-cbr&interface=api#registry-cbr_region_policy)
 
 [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall#registry_firewall)
+
+* [Using a public network to access {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_firewall#registry_firewall_public)
 
 
 ## Observability
