@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-06-20"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, tag, repository, required permissions, resource group, command options, security issue, notes
 
@@ -310,12 +310,6 @@ If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_c
 You can refer to an image by using a combination of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`. You can also refer to the image name by using a combination of the content of the **Repository** column (`repository`) and one of the tags in the **Tags** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`.
 {: tip}
 
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
-
-From 24 July 2023, the `--json` option is deprecated and is replaced by the `--output json` option.
-{: deprecated}
-
 ```txt
 ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --output json | -o json] [--restrict RESTRICTION] [--include-ibm] [--no-va] [--va]
 ```
@@ -412,9 +406,6 @@ When you're using the digest to identify an image, always use the long format.
 The image name is the combination of the content of the **Repository** and **Tag** columns in the format: `repository:tag`
 {: tip}
 
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
-
 If the command to list images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
 {: tip}
 
@@ -472,9 +463,6 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 {: #ic_cr_image_prune_untagged}
 
 Delete all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
-
-From 24 July 2023, the `--json` option is deprecated and is replaced by the `--output json` option.
-{: deprecated}
 
 ```txt
 ibmcloud cr image-prune-untagged [--force | -f [--output json | -o json]] --restrict RESTRICTION
@@ -1305,9 +1293,6 @@ If you want to restore a deleted image, you can list the contents of the trash b
 If an image that you're expecting to see doesn't show in the list that is produced, see [Why doesn't the retention command show all the images?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention) for assistance.
 {: tip}
 
-From 24 July 2023, the `--json` option is deprecated and is replaced by the `--output json` option.
-{: deprecated}
-
 ```txt
 ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-untagged] --images IMAGECOUNT NAMESPACE
 ```
@@ -1355,9 +1340,6 @@ Displays all images in the trash in your {{site.data.keyword.cloud_notm}} accoun
 
 If you want to restore an image from the trash, run the [`ibmcloud cr image-restore`](#bx_cr_image_restore) command, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
-From 24 July 2023, the `--json` option is deprecated and is replaced by the `--output json` option.
-{: deprecated}
-
 ```txt
 ibmcloud cr trash-list [--restrict NAMESPACE] [--output json | -o json]
 ```
@@ -1392,9 +1374,6 @@ ibmcloud cr trash-list --restrict birds
 
 Find out which version of Vulnerability Advisor you're using. Version 4 is the only valid version.
 
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
-
 ```txt
 ibmcloud cr va-version
 ```
@@ -1409,9 +1388,6 @@ None.
 {: #ic_cr_va_version_set}
 
 Set the version of Vulnerability Advisor.
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
 
 If you try to set an invalid version of Vulnerability Advisor, you get en error, see [Why do I get an error about an invalid version of Vulnerability Advisor being specified?](/docs/Registry?topic=Registry-troubleshoot-va-version-error) for assistance.
 {: tip}
@@ -1446,9 +1422,6 @@ ibmcloud cr va-version-set v4
 {: #bx_cr_va}
 
 View a vulnerability assessment report for your images.
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
 
 ```txt
 ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--configuration-issues | -c] [--output FORMAT | -o FORMAT] IMAGE [IMAGE...]
