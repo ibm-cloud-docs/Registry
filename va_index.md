@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-06-20"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -27,9 +27,6 @@ Any issues that are found by Vulnerability Advisor result in a verdict that indi
 Fixing the security and configuration issues that are reported by Vulnerability Advisor can help you to secure your {{site.data.keyword.cloud_notm}} infrastructure.
 
 You can use {{site.data.keyword.compliance_long}} to monitor vulnerabilities that are detected by Vulnerability Advisor. For more information, see [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic=security-compliance-getting-started).
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
 
 Using Portieris to block the deployment of images with issues that are found by Vulnerability Advisor is deprecated.
 {: deprecated}
@@ -121,9 +118,6 @@ Alternatively, you can set an environment variable `va_version`, and specify the
 
 If you try to set an invalid version of Vulnerability Advisor, you get en error, see [Why do I get an error about an invalid version of Vulnerability Advisor being specified?](/docs/Registry?topic=Registry-troubleshoot-va-version-error) for assistance.
 {: tip}
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
 
 ## Reviewing a vulnerability report
 {: #va_reviewing}

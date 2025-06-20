@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-06-20"
 
 keywords: commands, questions, registry, Vulnerability Advisor, frequently asked questions, image, package manager, security notices, version of a package, notify security status, vulnerabilities
 
@@ -173,6 +173,3 @@ On {{site.data.keyword.redhat_openshift_full}} and CentOS, to determine the vers
 {: faq}
 
 Vulnerability Advisor version 4 is the only version available. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
-
-Vulnerability Advisor version 3 is discontinued from 13 November 2023. For more information about how to update to version 4, see [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-{: deprecated}
