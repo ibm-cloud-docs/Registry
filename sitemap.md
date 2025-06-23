@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-06-17"
+lastupdated: "2025-06-23"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1669,6 +1669,8 @@ subcollection: Registry
 * [How can I share access to an image?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
 
 * [Can I share a {{site.data.keyword.registryshort}} namespace across {{site.data.keyword.cloud_notm}} accounts?](/docs/Registry?topic=Registry-registry_faq#faq_share_namespace)
+
+* [Can I push images to {{site.data.keyword.registryshort}} on a different {{site.data.keyword.cloud_notm}} account than the one that is running the build pipeline?](/docs/Registry?topic=Registry-registry_faq#faq_push_image_diff_account)
 
 * [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
 
