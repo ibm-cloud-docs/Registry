@@ -126,7 +126,7 @@ To log in to {{site.data.keyword.registrylong_notm}} by using Podman, you can us
 
 If you prefer not to use an API key, you can use the following command to log in with a user refresh token `ibmcloud cr login --client podman`.
 
-For more information, see [Using Podman to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_podman), [Using Podman to authenticate with the registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_podman), and [ibmcloud cr login](/docs/Registry?topic=Registry-containerregcli#bx_cr_login).
+For more information, see [Using Podman to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_podman), [Using Podman to authenticate with the registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_podman), and [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login).
 
 ## Do images in the trash count toward my quota?
 {: #faq_trash}
