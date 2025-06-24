@@ -764,13 +764,13 @@ subcollection: Registry
 
     * [Using client software to authenticate in automation](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth)
 
-        * [Using Buildah to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_buildah)
+        * [Using Buildah to authenticate with the registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_buildah)
 
-        * [Using Docker to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_docker)
+        * [Using Docker to authenticate with the registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_docker)
 
-        * [Using Podman to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_podman)
+        * [Using Podman to authenticate with the registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_podman)
 
-        * [Using Skopeo to authenticate with the registry](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_skopeo)
+        * [Using Skopeo to authenticate with the registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_skopeo)
 
 [Managing IAM access](/docs/Registry?topic=Registry-iam#iam)
 
@@ -1653,6 +1653,8 @@ subcollection: Registry
 * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
 
 * [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
+
+* [How do I log in with Podman?](/docs/Registry?topic=Registry-registry_faq#faq_login_podman)
 
 * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 

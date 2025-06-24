@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-05-01"
+  years: 2025
+lastupdated: "2025-06-24"
 
 keywords: API key, tokens, automating access, access, authentication, Podman, Skopeo, Buildah, Docker, client, authenticate, iam, domain, service id api key, trusted profiles,
 
@@ -67,7 +67,7 @@ Examples of how to authenticate automatically with the registry are provided for
 - [Podman](#registry_access_trusted_profiles_apikey_auth_podman)
 - [Skopeo](#registry_access_trusted_profiles_apikey_auth_skopeo)
 
-#### Using Buildah to authenticate with the registry
+#### Using Buildah to authenticate with the registry by using trusted profiles
 {: #registry_access_trusted_profiles_apikey_auth_buildah}
 
 You can use Buildah to authenticate with the registry so that you can push and pull images to and from the registry.
@@ -79,7 +79,7 @@ buildah login -u PROFILE_ID -p API_KEY REGISTRY_DOMAIN
 ```
 {: pre}
 
-#### Using Docker to authenticate with the registry
+#### Using Docker to authenticate with the registry by using trusted profiles
 {: #registry_access_trusted_profiles_apikey_auth_docker}
 
 You can use Docker to authenticate with the registry so that you can push and pull images to and from the registry.
@@ -91,7 +91,7 @@ docker login -u PROFILE_ID -p API_KEY REGISTRY_DOMAIN
 ```
 {: pre}
 
-#### Using Podman to authenticate with the registry
+#### Using Podman to authenticate with the registry by using trusted profiles
 {: #registry_access_trusted_profiles_apikey_auth_podman}
 
 You can use Podman to authenticate with the registry so that you can push and pull images to and from the registry.
@@ -103,7 +103,7 @@ podman login -u PROFILE_ID -p API_KEY REGISTRY_DOMAIN
 ```
 {: pre}
 
-#### Using Skopeo to authenticate with the registry
+#### Using Skopeo to authenticate with the registry by using trusted profiles
 {: #registry_access_trusted_profiles_apikey_auth_skopeo}
 
 You can use Skopeo to authenticate with the registry so that you can push and pull images to and from the registry.
