@@ -1654,6 +1654,8 @@ subcollection: Registry
 
 * [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
+* [How do I log in with Podman?](/docs/Registry?topic=Registry-registry_faq#faq_login_podman)
+
 * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 
 * [How do I find the image digest?](/docs/Registry?topic=Registry-registry_faq#faq_digest)

@@ -118,6 +118,16 @@ ibmcloud cr images --include-ibm
 
 You can use Docker and non-Docker tools to build and push images to the registry. You can use non-Docker tools that support [OCI container image](#x9860419){: term} format and protocol. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
+## How do I log in with Podman?
+{: #faq_login_podman}
+{: faq}
+
+To log in to {{site.data.keyword.registrylong_notm}} by using Podman, you can use the following command `podman login DOMAIN_NAME -u iamapikey -p PASSWORD`. Replace `DOMAIN_NAME` with your domain name, for example `icr.io`, and replace `PASSWORD` with your IAM API key.
+
+If you prefer not to use an API key, you can use the following command to log in with a user refresh token `ibmcloud cr login --client podman`.
+
+For more information, see [Using Podman to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_podman), [Using Podman to authenticate with the registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_apikey_auth_podman), and [ibmcloud cr login](/docs/Registry?topic=Registry-containerregcli#bx_cr_login).
+
 ## Do images in the trash count toward my quota?
 {: #faq_trash}
 {: faq}
