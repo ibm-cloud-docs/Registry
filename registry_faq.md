@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-23"
+lastupdated: "2025-06-24"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -198,11 +198,11 @@ For more information, see [Defining IAM access policies](/docs/Registry?topic=Re
 
 You can't share a {{site.data.keyword.registryshort}} (`icr.io`) namespace across {{site.data.keyword.cloud_notm}} accounts. A namespace is owned by a single {{site.data.keyword.cloud_notm}} account and cannot be shared with multiple accounts.
 
-## Can I push images to {{site.data.keyword.registryshort}} on a different {{site.data.keyword.cloud_notm}} account than the one that is running the build pipeline?
+## Can I push images on a different account to the one that is running the build pipeline?
 {: #faq_push_image_diff_account}
 {: faq}
 
-Yes, you can push images to {{site.data.keyword.registrylong}} on a different {{site.data.keyword.cloud_notm}} account than the one that is running the build pipeline. Follow these steps:
+Yes, you can push images to {{site.data.keyword.registrylong_notm}} on a different {{site.data.keyword.cloud_notm}} account than the one that is running the build pipeline. Follow these steps:
 
  1. Create an API key in the target {{site.data.keyword.cloud_notm}} account with the necessary access policies to allow pushing images to the required namespace.
  2. Store the API key and the target namespace in your build pipeline configuration.
