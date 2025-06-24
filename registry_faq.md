@@ -118,7 +118,7 @@ ibmcloud cr images --include-ibm
 
 You can use Docker and non-Docker tools to build and push images to the registry. You can use non-Docker tools that support [OCI container image](#x9860419){: term} format and protocol. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
-## How do I log in with Podman?
+## How do I log in to {{site.data.keyword.registryshort}} with Podman?
 {: #faq_login_podman}
 {: faq}
 
