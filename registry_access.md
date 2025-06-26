@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-06-26"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -35,7 +35,7 @@ You can use service ID API keys to automate the pushing and pulling of container
 
 [API keys](#x8051010){: term} are linked to user IDs or service IDs in your account and you can use them across {{site.data.keyword.cloud}}. You can use an API key in the CLI or as part of automation to authenticate as your user or service identity. A [user API key](#registry_access_user_apikey_create) is associated with a user and their access policies. A [service ID API key](#registry_access_serviceid_apikey_create) has its own access policies. You can have several service IDs with different fine-grained policies so that your automation is granted specific and limited capabilities.
 
-When you create an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong}} cluster, the cluster is created with an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM Reader service access policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are authenticated in a nonexpiring service ID API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and to the list of secrets in the `default` service account for this Kubernetes namespace. If you require more service ID API keys or the service ID API key is missing, you can [create a service ID API key manually](#registry_access_serviceid_apikey_create).
+When you create an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong}} cluster, the cluster is created with an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM **Reader** service access policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are authenticated in a nonexpiring service ID API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and to the list of secrets in the `default` service account for this Kubernetes namespace. If you require more service ID API keys or the service ID API key is missing, you can [create a service ID API key manually](#registry_access_serviceid_apikey_create).
 
 You can use service ID API keys in the following places:
 
