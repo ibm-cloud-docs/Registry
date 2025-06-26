@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-06-26"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -141,7 +141,7 @@ You can review the security of the Docker images that are stored in your namespa
 2. Click the **Navigation menu** icon, then click **Container Registry**.
 3. Click **Images**. A list of your images and the security status of each image is displayed in the **Images** table.
 4. To see the report for the image that is tagged `latest`, click the row for that image. The **Image details** tab opens showing the data for that image. If no `latest` tag exists in the repository, the most recent image is used.
-5. If the **Security status** column shows any issues, to find out about the issues, click the **Issues by type** tab. The **Vulnerabilities** and **Configuration Issues** tables are displayed.
+5. If the **Security status** column shows any issues, to find out about the issues, click the **Issues by type** tab. The and **Configuration Issues** tables are displayed.
 
     - **Vulnerabilities** table. This table shows the Vulnerability ID for each issue, the policy status for that issue, the affected packages and how to resolve the issue. To see more information about that issue, expand the row. A summary of that issue is displayed that contains a link to the vendor security notice for that issue. Lists packages that contain known vulnerability issues.
 
