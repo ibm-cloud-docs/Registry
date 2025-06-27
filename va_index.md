@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-06-27"
 
-keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
+keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
 subcollection: Registry
 
@@ -24,7 +24,7 @@ When you add an image to a namespace, the image is automatically scanned by Vuln
 
 Any issues that are found by Vulnerability Advisor result in a verdict that indicates that it is not advisable to deploy this image. If you choose to deploy the image, any containers that are deployed from the image include known issues that might be used to attack or otherwise compromise the container. The verdict is adjusted based on any exemptions that you specified.
 
-Fixing the security and configuration issues that are reported by Vulnerability Advisor can help you to secure your {{site.data.keyword.cloud_notm}} infrastructure.
+Fixing the security issues that are reported by Vulnerability Advisor can help you to secure your {{site.data.keyword.cloud_notm}} infrastructure.
 
 Using Portieris to block the deployment of images with issues that are found by Vulnerability Advisor is deprecated.
 {: deprecated}
@@ -141,15 +141,11 @@ You can review the security of the Docker images that are stored in your namespa
 2. Click the **Navigation menu** icon, then click **Container Registry**.
 3. Click **Images**. A list of your images and the security status of each image is displayed in the **Images** table.
 4. To see the report for the image that is tagged `latest`, click the row for that image. The **Image details** tab opens showing the data for that image. If no `latest` tag exists in the repository, the most recent image is used.
-5. If the **Security status** column shows any issues, to find out about the issues, click the **Issues by type** tab. The **Vulnerabilities** and **Configuration Issues** tables are displayed.
+5. If the **Security status** column shows any issues, to find out about the issues, click the **Issues by type** tab. The **Vulnerabilities** table is displayed.
 
     - **Vulnerabilities** table. This table shows the Vulnerability ID for each issue, the policy status for that issue, the affected packages and how to resolve the issue. To see more information about that issue, expand the row. A summary of that issue is displayed that contains a link to the vendor security notice for that issue. Lists packages that contain known vulnerability issues.
 
         The list is updated daily by using published security notices for the Docker image types that are listed in [Types of vulnerabilities](#types). Typically, for a vulnerable package to pass the scan, a later version of the package is required that includes a fix for the vulnerability. The same package can list multiple vulnerabilities and in this case, a single package update can correct multiple issues. Click the security notice code to view more information about the package and for steps to update the package.
-
-    - **Configuration issues** table. This table shows the configuration issue ID for each issue, the policy status for that issue, and the security practice. To see more information about that issue, expand the row. A summary of that issue is displayed that contains a link to the security notice for that issue.
-
-        The list contains suggestions for actions that you can take to increase the security of the container and any application settings for the container that are nonsecure. Expand the row to view how to resolve the issue.
 
 6. Complete the corrective action for each issue shown in the report, and rebuild the image.
 
@@ -172,7 +168,7 @@ You can review the security of Docker images that are stored in your namespaces 
     - `No Issues` No security issues were found.
     - `<X> Issues` The potential security issues or vulnerabilities that are found, where `<X>` is the number of issues.
     - `Scanning` The image is being scanned and the final vulnerability status is not determined.
-    - `Unsupported OS` The scan found no supported operating system (OS) distribution and no active configuration issues.
+    - `Unsupported OS` The scan found no supported operating system (OS) distribution.
 
 3. To view the details for the status, review the Vulnerability Advisor report by running the following command. Where `REGION` is the region, `MY_NAMESPACE` is your namespace, `MY_IMAGE` is your image, and `TAG` is your tag.
 
@@ -180,10 +176,6 @@ You can review the security of Docker images that are stored in your namespaces 
     ibmcloud cr va REGION.icr.io/MY_NAMESPACE/MY_IMAGE:TAG
     ```
     {: pre}
-
-    In the CLI output, you can view the following information about the configuration issues.
-    - `Security practice` A description of the vulnerability.
-    - `Corrective action` How to fix the vulnerability.
 
 ## Setting organizational exemption policies
 {: #va_managing_policy}
@@ -215,7 +207,7 @@ If you want to set exemptions from the policy by using the {{site.data.keyword.c
 5. Select the issue type.
 6. Enter the issue ID.
 
-    You can find this information in your [vulnerability report](#va_reviewing). The **Vulnerability ID** column contains the ID to use for CVE or security notice issues; the **Configuration Issue ID** column contains the ID to use for configuration issues.
+    You can find this information in your [vulnerability report](#va_reviewing). The **Vulnerability ID** column contains the ID to use for CVE or security notice issues.
     {: tip}
 
 7. Select the registry namespace, repository, image, and tag that you want the exemption to apply to.

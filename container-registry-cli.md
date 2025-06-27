@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-20"
+lastupdated: "2025-06-27"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, tag, repository, required permissions, resource group, command options, security issue, notes
 
@@ -93,7 +93,7 @@ To find out more about the required permissions, see [Access roles for configuri
 :   The type of security issue that you want to exempt. To find valid issue types, run `ibmcloud cr exemption-types`.
 
 `--issue-id ISSUE_ID`
-:   The ID of the security issue that you want to exempt. To find an issue ID, run `ibmcloud cr va <image>`, where `<image>` is the name of your image, and use the relevant value from either the **Vulnerability ID** or **Configuration Issue ID** column.
+:   The ID of the security issue that you want to exempt. To find an issue ID, run `ibmcloud cr va <image>`, where `<image>` is the name of your image, and use the relevant value from the **Vulnerability ID** column.
 
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
@@ -112,20 +112,6 @@ Create an account-wide CVE exemption for CVE with ID `CVE-2018-17929`.
 
 ```txt
 ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
-```
-{: pre}
-
-Create a configuration issue exemption for issue `application_configuration:nginx.ssl_protocols` for a single image with the tag `us.icr.io/birds/bluebird:1`.
-
-```txt
-ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
-```
-{: pre}
-
-Create a configuration issue exemption for issue `application_configuration:nginx.ssl_protocols` for a single image with the digest `us.icr.io/birds/bluebird@sha256:101010101010`.
-
-```txt
-ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird@sha256:101010101010 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
 ```
 {: pre}
 
@@ -231,20 +217,6 @@ Delete an account-wide CVE exemption for CVE with ID `CVE-2018-17929`.
 
 ```txt
 ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
-```
-{: pre}
-
-Delete a configuration issue exemption for issue `application_configuration:nginx.ssl_protocols` for a single image with the tag `us.icr.io/birds/bluebird:1`.
-
-```txt
-ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
-```
-{: pre}
-
-Delete a configuration issue exemption for issue `application_configuration:nginx.ssl_protocols` for a single image with the digest `us.icr.io/birds/bluebird@sha256:101010101010`.
-
-```txt
-ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird@sha256:101010101010 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
 ```
 {: pre}
 
@@ -1424,7 +1396,7 @@ ibmcloud cr va-version-set v4
 View a vulnerability assessment report for your images.
 
 ```txt
-ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--configuration-issues | -c] [--output FORMAT | -o FORMAT] IMAGE [IMAGE...]
+ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--output FORMAT | -o FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
@@ -1450,9 +1422,6 @@ To find out more about the required permissions, see [Access roles for using {{s
 
 `--vulnerabilities`, `-v`
 :   (Optional) The command output is restricted to show vulnerabilities only.
-
-`--configuration-issues`, `-c`
-:   (Optional) The command output is restricted to show configuration issues only.
 
 `--output FORMAT`, `-o FORMAT`
 :   (Optional) The command output is returned in the chosen format. The default format is `text`.
