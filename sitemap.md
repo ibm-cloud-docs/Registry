@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-07-01"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -153,14 +153,6 @@ subcollection: Registry
 
     * [2022](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2022)
 
-    * [2021](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2021)
-
-    * [2020](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2020)
-
-    * [2019](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2019)
-
-    * [2018](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2018)
-
     * [2017](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2017)
 
 [Firewall changes from 4 September 2024 for users that pull images from global](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
@@ -224,92 +216,6 @@ subcollection: Registry
 * [What if I did not implement the changes in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
 [Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
-
-[Ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions)
-
-* [What are exemptions?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_desc)
-
-* [What is the current behavior?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_behavior)
-
-* [Which regions currently replicate exemptions?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_replicate)
-
-* [Do I have any exemptions?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_own)
-
-* [How does this change affect me?](/docs/Registry?topic=Registry-registry_notices_exemptions#registry_notices_exemptions_affect)
-
-[Billing for storage used by untagged images from 1 February 2022](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing)
-
-* [What are untagged images?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_untagged_image)
-
-* [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_untagged_image_own)
-
-* [Do I need untagged images?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_untagged_image_need)
-
-* [How does this change affect me?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_affect)
-
-* [How can I remove untagged images?](/docs/Registry?topic=Registry-registry_notices_billing#registry_notices_billing_untagged_image_remove)
-
-[Support for the container build service ends on 5 October 2021](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos)
-
-* [What you need to know](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos_what)
-
-* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_cont_builds_eos#registry_notices_cont_builds_eos_action)
-
-[Changes to public IP addresses from 13 September 2021](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address)
-
-* [What you need to know:](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_know)
-
-* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_action)
-
-* [When the changes take effect](/docs/Registry?topic=Registry-registry_notices_public_ip_address#registry_notices_public_ip_address_change)
-
-[Using Notary v1 for signing images is deprecated from 8 July 2021](/docs/Registry?topic=Registry-registry_notices_notaryv1#registry_notices_notaryv1)
-
-[Registry tokens discontinued for authentication on 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth)
-
-* [What actions you must take by 19 August 2021](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_action)
-
-* [Learn more](/docs/Registry?topic=Registry-registry_notices_token_auth#registry_notices_token_auth_learn)
-
-[Deprecation of container builds - act by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds)
-
-* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_know)
-
-* [What actions you must take by 6 September 2021](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_action)
-
-* [Learn more](/docs/Registry?topic=Registry-registry_notices_container_builds#registry_notices_container_builds_learn)
-
-[End of support for UAA tokens from 12 August 2020](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token)
-
-* [Next steps to use IAM for authentication](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token_next)
-
-* [Summary](/docs/Registry?topic=Registry-registry_notices_uaa_token#registry_notices_uaa_token_summary)
-
-[Introducing retention policies from 23 September 2019](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention)
-
-* [Setting retention policies in the CLI](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention_cli)
-
-* [Learn more](/docs/Registry?topic=Registry-registry_notices_retention#registry_notices_retention_learn)
-
-[Registry token creation is discontinued from 1 July 2019](/docs/Registry?topic=Registry-registry_notices_token#registry_notices_token)
-
-* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_token#registry_notices_token_affect)
-
-* [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_token#registry_notices_token_benefit)
-
-[Introducing new domain names from 25 February 2019](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names)
-
-* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names_know)
-
-* [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_domain_names#registry_notices_domain_names_benefit)
-
-[Vulnerability Advisor version 2 API is being discontinued on 8 January 2019](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep)
-
-* [What is changing?](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep_change)
-
-* [End of support Date: 8 January 2019](/docs/Registry?topic=Registry-registry_notices_va_v2_dep#registry_notices_va_v2_dep_eos)
-
-[Support for IAM access policies](/docs/Registry?topic=Registry-registry_notices_iam_support#registry_notices_iam_support)
 
 [IBM Cloud Container Registry is available](/docs/Registry?topic=Registry-registry_notices_ibcr#registry_notices_ibcr)
 
@@ -393,34 +299,6 @@ subcollection: Registry
     * [Change to {{site.data.keyword.registryshort}} private IP addresses in all regions](/docs/Registry?topic=Registry-registry_release_notes#05jul2022_private_network)
 
     * [All accounts require IAM access policies](/docs/Registry?topic=Registry-registry_release_notes#05jul2022_iam)
-
-* [23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-23jun2022)
-
-    * [Change to {{site.data.keyword.registryshort}} private IP addresses in the following regions only: `br-sao`, `ca-tor`](/docs/Registry?topic=Registry-registry_release_notes#23jun2022_private_network)
-
-* [20 April 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-20apr2022)
-
-    * [{{site.data.keyword.registryshort}} private IP addresses are changing from 23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#20apr2022_private_network)
-
-* [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
-
-    * [Amendment to the minimum supported Docker version for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#01mar2022_docker)
-
-* [9 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-09feb2022)
-
-    * [All accounts will require IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_release_notes#09feb2022_iam)
-
-* [2 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-02feb2022)
-
-    * [Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions is discontinued](/docs/Registry?topic=Registry-registry_release_notes#02feb2022_exemption)
-
-* [1 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01feb2022)
-
-    * [Storage that is used by untagged images is being charged for](/docs/Registry?topic=Registry-registry_release_notes#01feb2022_billing)
-
-* [17 January 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-17jan2022)
-
-    * [View the activity tracker auditing events for {{site.data.keyword.redhat_notm}} signing](/docs/Registry?topic=Registry-registry_release_notes#17jan2022_sig)
 
 * [27 June 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2017)
 
