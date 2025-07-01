@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-07-01"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -229,79 +229,6 @@ All accounts require IAM access policies {: #05jul2022_iam}
     Other regions are unaffected because they already require IAM access policies for all accounts.
 
     For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
-
-## 23 June 2022
-{: #registry-23jun2022}
-{: release-note}
-
-Change to {{site.data.keyword.registryshort}} private IP addresses in the following regions only: `br-sao`, `ca-tor` {: #23jun2022_private_network}
-:   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network in the `br-sao` and `ca-tor` regions, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees also changed. This change also affects you if you have allowlists or a firewall rule. Other regions are not affected yet.
-
-    For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
-
-## 20 April 2022
-{: #registry-20apr2022}
-{: release-note}
-
-{{site.data.keyword.registryshort}} private IP addresses are changing from 23 June 2022 {: #20apr2022_private_network}
-:   By 23 June 2022, if you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, you must update your lists of allowed IP addresses to include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees are also changing, which might require updates to your firewall configuration.
-
-    For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
-
-## 1 March 2022
-{: #registry-01mar2022}
-{: release-note}
-
-Amendment to the minimum supported Docker version for {{site.data.keyword.registryshort}} {: #01mar2022_docker}
-:   From 1 March 2022, the minimum version of Docker Engine that is supported by {{site.data.keyword.registryshort}} is v17.07, or later.
-
-## 9 February 2022
-{: #registry-09feb2022}
-{: release-note}
-
-All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam}
-:   From 5 July 2022, to access {{site.data.keyword.registrylong_notm}}, you must be using {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of IAM API key policies in {{site.data.keyword.registryshort}} in February 2019, you must now ensure that you're using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
-
-    Policy-free authorization will be discontinued in the following {{site.data.keyword.registryshort}} regions:
-
-    - `au-syd`
-    - `eu-de`
-    - `eu-gb`
-    - `jp-tok`
-    - `us-south`
-
-    For more information about mapping the region name to the domain, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
-
-    Other regions are unaffected because they already require IAM access policies for all accounts.
-
-    For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
-
-## 2 February 2022
-{: #registry-02feb2022}
-{: release-note}
-
-Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions is discontinued {: #02feb2022_exemption}
-:   From 2 February 2022, all regions require separate exemption policy management. Exemption policies are used to exclude any matching vulnerabilities or configuration issues from Vulnerability Advisor reports. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add) command, see [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy).
-
-    For more information, see [{{site.data.keyword.registryshort_notm}} is ending exemption synchronization across regions on 31 January 2022](/docs/Registry?topic=Registry-registry_notices_exemptions).
-
-## 1 February 2022
-{: #registry-01feb2022}
-{: release-note}
-
-Storage that is used by untagged images is being charged for {: #01feb2022_billing}
-:   From 1 February 2022, {{site.data.keyword.registrylong_notm}} is charging for the storage that is used by [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images. To reduce the amount that you're charged, you can [clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged). You can also [free up used storage and change service plans or quota limits to stay within given quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
-
-    For more information, see [{{site.data.keyword.registryshort_notm}} to bill for storage used by untagged images from 1 February 2022](/docs/Registry?topic=Registry-registry_notices_billing).
-
-## 17 January 2022
-{: #registry-17jan2022}
-{: release-note}
-
-View the activity tracker auditing events for {{site.data.keyword.redhat_notm}} signing {: #17jan2022_sig}
-:   You can view the activity tracker auditing events for [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} operations.
-
-    For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
 ## 27 June 2017
 {: #registry-27jun2017}

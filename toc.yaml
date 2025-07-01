@@ -47,30 +47,6 @@ toc:
             navtitle: IAM access policies are required from 5 July 2022
           - topic: registry_notices_docker.md
             navtitle: Minimum supported Docker version from 1 March 2022
-          - topic: registry_notices_exemptions.md
-            navtitle: Ending exemption synchronization across regions on 31 January 2022
-          - topic: registry_notices_billing.md
-            navtitle: Billing for storage used by untagged images from 1 February 2022
-          - topic: registry_notices_cont_builds_eos.md
-            navtitle: Support for the container build service ends on 5 October 2021
-          - topic: registry_notices_public_ip_address.md
-            navtitle: Changes to public IP addresses from 13 September 2021
-          - topic: registry_notices_notaryv1.md
-            navtitle: Using Notary v1 for signing images is deprecated from 8 July 2021
-          - topic: registry_notices_token_auth.md
-            navtitle: Registry tokens discontinued for authentication on 19 August 2021
-          - topic: registry_notices_container_builds.md
-            navtitle: Deprecation of container builds - act by 6 September 2021
-          - topic: registry_notices_uaa_token.md
-            navtitle: End of support for UAA tokens from 12 August 2020
-          - topic: registry_notices_retention.md
-            navtitle: Introducing retention policies from 23 September 2019
-          - registry_notices_token.md
-          - topic: registry_notices_domain_names.md
-            navtitle: Introducing new domain names from 25 February 2019
-          - registry_notices_va_v2_dep.md
-          - topic: registry_notices_iam_support.md
-            navtitle: Support for IAM access policies
           - topic: registry_notices_ibcr.md
             navtitle: IBM Cloud Container Registry is available
       - topic: registry_release_notes.md
