@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-07-02"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -87,6 +87,19 @@ done
 You are not authorized to create a namespace in {{site.data.keyword.registrylong_notm}}. The error message `You are not authorized to access the specified resource.` indicates that you lack the necessary user permissions for working with namespaces. To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registryshort}} service at the account level. If you have the Manager role on the resource group, or resource groups, it is not sufficient; the Manager role must be at the account level.
 
 For more information, see [Why aren't I authorized to access a specified resource in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth) and [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
+
+## How do I obtain image pull credentials for {{site.data.keyword.registryshort}}?
+{: #faq_credentials}
+{: faq}
+
+For long-lived credentials, you want an API key that is associated with a service ID or user ID that has IAM reader permission on the namespace that contains the image. A user API key is associated with a user and their access policies. A service ID API key has its own access policies. You can create service ID API keys and user API keys manually in the {{site.data.keyword.cloud_notm}} console and in the CLI. For more information about API keys, see [Understanding API keys](/docs/account?topic=account-manapikey).
+
+For security reasons, the API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key.
+{: tip}
+
+You can create user API keys and service ID API keys in the console, the CLI, the API, and in Terraform. For more information about creating API keys, see [Managing user API keys](/docs/account?topic=account-userapikey&interface=ui) and [Managing service ID API keys](/docs/account?topic=account-serviceidapikeys&interface=ui).
+
+For more information about how to access {{site.data.keyword.registryshort}}, see [Accessing {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_access).
 
 ## How do I list image names?
 {: #faq_list_images}
