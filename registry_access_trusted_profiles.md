@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-07-22"
 
 keywords: API key, tokens, automating access, access, authentication, Podman, Skopeo, Buildah, Docker, client, authenticate, iam, domain, service id api key, trusted profiles,
 
@@ -66,6 +66,9 @@ Examples of how to authenticate automatically with the registry are provided for
 - [Docker](#registry_access_trusted_profiles_apikey_auth_docker)
 - [Podman](#registry_access_trusted_profiles_apikey_auth_podman)
 - [Skopeo](#registry_access_trusted_profiles_apikey_auth_skopeo)
+
+If you get a **400 Bad Request** message, the username and password combination is not valid.
+{: tip}
 
 #### Using Buildah to authenticate with the registry by using trusted profiles
 {: #registry_access_trusted_profiles_apikey_auth_buildah}
