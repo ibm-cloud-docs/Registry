@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-07-24"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -71,31 +71,31 @@ You can configure one monitoring instance in each region to collect platform met
 
 | Locations in Americas | Platform metrics available |
 |-----------------------|----------------------------|
-| `Dallas (us-south)` | Yes |
-| `Sao Paulo (br-sao)` | Yes |
-| `Toronto (ca-tor)` | Yes |
+| `Dallas (us-south)` | [Yes]{: tag-green} |
+| `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
+| `Toronto (ca-tor)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Americas locations" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_americas}
 
 | Locations in Asia Pacific | Platform metrics available |
 |---------------------------|----------------------------|
-| `Osaka (jp-osa)` | Yes |
-| `Sydney (au-syd)` | Yes |
-| `Tokyo (jp-tok)` | Yes |
+| `Osaka (jp-osa)` | [Yes]{: tag-green} |
+| `Sydney (au-syd)` | [Yes]{: tag-green} |
+| `Tokyo (jp-tok)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Asia-Pacific locations" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_ap}
 
 | Locations in Europe | Platform metrics available |
 |---------------------|----------------------------|
-| `Frankfurt (eu-de)` | Yes |
-| `London (eu-gb)` | Yes |
-| `Madrid (eu-es)` | Yes |
+| `Frankfurt (eu-de)` | [Yes]{: tag-green} |
+| `London (eu-gb)` | [Yes]{: tag-green} |
+| `Madrid (eu-es)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Europe locations" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_europe}
 
 | Location for Global | Platform metrics available |
 |---------------------|----------------------------|
-| `Global` | Yes |
+| `Global` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics for Global" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_global}
 
