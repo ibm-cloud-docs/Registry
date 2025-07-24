@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-07-24"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -71,31 +71,31 @@ You can configure one monitoring instance in each region to collect platform met
 
 | Locations in Americas | Platform metrics available |
 |-----------------------|----------------------------|
-| `Dallas (us-south)` | Yes |
-| `Sao Paulo (br-sao)` | Yes |
-| `Toronto (ca-tor)` | Yes |
+| `Dallas (us-south)` | [Yes]{: tag-green} |
+| `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
+| `Toronto (ca-tor)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Americas locations" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_americas}
 
 | Locations in Asia Pacific | Platform metrics available |
 |---------------------------|----------------------------|
-| `Osaka (jp-osa)` | Yes |
-| `Sydney (au-syd)` | Yes |
-| `Tokyo (jp-tok)` | Yes |
+| `Osaka (jp-osa)` | [Yes]{: tag-green} |
+| `Sydney (au-syd)` | [Yes]{: tag-green} |
+| `Tokyo (jp-tok)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Asia-Pacific locations" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_ap}
 
 | Locations in Europe | Platform metrics available |
 |---------------------|----------------------------|
-| `Frankfurt (eu-de)` | Yes |
-| `London (eu-gb)` | Yes |
-| `Madrid (eu-es)` | Yes |
+| `Frankfurt (eu-de)` | [Yes]{: tag-green} |
+| `London (eu-gb)` | [Yes]{: tag-green} |
+| `Madrid (eu-es)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Europe locations" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_europe}
 
 | Location for Global | Platform metrics available |
 |---------------------|----------------------------|
-| `Global` | Yes |
+| `Global` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics for Global" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_global}
 
@@ -160,8 +160,8 @@ The following table outlines the predefined monitoring dashboards that you can u
 
 | Dashboard name | Description | Default dashboard |
 |----------------|-------------|-------------------|
-| {{site.data.keyword.registryshort_notm}} Usage | A dashboard that you can use to visualize the traffic usage and storage usage. Traffic usage is the sum of bytes from image pulls from your {{site.data.keyword.registryshort_notm}} namespaces in the current billing period. Storage usage is the sum of bytes of images in your {{site.data.keyword.registryshort_notm}} namespaces. | Yes |
-| {{site.data.keyword.registryshort_notm}} Quota Usage | A dashboard that you can use to visualize the traffic usage and storage usage and compare the data to your quotas, if set. Visible only to those accounts that have finite quotas. The **Container Registry Quota Usage** dashboard is available only if you enable metrics and you have both a storage and a traffic quota set. | No |
+| {{site.data.keyword.registryshort_notm}} Usage | A dashboard that you can use to visualize the traffic usage and storage usage. Traffic usage is the sum of bytes from image pulls from your {{site.data.keyword.registryshort_notm}} namespaces in the current billing period. Storage usage is the sum of bytes of images in your {{site.data.keyword.registryshort_notm}} namespaces. | [Yes]{: tag-green} |
+| {{site.data.keyword.registryshort_notm}} Quota Usage | A dashboard that you can use to visualize the traffic usage and storage usage and compare the data to your quotas, if set. Visible only to those accounts that have finite quotas. The **Container Registry Quota Usage** dashboard is available only if you enable metrics and you have both a storage and a traffic quota set. | [No]{: tag-red}|
 {: caption="Predefined dashboards" caption-side="bottom"}
 {: #table_registry_monitor_dashboards_predefined}
 
