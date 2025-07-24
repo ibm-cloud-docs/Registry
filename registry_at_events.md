@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-04-01"
 
 keywords: Track, tracking events, find events, activity tracking for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -95,8 +95,6 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {: tab-group="atracker"}
 {: class="simple-tab-table"}
 {: row-headers}
-
-
 
 ## Viewing activity tracking events for {{site.data.keyword.registryshort}}
 {: #at-viewing}
