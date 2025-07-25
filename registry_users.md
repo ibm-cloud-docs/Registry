@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-07-24"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -34,7 +34,7 @@ Before you begin, complete the following tasks:
 
 - Decide on the roles that each user needs and on which resources in {{site.data.keyword.registrylong_notm}}, see [IAM roles](/docs/Registry?topic=Registry-iam#iam). You can create multiple policies, for example, you can grant write access on a resource but grant read access only on another resource. Policies are additive, which means that a global read policy and a resource-scoped write policy grants both read and write access on that resource.
 
-- [Invite users to an account](/docs/account?topic=account-iamuserinv#iamuserinv).
+- [Invite users to an account](/docs/account?topic=account-iamuserinv&interface=ui#invite-users-access).
 
     If you want users to create clusters in {{site.data.keyword.containerlong_notm}}, ensure that you assign the {{site.data.keyword.registrylong_notm}} Administrator role to those users, and don't assign a resource group. For more information, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters).
     {: tip}
