@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-27"
+lastupdated: "2025-07-28"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, tag, repository, required permissions, resource group, command options, security issue, notes
 
@@ -13,7 +13,7 @@ subcollection: Registry
 {{site.data.keyword.attribute-definition-list}}
 
 
-# {{site.data.keyword.registryshort_notm}} CLI
+# {{site.data.keyword.registryshort_notm}} CLI (`ibmcloud cr`)
 {: #containerregcli}
 
 You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the `container-registry` CLI plug-in, to manage your [registry](#x2064940){: term} and its resources for your {{site.data.keyword.cloud_notm}} account.
@@ -40,7 +40,7 @@ For more information about the IAM platform and service access roles that are re
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
-If {{site.data.keyword.registryshort_notm}} commands fail with an error that says that they're not registered commands, see [Why do `cr` commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail saying that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+If {{site.data.keyword.registryshort_notm}} commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort}} commands fail with a message that states that they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
 {: tip}
 
 ## `ibmcloud cr api`
@@ -48,15 +48,9 @@ If {{site.data.keyword.registryshort_notm}} commands fail with an error that say
 
 This command returns the details about the registry API endpoint that the commands are run against.
 
-```txt
+```sh
 ibmcloud cr api
 ```
-{: codeblock}
-
-### Prerequisites
-{: #bx_cr_api_prereq}
-
-None
 
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
@@ -66,10 +60,9 @@ Create an exemption for a security issue. You can create an exemption for a secu
 You can identify the images in the scope by using either the tag or the digest. You can reference the image by digest `<dns>/<namespace>/<repo>@<digest>`, which affects the digest and all its tags in the same repository, or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. To list all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID [--output json | -o json]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_exemption_add_prereq}
@@ -101,16 +94,16 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Examples
 {: #bx_cr_exemption_add_example}
 
-Create a CVE exemption for CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository.
+Create a CVE exemption for CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository by entering `us.icr.io/birds/bluebird` for the scope, `cve` for the issue type, and `CVE-2018-17929` for the issue ID.
 
-```txt
+```sh
 ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-Create an account-wide CVE exemption for CVE with ID `CVE-2018-17929`.
+Create an account-wide CVE exemption for the CVE with ID `CVE-2018-17929` by entering `"*"` for the scope, `cve` for the issue type, and `CVE-2018-17929` for the issue ID.
 
-```txt
+```sh
 ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
@@ -123,10 +116,9 @@ List your exemptions for security issues.
 You can identify the images in the scope by using either the [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) or the [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest). You can reference the image by digest `<dns>/<namespace>/<repo>@<digest>`, which affects the digest and all its tags in the same repository, or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. To list all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr exemption-list [--scope SCOPE] [--output json | -o json]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_exemption_list_prereq}
@@ -152,16 +144,20 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Examples
 {: #bx_cr_exemption_list_example}
 
-List all your exemptions for security issues that apply to images in the `birds/bluebird` repository. The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
+List all your exemptions for security issues that apply to images in the `birds/bluebird` repository by entering `birds/bluebird` as the scope.
 
-```txt
+The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
+
+```sh
 ibmcloud cr exemption-list --scope birds/bluebird
 ```
 {: pre}
 
-List all your exemptions for security issues that apply to images in the `birds/bluebird@sha256:101010101010` digest. The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository and to the `birds/bluebird@sha256:101010101010` digest. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
+List all your exemptions for security issues that apply to images in the `birds/bluebird@sha256:101010101010` digest by entering `birds/bluebird@sha256:101010101010` as the scope.
 
-```txt
+The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository and to the `birds/bluebird@sha256:101010101010` digest. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
+
+```sh
 ibmcloud cr exemption-list --scope birds/bluebird@sha256:101010101010
 ```
 {: pre}
@@ -174,10 +170,9 @@ Delete an exemption for a security issue. To view your existing exemptions, run 
 You can identify the images in the scope by using either the [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) or the [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest). You can reference the image by digest `<dns>/<namespace>/<repo>@<digest>`, which affects the digest and all its tags in the same repository, or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. To list all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_exemption_rm_prereq}
@@ -206,16 +201,16 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Examples
 {: #bx_cr_exemption_rm_example}
 
-Delete a CVE exemption for CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository.
+Delete a CVE exemption for CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository by entering `us.icr.io/birds/bluebird` as the scope, `cve` as the issue type, and `CVE-2018-17929` as the issue ID.
 
-```txt
+```sh
 ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-Delete an account-wide CVE exemption for CVE with ID `CVE-2018-17929`.
+Delete an account-wide CVE exemption for CVE with ID `CVE-2018-17929` by entering `"*"` as the scope, `cve` as the issue type, and `CVE-2018-17929` as the issue ID.
 
-```txt
+```sh
 ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
@@ -225,10 +220,9 @@ ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
 
 Lists the types of security issues that you can exempt.
 
-```txt
+```sh
 ibmcloud cr exemption-types [--output json | -o json]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_exemption_types_prereq}
@@ -244,15 +238,14 @@ To find out more about the required permissions, see [Access roles for configuri
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
 
-From 5 July 2022, all accounts require {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of IAM API key policies in {{site.data.keyword.registryshort}} in February 2019, you must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
+All accounts require {{site.data.keyword.iamshort}} (IAM) access policies.
 {: important}
 
 If you're using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
-```txt
+```sh
 ibmcloud cr iam-policies-enable
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_iam_policies_enable_prereq}
@@ -264,13 +257,12 @@ To find out more about the required permissions, see [Access roles for configuri
 
 This command displays the IAM access policy status of the targeted {{site.data.keyword.registrylong_notm}} account. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
-From 5 July 2022, all accounts require {{site.data.keyword.iamlong}} (IAM) access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of IAM API key policies in {{site.data.keyword.registryshort}} in February 2019, you must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
+All accounts require {{site.data.keyword.iamlong}} (IAM) access policies.
 {: important}
 
-```txt
+```sh
 ibmcloud cr iam-policies-status
 ```
-{: codeblock}
 
 ## `ibmcloud cr image-digests` (`ibmcloud cr digests`)
 {: #bx_cr_image_digests}
@@ -282,10 +274,9 @@ If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_c
 You can refer to an image by using a combination of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`. You can also refer to the image name by using a combination of the content of the **Repository** column (`repository`) and one of the tags in the **Tags** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --output json | -o json] [--restrict RESTRICTION] [--include-ibm] [--no-va] [--va]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_image_digests_prereq}
@@ -319,9 +310,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_digests_example}
 
-Display all the images in the `birds` namespace, including untagged images, in the format `repository@digest`.
+Display all the images in the `birds` namespace, including untagged images, in the format `repository@digest` by using `--quiet` to list the images in the format `repository@digest` and by entering `birds` as the restriction.
 
-```txt
+```sh
 ibmcloud cr image-digests --restrict birds --quiet
 ```
 {: pre}
@@ -331,10 +322,9 @@ ibmcloud cr image-digests --restrict birds --quiet
 
 Displays details about a specific image. You can reference the image that you want to inspect either by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) `repository@digest`, or by [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) `repository:tag`.
 
-```txt
+```sh
 ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_image_inspect_prereq}
@@ -360,9 +350,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_inspect_example}
 
-Display details about the exposed ports for the image `us.icr.io/birds/bluebird:1` by using the following formatting directive.
+Display details about the exposed ports for the image `us.icr.io/birds/bluebird:1` by using the formatting directive `"{{ .Config.ExposedPorts }}"` and by entering `us.icr.io/birds/bluebird:1` as the image.
 
-```txt
+```sh
 ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds/bluebird:1
 ```
 {: pre}
@@ -381,10 +371,9 @@ The image name is the combination of the content of the **Repository** and **Tag
 If the command to list images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type] [--no-va] [--va] [--output json | -o json]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_image_list_prereq}
@@ -424,9 +413,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_list_example}
 
-Display the images in the `birds` namespace in the format `repository:tag`, without truncating the image digests.
+Display the images in the `birds` namespace in the format `repository:tag`, without truncating the image digests by using `--quiet` to display the image in the format `repository:tag` and `--no-trunc` to display the image digest in the long format and by entering `birds` as the restriction.
 
-```txt
+```sh
 ibmcloud cr image-list --restrict birds --quiet --no-trunc
 ```
 {: pre}
@@ -436,10 +425,9 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 Delete all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
 
-```txt
+```sh
 ibmcloud cr image-prune-untagged [--force | -f [--output json | -o json]] --restrict RESTRICTION
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #ic_cr_image_prune_untagged_prereq}
@@ -461,9 +449,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #ic_cr_image_prune_untagged_example}
 
-Delete all untagged images that are in the `birds` namespace and output the results in JSON format.
+Delete all untagged images that are in the `birds` namespace and output the results in JSON format with no user prompts by using the `--force` option to force the command to run with no user prompts and by entering `--json` as the output and `birds` as the restriction.
 
-```txt
+```sh
 ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict birds
 ```
 {: pre}
@@ -479,10 +467,9 @@ If you get an error when you're restoring an image that says that the tagged ima
 If you're restoring an image by digest, but some tags aren't restored, see [Why aren't all the tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr image-restore IMAGE
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_image_restore_prereq}
@@ -504,9 +491,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_restore_example}
 
-To restore the image `us.icr.io/birds/bluebird:1`, run the following command.
+Restore the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
 
-```txt
+```sh
 ibmcloud cr image-restore us.icr.io/birds/bluebird:1
 ```
 {: pre}
@@ -524,10 +511,9 @@ Where multiple tags exist for the same image digest within a repository, the `ib
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_image_rm_prereq}
@@ -550,9 +536,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_rm_example}
 
-Delete the image `us.icr.io/birds/bluebird:1`.
+Delete the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
 
-```txt
+```sh
 ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ```
 {: pre}
@@ -575,10 +561,9 @@ If you get a manifest error when you try to tag your image, the following topics
 - [Why do I get a manifest list invalid error?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error)
 
 
-```txt
+```sh
 ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_image_tag_prereq}
@@ -597,23 +582,23 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Examples
 {: #bx_cr_image_tag_example}
 
-Add another tag reference `latest`, to the image `us.icr.io/birds/bluebird:1`.
+Add another tag reference `latest` to the image `us.icr.io/birds/bluebird:1` by entering `us.icr.io/birds/bluebird:1` as the source image and `us.icr.io/birds/bluebird:latest` as the target image.
 
-```txt
+```sh
 ibmcloud cr image-tag  us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:latest
 ```
 {: pre}
 
-Copy the image `us.icr.io/birds/bluebird:peck` to another repository in the same namespace `birds/pigeon`.
+Copy the image `us.icr.io/birds/bluebird:peck` to another repository in the same namespace `birds/pigeon` by entering `us.icr.io/birds/bluebird:peck` as the source image and `us.icr.io/birds/pigeon:peck` as the target image.
 
-```txt
+```sh
 ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/birds/pigeon:peck
 ```
 {: pre}
 
-Copy the image `us.icr.io/birds/bluebird:peck` to another namespace `animals` to which you have access.
+Copy the image `us.icr.io/birds/bluebird:peck` to the `animals` namespace, which you can access, by entering `us.icr.io/birds/bluebird:peck` as the source image and `us.icr.io/animals/dog:bark` as the target image.
 
-```txt
+```sh
 ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
@@ -626,10 +611,9 @@ Remove a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements
 To remove a specific tag from an image and leave the underlying image and any other tags in place, use the `ibmcloud cr image-untag` command. If you want to delete the underlying image, and all its tags, use the [`ibmcloud cr image-rm`](#bx_cr_image_rm) command instead.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr image-untag IMAGE [IMAGE...]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_image_untag_prereq}
@@ -647,9 +631,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_untag_example}
 
-Remove the tag `1` from the image `us.icr.io/birds/bluebird:1`.
+Remove the tag `1` from the image `us.icr.io/birds/bluebird:1` by entering `us.icr.io/birds/bluebird:1` as the image.
 
-```txt
+```sh
 ibmcloud cr image-untag us.icr.io/birds/bluebird:1
 ```
 {: pre}
@@ -659,15 +643,9 @@ ibmcloud cr image-untag us.icr.io/birds/bluebird:1
 
 Displays the name and the account of the registry that you are logged in to.
 
-```txt
+```sh
 ibmcloud cr info
 ```
-{: codeblock}
-
-### Prerequisites
-{: #bx_cr_info_prereq}
-
-None
 
 ## `ibmcloud cr login`
 {: #bx_cr_login}
@@ -676,10 +654,9 @@ Log the local Docker or Podman client in to {{site.data.keyword.registrylong_not
 
 This command is required if you want to run the `push` or `pull` commands for the registry. If you want to run other `ibmcloud cr` commands, you're not required to log in to {{site.data.keyword.registryshort}}.
 
-```txt
+```sh
 ibmcloud cr login [--client CLIENT]
 ```
-{: codeblock}
 
 {{site.data.keyword.registryshort}} supports other clients as well as Docker and Podman. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
@@ -688,11 +665,6 @@ If you have a problem when you try to log in, see [Why can't I log in to {{site.
 
 Logging in to {{site.data.keyword.registryshort}} by using the `ibmcloud cr login` command is subject to IAM login session limits. If your login expires, see [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire) for assistance.
 {: tip}
-
-### Prerequisites
-{: #bx_cr_login_prereq}
-
-None
 
 ### Command options
 {: #bx_cr_login_option}
@@ -703,9 +675,9 @@ None
 ### Example
 {: #bx_cr_login__example}
 
-To log in to the registry with Podman, run the following command.
+To log in to the registry by using Podman, enter `podman` as the client.
 
-```txt
+```sh
 ibmcloud cr login --client podman
 ```
 {: pre}
@@ -715,10 +687,9 @@ ibmcloud cr login --client podman
 
 View the contents of the [manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest) for an image. You can reference the image that you want to inspect either by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) `repository@digest`, or by [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) `repository:tag`.
 
-```txt
+```sh
 ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_manifest_inspect_prereq}
@@ -742,9 +713,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_manifest_inspect_example}
 
-To view the contents of the manifest for the image `us.icr.io/birds/bluebird:1`, run the following command.
+View the contents of the manifest for the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
 
-```txt
+```sh
 ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 ```
 {: pre}
@@ -756,7 +727,7 @@ Choose a name for your [namespace](#x2031005){: term} and add it to your {{site.
 
 You can create a namespace in a [resource group](#x2161955){: term} of your choice by using one of the following options.
 
-- Before you create the namespace, run the [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `<resource_group>` is the resource group.
+- Before you create the namespace, run the [`ibmcloud target -g RESOURCE_GROUP`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `RESOURCE_GROUP` is the resource group.
 - Specify the required resource group by using the `-g` option on the `ibmcloud cr namespace-add` command.
 
 If you create a namespace in a resource group, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.
@@ -766,10 +737,9 @@ If you have an older namespace that is not in a resource group, you can assign i
 Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr namespace-add [-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)] NAMESPACE
 ```
-{: codeblock}
 
 For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs&interface=ui#create_rgs).
 
@@ -796,9 +766,9 @@ To find out more about the required permissions, see [Platform management roles]
 ### Example
 {: #bx_cr_namespace_add_example}
 
-Create a namespace with the name `birds` and add it to the resource group `beaks`.
+Create a namespace with the name `birds` and add it to the resource group `beaks` by entering `beaks` as the resource group name and `birds` as the namespace.
 
-```txt
+```sh
 ibmcloud cr namespace-add -g beaks birds
 ```
 {: pre}
@@ -814,10 +784,9 @@ You can assign a namespace to a resource group only once. When a namespace is in
 To find out which namespaces are assigned to resource groups and which are unassigned, run the [`ibmcloud cr namespace-list`](#bx_cr_namespace_list) command with the `-v` option. Namespaces that are assigned to a resource group also show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr namespace-assign -g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID) NAMESPACE
 ```
-{: codeblock}
 
 For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs&interface=ui#create_rgs).
 
@@ -838,9 +807,9 @@ To find out more about the required permissions, see [Platform management roles]
 ### Example
 {: #ic_cr_namespace_assign_example}
 
-Assign a namespace with the name `birds` to the resource group `beaks`.
+Assign a namespace with the name `birds` to the resource group `beaks` by entering `beaks` as the resource group name and `birds` as the namespace.
 
-```txt
+```sh
 ibmcloud cr namespace-assign -g beaks birds
 ```
 {: pre}
@@ -850,10 +819,9 @@ ibmcloud cr namespace-assign -g beaks birds
 
 Displays all namespaces that are owned by your {{site.data.keyword.cloud_notm}} account. You can use this command to list your namespaces so that you can verify which namespaces are assigned to resource groups, and which namespaces are unassigned. Namespaces that are assigned to a resource group also show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 
-```txt
+```sh
 ibmcloud cr namespace-list [--verbose | -v] [--output json | -o json]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_namespace_list_prereq}
@@ -872,10 +840,10 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_namespace_list_example}
 
-View a list of all your namespaces, including information about resource groups and creation dates.
+View a list of all your namespaces, including information about resource groups and creation dates, by using the `-verbose` option.
 
-```txt
-ibmcloud cr namespace-list  -v
+```sh
+ibmcloud cr namespace-list -v
 ```
 {: pre}
 
@@ -884,10 +852,9 @@ ibmcloud cr namespace-list  -v
 
 Removes a namespace from your {{site.data.keyword.cloud_notm}} account. Images in this namespace are deleted when the namespace is removed.
 
-```txt
+```sh
 ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_namespace_rm_prereq}
@@ -906,9 +873,9 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Example
 {: #bx_cr_namespace_rm_example}
 
-Remove the namespace `birds`.
+Remove the `birds` namespace by entering `birds` as the namespace.
 
-```txt
+```sh
 ibmcloud cr namespace-rm birds
 ```
 {: pre}
@@ -918,10 +885,9 @@ ibmcloud cr namespace-rm birds
 
 Displays your pricing plan for the registry region that you're targeting.
 
-```txt
+```sh
 ibmcloud cr plan [--output json | -o json]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_plan_prereq}
@@ -934,15 +900,24 @@ To find out more about the required permissions, see [Access roles for configuri
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
 
+### Example
+{: #bx_cr_plan_example}
+
+Output your pricing plan in JSON format by entering `json` as the output.
+
+```sh
+ibmcloud cr plan -o json
+```
+{; pre}
+
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
 Upgrades you to the standard plan for the registry region that you're targeting.
 
-```txt
+```sh
 ibmcloud cr plan-upgrade [PLAN]
 ```
-{: codeblock}
 
 For more information about plans, see [Registry plans](/docs/Registry?topic=Registry-registry_overview#registry_plans).
 
@@ -960,9 +935,9 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Example
 {: #bx_cr_plan_upgrade_example}
 
-Upgrade to the standard pricing plan.
+Upgrade to the standard pricing plan by entering `standard` as the plan.
 
-```txt
+```sh
 ibmcloud cr plan-upgrade standard
 ```
 {: pre}
@@ -978,10 +953,9 @@ If you want to view the platform metrics for {{site.data.keyword.registrylong_no
 You must specify one of the command options or the command fails with an error.
 {: requirement}
 
-```txt
+```sh
 ibmcloud cr platform-metrics --enable | --disable | --status
 ```
-{: codeblock}
 
 For more information about the platform metrics that you can view in {{site.data.keyword.registryshort}}, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor).
 
@@ -1007,9 +981,9 @@ For more information about the platform metrics that you can view in {{site.data
 ### Example
 {: #ic_cr_platform_metrics_example}
 
-Enable platform metrics for your account.
+Enable platform metrics for your account by using the `--enable` option.
 
-```txt
+```sh
 ibmcloud cr platform-metrics --enable
 ```
 {: pre}
@@ -1019,10 +993,9 @@ ibmcloud cr platform-metrics --enable
 
 Prevent image pulls or pushes over public network connections for your account for the registry region that you're targeting. You must specify one of the command options or the command fails with an error.
 
-```txt
+```sh
 ibmcloud cr private-only --enable | --disable | --status
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #ic_cr_private_only_prereq}
@@ -1044,9 +1017,9 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Example
 {: #ic_cr_private_only_example}
 
-Prevent image pulls or pushes over public network connections for your account.
+Prevent image pulls or pushes over public network connections for your account by using the `--enable` option.
 
-```txt
+```sh
 ibmcloud cr private-only --enable
 ```
 {: pre}
@@ -1054,12 +1027,11 @@ ibmcloud cr private-only --enable
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-This command displays your current quotas for traffic and storage, and usage information against those quotas for the registry region that you're targeting.
+Display your quotas for traffic and storage, and the usage information against those quotas for the registry region that you're targeting.
 
-```txt
+```sh
 ibmcloud cr quota [--output json | -o json]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_quota_prereq}
@@ -1072,15 +1044,24 @@ To find out more about the required permissions, see [Access roles for configuri
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
 
+### Example
+{: #bx_cr_quota_example}
+
+Display your traffic and storage quotas in JSON format by entering `json` as the output option.
+
+```sh
+ibmcloud cr quota -o json
+```
+{: pre}
+
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
 Modify the specified quota for the registry region that you're targeting.
 
-```txt
+```sh
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_quota_set_prereq}
@@ -1099,9 +1080,9 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Example
 {: #bx_cr_quota_set_example}
 
-Set your quota limit for pull traffic to *7000* megabytes and storage to *600* megabytes.
+Set your quota limit for pull traffic to 7000 megabytes and storage to 600 megabytes by entering `7000` as your traffic quota and `600` as your storage quota.
 
-```txt
+```sh
 ibmcloud cr quota-set --traffic 7000 --storage 600
 ```
 {: pre}
@@ -1109,34 +1090,20 @@ ibmcloud cr quota-set --traffic 7000 --storage 600
 ## `ibmcloud cr region`
 {: #bx_cr_region}
 
-Displays the targeted region and the registry.
+Displays the targeted region and the registry. For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
-```txt
+```sh
 ibmcloud cr region
 ```
-{: codeblock}
-
-For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
-
-### Prerequisites
-{: #bx_cr_region_prereq}
-
-None
 
 ## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
 
-Set a target region for the {{site.data.keyword.registrylong_notm}} commands. To list the available regions, run the command with no options.
+Set a target region for the {{site.data.keyword.registrylong_notm}} commands. To list the available regions, run the command with no options. For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
-```txt
+```sh
 ibmcloud cr region-set [REGION]
 ```
-{: codeblock}
-
-### Prerequisites
-{: #bx_cr_region_set_prereq}
-
-None
 
 ### Command options
 {: #bx_cr_region_set_option}
@@ -1147,9 +1114,9 @@ None
 ### Example
 {: #bx_cr_region_set_example}
 
-Target the US South region.
+Target the US South region by entering `us-south` as the region.
 
-```txt
+```sh
 ibmcloud cr region-set us-south
 ```
 {: pre}
@@ -1162,10 +1129,9 @@ List the image retention policies for your account. Image retention policies ret
 Where an image within a repository is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr retention-policy-list [--output json | -o json]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_retention_policy_list_prereq}
@@ -1183,7 +1149,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 
 List the retention policies in your account.
 
-```txt
+```sh
 ibmcloud cr retention-policy-list
 ```
 {: pre}
@@ -1205,10 +1171,9 @@ If a retention policy deletes an image that you want to keep, you can restore th
 
 If you want to cancel a retention policy, see [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep).
 
-```txt
+```sh
 ibmcloud cr retention-policy-set [--retain-untagged] [--force | -f] --images IMAGECOUNT NAMESPACE
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_retention_policy_set_prereq}
@@ -1233,16 +1198,16 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Examples
 {: #bx_cr_retention_policy_set_example}
 
-Set a policy that retains the newest 20 images within each repository in the namespace `birds`.
+Set a policy that retains the newest 20 images within each repository in the `birds` namespace by entering `20` as the number of images to keep and `birds` as the namespace.
 
-```txt
+```sh
 ibmcloud cr retention-policy-set --images 20 birds
 ```
 {: pre}
 
-Set the policy back to the default state so that you keep all your images in the namespace `birds`.
+Set the policy to the default state so that you keep all your images in the `birds` namespace by entering `All` as the number of images to keep and `birds` as the namespace.
 
-```txt
+```sh
 ibmcloud cr retention-policy-set --images All birds
 ```
 {: pre}
@@ -1265,10 +1230,9 @@ If you want to restore a deleted image, you can list the contents of the trash b
 If an image that you're expecting to see doesn't show in the list that is produced, see [Why doesn't the retention command show all the images?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention) for assistance.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-untagged] --images IMAGECOUNT NAMESPACE
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_retention_run_prereq}
@@ -1296,9 +1260,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_retention_run_example}
 
-Retain the newest 20 images within each repository, in the namespace `birds`.
+Retain the newest 20 images within each repository in the `birds` namespace by entering `20` as the number of images to keep and `birds` as the namespace.
 
-```txt
+```sh
 ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
@@ -1312,10 +1276,9 @@ Displays all images in the trash in your {{site.data.keyword.cloud_notm}} accoun
 
 If you want to restore an image from the trash, run the [`ibmcloud cr image-restore`](#bx_cr_image_restore) command, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
-```txt
+```sh
 ibmcloud cr trash-list [--restrict NAMESPACE] [--output json | -o json]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_trash_list_prereq}
@@ -1334,9 +1297,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_trash_list_example}
 
-Display the images that are in the trash in the `birds` namespace.
+Display the images that are in the trash in the `birds` namespace by entering `birds` as the restriction.
 
-```txt
+```sh
 ibmcloud cr trash-list --restrict birds
 ```
 {: pre}
@@ -1346,33 +1309,21 @@ ibmcloud cr trash-list --restrict birds
 
 Find out which version of Vulnerability Advisor you're using. Version 4 is the only valid version.
 
-```txt
+```sh
 ibmcloud cr va-version
 ```
-{: codeblock}
-
-### Prerequisites
-{: #ic_cr_va_version_prereq}
-
-None.
 
 ## `ibmcloud cr va-version-set`
 {: #ic_cr_va_version_set}
 
-Set the version of Vulnerability Advisor.
+Set the version of Vulnerability Advisor. The only valid value is `v4`.
 
 If you try to set an invalid version of Vulnerability Advisor, you get en error, see [Why do I get an error about an invalid version of Vulnerability Advisor being specified?](/docs/Registry?topic=Registry-troubleshoot-va-version-error) for assistance.
 {: tip}
 
-```txt
+```sh
 ibmcloud cr va-version-set VERSION
 ```
-{: codeblock}
-
-### Prerequisites
-{: #ic_cr_va_version_set_prereq}
-
-None.
 
 ### Command options
 {: #ic_cr_va_version_set_option}
@@ -1383,9 +1334,9 @@ None.
 ### Example
 {: #ic_cr_va_version_set_example}
 
-To set the Vulnerability version to version 4, run the following command:
+Set the version of Vulnerability Advisor to version 4 by entering `v4` as the version:
 
-```txt
+```sh
 ibmcloud cr va-version-set v4
 ```
 {: pre}
@@ -1395,10 +1346,9 @@ ibmcloud cr va-version-set v4
 
 View a vulnerability assessment report for your images.
 
-```txt
+```sh
 ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--output FORMAT | -o FORMAT] IMAGE [IMAGE...]
 ```
-{: codeblock}
 
 ### Prerequisites
 {: #bx_cr_va_prereq}
@@ -1434,16 +1384,16 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Examples
 {: #bx_cr_va_example}
 
-View a standard vulnerability assessment report for your image.
+View a standard vulnerability assessment report for the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
 
-```txt
+```sh
 ibmcloud cr vulnerability-assessment us.icr.io/birds/bluebird:1
 ```
 {: pre}
 
-View a vulnerability assessment report for your image `us.icr.io/birds/bluebird:1` in JSON format, showing vulnerabilities only.
+View a vulnerability assessment report that shows the vulnerabilities for the `us.icr.io/birds/bluebird:1` image in JSON format by using the `-- vulnerabilities` option and entering `json` as the format for the output and `us.icr.io/birds/bluebird:1` as the image.
 
-```txt
-ibmcloud cr vulnerability-assessment --vulnerabilities  --output json us.icr.io/birds/bluebird:1
+```sh
+ibmcloud cr vulnerability-assessment --vulnerabilities --output json us.icr.io/birds/bluebird:1
 ```
 {: pre}

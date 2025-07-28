@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-28"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -955,8 +955,6 @@ subcollection: Registry
 
 * [`ibmcloud cr api`](/docs/Registry?topic=Registry-containerregcli#bx_cr_api)
 
-    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_api_prereq)
-
 * [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_prereq)
@@ -1059,11 +1057,7 @@ subcollection: Registry
 
 * [`ibmcloud cr info`](/docs/Registry?topic=Registry-containerregcli#bx_cr_info)
 
-    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_info_prereq)
-
 * [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login)
-
-    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_login_prereq)
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_login_option)
 
@@ -1115,6 +1109,8 @@ subcollection: Registry
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_option)
 
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_example)
+
 * [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_prereq)
@@ -1145,6 +1141,8 @@ subcollection: Registry
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_option)
 
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_example)
+
 * [`ibmcloud cr quota-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set_prereq)
@@ -1155,11 +1153,7 @@ subcollection: Registry
 
 * [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region)
 
-    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_prereq)
-
 * [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set)
-
-    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_prereq)
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_option)
 
@@ -1199,11 +1193,7 @@ subcollection: Registry
 
 * [`ibmcloud cr va-version`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version)
 
-    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_prereq)
-
 * [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set)
-
-    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_prereq)
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_option)
 
