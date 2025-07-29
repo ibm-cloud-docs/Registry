@@ -58,7 +58,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs for Global" caption-side="bottom"}
 {: #table_registry_logs_service_global}
 
-For more information about where to see {{site.data.keyword.registryshort_notm}} service logs if you are using {{site.data.keyword.logs_routing_full_notm}}, see [Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}](#lr-locations).
+For more information about where to see {{site.data.keyword.registryshort_notm}} service logs if you're using {{site.data.keyword.logs_routing_full_notm}}, see [Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}](#lr-locations).
 
 ## Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}
 {: #lr-locations}

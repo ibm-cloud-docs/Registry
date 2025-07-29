@@ -18,7 +18,7 @@ subcollection: Registry
 To authorize worker nodes to communicate with {{site.data.keyword.registrylong}}, you must allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} [regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 {: shortdesc}
 
-If you are using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong}}, by default the connection to {{site.data.keyword.registryshort}} is private. Therefore, you don't need to allow public access to {{site.data.keyword.registryshort}}. For more information about private connectivity, see [Private network connection to `icr.io` registries](/docs/containers?topic=containers-registry#cluster_registry_auth_private).
+If you're using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong}}, by default the connection to {{site.data.keyword.registryshort}} is private. Therefore, you don't need to allow public access to {{site.data.keyword.registryshort}}. For more information about private connectivity, see [Private network connection to `icr.io` registries](/docs/containers?topic=containers-registry#cluster_registry_auth_private).
 {: note}
 
 You can configure your firewall to allow connections to {{site.data.keyword.registryshort}} by using a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains listed in the following table.
@@ -31,16 +31,16 @@ In addition to the following regional subdomains, you must also allow traffic fr
 | Region | Registry address | Deprecated addresses |
 |--------|------------------|----------------------|
 | Global | `icr.io` | `registry.bluemix.net` |
-| AP North | `jp.icr.io` | Not applicable |
-| AP South | `au.icr.io` | `registry.au-syd.bluemix.net` |
-| EU Central | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| Tokyo | `jp.icr.io` | Not applicable |
+| Sydney | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| Frankfurt | `de.icr.io` | `registry.eu-de.bluemix.net` |
 | Madrid | `es.icr.io` | Not applicable |
 | Montreal | `ca2.icr.io` | Not applicable |
 | Osaka | `jp2.icr.io` | Not applicable |
 | Sao Paolo | `br.icr.io` | Not applicable |
 | Toronto | `ca.icr.io` | Not applicable |
-| UK South | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
-| US South | `us.icr.io` | `registry.ng.bluemix.net` |
+| London | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| Dallas | `us.icr.io` | `registry.ng.bluemix.net` |
 {: caption="Addresses for {{site.data.keyword.registryshort}} traffic" caption-side="bottom"}
 {: #table_registry_firewall_traffic_addresses}
 

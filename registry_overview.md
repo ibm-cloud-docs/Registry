@@ -215,7 +215,7 @@ In the context of the registry, an image digest is an immutable reference to an 
 
 To find the image digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. The [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command also returns the image digest, but, by default, it is in a truncated format. You can add an option to the `ibmcloud cr image-list` command to return the image digest in the long format.
 
-When you are using the image digest to identify an image, always use the long format.
+When you're using the image digest to identify an image, always use the long format.
 {: requirement}
 
 In {{site.data.keyword.registryshort}}, any reference to "digest" means "image digest".

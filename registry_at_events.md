@@ -15,6 +15,7 @@ subcollection: Registry
 # Activity tracking events for {{site.data.keyword.registryshort_notm}}
 {: #at_events}
 
+
 {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, generate activity tracking events.
 {: shortdesc}
 
