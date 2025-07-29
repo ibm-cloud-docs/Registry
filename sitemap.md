@@ -226,6 +226,10 @@ subcollection: Registry
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
 
+* [29 July 2025](/docs/Registry?topic=Registry-registry_release_notes#registry-29jul2025)
+
+    * [New region in Canada](/docs/Registry?topic=Registry-registry_release_notes#29jul2025_montreal)
+
 * [14 February 2025](/docs/Registry?topic=Registry-registry_release_notes#registry-14feb2025)
 
     * [Access {{site.data.keyword.registrylong_notm}} by using trusted profiles](/docs/Registry?topic=Registry-registry_release_notes#14feb2025_trustprof)

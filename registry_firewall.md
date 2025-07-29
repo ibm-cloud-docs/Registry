@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-06-17"
+lastupdated: "2025-07-29"
 
 keywords: IBM Cloud Container Registry, firewall, access, communicate, domains, subdomains, traffic, allowlist
 
@@ -35,6 +35,7 @@ In addition to the following regional subdomains, you must also allow traffic fr
 | AP South | `au.icr.io` | `registry.au-syd.bluemix.net` |
 | EU Central | `de.icr.io` | `registry.eu-de.bluemix.net` |
 | Madrid | `es.icr.io` | Not applicable |
+| Montreal | `ca2.icr.io` | Not applicable |
 | Osaka | `jp2.icr.io` | Not applicable |
 | Sao Paolo | `br.icr.io` | Not applicable |
 | Toronto | `ca.icr.io` | Not applicable |

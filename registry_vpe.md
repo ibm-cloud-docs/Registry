@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-07-29"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -47,6 +47,7 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Frankfurt (`eu-de`)
 - London (`eu-gb`)
 - Madrid (`eu-es`)
+- Montreal (`ca-mon`)
 - Osaka (`jp-osa`)
 - Sao Paulo (`br-sao`)
 - Sydney (`au-syd`)
@@ -62,12 +63,13 @@ You can create a VPE gateway for your local {{site.data.keyword.registryshort_no
 
 When you create a VPE gateway by using the CLI or API, you must specify the [cloud resource name (CRN)](#x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
-You can create VPE gateways in these locations:  `au-syd`, `br-sao`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `jp-osa`, `jp-tok`, `us-south`, and `us-east` (global registry).
+You can create VPE gateways in these locations:  `au-syd`, `br-sao`, `ca-mon`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `jp-osa`, `jp-tok`, `us-south`, and `us-east` (global registry).
 
 | Registry region | Region that was formerly known as | Cloud resource name (CRN) |
 |-----------------|----------------------------------|---------------------------|
 | `au-syd` | `ap-south` | `crn:v1:bluemix:public:container-registry:au-syd:::endpoint:au.icr.io` |
 | `br-sao` | Not applicable | `crn:v1:bluemix:public:container-registry:br-sao:::endpoint:br.icr.io` |
+| `ca-mon` | Not applicable | `crn:v1:bluemix:public:container-registry:ca-mon:::endpoint:ca2.icr.io` |
 | `ca-tor` | Not applicable | `crn:v1:bluemix:public:container-registry:ca-tor:::endpoint:ca.icr.io` |
 | `eu-de` | `eu-central` | `crn:v1:bluemix:public:container-registry:eu-de:::endpoint:de.icr.io` |
 | `eu-es` | Not applicable | `crn:v1:bluemix:public:container-registry:eu-es:::endpoint:es.icr.io` |
