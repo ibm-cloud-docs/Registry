@@ -40,7 +40,7 @@ For more information about the IAM platform and service access roles that are re
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
-If {{site.data.keyword.registryshort_notm}}, `ibmcloud cr`, commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort}} commands fail with a message that states that they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+If {{site.data.keyword.registryshort_notm}} `ibmcloud cr`, commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort}} commands fail with a message that states that they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
 {: tip}
 
 ## `ibmcloud cr api`
@@ -360,7 +360,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_inspect_example}
 
-Display details about the exposed ports for the  `us.icr.io/birds/bluebird:1` image by using the formatting directive `"{{ .Config.ExposedPorts }}"` and by entering `us.icr.io/birds/bluebird:1` as the image.
+Display details about the exposed ports for the `us.icr.io/birds/bluebird:1` image by using the formatting directive `"{{ .Config.ExposedPorts }}"` and by entering `us.icr.io/birds/bluebird:1` as the image.
 
 ```sh
 ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds/bluebird:1
@@ -592,7 +592,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Examples
 {: #bx_cr_image_tag_example}
 
-Add another tag reference, `latest`, to the image `us.icr.io/birds/bluebird:1` by entering `us.icr.io/birds/bluebird:1` as the source image and `us.icr.io/birds/bluebird:latest` as the target image.
+Add another tag reference `latest`, to the image `us.icr.io/birds/bluebird:1` by entering `us.icr.io/birds/bluebird:1` as the source image and `us.icr.io/birds/bluebird:latest` as the target image.
 
 ```sh
 ibmcloud cr image-tag  us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:latest
@@ -606,7 +606,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/birds/pigeon:peck
 ```
 {: pre}
 
-Copy the `us.icr.io/birds/bluebird:peck` image another namespace that you have access to, in this example the `animals` namespace, by entering `us.icr.io/birds/bluebird:peck` as the source image and `us.icr.io/animals/dog:bark` as the target image.
+Copy the `us.icr.io/birds/bluebird:peck` image to another namespace that you have access to, in this example the `animals` namespace, by entering `us.icr.io/birds/bluebird:peck` as the source image and `us.icr.io/animals/dog:bark` as the target image.
 
 ```sh
 ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
