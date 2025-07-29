@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-22"
+lastupdated: "2025-07-29"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -81,6 +81,7 @@ Clients require an API key and a domain, replace `API_KEY` with your API key and
 | `global` | Not applicable | `icr.io` |
 | `au-syd` | `ap-south` |`au.icr.io` |
 | `br-sao` | Not applicable | `br.icr.io` |
+| `ca-mon` | Not applicable | `ca2.icr.io` |
 | `ca-tor` | Not applicable | `ca.icr.io` |
 | `eu-de` | `eu-central` |`de.icr.io` |
 | `eu-es` | Not applicable |`es.icr.io` |
@@ -230,7 +231,7 @@ ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | skopeo login -u iamb
 
 Use your own code to access to your namespaces in {{site.data.keyword.registrylong_notm}}.
 
-Most users can use the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a username and password. In {{site.data.keyword.registrylong_notm}}, the username indicates the type of secret that is presented in the password.
+Most users can use the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command to simplify `docker login`, but if you are implementing automation or you're using a different client, you might want to authenticate manually. You must present a username and password. In {{site.data.keyword.registrylong_notm}}, the username indicates the type of secret that is presented in the password.
 
 The following usernames are valid:
 

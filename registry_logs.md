@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-07-29"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -31,6 +31,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 |-----------------------|---------------------------------------|
 | `Dallas (us-south)` | [Yes]{: tag-green} |
 | `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
+| `Montreal (ca-mon)` | [Yes]{: tag-green} |
 | `Toronto (ca-tor)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Americas locations" caption-side="bottom"}
 {: #table_registry_logs_service_americas}
@@ -57,16 +58,16 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs for Global" caption-side="bottom"}
 {: #table_registry_logs_service_global}
 
-For more information about where to see {{site.data.keyword.registryshort_notm}} service logs if you are using {{site.data.keyword.logs_routing_full_notm}}, see [Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}](#lr-locations).
+For more information about where to see {{site.data.keyword.registryshort_notm}} service logs if you're using {{site.data.keyword.logs_routing_full_notm}}, see [Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}](#lr-locations).
 
 ## Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}
 {: #lr-locations}
 
 {{site.data.keyword.registryshort}} sends logs by {{site.data.keyword.logs_routing_full_notm}} in the regions that are indicated in the following table.
 
-| Dallas (`us-south`) | Washington (`us-east`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-|---------------------|------------------------|--------------------|----------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Dallas (`us-south`) | Washington (`us-east`) | Montreal (`ca-mon`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
+|---------------------|------------------------|---------------------|--------------------|----------------------|
+| [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #logr-table-1}
 {: tab-title="Americas"}

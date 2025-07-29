@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-07-29"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -60,6 +60,7 @@ The following table shows the backup locations.
 |-------------|---------------------------------------|-----------------|-----------------|
 | `au-syd` | `ap-south` | `au-syd` | `jp-tok` |
 | `br-sao` | Not applicable | `br-sao` | `us-south` |
+| `ca-mon` | Not applicable | `ca-mon` | `ca-tor` |
 | `ca-tor` | Not applicable | `ca-tor` | `us-east` (service and policy settings)  \n  \n `ca-mon` (images) |
 | `eu-de` | `eu-central` | `eu-de` | `eu-gb` |
 | `eu-es` | Not applicable | `eu-es` | `eu-de` |
@@ -79,4 +80,4 @@ The image data, service settings, and policy settings are backed up by {{site.da
 ### Are users required to replicate the data?
 {: #bc-dr_client}
 
-You are not expected to replicate your images. However, you can create a service instance in another {{site.data.keyword.registrylong_notm}} region. You can also choose from a range of tools, including pushing to multiple locations from your development pipeline, and the use of replication tools, such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}. {{site.data.keyword.IBM_notm}} doesn't replicate service instances.
+You're not expected to replicate your images. However, you can create a service instance in another {{site.data.keyword.registrylong_notm}} region. You can also choose from a range of tools, including pushing to multiple locations from your development pipeline, and the use of replication tools, such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}. {{site.data.keyword.IBM_notm}} doesn't replicate service instances.

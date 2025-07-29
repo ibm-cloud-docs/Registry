@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-07-29"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -215,7 +215,7 @@ In the context of the registry, an image digest is an immutable reference to an 
 
 To find the image digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. The [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command also returns the image digest, but, by default, it is in a truncated format. You can add an option to the `ibmcloud cr image-list` command to return the image digest in the long format.
 
-When you are using the image digest to identify an image, always use the long format.
+When you're using the image digest to identify an image, always use the long format.
 {: requirement}
 
 In {{site.data.keyword.registryshort}}, any reference to "digest" means "image digest".
@@ -361,6 +361,7 @@ Regional instances of {{site.data.keyword.registryshort}} are available by using
 |-----------------------|----------------------------------|-------------|---------------------|------------------------|
 | `au-syd` | `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
 | `br-sao` | Not applicable | `br.icr.io` | `private.br.icr.io` | Not applicable |
+| `ca-mon` | Not applicable | `ca2.icr.io` | `private.ca2.icr.io` | Not applicable |
 | `ca-tor` | Not applicable | `ca.icr.io` | `private.ca.icr.io` | Not applicable |
 | `eu-de` | `eu-central` | `de.icr.io` | `private.de.icr.io` | `registry.eu-de.bluemix.net` |
 | `eu-es` | Not applicable | `es.icr.io` | `private.es.icr.io` | Not applicable |

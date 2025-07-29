@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-22"
+lastupdated: "2025-07-29"
 
 keywords: API key, tokens, automating access, access, authentication, Podman, Skopeo, Buildah, Docker, client, authenticate, iam, domain, service id api key, trusted profiles,
 
@@ -18,7 +18,7 @@ subcollection: Registry
 You can use trusted profiles to grant different {{site.data.keyword.cloud}} identities access to {{site.data.keyword.registrylong_notm}} resources in your account. Automatically grant federated users access to your account with conditions based on SAML attributes from your corporate directory.
 {: shortdesc}
 
-A user doesn't need to be a member of the account to assume a trusted profile. A user can use the profile if the user's identity provider (IdP) matches an IdP used in the conditions of trust.
+A user does not need to be a member of the account to assume a trusted profile. A user can use the profile if the user's identity provider (IdP) matches an IdP used in the conditions of trust.
 
 When you initially create a trusted profile, you can build conditions of trust with the following entity types: federated users and service IDs. After you create the trusted profile, you can add more conditions to combine multiple entity types in the same profile.
 

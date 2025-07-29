@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-07-29"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -20,6 +20,13 @@ content-type: release-note
 
 What's new in {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 29 July 2025
+{: #registry-29jul2025}
+{: release-note}
+
+New region in Canada {: #29jul2025_montreal}
+:   A new region in Montreal, Canada is available. The new region is `ca-mon` and the domain name is `ca2.icr.io`. You can target the new region in the {{site.data.keyword.cloud_notm}} console or in the CLI by running `ibmcloud cr region-set ca-mon`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
 ## 14 February 2025
 {: #registry-14feb2025}

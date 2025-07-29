@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-07-29"
 
 keywords: Track, tracking events, find events, activity tracking for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -14,6 +14,7 @@ subcollection: Registry
 
 # Activity tracking events for {{site.data.keyword.registryshort_notm}}
 {: #at_events}
+
 
 {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, generate activity tracking events.
 {: shortdesc}
@@ -33,6 +34,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 |-----------------------|--------------------------|
 | `Dallas (us-south)` | [Yes]{: tag-green} |
 | `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
+| `Montreal (ca-mon)` | [Yes]{: tag-green} |
 | `Toronto (ca-tor)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Americas locations" caption-side="bottom"}
 {: #table_registry_at_event_collection_americas}
@@ -66,9 +68,9 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 
 {{site.data.keyword.registryshort}} sends activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following tables.
 
-| Dallas (`us-south`) | Washington (`us-east`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-|---------------------|------------------------|--------------------|----------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Dallas (`us-south`) | Washington (`us-east`) | Montreal (`ca-mon`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
+|---------------------|------------------------|---------------------|--------------------|----------------------|
+| [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
 {: #atracker-table-1}
 {: tab-title="Americas"}
@@ -95,6 +97,8 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {: tab-group="atracker"}
 {: class="simple-tab-table"}
 {: row-headers}
+
+
 
 ## Viewing activity tracking events for {{site.data.keyword.registryshort}}
 {: #at-viewing}
