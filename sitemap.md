@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-28"
+lastupdated: "2025-07-29"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -984,6 +984,8 @@ subcollection: Registry
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_prereq)
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_option)
+
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_example)
 
 * [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable)
 

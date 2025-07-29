@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-28"
+lastupdated: "2025-07-29"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, tag, repository, required permissions, resource group, command options, security issue, notes
 
@@ -31,7 +31,7 @@ Before you can use the {{site.data.keyword.registryshort}} CLI, you must complet
 ### Notes
 {: #containerregcli_prereq_notes}
 
-To find out more about how to use the {{site.data.keyword.registryshort}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
+To find out more about how to use the {{site.data.keyword.registryshort}} CLI, the `ibmcloud cr` commands, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
 You're notified on the command line when updates to the `ibmcloud` CLI and `container-registry` CLI plug-ins are available. Ensure that you keep your CLIs up to date so that you can use all the available commands and options. If you want to view the current version of your `container-registry` CLI plug-in, run the `ibmcloud plugin list` command.
 
@@ -40,7 +40,7 @@ For more information about the IAM platform and service access roles that are re
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
-If {{site.data.keyword.registryshort_notm}} commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort}} commands fail with a message that states that they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+If {{site.data.keyword.registryshort_notm}}, `ibmcloud cr`, commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort}} commands fail with a message that states that they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
 {: tip}
 
 ## `ibmcloud cr api`
@@ -94,7 +94,7 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Examples
 {: #bx_cr_exemption_add_example}
 
-Create a CVE exemption for CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository by entering `us.icr.io/birds/bluebird` for the scope, `cve` for the issue type, and `CVE-2018-17929` for the issue ID.
+Create a CVE exemption for the CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository by entering `us.icr.io/birds/bluebird` for the scope, `cve` for the issue type, and `CVE-2018-17929` for the issue ID.
 
 ```sh
 ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
@@ -201,14 +201,14 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Examples
 {: #bx_cr_exemption_rm_example}
 
-Delete a CVE exemption for CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository by entering `us.icr.io/birds/bluebird` as the scope, `cve` as the issue type, and `CVE-2018-17929` as the issue ID.
+Delete a CVE exemption for the CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository by entering `us.icr.io/birds/bluebird` as the scope, `cve` as the issue type, and `CVE-2018-17929` as the issue ID.
 
 ```sh
 ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-Delete an account-wide CVE exemption for CVE with ID `CVE-2018-17929` by entering `"*"` as the scope, `cve` as the issue type, and `CVE-2018-17929` as the issue ID.
+Delete an account-wide CVE exemption for the CVE with ID `CVE-2018-17929` by entering `"*"` as the scope, `cve` as the issue type, and `CVE-2018-17929` as the issue ID.
 
 ```sh
 ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
@@ -234,6 +234,16 @@ To find out more about the required permissions, see [Access roles for configuri
 
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
+
+### Example
+{: #bx_cr_exemption_types_example}
+
+List the types of security issues in JSON format by entering `json` as the output.
+
+```sh
+ibmcloud cr exemption-types -o json
+```
+{: pre}
 
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
@@ -350,7 +360,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_inspect_example}
 
-Display details about the exposed ports for the image `us.icr.io/birds/bluebird:1` by using the formatting directive `"{{ .Config.ExposedPorts }}"` and by entering `us.icr.io/birds/bluebird:1` as the image.
+Display details about the exposed ports for the  `us.icr.io/birds/bluebird:1` image by using the formatting directive `"{{ .Config.ExposedPorts }}"` and by entering `us.icr.io/birds/bluebird:1` as the image.
 
 ```sh
 ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds/bluebird:1
@@ -413,7 +423,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_list_example}
 
-Display the images in the `birds` namespace in the format `repository:tag`, without truncating the image digests by using `--quiet` to display the image in the format `repository:tag` and `--no-trunc` to display the image digest in the long format and by entering `birds` as the restriction.
+Display the images in the `birds` namespace in the format `repository:tag`, without truncating the image digests by using `--quiet` to display the image in the format `repository:tag`, `--no-trunc` to display the image digest in the long format, and by entering `birds` as the restriction.
 
 ```sh
 ibmcloud cr image-list --restrict birds --quiet --no-trunc
@@ -449,7 +459,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #ic_cr_image_prune_untagged_example}
 
-Delete all untagged images that are in the `birds` namespace and output the results in JSON format with no user prompts by using the `--force` option to force the command to run with no user prompts and by entering `--json` as the output and `birds` as the restriction.
+Delete all untagged images that are in the `birds` namespace without any user prompts and output the results in JSON format by using the `--force` option to force the command to run with no user prompts, and by entering `--json` as the output and `birds` as the restriction.
 
 ```sh
 ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict birds
@@ -582,7 +592,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Examples
 {: #bx_cr_image_tag_example}
 
-Add another tag reference `latest` to the image `us.icr.io/birds/bluebird:1` by entering `us.icr.io/birds/bluebird:1` as the source image and `us.icr.io/birds/bluebird:latest` as the target image.
+Add another tag reference, `latest`, to the image `us.icr.io/birds/bluebird:1` by entering `us.icr.io/birds/bluebird:1` as the source image and `us.icr.io/birds/bluebird:latest` as the target image.
 
 ```sh
 ibmcloud cr image-tag  us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:latest
@@ -596,7 +606,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/birds/pigeon:peck
 ```
 {: pre}
 
-Copy the image `us.icr.io/birds/bluebird:peck` to the `animals` namespace, which you can access, by entering `us.icr.io/birds/bluebird:peck` as the source image and `us.icr.io/animals/dog:bark` as the target image.
+Copy the `us.icr.io/birds/bluebird:peck` image another namespace that you have access to, in this example the `animals` namespace, by entering `us.icr.io/birds/bluebird:peck` as the source image and `us.icr.io/animals/dog:bark` as the target image.
 
 ```sh
 ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
@@ -631,7 +641,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_image_untag_example}
 
-Remove the tag `1` from the image `us.icr.io/birds/bluebird:1` by entering `us.icr.io/birds/bluebird:1` as the image.
+Remove the tag `1` from the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
 
 ```sh
 ibmcloud cr image-untag us.icr.io/birds/bluebird:1
@@ -840,7 +850,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_namespace_list_example}
 
-View a list of all your namespaces, including information about resource groups and creation dates, by using the `-verbose` option.
+View a list of all your namespaces, including information about resource groups and creation dates, by using the `--verbose` option.
 
 ```sh
 ibmcloud cr namespace-list -v
@@ -908,7 +918,7 @@ Output your pricing plan in JSON format by entering `json` as the output.
 ```sh
 ibmcloud cr plan -o json
 ```
-{; pre}
+{: pre}
 
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
@@ -1147,10 +1157,10 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example
 {: #bx_cr_retention_policy_list_example}
 
-List the retention policies in your account.
+List the retention policies in your account in JSON format by entering `json` as the output.
 
 ```sh
-ibmcloud cr retention-policy-list
+ibmcloud cr retention-policy-list -o json
 ```
 {: pre}
 
@@ -1205,7 +1215,7 @@ ibmcloud cr retention-policy-set --images 20 birds
 ```
 {: pre}
 
-Set the policy to the default state so that you keep all your images in the `birds` namespace by entering `All` as the number of images to keep and `birds` as the namespace.
+Revert the policy to the default state so that you keep all your images in the `birds` namespace by entering `All` as the number of images to keep and `birds` as the namespace.
 
 ```sh
 ibmcloud cr retention-policy-set --images All birds
@@ -1391,7 +1401,7 @@ ibmcloud cr vulnerability-assessment us.icr.io/birds/bluebird:1
 ```
 {: pre}
 
-View a vulnerability assessment report that shows the vulnerabilities for the `us.icr.io/birds/bluebird:1` image in JSON format by using the `-- vulnerabilities` option and entering `json` as the format for the output and `us.icr.io/birds/bluebird:1` as the image.
+View a vulnerability assessment report that shows the vulnerabilities for the `us.icr.io/birds/bluebird:1` image in JSON format by using the `-- vulnerabilities` option, and by entering `json` as the format for the output and `us.icr.io/birds/bluebird:1` as the image.
 
 ```sh
 ibmcloud cr vulnerability-assessment --vulnerabilities --output json us.icr.io/birds/bluebird:1
