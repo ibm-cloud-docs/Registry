@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-21"
+lastupdated: "2025-07-30"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key, upload images, pull images, push images
 
@@ -230,14 +230,14 @@ To build your own Docker image, complete the following steps:
 
     1. Build the image from your Dockerfile on your local computer and tag it with your image name, where `IMAGE_NAME` is the name of your image and `DIRECTORY` is the path to the directory.
 
-        ```txt
+        ```sh
         docker build -t IMAGE_NAME DIRECTORY
         ```
         {: pre}
 
     2. Optional: Test your image on your local computer before you push it to your namespace.
 
-        ```txt
+        ```sh
         docker run IMAGE_NAME
         ```
         {: pre}
@@ -280,17 +280,16 @@ To remove a tag, or tags, by using the CLI, complete the following steps:
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. To remove a tag, run the following command, where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`. If a tag is not specified in the image name, the command fails. You can delete the tags for multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
-    ```txt
+    ```sh
     ibmcloud cr image-untag IMAGE
     ```
-    {: pre}
 
     To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`.
     {: tip}
 
 3. Verify that the tag was removed by running the following command, and check that the tag does not show in the list.
 
-    ```txt
+    ```sh
     ibmcloud cr image-list
     ```
     {: pre}

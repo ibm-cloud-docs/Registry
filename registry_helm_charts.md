@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-07-30"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -57,31 +57,29 @@ Before you begin, complete the following tasks.
 
     - Download the Helm chart from the OCI registry:
 
-        ```txt
+        ```sh
         helm pull oci://REGISTRY/MY_NAMESPACE/CHART_NAME --version CHART_VERSION
         ```
-        {: pre}
 
         Example, where `REGISTRY` is `localhost:5000`, `MY_NAMESPACE` is `helm-charts`, `CHART_NAME` is `mychart`, and `CHART_VERSION` is `0.1.0`:
 
-        ```txt
+        ```sh
         helm pull oci://localhost:5000/helm-charts/mychart --version 0.1.0
         ```
         {: pre}
 
     - Download the Helm chart from a Helm repository:
 
-        ```txt
+        ```sh
         helm pull [CHART_URL | REPO/CHART_NAME] --version CHART_VERSION
         ```
-        {: pre}
 
         Example, where `REPO/CHART_NAME` is `ibm-charts/ibm-istio` and `CHART_VERSION` is `1.2.2`.
 
         You can add the repo alias by using the [`helm repo add`](https://helm.sh/docs/helm/helm_repo_add/){: external} command.
         {: tip}
 
-        ```txt
+        ```sh
         helm pull ibm-charts/ibm-istio  --version 1.2.2
         ```
         {: pre}
@@ -111,10 +109,9 @@ To upload (push) a chart, complete the following steps:
 
 1. Log in to the CLI by running the following command, where `DOMAIN` is the domain name and the username (`-u`) is set to `iamapikey`. To find out more about the domain names, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
-    ```txt
+    ```sh
     helm registry login DOMAIN -u iamapikey
     ```
-    {: pre}
 
     The command then prompts you to input the password, which is the IAM API key.
 
@@ -124,14 +121,13 @@ To upload (push) a chart, complete the following steps:
 2. To view all namespaces that are available in your account, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list) command.
 3. Upload the chart to your namespace.
 
-    ```txt
+    ```sh
     helm push MY_CHART_PACKAGE oci://REGION.icr.io/MY_NAMESPACE
     ```
-    {: pre}
 
     Example, where `MY_CHART_PACKAGE` is `mychart-0.1.0.tgz`, `REGION` is `uk`, and `MY_NAMESPACE` is `helm-charts`:
 
-    ```txt
+    ```sh
     helm push mychart-0.1.0.tgz oci://uk.icr.io/helm-charts
     ```
     {: pre}
@@ -170,14 +166,13 @@ After you copy your chart, you can [install the Helm chart to the cluster in {{s
 
 You can install a Helm chart to the cluster in {{site.data.keyword.containerlong_notm}} directly from the registry. Follow the instructions in the Helm chart `README`, and use the full registry reference to the chart and chart version for installation.
 
-```txt
+```sh
 helm install RELEASE_NAME oci://REGION.icr.io/MY_NAMESPACE/CHART_NAME --version CHART_VERSION
 ```
-{: pre}
 
 Example, where `RELEASE_NAME` is `myrelease`, `REGION` is `uk`, `MY_NAMESPACE` is `helm-charts`, `CHART_NAME` is `mychart`, and `CHART_VERSION` is `0.1.0`:
 
-```txt
+```sh
 helm install myrelease oci://uk.icr.io/helm-charts/mychart --version 0.1.0
 ```
 {: pre}
@@ -221,17 +216,16 @@ To delete a chart by using the CLI, complete the following steps:
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. To delete a chart, run the following command, where `CHART` is the name of the chart that you want to remove, in the format `repository@digest` or `repository:tag`. Unlike images, a tag must be specified because the `latest` tag doesn't exist because a tag must always match the chart's semantic version. You can delete multiple charts by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
-    ```txt
+    ```sh
     ibmcloud cr image-rm CHART
     ```
-    {: pre}
 
     To find the names of your charts, run `ibmcloud cr image-list`. The registry stores different artifact types that include Helm charts and container images. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. To identify your chart by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
     {: tip}
 
 3. Verify that the chart was deleted by running the following command, and check that the chart does not show in the list.
 
-    ```txt
+    ```sh
     ibmcloud cr image-list
     ```
     {: pre}
@@ -272,17 +266,16 @@ To list the charts in the trash, complete the following steps.
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. You can list the charts in the trash by running the following command.
 
-    ```txt
+    ```sh
     ibmcloud cr trash-list
     ```
     {: pre}
 
 3. You can list only the charts in the trash for the namespace that you are interested in by running the following command, where `NAMESPACE` is your namespace.
 
-    ```txt
+    ```sh
     ibmcloud cr trash-list --restrict NAMESPACE
     ```
-    {: pre}
 
 ## Restoring charts
 {: #registry_helm_charts_restore}
@@ -310,7 +303,7 @@ To restore a chart by digest from the trash, complete the following steps:
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. List the charts in the trash by running the following command.
 
-    ```txt
+    ```sh
     ibmcloud cr trash-list
     ```
     {: pre}
@@ -320,10 +313,9 @@ To restore a chart by digest from the trash, complete the following steps:
 3. Note the digest for the chart that you want to restore.
 4. Run the following command to restore the chart to your repository. Where `DNS` is the domain name, `NAMESPACE` is the namespace, `REPO` is the repository, and `DIGEST` is the digest of the chart that you want to restore.
 
-    ```txt
+    ```sh
     ibmcloud cr image-restore DNS/NAMESPACE/REPO@DIGEST
     ```
-    {: pre}
 
     If some tags aren't restored, see [Why aren't all the tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
     {: tip}
@@ -343,7 +335,7 @@ To restore a chart by tag from the trash, complete the following steps.
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. List the charts in the trash by running the following command.
 
-    ```txt
+    ```sh
     ibmcloud cr trash-list
     ```
     {: pre}
@@ -354,10 +346,9 @@ To restore a chart by tag from the trash, complete the following steps.
 4. For the chart that you want to restore, make a note of the tag `TAG`.
 5. Run the following command to restore the chart to your repository, where `DNS/NAMESPACE/REPO` is the name of the chart that you want to restore and `TAG` is the tag.
 
-    ```txt
+    ```sh
     ibmcloud cr image-restore DNS/NAMESPACE/REPO:TAG
     ```
-    {: pre}
 
     In your live repository, you can pull the chart by tag.
 
