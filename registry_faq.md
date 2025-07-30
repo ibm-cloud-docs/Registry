@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-30"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -115,12 +115,16 @@ For more information, see [`ibmcloud cr image-list` (`ibmcloud cr images`)](/doc
 
 To list public images, run the following `ibmcloud` commands to target the global registry and list the public images that are provided by {{site.data.keyword.IBM_notm}}:
 
-```txt
+1. Set the region to global by running the `ibmcloud cr region-set` command and entering `global` as the region.
+
+```sh
 ibmcloud cr region-set global
 ```
 {: pre}
 
-```txt
+2. List the public images by running the `ibmcloud cr images` command with the `--include-ibm` option.
+
+```sh
 ibmcloud cr images --include-ibm
 ```
 {: pre}
@@ -156,16 +160,18 @@ You can find the long format of the image [digest](/docs/Registry?topic=Registry
 When you're using the digest to identify an image, always use the long format.
 {: note}
 
+You can run either of the following commands to get the long form of the image digest:
+
 - Run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command:
 
-    ```txt
+    ```sh
     ibmcloud cr image-digests
     ```
     {: pre}
 
-- Run the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command:
+- Run the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command with the `--no-trunc` option:
 
-    ```txt
+    ```sh
     ibmcloud cr image-list --no-trunc
     ```
     {: pre}
