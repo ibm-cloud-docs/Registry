@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-03"
+lastupdated: "2025-07-31"
 
 keywords:
 
@@ -40,16 +40,18 @@ The following table provides the dependency listing of this service following a 
 |:---|:---|:---|:---|:---|
 | IBM Cloud File Storage | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 | IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud - containers-kubernetes | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
-| IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
 | Akamai | Availability, Security compliance | No | Both |  external  |
-| IBM Cloud Classic Infrastructure Resource Management | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Public IP Address Management | Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Identity and Access Management | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Object Storage | Availability, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
-| IBM Cloud Service Endpoints | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 | IBM Cloudant for IBM Cloud | Availability, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
 | IBM Cloud Databases - databases-for-postgresql | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
 | IBM Cloud Databases - databases-for-redis | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
+| IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
+| IBM Cloud Classic Infrastructure Resource Management | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Service Endpoints | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
+| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud - containers-kubernetes | Availability, Change management, Disaster recovery, Instance control, Security compliance | No |  |  Same region  |
+| IBM Cloud Virtual Private Cloud | Availability, Disaster recovery, Operations | No |  |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Container Registry service dependency information - Critical dependencies" caption-side="top"}
 {: tab-title="Critical dependencies"}
@@ -60,9 +62,9 @@ The following table provides the dependency listing of this service following a 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
+| IBM Key Protect for IBM Cloud | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control, Operations, Security compliance | No | Both |  Same data center  |
 | IBM Cloud Global Search and Tagging | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Key Protect for IBM Cloud | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
 | PagerDuty | Availability, Operations, Security compliance | No | Both |  external  |
 | IBM Cloud Console | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
@@ -109,7 +111,7 @@ This table can be used to answer the following questions:
    :   No function impacted.
 
    operations
-   :   Monitoring, troubleshooting, and so on of the service and service instances.
+   :   Monitoring, troubleshooting, etc of the service and service instances.
 
    security compliance
    :   Vulnerability management and other security and compliance management of the service and service instances.
