@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-07-31"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, tag, repository, required permissions, resource group, command options, security issue, notes
 
@@ -51,6 +51,16 @@ This command returns the details about the registry API endpoint that the comman
 ```sh
 ibmcloud cr api
 ```
+
+### Example
+{: #bx_cr_api_example}
+
+Find out the details for the registry API endpoint.
+
+```sh
+ibmcloud cr api
+```
+{: pre}
 
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
@@ -262,6 +272,16 @@ ibmcloud cr iam-policies-enable
 
 To find out more about the required permissions, see [Access roles for configuring {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
+### Example
+{: #bx_cr_iam_policies_enable_example}
+
+Use IAM policies to enable fine-grained authorization.
+
+```sh
+ibmcloud cr iam-policies-enable
+```
+{: pre}
+
 ## `ibmcloud cr iam-policies-status`
 {: #bx_cr_iam_policies_status}
 
@@ -273,6 +293,16 @@ All accounts require {{site.data.keyword.iamlong}} (IAM) access policies.
 ```sh
 ibmcloud cr iam-policies-status
 ```
+
+### Example
+{: #bx_cr_iam_policies_status_example}
+
+Show the status of the IAM access policy for your account.
+
+```sh
+ibmcloud cr iam-policies-status
+```
+{: pre}
 
 ## `ibmcloud cr image-digests` (`ibmcloud cr digests`)
 {: #bx_cr_image_digests}
@@ -656,6 +686,16 @@ Displays the name and the account of the registry that you are logged in to.
 ```sh
 ibmcloud cr info
 ```
+
+### Example
+{: #bx_cr_info_example}
+
+Find the name and account of the registry.
+
+```sh
+ibmcloud cr info
+```
+{: pre}
 
 ## `ibmcloud cr login`
 {: #bx_cr_login}
@@ -1106,6 +1146,16 @@ Displays the targeted region and the registry. For more information, see [Region
 ibmcloud cr region
 ```
 
+### Example
+{: #bx_cr_region_example}
+
+Find out which region and registry you're targeting.
+
+```sh
+ibmcloud cr region
+```
+{: pre}
+
 ## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
 
@@ -1124,7 +1174,7 @@ ibmcloud cr region-set [REGION]
 ### Example
 {: #bx_cr_region_set_example}
 
-Target the US South region by entering `us-south` as the region.
+Target the Dallas region by entering `us-south` as the region.
 
 ```sh
 ibmcloud cr region-set us-south
@@ -1322,6 +1372,16 @@ Find out which version of Vulnerability Advisor you're using. Version 4 is the o
 ```sh
 ibmcloud cr va-version
 ```
+
+### Example
+{: #ic_cr_va_version_example}
+
+Find out which version of Vulnerability Advisor you're using.
+
+```sh
+ibmcloud cr va-version
+```
+{: pre}
 
 ## `ibmcloud cr va-version-set`
 {: #ic_cr_va_version_set}

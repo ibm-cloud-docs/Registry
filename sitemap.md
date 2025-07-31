@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-07-31"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -959,6 +959,8 @@ subcollection: Registry
 
 * [`ibmcloud cr api`](/docs/Registry?topic=Registry-containerregcli#bx_cr_api)
 
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_api_example)
+
 * [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_prereq)
@@ -995,7 +997,11 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable_prereq)
 
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable_example)
+
 * [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status)
+
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status_example)
 
 * [`ibmcloud cr image-digests` (`ibmcloud cr digests`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests)
 
@@ -1062,6 +1068,8 @@ subcollection: Registry
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_example)
 
 * [`ibmcloud cr info`](/docs/Registry?topic=Registry-containerregcli#bx_cr_info)
+
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_info_example)
 
 * [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login)
 
@@ -1159,6 +1167,8 @@ subcollection: Registry
 
 * [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region)
 
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_example)
+
 * [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set)
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_option)
@@ -1198,6 +1208,8 @@ subcollection: Registry
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list_example)
 
 * [`ibmcloud cr va-version`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version)
+
+    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_example)
 
 * [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set)
 
