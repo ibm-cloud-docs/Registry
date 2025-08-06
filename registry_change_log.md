@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-06-09"
+lastupdated: "2025-08-06"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI, vulnerabilities, what's new in CLI
 
@@ -19,6 +19,17 @@ In this change log you can learn about what's new in the CLI. You can find out a
 {: shortdesc}
 
 For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the container-registry CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+
+
+## Version 1.3.15
+{: #cli-change-logv1-1315}
+
+Version 1.3.15 of the CLI was released on 6 August 2025.
+
+This release has the following changes:
+
+- Updates to support the new region in Montreal, Canada (`ca-mon`).
+- Remediates vulnerabilities.
 
 ## Version 1.3.14
 {: #cli-change-logv1-1314}

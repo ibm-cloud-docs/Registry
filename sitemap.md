@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-31"
+lastupdated: "2025-08-06"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1240,6 +1240,8 @@ subcollection: Registry
     * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
 
 [CLI change log](/docs/Registry?topic=Registry-registry_cli_change_log#registry_cli_change_log)
+
+* [Version 1.3.15](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-1315)
 
 * [Version 1.3.14](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-1314)
 
