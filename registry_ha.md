@@ -15,8 +15,6 @@ subcollection: Registry
 # High availability for {{site.data.keyword.registryshort_notm}}
 {: #ha-dr}
 
-
-
 The {{site.data.keyword.registrylong}} service is a highly available, regional, service.
 {: shortdesc}
 
