@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-08-08"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -35,7 +35,7 @@ Before you target a VPE for {{site.data.keyword.registryshort_notm}}, you must c
 - Ensure that a Virtual Private Cloud is created, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
 - Make a plan for your virtual private endpoints, see [Planning for virtual private endpoint gateways](/docs/vpc?topic=vpc-planning-considerations).
 - Ensure that correct access controls are set for your VPE, see [Configuring ACLs and security groups for use with endpoint gateways](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways).
-- Understand the limitations of having a VPE, see [Virtual private endpoint limitations](/docs/vpc?topic=vpc-limitations-vpe).
+- Understand the limitations of having a VPE, see [Planning for virtual private endpoint gateways](/docs/vpc?topic=vpc-planning-considerations).
 - Understand how to view details about a VPE, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway).
 
 ## Virtual private endpoints
