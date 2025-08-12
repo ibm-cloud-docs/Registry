@@ -371,11 +371,8 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 
 To find out more about the required permissions, see [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-### Command options
-{: #bx_cr_image_inspect_option}
-
-`--format FORMAT`
-:   (Optional) Format the output elements by using a Go template. For more information, see [Formatting and filtering the {{site.data.keyword.registryshort}} CLI output](/docs/Registry?topic=Registry-registry_cli_list).
+### Command arguments
+{: #bx_cr_image_inspect_argument}
 
 `IMAGE`
 :   The name of the image for which you want to get a report. You can inspect multiple images by listing each image in the command with a space between each name.
@@ -386,6 +383,12 @@ To find out more about the required permissions, see [Access roles for using {{s
 
     - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
     - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
+
+### Command options
+{: #bx_cr_image_inspect_option}
+
+`--format FORMAT`
+:   (Optional) Format the output elements by using a Go template. For more information, see [Formatting and filtering the {{site.data.keyword.registryshort}} CLI output](/docs/Registry?topic=Registry-registry_cli_list).
 
 ### Example
 {: #bx_cr_image_inspect_example}
@@ -516,8 +519,8 @@ ibmcloud cr image-restore IMAGE
 
 To find out more about the required permissions, see [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-### Command options
-{: #bx_cr_image_restore_option}
+### Command arguments
+{: #bx_cr_image_restore_argument}
 
 `IMAGE`
 :   The name of the image that you want to restore from the trash.
@@ -560,8 +563,8 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 
 To find out more about the required permissions, see [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-### Command options
-{: #bx_cr_image_rm_option}
+### Command arguments
+{: #bx_cr_image_rm_argument}
 
 `IMAGE`
 :   The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. You can identify images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
@@ -610,8 +613,8 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 
 To find out more about the required permissions, see [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-### Command options
-{: #bx_cr_image_tag_option}
+### Command arguments
+{: #bx_cr_image_tag_argument}
 
 `SOURCE_IMAGE`
 :   The name of the source image. You can identify source images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
@@ -660,8 +663,8 @@ ibmcloud cr image-untag IMAGE [IMAGE...]
 
 To find out more about the required permissions, see [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-### Command options
-{: #bx_cr_image_untag_option}
+### Command arguments
+{: #bx_cr_image_untag_argument}
 
 `IMAGE`
 :   The name of the image for which you want to remove the tag. You can delete the tag from multiple images at the same time by listing each image in the command with a space between each name. `IMAGE` must be in the format `repository:tag`, for example, `us.icr.io/namespace/image:latest`.
@@ -746,8 +749,8 @@ ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
 
 To find out more about the required permissions, see [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-### Command options
-{: #bx_cr_manifest_inspect_option}
+### Command arguments
+{: #bx_cr_manifest_inspect_argument}
 
 `IMAGE`
 :   The name of the image for which you want to inspect the manifest. You can identify images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
@@ -756,6 +759,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 
     - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
     - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`.
+
+### Command options
+{: #bx_cr_manifest_inspect_option}
 
 `--quiet`, `-q`
 :   (Optional) Reduces the output to display essential elements only.
@@ -801,14 +807,17 @@ If you have a problem when you try to add a namespace, see [Why can't I add a na
 
 To find out more about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles) and [Access roles for configuring {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
-### Command options
-{: #bx_cr_namespace_add_option}
+### Command arguments
+{: #bx_cr_namespace_add_argument}
 
 `NAMESPACE`
 :   The namespace that you want to add. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
 
     Do not put personal information in your namespace names.
     {: important}
+
+### Command options
+{: #bx_cr_namespace_add_option}
 
 `-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)`
 :   (Optional) Specify the name or ID of the resource group to which you want to add the namespace. If you don't set this option, the targeted resource group is used. If you don't set this option and a resource group is not targeted, the default resource group for the account is used.
@@ -845,14 +854,17 @@ For more information about resource groups, see [Creating a resource group](/doc
 
 To find out more about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles) and [Access roles for configuring {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
+### Command arguments
+{: #ic_cr_namespace_assign_argument}
+
+`NAMESPACE`
+:   The namespace that you want to assign to a resource group.
+
 ### Command options
 {: #ic_cr_namespace_assign_option}
 
 `-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)`
 :   (Optional) Specify the name or ID of the resource group to which you want to assign the namespace. If you don't set this option, the targeted resource group is used.
-
-`NAMESPACE`
-:   The namespace that you want to assign to a resource group.
 
 ### Example
 {: #ic_cr_namespace_assign_example}
@@ -911,11 +923,14 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 
 To find out more about the required permissions, see [Access roles for configuring {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
-### Command options
-{: #bx_cr_namespace_rm_option}
+### Command arguments
+{: #bx_cr_namespace_rm_argument}
 
 `NAMESPACE`
 :   The namespace that you want to remove.
+
+### Command options
+{: #bx_cr_namespace_rm_option}
 
 `--force`, `-f`
 :   (Optional) Force the command to run with no user prompts.
@@ -976,8 +991,8 @@ For more information about plans, see [Registry plans](/docs/Registry?topic=Regi
 
 To find out more about the required permissions, see [Access roles for configuring {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
-### Command options
-{: #bx_cr_plan_upgrade_option}
+### Command arguments
+{: #bx_cr_plan_upgrade_argument}
 
 `PLAN`
 :   (Optional) The name of the pricing plan that you want to upgrade to. If `PLAN` is not specified, the default is `standard`.
@@ -1165,8 +1180,8 @@ Set a target region for the {{site.data.keyword.registrylong_notm}} commands. To
 ibmcloud cr region-set [REGION]
 ```
 
-### Command options
-{: #bx_cr_region_set_option}
+### Command arguments
+{: #bx_cr_region_set_argument}
 
 `REGION`
 :   (Optional) The name of your target region, for example `us-south`. For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
@@ -1240,11 +1255,14 @@ ibmcloud cr retention-policy-set [--retain-untagged] [--force | -f] --images IMA
 
 To find out more about the required permissions, see [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-### Command options
-{: #bx_cr_retention_policy_set_option}
+### Command arguments
+{: #bx_cr_retention_policy_set_argument}
 
 `NAMESPACE`
 :   The namespace for which you want to create a policy.
+
+### Command options
+{: #bx_cr_retention_policy_set_option}
 
 `--retain-untagged`
 :   (Optional) Retain all untagged images when the retention policy is being processed. Only tagged images are analyzed and, if the images don't meet the criteria, they are deleted. If the option isn't specified, all tagged and untagged images are analyzed and, if the images don't meet the criteria, they are deleted.
@@ -1299,11 +1317,14 @@ ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-unt
 
 To find out more about the required permissions, see [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-### Command options
-{: #bx_cr_retention_run_option}
+### Command arguments
+{: #bx_cr_retention_run_argument}
 
 `NAMESPACE`
 :   The namespace that you want to clean up.
+
+### Command options
+{: #bx_cr_retention_run_option}
 
 `--force`, `-f`
 :   (Optional) Force the command to run with no user prompts.
@@ -1395,8 +1416,8 @@ If you try to set an invalid version of Vulnerability Advisor, you get en error,
 ibmcloud cr va-version-set VERSION
 ```
 
-### Command options
-{: #ic_cr_va_version_set_option}
+### Command arguments
+{: #ic_cr_va_version_set_argument}
 
 `VERSION`
 :   The version of Vulnerability Advisor that you want to use. The only valid value is `v4`.
@@ -1425,8 +1446,8 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 
 To find out more about the required permissions, see [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-### Command options
-{: #bx_cr_va_option}
+### Command arguments
+{: #bx_cr_va_argument}
 
 `IMAGE`
 :   The name of the image for which you want to get a report. The report states whether the image has any known package vulnerabilities. You can request reports for multiple images at the same time by listing each image in the command with a space between each name.
@@ -1436,6 +1457,9 @@ To find out more about the required permissions, see [Access roles for using {{s
     For more information about supported Docker base images, see [Vulnerable packages](/docs/Registry?topic=Registry-va_index&interface=ui#packages).
 
     For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
+
+### Command options
+{: #bx_cr_va_option}
 
 `--extended`, `-e`
 :   (Optional) The command output shows additional information about fixes for vulnerable packages.
