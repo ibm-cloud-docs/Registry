@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-04-08"
+  years: 2017, 2025
+lastupdated: "2025-08-12"
 
 keywords: registry, log in, login fails, container-registry, CLI plug-in, login credentials, Docker
 
@@ -28,7 +28,7 @@ The [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_lo
 The following alternatives are possible causes:
 {: tsCauses}
 
-- **Scenario A.** The `container-registry` CLI plug-in is out of date and needs updating.
+- **Scenario A.** The `container-registry` command-line interface (CLI) plug-in is out of date and needs updating.
 - **Scenario B.** Docker is not installed on your local computer, or is not running.
 - **Scenario C.** Your {{site.data.keyword.cloud_notm}} login credentials expired.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-08-12"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -20,7 +20,7 @@ Use {{site.data.keyword.registrylong}} to store and access private container ima
 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, scalable, and encrypted private image registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can use {{site.data.keyword.registryshort}} by setting up your own image [namespace](#x2031005){: term} and pushing container images to your namespace.
 
-![Diagram showing how IBM Cloud Container Registry interacts with images.](images/about_container_registry_v2.svg "Diagram showing how {{site.data.keyword.registryshort}} interacts with images. {{site.data.keyword.registryshort}} contains both private and public namespaces and APIs to interact with the service. Your local image store interacts with both {{site.data.keyword.registryshort}} and other registries, which in turn interact with your Kubernetes cluster. The {{site.data.keyword.cloud_notm}} GUI ({{site.data.keyword.cloud_notm}} console) interacts with the {{site.data.keyword.registryshort}} API to list images. The {{site.data.keyword.registryshort}} CLI interacts with the API to list, inspect, and remove images, create namespaces, and perform other administrative functions."){: caption="How {{site.data.keyword.registryshort}} interacts with images" caption-side="bottom"}{: external download="../images/about_container_registry_v2.svg"}
+![Diagram showing how IBM Cloud Container Registry interacts with images.](images/about_container_registry_v2.svg "Diagram showing how {{site.data.keyword.registryshort}} interacts with images. {{site.data.keyword.registryshort}} contains both private and public namespaces and APIs to interact with the service. Your local image store interacts with both {{site.data.keyword.registryshort}} and other registries, which in turn interact with your Kubernetes cluster. The {{site.data.keyword.cloud_notm}} graphical user interface (GUI), which is called the {{site.data.keyword.cloud_notm}} console, interacts with the {{site.data.keyword.registryshort}} API to list images. The {{site.data.keyword.registryshort}} CLI interacts with the API to list, inspect, and remove images, create namespaces, and perform other administrative functions."){: caption="How {{site.data.keyword.registryshort}} interacts with images" caption-side="bottom"}{: external download="../images/about_container_registry_v2.svg"}
 
 A Docker image is the basis for every container that you create. An image is created from a [Dockerfile](#x9860414){: term}, which is a file that contains instructions about how to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the configuration of the app, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a group of users (private registry). By using {{site.data.keyword.registryshort}}, only users with access to your {{site.data.keyword.cloud_notm}} account can access your images.
 
@@ -142,7 +142,7 @@ Pull traffic across public connections counts toward usage and quota. Pull traff
 The following example is for the standard plan:
 :   In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull a 1 GB image from your namespace. Because the quota limit is not yet reached, {{site.data.keyword.registryshort}} allows the user to pull this image.
 
-    After the image is pulled, {{site.data.keyword.registryshort}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registryshort}} prevents you from pulling images from your namespace.
+    After the image is pulled, {{site.data.keyword.registryshort}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increased from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registryshort}} prevents you from pulling images from your namespace.
 
 ### Cost of {{site.data.keyword.registryshort}}
 {: #registry_cost}

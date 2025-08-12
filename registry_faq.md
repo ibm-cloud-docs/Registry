@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-08-12"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -32,7 +32,7 @@ The reference documentation for {{site.data.keyword.registrylong_notm}} is avail
 {: #faq_setup_cli}
 {: faq}
 
-To set up the {{site.data.keyword.registrylong_notm}} CLI, use the following steps:
+To set up the {{site.data.keyword.registrylong_notm}} command-line interface (CLI), use the following steps:
 1. Ensure that the {{site.data.keyword.cloud_notm}} CLI is installed.
 2. Install the `container-registry` CLI plug-in by running the command `ibmcloud plugin install container-registry`.
 3. Log in to {{site.data.keyword.cloud_notm}} with the `ibmcloud login` command.
@@ -284,7 +284,16 @@ For more information, see [Why can't I pull the newest image by using the latest
 {: #faq_imagepullbackoff}
 {: faq}
 
-Your cluster uses an API key that is stored in an image pull secret to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}, or the image with the specific tag does not exist in the repository. To fix it, make sure that you're using the correct name and tag for the image, that you have enough pull traffic and storage quota, and that you have an image pull secret in your namespace.
+The error is likely to be caused by one of the following situations:
+
+- Your cluster uses an API key that is stored in an image pull secret to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}.
+- The image with the specific tag does not exist in the repository.
+
+To fix the error, check for the following potential causes:
+
+- Check that you're using the correct name and tag for the image.
+- Check that your pull traffic and storage quotas are large enough.
+- Check whether you have an image pull secret in your namespace.
 
 For more information, see [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull) for assistance.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-04-26"
+  years: 2017, 2025
+lastupdated: "2025-08-12"
 
 keywords: registry, list, images, timeout, account
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 Listing images times out in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-The request timed out while you attempted to list your images in the {{site.data.keyword.cloud_notm}} console, CLI, or API.
+The request timed out while you attempted to list your images in the {{site.data.keyword.cloud_notm}} console, command-line interface (CLI), or API.
 {: tsSymptoms}
 
 The most likely cause of the timeout is that the account has many images. The vulnerability reports can't be displayed because the targeted account contains more images than Vulnerability Advisor can process.

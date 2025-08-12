@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-08-12"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -34,7 +34,7 @@ For more information about how to use IAM to manage access to your resources, se
 Before you begin, you must complete the following tasks:
 
 - Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
-- Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+- Ensure that you have the most recent version of the `container-registry` command-line interface (CLI) plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 - Ensure that you have access to two [{{site.data.keyword.cloud_notm}} accounts](https://cloud.ibm.com/login){: external} that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
 - Ensure that you have the correct access permissions for adding and removing [namespaces](#x2031005){: term}, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 

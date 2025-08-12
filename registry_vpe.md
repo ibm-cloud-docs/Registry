@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-08"
+lastupdated: "2025-08-12"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -61,7 +61,7 @@ You can create a VPE gateway for your local {{site.data.keyword.registryshort_no
 ## Setting up a VPE for {{site.data.keyword.registrylong_notm}}
 {: #registry_vpe_endpoint_setup}
 
-When you create a VPE gateway by using the CLI or API, you must specify the [cloud resource name (CRN)](#x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
+When you create a VPE gateway by using the command-line interface (CLI) or API, you must specify the [cloud resource name (CRN)](#x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
 You can create VPE gateways in these locations:  `au-syd`, `br-sao`, `ca-mon`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `jp-osa`, `jp-tok`, `us-south`, and `us-east` (global registry).
 

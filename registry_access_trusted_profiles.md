@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-08-12"
 
 keywords: API key, tokens, automating access, access, authentication, Podman, Skopeo, Buildah, Docker, client, authenticate, iam, domain, service id api key, trusted profiles,
 
@@ -33,7 +33,7 @@ You can use service ID API keys in the following places:
 
 - {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} clusters.
 - Kubernetes and {{site.data.keyword.redhat_openshift_full}} clusters that aren't on {{site.data.keyword.cloud_notm}}.
-- Docker CLI and other clients.
+- Docker command-line interface (CLI) and other clients.
 
 ### Creating a trusted profile
 {: #registry_access_trusted_profiles_create}

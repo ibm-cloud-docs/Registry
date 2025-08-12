@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-08-12"
 
 keywords: IBM Cloud Container Registry notices, support, version, security status, lists
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # {{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0
 {: #registry_notices_lists}
 
-From {{site.data.keyword.registrylong}} CLI plug-in version 1.0.0, when you use the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands to list images, they return Vulnerability Advisor security status results only if you use the `--va` option.
+From {{site.data.keyword.registrylong}} command-line interface (CLI) plug-in version 1.0.0, when you use the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands to list images, they return Vulnerability Advisor security status results only if you use the `--va` option.
 {: shortdesc}
 
 The original announcement was published on 3 August 2022.

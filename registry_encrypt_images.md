@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-10"
+lastupdated: "2025-08-12"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -39,7 +39,7 @@ For more information about encrypting images, see [Encrypted container images fo
 {: #registry_encrypt_prereqs}
 
 - Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
-- Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+- Ensure that you have the most recent version of the `container-registry` command-line interface (CLI) plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 - Ensure that you have a private namespace to push your encrypted image to, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
 - Install [Buildah version 1.15](https://buildah.io/releases/2020/06/27/Buildah-version-v1.15.0.html){: external}, or later, so that you can build encrypted images. Buildah works in the Linux&reg; environment only. As an alternative to Linux&reg;, you can use a virtual machine or Docker image to run Buildah to build images.
 - Install [Podman](https://podman.io/).
@@ -108,7 +108,7 @@ Create a public-private key pair by using OpenSSL commands.
 
 Encrypt the image by using the public key and then build a container image by using a [Dockerfile](#x9860414){: term}.
 
-1. Go to the directory where you store your apps, for example, `MY_APP`.
+1. Go to the directory where you store your apps, for example `MY_APP`.
 
     ```txt
     cd MY_APP

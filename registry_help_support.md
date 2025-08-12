@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-08-12"
 
 keywords: support, help, registry, status, support case
 
@@ -18,7 +18,7 @@ subcollection: Registry
 If you experience an issue or have questions when you are using {{site.data.keyword.registrylong}}, use the following resources before you open a support case.
 {: shortdesc}
 
-- Ask a question in the [AI assistant](/docs/overview?topic=overview-ask-ai-assistant) from the console or the {{site.data.keyword.cloud_notm}} CLI.
+- Ask a question in the [AI assistant](/docs/overview?topic=overview-ask-ai-assistant) from the console or the {{site.data.keyword.cloud_notm}} command-line interface (CLI).
 - Review the frequently asked questions in the product documentation.
     - [FAQ for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_faq)
     - [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va)

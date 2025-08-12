@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-08-12"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -169,7 +169,7 @@ You can use one of the following options to assign access in the console:
 - Access policies per user. You can manage access policies per user from the **Manage > Access (IAM) > Users** page in the console. For more information about the steps to assign IAM access, see [Managing access to resources](/docs/account?topic=account-assign-access-resources&interface=ui#access-resources-console).
 - Access groups. Access groups are used to streamline access management by assigning access to a group once, then you can add or remove users as required from the group to control their access. You manage access groups and their access from the **Manage > Access (IAM) > Access groups** page in the console. For more information, see [Assigning access to a group in the console](/docs/account?topic=account-groups&interface=ui#access_ag).
 
-## Assigning access to {{site.data.keyword.registryshort}} in the CLI
+## Assigning access to {{site.data.keyword.registryshort}} in the command-line interface (CLI)
 {: #registry_iam_assign-access-cli}
 {: cli}
 

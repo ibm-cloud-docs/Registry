@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-05-23"
+  years: 2017, 2025
+lastupdated: "2025-08-12"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -30,7 +30,7 @@ The following troubleshooting topics are available to help you:
 ### Troubleshooting CLI login
 {: #gettinghelp_ts_cli_login}
 
-Troubleshoot logging in problems.
+Troubleshoot problems logging in to the command-line interface (CLI).
 
 - [Why can't I log in to {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-login)
 - [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire)

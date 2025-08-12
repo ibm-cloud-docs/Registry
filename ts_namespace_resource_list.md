@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-04-26"
+  years: 2021, 2025
+lastupdated: "2025-08-12"
 
 keywords: registry, namespaces, resource list, resource group, console
 
@@ -28,7 +28,7 @@ When you view your namespaces in the {{site.data.keyword.cloud_notm}} **Resource
 Only namespaces that are assigned to [resource groups](#x2161955){: term} show in the {{site.data.keyword.cloud_notm}} **Resource list** page.
 {: tsCauses}
 
-Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, are created in the resource group that you specify. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.
+Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} command-line interface (CLI) or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, are created in the resource group that you specify. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.
 
 Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups.
 

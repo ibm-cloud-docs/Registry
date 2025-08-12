@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-11"
+lastupdated: "2025-08-12"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -87,7 +87,7 @@ The following attribute types for specific resources are available in the {{site
 {: #registry-cbr_rules_cli}
 {: cli}
 
-1. To create rules from the CLI, [install the context-based restrictions CLI plug-in](/docs/cli?topic=cli-cbr-plugin#install-cbr-plugin).
+1. To create rules from the command-line interface (CLI), [install the context-based restrictions CLI plug-in](/docs/cli?topic=cli-cbr-plugin#install-cbr-plugin).
 2. You can use the [`ibmcloud cbr rule-create` command](/docs/account?topic=account-cbr-plugin#cbr-cli-rule-create-command) to create rules for context-based restrictions. For more information, see [Creating rules by using the CLI](/docs/account?topic=account-context-restrictions-create&interface=cli#context-restrictions-create-rules-cli).
 
 The following example creates a rule that targets the Container Registry service and allows access to your namespace `my_namespace` only over the private network in `us-south`.

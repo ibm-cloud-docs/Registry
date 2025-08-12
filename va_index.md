@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-27"
+lastupdated: "2025-08-12"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -155,7 +155,7 @@ You can review the security of the Docker images that are stored in your namespa
 {: support}
 {: cli}
 
-You can review the security of Docker images that are stored in your namespaces in {{site.data.keyword.registrylong_notm}} by using the CLI.
+You can review the security of Docker images that are stored in your namespaces in {{site.data.keyword.registrylong_notm}} by using the command-line interface (CLI).
 
 1. List the images in your {{site.data.keyword.cloud_notm}} account. A list of all images is returned, independent of the namespace where they are stored.
 

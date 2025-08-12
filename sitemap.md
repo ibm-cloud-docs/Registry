@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-06"
+lastupdated: "2025-08-12"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -672,7 +672,7 @@ subcollection: Registry
 
 * [Assigning access to {{site.data.keyword.registryshort}} in the console](/docs/Registry?topic=Registry-iam&interface=ui#registry_iam_assign-access-console)
 
-* [Assigning access to {{site.data.keyword.registryshort}} in the CLI](/docs/Registry?topic=Registry-iam&interface=cli#registry_iam_assign-access-cli)
+* [Assigning access to {{site.data.keyword.registryshort}} in the command-line interface (CLI)](/docs/Registry?topic=Registry-iam&interface=cli#registry_iam_assign-access-cli)
 
 * [Assigning access to {{site.data.keyword.registryshort}} by using the API](/docs/Registry?topic=Registry-iam&interface=api#registry_iam_assign-access-api)
 

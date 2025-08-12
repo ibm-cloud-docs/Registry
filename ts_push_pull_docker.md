@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-05-21"
+  years: 2017, 2025
+lastupdated: "2025-08-12"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -47,4 +47,4 @@ For scenarios A, B, and C complete the following tasks:
 
 - [Ensure that Docker is installed on your computer](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install).
 - Check your Docker installation path.
-- Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login).
+- Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} command-line interface (CLI) by running [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-12"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI, vulnerabilities, what's new in CLI
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # {{site.data.keyword.registryshort}} CLI change log
 {: #registry_cli_change_log}
 
-In this change log you can learn about what's new in the CLI. You can find out about the most recent changes, improvements, and updates for the {{site.data.keyword.registrylong}} CLI.
+In this change log you can learn about what's new in the {{site.data.keyword.registrylong}} command-line interface (CLI). You can find out about the most recent changes, improvements, and updates for the {{site.data.keyword.registryshort}} CLI.
 {: shortdesc}
 
 For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the container-registry CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
