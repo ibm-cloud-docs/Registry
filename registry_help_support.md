@@ -18,7 +18,7 @@ subcollection: Registry
 If you experience an issue or have questions when you are using {{site.data.keyword.registrylong}}, use the following resources before you open a support case.
 {: shortdesc}
 
-- Ask a question in the [AI assistant](/docs/overview?topic=overview-ask-ai-assistant) from the console or the {{site.data.keyword.cloud_notm}} command-line interface (CLI).
+- Ask a question in the [AI assistant](/docs/overview?topic=overview-ask-ai-assistant) from the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} command-line interface (CLI).
 - Review the frequently asked questions in the product documentation.
     - [FAQ for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_faq)
     - [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va)

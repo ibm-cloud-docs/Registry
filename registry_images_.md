@@ -344,7 +344,7 @@ To delete an image by using the CLI, complete the following steps:
     ```
     {: pre}
 
-### Deleting images from your private repository in the console
+### Deleting images from your private repository in the {{site.data.keyword.cloud_notm}} console
 {: #registry_images_remove_gui}
 
 You can delete unwanted images and all their tags from your private {{site.data.keyword.cloud_notm}} image repository by using the {{site.data.keyword.cloud_notm}} console.

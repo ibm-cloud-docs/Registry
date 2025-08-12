@@ -230,7 +230,7 @@ To delete a chart by using the CLI, complete the following steps:
     ```
     {: pre}
 
-### Deleting charts from your private repository in the console
+### Deleting charts from your private repository in the {{site.data.keyword.cloud_notm}} console
 {: #registry_helm_charts_remove_gui}
 {: help}
 {: support}
