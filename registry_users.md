@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-08-12"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -52,7 +52,7 @@ For an example of useful access policies for {{site.data.keyword.registrylong_no
 ## Setting up region-based policies for IAM
 {: #create_region_policy_iam}
 
-For all regions other than global you can use the region field when you create a rule. So for example, in the CLI for `us-south` you use the `--region us-south` option. However, because global is a geography and not a region you must omit the `--region`option and add `geography=global` into the `--attributes` field.
+For all regions other than global you can use the region field when you create a rule. So for example in the command-line interface (CLI), for `us-south` you use the `--region us-south` option. However, because global is a geography and not a region you must omit the `--region`option and add `geography=global` into the `--attributes` field.
 
 ### Region-based user policies
 {: #create_region_policy_user}

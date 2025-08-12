@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-10"
+lastupdated: "2025-08-12"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -34,7 +34,7 @@ Do not put personal information in your container images, namespace names, descr
 ## Before you begin
 {: #gs_registry_prereqs}
 
-Install the {{site.data.keyword.cloud_notm}} CLI so that you can run the {{site.data.keyword.cloud_notm}} `ibmcloud` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
+Install the {{site.data.keyword.cloud_notm}} command-line interface (CLI) so that you can run the {{site.data.keyword.cloud_notm}} `ibmcloud` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 
 The following instructions assume that you’re in your own account with permission to do everything. If you find that you can't run the commands and you’re a member of an account that is owned and administered by someone else, you might lack the correct permissions to configure and operate the {{site.data.keyword.registryshort}} service. In which case, you must ask your administrator to give you the required IAM service access role permissions. For more information, see [Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started)
 {: note}

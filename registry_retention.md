@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-08-12"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -72,7 +72,7 @@ Where an image, within a repository, is referenced by multiple tags, that image 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
-To reduce the number of images in each repository within your namespace by using the CLI, complete the following steps:
+To reduce the number of images in each repository within your namespace by using the command-line interface (CLI), complete the following steps:
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. Choose the registry in which you want to clean up your images by running the following command and selecting the appropriate region:

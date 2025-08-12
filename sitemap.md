@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-06"
+lastupdated: "2025-08-12"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -524,7 +524,7 @@ subcollection: Registry
 
     * [Deleting images from your private repository in the CLI](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_cli)
 
-    * [Deleting images from your private repository in the console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
+    * [Deleting images from your private repository in the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
 
 * [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash)
 
@@ -559,7 +559,7 @@ subcollection: Registry
 
     * [Deleting charts from your private repository in the CLI](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_cli)
 
-    * [Deleting charts from your private repository in the console](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_gui)
+    * [Deleting charts from your private repository in the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_gui)
 
 * [Listing charts in the trash](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_list_trash)
 
@@ -670,9 +670,9 @@ subcollection: Registry
 
     * [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using)
 
-* [Assigning access to {{site.data.keyword.registryshort}} in the console](/docs/Registry?topic=Registry-iam&interface=ui#registry_iam_assign-access-console)
+* [Assigning access to {{site.data.keyword.registryshort}} in the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-iam&interface=ui#registry_iam_assign-access-console)
 
-* [Assigning access to {{site.data.keyword.registryshort}} in the CLI](/docs/Registry?topic=Registry-iam&interface=cli#registry_iam_assign-access-cli)
+* [Assigning access to {{site.data.keyword.registryshort}} in the command-line interface (CLI)](/docs/Registry?topic=Registry-iam&interface=cli#registry_iam_assign-access-cli)
 
 * [Assigning access to {{site.data.keyword.registryshort}} by using the API](/docs/Registry?topic=Registry-iam&interface=api#registry_iam_assign-access-api)
 
@@ -709,13 +709,13 @@ subcollection: Registry
 
 * [Reviewing a vulnerability report](/docs/Registry?topic=Registry-va_index#va_reviewing)
 
-    * [Reviewing a vulnerability report by using the console](/docs/Registry?topic=Registry-va_index&interface=ui#va_reviewing_gui)
+    * [Reviewing a vulnerability report by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-va_index&interface=ui#va_reviewing_gui)
 
     * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli)
 
 * [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=cli#va_managing_policy)
 
-    * [Setting exemption policies by using the console](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy_gui)
+    * [Setting exemption policies by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy_gui)
 
     * [Setting exemption policies by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_managing_policy_cli)
 

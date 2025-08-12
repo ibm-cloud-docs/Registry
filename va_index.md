@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-27"
+lastupdated: "2025-08-12"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -129,7 +129,7 @@ If you don't address any discovered issues, those issues can impact the security
 If your image does not meet the requirements that are set by your organization's policy, you must configure the image to meet those requirements before you can deploy it. For more information about how to view and change the organization policy, see [Setting organizational exemption policies](#va_managing_policy).
 {: requirement}
 
-### Reviewing a vulnerability report by using the console
+### Reviewing a vulnerability report by using the {{site.data.keyword.cloud_notm}} console
 {: #va_reviewing_gui}
 {: help}
 {: support}
@@ -155,7 +155,7 @@ You can review the security of the Docker images that are stored in your namespa
 {: support}
 {: cli}
 
-You can review the security of Docker images that are stored in your namespaces in {{site.data.keyword.registrylong_notm}} by using the CLI.
+You can review the security of Docker images that are stored in your namespaces in {{site.data.keyword.registrylong_notm}} by using the command-line interface (CLI).
 
 1. List the images in your {{site.data.keyword.cloud_notm}} account. A list of all images is returned, independent of the namespace where they are stored.
 
@@ -189,7 +189,7 @@ To find out more about the required permissions for working with exemptions, see
 Using Portieris to block the deployment of images with issues that are found by Vulnerability Advisor is deprecated.
 {: deprecated}
 
-### Setting exemption policies by using the console
+### Setting exemption policies by using the {{site.data.keyword.cloud_notm}} console
 {: #va_managing_policy_gui}
 {: help}
 {: support}

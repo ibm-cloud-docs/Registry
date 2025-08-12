@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-08-12"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracking, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # IAM and activity tracker auditing event actions by API method for {{site.data.keyword.registryshort_notm}}
 {: #registry_at_iam}
 
-When you use {{site.data.keyword.registrylong}} through the command line or console, the service calls application programming interface (API) methods to complete your requests.
+When you use {{site.data.keyword.registrylong}} through the command-line interface (CLI) or the {{site.data.keyword.cloud_notm}} console, the service calls application programming interface (API) methods to complete your requests.
 {: shortdesc}
 
 You might need certain permissions to call these API methods, and you can track the requests that you make with an {{site.data.keyword.atracker_full_notm}} and {{site.data.keyword.logs_full_notm}} instance.

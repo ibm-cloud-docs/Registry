@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-08-12"
 
 keywords: IBM Cloud Container Registry notices, iam access policies, access policies, changes, prepare, iam, policy, region
 
@@ -46,7 +46,7 @@ By default, account owners already have appropriate policies that give them full
 ## Check whether these changes affect you
 {: #notices_iam_policy_affect}
 
-To check whether policy-free authorization is in effect, run the [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status) command. If the CLI reports that `IAM policy enforcement is disabled`, you must [prepare for the changes](#notices_iam_policy_prepare).
+To check whether policy-free authorization is in effect, run the [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status) command. If the command-line interface (CLI) reports that `IAM policy enforcement is disabled`, you must [prepare for the changes](#notices_iam_policy_prepare).
 
 The policy status setting is specific to each {{site.data.keyword.registryshort}} region. Check every region in which you have {{site.data.keyword.registryshort}} namespaces by running the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command.
 

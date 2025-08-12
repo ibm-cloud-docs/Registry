@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-24"
+lastupdated: "2025-08-12"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -15,15 +15,15 @@ subcollection: Registry
 # Formatting and filtering the {{site.data.keyword.registryshort_notm}} CLI output
 {: #registry_cli_list}
 
-You can format and filter the {{site.data.keyword.registrylong}} CLI output for supported {{site.data.keyword.registrylong_notm}} commands.
+You can format and filter the {{site.data.keyword.registrylong}} command-line interface (CLI) output for supported {{site.data.keyword.registrylong_notm}} commands.
 {: shortdesc}
 
 By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output you might want to sort the `Size` field in numerical order, but the command returns a string description. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://pkg.go.dev/text/template){: external} that you can use to customize the CLI output.
 
 You can alter the CLI output by applying the format option in two different ways:
 
-- Format data in your CLI output. For example, change the `Created` field output from UNIX&reg; time to standard time.
-- Filter data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the Go template `if gt` condition.
+- Format the data in your CLI output. For example, change the `Created` field output from UNIX&reg; time to standard time.
+- Filter the data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the Go template `if gt` condition.
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
@@ -49,7 +49,7 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
-- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all tagged images that have a size over 1 MB.
+- Run the following `ibmcloud cr image-list` command to display the repository, tag, and security status of all tagged images that have a size over 1 MB.
 
     ```txt
     ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"

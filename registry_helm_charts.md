@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-08-12"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -49,7 +49,7 @@ You can pull (download) a chart from any private or public [registry](#x2064940)
 
 Before you begin, complete the following tasks.
 
-- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with your namespace.
+- [Install the {{site.data.keyword.registryshort}} command-line interface (CLI)](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
 - Install the latest release of [Helm CLI](https://github.com/helm/helm/releases){: external} to work with charts.
 
@@ -230,7 +230,7 @@ To delete a chart by using the CLI, complete the following steps:
     ```
     {: pre}
 
-### Deleting charts from your private repository in the console
+### Deleting charts from your private repository in the {{site.data.keyword.cloud_notm}} console
 {: #registry_helm_charts_remove_gui}
 {: help}
 {: support}

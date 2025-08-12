@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-08-12"
 
 keywords: registry, access, authorization required, error, API key, client, token, region, CRG0014E
 
@@ -91,5 +91,5 @@ You can't access {{site.data.keyword.registryshort}} because you attempted to au
 
 You can fix this problem in the following ways:
 
-- Use the `ibmcloud` CLI or IAM API to retrieve a valid OAuth token to authenticate against the {{site.data.keyword.registryshort}} API. For more information, see [{{site.data.keyword.registrylong_notm}} API - Authentication](https://{DomainName}/apidocs/container-registry#authentication).
+- Use the `ibmcloud` command-line interface (CLI) or IAM API to retrieve a valid OAuth token to authenticate against the {{site.data.keyword.registryshort}} API. For more information, see [{{site.data.keyword.registrylong_notm}} API - Authentication](https://{DomainName}/apidocs/container-registry#authentication).
 - When you authenticate against the {{site.data.keyword.registryshort}} API, ensure that you use a valid Account ID. You can retrieve your Account ID by running the [`ibmcloud account show`](/docs/cli?topic=cli-ibmcloud_commands_account#ibmcloud_account_show) command.

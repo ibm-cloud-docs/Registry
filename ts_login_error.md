@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-20"
+lastupdated: "2025-08-12"
 
 keywords: error, registry, not a registered command, registered command, cr, command, ibmcloud cr
 
@@ -37,7 +37,7 @@ ibmcloud cr namespace
 ```
 {: screen}
 
-The `container-registry` CLI plug-in is not installed.
+The `container-registry` command-line interface (CLI) plug-in is not installed.
 {: tsCauses}
 
 Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).

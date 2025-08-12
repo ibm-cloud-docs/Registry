@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-08-12"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key, upload images, pull images, push images
 
@@ -34,7 +34,7 @@ You can pull (download) an image from any private or public [registry](#x2064940
 
 Before you begin, complete the following tasks.
 
-- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Install the {{site.data.keyword.registryshort}} command-line interface (CLI)](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
@@ -344,7 +344,7 @@ To delete an image by using the CLI, complete the following steps:
     ```
     {: pre}
 
-### Deleting images from your private repository in the console
+### Deleting images from your private repository in the {{site.data.keyword.cloud_notm}} console
 {: #registry_images_remove_gui}
 
 You can delete unwanted images and all their tags from your private {{site.data.keyword.cloud_notm}} image repository by using the {{site.data.keyword.cloud_notm}} console.
@@ -454,8 +454,8 @@ To restore an image by tag from the trash, complete the following steps:
 
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
-3. For the image that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This section of the digest is `DNS/NAMESPACE/REPO`, where `DNS` is the domain name, `NAMESPACE` is the namespace, and `REPO` is the repository.
-4. For the image that you want to restore, make a note of the tag, `TAG`.
+3. For the image that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `DNS/NAMESPACE/REPO`, where `DNS` is the domain name, `NAMESPACE` is the namespace, and `REPO` is the repository.
+4. For the image that you want to restore, make a note of the tag `TAG`.
 5. Run the following command to restore the image to your repository, where `DNS/NAMESPACE/REPO` is the name of the image that you want to restore and `TAG` is the tag.
 
     ```txt

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-10"
+lastupdated: "2025-08-12"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry, private network, image, connection, service endpoint, account, services
 
@@ -45,7 +45,7 @@ To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing a
 ### Considerations for private network connections
 {: #registry_private_images_considerations}
 
-- Private domain names aren't used by the `container-registry` CLI plug-in. If you push an image on the private domain name, and then use the CLI on a public connection to run the `ibmcloud cr images` command, the image is listed with all the other images that have the same public domain name.
+- Private domain names aren't used by the `container-registry` command-line interface (CLI) plug-in. If you push an image on the private domain name, and then use the CLI on a public connection to run the `ibmcloud cr images` command, the image is listed with all the other images that have the same public domain name.
 
 - If you have private {{site.data.keyword.containerlong_notm}} clusters, you aren't required to change anything. {{site.data.keyword.containerlong_notm}} already modifies the connection, which is referenced by the public domain name, to use a private connection. This behavior is unchanged.
 

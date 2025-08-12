@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-20"
+lastupdated: "2025-08-12"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in, delete Container Registry, uninstall Container Registry
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Setting up the {{site.data.keyword.registryshort}} CLI and namespace
 {: #registry_setup_cli_namespace}
 
-To manage your Docker images in {{site.data.keyword.registrylong}}, you must install the `container-registry` CLI plug-in and create a [namespace](#x2031005){: term} in a [resource group](#x2161955){: term}.
+To manage your Docker images in {{site.data.keyword.registrylong}}, you must install the `container-registry` command-line interface (CLI) plug-in and create a [namespace](#x2031005){: term} in a [resource group](#x2161955){: term}.
 {: shortdesc}
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
@@ -31,7 +31,7 @@ Before you begin, install the {{site.data.keyword.cloud_notm}} CLI, see [Getting
 {: help}
 {: support}
 
-Install the `container-registry` CLI plug-in so that you can use the command line to manage your namespaces and Docker images in {{site.data.keyword.registrylong_notm}}.
+Install the `container-registry` CLI plug-in so that you can use the command-line interface to manage your namespaces and Docker images in {{site.data.keyword.registrylong_notm}}.
 
 1. Install the `container-registry` CLI plug-in by running the following command:
 
