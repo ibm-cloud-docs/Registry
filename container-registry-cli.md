@@ -722,7 +722,7 @@ Logging in to {{site.data.keyword.registryshort}} by using the `ibmcloud cr logi
 ### Command options
 {: #bx_cr_login_option}
 
-`CLIENT`
+`-- client`
 :   (Optional) Select the client that you want to log in. Valid values are `docker` and `podman`. If this option is not used and Docker is installed, the default is `docker`; if Docker is not installed, the default is `podman`.
 
 ### Example
@@ -1247,7 +1247,7 @@ If a retention policy deletes an image that you want to keep, you can restore th
 If you want to cancel a retention policy, see [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep).
 
 ```sh
-ibmcloud cr retention-policy-set [--retain-untagged] [--force | -f] --images IMAGECOUNT NAMESPACE
+ibmcloud cr retention-policy-set [--retain-untagged] [--force | -f] --images IMAGE_COUNT NAMESPACE
 ```
 
 ### Prerequisites
@@ -1271,7 +1271,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 :   (Optional) Force the command to run with no user prompts.
 
 `--images`
-:   Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace. To return a policy to the default state that keeps all the images set `IMAGECOUNT` to `All`.
+:   Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGE_COUNT` is the number of images that you want to retain in each repository for the namespace. To return a policy to the default state that keeps all the images set `IMAGE_COUNT` to `All`.
 
 ### Examples
 {: #bx_cr_retention_policy_set_example}
@@ -1309,7 +1309,7 @@ If an image that you're expecting to see doesn't show in the list that is produc
 {: tip}
 
 ```sh
-ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-untagged] --images IMAGECOUNT NAMESPACE
+ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-untagged] --images IMAGE_COUNT NAMESPACE
 ```
 
 ### Prerequisites
@@ -1336,7 +1336,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 :   (Optional) Retain all untagged images when the retention policy is being processed. Only tagged images are analyzed and, if the images don't meet the criteria, they are deleted. If the option isn't specified, all tagged and untagged images are analyzed and, if the images don't meet the criteria, they are deleted.
 
 `--images`
-:   Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace.
+:   Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGE_COUNT` is the number of images that you want to retain in each repository for the namespace.
 
 ### Example
 {: #bx_cr_retention_run_example}
