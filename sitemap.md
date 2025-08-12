@@ -1015,6 +1015,8 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_prereq)
 
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_argument)
+
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_option)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_example)
@@ -1039,7 +1041,7 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_prereq)
 
-    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_option)
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_argument)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_example)
 
@@ -1047,7 +1049,7 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_prereq)
 
-    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_option)
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_argument)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_example)
 
@@ -1055,7 +1057,7 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_prereq)
 
-    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_option)
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_argument)
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_example)
 
@@ -1063,7 +1065,7 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_prereq)
 
-    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_option)
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_argument)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_example)
 
@@ -1081,6 +1083,8 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_prereq)
 
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_argument)
+
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_option)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_example)
@@ -1089,6 +1093,8 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_prereq)
 
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_argument)
+
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_option)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_example)
@@ -1096,6 +1102,8 @@ subcollection: Registry
 * [`ibmcloud cr namespace-assign`](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_prereq)
+
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_argument)
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_option)
 
@@ -1113,6 +1121,8 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_prereq)
 
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_argument)
+
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_option)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_example)
@@ -1129,7 +1139,7 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_prereq)
 
-    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_option)
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_argument)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_example)
 
@@ -1171,7 +1181,7 @@ subcollection: Registry
 
 * [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set)
 
-    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_option)
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_argument)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_example)
 
@@ -1187,6 +1197,8 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_prereq)
 
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_argument)
+
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_option)
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_example)
@@ -1194,6 +1206,8 @@ subcollection: Registry
 * [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_prereq)
+
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_argument)
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_option)
 
@@ -1213,13 +1227,15 @@ subcollection: Registry
 
 * [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set)
 
-    * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_option)
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_argument)
 
     * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_example)
 
 * [`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_va)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_prereq)
+
+    * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_argument)
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_option)
 
