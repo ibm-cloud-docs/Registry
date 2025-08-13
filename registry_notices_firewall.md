@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-08-13"
 
 keywords: IBM Cloud Container Registry notices, firewall, cdn, domain-based firewall, domains, icr.io, notices, content delivery network
 
@@ -33,14 +33,10 @@ If you use a public network to access the global instance of {{site.data.keyword
 
 - `dd0.icr.io`
 - `dd2.icr.io`
-- `dd4.icr.io`
-- `dd6.icr.io`
 
 If you are located in China, you must also allow the following domains by 4 September 2024:
 
 - `dd1-icr.ibm-zh.com`
 - `dd3-icr.ibm-zh.com`
-- `dd5-icr.ibm-zh.com`
-- `dd7-icr.ibm-zh.com`
 
 For more information about {{site.data.keyword.registryshort}} public access and firewall rules, see [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall).
