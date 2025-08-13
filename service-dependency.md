@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-31"
+lastupdated: "2025-08-13"
 
 keywords:
 
@@ -43,10 +43,9 @@ The following table provides the dependency listing of this service following a 
 | Akamai | Availability, Security compliance | No | Both |  external  |
 | IBM Cloud Public IP Address Management | Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Identity and Access Management | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Object Storage | Availability, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
+| cloud-object-storage | Availability, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
 | IBM Cloudant for IBM Cloud | Availability, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
-| IBM Cloud Databases - databases-for-postgresql | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
-| IBM Cloud Databases - databases-for-redis | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
+| ibm-cloud-databases | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
 | IBM Cloud Classic Infrastructure Resource Management | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Service Endpoints | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
