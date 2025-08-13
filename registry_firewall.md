@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-08-13"
 
 keywords: IBM Cloud Container Registry, firewall, access, communicate, domains, subdomains, traffic, allowlist
 
@@ -51,14 +51,10 @@ If you use a public network to access the {{site.data.keyword.registryshort}} by
 
 - `dd0.icr.io`
 - `dd2.icr.io`
-- `dd4.icr.io`
-- `dd6.icr.io`
 
 Users that are located in China must also allow the following domains:
 
 - `dd1-icr.ibm-zh.com`
 - `dd3-icr.ibm-zh.com`
-- `dd5-icr.ibm-zh.com`
-- `dd7-icr.ibm-zh.com`
 
 You can also add wildcard characters to domains in your allowlist, for example `*.icr.io` and `*.ibm-zh.com`.
