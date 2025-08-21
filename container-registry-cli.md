@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-14"
+lastupdated: "2025-08-20"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -726,7 +726,7 @@ Logging in to {{site.data.keyword.registryshort}} by using the `ibmcloud cr logi
 :   (Optional) Select the client that you want to log in. Valid values are `docker` and `podman`. If this option is not used and Docker is installed, the default is `docker`; if Docker is not installed, the default is `podman`.
 
 ### Example
-{: #bx_cr_login__example}
+{: #bx_cr_login_example}
 
 To log in to the registry by using Podman, enter `podman` as the client.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-04-25"
+  years: 2017, 2025
+lastupdated: "2025-08-19"
 
 keywords: registry, namespace, value, characters, delete
 
@@ -31,7 +31,6 @@ The following alternatives are possible causes:
 - **Scenario A.** You used invalid characters in the namespace value.
 - **Scenario B.** You entered a namespace value that is already being used by another {{site.data.keyword.cloud_notm}} organization.
 - **Scenario C.** A namespace was recently deleted and you're reusing its name. If the namespace that was deleted contained many resources, the deletion might not yet be fully processed by {{site.data.keyword.registryshort}}.
-
 
 You can fix this problem in the following ways:
 {: tsResolve}
