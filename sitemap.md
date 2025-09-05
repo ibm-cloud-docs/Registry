@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-09-04"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -307,37 +307,6 @@ subcollection: Registry
 * [27 June 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2017)
 
     * [Introducing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#27jun2017_ga)
-
-
-## Container Registry and Vulnerability Advisor workflow tutorial
-{: #sitemap_container_registry_and_vulnerability_advisor_workflow_tutorial}
-
-
-[Container Registry and Vulnerability Advisor workflow tutorial](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow)
-
-* [Objectives](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_objectives)
-
-* [Services used](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_services)
-
-* [Before you begin](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_prereqs)
-
-* [From code to a running container](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_code_run)
-
-    * [Create a namespace](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_create_namespace)
-
-    * [Build and push an image](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_build_push_image)
-
-    * [Deploy a container that uses your image](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_deploy)
-
-* [Secure your images and clusters](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_secure)
-
-    * [View the vulnerability report for your image](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_vulnerability_report)
-
-    * [Enforce security in your cluster](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_enforce_security)
-
-    * [Resolve vulnerabilities in your image](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_resolve_vulnerabilities)
-
-* [Deploying to nondefault Kubernetes namespaces](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_deploy_nondefault_namespaces)
 
 
 ## Granting access to Container Registry resources tutorial

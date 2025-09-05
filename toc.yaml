@@ -54,8 +54,6 @@ toc:
   - navgroup:
       id: tutorial
       topics:
-      - topic: registry_tutorial_workflow.md
-        navtitle: Container Registry and Vulnerability Advisor workflow tutorial
       - topic: registry_tutorial_configure_iam.md
         navtitle: Granting access to Container Registry resources tutorial
       - topicgroup:
