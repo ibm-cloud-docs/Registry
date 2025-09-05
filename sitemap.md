@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-09-05"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -307,6 +307,29 @@ subcollection: Registry
 * [27 June 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2017)
 
     * [Introducing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#27jun2017_ga)
+
+
+## Setting up your first cluster in your Virtual Private Cloud (VPC)
+{: #sitemap_setting_up_your_first_cluster_in_your_virtual_private_cloud_vpc}
+
+
+[Setting up your first cluster in your Virtual Private Cloud (VPC)](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_tutorial)
+
+* [Audience](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_audience)
+
+* [Objectives](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_objectives)
+
+* [What you'll get](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_rh_get)
+
+* [Prerequisites](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_prereqs)
+
+* [Create a cluster in VPC](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_create_vpc_cluster)
+
+* [Deploy a privately available app](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_app)
+
+* [Set up a Load Balancer for VPC to expose your app publicly](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_vpc_lb)
+
+* [What's next?](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_next)
 
 
 ## Granting access to Container Registry resources tutorial

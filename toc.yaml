@@ -54,6 +54,7 @@ toc:
   - navgroup:
       id: tutorial
       topics:
+      - include:  ../containers/cs_tutorial_vpc.md
       - topic: registry_tutorial_configure_iam.md
         navtitle: Granting access to Container Registry resources tutorial
       - topicgroup:
