@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-09-16"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -81,7 +81,7 @@ Add a second user to your account and grant them the ability to configure {{site
     2. Try to edit your registry quota to 4 GB of traffic by running the following command.
 
         ```txt
-        ibmcloud cr quota-set --traffic=4000
+        ibmcloud cr quota-set --traffic 4000
         ```
         {: pre}
 
@@ -115,7 +115,7 @@ Add a second user to your account and grant them the ability to configure {{site
     2. Try to edit your registry quota to 4 GB of traffic by running the following command.
 
         ```txt
-        ibmcloud cr quota-set --traffic=4000
+        ibmcloud cr quota-set --traffic 4000
         ```
         {: pre}
 
@@ -124,7 +124,7 @@ Add a second user to your account and grant them the ability to configure {{site
     3. Now change the quota back by running the following command.
 
         ```txt
-        ibmcloud cr quota-set --traffic=5120
+        ibmcloud cr quota-set --traffic 5120
         ```
         {: pre}
 
