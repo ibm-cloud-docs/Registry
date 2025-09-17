@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-09-17"
 
 keywords: data portability
 
@@ -55,7 +55,7 @@ For more information about your responsibilities for {{site.data.keyword.registr
     ibmcloud cr region-set REGION
     ```
 
-    b. Export your container images by running the `ibmcloud cr images` command and entering `"{{ .Repository }}:{{ .Tag }}" | xargs -L 1 docker pull` as the format.
+    b. Export your container images by running the `ibmcloud cr images` command, with `"{{ .Repository }}:{{ .Tag }}"` as the format, and pass the command output to `xargs -L 1 docker pull`.
 
     ```sh
     ibmcloud cr images --format "{{ .Repository }}:{{ .Tag }}" | xargs -L 1 docker pull
