@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-01"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key, upload images, pull images, push images
 
@@ -181,8 +181,6 @@ Before you begin, complete the following tasks.
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
     If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
-
-A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the configuration of the app, and its dependencies.
 
 If you want to take advantage of {{site.data.keyword.cloud_notm}} compute resources and internet connection or Docker is not installed on your workstation, build your image directly in {{site.data.keyword.cloud_notm}}. If you need to access resources in your build that are on servers that are behind your firewall, build your image locally.
 
@@ -376,14 +374,15 @@ To find out which images are in the trash, you can use the [`ibmcloud cr trash-l
 To list the images in the trash, complete the following steps:
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
-2. List the images in the trash by running the following command:
+2. List the images in the trash by using one of the following options:
+    - List all the images in the trash by running the following command:
 
     ```txt
     ibmcloud cr trash-list
     ```
     {: pre}
 
-3. List only the images in the trash for the namespace that you're interested in by running the following command, where `NAMESPACE` is your namespace:
+    - List only the images in the trash for the namespace that you're interested in by running the following command, where `NAMESPACE` is your namespace:
 
     ```txt
     ibmcloud cr trash-list --restrict NAMESPACE
