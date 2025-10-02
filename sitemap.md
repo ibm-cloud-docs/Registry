@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-09-05"
+lastupdated: "2025-10-02"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1581,6 +1581,8 @@ subcollection: Registry
 * [What are eligible images?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
 
 * [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
+
+* [How do I change the region or registry?](/docs/Registry?topic=Registry-registry_faq#faq_region_registry)
 
 * [How do I get the `docker pull` command to return the most recent version?](/docs/Registry?topic=Registry-registry_faq#faq_docker_pull)
 
