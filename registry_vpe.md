@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-02"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -19,6 +19,12 @@ You can use {{site.data.keyword.cloud}} virtual private endpoints (VPE) for Virt
 {: shortdesc}
 
 VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all [availability zones](#x7018171){: term} of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addresses within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
+
+If you're using {{site.data.keyword.containerlong_notm}} 1.28, or later, and you create a cluster, the {{site.data.keyword.registryshort_notm}} VPE is created for you automatically. For more information, see [Virtual private endpoint (VPE) gateways](/docs/containers?topic=containers-vpc-security-group-reference#sbd-managed-vpe-gateways).
+{: note}
+
+If you're using {{site.data.keyword.openshiftlong_notm}} 4.14, or later, and you create a cluster, the {{site.data.keyword.registryshort_notm}} VPE is created for you automatically. For more information, see [Virtual private endpoint (VPE) gateways](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-managed-vpe-gateways).
+{: note}
 
 If you have an {{site.data.keyword.vpc_short}} instance and you want to connect the VPC instance to {{site.data.keyword.registrylong_notm}} for your {{site.data.keyword.registryshort_notm}} services, you can create a VPE gateway for your VPC to access {{site.data.keyword.registrylong_notm}} within your VPC network. Any connections to {{site.data.keyword.registrylong_notm}} that originate from within the VPC automatically go through the {{site.data.keyword.registryshort_notm}} VPE gateway, if one exists. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
 
