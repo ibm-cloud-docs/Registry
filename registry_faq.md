@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-02"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -26,7 +26,7 @@ For frequently asked questions about Vulnerability Advisor, see [FAQ for Vulnera
 {: #faq_ref_docs}
 {: faq}
 
-The reference documentation for {{site.data.keyword.registrylong_notm}} is available in the {{site.data.keyword.cloud_notm}} documentation. For more information, see [About {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_overview) and [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-containerregcli).
+The reference documentation for {{site.data.keyword.registrylong_notm}} is available in the [{{site.data.keyword.cloud_notm}} documentation](/docs/Registry?topic=Registry-registry_overview).
 
 ## How do I set up the {{site.data.keyword.registryshort}} CLI?
 {: #faq_setup_cli}
@@ -84,7 +84,7 @@ done
 {: #faq_auth_namespace}
 {: faq}
 
-You are not authorized to create a namespace in {{site.data.keyword.registrylong_notm}}. The error message `You are not authorized to access the specified resource.` indicates that you lack the necessary user permissions for working with namespaces. To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registryshort}} service at the account level. If you have the Manager role on the resource group, or resource groups, it is not sufficient; the Manager role must be at the account level.
+The error message `You are not authorized to access the specified resource.` indicates that you lack the necessary user permissions for working with namespaces. To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registryshort}} service at the account level. If you have the Manager role on the resource group, or resource groups, it is not sufficient; the Manager role must be at the account level.
 
 For more information, see [Why aren't I authorized to access a specified resource in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth) and [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
 
