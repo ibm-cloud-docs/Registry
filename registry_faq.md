@@ -272,6 +272,40 @@ For more information, see [Planning retention](/docs/Registry?topic=Registry-reg
 
 To find out more about the regions that are available for {{site.data.keyword.registrylong_notm}}, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
+## How do I change the region or registry?
+{: #faq_region_registry}
+{: faq}
+
+To change the region and the registry, you must log in to {{site.data.keyword.cloud_notm}} and use the [`ibmcloud cr region-set REGION`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command, which sets the `container-registry` CLI plug-in to target the specified regional registry.
+
+For example, to change the registry to `uk.icr.io`, which is in the region `eu-gb`:
+
+1. Log in to {{site.data.keyword.cloud_notm}} by using the following command:
+
+```sh
+ibmcloud login
+```
+{: pre}
+
+2. Run the `ibmcloud cr region-set` command to set the region and registry by entering `eu-gb` as the region:
+
+```sh
+ibmcloud cr region-set eu-gb
+```
+{: pre}
+
+You can also use the name of the registry (for example, `uk.icr.io`) or the former name of the region (for example, `uk-south` instead of `eu-gb`).
+{: tip}
+
+You get the following response:
+
+```txt
+The region is set to 'uk-south', the registry is 'uk.icr.io'.
+```
+{: screen}
+
+To find out more about the regions that are available for {{site.data.keyword.registrylong_notm}}, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+
 ## How do I get the `docker pull` command to return the most recent version?
 {: #faq_docker_pull}
 {: faq}
