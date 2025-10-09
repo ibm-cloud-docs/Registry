@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-10-02"
+lastupdated: "2025-10-09"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -128,6 +128,24 @@ ibmcloud cr region-set global
 ibmcloud cr images --include-ibm
 ```
 {: pre}
+
+## How do I add multiple tags to a container image?
+{: #faq_tags}
+{: faq}
+
+To add multiple tags to a container image you can use the `ibmcloud cr image-tag` command, but you need to run the command for each tag that you want to add. For example, if you have an image named `us.icr.io/birds/bluebird:1` and you want to add the tags `latest` and `peck`, you must run the following commands:
+
+```sh
+ibmcloud cr image-tag us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:latest
+```
+{: pre}
+
+```sh
+ibmcloud cr image-tag us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:peck
+```
+{: pre}
+
+These commands result in the image having three tags: `1`, `latest`, and `peck`.
 
 ## What tools can I use to build and push images?
 {: #faq_tools}

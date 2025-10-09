@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-10-02"
+lastupdated: "2025-10-09"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1551,6 +1551,8 @@ subcollection: Registry
 * [How do I list image names?](/docs/Registry?topic=Registry-registry_faq#faq_list_images)
 
 * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
+
+* [How do I add multiple tags to a container image?](/docs/Registry?topic=Registry-registry_faq#faq_tags)
 
 * [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
