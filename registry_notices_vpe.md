@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-10"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vpe
 
@@ -26,7 +26,7 @@ The original announcement was published on 11 November 2022.
 
 On 11 November 2022, virtual private endpoints (VPEs) for {{site.data.keyword.registrylong_notm}} are being updated and the existing VPE version is being deprecated on 15 December 2022. If you use {{site.data.keyword.registryshort}} VPE gateways, you must create new VPE gateways and remove your VPE gateways that were created before 11 November 2022 at the earliest opportunity so that you pick up these changes. VPE gateways that were created before 11 November 2022 are deprecated and will not work after 15 December 2022.
 
-If you create a new {{site.data.keyword.registryshort}} VPE gateway after 11 November 2022 and also use {{site.data.keyword.iamshort}} (IAM) [restricted IP address lists](/docs/account?topic=account-ips&interface=ui), you must ensure that your restricted IP address list contains the Cloud Service Endpoint (CSE) source IP addresses of the VPCs in which your {{site.data.keyword.registryshort}} VPE gateways exist. This requirement is related to a previous change to how {{site.data.keyword.registryshort}} works over the private network that the new VPE version also uses, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
+If you create a new {{site.data.keyword.registryshort}} VPE gateway after 11 November 2022 and also use {{site.data.keyword.iamshort}} (IAM) [restricted IP address lists](/docs/account?topic=account-ips&interface=ui), you must ensure that your restricted IP address list contains the Cloud Service Endpoint (CSE) source IP addresses of the VPCs in which your {{site.data.keyword.registryshort}} VPE gateways exist. This requirement is related to a previous change to how {{site.data.keyword.registryshort}} works over the private network that the new VPE version also uses, see [{{site.data.keyword.registryshort}} private IP addresses change on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
 
 ## How you benefit from this change
 {: #registry_notices_vpe_benefit}
@@ -37,7 +37,7 @@ With the new VPE version, VPC users can privately access all {{site.data.keyword
 
 Additionally, the new version of the VPE is inline with previous changes to private networking within {{site.data.keyword.registryshort}} where the real source IP addresses of requests to the {{site.data.keyword.registryshort}} are now maintained.
 
-Previously, when connections came in over private networks, including through VPE gateways, the source IP addresses that you saw in the activity tracker auditing events and that were configured for IAM restricted IP address lists, were documented {{site.data.keyword.registryshort}} IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
+Previously, when connections came in over private networks, including through VPE gateways, the source IP addresses that you saw in the activity tracker audit events and that were configured for IAM restricted IP address lists, were documented {{site.data.keyword.registryshort}} IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 When you connect to {{site.data.keyword.registryshort}} now, the real IP address of your VPC [Cloud service endpoint source addresses](/docs/vpc?topic=vpc-vpc-behind-the-curtain#cse-source-addresses) is maintained in a request, which means that IAM restricted IP lists can be configured to specifically allow requests from your VPC, which improves security.
 

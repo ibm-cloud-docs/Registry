@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-04-26"
+  years: 2022, 2025
+lastupdated: "2025-10-10"
 
 keywords: registry, resource, authorized, namespace, create a namespace, permissions
 
@@ -31,5 +31,5 @@ You try to create a namespace, but you receive the following error message:
 You don't have the correct user permissions for working with namespaces. To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registryshort}} service at the account level. If you have the Manager role on the resource group, or resource groups, it is not sufficient, the Manager role must be at the account level.
 {: tsCauses}
 
-You must ensure that you are assigned the Manager role at the account level. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
+You must ensure that you are assigned to the Manager role at the account level. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
 {: tsResolve}

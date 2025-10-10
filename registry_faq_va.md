@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-20"
+lastupdated: "2025-10-10"
 
 keywords: commands, questions, registry, Vulnerability Advisor, frequently asked questions, image, package manager, security notices, version of a package, notify security status, vulnerabilities
 
@@ -22,7 +22,7 @@ Frequently asked questions for the Vulnerability Advisor component of {{site.dat
 
 For frequently asked questions about {{site.data.keyword.registryshort}}, see [FAQ for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_faq).
 
-## How do I manage vulnerabilities?
+## How do I manage any vulnerabilities?
 {: #faq_va_vuln}
 {: faq}
 

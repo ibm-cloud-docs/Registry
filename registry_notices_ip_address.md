@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-10-10"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, ip address
 
@@ -24,7 +24,7 @@ The original announcement was published on 2 November 2022.
 ## What you need to know about this change
 {: #registry_notices_ip_address_know}
 
-IP addresses for accessing {{site.data.keyword.registryshort}} over the private network changed on 5 July 2022, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network). You continue to be able to use these old IP addresses, but they are due to be decommissioned on 15 December 2022. After this date, you will not be able to access {{site.data.keyword.registryshort}} by using these IP addresses.
+IP addresses for accessing {{site.data.keyword.registryshort}} over the private network changed on 5 July 2022, see [{{site.data.keyword.registryshort}} private IP addresses change on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network). You continue to be able to use these old IP addresses, but they are due to be decommissioned on 15 December 2022. After this date, you will not be able to access {{site.data.keyword.registryshort}} by using these IP addresses.
 
 {{site.data.keyword.containerlong_notm}} cluster workers are configured so that you can access {{site.data.keyword.registryshort}} over the private network even when the public domain is used. This process caches the DNS result on worker startup and is not refreshed until a cluster worker is reloaded, replaced, or rebooted. If you have not reloaded, replaced, or rebooted the cluster workers since 5 July 2022, it is likely that they still refer to the old {{site.data.keyword.registryshort}} private IP addresses. If these workers are not reloaded or replaced, they will not function correctly after the old {{site.data.keyword.registryshort}} IP addresses are decommissioned.
 

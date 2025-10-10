@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-10"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -46,7 +46,7 @@ You gain the following advantages by using this technique:
 - You can choose different retention settings for development, staging, and production namespaces.
 - You minimize the chances of accidentally removing an image that might be in use in your staging or production environments, when compared with using a single namespace for all images.
 - You can use different [IAM](/docs/Registry?topic=Registry-iam) policies. For example, you can have more restrictive access to production images.
-- You can sign production images, but leave development and staging images unsigned.
+- You can sign production images, but development and staging images must remain unsigned.
 
 Some build tools, for example, [Cloud Native Buildpacks](https://buildpacks.io/){: external} and [distroless](https://github.com/GoogleContainerTools/distroless){: external} base images, produce images with the build date set to a specific constant rather than the real build time or with no build timestamp at all. If you want to use retention policies on namespaces that contain images that are built by using similar tools, be aware that images that do not have a created date and images that were created before `2013-01-19T00:13:39Z` are always retained.
 
@@ -153,7 +153,7 @@ To set a policy and immediately move your deleted images to the trash, complete 
 
         Where `IMAGE_COUNT` is the number of images that you want to retain for each repository within your namespace `NAMESPACE`.
 
-        You are shown a list of images to delete.
+        A list of images to delete is displayed.
 
     - If you want to clean up tagged images only and retain all untagged images, run the following command:
 
@@ -164,7 +164,7 @@ To set a policy and immediately move your deleted images to the trash, complete 
 
         Where `IMAGE_COUNT` is the number of images that you want to retain for each repository within your namespace `NAMESPACE`.
 
-        You are shown a list of images to delete.
+        A list of images to delete is displayed.
 
 4. Review the list of images. To run the policy and delete the images, confirm that you want to set the policy.
 

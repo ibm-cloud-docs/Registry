@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-10-10"
 
 keywords: data portability
 
@@ -62,7 +62,7 @@ For more information about your responsibilities for {{site.data.keyword.registr
     ```
     {: pre}
 
-    c. Tag each image with the name for the new registry, where `DOMAIN_NAME` is the domain name (for example, `us.icr.io`), `NAMESPACE`is the namespace, `NAME` is the name, and `NEW_IMAGE_NAME` is the new image name.
+    c. Tag each image with the name for the new registry, where `DOMAIN_NAME` is the domain name (for example, `us.icr.io`), `NAMESPACE` is the namespace, `NAME` is the name, and `NEW_IMAGE_NAME` is the new image name.
 
     ```sh
     docker tag DOMAIN_NAME/NAMESPACE/NAME NEW_IMAGE_NAME

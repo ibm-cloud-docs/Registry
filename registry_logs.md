@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-10-10"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -18,7 +18,7 @@ subcollection: Registry
 {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, generate platform logs that you can use to investigate abnormal activity and critical actions in your account, and troubleshoot problems.
 {: shortdesc}
 
-You can use {{site.data.keyword.logs_routing_full_notm}}, which is a platform service, to route platform logs in your account to a destination of your choice by configuring a tenant that defines where platform logs are sent. For more information, see [About Logs Routing](/docs/logs-router?topic=logs-router-about).
+{{site.data.keyword.logs_routing_full_notm}} is a platform service. You can use {{site.data.keyword.logs_routing_full_notm}} to route the platform logs in your account to your choice of destination by configuring a tenant that defines where the platform logs are sent. For more information, see [About Logs Routing](/docs/logs-router?topic=logs-router-about).
 
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platform logs that are generated in your account and routed by {{site.data.keyword.logs_routing_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 

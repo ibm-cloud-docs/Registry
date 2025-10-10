@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-10"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -30,12 +30,12 @@ The following troubleshooting topics are available to help you:
 ### Troubleshooting CLI login
 {: #gettinghelp_ts_cli_login}
 
-Troubleshoot problems logging in to the command-line interface (CLI).
+Troubleshoot log-in problems in the command-line interface (CLI).
 
 - [Why can't I log in to {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-login)
 - [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire)
 - [Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started)
-- [Why do {{site.data.keyword.registryshort}} commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error)
+- [Why do {{site.data.keyword.registryshort_notm}} commands fail with a message that states that they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error)
 - [macOS]{: tag-macos} [Why is `docker login` on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac)
 
 ### Troubleshooting pull and push errors

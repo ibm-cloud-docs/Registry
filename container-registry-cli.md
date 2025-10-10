@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-10-10"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -40,7 +40,7 @@ For more information about the IAM platform and service access roles that are re
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
-If {{site.data.keyword.registryshort_notm}} `ibmcloud cr`, commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort}} commands fail with a message that states that they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+If {{site.data.keyword.registryshort_notm}} `ibmcloud cr`, commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort_notm}} commands fail with a message that states that they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
 {: tip}
 
 ## `ibmcloud cr api`
@@ -548,7 +548,7 @@ For more information about how to use the `ibmcloud cr image-restore` command, s
 
 Delete one or more specified images from {{site.data.keyword.registryshort}}. You can reference the image that you want to delete either by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) `repository@digest`, or by [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) `repository:tag`.
 
-Where multiple tags exist for the same image digest within a repository, the `ibmcloud cr image-rm` command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, then that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](#bx_cr_image_untag) command.
+Where multiple tags exist for the same image digest within a repository, the `ibmcloud cr image-rm` command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, then that copy of the image is not removed. If you want to remove a tag from an image and make sure that the underlying image and any other tags remain in place, use the [`ibmcloud cr image-untag`](#bx_cr_image_untag) command.
 {: tip}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
@@ -651,7 +651,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 
 Remove a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), or tags, from each specified image in {{site.data.keyword.registrylong_notm}}.
 
-To remove a specific tag from an image and leave the underlying image and any other tags in place, use the `ibmcloud cr image-untag` command. If you want to delete the underlying image, and all its tags, use the [`ibmcloud cr image-rm`](#bx_cr_image_rm) command instead.
+To remove a specific tag from an image and make sure that the underlying image and any other tags remain in place, use the `ibmcloud cr image-untag` command. If you want to delete the underlying image, and all its tags, use the [`ibmcloud cr image-rm`](#bx_cr_image_rm) command instead.
 {: tip}
 
 ```sh

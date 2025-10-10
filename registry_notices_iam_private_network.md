@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-10-10"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022
+# {{site.data.keyword.registryshort}} private IP addresses change on 5 July 2022
 {: #registry_notices_iam_private_network}
 
 By 23 June 2022, if you connect to {{site.data.keyword.registrylong}} over the private network and you use {{site.data.keyword.iamshort}} (IAM) restricted IP address lists, you must change your IAM restricted IP list. This change also affects you if you have allowlists or a firewall rule.
@@ -27,7 +27,7 @@ On 23 June 2022, only the `br-sao` and `ca-tor` regions changed. The remaining r
 ## What you need to know about this change
 {: #registry_notices_iam_private_network_know}
 
-From 5 July 2022 (23 June 2022 for the `br-sao` and `ca-tor` regions), when connections are made to {{site.data.keyword.registryshort}}, the real source IP of the request is used. Previously, when connections came in over private networks, the source IP addresses that you saw in the activity tracker auditing events and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented {{site.data.keyword.registryshort}} [IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
+From 5 July 2022 (23 June 2022 for the `br-sao` and `ca-tor` regions), when connections are made to {{site.data.keyword.registryshort}}, the real source IP of the request is used. Previously, when connections came in over private networks, the source IP addresses that you saw in the activity tracker audit events and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented {{site.data.keyword.registryshort}} [IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 This change improves the security of {{site.data.keyword.registrylong_notm}}. With this change, you can configure real, account specific, private client IP addresses in IAM restricted IP lists, instead of the documented list of shared IP addresses. You must now allow private subnet and IP addresses of your own hosts (for example, worker nodes in a classic {{site.data.keyword.containerlong_notm}} cluster or the egress IP of a VPC network).
 
@@ -60,7 +60,7 @@ You are accessing {{site.data.keyword.registryshort}} over the private network i
 - You access {{site.data.keyword.registryshort}} through a virtual private cloud (VPC) virtual private endpoint gateway (VPE gateway).
 - You use the {{site.data.keyword.registryshort}} private IP addresses for configuring network access, for example, in firewalls or Access Control Lists (ACL).
 
-If any of the previous statements is true when this change takes effect, then the IP addresses in the activity tracker auditing events change, but you don't need to do anything unless you are also using IAM IP address access restrictions.
+If any of the previous statements is true when this change takes effect, then the IP addresses in the activity tracker audit events change, but you don't need to do anything unless you are also using IAM IP address access restrictions.
 
 ## What actions you need to take
 {: #registry_notices_iam_pivate_network_action}

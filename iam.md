@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-10"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -90,7 +90,7 @@ The following table details actions that are mapped to service access roles. Ser
 |---------------------|------------------------|----------------|
 | Reader | The Reader role can view information. | View, inspect, and pull images.  \n  \n View and analyze namespaces.  \n  \n View quotas.  \n  \n View vulnerability reports.  \n  \n View image signatures.  \n  \n View retention policies.  \n  \n View the contents of the trash.  \n  \n View the contents of the manifest for an image.  \n  \n List Vulnerability Advisor security exemption policies and types of security exemptions. |
 | Writer | The Writer role can edit information. | Push, delete, and restore images.  \n  \n View quotas.  \n  \n Sign images.  \n  \n Set and run retention policies.  \n  \n Delete all untagged images in your {{site.data.keyword.registryshort}} account. |
-| Manager | The Manager role can perform all actions. | View, inspect, pull, push, delete, and restore images.  \n  \n View, add, analyze, and remove namespaces.  \n  \n Assign namespaces to resource groups.  \n  \n View and set quotas.  \n  \n View vulnerability reports.  \n  \n View and create image signatures.  \n  \n Review and change pricing plans.  \n  \n Enable IAM access policy enforcement.  \n  \n List, add, and remove Vulnerability Advisor security issue exemption policies.  \n  \n List types of security exemptions.  \n  \n Set and run retention policies.  \n  \n View the contents of the trash.  \n  \n Restore images.  \n  \n  View the contents of the manifest for an image.  \n  \n Prevent or allow image pulls or pushes over public network connections for your account.  \n  \n Check whether the use of public connections is prevented for image pushes or pulls in your account.  \n  \n Delete all untagged images in your {{site.data.keyword.registryshort}} account. |
+| Manager | The Manager role can perform all actions. | View, inspect, pull, push, delete, and restore images.  \n  \n View, add, analyze, and remove namespaces.  \n  \n Assign namespaces to resource groups.  \n  \n View and set quotas.  \n  \n View vulnerability reports.  \n  \n View and create image signatures.  \n  \n Review and change pricing plans.  \n  \n Enable IAM access policy enforcement.  \n  \n List, add, and remove Vulnerability Advisor security issue exemption policies.  \n  \n List the types of security exemptions.  \n  \n Set and run retention policies.  \n  \n View the contents of the trash.  \n  \n Restore images.  \n  \n  View the contents of the manifest for an image.  \n  \n Prevent or allow image pulls or pushes over public network connections for your account.  \n  \n Check whether the use of public connections is prevented for image pushes or pulls in your account.  \n  \n Delete all untagged images in your {{site.data.keyword.registryshort}} account. |
 {: caption="IAM service access roles and actions" caption-side="bottom"}
 {: #table_registry_iam_service_roles}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-10-10"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key, upload images, pull images, push images
 
@@ -268,7 +268,7 @@ You can now use clusters to pull the images, see [Building containers from image
 {: help}
 {: support}
 
-You can remove a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), or tags, from an image in your private {{site.data.keyword.cloud_notm}} repository, and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag) command.
+You can remove a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), or tags, from an image in your private {{site.data.keyword.cloud_notm}} repository, and make sure that the underlying image and any other tags remain in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag) command.
 
 If multiple tags exist for the same image [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) within a repository and you want to remove the underlying image and all its tags, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](#registry_images_remove).
 {: tip}
@@ -308,7 +308,7 @@ Deleting an image that is being used by an existing deployment might cause scale
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
-Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, the copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private repository](#registry_images_untag) command.
+Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, the copy of the image is not removed. If you want to remove a tag from an image and make sure that the underlying image and any other tags remain in place, see [Removing tags from images in your private repository](#registry_images_untag) command.
 {: tip}
 
 ### Deleting images from your private repository in the CLI
@@ -398,8 +398,8 @@ You can restore an image from the trash by running the [`ibmcloud cr image-resto
 
 You can restore images by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use the following options:
 
-- `REPO@DIGEST` restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring images by digest](#registry_images_restore_digest).
-- `REPO:TAG` restores the tag, see [Restoring images by tag](#registry_images_restore_tag).
+- `REPO@DIGEST` this option restores the digest and all its tags in the repository that aren't already in the live repository. For more information, see [Restoring images by digest](#registry_images_restore_digest).
+- `REPO:TAG` this option restores the tag. For more information, see [Restoring images by tag](#registry_images_restore_tag).
 
 ### Restoring images by digest
 {: #registry_images_restore_digest}
@@ -408,7 +408,7 @@ You can restore images by running the [`ibmcloud cr image-restore`](/docs/Regist
 
 When you restore an image by digest, the digest is copied from the trash into your live repository, and all the tags for the digest in the repository are restored. The digest continues to show in the trash because a copy is restored.
 
-To restore an image by digest from the trash, complete the following steps:
+To restore an image from the trash by using the digest, complete the following steps:
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. List the images in the trash by running the following command:
@@ -441,7 +441,7 @@ To restore an image by digest from the trash, complete the following steps:
 
 When you restore an image by tag, only that specific tag is moved out of the trash into your live repository.
 
-To restore an image by tag from the trash, complete the following steps:
+To restore an image from the trash by using a tag, complete the following steps:
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. List the images in the trash by running the following command:

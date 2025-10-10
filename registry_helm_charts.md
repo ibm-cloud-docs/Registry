@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-10"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -288,8 +288,8 @@ You can restore a chart from the trash by running the [`ibmcloud cr image-restor
 
 You can restore the charts by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use the following options:
 
-- `REPO@DIGEST` restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring charts by digest](#registry_helm_charts_restore_digest).
-- `REPO:TAG` restores the tag, see [Restoring charts by tag](#registry_helm_charts_restore_tag).
+- `REPO@DIGEST` this option restores the digest and all its tags in the repository that aren't already in the live repository. For more information, see [Restoring charts by digest](#registry_helm_charts_restore_digest).
+- `REPO:TAG` this option restores the tag. For more information, see [Restoring charts by tag](#registry_helm_charts_restore_tag).
 
 ### Restoring charts by digest
 {: #registry_helm_charts_restore_digest}

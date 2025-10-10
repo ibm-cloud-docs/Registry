@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-10-10"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -133,7 +133,7 @@ ibmcloud cr images --include-ibm
 {: #faq_tags}
 {: faq}
 
-To add multiple tags to a container image you can use the `ibmcloud cr image-tag` command, but you need to run the command for each tag that you want to add. For example, if you have an image named `us.icr.io/birds/bluebird:1` and you want to add the tags `latest` and `peck`, you must run the following commands:
+To add multiple tags to a container image you can use the `ibmcloud cr image-tag` command, but you need to run the command for each tag that you want to add. For example, if your image is named `us.icr.io/birds/bluebird:1` and you want to add the tags `latest` and `peck`, you must run the following commands:
 
 ```sh
 ibmcloud cr image-tag us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:latest
@@ -145,7 +145,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:peck
 ```
 {: pre}
 
-These commands result in the image having three tags: `1`, `latest`, and `peck`.
+After running these commands, the image has three tags `1`, `latest`, and `peck`.
 
 ## What tools can I use to build and push images?
 {: #faq_tools}
@@ -296,9 +296,9 @@ To find out more about the regions that are available for {{site.data.keyword.re
 
 To change the region and the registry, you must log in to {{site.data.keyword.cloud_notm}} and use the [`ibmcloud cr region-set REGION`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command, which sets the `container-registry` CLI plug-in to target the specified regional registry.
 
-For example, to change the registry to `uk.icr.io`, which is in the region `eu-gb`:
+For example, to change the registry to `uk.icr.io`, which is in the region `eu-gb`, complete the following steps.
 
-1. Log in to {{site.data.keyword.cloud_notm}} by using the following command:
+1. Log in to {{site.data.keyword.cloud_notm}} by using the following command.
 
 ```sh
 ibmcloud login
@@ -341,7 +341,7 @@ The error is likely to be caused by one of the following situations:
 - Your cluster uses an API key that is stored in an image pull secret to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}.
 - The image with the specific tag does not exist in the repository.
 
-To fix the error, check for the following potential causes:
+To fix the error, check for the following potential causes.
 
 - Check that you're using the correct name and tag for the image.
 - Check that your pull traffic and storage quotas are large enough.
@@ -353,6 +353,6 @@ For more information, see [Why do images fail to pull from registry with ImagePu
 {: #faq_quota_error}
 {: faq}
 
-You exceeded your image storage or pull traffic quota for the current month. This means that you used more quota than your account allows for the month. To resolve this issue, you can either review your quota limits and increase them as necessary, or if you're on the lite plan upgrade to the standard plan.
+You exceeded the image storage or pull traffic quota for your account for the current month. To resolve this issue, you can either review your quota limits and increase them as necessary, or if you're on the lite plan, upgrade to the standard plan.
 
 For more information, see [Why am I getting errors about my quota in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-quota) and [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).

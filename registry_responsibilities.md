@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-10-10"
 
 keywords: Responsibilities, change management, identity and access management, incident and operations management, security and regulation compliance, disaster recovery, responsibility, access
 
@@ -31,7 +31,7 @@ Incident and operations management includes tasks such as monitoring, event mana
 |------|-------------------------------------------------|-----------------------|
 | Data incidents. | It is the responsibility of {{site.data.keyword.IBM_notm}} to inform you if your data is lost. | Not applicable |
 | Ensure that the application is available. | It is the responsibility of {{site.data.keyword.IBM_notm}} to inform you if the application is not available. | Not applicable |
-| Track events. | It is the responsibility of {{site.data.keyword.IBM_notm}} to ensure that {{site.data.keyword.atracker_full_notm}} is tracking events. | It is your responsibility to monitor events by using {{site.data.keyword.atracker_full_notm}} to ensure that your application is being accessed only by users with the correct authority. It is also your responsibility to ensure that an {{site.data.keyword.atracker_short}} instance is set up to receive events. For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events). |
+| Track events. | It is the responsibility of {{site.data.keyword.IBM_notm}} to ensure that {{site.data.keyword.atracker_full_notm}} is tracking events. | It is your responsibility to monitor events by using {{site.data.keyword.atracker_full_notm}} to ensure that your application is being accessed only by users with the correct authority. It is also your responsibility to ensure that an {{site.data.keyword.atracker_short}} instance is set up to receive events. For more information, see [Activity tracking events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events). |
 {: row-headers}
 {: caption="Responsibilities for incident and operations" caption-side="bottom"}
 {: summary="The first column describes the task that the customer or {{site.data.keyword.IBM_notm}} might be responsible for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
@@ -62,7 +62,7 @@ Identity and access management includes tasks such as authentication, authorizat
 | Authentication | It is the responsibility of {{site.data.keyword.IBM_notm}} to implement authentication. | Not applicable |
 | Process access policies | It is the responsibility of {{site.data.keyword.IBM_notm}} to ensure that the policies are processed. | Not applicable |
 | Set up access policies | Not applicable | It is your responsibility to set up access policies. For more information, see [Creating policies](/docs/Registry?topic=Registry-user#create). |
-| Access to back-end resources | It is the responsibility of {{site.data.keyword.IBM_notm}} to access to back-end resources. | Not applicable |
+| Access to back-end resources | It is the responsibility of {{site.data.keyword.IBM_notm}} to access the back-end resources. | Not applicable |
 | Access to namespaces | Not applicable | It is your responsibility to set up access to namespaces. For more information, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).|
 {: row-headers}
 {: caption="Responsibilities for identity and access management" caption-side="bottom"}

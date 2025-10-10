@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-10-10"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -195,7 +195,7 @@ subcollection: Registry
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
 
-[Private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
+[Private IP addresses change on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
 
@@ -908,7 +908,7 @@ subcollection: Registry
 
 * [Fields by log type](/docs/Registry?topic=Registry-registry_logs#log-fields)
 
-[IAM and activity tracker auditing event actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
+[IAM and activity tracker audit event actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
 
 * [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg)
 
@@ -1594,7 +1594,7 @@ subcollection: Registry
 
 [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va#registry_faq_va)
 
-* [How do I manage vulnerabilities?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_vuln)
+* [How do I manage any vulnerabilities?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_vuln)
 
 * [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_cost)
 
