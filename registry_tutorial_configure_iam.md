@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-16"
+lastupdated: "2025-10-10"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -519,7 +519,7 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 {: #clean_up}
 {: step}
 
-Remove the resources that you created in previous sections to leave your account as it was at the start of this tutorial.
+Remove the resources that you created in previous sections so that your account returns to how it was at the start of this tutorial.
 
 1. Log in to User A's account by running the following command.
 

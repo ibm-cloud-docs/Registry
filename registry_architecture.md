@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-10-10"
 
 keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # {{site.data.keyword.registryshort_notm}} architecture and workload
 {: #registry_architecture}
 
-{{site.data.keyword.registrylong}} is a multi-tenant, highly available, scalable, and encrypted private image [registry](#x2064940){: term} that's hosted and managed by {{site.data.keyword.IBM_notm}}.
+{{site.data.keyword.registrylong}} is a multi-tenant, highly available, scalable, and encrypted private image [registry](#x2064940){: term} that is hosted and managed by {{site.data.keyword.IBM_notm}}.
 {: shortdesc}
 
 Both the control plane (management of images and configuration) and data plane (pushing and pulling your images) are multi-tenant. All parts of the service are hosted in an {{site.data.keyword.IBM_notm}} service account, which is not shared with users or other services.

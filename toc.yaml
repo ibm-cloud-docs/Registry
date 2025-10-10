@@ -42,7 +42,7 @@ toc:
           - topic: registry_notices_lists.md
             navtitle: Container Registry CLI stops returning security status results in lists from version 1.0.0
           - topic: registry_notices_iam_private_network.md
-            navtitle: Private IP addresses changed on 5 July 2022
+            navtitle: Private IP addresses change on 5 July 2022
           - topic: registry_notices_iam_policy.md
             navtitle: IAM access policies are required from 5 July 2022
           - topic: registry_notices_docker.md
@@ -126,7 +126,7 @@ toc:
           - topic: registry_logs.md
             navtitle: Logging
           - topic: registry_at_iam.md
-            navtitle: IAM and activity tracker auditing event actions by API method
+            navtitle: IAM and activity tracker audit event actions by API method
   - navgroup:
       id: reference
       topics:

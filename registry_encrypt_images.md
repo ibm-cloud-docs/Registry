@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-10"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -41,7 +41,7 @@ For more information about encrypting images, see [Encrypted container images fo
 - Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 - Ensure that you have the most recent version of the `container-registry` command-line interface (CLI) plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 - Ensure that you have a private namespace to push your encrypted image to, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
-- Install [Buildah version 1.15](https://buildah.io/releases/2020/06/27/Buildah-version-v1.15.0.html){: external}, or later, so that you can build encrypted images. Buildah works in the Linux&reg; environment only. As an alternative to Linux&reg;, you can use a virtual machine or Docker image to run Buildah to build images.
+- Install [Buildah version 1.15](https://buildah.io/releases/2020/06/27/Buildah-version-v1.15.0.html){: external} or later, so that you can build encrypted images. Buildah works in the Linux&reg; environment only. As an alternative to Linux&reg;, you can use a virtual machine or Docker image to run Buildah to build images.
 - Install [Podman](https://podman.io/).
 
 ## Create the public-private key pair
@@ -141,7 +141,7 @@ Encrypt the image by using the public key and then build a container image by us
     ```
     {: pre}
 
-    Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an [API key](#x8051010){: term}, you can supply the `—-creds <username>` option, where `<username>` is the username. If you use the `—-creds <username>` the option, when requested, type in the password of the registry credential.
+    Buildah version 1.15 or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an [API key](#x8051010){: term}, you can supply the `—-creds <username>` option, where `<username>` is the username. If you use the `—-creds <username>` the option, when requested, type in the password of the registry credential.
     {: tip}
 
     You get a response that informs you that the manifest is written to the image destination, which is the registry.

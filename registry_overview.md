@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-10"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -53,7 +53,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 | Description. | Try out {{site.data.keyword.registryshort}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registryshort}}. | Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account. |
 | Amount of storage for images. | 500 MB | Unlimited |
 | Pull traffic. | 5 GB per month | Unlimited |
-| Billing. | If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/containers/registry/catalog).  \n  \n **Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/containers/registry/catalog). If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing](#registry_plan_billing). |
+| Billing. | If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page. For more information, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/containers/registry/catalog).  \n  \n **Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page. For more information, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/containers/registry/catalog). If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing](#registry_plan_billing). |
 {: caption="{{site.data.keyword.registryshort}} plans" caption-side="bottom"}
 {: #table_registry_overview_plans}
 
@@ -91,7 +91,7 @@ Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain 
 The following example is for the standard plan:
 :   You use 5 GB for exactly half the month and then you push several images to your namespace and use 10 GB for the rest of the month. Your monthly usage is calculated as shown in the following example:
 
-    (5 GB x 0.5 (months)) + (10 GB x 0.5 (months)) = 2.5 + 5 = 7.5 GB-Months
+    (5 GB x 0.5 (months)) + (10 GB x 0.5 (months)) = 2.5 + 5 = 7.5 GB-Months.
 
     In the standard plan, the first 0.5 GB-Months each month are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
 
@@ -147,7 +147,7 @@ The following example is for the standard plan:
 ### Cost of {{site.data.keyword.registryshort}}
 {: #registry_cost}
 
-You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/containers/registry/catalog).
+You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page. For more information, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/containers/registry/catalog).
 
 ## Upgrading your service plan
 {: #registry_plan_upgrade}
@@ -197,7 +197,7 @@ To upgrade your service plan, complete the following steps.
 
 Information about the terms that are used in {{site.data.keyword.registrylong_notm}}.
 
-For more information about Docker-specific terms, see [Docker glossary](https://docs.docker.com/reference/glossary/){: external}.
+For more information about Docker-specific terms, see the [Docker glossary](https://docs.docker.com/reference/glossary/){: external}.
 
 ### Container image
 {: #overview_elements_container_image}
@@ -231,7 +231,7 @@ Typically, a container image is built upon a base image that contains a base ope
 ### Docker V2 container images
 {: #overview_elements_dockerv2_images}
 
-A container image that is compliant with the [Image Manifest Version 2, Schema 2](https://distribution.github.io/distribution/spec/manifest-v2-2/){: external} specification.
+A container image that is compliant with the [Image Manifest Version 2, schema 2](https://distribution.github.io/distribution/spec/manifest-v2-2/){: external} specification.
 
 The media type for Docker Image Manifest V2, schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
@@ -421,4 +421,4 @@ Docker V2 schema 1 images are discontinued and you can't push them to {{site.dat
 ### Support for other clients
 {: #clients}
 
-{{site.data.keyword.registrylong_notm}} supports supported versions of clients that are compliant with the OCI Distribution spec version 1, or later, such as Buildah, Podman, and Skopeo.
+{{site.data.keyword.registrylong_notm}} supports the supported versions of clients that are compliant with the OCI Distribution spec version 1, or later, such as Buildah, Podman, and Skopeo.

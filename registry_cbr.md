@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-10"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -24,7 +24,7 @@ These restrictions work with traditional IAM policies, which are based on identi
 A user must have the Administrator role on the {{site.data.keyword.registryshort}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role for context-based restrictions to create, update, or delete network zones. A user with the Viewer role for the context-based restrictions can add network zones to a rule.
 {: note}
 
-Any activity tracker auditing events that are generated come from the context-based restrictions, not {{site.data.keyword.registryshort}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
+Any activity tracker audit events that are generated come from the context-based restrictions, not {{site.data.keyword.registryshort}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
 
 {{site.data.keyword.registryshort}} is a service that is integrated with context-based restrictions. For more information, see [Services that are integrated with context-based restrictions](/docs/account?topic=account-context-restrictions-whatis#cbr-adopters).
 
@@ -62,7 +62,7 @@ Context-based restrictions protect only the actions that are associated with the
 - [Resource Reclamations APIs](/apidocs/resource-controller/resource-controller#list-reclamations)
 - [IAM Policy APIs](/apidocs/iam-policy-management#list-policies)
 - [Global Search APIs](/apidocs/search)
-- Global Tagging [Attach](/apidocs/tagging#attach-tag) and [Detach](/apidocs/tagging#detach-tag) APIs
+- [Global Tagging Attach tags](/apidocs/tagging#attach-tag) API and [Global Tagging Detach tags](/apidocs/tagging#detach-tag) API
 - [Context-based Restriction Rule APIs](/apidocs/context-based-restrictions#create-rule)
 - [Secrets Manager APIs](/apidocs/secrets-manager/secrets-manager-v2)
 

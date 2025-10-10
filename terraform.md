@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-10"
 
 keywords: Terraform for IBM Cloud Container Registry, terraform, namespace, cli, image, resource
 
@@ -30,7 +30,7 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 
 2. Create a Terraform configuration file that is named `main.tf`. Add the configuration to create a {{site.data.keyword.registryshort}} namespace and to assign a user an IAM [access policy](#x2853407){: term} in {{site.data.keyword.iamshort}} (IAM) for that namespace by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language){: external}.
 
-    The following example creates a namespace in the default [resource group](#x2161955){: term} with a name of your choice and attaches an image retention policy to that namespace that retains 10 images. To retrieve the ID of the default resource group, the `ibm_resource_group` data source is used. Then, the user `user@ibm.com` is assigned the Manager role in the IAM access policy for the namespace for a particular region. The region is retrieved from the `terraform.tfvars` file that you created in step 1.
+    The following example creates a namespace in the default [resource group](#x2161955){: term} with a name of your choice and attaches an image retention policy to that namespace that retains 10 images. To retrieve the ID of the default resource group, the `ibm_resource_group` data source is used. Then, the user `user@ibm.com` is assigned to the Manager role in the IAM access policy for the namespace for a particular region. The region is retrieved from the `terraform.tfvars` file that you created in step 1.
 
     ```terraform
     data "ibm_resource_group" "group" {

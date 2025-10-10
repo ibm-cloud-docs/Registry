@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-10"
+lastupdated: "2025-10-10"
 
 keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
@@ -66,7 +66,7 @@ To set a quota, complete the following steps.
     ```
     {: pre}
 
-    Example to set your quota limit for storage to 600 megabytes, and the pull traffic to 7000 megabytes:
+    The following example sets your quota limit for storage to 600 megabytes, and the pull traffic to 7000 megabytes.
 
     ```txt
     ibmcloud cr quota-set --storage 600 --traffic 7000
@@ -149,7 +149,7 @@ Depending on the proportions of the image, it might take a while for the image t
         ```
         {: pre}
 
-        Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag) command.
+        Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace that copy of the image is not removed. If you want to remove a tag from an image and make sure the underlying image and any other tags remain in place, see [Removing tags from images in your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag) command.
         {: tip}
 
    - To remove untagged images collectively from your namespace, use the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command, see [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).
