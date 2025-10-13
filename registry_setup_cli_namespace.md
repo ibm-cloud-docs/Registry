@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-13"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in, delete Container Registry, uninstall Container Registry
 
@@ -117,6 +117,8 @@ Namespaces that are assigned to a resource group show in the **Resource list** p
 {: tip}
 
 You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.cloud_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name in that region.
+
+You can't share a {{site.data.keyword.registryshort}} (`icr.io`) namespace across {{site.data.keyword.cloud_notm}} accounts. A namespace is owned by a single {{site.data.keyword.cloud_notm}} account and cannot be shared with multiple accounts.
 
 You can have 100 namespaces in each region.
 {: note}
