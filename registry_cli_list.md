@@ -104,13 +104,13 @@ Review the following table to find available Go template options and data types 
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `Created` | Integer (64 bit) | Displays when the image was created, expressed by the number of seconds in UNIX time. |
-| `Digest` | String | Displays the unique identifier for an image. |
-| `ManifestType` | String | Displays the image manifest type. |
-| `Repository` | String | Displays the repository of the image. |
-| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli). |
-| `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
-| `Tags` | Array of strings | Displays the tags for the image. |
+| `Created` | Integer (64 bit) | This option displays when the image was created, expressed by the number of seconds in UNIX time. |
+| `Digest` | String | This option displays the unique identifier for an image. |
+| `ManifestType` | String | This option displays the image manifest type. |
+| `Repository` | String | This option displays the repository of the image. |
+| `SecurityStatus` | Object | This option displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli). |
+| `Size` | Integer (64 bit) | This option displays the size of the image in bytes. |
+| `Tags` | Array of strings | This option displays the tags for the image. |
 {: caption="Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list image digests" caption-side="bottom"}
 {: #table_registry_cli_list_image_digests}
 
