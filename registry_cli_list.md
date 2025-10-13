@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-13"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -145,7 +145,7 @@ Review the following table to find available Go template options and data types 
 | `Config` | Object | This option displays the configuration metadata for the image. For more information, see [`Config` field details](#registry_cli_list_imageinspect_config). |
 | `Container` | String | This option displays the ID of the container that created the image. |
 | `ContainerConfig` | Object | This option displays the default configuration for containers that are started from this image. For more information, see [`Config` field details](#registry_cli_list_imageinspect_config). |
-| `Created` | String | DThis option displays the UNIX timestamp when the image was created. |
+| `Created` | String | This option displays the UNIX timestamp when the image was created. |
 | `DockerVersion` | String | This option displays the Docker version that was used to build this image. |
 | `ID` | String | This option displays the unique identifier for an image. |
 | `Os` | String | This option displays the operating system family that was used to build this image, and that is required to run the image. |
