@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-04-25"
+  years: 2017, 2025
+lastupdated: "2025-10-14"
 
 keywords: error, registry, restore, trash, image, tag, tagged image, digest, tagged image already exists, restore this image by using the digest, CRT0500E
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get an error when I'm restoring an image in {{site.data.keyword.registryshort_notm}}?
+# Why do I get an error when I am restoring an image in {{site.data.keyword.registryshort_notm}}?
 {: #troubleshoot-image-restore}
 {: troubleshoot}
 {: support}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-23"
+lastupdated: "2025-10-14"
 
 keywords: error, va, vulnerability advisor, v3, version 3, version 4, invalid version
 
@@ -35,7 +35,7 @@ Invalid Vulnerability Advisor version 'v3' specified. Specify a valid version or
 You are trying to use a discontinued version of Vulnerability Advisor.
 {: tsCauses}
 
-Version 3 of Vulnerability Advisor is discontinued from 13 November 2023. Vulnerability Advisor version 4 is now the default. You must update to Vulnerability Advisor version 4.
+Version 3 of Vulnerability Advisor was discontinued on 13 November 2023. Vulnerability Advisor version 4 is now the default. You must update to Vulnerability Advisor version 4.
 {: tsResolve}
 
 To update to version 4, run the following command.

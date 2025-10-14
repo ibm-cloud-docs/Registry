@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-08-01"
+  years: 2017, 2025
+lastupdated: "2025-10-14"
 
 keywords: registry, image, retention, distroless, list, creation date
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-An image doesn't show in the list that is produced by the {{site.data.keyword.registrylong}} `ibmcloud cr retention-run` command.
+An image does not show in the list that is produced by the {{site.data.keyword.registrylong}} `ibmcloud cr retention-run` command.
 {: shortdesc}
 
 You ran the [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) command and an image that you expected to see in the list is not displayed.
