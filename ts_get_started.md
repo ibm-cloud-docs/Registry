@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2024
+  years: 2024, 2025
 lastupdated: "2025-10-14"
 
 keywords: iam, access, policy, permission, access policy
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You are trying to use the [getting started instructions](/docs/Registry?topic=Registry-getting-started) for {{site.data.keyword.registrylong}}, but you can't get any {{site.data.keyword.registryshort}} commands to work.
+You're trying to use the [getting started instructions](/docs/Registry?topic=Registry-getting-started) for {{site.data.keyword.registrylong}}, but you can't get any {{site.data.keyword.registryshort}} commands to work.
 {: shortdesc}
 
 You can't run any commands in {{site.data.keyword.registryshort}} because you don't have permission.
