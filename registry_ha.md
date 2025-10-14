@@ -22,7 +22,7 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
 
 - In each supported region, traffic is load balanced across registry infrastructure in multiple [availability zones](#x7018171){: term}, with no single point of failure.
 - Data that is stored in {{site.data.keyword.registrylong_notm}} is replicated over the availability zones and it is also backed up in another region regularly.
-- If you are worried about the availability of your images if an entire region is unavailable, you can choose to push your images to multiple registry regions.
+- If you're worried about the availability of your images if an entire region is unavailable, you can choose to push your images to multiple registry regions.
 
     You might also choose to push your images to multiple registry regions in case you accidentally delete or overwrite your images.
 
@@ -33,7 +33,7 @@ For more information about service availability, see [Service Level Agreements](
 ## Ownership of responsibilities
 {: #ha-responsibilities}
 
-To find out more about responsibility ownership for using {{site.data.keyword.cloud_notm}} products between {{site.data.keyword.IBM_notm}} and the customer, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
+For more information about responsibility ownership for using {{site.data.keyword.cloud_notm}} products between {{site.data.keyword.IBM_notm}} and the customer, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
 
 For more information about your responsibilities when you are using {{site.data.keyword.registrylong_notm}}, see [Shared responsibilities for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_responsibilities).
 
