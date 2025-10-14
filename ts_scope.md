@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-10-14"
 
 keywords: error, iam, access denied, access, insufficient scope, scope
 
@@ -27,7 +27,7 @@ When you try to access {{site.data.keyword.registryshort}}, you get the followin
 
 `Insufficient scope`
 
-You might see this message if you are trying to access {{site.data.keyword.registryshort}} by using a client such as Docker. The following alternatives are possible causes:
+You might see this message if you're trying to access {{site.data.keyword.registryshort}} by using a client such as Docker. The following alternatives are possible causes:
 {: tsCauses}
 
 - **Scenario A.** The API key that is used to access {{site.data.keyword.registryshort}} has insufficient permissions.

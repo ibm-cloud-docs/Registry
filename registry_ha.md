@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-10-14"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
 
@@ -22,7 +22,7 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
 
 - In each supported region, traffic is load balanced across registry infrastructure in multiple [availability zones](#x7018171){: term}, with no single point of failure.
 - Data that is stored in {{site.data.keyword.registrylong_notm}} is replicated over the availability zones and it is also backed up in another region regularly.
-- If you're worried about the availability of your images if an entire region is unavailable, you can choose to push your images to multiple registry regions.
+- If you are worried about the availability of your images if an entire region is unavailable, you can choose to push your images to multiple registry regions.
 
     You might also choose to push your images to multiple registry regions in case you accidentally delete or overwrite your images.
 

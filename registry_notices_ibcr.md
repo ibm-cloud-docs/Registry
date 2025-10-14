@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-10-14"
 
 keywords: IBM Cloud Container Registry notices, notices, IBM Bluemix Container Registry, available, ga
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort_notm}} is available as of 27 June 2017
+# {{site.data.keyword.registryshort_notm}} is available from 27 June 2017
 {: #registry_notices_ibcr}
 
 The registry has been a part of {{site.data.keyword.containerlong_notm}} since its inception in June 2015. {{site.data.keyword.IBM_notm}} announced that the {{site.data.keyword.registrylong}} is live as a separate offering within the {{site.data.keyword.cloud_notm}} platform.

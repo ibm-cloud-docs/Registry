@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-07-17"
+  years: 2021, 2025
+lastupdated: "2025-10-14"
 
 keywords: registry, login, push, pull, iam session, iam
 
@@ -36,4 +36,4 @@ You can mitigate the issue by taking one of the following actions:
 {: tsResolve}
 
 - Log in by using an IAM [API key](#x8051010){: term} because this key is not subject to the IAM session expiry, see [Using Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker).
-- Change the IAM login session limits to better suit your needs, see [Setting limits for login sessions](/docs/account?topic=account-iam-work-sessions). The longer you set the limits, the longer your {{site.data.keyword.registrylong_notm}} login lasts for.
+- Change the IAM login session limits to better suit your needs, see [Setting limits for login sessions](/docs/account?topic=account-iam-work-sessions). The longer you set the limits, the longer your {{site.data.keyword.registryshort_notm}} login lasts for.
