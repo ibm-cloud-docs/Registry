@@ -89,7 +89,7 @@ toc:
             navtitle: Managing IAM access
           - topic: registry_users.md
             navtitle: Defining IAM access policies
-      - va_index.md
+      - topic: va_index.md
       - topic: terraform.md
         navtitle: Setting up Terraform
       - topicgroup:
