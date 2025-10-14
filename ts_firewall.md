@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-05-02"
+  years: 2017, 2025
+lastupdated: "2025-10-14"
 
 keywords: registry, firewall, custom firewall, network, network traffic
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Accessing {{site.data.keyword.registrylong}} fails when you have a custom firewall.
+Accessing {{site.data.keyword.registrylong}} fails when you are using a custom firewall.
 {: shortdesc}
 
 You have a supplementary firewall in your development environment with custom settings for inbound and outbound network traffic. When you try to access {{site.data.keyword.registrylong_notm}}, the connection fails.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-04-26"
+  years: 2017, 2025
+lastupdated: "2025-10-14"
 
 keywords: error, problem, registry, docker login, mac, credentials, error saving credentials, error storing credentials, user name or passphrase you entered is not correct
 
@@ -34,7 +34,7 @@ Error saving credentials: error storing credentials - err: exit status 1, out:
 Docker for Mac has a problem that prevents your credentials from being stored in the macOS keychain.
 {: tsCauses}
 
-You might be able to resolve the problem by restarting your Mac. If the restart doesn't solve the problem, you can disable the storage of logins in your Mac keychain:
+You might be able to resolve the problem by restarting your Mac. If restarting your Mac doesn't solve the problem, you can disable the storage of logins in your Mac keychain:
 {: tsResolve}
 
 1. In your menu, click the **Docker** icon, select **Preferences**.

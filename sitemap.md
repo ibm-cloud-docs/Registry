@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-14"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -483,13 +483,13 @@ subcollection: Registry
 
 [Setting up {{site.data.keyword.registryshort}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos)
 
-* [Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_rhoks)
+* [Setting up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_rhoks)
 
-* [Set up {{site.data.keyword.redhat_openshift_notm}} Container Platform to use {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os)
+* [Setting up {{site.data.keyword.redhat_openshift_notm}} Container Platform to use {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os)
 
-    * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform internal registry to pull from {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_pull)
+    * [Setting up the {{site.data.keyword.redhat_openshift_notm}} Container Platform internal registry to pull from {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_pull)
 
-    * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_push)
+    * [Setting up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_push)
 
 
 ## Adding images to your namespace

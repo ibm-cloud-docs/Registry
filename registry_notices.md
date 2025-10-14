@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-14"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, announcements
 
@@ -32,7 +32,7 @@ Notifications about the changes to {{site.data.keyword.registryshort}} and Vulne
 {: #registry_notices_topics_2023}
 
 - [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3).
-- [Upcoming public networking changes for {{site.data.keyword.registryshort}} from 15 June 2023](/docs/Registry?topic=Registry-registry_notices_wildcard_domains).
+- [Public networking changes for {{site.data.keyword.registryshort}} from 15 June 2023](/docs/Registry?topic=Registry-registry_notices_wildcard_domains).
 - [Update Vulnerability Advisor to version 4 by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4).
 
 ### 2022
@@ -49,4 +49,4 @@ Notifications about the changes to {{site.data.keyword.registryshort}} and Vulne
 ### 2017
 {: #registry_notices_topics_2017}
 
-- [{{site.data.keyword.registrylong_notm}} is available as of 27 June 2017](/docs/Registry?topic=Registry-registry_notices_ibcr)
+- [{{site.data.keyword.registrylong_notm}} is available from 27 June 2017](/docs/Registry?topic=Registry-registry_notices_ibcr)

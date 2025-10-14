@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-07-17"
+  years: 2024, 2025
+lastupdated: "2025-10-14"
 
 keywords: iam, access, policy, permission, access policy
 
@@ -25,7 +25,7 @@ You're trying to use the [getting started instructions](/docs/Registry?topic=Reg
 You can't run any commands in {{site.data.keyword.registryshort}} because you don't have permission.
 {: tsSymptoms}
 
-The [getting started instructions](/docs/Registry?topic=Registry-getting-started) assume that you’re in your own account with permission to do everything. If you’re a member of an account that is owned and administered by someone else, you might not have the correct permissions to configure and operate the registry service.
+The [getting started instructions](/docs/Registry?topic=Registry-getting-started) assume that you are in your own account with permission to do everything. If you are a member of an account that is owned and administered by someone else, you might not have the correct permissions to configure and operate the registry service.
 {: tsCauses}
 
 Ask your administrator to add you to an existing access policy, or create an access policy that gives you the correct [service access role](/docs/Registry?topic=Registry-iam&interface=ui#service_access_roles) for working with {{site.data.keyword.registryshort}}. For more information, see [Managing IAM access for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam&interface=ui) and [Defining IAM access policies for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-user).

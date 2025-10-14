@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-04-25"
+  years: 2023, 2025
+lastupdated: "2025-10-14"
 
 keywords: error, iam, access denied, access, quota, pull traffic quota, image storage quota
 
@@ -32,7 +32,7 @@ The following alternatives are possible causes:
 {: tsCauses}
 
 - **Scenario A.** You exceeded your image storage quota or pull traffic quota.
-- **Scenario B.** You're on a free plan and you need to upgrade to a standard plan.
+- **Scenario B.** You are on a free plan and you need to upgrade to a standard plan.
 
 You can fix this problem in the following ways:
 {: tsResolve}

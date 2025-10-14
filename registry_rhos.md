@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-10-14"
 
 keywords: External registry, private registry, Red Hat OpenShift, Red Hat, clusters, Red Hat OpenShift Container Platform, container platform, internal registry, images
 
@@ -22,7 +22,7 @@ For example, if you have multiple clusters, {{site.data.keyword.registryshort_no
 
 You can set up {{site.data.keyword.registryshort}} to work with the internal registry of [{{site.data.keyword.openshiftlong_notm}}](#registry_rhos_rhoks) or [other {{site.data.keyword.redhat_openshift_notm}} Container Platform providers](#registry_rhos_os).
 
-## Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registryshort}}
+## Setting up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registryshort}}
 {: #registry_rhos_rhoks}
 {: help}
 {: support}
@@ -36,7 +36,7 @@ To set up your {{site.data.keyword.openshiftlong_notm}} clusters to use the inte
 - [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry).
 - [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry).
 
-## Set up {{site.data.keyword.redhat_openshift_notm}} Container Platform to use {{site.data.keyword.registryshort}}
+## Setting up {{site.data.keyword.redhat_openshift_notm}} Container Platform to use {{site.data.keyword.registryshort}}
 {: #registry_rhos_os}
 
 To set up {{site.data.keyword.redhat_openshift_notm}} Container Platform, you must create secrets that have the credentials to access {{site.data.keyword.registryshort}} so that you can perform the following actions.
@@ -45,7 +45,7 @@ To set up {{site.data.keyword.redhat_openshift_notm}} Container Platform, you mu
 - **Push** Create image push secrets to [push images](#registry_rhos_os_push) from your {{site.data.keyword.redhat_openshift_notm}} cluster to a repository in {{site.data.keyword.registryshort}}. For example, you might set up a continuous delivery pipeline that builds an image to a private registry instead of the internal registry.
 - **Both** Create a secret that can pull images from and push images to {{site.data.keyword.registryshort}}. For example, you might set up a continuous delivery pipeline that builds an image to a private registry so that your team can pull the most recent image across multiple clusters.
 
-### Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform internal registry to pull from {{site.data.keyword.registryshort}}
+### Setting up the {{site.data.keyword.redhat_openshift_notm}} Container Platform internal registry to pull from {{site.data.keyword.registryshort}}
 {: #registry_rhos_os_pull}
 {: help}
 {: support}
@@ -56,7 +56,7 @@ To configure {{site.data.keyword.redhat_openshift_notm}} Container Platform to p
 
 2. [Configure {{site.data.keyword.redhat_openshift_notm}} Container Platform to use the image pull secrets](/docs/openshift?topic=openshift-registry#use_imagePullSecret) by adding the secrets to a service account in each project or by referring to the secret in your [pod](#x8461823){: term} deployment. You're only required to add the secret to the projects that you want to pull to.
 
-### Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registryshort}}
+### Setting up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registryshort}}
 {: #registry_rhos_os_push}
 {: help}
 {: support}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-04-26"
+  years: 2017, 2025
+lastupdated: "2025-10-14"
 
 keywords: restore, image, digest, trash, tag, repository
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 You want to restore an image by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) from the {{site.data.keyword.registrylong}} trash, but some [tags](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) weren't restored.
 {: shortdesc}
 
-You run the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command, but the tags were not restored. If all the tags were unsuccessful, the digest shows in the live repository, but it is not tagged. You can see the digest if you run [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests), but not if you run [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list).
+You run the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command, but the tags weren't restored. If all the tags were unsuccessful, the digest shows in the live repository, but it is not tagged. You can see the digest if you run [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests), but not if you run [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list).
 {: tsSymptoms}
 
 The tags that were not restored are already in your live repository. You can't overwrite a tag with a tag that is in the trash.
