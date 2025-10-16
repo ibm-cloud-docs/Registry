@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-16"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -26,14 +26,14 @@ For frequently asked questions about Vulnerability Advisor, see [FAQ for Vulnera
 {: #faq_ref_docs}
 {: faq}
 
-The reference documentation for {{site.data.keyword.registrylong_notm}} is available in the [{{site.data.keyword.cloud_notm}} documentation](/docs/Registry?topic=Registry-registry_overview).
+The reference documentation for {{site.data.keyword.registrylong_notm}} is available in the {{site.data.keyword.cloud_notm}} documentation. For more information, see [About {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_overview) and [{{site.data.keyword.registryshort}} CLI](/docs/Registry?topic=Registry-containerregcli).
 
 ## How do I set up the {{site.data.keyword.registryshort}} CLI?
 {: #faq_setup_cli}
 {: faq}
 
 To set up the {{site.data.keyword.registrylong_notm}} command-line interface (CLI), use the following steps:
-1. Ensure that the {{site.data.keyword.cloud_notm}} CLI is installed.
+1. Ensure that the {{site.data.keyword.cloud_notm}} CLI is installed. To verify that it is installed, run the `ibmcloud help` command.
 2. Install the `container-registry` CLI plug-in by running the command `ibmcloud plugin install container-registry`.
 3. Log in to {{site.data.keyword.cloud_notm}} with the `ibmcloud login` command.
 4. Verify the installation by checking the current version of the `container-registry` CLI plug-in with the command `ibmcloud plugin list`.
@@ -42,17 +42,42 @@ Now you can use the {{site.data.keyword.registrylong_notm}} CLI to manage your r
 
 For more information, see [Setting up the {{site.data.keyword.registryshort}} CLI and namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace) and [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
 
+## Why isn't `ibmcloud cr` a known command?
+{: #faq_cr_unknown}
+{: faq}
+
+If you receive a message that says that `ibmcloud cr` isn't a known command, the container-registry CLI plug-in isn't installed.
+
+To use {{site.data.keyword.registrylong_notm}}, you must install the container-registry CLI plug-in.
+
+1. To install the container-registry CLI plug-in, run the following command.
+
+```sh
+ibmcloud plugin install container-registry
+```
+{: pre}
+
+2. Log in to {{site.data.keyword.cloud_notm}} with the `ibmcloud login` command to generate an access token and authenticate your session.
+
+3. You can now use the `ibmcloud cr` commands to manage your registry and its resources.
+
+For more information about using the {{site.data.keyword.registryshort_notm}} CLI, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
+
+If you have issues with unregistered commands, it is likely that you don't have the most recent version of the plug-in. For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the container-registry CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+
 ## How do I configure my firewall to allow connections to {{site.data.keyword.registryshort}}?
 {: #faq_firewall}
 {: faq}
 
 You can use a [Layer 7 firewall](https://nordlayer.com/learn/firewall/layer-7/){: external} with the domains that are listed in [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall) or use a [virtual private network (VPN)](/docs/iaas-vpn?topic=iaas-vpn-getting-started).
 
-## What is my namespace?
+## What is the name of my namespace?
 {: #faq_namespace_2}
 {: faq}
 
 To find out the names of your namespaces, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list) command.
+
+You can also use the API to list your namespaces by using the `GET /api/v1/namespaces` method.
 
 For more information about namespaces, see [Registry namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace). To plan your namespaces, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
 
@@ -87,6 +112,24 @@ done
 The error message `You are not authorized to access the specified resource.` indicates that you lack the necessary user permissions for working with namespaces. To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registryshort}} service at the account level. If you have the Manager role on the resource group, or resource groups, it is not sufficient; the Manager role must be at the account level.
 
 For more information, see [Why aren't I authorized to access a specified resource in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth) and [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
+
+## Why am I unable to create a namespace?
+{: #faq_namespace_create}
+{: faq}
+
+If you're having issues when you try to add a namespace in {{site.data.keyword.registryshort_notm}}, these potential reasons and solutions might help.
+
+- Invalid characters. Ensure that your namespace value is between 4-30 characters, starts and ends with a letter or number, and contains only lowercase letters, numbers, hyphens, and underscores.
+- Namespace already in use. The namespace that you're trying to create might already be in use by another {{site.data.keyword.cloud_notm}} organization.
+- Reusing a namespace that was deleted recently. If you're reusing a recently deleted namespace's name, wait for the deletion process to complete, especially if the namespace contained many resources or images.
+
+To resolve these issues, follow the instructions in the returned error message. If unsuccessful, consider the following options:
+- Double-check your namespace value.
+- Choose a different namespace value.
+- If you're re-creating a namespace, try again later if it previously contained many images or resources.
+- Ensure that you have the Manager role in the {{site.data.keyword.registryshort_notm}} service at the account level for adding, assigning, and removing namespaces. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
+
+For more information about namespaces, see [Planning namespaces](docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan)
 
 ## How do I obtain image pull credentials for {{site.data.keyword.registryshort}}?
 {: #faq_credentials}
@@ -129,6 +172,16 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
+## Why are requests to {{site.data.keyword.registryshort}} timing out while I'm using the {{site.data.keyword.cloud_notm}} CLI?
+{: #faq_requests_timeout}
+{: faq}
+
+The timeout issue when you are using the {{site.data.keyword.cloud_notm}} CLI with {{site.data.keyword.registryshort}} might be due to having many images in the account. To resolve this situation, you can use the `ibmcloud cr image-list` command with the `--restrict` option to narrow down the scope of the list and improve performance. Alternatively, if vulnerability reports are not needed, use the `ibmcloud cr image-list` command with the `--no-va` option. To manage the number of images, consider cleaning up your namespaces. For more information, see [Cleaning up your namespaces in Container Registry](/docs/Registry?topic=Registry-registry_retention).
+
+If you're following the [getting started instructions](/docs/Registry?topic=Registry-getting-started), the instructions assume that you're in your own account with permission to do everything. If you're a member of an account that is owned and administered by someone else, you might not have the correct permissions to configure and operate the registry service. Ask your administrator to add you to an existing access policy, or create an access policy that gives you the correct service access role for working with {{site.data.keyword.registryshort}}. For more information, see [Why can't I get started with Container Registry?](/docs/Registry?topic=Registry-troubleshoot-get-started) for assistance.
+
+If {{site.data.keyword.registryshort}} commands fail with an error that states that they're not registered, install the container-registry CLI plug-in. Additionally, ensure that the `ibmcloud cli plug-in` and the `container-registry cli plug-in` are both up to date. Keeping your CLIs current allows you to use all available commands and options. To check the current version of your CLI plug-ins, run the `ibmcloud plugin list` command. See [Why isn't `ibmcloud cr` a known command?](#faq_cr_unknown) for assistance.
+
 ## How do I add multiple tags to a container image?
 {: #faq_tags}
 {: faq}
@@ -145,7 +198,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:peck
 ```
 {: pre}
 
-After running these commands, the image has three tags `1`, `latest`, and `peck`.
+After you run these commands, the image has three tags `1`, `latest`, and `peck`.
 
 ## What tools can I use to build and push images?
 {: #faq_tools}
@@ -249,7 +302,7 @@ You can't share a {{site.data.keyword.registryshort}} (`icr.io`) namespace acros
 {: #faq_push_image_diff_account}
 {: faq}
 
-Yes, you can push images to {{site.data.keyword.registrylong_notm}} on a different {{site.data.keyword.cloud_notm}} account than the one that is running the build pipeline. Follow these steps:
+You can push images to {{site.data.keyword.registrylong_notm}} on a different {{site.data.keyword.cloud_notm}} account than the one that is running the build pipeline by using the following steps.
 
  1. Create an API key in the target {{site.data.keyword.cloud_notm}} account with the necessary access policies to allow pushing images to the required namespace.
  2. Store the API key and the target namespace in your build pipeline configuration.
@@ -328,9 +381,9 @@ To find out more about the regions that are available for {{site.data.keyword.re
 {: #faq_docker_pull}
 {: faq}
 
-To find the most recent image, run the `ibmcloud cr image-list` command rather than the `docker pull` command. To make it easier to find the most recent image, define a different sequential tag for your images every time, and do not rely on the latest tag.
+To find the most recent image, run the `ibmcloud cr image-list` command rather than the `docker pull` command. To make it easier to find the most recent image, define a different sequential tag for your images every time, and do not rely on the `latest` tag.
 
-For more information, see [Why can't I pull the newest image by using the latest tag in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-docker-latest) for assistance.
+For more information, see [Why can't I pull the newest image by using the `latest` tag in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-docker-latest) for assistance.
 
 ## Why do my pods fail with an `ImagePullBackOff` error?
 {: #faq_imagepullbackoff}
@@ -353,6 +406,6 @@ For more information, see [Why do images fail to pull from registry with ImagePu
 {: #faq_quota_error}
 {: faq}
 
-You exceeded the image storage or pull traffic quota for your account for the current month. To resolve this issue, you can either review your quota limits and increase them as necessary, or if you're on the lite plan, upgrade to the standard plan.
+You exceeded the image storage or pull traffic quota for your account for the current month. To resolve this issue, you can either review your quota limits and increase them as necessary, or if you're on the Lite plan, upgrade to the standard plan.
 
 For more information, see [Why am I getting errors about my quota in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-quota) and [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).

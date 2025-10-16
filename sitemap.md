@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-16"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1536,9 +1536,11 @@ subcollection: Registry
 
 * [How do I set up the {{site.data.keyword.registryshort}} CLI?](/docs/Registry?topic=Registry-registry_faq#faq_setup_cli)
 
+* [Why isn't `ibmcloud cr` a known command?](/docs/Registry?topic=Registry-registry_faq#faq_cr_unknown)
+
 * [How do I configure my firewall to allow connections to {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_firewall)
 
-* [What is my namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_2)
+* [What is the name of my namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_2)
 
 * [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
@@ -1546,11 +1548,15 @@ subcollection: Registry
 
 * [Why don't I have authorization to create a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_auth_namespace)
 
+* [Why am I unable to create a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_create)
+
 * [How do I obtain image pull credentials for {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_credentials)
 
 * [How do I list image names?](/docs/Registry?topic=Registry-registry_faq#faq_list_images)
 
 * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
+
+* [Why are requests to {{site.data.keyword.registryshort}} timing out while I'm using the {{site.data.keyword.cloud_notm}} CLI?](/docs/Registry?topic=Registry-registry_faq#faq_requests_timeout)
 
 * [How do I add multiple tags to a container image?](/docs/Registry?topic=Registry-registry_faq#faq_tags)
 
@@ -1595,6 +1601,8 @@ subcollection: Registry
 [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va#registry_faq_va)
 
 * [How do I manage any vulnerabilities?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_vuln)
+
+* [How can I view all of the vulnerabilities?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_vuln_view)
 
 * [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_cost)
 
