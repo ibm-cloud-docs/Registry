@@ -46,9 +46,9 @@ For more information, see [Setting up the {{site.data.keyword.registryshort}} CL
 {: #faq_cr_unknown}
 {: faq}
 
-If you receive a message that says that `ibmcloud cr` isn't a registered command, the container-registry CLI plug-in either isn't installed or it's not up to date. See [Why do {{site.data.keyword.registryshort_notm}} (`ibmcloud cr`) commands fail with a message that they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance.
+If you receive a message that says that `ibmcloud cr` isn't a registered command, the `container-registry` CLI plug-in either isn't installed or it's not up to date. See [Why do {{site.data.keyword.registryshort_notm}} (`ibmcloud cr`) commands fail with a message that they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance.
 
-If you have issues with an unregistered command, it is likely that you don't have the most recent version of the plug-in. For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the container-registry CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+If you have issues with an unregistered command, it is likely that you don't have the most recent version of the plug-in. For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 
 ## How do I configure my firewall to allow connections to {{site.data.keyword.registryshort}}?
 {: #faq_firewall}
@@ -160,7 +160,7 @@ The timeout issue when you are using the {{site.data.keyword.cloud_notm}} CLI wi
 
 If you're following the [getting started instructions](/docs/Registry?topic=Registry-getting-started), the instructions assume that you're in your own account with permission to do everything. If you're a member of an account that is owned and administered by someone else, you might not have the correct permissions to configure and operate the registry service. Ask your administrator to add you to an existing access policy, or create an access policy that gives you the correct service access role for working with {{site.data.keyword.registryshort}}. For more information, see [Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started) for assistance.
 
-If {{site.data.keyword.registryshort}} commands fail with an error that states that they're not registered, install the container-registry CLI plug-in. Additionally, ensure that the `ibmcloud cli plug-in` and the `container-registry cli plug-in` are both up to date. If you want to use all the available commands and options, you must keep your CLIs current. To check the current version of your CLI plug-ins, run the `ibmcloud plugin list` command. See [Why isn't `ibmcloud cr` a known command?](#faq_cr_unknown) for assistance.
+If {{site.data.keyword.registryshort}} commands fail with an error that states that they're not registered, install the `container-registry` CLI plug-in. Additionally, ensure that the `ibmcloud` CLI plug-in and the `container-registry` CLI plug-in are both up to date. If you want to use all the available commands and options, you must keep your CLIs current. To check the current version of your CLI plug-ins, run the `ibmcloud plugin list` command. See [Why isn't `ibmcloud cr` a known command?](#faq_cr_unknown) for assistance.
 
 ## How do I add multiple tags to a container image?
 {: #faq_tags}

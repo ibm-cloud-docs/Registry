@@ -37,10 +37,10 @@ ibmcloud cr namespace
 ```
 {: screen}
 
-The `container-registry` command-line interface (CLI) plug-in is not installed.
+The `container-registry` command-line interface (CLI) plug-in is not installed or is out of date.
 {: tsCauses}
 
 Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 {: tsResolve}
 
-If you have issues with an unregistered command, it is likely that you don't have the most recent version of the plug-in. For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the container-registry CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+Update the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
