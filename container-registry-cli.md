@@ -40,7 +40,7 @@ For more information about the IAM platform and service access roles that are re
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
-If {{site.data.keyword.registryshort_notm}} `ibmcloud cr`, commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort_notm}} (`ibmcloud cr`) commands fail with a message that they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+If {{site.data.keyword.registryshort_notm}} `ibmcloud cr` commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort_notm}} (`ibmcloud cr`) commands fail with a message that they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
 {: tip}
 
 ## `ibmcloud cr api`

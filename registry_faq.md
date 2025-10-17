@@ -102,14 +102,14 @@ See [Why aren't I authorized to access a specified resource in {{site.data.keywo
 {: #faq_namespace_create}
 {: faq}
 
-If you're having problems when you try to add a namespace in {{site.data.keyword.registryshort_notm}}, it could be one of several causes.
+If you're having problems when you try to add a namespace in {{site.data.keyword.registryshort_notm}}, it could be one of the following causes:
 
-- Invalid characters
-- Namespace already in use
-- Reusing a namespace that was deleted recently
-- Incorrect permissions
+- Invalid characters are included in the namespace.
+- The namespace is already in use.
+- You're reusing a namespace that was deleted recently.
+- You don't have the correct permissions to create a namespace.
 
-See [Why can't I add a namespace in Container Registry?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
+See [Why can't I add a namespace in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
 
 ## How do I obtain image pull credentials for {{site.data.keyword.registryshort}}?
 {: #faq_credentials}
@@ -156,9 +156,9 @@ ibmcloud cr images --include-ibm
 {: #faq_requests_timeout}
 {: faq}
 
-The timeout issue when you are using the {{site.data.keyword.cloud_notm}} CLI with {{site.data.keyword.registryshort}} might be due to having many images in the account. To resolve this situation, you can use the `ibmcloud cr image-list` command with the `--restrict` option to narrow down the scope of the list and improve performance. Alternatively, if vulnerability reports are not needed, use the `ibmcloud cr image-list` command with the `--no-va` option. To manage the number of images, consider cleaning up your namespaces. For more information, see [Cleaning up your namespaces in Container Registry](/docs/Registry?topic=Registry-registry_retention).
+The timeout issue when you are using the {{site.data.keyword.cloud_notm}} CLI with {{site.data.keyword.registryshort}} might be due to having many images in the account. To resolve this situation, you can use the `ibmcloud cr image-list` command with the `--restrict` option to narrow down the scope of the list and improve performance. Alternatively, if vulnerability reports are not needed, use the `ibmcloud cr image-list` command with the `--no-va` option. To manage the number of images, consider cleaning up your namespaces. For more information, see [Cleaning up your namespaces in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_retention).
 
-If you're following the [getting started instructions](/docs/Registry?topic=Registry-getting-started), the instructions assume that you're in your own account with permission to do everything. If you're a member of an account that is owned and administered by someone else, you might not have the correct permissions to configure and operate the registry service. Ask your administrator to add you to an existing access policy, or create an access policy that gives you the correct service access role for working with {{site.data.keyword.registryshort}}. For more information, see [Why can't I get started with Container Registry?](/docs/Registry?topic=Registry-troubleshoot-get-started) for assistance.
+If you're following the [getting started instructions](/docs/Registry?topic=Registry-getting-started), the instructions assume that you're in your own account with permission to do everything. If you're a member of an account that is owned and administered by someone else, you might not have the correct permissions to configure and operate the registry service. Ask your administrator to add you to an existing access policy, or create an access policy that gives you the correct service access role for working with {{site.data.keyword.registryshort}}. For more information, see [Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started) for assistance.
 
 If {{site.data.keyword.registryshort}} commands fail with an error that states that they're not registered, install the container-registry CLI plug-in. Additionally, ensure that the `ibmcloud cli plug-in` and the `container-registry cli plug-in` are both up to date. If you want to use all the available commands and options, you must keep your CLIs current. To check the current version of your CLI plug-ins, run the `ibmcloud plugin list` command. See [Why isn't `ibmcloud cr` a known command?](#faq_cr_unknown) for assistance.
 
