@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-16"
+lastupdated: "2025-10-17"
 
 keywords: commands, questions, registry, Vulnerability Advisor, frequently asked questions, image, package manager, security notices, version of a package, notify security status, vulnerabilities
 
@@ -47,7 +47,7 @@ To see the vulnerabilities in an image and address any vulnerabilities before yo
 5. To get more information about a specific issue, expand the corresponding row, which shows a summary of the issue along with a link to the vendor security notice.
 6. Complete the corrective action for each issue and then rebuild the image.
 
-For more information, see [Reviewing a vulnerability report](/docs/Registry?topic=Registry-va_index&interface=ui&locale=en#va_reviewing) and [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui&locale=en#about).
+For more information, see [Reviewing a vulnerability report](/docs/Registry?topic=Registry-va_index&interface=ui#va_reviewing) and [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#about).
 
 ## How much does Vulnerability Advisor cost?
 {: #faq_va_cost}

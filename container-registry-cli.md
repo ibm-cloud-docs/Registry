@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-17"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -40,7 +40,7 @@ For more information about the IAM platform and service access roles that are re
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
-If {{site.data.keyword.registryshort_notm}} `ibmcloud cr`, commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort_notm}} commands fail with a message that states that they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+If {{site.data.keyword.registryshort_notm}} `ibmcloud cr`, commands fail with an error that says that they're not registered commands, see [Why do {{site.data.keyword.registryshort_notm}} (`ibmcloud cr`) commands fail with a message that they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail with a message that you're not logged in, see [Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
 {: tip}
 
 ## `ibmcloud cr api`
