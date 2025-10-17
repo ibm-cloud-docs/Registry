@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-16"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -187,7 +187,7 @@ To upgrade your service plan, complete the following steps.
     ```
     {: pre}
 
-    If you have an {{site.data.keyword.cloud_notm}} lite plan, you must upgrade to an {{site.data.keyword.cloud_notm}} Pay-as-you-go or Subscription account before you run `ibmcloud cr plan-upgrade`.
+    If you have an {{site.data.keyword.cloud_notm}} Lite plan, you must upgrade to an {{site.data.keyword.cloud_notm}} Pay-as-you-go or Subscription account before you run `ibmcloud cr plan-upgrade`.
     {: requirement}
 
     For more information, see [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade).

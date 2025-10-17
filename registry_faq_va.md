@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-17"
 
 keywords: commands, questions, registry, Vulnerability Advisor, frequently asked questions, image, package manager, security notices, version of a package, notify security status, vulnerabilities
 
@@ -26,9 +26,28 @@ For frequently asked questions about {{site.data.keyword.registryshort}}, see [F
 {: #faq_va_vuln}
 {: faq}
 
-You can use Vulnerability Advisor to manage image security and vulnerabilities.
+You can use the Vulnerability Advisor component of {{site.data.keyword.registrylong_notm}} to manage image security and vulnerabilities.
 
 For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
+
+## How can I view all of the vulnerabilities?
+{: #faq_va_vuln_view}
+{: faq}
+
+To view all the vulnerabilities that are found by the Vulnerability Advisor component of {{site.data.keyword.registrylong_notm}}, you need to access the dashboard. The dashboard provides an overview and assessment of the security for an image. The dashboard displays details about any vulnerable packages and nonsecure container or app configurations.
+
+Encrypted images are not scanned by Vulnerability Advisor.
+{: note}
+
+To see the vulnerabilities in an image and address any vulnerabilities before you deploy the image, complete the following steps:
+1. Log in to the {{site.data.keyword.cloud_notm}} console.
+2. Navigate to {{site.data.keyword.registryshort_notm}} by clicking the **Navigation menu** icon and selecting **Container Registry**.
+3. View a list of your images along with their security status by clicking **Images**.
+4. If you see any issues, click the **Issues by type** tab to see the Vulnerabilities table. The Vulnerabilities table displays the Vulnerability ID, policy status, affected packages, and resolution steps for each issue.
+5. To get more information about a specific issue, expand the corresponding row, which shows a summary of the issue along with a link to the vendor security notice.
+6. Complete the corrective action for each issue and then rebuild the image.
+
+For more information, see [Reviewing a vulnerability report](/docs/Registry?topic=Registry-va_index&interface=ui#va_reviewing) and [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#about).
 
 ## How much does Vulnerability Advisor cost?
 {: #faq_va_cost}
@@ -46,13 +65,13 @@ Vulnerability Advisor scans images from {{site.data.keyword.registrylong_notm}} 
 {: #faq_va_trigger_scan}
 {: faq}
 
-For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=Registry-va_index&interface=ui#packages).
+For more information about how the scanning of an image by the Vulnerability Advisor component of {{site.data.keyword.registrylong_notm}} is triggered, see [Vulnerable packages](/docs/Registry?topic=Registry-va_index&interface=ui#packages).
 
 ## Why doesn't my image scan in Vulnerability Advisor v4?
 {: #faq_va_v4_scan}
 {: faq}
 
-If your image isn't being scanned, check that it has a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). In Vulnerability Advisor version 4, images are scanned only if they have a tag.
+If your image isn't being scanned by the Vulnerability Advisor component of {{site.data.keyword.registrylong_notm}}, check that it has a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). In Vulnerability Advisor version 4, images are scanned only if they have a tag.
 
 ## Why doesn't a new image scan in Vulnerability Advisor?
 {: #faq_va_new_scan_error}

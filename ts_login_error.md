@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-17"
 
 keywords: error, registry, not a registered command, registered command, cr, command, ibmcloud cr
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do {{site.data.keyword.registryshort_notm}} commands fail with a message that states that they're not registered?
+# Why do {{site.data.keyword.registryshort_notm}} (`ibmcloud cr`) commands fail with a message that they're not registered?
 {: #troubleshoot-login-error}
 {: troubleshoot}
 {: support}
@@ -42,3 +42,5 @@ The `container-registry` command-line interface (CLI) plug-in is not installed.
 
 Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 {: tsResolve}
+
+If you have issues with an unregistered command, it is likely that you don't have the most recent version of the plug-in. For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the container-registry CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
