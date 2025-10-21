@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-10-16"
+lastupdated: "2025-10-21"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1602,7 +1602,7 @@ subcollection: Registry
 
 * [How do I manage any vulnerabilities?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_vuln)
 
-* [How can I view all of the vulnerabilities?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_vuln_view)
+* [How can I view all the vulnerabilities?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_vuln_view)
 
 * [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq_va#faq_va_cost)
 

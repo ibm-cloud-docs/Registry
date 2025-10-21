@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-17"
+lastupdated: "2025-10-21"
 
 keywords: commands, questions, registry, Vulnerability Advisor, frequently asked questions, image, package manager, security notices, version of a package, notify security status, vulnerabilities
 
@@ -30,7 +30,7 @@ You can use the Vulnerability Advisor component of {{site.data.keyword.registryl
 
 For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
 
-## How can I view all of the vulnerabilities?
+## How can I view all the vulnerabilities?
 {: #faq_va_vuln_view}
 {: faq}
 
