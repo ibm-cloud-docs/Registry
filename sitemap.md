@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-10-21"
+lastupdated: "2025-11-03"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1307,6 +1307,28 @@ subcollection: Registry
 
 
 [Service dependencies](/docs/Registry?topic=Registry-service-dependencies#service-dependencies)
+
+* [Dreadnought data and control plane](/docs/Registry?topic=Registry-service-dependencies#dreadnought-data-and-control-plane)
+
+* [Dreadnought DevOps plane](/docs/Registry?topic=Registry-service-dependencies#dreadnought-devops-plane)
+
+* [Data and Control plane deployment](/docs/Registry?topic=Registry-service-dependencies#data-and-control-plane-deployment)
+
+* [Understanding service dependency data](/docs/Registry?topic=Registry-service-dependencies#understand-dependency-data)
+
+    * [What is the expected impact to the functions described?](/docs/Registry?topic=Registry-service-dependencies#expected-impact)
+
+    * [What services does my service depend on?](/docs/Registry?topic=Registry-service-dependencies#dependent-services)
+
+    * [What function does the dependency impact?](/docs/Registry?topic=Registry-service-dependencies#function-impact)
+
+    * [What does customer provided mean for dependencies?](/docs/Registry?topic=Registry-service-dependencies#customer-provided-dep)
+
+    * [Where do dependency services need to be deployed regarding my service?](/docs/Registry?topic=Registry-service-dependencies#deploy-dependencies)
+
+    * [Where are the separate control plane and data plane located, if applicable?](/docs/Registry?topic=Registry-service-dependencies#separate-plans)
+
+* [Additional resources](/docs/Registry?topic=Registry-service-dependencies#additional-resources)
 
 
 ## High availability and disaster recovery
