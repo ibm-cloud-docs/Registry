@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-11-05"
+lastupdated: "2025-11-06"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1308,7 +1308,7 @@ subcollection: Registry
 
 [Service dependencies](/docs/Registry?topic=Registry-service-dependencies#service-dependencies)
 
-* [Dreadnought data and control plane](/docs/Registry?topic=Registry-service-dependencies#dreadnought-data-and-control-plane)
+* [VPC Data and control plane](/docs/Registry?topic=Registry-service-dependencies#vpc-data-and-control-plane)
 
 * [Data and Control plane deployment](/docs/Registry?topic=Registry-service-dependencies#data-and-control-plane-deployment)
 
