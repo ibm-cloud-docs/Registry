@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-11-05"
+lastupdated: "2025-11-06"
 
 keywords:
 
@@ -35,8 +35,8 @@ Minimal
 
 
 
-## Dreadnought data and control plane
-{: #dreadnought-data-and-control-plane}
+## VPC Data and control plane
+{: #vpc-data-and-control-plane}
 
 The following dependencies apply to the following deployment locations: Montreal (ca-mon).
 
@@ -52,9 +52,9 @@ The following dependencies apply to the following deployment locations: Montreal
 | IBM Cloud Service Endpoints | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 | Akamai | Availability, Security compliance | No | Both |  external  |
 {: row-headers}
-{: caption="IBM Cloud Container Registry - Dreadnought data and control plane service dependency information - Critical dependencies" caption-side="top"}
+{: caption="IBM Cloud Container Registry - VPC Data and control plane service dependency information - Critical dependencies" caption-side="top"}
 {: tab-title="Critical dependencies"}
-{: tab-group="service-dependency-data-for-container-registry-Dreadnought-data-and-control-plane"}
+{: tab-group="service-dependency-data-for-container-registry-VPC-Data-and-control-plane"}
 {: class="comparison-tab-table"}
 {: #critical-deps}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
@@ -67,9 +67,9 @@ The following dependencies apply to the following deployment locations: Montreal
 | {{site.data.keyword.keymanagementservicefull}} | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control, Operations, Security compliance | No | Both |  Same data center  |
 {: row-headers}
-{: caption="IBM Cloud Container Registry - Dreadnought data and control plane service dependency information - Significant dependencies" caption-side="top"}
+{: caption="IBM Cloud Container Registry - VPC Data and control plane service dependency information - Significant dependencies" caption-side="top"}
 {: tab-title="Significant dependencies"}
-{: tab-group="service-dependency-data-for-container-registry-Dreadnought-data-and-control-plane"}
+{: tab-group="service-dependency-data-for-container-registry-VPC-Data-and-control-plane"}
 {: class="comparison-tab-table"}
 {: #significant-deps}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
@@ -88,9 +88,9 @@ The following dependencies apply to the following deployment locations: Montreal
 | RedHat Vulnerabilities Databases| none | No | Both |  external  |
 | IBM Log Analysis Log Routing| none | No | Both |  Same region  |
 {: row-headers}
-{: caption="IBM Cloud Container Registry - Dreadnought data and control plane service dependency information - Minimal dependencies" caption-side="top"}
+{: caption="IBM Cloud Container Registry - VPC Data and control plane service dependency information - Minimal dependencies" caption-side="top"}
 {: tab-title="Minimal dependencies"}
-{: tab-group="service-dependency-data-for-container-registry-Dreadnought-data-and-control-plane"}
+{: tab-group="service-dependency-data-for-container-registry-VPC-Data-and-control-plane"}
 {: class="comparison-tab-table"}
 {: #minimal-deps}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
