@@ -35,18 +35,6 @@ toc:
           - topic: registry_notices_wildcard_domains.md
             navtitle: Upcoming public networking changes from 15 June 2023
           - registry_notices_va_v4.md
-          - topic: registry_notices_vpe.md
-            navtitle: Changes to VPE gateways from 11 November 2022
-          - topic: registry_notices_ip_address.md
-            navtitle: Changes to private IP addresses from 15 December 2022
-          - topic: registry_notices_lists.md
-            navtitle: Container Registry CLI stops returning security status results in lists from version 1.0.0
-          - topic: registry_notices_iam_private_network.md
-            navtitle: Private IP addresses change on 5 July 2022
-          - topic: registry_notices_iam_policy.md
-            navtitle: IAM access policies are required from 5 July 2022
-          - topic: registry_notices_docker.md
-            navtitle: Minimum supported Docker version from 1 March 2022
           - topic: registry_notices_ibcr.md
             navtitle: IBM Cloud Container Registry is available
       - topic: registry_release_notes.md
