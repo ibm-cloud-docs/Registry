@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-08-13"
+lastupdated: "2025-12-17"
 
 keywords: IBM Cloud Container Registry, firewall, access, communicate, domains, subdomains, traffic, allowlist
 
@@ -30,17 +30,17 @@ In addition to the following regional subdomains, you must also allow traffic fr
 
 | Region | Registry address | Deprecated addresses |
 |--------|------------------|----------------------|
-| Global | `icr.io` | `registry.bluemix.net` |
-| Tokyo | `jp.icr.io` | Not applicable |
-| Sydney | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| Dallas | `us.icr.io` | `registry.ng.bluemix.net` |
 | Frankfurt | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| Global | `icr.io` | `registry.bluemix.net` |
+| London | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
 | Madrid | `es.icr.io` | Not applicable |
 | Montreal | `ca2.icr.io` | Not applicable |
 | Osaka | `jp2.icr.io` | Not applicable |
 | Sao Paolo | `br.icr.io` | Not applicable |
+| Sydney | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| Tokyo | `jp.icr.io` | Not applicable |
 | Toronto | `ca.icr.io` | Not applicable |
-| London | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
-| Dallas | `us.icr.io` | `registry.ng.bluemix.net` |
 {: caption="Addresses for {{site.data.keyword.registryshort}} traffic" caption-side="bottom"}
 {: #table_registry_firewall_traffic_addresses}
 
