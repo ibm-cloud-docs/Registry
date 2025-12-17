@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-11-06"
+lastupdated: "2025-12-17"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -151,8 +151,6 @@ subcollection: Registry
 
     * [2023](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2023)
 
-    * [2022](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2022)
-
     * [2017](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2017)
 
 [Firewall changes from 4 September 2024 for users that pull images from global](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
@@ -174,48 +172,6 @@ subcollection: Registry
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_change)
 
 * [What actions you must take by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_action)
-
-[Changes to VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
-
-* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_know)
-
-* [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_benefit)
-
-* [Understanding if you are impacted by this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_impact)
-
-* [What actions you must take](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_actions)
-
-[Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address)
-
-* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_know)
-
-* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_actions)
-
-[Container Registry CLI stops returning security status results in lists from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
-
-* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
-
-[Private IP addresses change on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
-
-* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
-
-* [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_benefit)
-
-* [Understanding if you are impacted by this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_impact)
-
-* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_action)
-
-[IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
-
-* [What are the changes?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
-
-* [Check whether these changes affect you](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_affect)
-
-* [Prepare for the changes](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_prepare)
-
-* [What if I did not implement the changes in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
-
-[Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
 [IBM Cloud Container Registry is available](/docs/Registry?topic=Registry-registry_notices_ibcr#registry_notices_ibcr)
 
