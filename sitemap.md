@@ -228,38 +228,6 @@ subcollection: Registry
 
     * [Using Portieris to block the deployment of images with issues is deprecated.](/docs/Registry?topic=Registry-registry_release_notes#26apr2023_portieris)
 
-* [11 November 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-11nov2022)
-
-    * [Change to virtual private endpoints](/docs/Registry?topic=Registry-registry_release_notes#11nov2022_vpe)
-
-* [2 November 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-2nov2022)
-
-    * [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_release_notes#2nov2022_ip)
-
-* [15 September 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-15sep2022)
-
-    * [{{site.data.keyword.registryshort}} plug-in 1.0.0 is available](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v1)
-
-    * [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0)
-
-    * [Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} plug-in 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_4)
-
-    * [New commands for setting and checking the Vulnerability Advisor version are available from {{site.data.keyword.registryshort}} plug-in 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_commands)
-
-* [3 August 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-03aug2022)
-
-    * [The CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#03aug2022_list)
-
-* [8 July 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-08jul2022)
-
-    * [Context-based restrictions](/docs/Registry?topic=Registry-registry_release_notes#08jul2022_cbr)
-
-* [5 July 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-05jul2022)
-
-    * [Change to {{site.data.keyword.registryshort}} private IP addresses in all regions](/docs/Registry?topic=Registry-registry_release_notes#05jul2022_private_network)
-
-    * [All accounts require IAM access policies](/docs/Registry?topic=Registry-registry_release_notes#05jul2022_iam)
-
 * [27 June 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2017)
 
     * [Introducing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#27jun2017_ga)
