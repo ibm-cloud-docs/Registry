@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-11-06"
+lastupdated: "2025-12-18"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -349,7 +349,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 :   (Optional) Excludes the Vulnerability Advisor security status results from the output. If you don't need the security status results as part of your `ibmcloud cr image-digests` output, you can use this option to increase performance.
 
 `--va`
-:   (Optional) Includes the Vulnerability Advisor security status results in the output. Use this option to ensure that you are ready for [{{site.data.keyword.registrylong_notm}} CLI plug-in version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists). You can use the `--va` option with the `--restrict` option to receive just the information that you require.
+:   (Optional) Includes the Vulnerability Advisor security status results in the output. You can use the `--va` option with the `--restrict` option to receive just the information that you require.
 
 ### Example
 {: #bx_cr_image_digests_example}
@@ -454,7 +454,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 :   (Optional) Excludes the Vulnerability Advisor security status results from the output. If you don't need the security status results as part of your `ibmcloud cr image-list` output, you can use this option to increase performance.
 
 `--va`
-:   (Optional) Includes the Vulnerability Advisor security status results in the output. Use this option to ensure that you are ready for [{{site.data.keyword.registrylong_notm}} CLI plug-in version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists). You can use the `--va` option with the `--restrict` option to receive just the information that you require.
+:   (Optional) Includes the Vulnerability Advisor security status results in the output. You can use the `--va` option with the `--restrict` option to receive just the information that you require.
 
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
