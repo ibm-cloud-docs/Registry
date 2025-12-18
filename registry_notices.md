@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-12-17"
+lastupdated: "2025-12-18"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, announcements
 
@@ -26,7 +26,7 @@ Notifications about the changes to {{site.data.keyword.registryshort}} and Vulne
 ### 2024
 {: #registry_notices_topics_2024}
 
-- [Important firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registryshort}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_notices_firewall)
+- [Firewall changes from 4 September 2024 for users that pull {{site.data.keyword.registryshort}} images from global (`icr.io`)](/docs/Registry?topic=Registry-registry_notices_firewall)
 
 ### 2023
 {: #registry_notices_topics_2023}
