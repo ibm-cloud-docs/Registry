@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-12-18"
+  years: 2017, 2026
+lastupdated: "2026-01-06"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -61,6 +61,18 @@ Find out the details for the registry API endpoint.
 ibmcloud cr api
 ```
 {: pre}
+
+### Output
+{: #bx_cr_api_output}
+
+The command in the [example](#bx_cr_api_example) returns the following output:
+
+```text
+Registry API endpoint   https://us.icr.io/api
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
@@ -250,12 +262,29 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Example
 {: #bx_cr_exemption_types_example}
 
-List the types of security issues in JSON format by entering `json` as the output.
+List the types of security issues.
 
 ```sh
-ibmcloud cr exemption-types -o json
+ibmcloud cr exemption-types
 ```
 {: pre}
+
+### Output
+{: #bx_cr_exemption_types_output}
+
+The command in the [example](#bx_cr_exemption_types_example) returns the following output:
+
+```text
+Listing exemption types...
+
+Issue type      Description
+cve             CVE
+sn              Security Notice
+configuration   Configuration Issue
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
@@ -305,6 +334,18 @@ Show the status of the IAM access policy for your account.
 ibmcloud cr iam-policies-status
 ```
 {: pre}
+
+### Output
+{: #bx_cr_iam_policies_status_output}
+
+The command in the [example](#bx_cr_iam_policies_status_example) returns the following output:
+
+```text
+IAM policy enforcement is enabled for account 'X's Account' in registry 'us.icr.io'.
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr image-digests` (`ibmcloud cr digests`)
 {: #bx_cr_image_digests}
@@ -360,6 +401,17 @@ Display all the images in the `birds` namespace, including untagged images, in t
 ibmcloud cr image-digests --restrict birds --quiet
 ```
 {: pre}
+
+### Output
+{: #bx_cr_image_digests_output}
+
+The command in the [example](#bx_cr_image_digests_example) returns the following output:
+
+```text
+us.icr.io/birds/bluebird@sha256:11ab001ab10011cd1000101cd0101010001ab111100cd00ab111
+us.icr.io/birds/blackbird@sha256:22ef00ef002220002gh200222000gh00ef2222000ab00222
+```
+{: screen}
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
@@ -468,6 +520,16 @@ Display the images in the `birds` namespace in the format `repository:tag`, with
 ibmcloud cr image-list --restrict birds --quiet --no-trunc
 ```
 {: pre}
+
+### Output
+{: #bx_cr_image_list_output}
+
+The command in the [exampl](#bx_cr_image_list_example) returns the following output:
+
+```text
+us.icr.io/birds/bluebird:1
+```
+{: screen}
 
 ## `ibmcloud cr image-prune-untagged`
 {: #ic_cr_image_prune_untagged}
@@ -706,6 +768,23 @@ ibmcloud cr info
 ```
 {: pre}
 
+### Output
+{: #bx_cr_info_output}
+
+The command in the [example](#bx_cr_info_example) returns the following output:
+
+```text
+
+Plugin version                    1.3.16
+Container Registry                us.icr.io
+Container Registry API endpoint   https://us.icr.io/api
+IBM Cloud API endpoint            https://cloud.ibm.com
+IBM Cloud account details         X's Account (1100110011001100)
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr login`
 {: #bx_cr_login}
 
@@ -838,6 +917,20 @@ ibmcloud cr namespace-add -g beaks birds
 ```
 {: pre}
 
+### Output
+{: #bx_cr_namespace_add_output}
+
+The command in the [example](#bx_cr_namespace_add_example) returns the following output:
+
+```text
+Adding namespace 'birds2' in resource group 'beaks' for account X's Account in registry us.icr.io...
+
+Successfully added namespace 'birds2'
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr namespace-assign`
 {: #ic_cr_namespace_assign}
 
@@ -882,6 +975,20 @@ ibmcloud cr namespace-assign -g beaks birds
 ```
 {: pre}
 
+### Output
+{: #ic_cr_namespace_assign_output}
+
+The command in the [example](#ic_cr_namespace_assign_example) returns the following output:
+
+```text
+Assigning namespace 'birds' to resource group 'beaks' for account X's Account in registry us.icr.io...
+
+Successfully assigned namespace 'birds' to resource group 'beaks.'
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
@@ -916,6 +1023,21 @@ View a list of all your namespaces, including information about resource groups 
 ibmcloud cr namespace-list -v
 ```
 {: pre}
+
+### Output
+{: #bx_cr_namespace_list_output}
+
+The command in the [example](#bx_cr_namespace_list_example) returns the following output:
+
+```text
+Listing namespaces for account 'X's Account' in registry 'us.icr.io'...
+
+Namespace   Resource Group   Created
+birds       default          1 year ago
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
@@ -982,6 +1104,18 @@ Output your pricing plan in JSON format by entering `json` as the output.
 ibmcloud cr plan -o json
 ```
 {: pre}
+
+### Output
+{: #bx_cr_plan_output}
+
+The command in the [example](#bx_cr_plan_example) returns the following output:
+
+```text
+{
+	"plan": "Free"
+}
+```
+{: screen}
 
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
@@ -1061,6 +1195,16 @@ ibmcloud cr platform-metrics --enable
 ```
 {: pre}
 
+### Output
+{: #ic_cr_platform_metrics_output}
+
+The command in the [example](#ic_cr_platform_metrics_example) returns the following output:
+
+```text
+OK
+```
+{: screen}
+
 ## `ibmcloud cr private-only`
 {: #ic_cr_private_only}
 
@@ -1127,6 +1271,25 @@ ibmcloud cr quota -o json
 ```
 {: pre}
 
+### Output
+{: #bx_cr_quota_output}
+
+The command in the [example](#bx_cr_quota_example) returns the following output:
+
+```text
+{
+	"usage": {
+		"traffic": 0,
+		"store": 0
+	},
+	"limit": {
+		"traffic": 5368709120,
+		"store": 536870912
+	}
+}
+```
+{: screen}
+
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
@@ -1160,6 +1323,18 @@ ibmcloud cr quota-set --traffic 7000 --storage 600
 ```
 {: pre}
 
+### Output
+{: #bx_cr_quota_set_output}
+
+The command in the [example](#bx_cr_quota_set_example) returns the following output:
+
+```text
+Setting quotas: 'storage: 600 , traffic: 7000'...
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr region`
 {: #bx_cr_region}
 
@@ -1178,6 +1353,18 @@ Find out which region and registry you're targeting.
 ibmcloud cr region
 ```
 {: pre}
+
+### Output
+{: #bx_cr_region_output}
+
+The command in the [example](#bx_cr_region_example) returns the following output:
+
+```text
+You are targeting region 'us-south', the registry is 'us.icr.io'.
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
@@ -1203,6 +1390,18 @@ Target the Dallas region by entering `us-south` as the region.
 ibmcloud cr region-set us-south
 ```
 {: pre}
+
+### Output
+{: #bx_cr_region_set_output}
+
+The command in the [example](#bx_cr_region_set_example) returns the followings output:
+
+```text
+The region is set to 'us-south', the registry is 'us.icr.io'.
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr retention-policy-list`
 {: #bx_cr_retention_policy_list}
@@ -1238,6 +1437,29 @@ ibmcloud cr retention-policy-list -o json
 {: pre}
 
 For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
+
+### Output
+{: #bx_cr_retention_policy_list_output}
+
+The command in the [example](#bx_cr_retention_policy_list_example) returns the following output:
+
+```text
+{
+	"birds": {
+		"namespace": "birds",
+		"account": "",
+		"images_per_repo": -1,
+		"retain_untagged": true
+	},
+	"birds2": {
+		"namespace": "birds2",
+		"account": "",
+		"images_per_repo": -1,
+		"retain_untagged": true
+	}
+}
+```
+{: screen}
 
 ## `ibmcloud cr retention-policy-set`
 {: #bx_cr_retention_policy_set}
@@ -1281,8 +1503,8 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--images`
 :   Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGE_COUNT` is the number of images that you want to retain in each repository for the namespace. To return a policy to the default state that keeps all the images set `IMAGE_COUNT` to `All`.
 
-### Examples
-{: #bx_cr_retention_policy_set_example}
+### Example 1
+{: #bx_cr_retention_policy_set_example1}
 
 Set a policy that retains the newest 20 images within each repository in the `birds` namespace by entering `20` as the number of images to keep and `birds` as the namespace.
 
@@ -1290,6 +1512,24 @@ Set a policy that retains the newest 20 images within each repository in the `bi
 ibmcloud cr retention-policy-set --images 20 birds
 ```
 {: pre}
+
+### Output for example 1
+{: #bx_cr_retention_policy_set_output1}
+
+The command in [example 1](#bx_cr_retention_policy_set_example1) returns the following output:
+
+```text
+Found n images to delete.
+
+OK
+A scheduled retention policy is set that keeps 20 images in each repository in birds and retain-untagged is set to false.
+
+OK
+```
+{: screen}
+
+### Example 2
+{: #bx_cr_retention_policy_set_example2}
 
 Revert the policy to the default state so that you keep all your images in the `birds` namespace by entering `All` as the number of images to keep and `birds` as the namespace.
 
@@ -1299,6 +1539,18 @@ ibmcloud cr retention-policy-set --images All birds
 {: pre}
 
 For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
+
+### Output for example 2
+{: #bx_cr_retention_policy_set_output2}
+
+The command in [example 2](#bx_cr_retention_policy_set_example2) returns the following output:
+
+```text
+The retention policy to keep all images in birds is set.
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr retention-run`
 {: #bx_cr_retention_run}
@@ -1358,6 +1610,20 @@ ibmcloud cr retention-run --images 20 birds
 
 For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
+### Output
+{: #bx_cr_retention_run_output}
+
+The command in the [example](#bx_cr_retention_run_example) returns the following output:
+
+```text
+Retrieving images to delete from namespace 'birds' in registry us.icr.io'...
+
+Found n images to delete.
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr trash-list`
 {: #bx_cr_trash_list}
 
@@ -1393,6 +1659,21 @@ ibmcloud cr trash-list --restrict birds
 ```
 {: pre}
 
+### Output
+{: #bx_cr_trash_list_output}
+
+The command in the [example](#bx_cr_trash_list_example) returns the following output:
+
+```text
+Listing the contents of the trash...
+
+Digest   Days until expiry   Tags
+110011   24                  1
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr va-version`
 {: #ic_cr_va_version}
 
@@ -1411,6 +1692,18 @@ Find out which version of Vulnerability Advisor you're using.
 ibmcloud cr va-version
 ```
 {: pre}
+
+### Output
+{: #ic_cr_va_version_output}
+
+The command in the [example](#ic_cr_va_version_example) returns the following output:
+
+```text
+You are targeting Vulnerability Advisor version 'v4'.
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr va-version-set`
 {: #ic_cr_va_version_set}
@@ -1439,6 +1732,18 @@ Set the version of Vulnerability Advisor to version 4 by entering `v4` as the ve
 ibmcloud cr va-version-set v4
 ```
 {: pre}
+
+### Output
+{: #ic_cr_va_version_set_output}
+
+The command in the [example](#ic_cr_va_version_set_example) returns the following output:
+
+```text
+You are targeting Vulnerability Advisor version 'v4'.
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)
 {: #bx_cr_va}
