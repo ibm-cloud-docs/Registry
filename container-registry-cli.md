@@ -582,6 +582,8 @@ If you're restoring an image by digest, but some tags aren't restored, see [Why 
 ibmcloud cr image-restore IMAGE
 ```
 
+For more information about how to use the `ibmcloud cr image-restore` command, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
+
 ### Prerequisites
 {: #bx_cr_image_restore_prereq}
 
@@ -608,8 +610,6 @@ Restore the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/blue
 ibmcloud cr image-restore us.icr.io/birds/bluebird:1
 ```
 {: pre}
-
-For more information about how to use the `ibmcloud cr image-restore` command, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
 ## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
@@ -1412,11 +1412,11 @@ List the image retention policies for your account. Image retention policies ret
 Where an image within a repository is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
-For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
-
 ```sh
 ibmcloud cr retention-policy-list [--output json | -o json]
 ```
+
+For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ### Prerequisites
 {: #bx_cr_retention_policy_list_prereq}
@@ -1477,11 +1477,11 @@ If a retention policy deletes an image that you want to keep, you can restore th
 
 If you want to cancel a retention policy, see [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep).
 
-For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
-
 ```sh
 ibmcloud cr retention-policy-set [--retain-untagged] [--force | -f] --images IMAGE_COUNT NAMESPACE
 ```
+
+For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ### Prerequisites
 {: #bx_cr_retention_policy_set_prereq}
