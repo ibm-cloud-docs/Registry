@@ -1573,6 +1573,8 @@ If an image that you're expecting to see doesn't show in the list that is produc
 ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-untagged] --images IMAGE_COUNT NAMESPACE
 ```
 
+For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
+
 ### Prerequisites
 {: #bx_cr_retention_run_prereq}
 
@@ -1608,8 +1610,6 @@ Retain the newest 20 images within each repository in the `birds` namespace by e
 ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
-
-For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ### Output
 {: #bx_cr_retention_run_output}
