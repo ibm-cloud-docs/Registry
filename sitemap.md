@@ -522,7 +522,7 @@ subcollection: Registry
 {: #sitemap_managing_user_access}
 
 
-[Accessing Container Registry](/docs/Registry?topic=Registry-registry_access#registry_access)
+[Accessing {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_access#registry_access)
 
 * [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating)
 
@@ -552,7 +552,7 @@ subcollection: Registry
 
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
 
-[Accessing Container Registry by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles)
+[Accessing {{site.data.keyword.registryshort_notm}} by using trusted profiles](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles)
 
 * [Accessing namespaces in automation by using a trusted profile](/docs/Registry?topic=Registry-registry_access_trusted_profiles#registry_access_trusted_profiles_auto)
 

@@ -70,9 +70,7 @@ toc:
           label: Managing user access
           topics:
           - topic: registry_access.md
-            navtitle: Accessing Container Registry
           - topic: registry_access_trusted_profiles.md
-            navtitle: Accessing Container Registry by using trusted profiles
           - topic: iam.md
             navtitle: Managing IAM access
           - topic: registry_users.md
