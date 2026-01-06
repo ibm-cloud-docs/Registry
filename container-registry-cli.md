@@ -524,7 +524,7 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 ### Output
 {: #bx_cr_image_list_output}
 
-The command in the [exampl](#bx_cr_image_list_example) returns the following output:
+The command in the [example](#bx_cr_image_list_example) returns the following output:
 
 ```text
 us.icr.io/birds/bluebird:1
