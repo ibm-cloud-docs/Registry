@@ -1034,6 +1034,7 @@ Listing namespaces for account 'X's Account' in registry 'us.icr.io'...
 
 Namespace   Resource Group   Created
 birds       default          1 year ago
+birds2      beaks            40 seconds ago
 
 OK
 ```
