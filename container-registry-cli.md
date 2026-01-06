@@ -1412,6 +1412,8 @@ List the image retention policies for your account. Image retention policies ret
 Where an image within a repository is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
+For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
+
 ```sh
 ibmcloud cr retention-policy-list [--output json | -o json]
 ```
@@ -1436,8 +1438,6 @@ List the retention policies in your account in JSON format by entering `json` as
 ibmcloud cr retention-policy-list -o json
 ```
 {: pre}
-
-For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ### Output
 {: #bx_cr_retention_policy_list_output}
@@ -1476,6 +1476,8 @@ If a retention policy deletes an image that you want to keep, you can restore th
 {: tip}
 
 If you want to cancel a retention policy, see [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep).
+
+For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ```sh
 ibmcloud cr retention-policy-set [--retain-untagged] [--force | -f] --images IMAGE_COUNT NAMESPACE
@@ -1538,8 +1540,6 @@ Revert the policy to the default state so that you keep all your images in the `
 ibmcloud cr retention-policy-set --images All birds
 ```
 {: pre}
-
-For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ### Output for example 2
 {: #bx_cr_retention_policy_set_output2}
