@@ -582,6 +582,8 @@ If you're restoring an image by digest, but some tags aren't restored, see [Why 
 ibmcloud cr image-restore IMAGE
 ```
 
+For more information about how to use the `ibmcloud cr image-restore` command, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
+
 ### Prerequisites
 {: #bx_cr_image_restore_prereq}
 
@@ -608,8 +610,6 @@ Restore the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/blue
 ibmcloud cr image-restore us.icr.io/birds/bluebird:1
 ```
 {: pre}
-
-For more information about how to use the `ibmcloud cr image-restore` command, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
 ## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
@@ -1416,6 +1416,8 @@ Where an image within a repository is referenced by multiple tags, that image is
 ibmcloud cr retention-policy-list [--output json | -o json]
 ```
 
+For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
+
 ### Prerequisites
 {: #bx_cr_retention_policy_list_prereq}
 
@@ -1436,8 +1438,6 @@ List the retention policies in your account in JSON format by entering `json` as
 ibmcloud cr retention-policy-list -o json
 ```
 {: pre}
-
-For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ### Output
 {: #bx_cr_retention_policy_list_output}
@@ -1480,6 +1480,8 @@ If you want to cancel a retention policy, see [Update a retention policy to keep
 ```sh
 ibmcloud cr retention-policy-set [--retain-untagged] [--force | -f] --images IMAGE_COUNT NAMESPACE
 ```
+
+For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ### Prerequisites
 {: #bx_cr_retention_policy_set_prereq}
@@ -1539,8 +1541,6 @@ ibmcloud cr retention-policy-set --images All birds
 ```
 {: pre}
 
-For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
-
 ### Output for example 2
 {: #bx_cr_retention_policy_set_output2}
 
@@ -1572,6 +1572,8 @@ If an image that you're expecting to see doesn't show in the list that is produc
 ```sh
 ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-untagged] --images IMAGE_COUNT NAMESPACE
 ```
+
+For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ### Prerequisites
 {: #bx_cr_retention_run_prereq}
@@ -1608,8 +1610,6 @@ Retain the newest 20 images within each repository in the `birds` namespace by e
 ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
-
-For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ### Output
 {: #bx_cr_retention_run_output}
