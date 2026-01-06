@@ -923,9 +923,9 @@ ibmcloud cr namespace-add -g beaks birds
 The command in the [example](#bx_cr_namespace_add_example) returns the following output:
 
 ```text
-Adding namespace 'birds2' in resource group 'beaks' for account X's Account in registry us.icr.io...
+Adding namespace 'birds' in resource group 'beaks' for account X's Account in registry us.icr.io...
 
-Successfully added namespace 'birds2'
+Successfully added namespace 'birds'
 
 OK
 ```
