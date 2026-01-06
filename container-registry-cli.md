@@ -910,10 +910,10 @@ To find out more about the required permissions, see [Platform management roles]
 ### Example
 {: #bx_cr_namespace_add_example}
 
-Create a namespace with the name `birds` and add it to the resource group `beaks` by entering `beaks` as the resource group name and `birds` as the namespace.
+Create a namespace with the name `birds2` and add it to the resource group `beaks` by entering `beaks` as the resource group name and `birds2` as the namespace.
 
 ```sh
-ibmcloud cr namespace-add -g beaks birds
+ibmcloud cr namespace-add -g beaks birds2
 ```
 {: pre}
 
@@ -923,9 +923,9 @@ ibmcloud cr namespace-add -g beaks birds
 The command in the [example](#bx_cr_namespace_add_example) returns the following output:
 
 ```text
-Adding namespace 'birds' in resource group 'beaks' for account X's Account in registry us.icr.io...
+Adding namespace 'birds2' in resource group 'beaks' for account X's Account in registry us.icr.io...
 
-Successfully added namespace 'birds'
+Successfully added namespace 'birds2'
 
 OK
 ```
