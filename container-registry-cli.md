@@ -1507,7 +1507,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Example 1
 {: #bx_cr_retention_policy_set_example1}
 
-Set a policy that retains the newest 20 images within each repository in the `birds` namespace by entering `20` as the number of images to keep and `birds` as the namespace.
+Set a policy that retains the newest 20 images within each repository in the `birds` namespace by entering `20` as the number of images to keep and `birds` as the namespace. Analyse all tagged and untagged images, if the images don't meet the criteria, they are deleted.
 
 ```sh
 ibmcloud cr retention-policy-set --images 20 birds
