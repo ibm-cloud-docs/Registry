@@ -98,10 +98,14 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {: class="simple-tab-table"}
 {: row-headers}
 
+
+
 ## Viewing activity tracking events for {{site.data.keyword.registryshort}}
 {: #at-viewing}
 
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+
+
 
 ### Starting {{site.data.keyword.logs_full_notm}} from the Observability page
 {: #at-launch-standalone}
