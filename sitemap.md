@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-01-09"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -233,6 +233,23 @@ subcollection: Registry
     * [Introducing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#27jun2017_ga)
 
 
+## Granting access to {{site.data.keyword.registryshort}} resources
+{: #sitemap_granting_access_to_resources}
+
+
+[Granting access to {{site.data.keyword.registryshort}} resources](/docs/Registry?topic=Registry-iam_access#iam_access)
+
+* [Before you begin](/docs/Registry?topic=Registry-iam_access#iam_access_prereq)
+
+* [Authorize a user to configure the registry](/docs/Registry?topic=Registry-iam_access#configure_registry)
+
+* [Authorize a user to access specific namespaces](/docs/Registry?topic=Registry-iam_access#access_resources)
+
+* [Create a service ID and grant access to a resource](/docs/Registry?topic=Registry-iam_access#service_id)
+
+* [Cleaning up your account](/docs/Registry?topic=Registry-iam_access#clean_up)
+
+
 ## Setting up your first cluster in your Virtual Private Cloud (VPC)
 {: #sitemap_setting_up_your_first_cluster_in_your_virtual_private_cloud_vpc}
 
@@ -254,23 +271,6 @@ subcollection: Registry
 * [Set up a Load Balancer for VPC to expose your app publicly](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_vpc_lb)
 
 * [What's next?](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_next)
-
-
-## Granting access to Container Registry resources tutorial
-{: #sitemap_granting_access_to_container_registry_resources_tutorial}
-
-
-[Granting access to Container Registry resources tutorial](/docs/Registry?topic=Registry-iam_access#iam_access)
-
-* [Before you begin](/docs/Registry?topic=Registry-iam_access#iam_access_prereq)
-
-* [Authorize a user to configure the registry](/docs/Registry?topic=Registry-iam_access#configure_registry)
-
-* [Authorize a user to access specific namespaces](/docs/Registry?topic=Registry-iam_access#access_resources)
-
-* [Create a service ID and grant access to a resource](/docs/Registry?topic=Registry-iam_access#service_id)
-
-* [Cleaning up your account](/docs/Registry?topic=Registry-iam_access#clean_up)
 
 
 ## Solution tutorials
