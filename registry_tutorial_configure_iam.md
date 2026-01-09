@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-10-10"
+  years: 2018, 2026
+lastupdated: "2026-01-09"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -16,7 +16,7 @@ completion-time: 45m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Granting access to {{site.data.keyword.registryshort}} resources tutorial
+# Granting access to {{site.data.keyword.registryshort}} resources
 {: #iam_access}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="45m"}

@@ -44,9 +44,9 @@
       "type": "blog"
     },
     {
-      "title": "IBM Cloud Container Registry with Vulnerability Advisor",
-      "description": "This course covers IBM Cloud Container Registry and its capabilities, namespaces, and Vulnerability Advisor basics.",
-      "href": "https://www.ibm.com/training/course/ibm-cloud-container-registry-with-vulnerability-advisor-DL70356G",
+      "title": "Granting access to Container Registry resources",
+      "description": "Grant access to your resources by configuring Identity and Access Management (IAM) for Container Registry.",
+      "href": "https://cloud.ibm.com/docs/Registry?topic=Registry-iam_access",
       "type": "training"
     }
   ],
