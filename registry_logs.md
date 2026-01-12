@@ -126,6 +126,8 @@ The following fields are included in the log record.
 {: caption="Log record fields" caption-side="bottom"}
 {: #table_at_log_records}
 
+
+
 ## Log messages
 {: #log_messages}
 
