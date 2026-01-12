@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2025
-lastupdated: "2025-10-10"
+  years: 2019, 2026
+lastupdated: "2026-01-12"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -125,3 +125,21 @@ The following fields are included in the log record.
 | `message`         | Required   | Description of the log that is generated. |
 {: caption="Log record fields" caption-side="bottom"}
 {: #table_at_log_records}
+
+## Log messages
+{: #log_messages}
+
+An example of a billing log in the `message.message` field is:
+
+```text
+For the period starting 2026-01-07 06:00:00 +0000 UTC, and ending 2026-01-07 07:00:00 +0000 UTC, this account used 0.00GB traffic, and used an average of 157.90GB storage
+```
+{: screen}
+
+## Analyzing {{site.data.keyword.registryshort}} logs
+{: #cloud-logs}
+
+You can use the following queries to analyze {{site.data.keyword.registryshort}} logs:
+
+- A Lucene query for {{site.data.keyword.registryshort}} platform logs: `message.serviceName:"container\-registry"`
+- A DataPrime query for {{site.data.keyword.registryshort}} platform logs: `filter $d.message.serviceName ~ 'container-registry'`
