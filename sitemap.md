@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-09"
+lastupdated: "2026-01-12"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -831,6 +831,10 @@ subcollection: Registry
     * [Launching {{site.data.keyword.logs_full_notm}} from the Observability page](/docs/Registry?topic=Registry-registry_logs#log-launch-standalone)
 
 * [Fields by log type](/docs/Registry?topic=Registry-registry_logs#log-fields)
+
+* [Log messages](/docs/Registry?topic=Registry-registry_logs#log_messages)
+
+* [Analyzing {{site.data.keyword.registryshort}} logs](/docs/Registry?topic=Registry-registry_logs#cloud-logs)
 
 [IAM and activity tracker audit event actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
 
