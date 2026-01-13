@@ -358,7 +358,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 Regional instances of {{site.data.keyword.registryshort}} are available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 
 | Local registry region | Region that was formerly known as | Domain name | Private domain name | Deprecated domain name |
-| --------------------- | --------------------------------- | ----------- | ------------------- | ----------------------- |
+| --------------------- | --------------------------------- | ----------- | ------------------- | ---------------------- |
 | `au-syd` | `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
 | `br-sao` | Not applicable | `br.icr.io` | `private.br.icr.io` | Not applicable |
 | `ca-mon` | Not applicable | `ca2.icr.io` | `private.ca2.icr.io` | Not applicable |

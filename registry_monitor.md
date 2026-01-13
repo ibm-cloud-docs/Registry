@@ -115,7 +115,7 @@ The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) i
 The following table shows the location of {{site.data.keyword.mon_short}} metrics.
 
 | Region for your account's registry | Region that was formerly known as | Domain name of your registry | Location of {{site.data.keyword.mon_short}} metrics |
-| ---------------------------------- | --------------------------------- | ---------------------------- | -------------------------------------------------- |
+| ---------------------------------- | --------------------------------- | ---------------------------- | --------------------------------------------------- |
 | `au-syd` | `ap-south` | `au.icr.io` | `Sydney (au-syd)` |
 | `br-sao` | Not applicable | `br.icr.io` | `Sao Paulo (br-sao)` |
 | `ca-mon` | Not applicable | `ca2.icr.io` | `Montreal (ca-mon)` |
