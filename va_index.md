@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-08-12"
+  years: 2017, 2026
+lastupdated: "2026-01-13"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -85,7 +85,7 @@ Vulnerability Advisor supports only releases of platforms that are currently sup
 {: important}
 
 | Docker base image | Supported versions | Source of security notices |
-|-------------------|--------------------|----------------------------|
+| ----------------- | ------------------ | -------------------------- |
 | Alpine | All stable versions with vendor security support. Edge is also supported. | [Alpine SecDB database](https://secdb.alpinelinux.org/){: external}. |
 | Debian | All stable versions with vendor security support.  \n  \n CVEs on binary packages that are associated with the Debian source package `linux`, such as `linux-libc-dev`, are not reported. Most of these binary packages are kernel and kernel modules, which are not run in container images. | [Debian Security Bug Tracker](https://security-tracker.debian.org/tracker/){: external}. |
 | GoogleContainerTools distroless | All stable versions with vendor security support. | [GoogleContainerTools distroless](https://github.com/GoogleContainerTools/distroless){: external} |

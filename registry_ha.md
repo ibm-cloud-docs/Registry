@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-10-14"
+  years: 2018, 2026
+lastupdated: "2026-01-13"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
 
@@ -50,7 +50,7 @@ The level of availability that you set up for your cluster impacts your coverage
 Service level objectives (SLO) describe the design points that the {{site.data.keyword.cloud_notm}} services are engineered to meet. {{site.data.keyword.registrylong_notm}} is designed to achieve the following availability target.
 
 | Availability target | Target Value |
-|---------------------|--------------|
+| ------------------- | ------------ |
 | Availability % | 99.999 |
 {: caption="SLO for {{site.data.keyword.registryshort}}" caption-side="bottom"}
 {: #table_registry_ha_slo}

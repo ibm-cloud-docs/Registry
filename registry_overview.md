@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-10-16"
+  years: 2017, 2026
+lastupdated: "2026-01-13"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -29,7 +29,7 @@ When you push images to {{site.data.keyword.registryshort}}, you benefit from th
 Review the following table to find an overview of the benefits of using {{site.data.keyword.registryshort}}.
 
 | Benefit | Description |
-|---------|-------------|
+| ------- | ----------- |
 | Highly available and scalable private registry. | Set up your own image namespace in a multi-tenant, highly available, scalable, encrypted private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.  \n  \n Store your private Docker images and share them with users in your {{site.data.keyword.cloud_notm}} account. |
 | Image security compliance with Vulnerability Advisor. | Benefit from automatic scanning of images in your namespace.  \n  \n Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised. |
 | Quota limits for storage and pull traffic. | Benefit from free storage and pull traffic to your private images until you reach your free quota.  \n  \n Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level. |
@@ -49,7 +49,7 @@ Service plans are scoped to the specific registry instance (one of the regional 
 The following table shows available {{site.data.keyword.registrylong_notm}} service plans and their characteristics. For more information about how billing works and what happens when you exceed service plan limits, see [Quota limits and billing](#registry_plan_billing).
 
 | Characteristics | Free | Standard |
-|-----------------|------|----------|
+| --------------- | ---- | -------- |
 | Description. | Try out {{site.data.keyword.registryshort}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registryshort}}. | Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account. |
 | Amount of storage for images. | 500 MB | Unlimited |
 | Pull traffic. | 5 GB per month | Unlimited |
@@ -325,7 +325,7 @@ A global registry is available. The global registry doesn't include a region in 
 The global instance of {{site.data.keyword.registryshort}} is available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 
 | Registry | Domain name | Private domain name | Deprecated domain name |
-|----------|-------------|----------------------|-----------------------|
+| -------- | ----------- | ------------------- | ---------------------- |
 | Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
 {: caption="Domain name for the global registry" caption-side="bottom"}
 {: #table_registry_overview_domain_name_global}
@@ -358,7 +358,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 Regional instances of {{site.data.keyword.registryshort}} are available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 
 | Local registry region | Region that was formerly known as | Domain name | Private domain name | Deprecated domain name |
-|-----------------------|----------------------------------|-------------|---------------------|------------------------|
+| --------------------- | --------------------------------- | ----------- | ------------------- | ----------------------- |
 | `au-syd` | `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
 | `br-sao` | Not applicable | `br.icr.io` | `private.br.icr.io` | Not applicable |
 | `ca-mon` | Not applicable | `ca2.icr.io` | `private.ca2.icr.io` | Not applicable |

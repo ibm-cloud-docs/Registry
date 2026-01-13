@@ -29,7 +29,7 @@ When you access {{site.data.keyword.registrylong_notm}} over the public internet
 In addition to the following regional subdomains, you must also allow traffic from your worker nodes to port `443` on all subdomains of `icr.io` so that they can be redirected to other subdomains for delivery optimization. You must allow `TCP port 443 FROM <each_worker_node_publicIP> TO *.icr.io`, where `<each_worker_node_publicIP>` is the public IP address for each worker node. If you use the deprecated domain names, you must allow those domains too.
 
 | Region | Registry address | Deprecated addresses |
-| -------- | ------------------ | ---------------------- |
+| ------ | ---------------- | -------------------- |
 | Dallas | `us.icr.io` | `registry.ng.bluemix.net` |
 | Frankfurt | `de.icr.io` | `registry.eu-de.bluemix.net` |
 | Global | `icr.io` | `registry.bluemix.net` |

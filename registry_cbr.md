@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-10-10"
+  years: 2023, 2026
+lastupdated: "2026-01-13"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -43,8 +43,8 @@ When you set up context-based restrictions, the restrictions apply to everything
 For example, if your image is in the format `uk.icr.io/<my_project>/<my_image>:latest`, where `<my_project>` is the name of your project and `<my_image>` is the name of the image, the attribute types are as shown in the following table.
 
 | Attribute type | Operator | Value |
-|----------------|----------|-------|
-| `Region` | `string equals` | `London`|
+| -------------- | -------- | ----- |
+| `Region` | `string equals` | `London` |
 | `Resource Type` | `string equals` | `namespace` |
 | `Resource Name` | `string equals` | `<my_project>` |
 {: caption="Example attribute types" caption-side="bottom"}
