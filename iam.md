@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-10-10"
+  years: 2018, 2026
+lastupdated: "2026-01-13"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -73,7 +73,7 @@ For more information, see [Protecting {{site.data.keyword.registryshort}} resour
 The following table details actions that are mapped to platform management roles. Platform management roles enable users to perform tasks on service resources at the platform level, for example assign user access for the service, and create or delete service IDs.
 
 | Platform management roles | Description of actions | Example actions |
-|--------------------------|------------------------|-----------------|
+| ------------------------- | ---------------------- | --------------- |
 | Viewer | Not supported | Not applicable |
 | Editor | Not supported | Not applicable |
 | Operator | Not supported | Not applicable |
@@ -86,8 +86,8 @@ The following table details actions that are mapped to platform management roles
 
 The following table details actions that are mapped to service access roles. Service access roles give users access to {{site.data.keyword.registryshort}} as well as the ability to call the {{site.data.keyword.registryshort}} API.
 
-| Service access role | Description of actions | Example actions|
-|---------------------|------------------------|----------------|
+| Service access role | Description of actions | Example actions |
+| ------------------- | ---------------------- | --------------- |
 | Reader | The Reader role can view information. | View, inspect, and pull images.  \n  \n View and analyze namespaces.  \n  \n View quotas.  \n  \n View vulnerability reports.  \n  \n View image signatures.  \n  \n View retention policies.  \n  \n View the contents of the trash.  \n  \n View the contents of the manifest for an image.  \n  \n List Vulnerability Advisor security exemption policies and types of security exemptions. |
 | Writer | The Writer role can edit information. | Push, delete, and restore images.  \n  \n View quotas.  \n  \n Sign images.  \n  \n Set and run retention policies.  \n  \n Delete all untagged images in your {{site.data.keyword.registryshort}} account. |
 | Manager | The Manager role can perform all actions. | View, inspect, pull, push, delete, and restore images.  \n  \n View, add, analyze, and remove namespaces.  \n  \n Assign namespaces to resource groups.  \n  \n View and set quotas.  \n  \n View vulnerability reports.  \n  \n View and create image signatures.  \n  \n Review and change pricing plans.  \n  \n Enable IAM access policy enforcement.  \n  \n List, add, and remove Vulnerability Advisor security issue exemption policies.  \n  \n List the types of security exemptions.  \n  \n Set and run retention policies.  \n  \n View the contents of the trash.  \n  \n Restore images.  \n  \n  View the contents of the manifest for an image.  \n  \n Prevent or allow image pulls or pushes over public network connections for your account.  \n  \n Check whether the use of public connections is prevented for image pushes or pulls in your account.  \n  \n Delete all untagged images in your {{site.data.keyword.registryshort}} account. |
@@ -115,7 +115,7 @@ ibmcloud iam user-policy-create USER_EMAIL --service-name container-registry --r
 The following table details actions that are mapped to operations on the service and to the service access roles for configuring {{site.data.keyword.registryshort}}.
 
 | Action | Operation on service | Role |
-|--------|----------------------|------|
+| ------ | -------------------- | ---- |
 | `container-registry.auth.get` | [`ibmcloud cr private-only`](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only) Check whether the use of public connections is prevented for image pushes or pulls in your account. | Manager |
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable) Enable IAM access policy enforcement.  \n  \n [`ibmcloud cr private-only`](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only) Prevent or allow image pulls or pushes over public network connections for your account. | Manager |
 | `container-registry.exemption.list` | [`ibmcloud cr exemption-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list) List your Vulnerability Advisor exemption policies for security issues.  \n  \n [`ibmcloud cr exemption-types`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types) List the types of security issues that you can exempt. | Reader, Manager |
@@ -146,7 +146,7 @@ ibmcloud iam user-policy-create USER_EMAIL --service-name container-registry --r
 The following table details actions that are mapped to operations on the service and to the service access roles for using {{site.data.keyword.registryshort}}.
 
 | Action | Operation on service | Role |
-|--------|----------------------|------|
+| ------ | -------------------- | ---- |
 | `container-registry.image.delete` | `docker trust revoke` Delete the signature for a container image.  \n  \n [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) Delete all untagged images in your {{site.data.keyword.registryshort}} account.  \n  \n [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) Delete one or more container images.  \n  \n [`ibmcloud cr image-untag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag) Remove a tag, or tags, from each specified container image in {{site.data.keyword.registryshort}}.  \n  \n [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only container images that meet your criteria.  \n  \n [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) Clean up your namespaces by retaining only container images that meet your criteria. | Writer, Manager  \n  \n To run `ibmcloud cr retention-run` and `ibmcloud cr retention-policy-set` you must have Manager, or both Reader and Writer. |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect) Display details about a specific container image.  \n  \n [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect) View the contents of the manifest for an image. | Reader, Manager |
 | `container-registry.image.list` | [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) List all your container images, including untagged images.  \n  \n [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) List your tagged container images.  \n  \n [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) Delete all untagged images in your {{site.data.keyword.registryshort}} account.  \n  \n [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) Display the container images that are in the trash. | Reader, Manager |
@@ -190,11 +190,11 @@ ibmcloud iam user-policy-create USER_EMAIL --service-name container-registry --r
 For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the API](/docs/account?topic=account-assign-access-resources&interface=api#access-resources-api) or [Create a policy](/apidocs/iam-policy-management#create-policy) in the API docs. Role cloud resource names (CRN) in the following table are used to assign access with the API.
 
 | Role name | Role CRN |
-|-----------|----------|
-| Administrator  | `crn:v1:bluemix:public:container-registry::::serviceRole:Administrator` |
-| Reader         | `crn:v1:bluemix:public:container-registry::::serviceRole:Reader`        |
-| Writer         | `crn:v1:bluemix:public:container-registry::::serviceRole:Writer`        |
-| Manager        | `crn:v1:bluemix:public:container-registry::::serviceRole:Manager`       |
+| --------- | -------- |
+| Administrator | `crn:v1:bluemix:public:container-registry::::serviceRole:Administrator` |
+| Reader | `crn:v1:bluemix:public:container-registry::::serviceRole:Reader` |
+| Writer | `crn:v1:bluemix:public:container-registry::::serviceRole:Writer` |
+| Manager | `crn:v1:bluemix:public:container-registry::::serviceRole:Manager` |
 {: caption="Role ID values for API use" caption-side="bottom"}
 {: #table_registry_iam_roles_id_values}
 

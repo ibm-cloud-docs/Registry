@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-08-20"
+  years: 2020, 2026
+lastupdated: "2026-01-13"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -70,7 +70,7 @@ Complete the following steps to create and configure platform metrics for {{site
 You can configure one monitoring instance in each region to collect platform metrics for {{site.data.keyword.registrylong_notm}}. The following tables list the locations where metrics can be collected if you enable collection of {{site.data.keyword.registryshort_notm}} service metrics in that region.
 
 | Locations in Americas | Platform metrics available |
-|-----------------------|----------------------------|
+| --------------------- | -------------------------- |
 | `Dallas (us-south)` | [Yes]{: tag-green} |
 | `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Montreal (ca-mon)` | [Yes]{: tag-green} |
@@ -79,7 +79,7 @@ You can configure one monitoring instance in each region to collect platform met
 {: #table_registry_monitor_collect_service_metrics_americas}
 
 | Locations in Asia Pacific | Platform metrics available |
-|---------------------------|----------------------------|
+| ------------------------- | -------------------------- |
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
@@ -87,7 +87,7 @@ You can configure one monitoring instance in each region to collect platform met
 {: #table_registry_monitor_collect_service_metrics_ap}
 
 | Locations in Europe | Platform metrics available |
-|---------------------|----------------------------|
+| ------------------- | -------------------------- |
 | `Frankfurt (eu-de)` | [Yes]{: tag-green} |
 | `London (eu-gb)` | [Yes]{: tag-green} |
 | `Madrid (eu-es)` | [Yes]{: tag-green} |
@@ -95,7 +95,7 @@ You can configure one monitoring instance in each region to collect platform met
 {: #table_registry_monitor_collect_service_metrics_europe}
 
 | Location for Global | Platform metrics available |
-|---------------------|----------------------------|
+| ------------------- | -------------------------- |
 | `Global` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics for Global" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_global}
@@ -115,7 +115,7 @@ The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) i
 The following table shows the location of {{site.data.keyword.mon_short}} metrics.
 
 | Region for your account's registry | Region that was formerly known as | Domain name of your registry | Location of {{site.data.keyword.mon_short}} metrics |
-|------------------------------------|----------------------------------|------------------------------|-----------------------------------------------------|
+| ---------------------------------- | --------------------------------- | ---------------------------- | --------------------------------------------------- |
 | `au-syd` | `ap-south` | `au.icr.io` | `Sydney (au-syd)` |
 | `br-sao` | Not applicable | `br.icr.io` | `Sao Paulo (br-sao)` |
 | `ca-mon` | Not applicable | `ca2.icr.io` | `Montreal (ca-mon)` |
@@ -132,7 +132,7 @@ The following table shows the location of {{site.data.keyword.mon_short}} metric
 The following table shows the location of global registry {{site.data.keyword.mon_short}} metrics.
 
 | Registry | Global registry | Location of {{site.data.keyword.mon_short}} metrics |
-|----------|-----------------|--------------------------------------------------------|
+| -------- | --------------- | --------------------------------------------------- |
 | `Global` | `icr.io` | `Washington (us-east)` |
 {: caption="Location of global registry {{site.data.keyword.mon_short}} metrics" caption-side="bottom"}
 {: #table_registry_monitor_metrics_location_global}
@@ -161,9 +161,9 @@ Next, change the scope or make a copy of the Default dashboard so that you can m
 The following table outlines the predefined monitoring dashboards that you can use to monitor {{site.data.keyword.registryshort_notm}} metrics.
 
 | Dashboard name | Description | Default dashboard |
-|----------------|-------------|-------------------|
+| -------------- | ----------- | ----------------- |
 | {{site.data.keyword.registryshort_notm}} Usage | A dashboard that you can use to visualize the traffic usage and storage usage. Traffic usage is the sum of bytes from image pulls from your {{site.data.keyword.registryshort_notm}} namespaces in the current billing period. Storage usage is the sum of bytes of images in your {{site.data.keyword.registryshort_notm}} namespaces. | [Yes]{: tag-green} |
-| {{site.data.keyword.registryshort_notm}} Quota Usage | A dashboard that you can use to visualize the traffic usage and storage usage and compare the data to your quotas, if set. Visible only to those accounts that have finite quotas. The **Container Registry Quota Usage** dashboard is available only if you enable metrics and you have both a storage and a traffic quota set. | [No]{: tag-red}|
+| {{site.data.keyword.registryshort_notm}} Quota Usage | A dashboard that you can use to visualize the traffic usage and storage usage and compare the data to your quotas, if set. Visible only to those accounts that have finite quotas. The **Container Registry Quota Usage** dashboard is available only if you enable metrics and you have both a storage and a traffic quota set. | [No]{: tag-red} |
 {: caption="Predefined dashboards" caption-side="bottom"}
 {: #table_registry_monitor_dashboards_predefined}
 
@@ -177,7 +177,7 @@ When you start your dashboard, some metrics might display a `Data Load Error` wa
 {: #metrics}
 
 | Metric Name | Information |
-|-------------|-------------|
+| ----------- | ----------- |
 | [`Pull Traffic`](#ibm_containerregistry_pull_traffic) | The account's pull traffic in the current month. |
 | [`Pull Traffic Quota`](#ibm_containerregistry_pull_traffic_quota) | The account's pull traffic quota. |
 | [`Storage Quota`](#ibm_containerregistry_storage_quota) | The account's storage quota. |
@@ -191,10 +191,10 @@ When you start your dashboard, some metrics might display a `Data Load Error` wa
 The account's pull traffic in the current month.
 
 | Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_containerregistry_pull_traffic`|
+| -------- | ----------- |
+| `Metric Name` | `ibm_containerregistry_pull_traffic` |
 | `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
+| `Value Type` | `byte` |
 {: caption="Pull Traffic metric metadata" caption-side="bottom"}
 {: #table_registry_monitor_metrics_pull_traffic}
 
@@ -204,10 +204,10 @@ The account's pull traffic in the current month.
 The account's pull traffic quota.
 
 | Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_containerregistry_pull_traffic_quota`|
+| -------- | ----------- |
+| `Metric Name` | `ibm_containerregistry_pull_traffic_quota` |
 | `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
+| `Value Type` | `byte` |
 {: caption="Pull Traffic Quota metric metadata" caption-side="bottom"}
 {: #table_registry_monitor_metrics_pull_traffic_quota}
 
@@ -217,10 +217,10 @@ The account's pull traffic quota.
 The account's storage quota.
 
 | Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_containerregistry_storage_quota`|
+| -------- | ----------- |
+| `Metric Name` | `ibm_containerregistry_storage_quota` |
 | `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
+| `Value Type` | `byte` |
 {: caption="Storage Quota metric metadata" caption-side="bottom"}
 {: #table_registry_monitor_metrics_storage_quota}
 
@@ -230,9 +230,9 @@ The account's storage quota.
 The account's storage usage.
 
 | Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_containerregistry_storage`|
+| -------- | ----------- |
+| `Metric Name` | `ibm_containerregistry_storage` |
 | `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
+| `Value Type` | `byte` |
 {: caption="Storage metric metadata" caption-side="bottom"}
 {: #table_registry_monitor_metrics_storage}

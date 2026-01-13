@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-07-29"
+  years: 2022, 2026
+lastupdated: "2026-01-13"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -33,7 +33,7 @@ For more information about your responsibilities when you're using {{site.data.k
 {{site.data.keyword.registryshort}} provides mechanisms to protect your data and restore service functions. Business continuity plans are in place to achieve targeted [recovery point objective](#x3429911){: term} (RPO) and [recovery time objective](#x3167918){: term} (RTO) for the service. The following table outlines the targets for {{site.data.keyword.registryshort}}.
 
 | Disaster recovery objective | Target Value |
-|-----------------------------|--------------|
+| --------------------------- | ------------ |
 | Recovery point objective (RPO) | 48 hours |
 | Recovery time objective (RTO) | 24 hours |
 {: caption="RPO and RTO for {{site.data.keyword.registryshort}}" caption-side="bottom"}
@@ -57,7 +57,7 @@ All customer data in {{site.data.keyword.registrylong_notm}} is replicated and b
 The following table shows the backup locations.
 
 | Environment | Environment that was formerly known as | Active location | Backup location |
-|-------------|---------------------------------------|-----------------|-----------------|
+| ----------- | -------------------------------------- | --------------- | --------------- |
 | `au-syd` | `ap-south` | `au-syd` | `jp-tok` |
 | `br-sao` | Not applicable | `br-sao` | `us-south` |
 | `ca-mon` | Not applicable | `ca-mon` | `ca-tor` |

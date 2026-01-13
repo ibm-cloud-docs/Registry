@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-09"
+lastupdated: "2026-01-13"
 
 keywords: Track, tracking events, find events, activity tracking for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -31,7 +31,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on event
 You can track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service. The following tables list the locations where the automatic collection of {{site.data.keyword.registryshort_notm}} service events is enabled.
 
 | Locations in Americas | Service events available |
-|-----------------------|--------------------------|
+| --------------------- | ------------------------ |
 | `Dallas (us-south)` | [Yes]{: tag-green} |
 | `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Montreal (ca-mon)` | [Yes]{: tag-green} |
@@ -40,7 +40,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 {: #table_registry_at_event_collection_americas}
 
 | Locations in Asia Pacific | Service events available |
-|---------------------------|--------------------------|
+| ------------------------- | ------------------------ |
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
@@ -48,7 +48,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 {: #table_registry_at_event_collection_ap}
 
 | Locations in Europe | Service events available |
-|---------------------|--------------------------|
+| ------------------- | ------------------------ |
 | `Frankfurt (eu-de)` | [Yes]{: tag-green} |
 | `London (eu-gb)` | [Yes]{: tag-green} |
 | `Madrid (eu-es)` | [Yes]{: tag-green} |
@@ -56,7 +56,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 {: #table_registry_at_event_collection_europe}
 
 | Location for Global | Service events available |
-|---------------------|--------------------------|
+| ------------------- | ------------------------ |
 | `Global` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events for Global" caption-side="bottom"}
 {: #table_registry_at_event_collection_global}
@@ -69,7 +69,7 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {{site.data.keyword.registryshort}} sends activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following tables.
 
 | Dallas (`us-south`) | Washington (`us-east`) | Montreal (`ca-mon`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-|---------------------|------------------------|---------------------|--------------------|----------------------|
+| ------------------- | ---------------------- | ------------------- | ------------------ | -------------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
 {: #atracker-table-1}
@@ -79,7 +79,7 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {: row-headers}
 
 | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
-|------------------|-------------------|------------------|
+| ---------------- | ----------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Asia-Pacific locations" caption-side="top"}
 {: #atracker-table-2}
@@ -89,7 +89,7 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {: row-headers}
 
 | Frankfurt (`eu-de`) | London (`eu-gb`) | Madrid (`eu-es`) |
-|---------------------|------------------|------------------|
+| ------------------- | ---------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
 {: #atracker-table-3}
@@ -118,7 +118,7 @@ For information about starting the {{site.data.keyword.logs_full_notm}} UI, see 
 Actions that generate account management events for authorization, plans, quotas, and settings.
 
 | Action | Description |
-|--------|-------------|
+| ------ | ----------- |
 | `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. |
 | `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. |
 | `container-registry.plan.get` | Display information about the current pricing plan. |
@@ -136,7 +136,7 @@ Actions that generate account management events for authorization, plans, quotas
 The following table shows actions that generate management and data events for images.
 
 | Action | Description |
-|--------|-------------|
+| ------ | ----------- |
 | `container-registry.image.inspect` | Display details about an image. |
 | `container-registry.image.list` | List the images in your {{site.data.keyword.IBM_notm}} account. |
 | `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registryshort}} image. |
@@ -155,7 +155,7 @@ The following table shows actions that generate management and data events for i
 {: row-headers}
 
 | Action | Description |
-|--------|-------------|
+| ------ | ----------- |
 | `container-registry.image.bulkdelete` | Delete multiple images from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. |
 | `container-registry.image.delete` | Delete an image from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. |
 | `container-registry.image.pull` | Pull an image from {{site.data.keyword.registryshort}}. |
@@ -176,7 +176,7 @@ The following table shows actions that generate management and data events for i
 The following table shows actions that generate management events for namespaces.
 
 | Action | Description |
-|--------|-------------|
+| ------ | ----------- |
 | `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registryshort}}. |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registryshort}}. |
 | `container-registry.namespace.list` | List the {{site.data.keyword.registryshort}} namespaces in your {{site.data.keyword.IBM_notm}} account. |
@@ -189,7 +189,7 @@ The following table shows actions that generate management events for namespaces
 The following table shows actions that generate management events for vulnerabilities and Vulnerability Advisor exemption policies.
 
 | Action | Description |
-|--------|-------------|
+| ------ | ----------- |
 | `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability report](#at_events_analyze_report_list). |
 | `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for the account vulnerability status](#at_events_analyze_status_list). |
 | `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for the vulnerability report](#at_events_analyze_report_read). |
@@ -226,7 +226,7 @@ Get the vulnerability assessment (`container-registry.account-vulnerability-repo
 The following table lists the fields that are available through the `requestData` field in events with the action `container-registry.account-vulnerability-report.list`.
 
 | Custom Event Fields | Type | Description |
-|---------------------|------|-------------|
+| ------------------- | ---- | ----------- |
 | `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
 | `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
@@ -243,7 +243,7 @@ Get the vulnerability assessment status (`container-registry.account-vulnerabili
 The following table lists the fields that are available through the `requestData` field in events with the action `container-registry.account-vulnerability-status.list`.
 
 | Custom Event Fields | Type | Description |
-|---------------------|------|-------------|
+| ------------------- | ---- | ----------- |
 | `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
 | `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
@@ -260,7 +260,7 @@ Get the vulnerability assessment (`container-registry.image-vulnerability-report
 The following table lists the fields that are available through the `requestData` and `responseData` fields in events with the action `container-registry.image-vulnerability-report.read`.
 
 | Custom Event Fields | Type | Description |
-|---------------------|------|-------------|
+| ------------------- | ---- | ----------- |
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n The following constraint applies: The value must match the regular expression `.*`. |
 | `responseData.id` | String | The unique ID of the report. |
 | `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/vulnerability-advisor#vulnerability-report-status-codes) in the API documentation. |
@@ -277,7 +277,7 @@ Get the overall vulnerability status (`container-registry.image-vulnerability-st
 The following table lists the fields that are available through the `requestData` and `responseData` fields in events with the action `container-registry.image-vulnerability-status.read`.
 
 | Custom Event Fields | Type | Description |
-|---------------------|------|-------------|
+| ------------------- | ---- | ----------- |
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n The following constraint applies: The value must match the regular expression `.*`. |
 | `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/vulnerability-advisor#vulnerability-report-status-codes) in the API documentation. |
 {: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability status read" caption-side="bottom"}
@@ -297,7 +297,7 @@ The following table lists the fields that are available through the `requestData
 - `container-registry.signature.write`
 
 | Custom Event Fields | Type | Description |
-|---------------------|------|-------------|
+| ------------------- | ---- | ----------- |
 | `requestData.RequestParameters.repository` | String | The name of the repository for which you want to see image signing reports. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.signatureMethod` | String | Displays the technology that is used to sign the image, such as [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external}. |
 | `requestData.RequestParameters.signatureObject` | String | Specifies the object type upon which a signing operation is implemented, for example, `image`. |

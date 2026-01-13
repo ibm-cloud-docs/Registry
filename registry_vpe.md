@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-10-10"
+  years: 2021, 2026
+lastupdated: "2026-01-13"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -69,7 +69,7 @@ When you create a VPE gateway by using the command-line interface (CLI) or API, 
 You can create VPE gateways in these locations:  `au-syd`, `br-sao`, `ca-mon`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `jp-osa`, `jp-tok`, `us-south`, and `us-east` (global registry).
 
 | Registry region | Region that was formerly known as | Cloud resource name (CRN) |
-|-----------------|----------------------------------|---------------------------|
+| --------------- | --------------------------------- | ------------------------- |
 | `au-syd` | `ap-south` | `crn:v1:bluemix:public:container-registry:au-syd:::endpoint:au.icr.io` |
 | `br-sao` | Not applicable | `crn:v1:bluemix:public:container-registry:br-sao:::endpoint:br.icr.io` |
 | `ca-mon` | Not applicable | `crn:v1:bluemix:public:container-registry:ca-mon:::endpoint:ca2.icr.io` |

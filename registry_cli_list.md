@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-10-13"
+  years: 2017, 2026
+lastupdated: "2026-01-13"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -103,7 +103,7 @@ The following code examples demonstrate how you might use the formatting and fil
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command.
 
 | Field | Type | Description |
-|-------|------|-------------|
+| ----- | ---- | ----------- |
 | `Created` | Integer (64 bit) | This option displays when the image was created, expressed by the number of seconds in UNIX time. |
 | `Digest` | String | This option displays the unique identifier for an image. |
 | `ManifestType` | String | This option displays the image manifest type. |
@@ -120,7 +120,7 @@ Review the following table to find available Go template options and data types 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command.
 
 | Field | Type | Description |
-|-----|----|-----------|
+| ----- | ---- | ----------- |
 | `Created` | Integer (64 bit) | This option displays when the image was created, expressed by the number of seconds in UNIX time. |
 | `Digest` | String | This option displays the unique identifier for an image. |
 | `ManifestType` | String | This option displays the image manifest type. |
@@ -138,7 +138,7 @@ Review the following table to find available Go template options and data types 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect) command.
 
 | Field | Type | Description |
-|-----|----|-----------|
+| ----- | ---- | ----------- |
 | `Architecture` | String | This option displays the processor architecture that was used to build this image, and that is required to run the image. |
 | `Author` | String | This option displays the author of the image. |
 | `Comment` | String | This option displays the description of the image. |
@@ -161,7 +161,7 @@ Review the following table to find available Go template options and data types 
 {: #registry_cli_list_imageinspect_config}
 
 | Field | Type | Description |
-|-----|----|-----------|
+| ----- | ---- | ----------- |
 | `ArgsEscaped` | Boolean | [Windows]{: tag-windows} This option displays _true_ if the command is escaped (Windows&reg; specific). |
 | `AttachStderr` | Boolean | This option displays _true_ if the standard error stream is attached to the container and _false_ if not. |
 | `AttachStdin` | Boolean | This option displays _true_ if the standard input stream is attached to the container and _false_ if not. |
@@ -194,7 +194,7 @@ Review the following table to find available Go template options and data types 
 {: #registry_cli_list_imageinspect_healthcheck}
 
 | Field | Type | Description |
-|-----|----|-----------|
+| ----- | ---- | ----------- |
 | `Interval` | Integer (64 bit) | This option displays the time to wait between two health checks in nanoseconds. |
 | `Retries` | Integer | This option displays the number of consecutive failures that need to occur to deem that a container is not working correctly. |
 | `Test` | Array of strings | This option displays how to run the health check test. The following options are available.  \n - `{}` inherit the health check.  \n - `{"NONE"}` the health check is disabled.  \n - `{"CMD", args...}` exec arguments directly.  \n - `{"CMD-SHELL", command}` run the command with the system's default shell. |
@@ -206,7 +206,7 @@ Review the following table to find available Go template options and data types 
 {: #registry_cli_list_imageinspect_rootfs}
 
 | Option | Type | Description |
-|------|----|-----------|
+| ------ | ---- | ----------- |
 | `BaseLayer` | String | This option displays the descriptor for the base layer in the image. |
 | `Layers` | Array of strings | This option displays the descriptors of each image layer. |
 | `Type` | String | This option displays the type of file system. |

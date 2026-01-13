@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-08-12"
+  years: 2017, 2026
+lastupdated: "2026-01-13"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -77,18 +77,18 @@ Use an API key to log in to the registry by using common clients.
 Clients require an API key and a domain, replace `API_KEY` with your API key and `REGISTRY_DOMAIN` with the domain of the registry where your namespaces are set up.
 
 | Region | Region that was formerly known as | `REGISTRY_DOMAIN` |
-|--------|----------------------------------|---------------------|
+| ------ | --------------------------------- | ----------------- |
 | `global` | Not applicable | `icr.io` |
-| `au-syd` | `ap-south` |`au.icr.io` |
+| `au-syd` | `ap-south` | `au.icr.io` |
 | `br-sao` | Not applicable | `br.icr.io` |
 | `ca-mon` | Not applicable | `ca2.icr.io` |
 | `ca-tor` | Not applicable | `ca.icr.io` |
-| `eu-de` | `eu-central` |`de.icr.io` |
-| `eu-es` | Not applicable |`es.icr.io` |
-| `eu-gb` | `uk-south` |`uk.icr.io` |
+| `eu-de` | `eu-central` | `de.icr.io` |
+| `eu-es` | Not applicable | `es.icr.io` |
+| `eu-gb` | `uk-south` | `uk.icr.io` |
 | `jp-osa` | Not applicable | `jp2.icr.io` |
-| `jp-tok` | `ap-north` |`jp.icr.io` |
-| `us-south` | Not applicable |`us.icr.io` |
+| `jp-tok` | `ap-north` | `jp.icr.io` |
+| `us-south` | Not applicable | `us.icr.io` |
 {: caption="Registry domains" caption-side="bottom"}
 {: #table_registry_access_domains}
 
