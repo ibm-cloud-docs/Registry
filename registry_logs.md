@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-01-12"
+lastupdated: "2026-01-13"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -28,7 +28,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {{site.data.keyword.registrylong_notm}} generates platform logs that are displayed in your logging instances. The following tables list the locations where the automatic collection of {{site.data.keyword.registryshort_notm}} service logs is enabled.
 
 | Locations in Americas | Are platform services logs available? |
-|-----------------------|---------------------------------------|
+| --------------------- | ------------------------------------- |
 | `Dallas (us-south)` | [Yes]{: tag-green} |
 | `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Montreal (ca-mon)` | [Yes]{: tag-green} |
@@ -37,7 +37,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {: #table_registry_logs_service_americas}
 
 | Locations in Asia Pacific | Are platform services logs available? |
-|---------------------------|---------------------------------------|
+| ------------------------- | ------------------------------------- |
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
@@ -45,7 +45,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {: #table_registry_logs_service_ap}
 
 | Locations in Europe | Are platform services logs available? |
-|---------------------|---------------------------------------|
+| ------------------- | ------------------------------------- |
 | `Frankfurt (eu-de)` | [Yes]{: tag-green} |
 | `London (eu-gb)` | [Yes]{: tag-green} |
 | `Madrid (eu-es)` | [Yes]{: tag-green} |
@@ -53,7 +53,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 {: #table_registry_logs_service_europe}
 
 | Location for Global | Are platform services logs available? |
-|---------------------|---------------------------------------|
+| ------------------- | ------------------------------------- |
 | `Global` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs for Global" caption-side="bottom"}
 {: #table_registry_logs_service_global}
@@ -66,7 +66,7 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 {{site.data.keyword.registryshort}} sends logs by {{site.data.keyword.logs_routing_full_notm}} in the regions that are indicated in the following table.
 
 | Dallas (`us-south`) | Washington (`us-east`) | Montreal (`ca-mon`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-|---------------------|------------------------|---------------------|--------------------|----------------------|
+| ------------------- | ---------------------- | ------------------- | ------------------ | -------------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #logr-table-1}
@@ -76,7 +76,7 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 {: row-headers}
 
 | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
-|------------------|-------------------|------------------|
+| ---------------- | ----------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Asia-Pacific locations" caption-side="top"}
 {: #logr-table-2}
@@ -86,7 +86,7 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 {: row-headers}
 
 | Frankfurt (`eu-de`) | London (`eu-gb`) | Madrid (`eu-es`) |
-|---------------------|------------------|------------------|
+| ------------------- | ---------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
 {: #logrr-table-3}
@@ -118,11 +118,11 @@ For information about fields included in every platform log, see [Fields that ar
 
 The following fields are included in the log record.
 
-| Field             | Type       | Description             |
-|-------------------|------------|-------------------------|
-| `logSourceCRN`    | Required   | Defines the account and flow log instance where the log is published. |
-| `saveServiceCopy` | Required   | Defines whether IBM saves a copy of the record for operational purposes. |
-| `message`         | Required   | Description of the log that is generated. |
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| `logSourceCRN` | Required | Defines the account and flow log instance where the log is published. |
+| `saveServiceCopy` | Required | Defines whether IBM saves a copy of the record for operational purposes. |
+| `message` | Required | Description of the log that is generated. |
 {: caption="Log record fields" caption-side="bottom"}
 {: #table_at_log_records}
 
