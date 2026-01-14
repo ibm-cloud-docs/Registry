@@ -29,6 +29,8 @@ toc:
           topics:
           - topic: registry_notices.md
             navtitle: Notifications
+          - topic: registry_notices_firewall_regions.md
+            navtitle: Firewall changes from 18 March 2026 for users that pull images from regional instances
           - topic: registry_notices_firewall.md
             navtitle: Firewall changes from 4 September 2024 for users that pull images from global
           - registry_notices_va_v3.md
