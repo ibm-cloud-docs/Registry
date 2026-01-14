@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-01-14"
 
 keywords: IBM Cloud Container Registry, firewall, access, communicate, domains, subdomains, traffic, allowlist
 
@@ -47,6 +47,9 @@ In addition to the following regional subdomains, you must also allow traffic fr
 ## Using a public network to access {{site.data.keyword.registryshort}}
 {: #registry_firewall_public}
 
+### Using a public network to access {{site.data.keyword.registryshort}} by using the domain `icr.io`
+{: #registry_firewall_public_global}
+
 If you use a public network to access the {{site.data.keyword.registryshort}} by using the domain `icr.io`, you must add the following domains to your firewall rules:
 
 - `dd0.icr.io`
@@ -58,3 +61,23 @@ Users that are located in China must also allow the following domains:
 - `dd3-icr.ibm-zh.com`
 
 You can also add wildcard characters to domains in your allowlist, for example `*.icr.io` and `*.ibm-zh.com`.
+
+### Using a public network to access {{site.data.keyword.registryshort}} regions
+{: #registry_firewall_public_regions}
+
+If you use a public network and domain-based firewall rules to access {{site.data.keyword.registrylong_notm}}, you must add the following domains to your firewall rules.
+
+| Local {{site.data.keyword.registryshort_notm}} region | Domain name |
+| ----------------------------------------------------- | ----------- |
+| `au-syd` | `dd0.au.icr.io` |
+| `br-sao` | `dd0.br.icr.io` |
+| `ca-mon` | `dd0.ca2.icr.io` |
+| `ca-tor` | `dd0.ca.icr.io` |
+| `eu-de` | `dd0.de.icr.io` |
+| `eu-es` | `dd0.es.icr.io` |
+| `eu-gb` | `dd0.uk.icr.io` |
+| `jp-osa` | `dd0.jp2.icr.io` |
+| `jp-tok` | `dd0.jp.icr.io` |
+| `us-south` | `dd0.us.icr.io` |
+{: caption="Add these domains to your firewall rules for {{site.data.keyword.registryshort_notm}}" caption-side="bottom"}
+{: #table_registry_firewall_domains}

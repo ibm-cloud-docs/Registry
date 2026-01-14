@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-12"
+lastupdated: "2026-01-14"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -147,11 +147,21 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
+    * [2026](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2026)
+
+    * [2025](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2025)
+
     * [2024](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2024)
 
     * [2023](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2023)
 
     * [2017](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics_2017)
+
+[Firewall changes from 18 March 2026 for users that pull images from regional instances](/docs/Registry?topic=Registry-registry_notices_firewall_regions#registry_notices_firewall_regions)
+
+* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_firewall_regions#registry_notices_firewall_regions_know)
+
+* [What actions you must take by 18 March 2026](/docs/Registry?topic=Registry-registry_notices_firewall_regions#registry_notices_firewall_regions_actions)
 
 [Firewall changes from 4 September 2024 for users that pull images from global](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
 
@@ -754,6 +764,10 @@ subcollection: Registry
 [Accessing {{site.data.keyword.registryshort}} through a firewall](/docs/Registry?topic=Registry-registry_firewall#registry_firewall)
 
 * [Using a public network to access {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_firewall#registry_firewall_public)
+
+    * [Using a public network to access {{site.data.keyword.registryshort}} by using the domain `icr.io`](/docs/Registry?topic=Registry-registry_firewall#registry_firewall_public_global)
+
+    * [Using a public network to access {{site.data.keyword.registryshort}} regions](/docs/Registry?topic=Registry-registry_firewall#registry_firewall_public_regions)
 
 
 ## Observability

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-12-18"
+  years: 2022, 2026
+lastupdated: "2026-01-14"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, announcements
 
@@ -22,6 +22,16 @@ Notifications about changes that affect {{site.data.keyword.registrylong}} and V
 {: #registry_notices_topics}
 
 Notifications about the changes to {{site.data.keyword.registryshort}} and Vulnerability Advisor and the date of the original announcement.
+
+### 2026
+{: #registry_notices_topics_2026}
+
+- [Firewall changes from 18 March 2026 for users that pull {{site.data.keyword.registryshort}} images from regional instances](/docs/Registry?topic=Registry-registry_notices_firewall_regions)
+
+### 2025
+{: #registry_notices_topics_2025}
+
+None.
 
 ### 2024
 {: #registry_notices_topics_2024}
