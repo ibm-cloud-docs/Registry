@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Important firewall changes from 18 March 2026 for users that pull {{site.data.keyword.registryshort}} images from regional instances
+# Firewall changes from 18 March 2026 for users that pull {{site.data.keyword.registryshort}} images from regional instances
 {: #registry_notices_firewall_regions}
 
 To ensure continued performance for regional instances of {{site.data.keyword.registrylong}}, a content delivery network (CDN) is being enabled that means that you might have to adjust your firewall settings. If you need to adjust your firewall settings, you must adjust them by 18 March 2026.
