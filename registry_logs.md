@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-01-16"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -74,6 +74,7 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 {: tab-group="lr"}
 {: class="simple-tab-table"}
 {: row-headers}
+
 
 | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
 | ---------------- | ----------------- | ---------------- |
