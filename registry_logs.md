@@ -75,7 +75,6 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 {: class="simple-tab-table"}
 {: row-headers}
 
-
 | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
 | ---------------- | ----------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
