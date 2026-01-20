@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-12-18"
+  years: 2022, 2026
+lastupdated: "2026-01-20"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI, vulnerabilities, what's new in CLI
 
@@ -19,6 +19,15 @@ In this change log you can learn about what's new in the {{site.data.keyword.reg
 {: shortdesc}
 
 For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+
+## Version 1.3.18
+{: #cli-change-logv1-1318}
+
+Version 1.3.18 of the CLI was released on 20 January 2026.
+
+This release has the following changes:
+
+- Remediates vulnerabilities.
 
 ## Version 1.3.16
 {: #cli-change-logv1-1316}
