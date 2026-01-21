@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-14"
+lastupdated: "2026-01-21"
 
 keywords: IBM Cloud Container Registry notices, firewall, cdn, domain-based firewall, domains, icr.io, notices, content delivery network, regions
 
@@ -18,7 +18,7 @@ subcollection: Registry
 To ensure continued performance for regional instances of {{site.data.keyword.registrylong}}, a content delivery network (CDN) is being enabled that means that you might have to adjust your firewall settings. If you need to adjust your firewall settings, you must adjust them by 18 March 2026.
 {: shortdesc}
 
-The original announcement was published on 14 January 2026.
+The original announcement was published on 20 January 2026.
 {: note}
 
 ## What you need to know about this change
