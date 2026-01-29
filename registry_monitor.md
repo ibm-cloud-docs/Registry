@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-01-29"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -133,7 +133,7 @@ The following table shows the location of global registry {{site.data.keyword.mo
 
 | Registry | Global registry | Location of {{site.data.keyword.mon_short}} metrics |
 | -------- | --------------- | --------------------------------------------------- |
-| `Global` | `icr.io` | `Washington (us-east)` |
+| `Global` | `icr.io` | `Washington DC (us-east)` |
 {: caption="Location of global registry {{site.data.keyword.mon_short}} metrics" caption-side="bottom"}
 {: #table_registry_monitor_metrics_location_global}
 
