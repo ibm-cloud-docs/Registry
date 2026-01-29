@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-01-29"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -56,7 +56,7 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Sydney (`au-syd`)
 - Tokyo (`jp-tok`)
 - Toronto (`ca-tor`)
-- Washington (`us-east`)
+- Washington DC (`us-east`)
 
 You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. You can pull images from any other {{site.data.keyword.registryshort_notm}} region by using the public domains, such as `uk.icr.io`. For more information about mapping the region name to the domain, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 {: important}

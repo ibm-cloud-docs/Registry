@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-01-29"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1400,7 +1400,7 @@ subcollection: Registry
 
 [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry){: external}
 
-[Vulnerability Advisor 4 for IBM Cloud Container Registry API](https://{DomainName}/apidocs/vulnerability-advisor){: external}
+[Vulnerability Advisor 4 API for IBM Cloud Container Registry](https://{DomainName}/apidocs/vulnerability-advisor){: external}
 
 
 ## Related links
