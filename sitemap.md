@@ -1596,7 +1596,9 @@ subcollection: Registry
 
 * [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
 
-* [How do I check what untagged images are going to be removed by the `ibmcloud cr image-prune-untagged` command ?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_prune)
+* [How do I do a dry run to check what untagged images are going to be removed by the `ibmcloud cr image-prune-untagged` command?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_prune)
+
+* [How do I restore an image that I removed by accident?](/docs/Registry?topic=Registry-registry_faq#faq_image_restore)
 
 * [What are eligible images?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
 
