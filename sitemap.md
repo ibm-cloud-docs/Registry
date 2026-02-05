@@ -1560,6 +1560,8 @@ subcollection: Registry
 
 * [Why am I unable to create a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_create)
 
+* [How do I delete a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_delete)
+
 * [How do I obtain image pull credentials for {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_credentials)
 
 * [How do I list image names?](/docs/Registry?topic=Registry-registry_faq#faq_list_images)
@@ -1611,6 +1613,8 @@ subcollection: Registry
 * [Why do my pods fail with an `ImagePullBackOff` error?](/docs/Registry?topic=Registry-registry_faq#faq_imagepullbackoff)
 
 * [Why am I getting an exceeded quota error?](/docs/Registry?topic=Registry-registry_faq#faq_quota_error)
+
+* [How do I delete {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_delete_iccr)
 
 [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va#registry_faq_va)
 

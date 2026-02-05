@@ -111,6 +111,15 @@ If you're having problems when you try to add a namespace in {{site.data.keyword
 
 See [Why can't I add a namespace in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
 
+## How do I delete a namespace?
+{: #faq_namespace_delete}
+{: faq}
+
+If you no longer require a registry namespace, you can remove the namespace from your {{site.data.keyword.cloud_notm}} account. For more information, see [Removing namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_remove).
+
+When you remove a namespace, any images that are stored in that namespace are also deleted. This action cannot be undone.
+{: attention}
+
 ## How do I obtain image pull credentials for {{site.data.keyword.registryshort}}?
 {: #faq_credentials}
 {: faq}
@@ -401,3 +410,9 @@ For more information, see [Why do images fail to pull from registry with ImagePu
 You exceeded the image storage or pull traffic quota for your account for the current month. To resolve this issue, you can either review your quota limits and increase them as necessary, or if you're on the Lite plan, upgrade to the standard plan.
 
 For more information, see [Why am I getting errors about my quota in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-quota) and [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
+
+## How do I delete {{site.data.keyword.registrylong_notm}}?
+{: #faq_delete_iccr}
+{: faq}
+
+If you don't want to use {{site.data.keyword.registryshort_notm}} anymore, you can delete it by uninstalling the `container-registry` CLI plug-in. For more information, see [Uninstalling the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace&interface=ui#registry_cli_uninstall).
