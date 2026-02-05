@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-29"
+lastupdated: "2026-02-05"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1595,6 +1595,8 @@ subcollection: Registry
 * [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
 
 * [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
+
+* [How do I check what untagged images are going to be removed by the `ibmcloud cr image-prune-untagged` command ?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_prune)
 
 * [What are eligible images?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
 

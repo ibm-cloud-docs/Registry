@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-10-17"
+  years: 2018, 2026
+lastupdated: "2026-02-05"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -304,6 +304,12 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 
 - The image was deployed by using the digest as the reference. For example, {{site.data.keyword.codeenginefull_notm}} does resolve and use an image digest when it is serving applications, see [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app&interface=ui).
 - The image reference was mutated by a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
+
+## How do I check what untagged images are going to be removed by the `ibmcloud cr image-prune-untagged` command ?
+{: #faq_untagged_image_prune}
+{: faq}
+
+Before you run the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command to view your untagged images.
 
 ## What are eligible images?
 {: #faq_eligible_image}
