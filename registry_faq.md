@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-10-17"
+  years: 2018, 2026
+lastupdated: "2026-02-05"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -110,6 +110,15 @@ If you're having problems when you try to add a namespace in {{site.data.keyword
 - You don't have the correct permissions to create a namespace.
 
 See [Why can't I add a namespace in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
+
+## How do I delete a namespace?
+{: #faq_namespace_delete}
+{: faq}
+
+If you no longer require a registry namespace, you can remove the namespace from your {{site.data.keyword.cloud_notm}} account. For more information, see [Removing namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_remove).
+
+When you remove a namespace, any images that are stored in that namespace are also deleted. This action cannot be undone.
+{: attention}
 
 ## How do I obtain image pull credentials for {{site.data.keyword.registryshort}}?
 {: #faq_credentials}
@@ -305,6 +314,18 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 - The image was deployed by using the digest as the reference. For example, {{site.data.keyword.codeenginefull_notm}} does resolve and use an image digest when it is serving applications, see [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app&interface=ui).
 - The image reference was mutated by a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
 
+## How do I do a dry run to check what untagged images are going to be removed by the `ibmcloud cr image-prune-untagged` command?
+{: #faq_untagged_image_prune}
+{: faq}
+
+You can't do a dry run of the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command. But you can view your untagged images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. You can then check that you do want to remove these untagged images before you run the `ibmcloud cr image-prune-untagged` command.
+
+## How do I restore an image that I removed by accident?
+{: #faq_image_restore}
+{: faq}
+
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. Images are stored in the trash for 30 days.
+
 ## What are eligible images?
 {: #faq_eligible_image}
 {: faq}
@@ -389,3 +410,9 @@ For more information, see [Why do images fail to pull from registry with ImagePu
 You exceeded the image storage or pull traffic quota for your account for the current month. To resolve this issue, you can either review your quota limits and increase them as necessary, or if you're on the Lite plan, upgrade to the standard plan.
 
 For more information, see [Why am I getting errors about my quota in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-quota) and [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
+
+## How do I delete {{site.data.keyword.registrylong_notm}}?
+{: #faq_delete_iccr}
+{: faq}
+
+If you don't want to use {{site.data.keyword.registryshort_notm}} anymore, you can delete it by uninstalling the `container-registry` CLI plug-in. For more information, see [Uninstalling the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace&interface=ui#registry_cli_uninstall).
