@@ -30,7 +30,7 @@ In addition to the following regional subdomains, you must also allow traffic fr
 
 | Region | Registry address | Deprecated addresses |
 | ------ | ---------------- | -------------------- |
-| Chennai - Airtel | `in.icr.io` | Not applicable |
+| Chennai-Airtel | `in.icr.io` | Not applicable |
 | Dallas | `us.icr.io` | `registry.ng.bluemix.net` |
 | Frankfurt | `de.icr.io` | `registry.eu-de.bluemix.net` |
 | Global | `icr.io` | `registry.bluemix.net` |

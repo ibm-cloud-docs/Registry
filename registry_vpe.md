@@ -46,7 +46,7 @@ Before you target a VPE for {{site.data.keyword.registryshort_notm}}, you must c
 
 The table lists {{site.data.keyword.registrylong_notm}} private endpoints that are supported from the following VPC regions:
 
-- Chennai - Airtel (`in-che`)
+- Chennai-Airtel (`in-che`)
 - Dallas (`us-south`)
 - Frankfurt (`eu-de`)
 - London (`eu-gb`)

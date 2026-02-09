@@ -26,7 +26,7 @@ What's new in {{site.data.keyword.registrylong}} and Vulnerability Advisor? The 
 {: release-note}
 
 New region in India {: #09feb2026_chennai}
-:   A new region in India, `Chennai - Airtel`, is available. The new region is `in-che` and the domain name is `in.icr.io`. You can target the new region in the {{site.data.keyword.cloud_notm}} console or in the command-line interface (CLI) by running `ibmcloud cr region-set in-che`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
+:   A new region in India, Chennai-Airtel, is available. The new region is `in-che` and the domain name is `in.icr.io`. You can target the new region in the {{site.data.keyword.cloud_notm}} console or in the command-line interface (CLI) by running `ibmcloud cr region-set in-che`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
 ## 29 July 2025
 {: #registry-29jul2025}
