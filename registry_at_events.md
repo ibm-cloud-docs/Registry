@@ -41,7 +41,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 
 | Locations in Asia Pacific | Service events available |
 | ------------------------- | ------------------------ |
-| `Chennai-Airtel (in-che)` | [Yes]{: tag-green} |
+| `Chennai - Airtel (in-che)` | [Yes]{: tag-green} |
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
@@ -79,7 +79,7 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Chennai-Airtel (`in-che`) | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
+| Chennai - Airtel (`in-che`) | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
 | ------------------ | ---------------- | ----------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Asia-Pacific locations" caption-side="top"}
