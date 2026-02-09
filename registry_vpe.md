@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-29"
+lastupdated: "2026-02-09"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -46,6 +46,7 @@ Before you target a VPE for {{site.data.keyword.registryshort_notm}}, you must c
 
 The table lists {{site.data.keyword.registrylong_notm}} private endpoints that are supported from the following VPC regions:
 
+- Chennai - Airtel (`in-che`)
 - Dallas (`us-south`)
 - Frankfurt (`eu-de`)
 - London (`eu-gb`)
@@ -66,7 +67,7 @@ You can create a VPE gateway for your local {{site.data.keyword.registryshort_no
 
 When you create a VPE gateway by using the command-line interface (CLI) or API, you must specify the [cloud resource name (CRN)](#x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
-You can create VPE gateways in these locations:  `au-syd`, `br-sao`, `ca-mon`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `jp-osa`, `jp-tok`, `us-south`, and `us-east` (global registry).
+You can create VPE gateways in these locations:  `au-syd`, `br-sao`, `ca-mon`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `in-che`, `jp-osa`, `jp-tok`, `us-south`, and `us-east` (global registry).
 
 | Registry region | Region that was formerly known as | Cloud resource name (CRN) |
 | --------------- | --------------------------------- | ------------------------- |
@@ -77,6 +78,7 @@ You can create VPE gateways in these locations:  `au-syd`, `br-sao`, `ca-mon`, `
 | `eu-de` | `eu-central` | `crn:v1:bluemix:public:container-registry:eu-de:::endpoint:de.icr.io` |
 | `eu-es` | Not applicable | `crn:v1:bluemix:public:container-registry:eu-es:::endpoint:es.icr.io` |
 | `eu-gb` | `uk-south` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:uk.icr.io` |
+| `in-che` | Not applicable | `crn:v1:bluemix:public:container-registry:in-che:::endpoint:in.icr.io` |
 | `jp-osa` | Not applicable | `crn:v1:bluemix:public:container-registry:jp-osa:::endpoint:jp2.icr.io` |
 | `jp-tok` | `ap-north` | `crn:v1:bluemix:public:container-registry:jp-tok:::endpoint:jp.icr.io` |
 | `us-south` | Not applicable | `crn:v1:bluemix:public:container-registry:us-south:::endpoint:us.icr.io` |

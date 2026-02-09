@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-01-14"
+lastupdated: "2026-02-09"
 
 keywords: IBM Cloud Container Registry, firewall, access, communicate, domains, subdomains, traffic, allowlist
 
@@ -30,6 +30,7 @@ In addition to the following regional subdomains, you must also allow traffic fr
 
 | Region | Registry address | Deprecated addresses |
 | ------ | ---------------- | -------------------- |
+| Chennai - Airtel | `in.icr.io` | Not applicable |
 | Dallas | `us.icr.io` | `registry.ng.bluemix.net` |
 | Frankfurt | `de.icr.io` | `registry.eu-de.bluemix.net` |
 | Global | `icr.io` | `registry.bluemix.net` |
@@ -76,6 +77,7 @@ If you use a public network and domain-based firewall rules to access {{site.dat
 | `eu-de` | `dd0.de.icr.io` |
 | `eu-es` | `dd0.es.icr.io` |
 | `eu-gb` | `dd0.uk.icr.io` |
+| `in-che` | `dd0.in.icr.io` |
 | `jp-osa` | `dd0.jp2.icr.io` |
 | `jp-tok` | `dd0.jp.icr.io` |
 | `us-south` | `dd0.us.icr.io` |

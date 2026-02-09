@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-02-05"
+lastupdated: "2026-02-09"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -191,6 +191,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [9 February 2026](/docs/Registry?topic=Registry-registry_release_notes#registry-09feb2026)
+
+    * [New region in India](/docs/Registry?topic=Registry-registry_release_notes#09feb2026_chennai)
 
 * [29 July 2025](/docs/Registry?topic=Registry-registry_release_notes#registry-29jul2025)
 
