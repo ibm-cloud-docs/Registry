@@ -38,7 +38,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 
 | Locations in Asia Pacific | Are platform services logs available? |
 | ------------------------- | ------------------------------------- |
-| `Chennai-Airtel (in-che)` | [Yes]{: tag-green} |
+| `Chennai - Airtel (in-che)` | [Yes]{: tag-green} |
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
@@ -76,7 +76,7 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Chennai-Airtel (`in-che`) | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
+| Chennai - Airtel (`in-che`) | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
 | ------------------ | ---------------- | ----------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Asia-Pacific locations" caption-side="top"}
