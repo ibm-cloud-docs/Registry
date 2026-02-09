@@ -1,12 +1,13 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-12-08"
+  years: 2024, 2026
+lastupdated: "2026-02-09"
 
 keywords:
 
 subcollection: Registry
+
 
 ---
 
@@ -38,7 +39,7 @@ Minimal
 ## VPC Data and control plane
 {: #vpc-data-and-control-plane}
 
-The following dependencies apply to the following deployment locations: Montreal (ca-mon).
+The following dependencies apply to the following deployment locations: Chennai - Airtel (in-che), Montreal (ca-mon).
 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
@@ -158,6 +159,8 @@ The following dependencies apply to the following deployment locations: Dallas (
 
 ## Understanding service dependency data
 {: #understand-dependency-data}
+
+
 
 If you have any questions about the service dependency data as you review the service dependency information in the tables, you can refer to the following FAQ:
 
