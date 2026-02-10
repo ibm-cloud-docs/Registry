@@ -846,7 +846,7 @@ subcollection: Registry
 
 * [Viewing logs](/docs/Registry?topic=Registry-registry_logs#log-viewing)
 
-    * [Launching {{site.data.keyword.logs_full_notm}} from the Observability page](/docs/Registry?topic=Registry-registry_logs#log-launch-standalone)
+    * [Starting {{site.data.keyword.logs_full_notm}} from the Observability page](/docs/Registry?topic=Registry-registry_logs#log-launch-standalone)
 
 * [Fields by log type](/docs/Registry?topic=Registry-registry_logs#log-fields)
 
