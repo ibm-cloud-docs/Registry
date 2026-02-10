@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-02-10"
 
 keywords: Track, tracking events, find events, activity tracking for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -14,7 +14,6 @@ subcollection: Registry
 
 # Activity tracking events for {{site.data.keyword.registryshort_notm}}
 {: #at_events}
-
 
 {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, generate activity tracking events.
 {: shortdesc}
@@ -70,7 +69,7 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {{site.data.keyword.registryshort}} sends activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following tables.
 
 | Dallas (`us-south`) | Washington DC (`us-east`) | Montreal (`ca-mon`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-| ------------------- | ---------------------- | ------------------- | ------------------ | -------------------- |
+| ------------------- | ------------------------- | ------------------- | ------------------ | -------------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
 {: #atracker-table-1}
@@ -80,7 +79,7 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {: row-headers}
 
 | Chennai - Airtel (`in-che`) | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
-| ------------------ | ---------------- | ----------------- | ---------------- |
+| --------------------------- | ---------------- | ----------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Asia-Pacific locations" caption-side="top"}
 {: #atracker-table-2}
