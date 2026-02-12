@@ -299,6 +299,12 @@ You can push images to {{site.data.keyword.registrylong_notm}} on a different {{
 
  For more information, see [Pushing images by using an API key](/docs/Registry?topic=Registry-registry_images_#registry_api_key_push_image) and [Accessing {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_access).
 
+## What roles do I need to have to push and pull images?
+{: #faq_role}
+{: faq}
+
+To pull and push an image you must have either the Writer or the Manager role. For more information, see [Access roles for using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam&interface=ui#access_roles_using).
+
 ## Do I have any untagged images?
 {: #faq_untagged_image_1}
 {: faq}
