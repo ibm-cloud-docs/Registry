@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-12"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -102,7 +102,7 @@ See [Why aren't I authorized to access a specified resource in {{site.data.keywo
 {: #faq_namespace_create}
 {: faq}
 
-If you're having problems when you try to add a namespace in {{site.data.keyword.registryshort_notm}}, it could be one of the following causes:
+If you're having problems when you try to add a namespace in {{site.data.keyword.registryshort_notm}}, it might be one of the following causes:
 
 - Invalid characters are included in the namespace.
 - The namespace is already in use.
@@ -299,6 +299,12 @@ You can push images to {{site.data.keyword.registrylong_notm}} on a different {{
 
  For more information, see [Pushing images by using an API key](/docs/Registry?topic=Registry-registry_images_#registry_api_key_push_image) and [Accessing {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_access).
 
+## What roles do I need to have to push and pull images?
+{: #faq_role}
+{: faq}
+
+To pull and push an image you must have either the Writer or the Manager role. For more information, see [Access roles for using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam&interface=ui#access_roles_using).
+
 ## Do I have any untagged images?
 {: #faq_untagged_image_1}
 {: faq}
@@ -324,7 +330,7 @@ You can't do a dry run of the [`ibmcloud cr image-prune-untagged`](/docs/Registr
 {: #faq_image_restore}
 {: faq}
 
-If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. Images are stored in the trash for 30 days.
+If you want to restore a deleted image, find the image by listing the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command. Restore the selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. Images are stored in the trash for 30 days.
 
 ## What are eligible images?
 {: #faq_eligible_image}
