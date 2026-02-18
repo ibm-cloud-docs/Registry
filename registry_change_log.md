@@ -20,7 +20,6 @@ In this change log you can learn about what's new in the {{site.data.keyword.reg
 
 For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 
-
 ## Version 1.3.19
 {: #cli-change-logv1-1319}
 
@@ -29,7 +28,7 @@ Version 1.3.19 of the CLI was released on 13 February 2026.
 This release has the following changes:
 
 - Updates to support the new region in Chennai - Airtel, India (`in-che`).
-- Fixes typographical errors.
+- Corrects typographical errors.
 
 ## Version 1.3.18
 {: #cli-change-logv1-1318}
