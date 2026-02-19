@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-10-17"
+  years: 2017, 2026
+lastupdated: "2026-02-19"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -62,6 +62,7 @@ Troubleshoot pull and push problems.
 Troubleshoot CLI command problems.
 
 - [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace)
+- [Why am I forbidden to create a {{site.data.keyword.registryshort_notm}} instance in my account?](/docs/Registry?topic=Registry-troubleshoot-create-namespace)
 - [Why aren't I authorized to access a specified resource?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth)
 - [Why can't I find my image or my namespace?](/docs/Registry?topic=Registry-troubleshoot-image-find)
 - [Why don't all my namespaces show in the resource list?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list)
