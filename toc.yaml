@@ -219,6 +219,8 @@ toc:
               topics:
               - topic: ts_add_namespace.md
                 navtitle: Why can't I add a namespace?
+              - topic: ts_create_namespace.md
+                navtitle: Why am I forbidden to create a Container Registry instance in my account?
               - topic: ts_namespace_auth.md
                 navtitle: Why aren't I authorized to access a specified resource?
               - topic: ts_image_find.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-02-18"
+lastupdated: "2026-02-20"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1496,6 +1496,8 @@ subcollection: Registry
 
 
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
+
+[Why am I forbidden to create a Container Registry instance in my account?](/docs/Registry?topic=Registry-troubleshoot-create-namespace#troubleshoot-create-namespace)
 
 [Why aren't I authorized to access a specified resource?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth#troubleshoot-namespace-auth)
 
