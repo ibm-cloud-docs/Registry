@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-10-17"
+  years: 2017, 2026
+lastupdated: "2026-02-19"
 
 keywords: registry, namespace, value, characters, delete
 
@@ -32,6 +32,7 @@ The following alternatives are possible causes:
 - **Scenario B.** You entered a namespace value that is already being used by another {{site.data.keyword.cloud_notm}} organization.
 - **Scenario C.** A namespace was recently deleted and you're reusing its name. If the namespace that was deleted contained many resources, the deletion might not yet be fully processed by {{site.data.keyword.registryshort}}.
 - **Scenario D.** You might not have the correct permissions for creating a namespace.
+- **Scenario E.** Your request could not be completed because it is forbidden to create an {{site.data.keyword.registrylong_notm}} instance in your account.
 
 You can fix these problems in the following ways:
 {: tsResolve}
@@ -46,5 +47,6 @@ Follow any instructions that are in the returned error message. If that is not s
 - **Scenario B.** Choose a different value for your namespace.
 - **Scenario C.** If you're re-creating a namespace that was deleted, and it contained many images, try again later.
 - **Scenario D.** - Ensure that you have the Manager role in the {{site.data.keyword.registryshort_notm}} service at the account level for adding, assigning, and removing namespaces. See [Why aren't I authorized to access a specified resource in {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth) for assistance.
+- **Scenario E.** You must ensure that {{site.data.keyword.registryshort}} is allowed when a namespace is being created. See [Why am I forbidden to create a {{site.data.keyword.registryshort_notm}} instance in my account?](/docs/Registry?topic=Registry-troubleshoot-create-namespace) for assistance.
 
 For more information about namespaces, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
