@@ -344,6 +344,12 @@ Images created before `2013-01-19T00:13:39Z` are excluded from retention policy 
 
 For more information, see [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan).
 
+## What region am I in?
+{: #faq_region}
+{: faq}
+
+To determine the region that you are currently using, you can use the [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region) command in the CLI. This command displays the targeted region and the registry. Alternatively, you can also check the console where your instance is deployed to find out the region. For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+
 ## What regions are available?
 {: #faq_regions}
 {: faq}
