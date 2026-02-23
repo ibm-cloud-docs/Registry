@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-02-23"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1613,6 +1613,8 @@ subcollection: Registry
 * [How do I restore an image that I removed by accident?](/docs/Registry?topic=Registry-registry_faq#faq_image_restore)
 
 * [What are eligible images?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
+
+* [What region am I in?](/docs/Registry?topic=Registry-registry_faq#faq_region)
 
 * [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 

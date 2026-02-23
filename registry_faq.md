@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-02-23"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -303,7 +303,7 @@ You can push images to {{site.data.keyword.registrylong_notm}} on a different {{
 {: #faq_role}
 {: faq}
 
-To pull and push an image you must have either the Writer or the Manager role. For more information, see [Access roles for using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam&interface=ui#access_roles_using).
+To pull or push an image, you must have either the Writer or the Manager role. For more information, see [Access roles for using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam&interface=ui#access_roles_using).
 
 ## Do I have any untagged images?
 {: #faq_untagged_image_1}
@@ -343,6 +343,12 @@ The images that are not eligible are still displayed, but they do not count towa
 Images created before `2013-01-19T00:13:39Z` are excluded from retention policy evaluation.
 
 For more information, see [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan).
+
+## What region am I in?
+{: #faq_region}
+{: faq}
+
+To determine the region that you are currently using, you can use the [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region) command in the CLI. This command displays the targeted region and the registry. Alternatively, you can also check the console where your instance is deployed to find out the region. For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 ## What regions are available?
 {: #faq_regions}
