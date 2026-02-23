@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-02-23"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -303,7 +303,7 @@ You can push images to {{site.data.keyword.registrylong_notm}} on a different {{
 {: #faq_role}
 {: faq}
 
-To pull and push an image you must have either the Writer or the Manager role. For more information, see [Access roles for using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam&interface=ui#access_roles_using).
+To pull or push an image, you must have either the Writer or the Manager role. For more information, see [Access roles for using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam&interface=ui#access_roles_using).
 
 ## Do I have any untagged images?
 {: #faq_untagged_image_1}
