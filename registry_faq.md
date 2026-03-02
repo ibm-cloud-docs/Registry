@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-23"
+lastupdated: "2026-03-02"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -20,7 +20,7 @@ content-type: faq
 Frequently asked questions for {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-For frequently asked questions about Vulnerability Advisor, see [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va).
+For frequently asked questions about how to manage image security and vulnerabilities by using Vulnerability Advisor, see [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va).
 
 ## Where is the reference documentation for {{site.data.keyword.registryshort}}?
 {: #faq_ref_docs}
