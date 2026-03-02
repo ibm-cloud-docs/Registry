@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-21"
+lastupdated: "2026-03-02"
 
-keywords: commands, questions, registry, Vulnerability Advisor, frequently asked questions, image, package manager, security notices, version of a package, notify security status, vulnerabilities
+keywords: commands, questions, registry, Vulnerability Advisor, frequently asked questions, image, package manager, security notices, version of a package, notify security status, vulnerabilities, security scans
 
 subcollection: Registry
 
@@ -17,7 +17,7 @@ content-type: faq
 # FAQ for Vulnerability Advisor
 {: #registry_faq_va}
 
-Frequently asked questions for the Vulnerability Advisor component of {{site.data.keyword.registrylong}}.
+Frequently asked questions about how to manage image security and vulnerabilities by using the Vulnerability Advisor component of {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 For frequently asked questions about {{site.data.keyword.registryshort}}, see [FAQ for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_faq).

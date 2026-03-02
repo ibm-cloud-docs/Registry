@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-03-02"
 
-keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
+keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues, security scans
 
 subcollection: Registry
 
