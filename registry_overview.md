@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-03-03"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -340,7 +340,7 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 
 You can target the global registry by running the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command.
 
-1. To target the global registry, run the following command.
+1. To target the global registry (`icr.io`), run the following command.
 
     ```txt
     ibmcloud cr region-set global

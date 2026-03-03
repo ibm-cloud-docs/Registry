@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-02"
+lastupdated: "2026-03-03"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -147,7 +147,7 @@ For more information, see [`ibmcloud cr image-list` (`ibmcloud cr images`)](/doc
 
 To list public images, run the following `ibmcloud` commands to target the global registry and list the public images that are provided by {{site.data.keyword.IBM_notm}}:
 
-1. Set the region to global by running the `ibmcloud cr region-set` command and entering `global` as the region.
+1. Set the region to global (`icr.io`) by running the `ibmcloud cr region-set` command and entering `global` as the region.
 
 ```sh
 ibmcloud cr region-set global
@@ -360,7 +360,7 @@ To find out more about the regions that are available for {{site.data.keyword.re
 {: #faq_region_registry}
 {: faq}
 
-To change the region and the registry, you must log in to {{site.data.keyword.cloud_notm}} and use the [`ibmcloud cr region-set REGION`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command, which sets the `container-registry` CLI plug-in to target the specified regional registry.
+To change the region and the registry, you must log in to {{site.data.keyword.cloud_notm}} and use the [`ibmcloud cr region-set REGION`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command, where `REGION` is the name of the region that you want to use, for example, `global`, `au-syd`, or `jp-tok`. This command sets the `container-registry` CLI plug-in to target the specified regional registry.
 
 For example, to change the registry to `uk.icr.io`, which is in the region `eu-gb`, complete the following steps.
 
