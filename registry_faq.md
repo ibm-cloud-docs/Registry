@@ -360,7 +360,7 @@ To find out more about the regions that are available for {{site.data.keyword.re
 {: #faq_region_registry}
 {: faq}
 
-To change the region and the registry, you must log in to {{site.data.keyword.cloud_notm}} and use the [`ibmcloud cr region-set REGION`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command, where `REGION` is the name of the region that you want to use, for example, `global`, `au-syd`, or `jp-tok`. This command sets the `container-registry` CLI plug-in to target the specified regional registry.
+To change the region and the registry, you must log in to {{site.data.keyword.cloud_notm}} and use the [`ibmcloud cr region-set REGION`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command, where `REGION` is the name of the region that you want to use, for example, `global`, `au-syd`, and `jp-tok`. This command sets the `container-registry` CLI plug-in to target the specified regional registry.
 
 For example, to change the registry to `uk.icr.io`, which is in the region `eu-gb`, complete the following steps.
 
