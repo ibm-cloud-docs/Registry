@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-03-11"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -81,4 +81,11 @@ The image data, service settings, and policy settings are backed up by {{site.da
 ### Are users required to replicate the data?
 {: #bc-dr_client}
 
-You're not expected to replicate your images. However, you can create a service instance in another {{site.data.keyword.registrylong_notm}} region. You can also choose from a range of tools, including pushing to multiple locations from your development pipeline, and the use of replication tools, such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}. {{site.data.keyword.IBM_notm}} doesn't replicate service instances.
+You're not expected to replicate your images. However, you can create a service instance in another {{site.data.keyword.registrylong_notm}} region. You can also choose from a range of tools, including pushing to multiple locations from your development pipeline, and the use of replication tools, such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}. {{site.data.keyword.IBM_notm}} doesn't replicate service instances. For more information, see [High availability for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr).
+
+### What happens if a disaster occurs?
+{: #bc-dr_recovery}
+
+{{site.data.keyword.IBM_notm}} has targets for the recovery point objective (RPO) of 48 hours and the recovery time objective (RTO) of 24 hours. These targets help ensure that your data is protected and service functions are restored promptly if a disaster occurs. If a region is not available, {{site.data.keyword.IBM_notm}} restores the region and the user data, subject to the RPO of 48 hours, therefore up to 48 hours of newly created or changed data might be lost.
+
+If the region that you use is unavailable, you cannot automatically access your data in another region. If you want highly available, 24x7, data, you are responsible for creating a comprehensive disaster recovery plan. For example, a comprehensive disaster recovery plan might entail pushing your images to two separate {{site.data.keyword.registrylong_notm}} regions, and being able to access your data from either region. For more information, see [High availability for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr).

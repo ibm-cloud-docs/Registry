@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-02-23"
+lastupdated: "2026-03-11"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1360,6 +1360,8 @@ subcollection: Registry
     * [What data is backed up or replicated?](/docs/Registry?topic=Registry-bc-dr#bc-dr_backup)
 
     * [Are users required to replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_client)
+
+    * [What happens if a disaster occurs?](/docs/Registry?topic=Registry-bc-dr#bc-dr_recovery)
 
 
 ## Understanding data portability
