@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-03-11"
+lastupdated: "2026-03-12"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1604,7 +1604,7 @@ subcollection: Registry
 
 * [Can I push images on a different account to the one that is running the build pipeline?](/docs/Registry?topic=Registry-registry_faq#faq_push_image_diff_account)
 
-* [What roles do I need to have to push and pull images?](/docs/Registry?topic=Registry-registry_faq#faq_role)
+* [What roles do I need to have so that I can push and pull images?](/docs/Registry?topic=Registry-registry_faq#faq_role)
 
 * [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
 

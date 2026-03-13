@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-03"
+lastupdated: "2026-03-12"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -299,7 +299,7 @@ You can push images to {{site.data.keyword.registrylong_notm}} on a different {{
 
  For more information, see [Pushing images by using an API key](/docs/Registry?topic=Registry-registry_images_#registry_api_key_push_image) and [Accessing {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_access).
 
-## What roles do I need to have to push and pull images?
+## What roles do I need to have so that I can push and pull images?
 {: #faq_role}
 {: faq}
 
