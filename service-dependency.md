@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-03-20"
 
 keywords:
 
@@ -39,7 +39,7 @@ Minimal
 ## VPC Data and control plane
 {: #vpc-data-and-control-plane}
 
-The following dependencies apply to the following deployment locations: Chennai - Airtel (in-che), Montreal (ca-mon).
+The following dependencies apply to the following deployment locations: Chennai - Airtel (in-che), Madrid (eu-es), Montreal (ca-mon), Sydney (au-syd), Toronto (ca-tor).
 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
@@ -99,7 +99,7 @@ The following dependencies apply to the following deployment locations: Chennai 
 ## Data and Control plane deployment
 {: #data-and-control-plane-deployment}
 
-The following dependencies apply to the following deployment locations: Dallas (us-south), Frankfurt (eu-de), London (eu-gb), Madrid (eu-es), Osaka (jp-osa), Sao Paulo (br-sao), Sydney (au-syd), Tokyo (jp-tok), Toronto (ca-tor), Washington DC (us-east).
+The following dependencies apply to the following deployment locations: Dallas (us-south), Frankfurt (eu-de), London (eu-gb), Osaka (jp-osa), Sao Paulo (br-sao), Tokyo (jp-tok), Washington DC (us-east).
 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
