@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2025
-lastupdated: "2025-10-10"
+  years: 2019, 2026
+lastupdated: "2026-03-24"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -82,7 +82,7 @@ To reduce the number of images in each repository within your namespace by using
     ```
     {: pre}
 
-3. To retain the most recent images and delete the others, run one the following commands:
+3. To retain the most recent images and delete the others, run one of the following commands:
 
     - If you want to clean up both tagged and untagged images, run the following command:
 
