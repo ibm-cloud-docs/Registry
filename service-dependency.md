@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-03-24"
 
 keywords:
 
@@ -86,7 +86,7 @@ The following dependencies apply to the following deployment locations: Chennai 
 | {{site.data.keyword.atracker_full}}| Security compliance | No | Both |  Same region  |
 | Canonical Ubuntu Vulnerabilities Databases| none | No | Both |  external  |
 | Alpine Linux Vulnerabilities Databases| none | No | Both |  external  |
-| RedHat Vulnerabilities Databases| none | No | Both |  external  |
+| Red Hat Vulnerabilities Databases| none | No | Both |  external  |
 | IBM Log Analysis Log Routing| none | No | Both |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Container Registry - VPC Data and control plane service dependency information - Minimal dependencies" caption-side="top"}
@@ -146,7 +146,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 | {{site.data.keyword.atracker_full}}| Security compliance | No | Both |  Same region  |
 | Canonical Ubuntu Vulnerabilities Databases| none | No | Both |  external  |
 | Alpine Linux Vulnerabilities Databases| none | No | Both |  external  |
-| RedHat Vulnerabilities Databases| none | No | Both |  external  |
+| Red Hat Vulnerabilities Databases| none | No | Both |  external  |
 | IBM Log Analysis Log Routing| none | No | Both |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Container Registry - Data and Control plane deployment service dependency information - Minimal dependencies" caption-side="top"}
