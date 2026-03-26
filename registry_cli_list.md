@@ -23,7 +23,7 @@ By default, the CLI output is displayed in a human-readable format. However, thi
 You can alter the CLI output by applying the format option in two different ways:
 
 - Format the data in your CLI output. For example, change the `Created` field output from UNIX&reg; time to standard time.
-- Filter the data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the  Go template `if gt` condition.
+- Filter the data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the Go template `if gt` condition.
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
@@ -100,7 +100,7 @@ The following code examples demonstrate how you might use the formatting and fil
 ## Go template options for `ibmcloud cr image-digests`
 {: #registry_cli_list_imagedigests}
 
-Review the following table to find available  Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -135,7 +135,7 @@ Review the following table to find available Go template options and data types 
 ## Go template options for `ibmcloud cr image-inspect`
 {: #registry_cli_list_imageinspect}
 
-Review the following table to find available  Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect) command.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
