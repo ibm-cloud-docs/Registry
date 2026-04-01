@@ -206,8 +206,6 @@ ibmcloud cr retention-policy-set --images All NAMESPACE
 
 You can clean up your namespace and reduce your bills by deleting your [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in the namespace and optionally output the results in JSON format.
 
-
-
 If you want to delete your untagged images and output the results in JSON format, run the following [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command, where `NAMESPACE` is your namespace:
 
 ```txt
