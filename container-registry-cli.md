@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-05"
+lastupdated: "2026-04-01"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -1398,7 +1398,7 @@ ibmcloud cr region-set us-south
 ### Output
 {: #bx_cr_region_set_output}
 
-The command in the [example](#bx_cr_region_set_example) returns the followings output:
+The command in the [example](#bx_cr_region_set_example) returns the following output:
 
 ```text
 The region is set to 'us-south', the registry is 'us.icr.io'.
