@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-10-14"
+  years: 2023, 2026
+lastupdated: "2026-04-15"
 
 keywords: error, iam, access denied, access, resource,
 
@@ -40,5 +40,5 @@ You can fix this problem in the following ways:
 
 - **Scenario B.** Check whether context-based restriction rules are in place. If so, these rules prevent you from accessing resources outside the defined allowed contexts. Adjust the allowed context or rerun your pull from within an allowed context. For more information, see [Protecting {{site.data.keyword.registryshort}} resources with context-based restrictions](/docs/Registry?topic=Registry-registry-cbr&interface=ui).
 
-    To confirm whether a context-based restriction rule caused the `Access denied` error, check the instance of {{site.data.keyword.logs_full_notm}} that is configured to receive events from {{site.data.keyword.atracker_full_notm}} for the resource that is being accessed. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor#enabled-access).
+    To confirm whether a context-based restriction rule caused the `Access denied` error, check the instance of {{site.data.keyword.logs_full_notm}} that is configured to receive events from {{site.data.keyword.atracker_full_notm}} for the resource that is being accessed. For more information, see [Determining how enabled rules affect access](/docs/iam?topic=iam-cbr-monitor#enabled-access).
     {: tip}

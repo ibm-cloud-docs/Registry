@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-08-12"
+  years: 2025, 2026
+lastupdated: "2026-04-15"
 
 keywords: API key, tokens, automating access, access, authentication, Podman, Skopeo, Buildah, Docker, client, authenticate, iam, domain, service id api key, trusted profiles,
 
@@ -18,11 +18,11 @@ subcollection: Registry
 You can use trusted profiles to grant different {{site.data.keyword.cloud}} identities access to {{site.data.keyword.registrylong_notm}} resources in your account. Automatically grant federated users access to your account with conditions based on SAML attributes from your corporate directory.
 {: shortdesc}
 
-A user does not need to be a member of the account to assume a trusted profile. A user can use the profile if the user's identity provider (IdP) matches an IdP used in the conditions of trust.
+A user is not required to be a member of the account to assume a trusted profile. A user can use the profile if the user's identity provider (IdP) matches an IdP used in the conditions of trust.
 
 When you initially create a trusted profile, you can build conditions of trust with the following entity types: federated users and service IDs. After you create the trusted profile, you can add more conditions to combine multiple entity types in the same profile.
 
-For more information about trusted profiles, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile&interface=cli#create-profile-serviceid-cli).
+For more information about trusted profiles, see [Trusted profiles for federated users and workloads](/docs/iam?topic=iam-create-trusted-profile&interface=cli).
 
 ## Accessing namespaces in automation by using a trusted profile
 {: #registry_access_trusted_profiles_auto}
@@ -38,7 +38,7 @@ You can use service ID API keys in the following places:
 ### Creating a trusted profile
 {: #registry_access_trusted_profiles_create}
 
-A trusted profile needs to be created in the same account as the registry resources you want to access. A service ID in a separate account can then be added to that trusted profile to establish trust, see [Establishing trust with service IDs by using the CLI](/docs/account?topic=account-create-trusted-profile&interface=cli#create-profile-serviceid-cli). Make a note of the trusted profile ID because it is used as the username for the login.
+A trusted profile needs to be created in the same account as the registry resources you want to access. A service ID in a separate account can then be added to that trusted profile to establish trust, see [Establishing trust with service IDs by using the CLI](/docs/iam?topic=iam-create-trusted-profile&interface=cli#create-profile-serviceid-cli). Make a note of the trusted profile ID because it is used as the username for the login.
 
 ### Creating a service ID API key manually
 {: #registry_access_trusted_profiles_serviceid_apikey_create}
@@ -47,7 +47,7 @@ A trusted profile needs to be created in the same account as the registry resour
 
 Create a service ID API key that you can use to log in to the registry.
 
-To create a service ID API key, see [Managing service ID API keys](/docs/account?topic=account-serviceidapikeys) and [`ibmcloud iam service-api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
+To create a service ID API key, see [Managing service ID API keys](/docs/iam?topic=iam-serviceidapikeys&interface=ui) and [`ibmcloud iam service-api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
 
 ### Using client software to authenticate in automation
 {: #registry_access_trusted_profiles_apikey_auth}

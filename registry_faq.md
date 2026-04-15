@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-12"
+lastupdated: "2026-04-15"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -124,12 +124,12 @@ When you remove a namespace, any images that are stored in that namespace are al
 {: #faq_credentials}
 {: faq}
 
-For long-lived credentials, you want an API key that is associated with a service ID or user ID that has IAM reader permission on the namespace that contains the image. A user API key is associated with a user and their access policies. A service ID API key has its own access policies. You can create service ID API keys and user API keys manually in the {{site.data.keyword.cloud_notm}} console and in the CLI. For more information about API keys, see [Understanding API keys](/docs/account?topic=account-manapikey).
+For long-lived credentials, you want an API key that is associated with a service ID or user ID that has IAM reader permission on the namespace that contains the image. A user API key is associated with a user and their access policies. A service ID API key has its own access policies. You can create service ID API keys and user API keys manually in the {{site.data.keyword.cloud_notm}} console and in the CLI. For more information about API keys, see [Understanding API keys](/docs/iam?topic=iam-manapikey).
 
 For security reasons, the API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key.
 {: tip}
 
-You can create user API keys and service ID API keys in the {{site.data.keyword.cloud_notm}} console, the command-line interface (CLI), the API, and in Terraform. For more information about creating API keys, see [Managing user API keys](/docs/account?topic=account-userapikey&interface=ui) and [Managing service ID API keys](/docs/account?topic=account-serviceidapikeys&interface=ui).
+You can create user API keys and service ID API keys in the {{site.data.keyword.cloud_notm}} console, the command-line interface (CLI), the API, and in Terraform. For more information about creating API keys, see [Managing user API keys](docs/iam?topic=iam-userapikey&interface=ui) and [Managing service ID API keys](/docs/iam?topic=iam-serviceidapikeys&interface=ui).
 
 For more information about how to access {{site.data.keyword.registryshort}}, see [Accessing {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_access).
 

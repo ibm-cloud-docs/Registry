@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-09"
+lastupdated: "2026-04-15"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -26,7 +26,7 @@ Use this tutorial to find out how to grant access to your resources by configuri
 
 All accounts require IAM access policies. To set up and manage IAM access policies, see [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
-For more information about how to use IAM to manage access to your resources, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+For more information about how to use IAM to manage access to your resources, see [Managing access to resources](/docs/iam?topic=iam-assign-access-resources&interface=ui).
 
 ## Before you begin
 {: #iam_access_prereq}
