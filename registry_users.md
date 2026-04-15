@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-10-10"
+  years: 2018, 2026
+lastupdated: "2026-04-15"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -21,7 +21,7 @@ As an administrator, you can define {{site.data.keyword.iamlong}} (IAM) access p
 
 You must define IAM [access policies](#x2853407){: term} for every user that works with {{site.data.keyword.registrylong_notm}}. The scope of an IAM access policy is based on the user's role or roles that determine the actions that they are allowed to do. Some roles are predefined, but custom roles can be defined.
 
-To find out more about IAM access policies, see [{{site.data.keyword.cloud_notm}} IAM roles](/docs/account?topic=account-userroles).
+To find out more about IAM access policies, see [Platform and service access roles for permissions](/docs/iam?topic=iam-userroles).
 
 You can assign {{site.data.keyword.registryshort}} namespaces to a [resource group](/docs/account?topic=account-rgs) and scope access policies to that group, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan). However, you can still define access policies that are scoped to individual {{site.data.keyword.registryshort}} namespaces or to all namespaces that are owned by the account.
 
@@ -34,7 +34,7 @@ Before you begin, complete the following tasks:
 
 - Decide on the roles that each user needs and on which resources in {{site.data.keyword.registrylong_notm}}, see [IAM roles](/docs/Registry?topic=Registry-iam#iam). You can create multiple policies, for example, you can grant write access on a resource but grant read access only on another resource. Policies are additive, which means that a global read policy and a resource-scoped write policy grants both read and write access on that resource.
 
-- [Invite users to an account](/docs/account?topic=account-iamuserinv&interface=ui#invite-users-access).
+- [Invite users to an account](/docs/iam?topic=iam-iamuserinv&interface=ui#invite-users-access).
 
     If you want users to create clusters in {{site.data.keyword.containerlong_notm}}, ensure that you assign the {{site.data.keyword.registrylong_notm}} Administrator role to those users, and don't assign a resource group. For more information, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters).
     {: tip}
@@ -43,8 +43,8 @@ To create policies for {{site.data.keyword.registrylong_notm}}, the service name
 
 If you want to access resources, you must assign roles to users or service IDs. If you want to grant access to everything, don't specify a resource type or a resource. If you want to grant access to a specific namespace, specify the resource type as `namespace` and use the namespace name as the resource.
 
-- To create a policy for users, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
-- To create a policy for service IDs, run the `ibmcloud iam service-policy-create` command or use the {{site.data.keyword.cloud_notm}} console to bind roles to your service IDs. To create policies, you must have the Administrator role. You automatically have the Administrator role on your own account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids) and [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+- To create a policy for users, see [Managing access to resources](/docs/iam?topic=iam-assign-access-resources&interface=ui).
+- To create a policy for service IDs, run the `ibmcloud iam service-policy-create` command or use the {{site.data.keyword.cloud_notm}} console to bind roles to your service IDs. To create policies, you must have the Administrator role. You automatically have the Administrator role on your own account. For more information, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids&interface=ui#serviceids) and [Managing access to resources](/docs/iam?topic=iam-assign-access-resources&interface=ui).
 
 For an example of useful access policies for {{site.data.keyword.registrylong_notm}}, see [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access).
 {: tip}

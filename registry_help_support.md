@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-08-12"
+  years: 2023, 2026
+lastupdated: "2026-04-15"
 
 keywords: support, help, registry, status, support case
 
@@ -25,7 +25,7 @@ If you experience an issue or have questions when you are using {{site.data.keyw
 - Review the [troubleshooting documentation](/docs/Registry?topic=Registry-ts_index) to troubleshoot and resolve common issues.
 - Check the status of the {{site.data.keyword.cloud_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 
-If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/account?topic=account-open-case). And, if you're looking to provide feedback, see [Submitting feedback](/docs/overview?topic=overview-feedback).
+If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/support?topic=support-open-case&interface=ui). And, if you're looking to provide feedback, see [Submitting feedback](/docs/overview?topic=overview-feedback).
 
 ## Providing support case details
 {: #support-case-details}

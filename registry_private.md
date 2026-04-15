@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-08-12"
+  years: 2020, 2026
+lastupdated: "2026-04-15"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry, private network, image, connection, service endpoint, account, services
 
@@ -78,4 +78,4 @@ For more information, see [Automating access to {{site.data.keyword.registrylong
 ## Enforcing access to your account
 {: #registry_private_account}
 
-You can prevent image pulls or pushes from IP addresses outside of certain network zones, including VPCs and private networks, by using [IAM context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
+You can prevent image pulls or pushes from IP addresses outside of certain network zones, including VPCs and private networks, by using [IAM context-based restrictions](/docs/iam?topic=iam-context-restrictions-whatis).

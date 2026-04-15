@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-04-15"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -19,16 +19,16 @@ subcollection: Registry
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.registrylong}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies.
 {: shortdesc}
 
-These restrictions work with traditional IAM policies, which are based on identity, to provide another layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Because both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. See [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis) for more information.
+These restrictions work with traditional IAM policies, which are based on identity, to provide another layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Because both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. See [Layered security with context-based restrictions](/docs/iam?topic=iam-context-restrictions-whatis) for more information.
 
 A user must have the Administrator role on the {{site.data.keyword.registryshort}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role for context-based restrictions to create, update, or delete network zones. A user with the Viewer role for the context-based restrictions can add network zones to a rule.
 {: note}
 
-Any activity tracker audit events that are generated come from the context-based restrictions, not {{site.data.keyword.registryshort}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
+Any activity tracker audit events that are generated come from the context-based restrictions, not {{site.data.keyword.registryshort}}. For more information, see [Monitoring context-based restrictions](/docs/iam?topic=iam-cbr-monitor).
 
-{{site.data.keyword.registryshort}} is a service that is integrated with context-based restrictions. For more information, see [Services that are integrated with context-based restrictions](/docs/account?topic=account-context-restrictions-whatis#cbr-adopters).
+{{site.data.keyword.registryshort}} is a service that is integrated with context-based restrictions. For more information, see [Services that are integrated with context-based restrictions](/docs/iam?topic=iam-context-restrictions-whatis#cbr-adopters).
 
-To find out how to protect your {{site.data.keyword.registryshort}} resources with context-based restrictions, see the [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial) tutorial.
+To find out how to protect your {{site.data.keyword.registryshort}} resources with context-based restrictions, see the [Leveraging context-based restrictions to secure your resources](/docs/iam?topic=iam-context-restrictions-tutorial) tutorial.
 
 ## How {{site.data.keyword.registryshort}} integrates with context-based restrictions
 {: #registry-cbr_overview}
@@ -38,7 +38,7 @@ You can create context-based restrictions for {{site.data.keyword.registrylong_n
 ## Protecting specific resources
 {: #registry-cbr_protect}
 
-When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = <your_image_namespace>`, where `<your_image_namespace>` is the namespace of your image. For more information about rules, see [Creating rules](/docs/account?topic=account-context-restrictions-create&interface=ui#context-restrictions-create-rules).
+When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = <your_image_namespace>`, where `<your_image_namespace>` is the namespace of your image. For more information about rules, see [Creating rules](/docs/iam?topic=iam-context-restrictions-create&interface=ui#context-restrictions-create-rules).
 
 For example, if your image is in the format `uk.icr.io/<my_project>/<my_image>:latest`, where `<my_project>` is the name of your project and `<my_image>` is the name of the image, the attribute types are as shown in the following table.
 
@@ -75,7 +75,7 @@ Define restrictions to {{site.data.keyword.registryshort}} resources by creating
 {: #registry-cbr_rules_ui}
 {: ui}
 
-To create rules in the {{site.data.keyword.cloud_notm}} console, see [Creating rules](/docs/account?topic=account-context-restrictions-create&interface=ui#context-restrictions-create-rules). When you are asked to select a service, select **Container Registry**. You can protect all resources, or specific resources, see [Protecting specific resources](#registry-cbr_protect).
+To create rules in the {{site.data.keyword.cloud_notm}} console, see [Creating rules](/docs/iam?topic=iam-context-restrictions-create&interface=ui#context-restrictions-create-rules). When you are asked to select a service, select **Container Registry**. You can protect all resources, or specific resources, see [Protecting specific resources](#registry-cbr_protect).
 
 The following attribute types for specific resources are available in the {{site.data.keyword.cloud_notm}} console:
 
@@ -88,7 +88,7 @@ The following attribute types for specific resources are available in the {{site
 {: cli}
 
 1. To create rules from the command-line interface (CLI), [install the context-based restrictions CLI plug-in](/docs/cli?topic=cli-cbr-plugin#install-cbr-plugin).
-2. You can use the [`ibmcloud cbr rule-create` command](/docs/account?topic=account-cbr-plugin#cbr-cli-rule-create-command) to create rules for context-based restrictions. For more information, see [Creating rules by using the CLI](/docs/account?topic=account-context-restrictions-create&interface=cli#context-restrictions-create-rules-cli).
+2. You can use the [`ibmcloud cbr rule-create` command](/docs/iam?topic=iam-cbr-plugin#cbr-cli-rule-create-command) to create rules for context-based restrictions. For more information, see [Creating rules by using the CLI](/docs/iam?topic=iam-context-restrictions-create&interface=cli#context-restrictions-create-rules-cli).
 
 The following example creates a rule that targets the Container Registry service and allows access to your namespace `my_namespace` only over the private network in `us-south`.
 
@@ -101,7 +101,7 @@ ibmcloud cbr rule-create --description 'Only allow access to my_namespace over t
 {: #registry-cbr_rules_api}
 {: api}
 
-To create rules in the API, see the [API docs](/apidocs/context-based-restrictions#create-rule) and [Creating rules by using the API](/docs/account?topic=account-context-restrictions-create&interface=api#context-restrictions-create-rules-api).
+To create rules in the API, see the [API docs](/apidocs/context-based-restrictions#create-rule) and [Creating rules by using the API](/docs/iam?topic=iam-context-restrictions-create&interface=api#context-restrictions-create-rules-api).
 
 After you create a rule, it might take up to 10 minutes to before you can update that rule due to IAM TTL response caching.
 {: note}

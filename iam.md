@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-04-15"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -18,9 +18,9 @@ subcollection: Registry
 Access to {{site.data.keyword.registrylong}} for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM).
 {: shortdesc}
 
-Every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an IAM [access policy](#x2853407){: term} with an IAM role. A user can also be a member of an [access group](/docs/account?topic=account-groups) with assigned IAM access policies that grant an IAM role. Review the following roles, actions, and more to help determine the best way to assign access to {{site.data.keyword.registryshort}}.
+Every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an IAM [access policy](#x2853407){: term} with an IAM role. A user can also be a member of an [access group](/docs/iam?topic=iam-groups&interface=ui) with assigned IAM access policies that grant an IAM role. Review the following roles, actions, and more to help determine the best way to assign access to {{site.data.keyword.registryshort}}.
 
-For more information about IAM, see [How {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} works](/docs/account?topic=account-iamoverview#iamoverview).
+For more information about IAM, see [Getting started with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}](/docs/iam?topic=iam-iamoverview#iamoverview).
 
 Try out the tutorial [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access#iam_access).
 {: tip}
@@ -28,7 +28,7 @@ Try out the tutorial [Granting access to {{site.data.keyword.registryshort}} res
 ## Access policies
 {: #iam_access_policies}
 
-The IAM access policy that you assign to users in your account determines the actions that a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.registryshort}} as operations that are allowed to be performed on the service. Each action is mapped to an [IAM platform or service role](/docs/account?topic=account-userroles) that you can assign to a user.
+The IAM access policy that you assign to users in your account determines the actions that a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.registryshort}} as operations that are allowed to be performed on the service. Each action is mapped to an [IAM platform or service role](/docs/iam?topic=iam-userroles#iamusermanrol) that you can assign to a user.
 
 Policies enable access to be granted at different levels. Some options include the following access levels:
 
@@ -37,7 +37,7 @@ Policies enable access to be granted at different levels. Some options include t
 - Access to all IAM-enabled services in your account
 - Access to resources within a resource group
 
-If you want to restrict user access to one or more [namespaces](#x2031005){: term} for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
+If you want to restrict user access to one or more [namespaces](#x2031005){: term} for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids&interface=ui).
 
 You can set permissions so that you can configure access to resources within a namespace at the [resource group](#x2161955){: term} level. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
 
@@ -48,7 +48,7 @@ For more information about enabling policies for {{site.data.keyword.registrysho
 
 After you define the scope of the IAM access policy, you assign a role.
 
-If a specific role and its actions don't fit the use case that you are looking to address, you can [create a custom role](/docs/account?topic=account-custom-roles&interface=ui#custom-access-roles) and pick the actions to include.
+If a specific role and its actions don't fit the use case that you are looking to address, you can [create a custom role](/docs/iam?topic=iam-custom-roles&interface=ui#custom-access-roles) and pick the actions to include.
 
 Review the following tables that outline the actions that each role allows within the {{site.data.keyword.registryshort}} service.
 
@@ -56,9 +56,9 @@ Review the following tables that outline the actions that each role allows withi
 
 - [Service access roles](#service_access_roles) enable users access to {{site.data.keyword.registryshort}} and the ability to call the {{site.data.keyword.registryshort}} API.
 
-For more information about the exact actions that are mapped to each role, see [IAM roles and actions for {{site.data.keyword.registryshort}}](/docs/account?topic=account-iam-service-roles-actions#container-registry-roles).
+For more information about the exact actions that are mapped to each role, see [IAM roles and actions for {{site.data.keyword.registryshort}}](/docs/iam?topic=iam-iam-service-roles-actions#container-registry-roles).
 
-For more information about assigning user roles in the {{site.data.keyword.cloud_notm}} console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+For more information about assigning user roles in the {{site.data.keyword.cloud_notm}} console, see [Managing access to resources](/docs/iam?topic=iam-assign-access-resources&interface=ui).
 
 ## Context-based restrictions
 {: #iam_cbr}
@@ -77,7 +77,7 @@ The following table details actions that are mapped to platform management roles
 | Viewer | Not supported | Not applicable |
 | Editor | Not supported | Not applicable |
 | Operator | Not supported | Not applicable |
-| Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the {{site.data.keyword.cloud_notm}} console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registryshort}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply) command to configure the pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters). |
+| Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the {{site.data.keyword.cloud_notm}} console, see [Managing access to resources](/docs/iam?topic=iam-assign-access-resources&interface=ui).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registryshort}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply) command to configure the pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters). |
 {: caption="IAM user roles and actions" caption-side="bottom"}
 {: #table_registry_iam__user_roles}
 
@@ -166,14 +166,14 @@ The following table details actions that are mapped to operations on the service
 
 You can use one of the following options to assign access in the {{site.data.keyword.cloud_notm}} console:
 
-- Access policies per user. You can manage access policies per user from the **Manage > Access (IAM) > Users** page in the {{site.data.keyword.cloud_notm}} console. For more information about the steps to assign IAM access, see [Managing access to resources](/docs/account?topic=account-assign-access-resources&interface=ui#access-resources-console).
-- Access groups. Access groups are used to streamline access management by assigning access to a group once, then you can add or remove users as required from the group to control their access. You manage access groups and their access from the **Manage > Access (IAM) > Access groups** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [Assigning access to a group in the console](/docs/account?topic=account-groups&interface=ui#access_ag).
+- Access policies per user. You can manage access policies per user from the **Manage > Access (IAM) > Users** page in the {{site.data.keyword.cloud_notm}} console. For more information about the steps to assign IAM access, see [Assigning access to resources in the console](/docs/iam?topic=iam-assign-access-resources&interface=ui#access-resources-console).
+- Access groups. Access groups are used to streamline access management by assigning access to a group once, then you can add or remove users as required from the group to control their access. You manage access groups and their access from the **Manage > Access (IAM) > Access groups** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [Assigning access to a group in the console](/docs/iam?topic=iam-groups&interface=ui#access_ag).
 
 ## Assigning access to {{site.data.keyword.registryshort}} in the command-line interface (CLI)
 {: #registry_iam_assign-access-cli}
 {: cli}
 
-For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the CLI](/docs/account?topic=account-assign-access-resources&interface=cli#access-resources-cli). The following example shows a command for assigning the `Manager` role for {{site.data.keyword.registryshort}} to a user, where `USER_EMAIL` is the user's email address.
+For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the CLI](/docs/iam?topic=iam-assign-access-resources&interface=cli#access-resources-cli). The following example shows a command for assigning the `Manager` role for {{site.data.keyword.registryshort}} to a user, where `USER_EMAIL` is the user's email address.
 
 Use `container-registry` for the service name.
 {: requirement}
@@ -187,7 +187,7 @@ ibmcloud iam user-policy-create USER_EMAIL --service-name container-registry --r
 {: #registry_iam_assign-access-api}
 {: api}
 
-For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the API](/docs/account?topic=account-assign-access-resources&interface=api#access-resources-api) or [Create a policy](/apidocs/iam-policy-management#create-policy) in the API docs. Role cloud resource names (CRN) in the following table are used to assign access with the API.
+For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the API](/docs/iam?topic=iam-assign-access-resources&interface=api#access-resources-api) or [Create a policy](/apidocs/iam-policy-management#create-policy) in the API docs. Role cloud resource names (CRN) in the following table are used to assign access with the API.
 
 | Role name | Role CRN |
 | --------- | -------- |

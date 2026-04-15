@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-10-14"
+  years: 2021, 2026
+lastupdated: "2026-04-15"
 
 keywords: access restrictions, IP addresses, access, public, private, network
 
@@ -20,7 +20,7 @@ You can enable IAM IP address access restrictions when you're using {{site.data.
 
 To enable IAM IP address access restrictions, you must ensure that the {{site.data.keyword.iamshort}} (IAM) access list is configured so that the {{site.data.keyword.registryshort}} OAuth service can still function. The OAuth service is used to authenticate image pulls and pushes in {{site.data.keyword.registryshort}}.
 
-You must ensure that the IP addresses of any computers that can originate pulls and pushes are added to the IAM IP address access list, see [Allowing specific IP addresses](/docs/account?topic=account-ips).
+You must ensure that the IP addresses of any computers that can originate pulls and pushes are added to the IAM IP address access list, see [Allowing specific IP addresses](/docs/iam?topic=iam-ips&interface=ui).
 
 ## Granting access if you are using a public network
 {: #registry_iam_ip_public}

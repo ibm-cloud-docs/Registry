@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-04-15"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -20,7 +20,7 @@ To access your {{site.data.keyword.registrylong}} namespaces so that you can pus
 
 All accounts require IAM access policies. To set up and manage IAM access policies, see [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
-Access to {{site.data.keyword.registrylong_notm}} is either [automated](#registry_access_automating), which typically uses [API keys](/docs/account?topic=account-manapikey), or [interactive](#registry_access_interactive), which typically uses bearer tokens.
+Access to {{site.data.keyword.registrylong_notm}} is either [automated](#registry_access_automating), which typically uses [API keys](/docs/iam?topic=iam-manapikey), or [interactive](#registry_access_interactive), which typically uses bearer tokens.
 
 If you have an IAM access policy, but you are getting `Access denied` errors, see [Why am I getting `Access denied` errors?](/docs/Registry?topic=Registry-troubleshoot-access-denied) for assistance.
 {: tip}
@@ -54,9 +54,9 @@ To create a service ID API key, complete the following steps:
 
 1. Create a service ID, see [`ibmcloud iam service-id-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_id_create).
 
-2. Assign service policies to the service ID to control the level of access that is allowed when the service ID is used to authenticate with {{site.data.keyword.registrylong_notm}}, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+2. Assign service policies to the service ID to control the level of access that is allowed when the service ID is used to authenticate with {{site.data.keyword.registrylong_notm}}, see [Managing access to resources](/docs/iam?topic=iam-assign-access-resources&interface=ui).
 
-3. Create a service ID API key, see [Managing service ID API keys](/docs/account?topic=account-serviceidapikeys) and [`ibmcloud iam service-api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
+3. Create a service ID API key, see [Managing service ID API keys](/docs/iam?topic=iam-serviceidapikeys&interface=ui) and [`ibmcloud iam service-api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
 
 ### Creating a user API key manually
 {: #registry_access_user_apikey_create}
@@ -67,7 +67,7 @@ Create a user API key that you can use to log in to the registry.
 
 If you create a user API key, the user's access policies are used.
 
-To create a user API key, see [Managing user API keys](/docs/account?topic=account-userapikey) and [`ibmcloud iam api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
+To create a user API key, see [Managing user API keys](/docs/iam?topic=iam-userapikey&interface=ui) and [`ibmcloud iam api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
 ### Using client software to authenticate in automation
 {: #registry_access_apikey_auth}

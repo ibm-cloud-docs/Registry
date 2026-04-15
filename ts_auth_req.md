@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-08-12"
+  years: 2023, 2026
+lastupdated: "2026-04-15"
 
 keywords: registry, access, authorization required, error, API key, client, token, region, CRG0014E
 
@@ -65,7 +65,7 @@ You can't access {{site.data.keyword.registryshort}} because you don't have a va
 You can fix these problems in the following ways:
 
 - Check the information about logging a client into {{site.data.keyword.registryshort}}, see [Push images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing).
-- Create and use a valid IAM API key to log a client, such as Docker, in to {{site.data.keyword.registryshort}} with username `iamapikey` and the API key as your password. For more information, see [Managing user API keys](/docs/account?topic=account-userapikey&interface=ui#userapikey).
+- Create and use a valid IAM API key to log a client, such as Docker, in to {{site.data.keyword.registryshort}} with username `iamapikey` and the API key as your password. For more information, see [Managing user API keys](/docs/iam?topic=iam-userapikey&interface=ui#userapikey).
 - When you access {{site.data.keyword.registryshort}} by using automation, set up a service ID and API key. For more information, see [Accessing {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_access#registry_access_serviceid_apikey_create).
 
 ## Scenario B. You're logged in to the wrong region
