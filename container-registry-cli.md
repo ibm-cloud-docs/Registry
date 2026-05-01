@@ -2,11 +2,13 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-01"
+lastupdated: "2026-05-01"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
 subcollection: Registry
+
+content-type: cli-docs
 
 ---
 
