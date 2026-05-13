@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-03-12"
+lastupdated: "2026-05-13"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -194,7 +194,7 @@ subcollection: Registry
 
 * [9 February 2026](/docs/Registry?topic=Registry-registry_release_notes#registry-09feb2026)
 
-    * [New region in India](/docs/Registry?topic=Registry-registry_release_notes#09feb2026_chennai)
+    * [New region in India, Chennai - Airtel](/docs/Registry?topic=Registry-registry_release_notes#09feb2026_chennai)
 
 * [29 July 2025](/docs/Registry?topic=Registry-registry_release_notes#registry-29jul2025)
 
@@ -1615,6 +1615,8 @@ subcollection: Registry
 * [How do I restore an image that I removed by accident?](/docs/Registry?topic=Registry-registry_faq#faq_image_restore)
 
 * [What are eligible images?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
+
+* [What can I use for signing images in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_sign_image)
 
 * [What region am I in?](/docs/Registry?topic=Registry-registry_faq#faq_region)
 

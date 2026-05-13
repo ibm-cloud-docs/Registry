@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-02-10"
+lastupdated: "2026-05-13"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -24,7 +24,7 @@ What's new in {{site.data.keyword.registrylong}} and Vulnerability Advisor? The 
 {: #registry-09feb2026}
 {: release-note}
 
-New region in India {: #09feb2026_chennai}
+New region in India, Chennai - Airtel {: #09feb2026_chennai}
 :   A new region in India, Chennai - Airtel, is available. The new region is `in-che` and the domain name is `in.icr.io`. You can target the new region in the {{site.data.keyword.cloud_notm}} console or in the command-line interface (CLI) by running `ibmcloud cr region-set in-che`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
 ## 29 July 2025
