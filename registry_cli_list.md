@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-05-13"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -18,89 +18,23 @@ subcollection: Registry
 You can format and filter the {{site.data.keyword.registrylong}} command-line interface (CLI) output for supported {{site.data.keyword.registrylong_notm}} commands.
 {: shortdesc}
 
-By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output you might want to sort the `Size` field in numerical order, but the command returns a string description. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://pkg.go.dev/text/template){: external} that you can use to customize the CLI output.
+By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output you might want to sort the `Size` field in numerical order, but the command returns a string description. The `container-registry` CLI plug-in provides the format option that you can use to apply a [Go template](https://pkg.go.dev/text/template){: external} to the CLI output.
 
 You can alter the CLI output by applying the format option in two different ways:
 
 - Format the data in your CLI output. For example, change the `Created` field output from UNIX&reg; time to standard time.
-- Filter the data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the Go template `if gt` condition.
+- Filter the data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the [Go template](https://pkg.go.dev/text/template){: external} `if gt` condition.
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
-- [`ibmcloud cr image-digests`](#registry_cli_list_imagedigests) command
-- [`ibmcloud cr image-list`](#registry_cli_list_imagelist) command
-- [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect) command
-
-The following code examples demonstrate how you might use the formatting and filtering options.
-
-- Run the following `ibmcloud cr image-digests` command to display all untagged images referenced by their digests.
-
-    ```txt
-    ibmcloud cr image-digests --format '{{if not .Tags}}{{.Repository}}@{{.Digest}}{{end}}'
-    ```
-    {: pre}
-
-    The following message is an example of the output from the command
-
-    ```txt
-    example-<region>.icr.io/user1/my_first_repo@<digest1>
-    example-<region>.icr.io/user1/my_first_repo@<digest2>
-    example-<region>.icr.io/user1/my_first_repo@<digest3>
-    ```
-    {: screen}
-
-- Run the following `ibmcloud cr image-list` command to display the repository, tag, and security status of all tagged images that have a size over 1 MB.
-
-    ```txt
-    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
-    ```
-    {: pre}
-
-    The following message is an example of the output from the command:
-
-    ```txt
-    example-<region>.icr.io/user1/my_first_repo:latest No Issues
-    example-<region>.icr.io/user1/my_second_repo:1 2 Issues
-    example-<region>.icr.io/user1/my_second_repo:test1 1 Issue
-    example-<region>.icr.io/user1/my_second_repo_2:test2 7 Issues
-    ```
-    {: screen}
-
-    If the listing images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
-    {: tip}
-
-- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} Documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
-
-    ```txt
-    ibmcloud cr image-inspect ibm_public_image --format "{{ .ContainerConfig.Labels }}"
-    ```
-    {: pre}
-
-    The following message is an example of the output from the command:
-
-    ```txt
-    map[doc.url:/docs/images/docker_image_ibm_public_image/ibm_public_image_starter.html]
-    ```
-    {: screen}
-
-- Run the following `ibmcloud cr image-inspect` command to display the exposed ports for a specified image.
-
-    ```txt
-    ibmcloud cr image-inspect ibm_public_image --format "{{ .Config.ExposedPorts }}"
-    ```
-    {: pre}
-
-    The following message is an example of the output from the command:
-
-    ```txt
-    map[9080/tcp: 9443/tcp:]
-    ```
-    {: screen}
+- [Go template options for the `ibmcloud cr image-digests` command](#registry_cli_list_imagedigests).
+- [Go template options for the `ibmcloud cr image-list` command](#registry_cli_list_imagelist).
+- [Go template options for the `ibmcloud cr image-inspect` command](#registry_cli_list_imageinspect).
 
 ## Go template options for `ibmcloud cr image-digests`
 {: #registry_cli_list_imagedigests}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command.
+Review the following table to find available [Go template](https://pkg.go.dev/text/template){: external} options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -114,10 +48,29 @@ Review the following table to find available Go template options and data types 
 {: caption="Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list image digests" caption-side="bottom"}
 {: #table_registry_cli_list_image_digests}
 
+### Example Go format command for `ibmcloud cr image-digests`
+{: #registry_cli_list_imagedigests_go}
+
+To display all untagged images referenced by their digests, run the following `ibmcloud cr image-digests` command.
+
+```txt
+ibmcloud cr image-digests --format '{{if not .Tags}}{{.Repository}}@{{.Digest}}{{end}}'
+```
+{: pre}
+
+The following message is an example of the output from the command
+
+```txt
+example-<region>.icr.io/user1/my_first_repo@<digest1>
+example-<region>.icr.io/user1/my_first_repo@<digest2>
+example-<region>.icr.io/user1/my_first_repo@<digest3>
+```
+{: screen}
+
 ## Go template options for `ibmcloud cr image-list`
 {: #registry_cli_list_imagelist}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command.
+Review the following table to find available [Go template](https://pkg.go.dev/text/template){: external} options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -132,10 +85,33 @@ Review the following table to find available Go template options and data types 
 {: caption="Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list images" caption-side="bottom"}
 {: #table_registry_cli_list_images}
 
+### Example Go format command for `ibmcloud cr image-list`
+{: #registry_cli_list_imagelist_go}
+
+To display the repository, tag, and security status of all tagged images that are over 1 MB, run the following `ibmcloud cr image-list` command.
+
+```txt
+ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+```
+{: pre}
+
+The following message is an example of the output from the command:
+
+```txt
+example-<region>.icr.io/user1/my_first_repo:latest No Issues
+example-<region>.icr.io/user1/my_second_repo:1 2 Issues
+example-<region>.icr.io/user1/my_second_repo:test1 1 Issue
+example-<region>.icr.io/user1/my_second_repo_2:test2 7 Issues
+```
+{: screen}
+
+If the listing images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+{: tip}
+
 ## Go template options for `ibmcloud cr image-inspect`
 {: #registry_cli_list_imageinspect}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect) command.
+Review the following table to find available [Go template](https://pkg.go.dev/text/template){: external} options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect) command.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -212,3 +188,42 @@ Review the following table to find available Go template options and data types 
 | `Type` | String | This option displays the type of file system. |
 {: caption="Available fields and data types in RootFS" caption-side="bottom"}
 {: #table_registry_cli_list_rootfs}
+
+### Example Go format commands for `ibmcloud cr image-inspect`
+{: #registry_cli_list_imageinspect_go}
+
+The following code examples demonstrate how you might use the formatting and filtering options.
+
+#### Example 1 for `ibmcloud cr image-inspect`
+{: #registry_cli_list_imageinspect_go1}
+
+To display where {{site.data.keyword.IBM_notm}} Documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image, run the following `ibmcloud cr image-inspect` command.
+
+```txt
+ibmcloud cr image-inspect ibm_public_image --format "{{ .ContainerConfig.Labels }}"
+```
+{: pre}
+
+The following message is an example of the output from the command:
+
+```txt
+map[doc.url:/docs/images/docker_image_ibm_public_image/ibm_public_image_starter.html]
+```
+{: screen}
+
+#### Example 2 for `ibmcloud cr image-inspect`
+{: #registry_cli_list_imageinspect_go2}
+
+To display the exposed ports for a specified image, run the following `ibmcloud cr image-inspect` command.
+
+```txt
+ibmcloud cr image-inspect ibm_public_image --format "{{ .Config.ExposedPorts }}"
+```
+{: pre}
+
+The following message is an example of the output from the command:
+
+```txt
+map[9080/tcp: 9443/tcp:]
+```
+{: screen}

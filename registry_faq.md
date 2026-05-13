@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-16"
+lastupdated: "2026-05-13"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -343,6 +343,12 @@ The images that are not eligible are still displayed, but they do not count towa
 Images created before `2013-01-19T00:13:39Z` are excluded from retention policy evaluation.
 
 For more information, see [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan).
+
+## What can I use for signing images in {{site.data.keyword.registryshort_notm}}?
+{: #faq_sign_image}
+{: faq}
+
+{{site.data.keyword.registryshort_notm}} supports signed images with either [{{site.data.keyword.redhat_notm}} signatures](https://www.redhat.com/en/blog/container-image-signing){: external} or [cosign](https://github.com/sigstore/cosign){: external}. You can use various tools, such as Skopeo, Podman, and the {{site.data.keyword.redhat_openshift_notm}} CLI, to create {{site.data.keyword.redhat_notm}} signatures for your images. You can store your signed images for trusted content by using the {{site.data.keyword.redhat_notm}} signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}. For more information about signing images, see [Signing images for trusted content in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_trustedcontent).
 
 ## What region am I in?
 {: #faq_region}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-02-10"
+lastupdated: "2026-05-13"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -30,8 +30,8 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 | Locations in Americas | Are platform services logs available? |
 | --------------------- | ------------------------------------- |
 | `Dallas (us-south)` | [Yes]{: tag-green} |
-| `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Montreal (ca-mon)` | [Yes]{: tag-green} |
+| `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Toronto (ca-tor)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Americas locations" caption-side="bottom"}
 {: #table_registry_logs_service_americas}
@@ -66,9 +66,9 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 
 {{site.data.keyword.registryshort}} sends logs by {{site.data.keyword.logs_routing_full_notm}} in the regions that are indicated in the following table.
 
-| Dallas (`us-south`) | Washington DC (`us-east`) | Montreal (`ca-mon`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-| ------------------- | ------------------------- | ------------------- | ------------------ | -------------------- |
-| [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Dallas (`us-south`) | Montreal (`ca-mon`) | Sao Paulo (`br-sao`) | Toronto (`ca-tor`) | Washington DC (`us-east`) |
+| ------------------- | ------------------- | -------------------- | ------------------ | ------------------------- |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) |
 {: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #logr-table-1}
 {: tab-title="Americas"}
@@ -76,7 +76,7 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Chennai - Airtel (`in-che`) | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
+| Chennai - Airtel (`in-che`) | Osaka (`jp-osa`) | Sydney (`au-syd`) | Tokyo (`jp-tok`) |
 | --------------------------- | ---------------- | ----------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Asia-Pacific locations" caption-side="top"}

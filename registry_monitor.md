@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-05-13"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -72,8 +72,8 @@ You can configure one monitoring instance in each region to collect platform met
 | Locations in Americas | Platform metrics available |
 | --------------------- | -------------------------- |
 | `Dallas (us-south)` | [Yes]{: tag-green} |
-| `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Montreal (ca-mon)` | [Yes]{: tag-green} |
+| `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Toronto (ca-tor)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Americas locations" caption-side="bottom"}
 {: #table_registry_monitor_collect_service_metrics_americas}

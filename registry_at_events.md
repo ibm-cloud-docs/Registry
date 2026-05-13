@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-10"
+lastupdated: "2026-05-13"
 
 keywords: Track, tracking events, find events, activity tracking for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -32,8 +32,8 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | Locations in Americas | Service events available |
 | --------------------- | ------------------------ |
 | `Dallas (us-south)` | [Yes]{: tag-green} |
-| `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Montreal (ca-mon)` | [Yes]{: tag-green} |
+| `Sao Paulo (br-sao)` | [Yes]{: tag-green} |
 | `Toronto (ca-tor)` | [Yes]{: tag-green} |
 {: caption="The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Americas locations" caption-side="bottom"}
 {: #table_registry_at_event_collection_americas}
@@ -68,9 +68,9 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 
 {{site.data.keyword.registryshort}} sends activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following tables.
 
-| Dallas (`us-south`) | Washington DC (`us-east`) | Montreal (`ca-mon`) | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-| ------------------- | ------------------------- | ------------------- | ------------------ | -------------------- |
-| [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Dallas (`us-south`) | Montreal (`ca-mon`) | Sao Paulo (`br-sao`) | Toronto (`ca-tor`) | Washington DC (`us-east`) |
+| ------------------- | ------------------- | -------------------- | ------------------ | ------------------------- |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} (`global`) |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
 {: #atracker-table-1}
 {: tab-title="Americas"}
@@ -78,7 +78,7 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Chennai - Airtel (`in-che`) | Tokyo (`jp-tok`) | Sydney (`au-syd`) | Osaka (`jp-osa`) |
+| Chennai - Airtel (`in-che`) | Osaka (`jp-osa`) | Sydney (`au-syd`) | Tokyo (`jp-tok`) |
 | --------------------------- | ---------------- | ----------------- | ---------------- |
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Asia-Pacific locations" caption-side="top"}
