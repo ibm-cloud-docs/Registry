@@ -1229,7 +1229,11 @@ subcollection: Registry
 
 * [Go template options for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
 
+    * [Example Go format command for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests_go)
+
 * [Go template options for `ibmcloud cr image-list`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
+
+    * [Example Go format command for `ibmcloud cr image-list`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist_go)
 
 * [Go template options for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
 
@@ -1238,6 +1242,12 @@ subcollection: Registry
     * [`Healthcheck` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
 
     * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
+
+    * [Example Go format commands for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_go)
+
+        * [Example 1 for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_go1)
+
+        * [Example 2 for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_go2)
 
 [CLI change log](/docs/Registry?topic=Registry-registry_cli_change_log#registry_cli_change_log)
 
