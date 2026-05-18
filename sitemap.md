@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-18"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -191,6 +191,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [18 May 2026](/docs/Registry?topic=Registry-registry_release_notes#registry-18may2026)
+
+    * [New region in India, Mumbai - Airtel](/docs/Registry?topic=Registry-registry_release_notes#18may2026_mumbai)
 
 * [9 February 2026](/docs/Registry?topic=Registry-registry_release_notes#registry-09feb2026)
 

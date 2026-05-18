@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-18"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -81,6 +81,7 @@ You can configure one monitoring instance in each region to collect platform met
 | Locations in Asia Pacific | Platform metrics available |
 | ------------------------- | -------------------------- |
 | `Chennai - Airtel (in-che)` | [Yes]{: tag-green} |
+| `Mumbai - Airtel (in-mum)` | [Yes]{: tag-green} |
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
@@ -125,6 +126,7 @@ The following table shows the location of {{site.data.keyword.mon_short}} metric
 | `eu-es` | Not applicable | `es.icr.io` | `Madrid (eu-es)` |
 | `eu-gb` | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `in-che` | Not applicable | `in.icr.io` | `Chennai - Airtel (in-che)` |
+| `in-mum` | Not applicable | `in2.icr.io` | `Mumbai - Airtel (in-mum)` |
 | `jp-osa` | Not applicable | `jp2.icr.io` | `Osaka (jp-osa)` |
 | `jp-tok` | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
 | `us-south` | Not applicable | `us.icr.io` | `Dallas (us-south)` |

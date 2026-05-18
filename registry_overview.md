@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-03"
+lastupdated: "2026-05-18"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -367,6 +367,7 @@ Regional instances of {{site.data.keyword.registryshort}} are available by using
 | `eu-es` | Not applicable | `es.icr.io` | `private.es.icr.io` | Not applicable |
 | `eu-gb` | `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |
 | `in-che` | Not applicable | `in.icr.io` | `private.in.icr.io` | Not applicable |
+| `in-mum` | Not applicable | `in2.icr.io` | `private.in2.icr.io` | Not applicable |
 | `jp-osa` | Not applicable | `jp2.icr.io` | `private.jp2.icr.io` | Not applicable |
 | `jp-tok` | `ap-north` | `jp.icr.io` | `private.jp.icr.io` | Not applicable |
 | `us-south` | Not applicable | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |

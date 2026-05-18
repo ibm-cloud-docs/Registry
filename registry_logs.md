@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-18"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -39,6 +39,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platf
 | Locations in Asia Pacific | Are platform services logs available? |
 | ------------------------- | ------------------------------------- |
 | `Chennai - Airtel (in-che)` | [Yes]{: tag-green} |
+| `Mumbai - Airtel (in-mum)` | [Yes]{: tag-green} |
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
@@ -76,9 +77,9 @@ For more information about where to see {{site.data.keyword.registryshort_notm}}
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Chennai - Airtel (`in-che`) | Osaka (`jp-osa`) | Sydney (`au-syd`) | Tokyo (`jp-tok`) |
-| --------------------------- | ---------------- | ----------------- | ---------------- |
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Chennai - Airtel (`in-che`) | Mumbai - Airtel (`in-mum`) | Osaka (`jp-osa`) | Sydney (`au-syd`) | Tokyo (`jp-tok`) |
+| --------------------------- | -------------------------- | ---------------- | ----------------- | ---------------- |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Asia-Pacific locations" caption-side="top"}
 {: #logr-table-2}
 {: tab-title="Asia Pacific"}
