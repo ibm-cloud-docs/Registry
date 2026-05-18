@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-05-18"
 
 keywords: IBM Cloud Container Registry, firewall, access, communicate, domains, subdomains, traffic, allowlist
 
@@ -37,6 +37,7 @@ In addition to the following regional subdomains, you must also allow traffic fr
 | London | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
 | Madrid | `es.icr.io` | Not applicable |
 | Montreal | `ca2.icr.io` | Not applicable |
+| Mumbai - Airtel | `in2.icr.io` | Not applicable |
 | Osaka | `jp2.icr.io` | Not applicable |
 | Sao Paolo | `br.icr.io` | Not applicable |
 | Sydney | `au.icr.io` | `registry.au-syd.bluemix.net` |
@@ -78,6 +79,7 @@ If you use a public network and domain-based firewall rules to access {{site.dat
 | `eu-es` | `dd0.es.icr.io` |
 | `eu-gb` | `dd0.uk.icr.io` |
 | `in-che` | `dd0.in.icr.io` |
+| `in-mum` | `dd0.in2.icr.io` |
 | `jp-osa` | `dd0.jp2.icr.io` |
 | `jp-tok` | `dd0.jp.icr.io` |
 | `us-south` | `dd0.us.icr.io` |

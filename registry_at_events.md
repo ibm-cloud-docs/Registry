@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-18"
 
 keywords: Track, tracking events, find events, activity tracking for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -41,6 +41,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | Locations in Asia Pacific | Service events available |
 | ------------------------- | ------------------------ |
 | `Chennai - Airtel (in-che)` | [Yes]{: tag-green} |
+| `Mumbai - Airtel (in-mum)` | [Yes]{: tag-green} |
 | `Osaka (jp-osa)` | [Yes]{: tag-green} |
 | `Sydney (au-syd)` | [Yes]{: tag-green} |
 | `Tokyo (jp-tok)` | [Yes]{: tag-green} |
@@ -78,9 +79,9 @@ For more information about where to find {{site.data.keyword.registryshort_notm}
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Chennai - Airtel (`in-che`) | Osaka (`jp-osa`) | Sydney (`au-syd`) | Tokyo (`jp-tok`) |
-| --------------------------- | ---------------- | ----------------- | ---------------- |
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
+| Chennai - Airtel (`in-che`) | Mumbai - Airtel (`in-mum`) | Osaka (`jp-osa`) | Sydney (`au-syd`) | Tokyo (`jp-tok`) |
+| --------------------------- | -------------------------- | ---------------- | ----------------- | ---------------- |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where activity tracking events are sent in Asia-Pacific locations" caption-side="top"}
 {: #atracker-table-2}
 {: tab-title="Asia Pacific"}
