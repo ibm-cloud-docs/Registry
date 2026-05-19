@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-05-19"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -538,7 +538,7 @@ us.icr.io/birds/bluebird:1
 
 Delete all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
 
-You can view your untagged images by using the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command, and then clean up the untagged images by running the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command.
+You can view all your tagged and untagged images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. If you want to view just your untagged images, you can run the `ibmcloud cr image-digests` command with Go language formatting, see [Example Go format command for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list&interface=ui#registry_cli_list_imagedigests_go). You can then check that you do want to remove these untagged images before you run the `ibmcloud cr image-prune-untagged` command.
 {: tip}
 
 ```sh

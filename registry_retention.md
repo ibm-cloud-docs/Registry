@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-05-19"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -211,6 +211,9 @@ ibmcloud cr retention-policy-set --images All NAMESPACE
 {: support}
 
 You can clean up your namespace and reduce your bills by deleting your [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in the namespace and optionally output the results in JSON format.
+
+You can view all your tagged and untagged images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. If you want to view just your untagged images, you can run the `ibmcloud cr image-digests` command with Go language formatting, see [Example Go format command for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list&interface=ui#registry_cli_list_imagedigests_go). You can then check that you do want to remove these untagged images before you run the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command.
+{: tip}
 
 If you want to delete your untagged images and output the results in JSON format, run the following [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command, where `NAMESPACE` is your namespace:
 
