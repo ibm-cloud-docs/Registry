@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-19"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -324,7 +324,7 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 {: #faq_untagged_image_prune}
 {: faq}
 
-You can't do a dry run of the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command. But you can view your untagged images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. You can then check that you do want to remove these untagged images before you run the `ibmcloud cr image-prune-untagged` command.
+You can't do a dry run of the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command. However, you can view all your tagged and untagged images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. If you want to view just your untagged images, you can run the `ibmcloud cr image-digests` command with Go language formatting, see [Example Go format command for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list&interface=ui#registry_cli_list_imagedigests_go). You can then check that you do want to remove these untagged images before you run the `ibmcloud cr image-prune-untagged` command.
 
 ## How do I restore an image that I removed by accident?
 {: #faq_image_restore}
