@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-05-18"
+lastupdated: "2026-05-20"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1254,6 +1254,8 @@ subcollection: Registry
         * [Example 2 for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_go2)
 
 [CLI change log](/docs/Registry?topic=Registry-registry_cli_change_log#registry_cli_change_log)
+
+* [Version 1.3.21](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-1321)
 
 * [Version 1.3.19](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-1319)
 

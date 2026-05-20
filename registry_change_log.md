@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-02-18"
+lastupdated: "2026-05-20"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI, vulnerabilities, what's new in CLI
 
@@ -20,6 +20,15 @@ In this change log you can learn about what's new in the {{site.data.keyword.reg
 
 For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 
+## Version 1.3.21
+{: #cli-change-logv1-1321}
+
+Version 1.3.21 of the CLI was released on 19 May 2026.
+
+This release has the following changes:
+
+- Remediates vulnerabilities.
+
 ## Version 1.3.19
 {: #cli-change-logv1-1319}
 
@@ -27,7 +36,6 @@ Version 1.3.19 of the CLI was released on 13 February 2026.
 
 This release has the following changes:
 
-- Updates to support the new region in Chennai - Airtel, India (`in-che`).
 - Corrects typographical errors.
 
 ## Version 1.3.18
