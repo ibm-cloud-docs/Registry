@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-05-21"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key, upload images, pull images, push images
 
@@ -166,85 +166,6 @@ To create an image from a source image, complete the following steps.
     ibmcloud cr image-list
     ```
     {: pre}
-
-## Building Docker images to use them with your namespace
-{: #registry_images_creating}
-{: help}
-{: support}
-
-You can build a Docker image directly in {{site.data.keyword.cloud_notm}} or create your own Docker image on your local computer and upload (push) it to your namespace in {{site.data.keyword.registrylong_notm}}.
-
-Before you begin, complete the following tasks.
-
-- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
-
-    If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
-
-If you want to take advantage of {{site.data.keyword.cloud_notm}} compute resources and internet connection or Docker is not installed on your workstation, build your image directly in {{site.data.keyword.cloud_notm}}. If you need to access resources in your build that are on servers that are behind your firewall, build your image locally.
-
-To build your own Docker image, complete the following steps:
-
-1. Create a local directory where you want to store the build context. The build context contains your Dockerfile and related build artifacts, such as the app code. Navigate to this directory in a command-line window.
-2. Create a Dockerfile.
-    1. Create a Dockerfile in your local directory.
-
-        ```txt
-        touch Dockerfile
-        ```
-        {: pre}
-
-    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace `SOURCE_IMAGE` and `TAG` with the image repository and tag that you want to use. If you're using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
-
-        ```txt
-        FROM SOURCE_IMAGE:TAG
-        ```
-        {: pre}
-
-        For example, to create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (`ibm/liberty`) image, use the following command.
-
-        ```txt
-        FROM icr.io/ibm/liberty:latest
-        LABEL description="This is my test Dockerfile"
-        EXPOSE 9080
-        ```
-        {: pre}
-
-        This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile reference](https://docs.docker.com/reference/dockerfile/){: external}.
-
-3. Decide on a name for your image. The image name must be in the following format, where `REGION` is the region, `MY_NAMESPACE` is your namespace information, `REPO_NAME` is the name of your repository, and `TAG` is the version that you want to use for your image:
-
-    ```txt
-    REGION.icr.io/MY_NAMESPACE/REPO_NAME:TAG
-    ```
-    {: pre}
-
-    To find your namespace, run the `ibmcloud cr namespace-list` command.
-    {: tip}
-
-4. Take note of the path to the directory that contains your Dockerfile. If you run the commands in the following steps while your working directory is set to where your build context is stored, you can replace `DIRECTORY` with a period (.).
-5. Build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}.
-
-    1. Build the image from your Dockerfile on your local computer and tag it with your image name, where `IMAGE_NAME` is the name of your image and `DIRECTORY` is the path to the directory.
-
-        ```sh
-        docker build -t IMAGE_NAME DIRECTORY
-        ```
-        {: pre}
-
-    2. Optional: Test your image on your local computer before you push it to your namespace.
-
-        ```sh
-        docker run IMAGE_NAME
-        ```
-        {: pre}
-
-        Replace `IMAGE_NAME` with the name of your image.
-
-    3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
-
-To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
 
 ## Pushing images by using an API key
 {: #registry_api_key_push_image}
