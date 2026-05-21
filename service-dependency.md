@@ -195,7 +195,7 @@ Configuration management
 :   Deployment, upgrade, patch, and so on, of the service and service instances.
 
 Customer responsibility
-:   Functions provided by customers to support specific service and service instances function. For example, {{site.data.keyword.keymanagementservicefull_notm}} instances that are provided by customer to support service BYOK encryption.
+:   Functions provided by customers to support specific service and service instances function. For example, {{site.data.keyword.keymanagementservicefull_notm}} instances provided by customer to support service BYOK encryption.
 
 Disaster recovery
 :   Backup, recovery, restart of the service and service instances in the case of a disruption.
