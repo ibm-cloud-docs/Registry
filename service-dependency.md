@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-05-18"
+lastupdated: "2026-05-21"
 
 keywords:
 
@@ -39,7 +39,7 @@ Minimal
 ## VPC Data and control plane
 {: #vpc-data-and-control-plane}
 
-The following dependencies apply to the following deployment locations: Chennai - Airtel (in-che), Frankfurt (eu-de), London (eu-gb), Madrid (eu-es), Montreal (ca-mon), Sydney (au-syd), Toronto (ca-tor), Washington DC (us-east).
+The following dependencies apply to the following deployment locations: Chennai - Airtel (in-che), Frankfurt (eu-de), London (eu-gb), Madrid (eu-es), Montreal (ca-mon), Mumbai - Airtel (in-mum), Sydney (au-syd), Toronto (ca-tor), Washington DC (us-east).
 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
@@ -195,7 +195,7 @@ Configuration management
 :   Deployment, upgrade, patch, and so on, of the service and service instances.
 
 Customer responsibility
-:   Functions provided by customers to support specific service and service instances function. For example, {{site.data.keyword.keymanagementservicefull_notm}} instances provided by customer to support service BYOK encryption.
+:   Functions provided by customers to support specific service and service instances function. For example, {{site.data.keyword.keymanagementservicefull_notm}} instances that are provided by customer to support service BYOK encryption.
 
 Disaster recovery
 :   Backup, recovery, restart of the service and service instances in the case of a disruption.
