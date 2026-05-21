@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-05-21"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -447,8 +447,6 @@ subcollection: Registry
 * [Copying images between registries](/docs/Registry?topic=Registry-registry_images_#registry_images_copying)
 
 * [Creating images that refer to a source image](/docs/Registry?topic=Registry-registry_images_#registry_images_source)
-
-* [Building Docker images to use them with your namespace](/docs/Registry?topic=Registry-registry_images_#registry_images_creating)
 
 * [Pushing images by using an API key](/docs/Registry?topic=Registry-registry_images_#registry_api_key_push_image)
 
