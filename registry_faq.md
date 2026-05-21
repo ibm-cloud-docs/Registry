@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-05-21"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -119,6 +119,20 @@ If you no longer require a registry namespace, you can remove the namespace from
 
 When you remove a namespace, any images that are stored in that namespace are also deleted. This action cannot be undone.
 {: attention}
+
+## How do I access my {{site.data.keyword.registryshort}} namespaces?
+{: #faq_access}
+{: faq}
+
+You can access your {{site.data.keyword.registrylong_notm}} namespaces in several ways, depending on your use case. You can create, view, modify, and delete namespaces in the {{site.data.keyword.cloud_notm}} console or {{site.data.keyword.cloud_notm}} CLI. You can push and pull images by using using third party tools such as [Docker](https://www.docker.com/){: external}, [Podman](https://podman.io/){: external}, [Skopeo](https://skopeo.org/){: external}, [ORAS](https://oras.land/){: external}, [regctl](https://regclient.org/usage/regctl/){: external}, and [Crane](https://github.com/google/go-containerregistry/tree/main/cmd/crane){: external}. You can also use the {{site.data.keyword.cloud_notm}} SDKs to manipulate the registry.
+
+Authenticating automation with long-lived credentials
+:   Use API keys (either user API keys or service ID API keys) with IAM access policies. API keys are the preferred method for automation and Kubernetes clusters. For more information, see [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating).
+
+Authenticating interactive access
+:   The `ibmcloud` command uses IAM refresh tokens for session access when you are working interactively with the registry. You can use the `ibmcloud cr login` command to set up refresh token access with Docker, Podman, and other clients. For more information, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+
+All access methods require appropriate IAM access policies. For more information about setting up access policies, see [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 
 ## How do I obtain image pull credentials for {{site.data.keyword.registryshort}}?
 {: #faq_credentials}

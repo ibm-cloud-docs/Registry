@@ -1586,6 +1586,8 @@ subcollection: Registry
 
 * [How do I delete a namespace?](/docs/Registry?topic=Registry-registry_faq#faq_namespace_delete)
 
+* [How do I access my {{site.data.keyword.registryshort}} namespaces?](/docs/Registry?topic=Registry-registry_faq#faq_access)
+
 * [How do I obtain image pull credentials for {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_credentials)
 
 * [How do I list image names?](/docs/Registry?topic=Registry-registry_faq#faq_list_images)
