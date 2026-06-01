@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-08-12"
+  years: 2017, 2026
+lastupdated: "2026-06-01"
 
 keywords: Docker, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, skopeo, podman, Red Hat signatures, sign images, images, signatures, cli
 
@@ -38,7 +38,7 @@ You can use the following tools to create {{site.data.keyword.redhat_notm}} sign
 {: help}
 {: support}
 
-To use [Skopeo](https://github.com/containers/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command.
+To use [Skopeo](https://github.com/podman-container-tools/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command.
 
 The following example doesn't include Skopeo authentication.
 {: note}

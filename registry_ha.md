@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-06-01"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
 
@@ -75,4 +75,4 @@ Review the following frequently asked questions about high availability.
 ### Are users required to replicate the service?
 {: #ha-dr_service_replicate}
 
-You're not required to replicate your data into another region, but you can do it yourself by using tools such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}.
+You're not required to replicate your data into another region, but you can do it yourself by using tools such as [`skopeo copy`](https://github.com/podman-container-tools/skopeo/blob/main/docs/skopeo-copy.1.md){: external}.
