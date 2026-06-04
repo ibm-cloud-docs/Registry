@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-04"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -1566,6 +1566,9 @@ Cleans up a namespace by retaining a specified number of images for each reposit
 You can choose whether to exclude all untagged images from the total number of images that you decide to retain.
 
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
+{: tip}
+
+The retention command runs against each repository in your namespace. If you have more than one repository in your namespace, the image count after the retention command runs might be higher than the number that you set as the maximum for a repository. For example, if you set your retention command to 500 images per repository, and you have 10 repositories in your namespace, you might have an image count of 5,000.
 {: tip}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
