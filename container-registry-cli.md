@@ -34,6 +34,7 @@ ibmcloud plugin install container-registry
 {: pre}
 
 For more information, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
+
 3. Log in to {{site.data.keyword.cloud_notm}} with the `ibmcloud login` command to generate an [access token](#x2113001){: term} and authenticate your session so that you can run commands in the CLI.
 
 ### Notes
