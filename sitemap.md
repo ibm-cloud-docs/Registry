@@ -50,6 +50,8 @@ subcollection: Registry
 
 [About {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_overview#registry_overview)
 
+* [Key features](/docs/Registry?topic=Registry-registry_overview#registry_key_features)
+
 * [Service plans](/docs/Registry?topic=Registry-registry_overview#registry_plans)
 
 * [Quota limits and billing](/docs/Registry?topic=Registry-registry_overview#registry_plan_billing)
