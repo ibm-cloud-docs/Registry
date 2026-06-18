@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-27"
+lastupdated: "2026-06-18"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -26,15 +26,37 @@ A Docker image is the basis for every container that you create. An image is cre
 
 When you push images to {{site.data.keyword.registryshort}}, you benefit from the built-in Vulnerability Advisor features that scan for potential security issues and vulnerabilities. Vulnerability Advisor checks for vulnerable packages in specific Docker base images, and known vulnerabilities in app configuration settings. When vulnerabilities are found, information about the vulnerability is provided. You can use this information to resolve security issues so that containers are not deployed from vulnerable images.
 
-Review the following table to find an overview of the benefits of using {{site.data.keyword.registryshort}}.
+## Key features
+{: #registry_key_features}
 
-| Benefit | Description |
-| ------- | ----------- |
-| Highly available and scalable private registry. | Set up your own image namespace in a multi-tenant, highly available, scalable, encrypted private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.  \n  \n Store your private Docker images and share them with users in your {{site.data.keyword.cloud_notm}} account. |
-| Image security compliance with Vulnerability Advisor. | Benefit from automatic scanning of images in your namespace.  \n  \n Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised. |
-| Quota limits for storage and pull traffic. | Benefit from free storage and pull traffic to your private images until you reach your free quota.  \n  \n Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level. |
-{: caption="{{site.data.keyword.registryshort}} benefits" caption-side="bottom"}
-{: #table_registry_overview_benefits}
+{{site.data.keyword.registrylong_notm}} provides the following key features to help you manage your container images securely and efficiently:
+
+Private registry
+:   Store and manage your private container images in a highly available, scalable, secure, and encrypted private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. Share your private Docker images with users in your {{site.data.keyword.cloud_notm}} account.
+
+Global and regional registries
+:   Choose between a global registry or regional registries to store your images based on your data sovereignty and performance requirements.
+
+Flexible quota management
+:   Control costs by setting custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level.
+
+IAM access control
+:   Manage access to your namespaces and images by using {{site.data.keyword.iamshort}} (IAM) policies and trusted profiles.
+
+Image signing
+:   Sign your images by using {{site.data.keyword.redhat_notm}} signatures to ensure image integrity and verify that images were pushed by authorized parties.
+
+Private network connections
+:   Connect to {{site.data.keyword.registryshort}} over private networks by using Virtual Private Endpoints (VPE) for enhanced security.
+
+Resource group organization
+:   Organize namespaces within resource groups to manage access and resources at the resource group level.
+
+Retention policies
+:   Automatically clean up your namespaces by setting retention policies to clean up unwanted images.
+
+OCI and Docker support
+:   Work with OCI-compliant container images and Docker images, including support for manifest lists and multi-architecture images. Use Docker, Podman, Skopeo, Buildah, and other OCI-compliant clients to interact with the registry.
 
 ## Service plans
 {: #registry_plans}
