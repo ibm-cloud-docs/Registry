@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-06-18"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -1646,6 +1646,9 @@ OK
 Displays all images in the trash in your {{site.data.keyword.cloud_notm}} account. You can also see the number of days that remain until the image is removed from the trash. The number of days that remain until removal is rounded up. For example, if the time until removal is 2 hours, it shows as 1 day. Images remain in the trash for 30 days after they are deleted from your live repository.
 
 If you want to restore an image from the trash, run the [`ibmcloud cr image-restore`](#bx_cr_image_restore) command, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
+
+You can't delete images from the trash. Images are stored in the trash for 30 days. You are not billed for any images that are in the trash.
+{: note}
 
 ```sh
 ibmcloud cr trash-list [--restrict NAMESPACE] [--output json | -o json]

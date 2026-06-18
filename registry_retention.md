@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-18"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -25,6 +25,9 @@ You can detect and delete old images from all the repositories in a namespace by
 The [`ibmcloud cr retention-run`](#retention_images) and [`ibmcloud cr retention-policy-set`](#retention_policy_set) commands produce a list of images to delete. You must confirm that you want to delete those images. After you run the `ibmcloud cr retention-policy-set` command the first time, the policy runs automatically and deletes any images that meet the criteria that are specified in the policy. Deleted images are stored in the trash for 30 days.
 
 If you want to check what's in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash) command. You can restore images from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-registry_images_#registry_images_restore) command.
+
+You can't delete images from the trash. Images are stored in the trash for 30 days. You are not billed for any images that are in the trash.
+{: note}
 
 If you want to check your policies, you can run the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list) command.
 

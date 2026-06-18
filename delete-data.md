@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-08-12"
+  years: 2020, 2026
+lastupdated: "2026-06-18"
 
 keywords: data, data encryption in IBM Cloud Container Registry, data storage for IBM Cloud Container Registry, personal data in IBM Cloud Container Registry, data deletion for IBM Cloud Container Registry, data in IBM Cloud Container Registry, data security in IBM Cloud Container Registry, deleting, namespace, images, private repositories, managing your data, service, data, trash
 
@@ -68,6 +68,8 @@ If you no longer require a registry namespace, you can remove the namespace from
 You can delete unwanted images from your private repository by using either the {{site.data.keyword.cloud_notm}} console or the command-line interface (CLI). For more information, see [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
 
 You can clean up your namespace by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registrylong_notm}}. You can detect and delete old images from all the repositories in a namespace by running a one-off command `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
+
+You can't delete images from the trash. Images are stored in the trash for 30 days. You are not billed for any images that are in the trash. You can check which images are in the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command.
 
 ### Deleting private repositories
 {: #data-delete_private_repo}

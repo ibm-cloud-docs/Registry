@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-06-18"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -224,6 +224,14 @@ For more information, see [Using Podman to authenticate with the registry](/docs
 {: faq}
 
 Images that are in the trash don't count toward your quota.
+
+## How do I empty the trash in {{site.data.keyword.registryshort_notm}}?
+{: #faq_trash_empty}
+{: faq}
+
+You can't delete images from the trash. Images are stored in the trash for 30 days. You are not billed for any images that are in the trash.
+
+You can check which images are in the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command.
 
 ## How do I find the image digest?
 {: #faq_digest}
