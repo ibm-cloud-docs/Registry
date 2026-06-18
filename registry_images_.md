@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-06-18"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key, upload images, pull images, push images
 
@@ -228,6 +228,9 @@ Deleting an image that is being used by an existing deployment might cause scale
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
+
+You can't delete images from the trash. Images are stored in the trash for 30 days. You are not billed for any images that are in the trash.
+{: note}
 
 Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, the copy of the image is not removed. If you want to remove a tag from an image and make sure that the underlying image and any other tags remain in place, see [Removing tags from images in your private repository](#registry_images_untag) command.
 {: tip}

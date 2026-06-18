@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-06-11"
+lastupdated: "2026-06-18"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1605,6 +1605,8 @@ subcollection: Registry
 * [How do I log in to {{site.data.keyword.registryshort}} with Podman?](/docs/Registry?topic=Registry-registry_faq#faq_login_podman)
 
 * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
+
+* [How do I empty the trash in {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_trash_empty)
 
 * [How do I find the image digest?](/docs/Registry?topic=Registry-registry_faq#faq_digest)
 
