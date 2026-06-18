@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-04"
+lastupdated: "2026-06-17"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -13,7 +13,6 @@ content-type: cli-docs
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # {{site.data.keyword.registryshort_notm}} CLI
 {: #containerregcli}
@@ -27,7 +26,15 @@ You can use the {{site.data.keyword.registrylong}} command-line interface (CLI),
 Before you can use the {{site.data.keyword.registryshort}} CLI, you must complete the following prerequisites.
 
 1. Install the `ibmcloud` CLI plug-in, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
-2. Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
+2. Install the `container-registry` CLI plug-in.
+
+    ```sh
+    ibmcloud plugin install container-registry
+    ```
+    {: pre}
+
+    For more information, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
+
 3. Log in to {{site.data.keyword.cloud_notm}} with the `ibmcloud login` command to generate an [access token](#x2113001){: term} and authenticate your session so that you can run commands in the CLI.
 
 ### Notes
