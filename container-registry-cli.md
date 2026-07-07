@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-07-07"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -1419,7 +1419,7 @@ OK
 ## `ibmcloud cr retention-policy-list`
 {: #bx_cr_retention_policy_list}
 
-List the image retention policies for your account. Image retention policies retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted. You can also see whether the option to retain all untagged images applies to the policy.
+List the image retention policies for your account. Image retention policies retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted. You can also see whether the option to retain all untagged images applies to the policy, and whether a deletion threshold age is set.
 
 Where an image within a repository is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
@@ -1461,8 +1461,9 @@ The command in the [example](#bx_cr_retention_policy_list_example) returns the f
 	"birds": {
 		"namespace": "birds",
 		"account": "",
-		"images_per_repo": -1,
-		"retain_untagged": true
+		"images_per_repo": 10,
+		"deletion_threshold_days": 365,
+		"retain_untagged": false
 	},
 	"birds2": {
 		"namespace": "birds2",
@@ -1479,7 +1480,7 @@ The command in the [example](#bx_cr_retention_policy_list_example) returns the f
 
 Set a policy to retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted. When you set a policy it runs interactively, then it runs daily. You can set only one policy in each namespace.
 
-You can choose whether to exclude all untagged images from the total number of images that you decide to retain.
+You can choose whether to exclude all untagged images from the total number of images that you decide to retain. You can also set a minimum age threshold so that images younger than the threshold are always retained, regardless of the `--images` count.
 
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
@@ -1490,7 +1491,7 @@ If a retention policy deletes an image that you want to keep, you can restore th
 If you want to cancel a retention policy, see [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep).
 
 ```sh
-ibmcloud cr retention-policy-set [--retain-untagged] [--force | -f] --images IMAGE_COUNT NAMESPACE
+ibmcloud cr retention-policy-set [--retain-untagged] [--deletion-threshold-days DAYS] [--force | -f] --images IMAGE_COUNT NAMESPACE
 ```
 
 For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
@@ -1511,6 +1512,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 
 `--retain-untagged`
 :   (Optional) Retain all untagged images when the retention policy is being processed. Only tagged images are analyzed and, if the images don't meet the criteria, they are deleted. If the option isn't specified, all tagged and untagged images are analyzed and, if the images don't meet the criteria, they are deleted.
+
+`--deletion-threshold-days`
+:   (Optional) Sets a minimum age in days that an image must reach before the retention policy can delete it. Images that are younger than `DAYS` are always retained, even if retaining them exceeds the `--images` count. `DAYS` must be a positive integer. The default value is `0`, which means no threshold applies.
 
 `--force`, `-f`
 :   (Optional) Force the command to run with no user prompts.
@@ -1546,10 +1550,10 @@ OK
 ### Example 2
 {: #bx_cr_retention_policy_set_example2}
 
-Revert the policy to the default state so that you keep all your images in the `birds` namespace by entering `All` as the number of images to keep and `birds` as the namespace.
+Set a policy that retains the newest 10 images in each repository in the `birds` namespace, but protects any image that is fewer than 90 days old from deletion, even if retaining those images exceeds the count of 10.
 
 ```sh
-ibmcloud cr retention-policy-set --images All birds
+ibmcloud cr retention-policy-set --images 10 --deletion-threshold-days 90 birds
 ```
 {: pre}
 
@@ -1557,6 +1561,31 @@ ibmcloud cr retention-policy-set --images All birds
 {: #bx_cr_retention_policy_set_output2}
 
 The command in [example 2](#bx_cr_retention_policy_set_example2) returns the following output:
+
+```text
+Found n images to delete.
+
+OK
+A scheduled retention policy is set that keeps 10 images in each repository in birds, with a deletion threshold of 90 days, and retain-untagged is set to false.
+
+OK
+```
+{: screen}
+
+### Example 3
+{: #bx_cr_retention_policy_set_example3}
+
+Revert the policy to the default state so that you keep all your images in the `birds` namespace by entering `All` as the number of images to keep and `birds` as the namespace.
+
+```sh
+ibmcloud cr retention-policy-set --images All birds
+```
+{: pre}
+
+### Output for example 3
+{: #bx_cr_retention_policy_set_output3}
+
+The command in [example 3](#bx_cr_retention_policy_set_example3) returns the following output:
 
 ```text
 The retention policy to keep all images in birds is set.
@@ -1570,7 +1599,7 @@ OK
 
 Cleans up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
 
-You can choose whether to exclude all untagged images from the total number of images that you decide to retain.
+You can choose whether to exclude all untagged images from the total number of images that you decide to retain. You can also set a minimum age threshold so that images younger than the threshold are always retained, regardless of the `--images` count.
 
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
@@ -1585,7 +1614,7 @@ If an image that you're expecting to see doesn't show in the list that is produc
 {: tip}
 
 ```sh
-ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-untagged] --images IMAGE_COUNT NAMESPACE
+ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-untagged] [--deletion-threshold-days DAYS] --images IMAGE_COUNT NAMESPACE
 ```
 
 For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
@@ -1612,6 +1641,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 
 `--retain-untagged`
 :   (Optional) Retain all untagged images when the retention policy is being processed. Only tagged images are analyzed and, if the images don't meet the criteria, they are deleted. If the option isn't specified, all tagged and untagged images are analyzed and, if the images don't meet the criteria, they are deleted.
+
+`--deletion-threshold-days`
+:   (Optional) Sets a minimum age in days that an image must reach before the retention run can delete it. Images that are younger than `DAYS` are always retained, even if retaining them exceeds the `--images` count. `DAYS` must be a positive integer. The default value is `0`, which means no threshold applies.
 
 `--images`
 :   Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGE_COUNT` is the number of images that you want to retain in each repository for the namespace.
