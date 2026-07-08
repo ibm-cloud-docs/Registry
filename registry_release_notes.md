@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-18"
+lastupdated: "2026-07-07"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
@@ -20,12 +20,20 @@ content-type: release-note
 What's new in {{site.data.keyword.registrylong}} and Vulnerability Advisor? The changes are grouped by date.
 {: shortdesc}
 
+## 07 July 2026
+{: #registry-deletion-threshold}
+{: release-note}
+
+New `--deletion-threshold-days` option for retention policies and retention runs {: #deletion-threshold-days}
+:   You can now set a minimum age threshold for image deletion when you run a retention policy or a one-off retention run. Images that are younger than the specified number of days are always retained, even if retaining them exceeds the `--images` per-repository count. Use the `--deletion-threshold-days` option with the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) commands. For more information, see [Cleaning up your namespaces in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_retention).
+
 ## 18 May 2026
 {: #registry-18may2026}
 {: release-note}
 
 New region in India, Mumbai - Airtel {: #18may2026_mumbai}
 :   A new region in India, Mumbai - Airtel, is available. The new region is `in-mum` and the domain name is `in2.icr.io`. You can target the new region in the {{site.data.keyword.cloud_notm}} console or in the command-line interface (CLI) by running `ibmcloud cr region-set in-mum`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
+
 
 ## 9 February 2026
 {: #registry-09feb2026}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-07-07"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -193,6 +193,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [07 July 2026](/docs/Registry?topic=Registry-registry_release_notes#registry-deletion-threshold)
+
+    * [New `--deletion-threshold-days` option for retention policies and retention runs](/docs/Registry?topic=Registry-registry_release_notes#deletion-threshold-days)
 
 * [18 May 2026](/docs/Registry?topic=Registry-registry_release_notes#registry-18may2026)
 
@@ -1182,6 +1186,10 @@ subcollection: Registry
     * [Example 2](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_example2)
 
     * [Output for example 2](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_output2)
+
+    * [Example 3](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_example3)
+
+    * [Output for example 3](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_output3)
 
 * [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run)
 

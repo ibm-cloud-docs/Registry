@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-07-07"
 
-keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
+keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash, deletion threshold, deletion_threshold_days, minimum age
 
 subcollection: Registry
 
@@ -21,6 +21,8 @@ You can clean up your [namespace](#x2031005){: term} by choosing to retain only 
 You can also choose whether to delete or retain your untagged images.
 
 You can detect and delete old images from all the repositories in a namespace by running a one-off command `ibmcloud cr retention-run`, or by scheduling a policy by running the `ibmcloud cr retention-policy-set` command. You can choose the number of images that you want to keep in each repository in a namespace, all other images are automatically deleted. Both options keep the most recent images. The age of the image is determined by when the image was created, not when it was pushed to the [registry](#x2064940){: term}. The number of images that are kept is the same for each repository in that namespace.
+
+You can also set a deletion threshold to protect recently created images from deletion. When a deletion threshold is set, images that are younger than the specified number of days are always retained, even if keeping them causes the per-repository count to exceed the `--images` value.
 
 The [`ibmcloud cr retention-run`](#retention_images) and [`ibmcloud cr retention-policy-set`](#retention_policy_set) commands produce a list of images to delete. You must confirm that you want to delete those images. After you run the `ibmcloud cr retention-policy-set` command the first time, the policy runs automatically and deletes any images that meet the criteria that are specified in the policy. Deleted images are stored in the trash for 30 days.
 
@@ -65,7 +67,7 @@ For more information, see the following topics for assistance:
 
 Use the `ibmcloud cr retention-run` command to clean up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
 
-You can choose whether to exclude untagged images from the clean-up process.
+You can choose whether to exclude untagged images from the clean-up process. You can also specify a deletion threshold so that recently created images are never deleted.
 
 The [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) command lists the images to delete and gives you the option to cancel before deletion.
 
@@ -108,6 +110,15 @@ To reduce the number of images in each repository within your namespace by using
 
         Where `IMAGE_COUNT` is the number of images that you want to retain for each repository within your namespace `NAMESPACE`.
 
+    - If you want to protect recently created images from deletion, use the `--deletion-threshold-days` option. Images younger than the specified number of days are always retained, even if they exceed the `--images` count:
+
+        ```txt
+        ibmcloud cr retention-run --images IMAGE_COUNT --deletion-threshold-days DAYS NAMESPACE
+        ```
+        {: pre}
+
+        Where `IMAGE_COUNT` is the number of images to retain, `DAYS` is the minimum age in days before an image can be deleted, and `NAMESPACE` is your namespace.
+
     If an image that you're expecting to see doesn't show in the list that is produced, see [Why doesn't the retention command show all the images?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention) for assistance.
     {: tip}
 
@@ -128,7 +139,7 @@ To reduce the number of images in each repository within your namespace by using
 
 You can set a retention policy for your namespaces to retain only images that meet your criteria. The retention policy runs automatically to clean up your namespaces.
 
-You can choose whether to exclude untagged images from the clean-up process.
+You can choose whether to exclude untagged images from the clean-up process. You can also specify a deletion threshold so that recently created images are never deleted.
 
 You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) command to set a policy that retains a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted and moved to the trash. When you set a policy it runs immediately, then it runs daily. You can set only one policy in each namespace.
 
@@ -175,19 +186,30 @@ To set a policy and immediately move your deleted images to the trash, complete 
 
         A list of images to delete is displayed.
 
+    - If you want to protect recently created images from deletion, use the `--deletion-threshold-days` option. Images younger than the specified number of days are always retained, even if they exceed the `--images` count:
+
+        ```txt
+        ibmcloud cr retention-policy-set --images IMAGE_COUNT --deletion-threshold-days DAYS NAMESPACE
+        ```
+        {: pre}
+
+        Where `IMAGE_COUNT` is the number of images to retain, `DAYS` is the minimum age in days before an image can be deleted, and `NAMESPACE` is your namespace.
+
+        A list of images to delete is displayed.
+
 4. Review the list of images. To run the policy and delete the images, confirm that you want to set the policy.
 
     If you don't want to delete those images, choose `No`. The policy is not set and the images are not deleted.
     {: tip}
 
-5. Verify that the images were deleted by running the following command, and check that the images show in the list.
+5. Verify that the images were deleted by running the following command, and check that the images appear in the list.
 
     ```txt
     ibmcloud cr trash-list
     ```
     {: pre}
 
-6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list) command, and check that the policy that you set for the namespace retains the required number of images. If you set the policy to retain all untagged images, ensure that the **`Retain all untagged`** column has the value `true`.
+6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list) command, and check that the policy that you set for the namespace retains the required number of images. If you set the policy to retain all untagged images, ensure that the **`Retain all untagged`** column has the value `true`. If you set a deletion threshold, verify that the **`Deletion threshold (days)`** column shows the correct value.
 
     ```txt
     ibmcloud cr retention-policy-list
