@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-10"
+  years: 2020, 2026
+lastupdated: "2026-08-03"
 
 keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
@@ -24,7 +24,7 @@ In each regional instance of the [registry](/docs/Registry?topic=Registry-regist
 
 {{site.data.keyword.registrylong_notm}} runs in {{site.data.keyword.containerlong_notm}} clusters, and uses {{site.data.keyword.cos_full_notm}} to store images. Image data in {{site.data.keyword.cos_full_notm}} is encrypted at rest.
 
-![Diagram showing deployment.](images/container_registry_architecture_mul.svg "Diagram that shows deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Diagram showing deployment" caption-side="bottom"}{: external download="../images/container_registry_architecture_mul.svg"}
+![Diagram showing deployment.](images/container_registry_architecture_mul.svg "The following diagram shows deployment in your account, public ingress, private ingress, customer data flows, and dependencies (public and private). Container Registry runs in IBM Cloud Kubernetes Service clusters within IBM Cloud. Container Registry uses IBM Cloud Object Storage to store images. Cloud Identity and Access Management is used to control access to Container Registry. The data flows through a user-managed public or private network."){: caption="Diagram showing deployment" caption-side="bottom"}{: external download="../images/container_registry_architecture_mul.svg"}
 
 ## Segmentation of data
 {: #registry_architecture_segment}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-08-03"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -99,7 +99,7 @@ Add a second user to your account and grant them the ability to configure {{site
     2. Create a policy that grants the Manager role to User B by running the following command.
 
         ```txt
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --roles Manager
+        ibmcloud iam user-policy-create USER.B@EXAMPLE.COM --service-name container-registry --roles Manager
         ```
         {: pre}
 
@@ -232,7 +232,7 @@ Create some namespaces with sample images, and grant access to them. You create 
     3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where `CLOUD_REGION` is the name of your {{site.data.keyword.cloud_notm}} region, for example `us-south`.
 
         ```txt
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region CLOUD_REGION --resource-type namespace --resource namespace_b --roles Reader
+        ibmcloud iam user-policy-create USER.B@EXAMPLE.COM --service-name container-registry --region CLOUD_REGION --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
 
@@ -242,7 +242,7 @@ Create some namespaces with sample images, and grant access to them. You create 
     4. Create a second policy that grants the Reader and Writer roles on `namespace_c` to User B by running the following command.
 
         ```txt
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region CLOUD_REGION --resource-type namespace --resource namespace_c --roles Reader,Writer
+        ibmcloud iam user-policy-create USER.B@EXAMPLE.COM --service-name container-registry --region CLOUD_REGION --resource-type namespace --resource namespace_c --roles Reader,Writer
         ```
         {: pre}
 

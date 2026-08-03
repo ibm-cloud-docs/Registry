@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-08-03"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -93,7 +93,7 @@ The following attribute types for specific resources are available in the {{site
 The following example creates a rule that targets the Container Registry service and allows access to your namespace `my_namespace` only over the private network in `us-south`.
 
 ```txt
-ibmcloud cbr rule-create --description 'Only allow access to my_namespace over the private network' --service-name container-registry --context-attributes endpointType=private --resource-attributes resourceType=namespace,resource=my_namespace --region=us-south
+ibmcloud cbr rule-create --description 'Only allow access to my_namespace over the private network' --service-name container-registry --context-attributes endpointType=private --resource-attributes resourceType=namespace,resource=my_namespace --region us-south
 ```
 {: pre}
 
