@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-08-03"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -77,7 +77,7 @@ The following table details actions that are mapped to platform management roles
 | Viewer | Not supported | Not applicable |
 | Editor | Not supported | Not applicable |
 | Operator | Not supported | Not applicable |
-| Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the {{site.data.keyword.cloud_notm}} console, see [Managing access to resources](/docs/iam?topic=iam-assign-access-resources&interface=ui).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registryshort}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply) command to configure the pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters). |
+| Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the {{site.data.keyword.cloud_notm}} console, see [Managing access to resources](/docs/iam?topic=iam-assign-access-resources&interface=ui).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registryshort}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cluster-pull-secret-apply-cli) command to configure the pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters). |
 {: caption="IAM user roles and actions" caption-side="bottom"}
 {: #table_registry_iam__user_roles}
 
