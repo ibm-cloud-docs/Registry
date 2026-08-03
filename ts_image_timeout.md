@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-08-12"
+  years: 2017, 2026
+lastupdated: "2026-08-03"
 
-keywords: registry, list, images, timeout, account
+keywords: registry, list, images, timeout, account, image timeout, image list timeout, IBM Cloud Registry timeout
 
 subcollection: Registry
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Listing images times out in {{site.data.keyword.registrylong}}.
+Listing images times out in {{site.data.keyword.registrylong}}. You can resolve image list timeouts in {{site.data.keyword.registryshort}} by restricting the scope of the list or by disabling vulnerability reports.
 {: shortdesc}
 
 The request timed out while you attempted to list your images in the {{site.data.keyword.cloud_notm}} console, command-line interface (CLI), or API.
