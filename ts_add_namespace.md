@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-19"
+lastupdated: "2026-08-04"
 
 keywords: registry, namespace, value, characters, delete
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I add a namespace in {{site.data.keyword.registryshort_notm}}?
+# Troubleshooting namespace creation in IBM Cloud registry
 {: #troubleshoot-add-namespace}
 {: troubleshoot}
 {: support}

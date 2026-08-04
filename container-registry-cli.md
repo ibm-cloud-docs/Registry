@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-04"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -14,7 +14,7 @@ content-type: cli-docs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort_notm}} CLI
+# Managing IBM Cloud container registry with the container registry CLI
 {: #containerregcli}
 
 Use `ibmcloud cr` commands in the `container-registry` CLI plug-in to manage your {{site.data.keyword.registrylong_notm}} registry and its resources.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-19"
+lastupdated: "2026-08-04"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Troubleshooting {{site.data.keyword.registryshort_notm}}
+# Troubleshooting IBM Cloud container registry issues
 {: #ts_index}
 {: troubleshoot}
 {: support}

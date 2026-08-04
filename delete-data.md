@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-08-04"
 
 keywords: data, data encryption in IBM Cloud Container Registry, data storage for IBM Cloud Container Registry, personal data in IBM Cloud Container Registry, data deletion for IBM Cloud Container Registry, data in IBM Cloud Container Registry, data security in IBM Cloud Container Registry, deleting, namespace, images, private repositories, managing your data, service, data, trash
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing your data in {{site.data.keyword.registryshort_notm}}
+# Managing data in IBM Cloud container registry: Security and storage
 {: #delete-data}
 
 Information about your data and how it is stored in {{site.data.keyword.registrylong}}.

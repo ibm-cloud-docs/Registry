@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-08-04"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -44,11 +44,11 @@ subcollection: Registry
 * [Next steps in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started#gs_get_start_next)
 
 
-## About {{site.data.keyword.registryshort_notm}}
-{: #sitemap_about_}
+## IBM Cloud container registry: Store and manage private container images
+{: #sitemap_ibm_cloud_container_registry_store_and_manage_private_container_images}
 
 
-[About {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_overview#registry_overview)
+[IBM Cloud container registry: Store and manage private container images](/docs/Registry?topic=Registry-registry_overview#registry_overview)
 
 * [Key features](/docs/Registry?topic=Registry-registry_overview#registry_key_features)
 
@@ -544,7 +544,7 @@ subcollection: Registry
 {: #sitemap_managing_user_access}
 
 
-[Accessing {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_access#registry_access)
+[Authenticating to IBM Cloud container registry with IAM](/docs/Registry?topic=Registry-registry_access#registry_access)
 
 * [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating)
 
@@ -1452,7 +1452,7 @@ subcollection: Registry
 {: #sitemap_troubleshooting}
 
 
-[Troubleshooting {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ts_index#ts_index)
+[Troubleshooting IBM Cloud container registry issues](/docs/Registry?topic=Registry-ts_index#ts_index)
 
 * [Troubleshooting topics](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts)
 
@@ -1475,7 +1475,7 @@ subcollection: Registry
 
 [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire#troubleshoot-login-expire)
 
-[Why can't I get started with {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-get-started#troubleshoot-get-started)
+[Troubleshooting getting started with IBM Cloud registry permissions](/docs/Registry?topic=Registry-troubleshoot-get-started#troubleshoot-get-started)
 
 [Why do commands fail saying they're not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
@@ -1576,7 +1576,7 @@ subcollection: Registry
 {: #sitemap_faq}
 
 
-[FAQ for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_faq#registry_faq)
+[Frequently asked questions for IBM Cloud container registry](/docs/Registry?topic=Registry-registry_faq#registry_faq)
 
 * [Where is the reference documentation for {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_ref_docs)
 

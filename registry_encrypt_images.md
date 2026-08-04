@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-10"
+  years: 2020, 2026
+lastupdated: "2026-08-04"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -17,7 +17,7 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Encrypting images for content confidentiality in {{site.data.keyword.registryshort}}
+# Encrypting images for confidentiality in IBM Cloud registry
 {: #registry_encrypt}
 {: toc-content-type="tutorial"}
 {: toc-services="key-protect"}

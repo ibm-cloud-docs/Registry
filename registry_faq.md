@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-18"
+lastupdated: "2026-08-04"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -14,7 +14,7 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQ for {{site.data.keyword.registryshort_notm}}
+# Frequently asked questions for IBM Cloud container registry
 {: #registry_faq}
 
 Frequently asked questions for {{site.data.keyword.registrylong}}.
