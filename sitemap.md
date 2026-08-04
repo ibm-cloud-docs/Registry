@@ -15,6 +15,9 @@ subcollection: Registry
 # Site map for {{site.data.keyword.registryshort_notm}}
 {: #sitemap}
 
+Explore the site map for IBM Cloud container registry, covering getting started guides, service overview, and key features for managing container images.
+{: shortdesc}
+
 
 
 ## Getting started

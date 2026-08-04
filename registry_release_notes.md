@@ -17,7 +17,7 @@ content-type: release-note
 # Release notes for IBM Cloud container registry and Vulnerability Advisor
 {: #registry_release_notes}
 
-Discover the latest updates in IBM Cloud container registry and Vulnerability Advisor, including new regions, retention policies, and CLI changes.
+What's new in {{site.data.keyword.registrylong}} and Vulnerability Advisor? The changes are grouped by date.
 {: shortdesc}
 
 ## 07 July 2026
