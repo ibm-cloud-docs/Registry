@@ -828,7 +828,7 @@ Logging in to {{site.data.keyword.registryshort}} by using the `ibmcloud cr logi
 ### Command options
 {: #bx_cr_login_option}
 
-`-- client`
+`--client CLIENT`
 :   (Optional) Select the client that you want to log in. Valid values are `docker` and `podman`. If this option is not used and Docker is installed, the default is `docker`; if Docker is not installed, the default is `podman`.
 
 ### Example
