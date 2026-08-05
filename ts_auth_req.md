@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-08-04"
 
 keywords: registry, access, authorization required, error, API key, client, token, region, CRG0014E
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting `Authorization required` errors in {{site.data.keyword.registryshort_notm}}?
+# Resolving `authorization required` errors in IBM Cloud registry
 {: #troubleshoot-auth-req}
 {: troubleshoot}
 {: support}

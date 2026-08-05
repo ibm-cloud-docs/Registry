@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-05"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -14,7 +14,7 @@ content-type: cli-docs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort_notm}} CLI
+# Managing IBM Cloud container registry with the container registry CLI
 {: #containerregcli}
 
 Use `ibmcloud cr` commands in the `container-registry` CLI plug-in to manage your {{site.data.keyword.registrylong_notm}} registry and its resources.
@@ -204,7 +204,7 @@ You can identify the images in the scope by using either the [tag](/docs/Registr
 {: tip}
 
 ```sh
-ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
+ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID [--output json | -o json]
 ```
 
 ### Prerequisites
@@ -230,6 +230,9 @@ To find out more about the required permissions, see [Access roles for configuri
 
 `--issue-id ISSUE_ID`
 :   The ID of the exemption for the security issue that you want to remove. To find the issue IDs for your exemptions, run `ibmcloud cr exemption-list`.
+
+`--output json`, `-o json`
+:   (Optional) Outputs the list in JSON format.
 
 ### Examples
 {: #bx_cr_exemption_rm_example}
@@ -767,8 +770,14 @@ ibmcloud cr image-untag us.icr.io/birds/bluebird:1
 Displays the name and the account of the registry that you are logged in to.
 
 ```sh
-ibmcloud cr info
+ibmcloud cr info [--verbose]
 ```
+
+### Command options
+{: #bx_cr_info_option}
+
+`--verbose`
+:   (Optional) Display additional information about the registry environment.
 
 ### Example
 {: #bx_cr_info_example}
@@ -819,7 +828,7 @@ Logging in to {{site.data.keyword.registryshort}} by using the `ibmcloud cr logi
 ### Command options
 {: #bx_cr_login_option}
 
-`-- client`
+`--client CLIENT`
 :   (Optional) Select the client that you want to log in. Valid values are `docker` and `podman`. If this option is not used and Docker is installed, the default is `docker`; if Docker is not installed, the default is `podman`.
 
 ### Example
@@ -955,7 +964,7 @@ To find out which namespaces are assigned to resource groups and which are unass
 {: tip}
 
 ```sh
-ibmcloud cr namespace-assign -g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID) NAMESPACE
+ibmcloud cr namespace-assign [-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)] NAMESPACE
 ```
 
 For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs&interface=ui#create_rgs).
@@ -1765,14 +1774,14 @@ If you try to set an invalid version of Vulnerability Advisor, you get en error,
 {: tip}
 
 ```sh
-ibmcloud cr va-version-set VERSION
+ibmcloud cr va-version-set [VERSION]
 ```
 
 ### Command arguments
 {: #ic_cr_va_version_set_argument}
 
 `VERSION`
-:   The version of Vulnerability Advisor that you want to use. The only valid value is `v4`.
+:   (Optional) The version of Vulnerability Advisor that you want to use. The only valid value is `v4`. If `VERSION` is not specified, the default is `v4`.
 
 ### Example
 {: #ic_cr_va_version_set_example}

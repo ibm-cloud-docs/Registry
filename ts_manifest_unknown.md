@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-10-14"
+  years: 2022, 2026
+lastupdated: "2026-08-04"
 
 keywords: error, registry, manifest unknown, manifest, manifest unknown error
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get a manifest unknown error in {{site.data.keyword.registryshort_notm}}?
+# Resolving manifest unknown error in IBM Cloud container registry
 {: #troubleshoot-manifest-unknown}
 {: troubleshoot}
 {: support}

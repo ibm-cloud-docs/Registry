@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-10-14"
+  years: 2024, 2026
+lastupdated: "2026-08-04"
 
 keywords: iam, access, policy, permission, access policy
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I get started with {{site.data.keyword.registryshort}}?
+# Troubleshooting getting started with IBM Cloud registry permissions
 {: #troubleshoot-get-started}
 {: troubleshoot}
 {: support}

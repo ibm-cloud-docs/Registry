@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-10-14"
+  years: 2017, 2026
+lastupdated: "2026-08-04"
 
 keywords: error, registry, manifest version, manifest version error, tag, image, the manifest version for this image is not supported for tagging, CRI0301E
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get a manifest version error in {{site.data.keyword.registryshort_notm}}?
+# Resolving manifest version errors in IBM Cloud registry
 {: #troubleshoot-manifest-error-version}
 {: troubleshoot}
 {: support}

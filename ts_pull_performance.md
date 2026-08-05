@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-10-14"
+  years: 2023, 2026
+lastupdated: "2026-08-04"
 
 keywords: registry, slow, performance, image, pull
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why is pulling images in {{site.data.keyword.registryshort}} slow?
+# Troubleshooting slow image pulls in IBM Cloud registry
 {: #troubleshoot-pull-performance}
 {: troubleshoot}
 {: support}

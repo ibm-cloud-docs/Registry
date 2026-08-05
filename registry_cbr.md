@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-04"
 
 keywords: IBM Cloud Container Registry, context-based restrictions, CBR, access
 
@@ -13,7 +13,7 @@ subcollection: Registry
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Protecting {{site.data.keyword.registryshort}} resources with context-based restrictions
+# Securing IBM Cloud container registry with context-based restrictions
 {: #registry-cbr}
 
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.registrylong}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies.

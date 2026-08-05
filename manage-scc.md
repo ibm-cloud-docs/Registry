@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-10-14"
+  years: 2021, 2026
+lastupdated: "2026-08-04"
 
 keywords: Security and compliance for IBM Cloud Container Registry, security for IBM Cloud Container Registry, compliance for IBM Cloud Container Registry, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing security and compliance for {{site.data.keyword.registryshort_notm}}
+# Securing IBM Cloud container registry: Managing compliance
 {: #manage-security-compliance}
 
 {{site.data.keyword.registrylong}} is integrated with {{site.data.keyword.sysdigsecure_short}} to help you to manage security and compliance for your organization.
