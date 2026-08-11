@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
-keywords: data, data encryption in IBM Cloud Container Registry, data storage for IBM Cloud Container Registry, personal data in IBM Cloud Container Registry, data deletion for IBM Cloud Container Registry, data in IBM Cloud Container Registry, data security in IBM Cloud Container Registry, deleting, namespace, images, private repositories, managing your data, service, data, trash
+keywords: data, data encryption in {{site.data.keyword.registryshort_notm}}, data storage for {{site.data.keyword.registryshort_notm}}, personal data in {{site.data.keyword.registryshort_notm}}, data deletion for {{site.data.keyword.registryshort_notm}}, data in {{site.data.keyword.registryshort_notm}}, data security in {{site.data.keyword.registryshort_notm}}, deleting, namespace, images, private repositories, managing your data, service, data, trash
 
 subcollection: Registry
 
@@ -12,10 +12,10 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing data in IBM Cloud container registry: Security and storage
+# Managing data in {{site.data.keyword.registryshort_notm}}: Security and storage
 {: #delete-data}
 
-Information about your data and how it is stored in {{site.data.keyword.registrylong}}.
+Find out about the data security and storage practices for {{site.data.keyword.registryshort_notm}}, including how your images and configuration data are protected and managed.
 {: shortdesc}
 
 The {{site.data.keyword.cloud_notm}} platform provides layered security controls across network and infrastructure. {{site.data.keyword.cloud_notm}} provides a group of security services that can be used by application developers to secure their mobile and web apps. For more information, see [How do I know that my data is safe?](/docs/overview?topic=overview-security)

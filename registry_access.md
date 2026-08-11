@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -12,10 +12,10 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Authenticating to IBM Cloud container registry with IAM
+# Authenticating to {{site.data.keyword.registryshort_notm}} with IAM
 {: #registry_access}
 
-To access your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images, use {{site.data.keyword.iamlong}} (IAM).
+Authenticate to {{site.data.keyword.registryshort_notm}} by using IAM API keys or bearer tokens to push and pull images in your registry namespaces.
 {: shortdesc}
 
 All accounts require IAM access policies. To set up and manage IAM access policies, see [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).

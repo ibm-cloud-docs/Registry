@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-11"
 
 keywords:
 
@@ -23,7 +23,7 @@ If a service depends on other {{site.data.keyword.cloud_notm}} services, there c
 {: shortdesc}
 
 Critical
-:   When the the dependency is down, the service is down.
+:   When the dependency is down, the service is down.
 
 Significant
 :   When the dependency is down, the service features are impacted.
@@ -58,7 +58,7 @@ The following dependencies apply to the following deployment locations: Chennai 
 {: tab-group="service-dependency-data-for-container-registry-VPC-Data-and-control-plane"}
 {: class="comparison-tab-table"}
 {: #critical-deps-vpc-data-and-control-plane}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about."}
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
@@ -73,7 +73,7 @@ The following dependencies apply to the following deployment locations: Chennai 
 {: tab-group="service-dependency-data-for-container-registry-VPC-Data-and-control-plane"}
 {: class="comparison-tab-table"}
 {: #significant-deps-vpc-data-and-control-plane}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about."}
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
@@ -87,14 +87,14 @@ The following dependencies apply to the following deployment locations: Chennai 
 | Canonical Ubuntu Vulnerabilities Databases| none | No | Both |  external  |
 | Alpine Linux Vulnerabilities Databases| none | No | Both |  external  |
 | Red Hat Vulnerabilities Databases| none | No | Both |  external  |
-| IBM Log Analysis Log Routing| none | No | Both |  Same region  |
+| IBM Cloud Log Routing| none | No | Both |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Container Registry - VPC Data and control plane service dependency information - Minimal dependencies" caption-side="top"}
 {: tab-title="Minimal dependencies"}
 {: tab-group="service-dependency-data-for-container-registry-VPC-Data-and-control-plane"}
 {: class="comparison-tab-table"}
 {: #minimal-deps-vpc-data-and-control-plane}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about."}
 
 ## Data and Control plane deployment
 {: #data-and-control-plane-deployment}
@@ -118,7 +118,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 {: tab-group="service-dependency-data-for-container-registry-Data-and-Control-plane-deployment"}
 {: class="comparison-tab-table"}
 {: #critical-deps-data-and-control-plane-deployment}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about."}
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
@@ -133,7 +133,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 {: tab-group="service-dependency-data-for-container-registry-Data-and-Control-plane-deployment"}
 {: class="comparison-tab-table"}
 {: #significant-deps-data-and-control-plane-deployment}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about."}
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
@@ -147,14 +147,14 @@ The following dependencies apply to the following deployment locations: Dallas (
 | Canonical Ubuntu Vulnerabilities Databases| none | No | Both |  external  |
 | Alpine Linux Vulnerabilities Databases| none | No | Both |  external  |
 | Red Hat Vulnerabilities Databases| none | No | Both |  external  |
-| IBM Log Analysis Log Routing| none | No | Both |  Same region  |
+| IBM Cloud Log Routing| none | No | Both |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Container Registry - Data and Control plane deployment service dependency information - Minimal dependencies" caption-side="top"}
 {: tab-title="Minimal dependencies"}
 {: tab-group="service-dependency-data-for-container-registry-Data-and-Control-plane-deployment"}
 {: class="comparison-tab-table"}
 {: #minimal-deps-data-and-control-plane-deployment}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about."}
 
 
 ## Understanding service dependency data

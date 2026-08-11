@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -332,7 +332,7 @@ The default instance of {{site.data.keyword.registryshort}} is the global regist
 
 Use the global instance of the registry unless you have a specific requirement, for example, data sovereignty, to store your data in a particular region. In which case, you can use {{site.data.keyword.registryshort}} in [local regions](#registry_regions_local).
 
-Each region is backed up in a different region. For example, the images that are stored in the {{site.data.keyword.registrylong_notm}} registry `Frankfurt(eu-de)` are replicated over the six data centers across `Frankfurt(eu-de)` and `London(eu-gb)` regions.
+Each region is backed up in a different region. For example, the images that are stored in {{site.data.keyword.registrylong_notm}} in the `Frankfurt(eu-de)` region are replicated over the six data centers across `Frankfurt(eu-de)` and `London(eu-gb)` regions.
 
 The following table shows you the backup locations. For more information about {{site.data.keyword.registryshort}} backup locations, see [Does the service replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_replicate_data) for assistance.
 

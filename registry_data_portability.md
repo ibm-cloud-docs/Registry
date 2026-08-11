@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: data portability
 
@@ -12,10 +12,10 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Data portability for IBM Cloud container registry
+# Data portability for {{site.data.keyword.registryshort_notm}}
 {: #data_portability}
 
-Data portability involves a set of tools and procedures that enable customers to export the digital artifacts that are needed to implement similar workload and data processing on different service providers or on-premises software. It includes procedures for copying and storing the service customer content, including the related configuration that is used by the service to store and process the data, on the customer's own location.
+Learn how to export your {{site.data.keyword.registryshort_notm}} data, including images and configuration, to move your workloads to a different provider or on-premises environment.
 {: shortdesc}
 
 ## Responsibilities

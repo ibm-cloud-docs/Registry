@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
-keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
+keywords: {{site.data.keyword.registryshort_notm}} release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor, what's new, whats new, what is new
 
 subcollection: Registry
 
@@ -14,10 +14,10 @@ content-type: release-note
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Release notes for IBM Cloud container registry and Vulnerability Advisor
+# Release notes for {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor
 {: #registry_release_notes}
 
-What's new in {{site.data.keyword.registrylong}} and Vulnerability Advisor? The changes are grouped by date.
+Find out what's new in {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor. Changes are grouped by date, covering new features, updates, and deprecations.
 {: shortdesc}
 
 ## 07 July 2026

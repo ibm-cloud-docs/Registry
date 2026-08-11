@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -14,10 +14,10 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Frequently asked questions for IBM Cloud container registry
+# Frequently asked questions for {{site.data.keyword.registryshort_notm}}
 {: #registry_faq}
 
-Frequently asked questions for {{site.data.keyword.registrylong}}.
+Find answers to frequently asked questions about {{site.data.keyword.registryshort_notm}}, including how to set up namespaces, manage images, and configure access.
 {: shortdesc}
 
 For frequently asked questions about how to manage image security and vulnerabilities by using Vulnerability Advisor, see [FAQ for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq_va).

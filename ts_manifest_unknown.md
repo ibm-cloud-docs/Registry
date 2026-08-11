@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: error, registry, manifest unknown, manifest, manifest unknown error
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Resolving manifest unknown error in IBM Cloud container registry
+# Resolving manifest unknown error in {{site.data.keyword.registryshort_notm}}
 {: #troubleshoot-manifest-unknown}
 {: troubleshoot}
 {: support}
 
-You get a `manifest unknown` error when you try to pull an image in {{site.data.keyword.registrylong}}.
+You get a `manifest unknown` error when you try to pull an image in {{site.data.keyword.registryshort_notm}}. Use these steps to diagnose and resolve the error.
 {: shortdesc}
 
 You are trying to pull an image, but you receive the following manifest error message: `manifest unknown`

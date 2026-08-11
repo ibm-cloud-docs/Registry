@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-02"
+lastupdated: "2026-08-11"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues, security scans
 
@@ -63,7 +63,7 @@ Do not put personal information into any field or location that Vulnerability Ad
 
 Scan results, aggregated at a data center level, are processed to produce anonymized metrics to operate and improve the service.
 
-In version 4, the image is indexed when it is first pushed to {{site.data.keyword.registryshort}} registry, and that index report is stored in the database. When Vulnerability Advisor is queried, the image index report is retrieved, and a vulnerability assessment is produced. This action happens dynamically every time Vulnerability Advisor is queried. Therefore, no pregenerated scan result exists that requires deleting. However, the image index report is deleted within 30 days of the deletion of the image from the registry.
+In version 4, the image is indexed when it is first pushed to {{site.data.keyword.registryshort_notm}}, and that index report is stored in the database. When Vulnerability Advisor is queried, the image index report is retrieved, and a vulnerability assessment is produced. This action happens dynamically every time Vulnerability Advisor is queried. Therefore, no pregenerated scan result exists that requires deleting. However, the image index report is deleted within 30 days of the deletion of the image from the registry.
 
 ## Types of vulnerabilities
 {: #types}

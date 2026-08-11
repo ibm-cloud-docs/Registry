@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: registry, access, authorization required, error, API key, client, token, region, CRG0014E
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Resolving `authorization required` errors in IBM Cloud registry
+# Resolving `authorization required` errors in {{site.data.keyword.registryshort_notm}}
 {: #troubleshoot-auth-req}
 {: troubleshoot}
 {: support}
 
-You are trying to access {{site.data.keyword.registrylong}} but are getting `Authorization required` errors.
+You are trying to access {{site.data.keyword.registryshort_notm}} but you get an `Authorization required` error. Use these steps to diagnose the issue, which is often caused by an expired API key or missing IAM permissions.
 {: shortdesc}
 
 When you try to access {{site.data.keyword.registryshort}}, you get one of the following messages.

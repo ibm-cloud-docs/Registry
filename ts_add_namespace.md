@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: registry, namespace, value, characters, delete
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Troubleshooting namespace creation in IBM Cloud registry
+# Troubleshooting namespace creation in {{site.data.keyword.registryshort_notm}}
 {: #troubleshoot-add-namespace}
 {: troubleshoot}
 {: support}
 
-Setting up a namespace fails in {{site.data.keyword.registrylong}}.
+Setting up a namespace in {{site.data.keyword.registryshort_notm}} fails when you run `ibmcloud cr namespace-add`. Use these steps to identify and fix the cause.
 {: shortdesc}
 
 When you run `ibmcloud cr namespace-add`, you are unable to set your entered value as the namespace.

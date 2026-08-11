@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
-keywords: IBM Cloud Container Registry notices, notices, IBM Bluemix Container Registry, available, ga
+keywords: {{site.data.keyword.registryshort_notm}} notices, notices, IBM Bluemix Container Registry, available, ga
 
 subcollection: Registry
 
@@ -12,10 +12,10 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IBM Cloud container registry now available: Secure image storage
+# {{site.data.keyword.registryshort_notm}} now available: Secure image storage
 {: #registry_notices_ibcr}
 
-The registry has been a part of {{site.data.keyword.containerlong_notm}} since its inception in June 2015. {{site.data.keyword.IBM_notm}} announced that the {{site.data.keyword.registrylong}} is live as a separate offering within the {{site.data.keyword.cloud_notm}} platform.
+{{site.data.keyword.registryshort_notm}} is now available as a standalone offering on the IBM Cloud platform for secure image storage and management.
 {: shortdesc}
 
 The original announcement was published on 28 June 2017.
