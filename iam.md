@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-11"
 
-keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
+keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for {{site.data.keyword.registryshort_notm}}, permissions for {{site.data.keyword.registryshort_notm}}, iam for {{site.data.keyword.registryshort_notm}}, roles for {{site.data.keyword.registryshort_notm}}, actions for {{site.data.keyword.registryshort_notm}}, assigning access for {{site.data.keyword.registryshort_notm}}, manager, reader, writer, actions, access group
 
 subcollection: Registry
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Managing IAM access for {{site.data.keyword.registryshort_notm}}
 {: #iam}
 
-Access to {{site.data.keyword.registrylong}} for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM).
+Control user access to {{site.data.keyword.registryshort_notm}} by using IAM access policies and roles to define what actions users can perform.
 {: shortdesc}
 
 Every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an IAM [access policy](#x2853407){: term} with an IAM role. A user can also be a member of an [access group](/docs/iam?topic=iam-groups&interface=ui) with assigned IAM access policies that grant an IAM role. Review the following roles, actions, and more to help determine the best way to assign access to {{site.data.keyword.registryshort}}.

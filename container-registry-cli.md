@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-05"
+lastupdated: "2026-08-11"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -14,10 +14,10 @@ content-type: cli-docs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing IBM Cloud container registry with the container registry CLI
+# Managing {{site.data.keyword.registryshort_notm}} with the container registry CLI
 {: #containerregcli}
 
-Use `ibmcloud cr` commands in the `container-registry` CLI plug-in to manage your {{site.data.keyword.registrylong_notm}} registry and its resources.
+Use `ibmcloud cr` commands in the `container-registry` CLI plug-in to manage your {{site.data.keyword.registrylong_notm}} and its resources.
 {: shortdesc}
 
 ## Prerequisites
@@ -92,7 +92,7 @@ You can identify the images in the scope by using either the tag or the digest. 
 {: tip}
 
 ```sh
-ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID [--output json | -o json]
+ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID [--output | -o [json]]
 ```
 
 ### Prerequisites
@@ -138,6 +138,50 @@ Create an account-wide CVE exemption for the CVE with ID `CVE-2018-17929` by ent
 ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
+
+### Example 1
+{: #bx_cr_exemption_add_example1}
+
+Create a CVE exemption for the CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository by entering `us.icr.io/birds/bluebird` for the scope, `cve` for the issue type, and `CVE-2018-17929` for the issue ID.
+
+```sh
+ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+### Output for example 1
+{: #bx_cr_exemption_add_output1}
+
+The command in [example 1](#bx_cr_exemption_add_example1) returns the following output:
+
+```text
+Creating exemption for 'CVE-2018-17929' in 'us.icr.io/birds/bluebird'...
+
+OK
+```
+{: screen}
+
+### Example 2
+{: #bx_cr_exemption_add_example2}
+
+Create an account-wide CVE exemption for the CVE with ID `CVE-2018-17929` by entering `"*"` for the scope, `cve` for the issue type, and `CVE-2018-17929` for the issue ID.
+
+```sh
+ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+### Output for example 2
+{: #bx_cr_exemption_add_output2}
+
+The command in [example 2](#bx_cr_exemption_add_example2) returns the following output:
+
+```text
+Creating exemption for 'CVE-2018-17929' in '*'...
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)
 {: #bx_cr_exemption_list}
@@ -186,14 +230,73 @@ ibmcloud cr exemption-list --scope birds/bluebird
 ```
 {: pre}
 
-List all your exemptions for security issues that apply to images in the `birds/bluebird@sha256:101010101010` digest by entering `birds/bluebird@sha256:101010101010` as the scope.
+List all your exemptions for security issues that apply to images in the `birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010` digest by entering `birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010` as the scope.
 
-The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository and to the `birds/bluebird@sha256:101010101010` digest. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
+The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository and to the `birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010` digest. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
 
 ```sh
-ibmcloud cr exemption-list --scope birds/bluebird@sha256:101010101010
+ibmcloud cr exemption-list --scope birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010
 ```
 {: pre}
+
+### Example 1
+{: #bx_cr_exemption_list_example1}
+
+List all your exemptions for security issues that apply to images in the `birds/bluebird` repository by entering `birds/bluebird` as the scope.
+
+```sh
+ibmcloud cr exemption-list --scope birds/bluebird
+```
+{: pre}
+
+### Output for example 1
+{: #bx_cr_exemption_list_output1}
+
+The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
+
+The command in [example 1](#bx_cr_exemption_list_example1) returns the following output:
+
+```text
+Listing exemptions for scope 'birds/bluebird'...
+
+Scope              Issue type   Issue ID
+*                  cve          CVE-2018-17929
+birds              cve          CVE-2018-17929
+birds/bluebird     cve          CVE-2018-17929
+
+OK
+```
+{: screen}
+
+### Example 2
+{: #bx_cr_exemption_list_example2}
+
+List all your exemptions for security issues that apply to images in the `birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010` digest by entering `birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010` as the scope.
+
+```sh
+ibmcloud cr exemption-list --scope birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010
+```
+{: pre}
+
+### Output for example 2
+{: #bx_cr_exemption_list_output2}
+
+The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository and to the `birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010` digest. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
+
+The command in [example 2](#bx_cr_exemption_list_example2) returns the following output:
+
+```text
+Listing exemptions for scope 'birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010'...
+
+Scope                                       Issue type   Issue ID
+*                                           cve          CVE-2018-17929
+birds                                       cve          CVE-2018-17929
+birds/bluebird                              cve          CVE-2018-17929
+birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010          cve          CVE-2018-17929
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr exemption-rm`
 {: #bx_cr_exemption_rm}
@@ -204,7 +307,7 @@ You can identify the images in the scope by using either the [tag](/docs/Registr
 {: tip}
 
 ```sh
-ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID [--output json | -o json]
+ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID [--output | -o [json]]
 ```
 
 ### Prerequisites
@@ -251,13 +354,57 @@ ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
+### Example 1
+{: #bx_cr_exemption_rm_example1}
+
+Delete a CVE exemption for the CVE with ID `CVE-2018-17929` for all images in the `us.icr.io/birds/bluebird` repository by entering `us.icr.io/birds/bluebird` as the scope, `cve` as the issue type, and `CVE-2018-17929` as the issue ID.
+
+```sh
+ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+### Output for example 1
+{: #bx_cr_exemption_rm_output1}
+
+The command in [example 1](#bx_cr_exemption_rm_example1) returns the following output:
+
+```text
+Deleting exemption for 'CVE-2018-17929' in 'us.icr.io/birds/bluebird'...
+
+OK
+```
+{: screen}
+
+### Example 2
+{: #bx_cr_exemption_rm_example2}
+
+Delete an account-wide CVE exemption for the CVE with ID `CVE-2018-17929` by entering `"*"` as the scope, `cve` as the issue type, and `CVE-2018-17929` as the issue ID.
+
+```sh
+ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+### Output for example 2
+{: #bx_cr_exemption_rm_output2}
+
+The command in [example 2](#bx_cr_exemption_rm_example2) returns the following output:
+
+```text
+Deleting exemption for 'CVE-2018-17929' in '*'...
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr exemption-types`
 {: #bx_cr_exemption_types}
 
 Lists the types of security issues that you can exempt.
 
 ```sh
-ibmcloud cr exemption-types [--output json | -o json]
+ibmcloud cr exemption-types [--output | -o [json]]
 ```
 
 ### Prerequisites
@@ -301,10 +448,10 @@ OK
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
 
-All accounts require {{site.data.keyword.iamshort}} (IAM) access policies.
-{: important}
+Enables IAM access policies for {{site.data.keyword.registrylong_notm}}, allowing fine-grained authorization when using IAM authentication. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
-If you're using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
+All accounts require IAM access policies.
+{: important}
 
 ```sh
 ibmcloud cr iam-policies-enable
@@ -324,6 +471,18 @@ Use IAM policies to enable fine-grained authorization.
 ibmcloud cr iam-policies-enable
 ```
 {: pre}
+
+### Output
+{: #bx_cr_iam_policies_enable_output}
+
+The command in the [example](#bx_cr_iam_policies_enable_example) returns the following output:
+
+```text
+Enabling IAM policies for account 'X's Account' in registry 'us.icr.io'...
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr iam-policies-status`
 {: #bx_cr_iam_policies_status}
@@ -420,8 +579,8 @@ ibmcloud cr image-digests --restrict birds --quiet
 The command in the [example](#bx_cr_image_digests_example) returns the following output:
 
 ```text
-us.icr.io/birds/bluebird@sha256:11ab001ab10011cd1000101cd0101010001ab111100cd00ab111
-us.icr.io/birds/blackbird@sha256:22ef00ef002220002gh200222000gh00ef2222000ab00222
+us.icr.io/birds/bluebird@sha256:11ab001ab10011cd1000101cd0101010001ab111100cd00ab1119f3de21ba0cd
+us.icr.io/birds/blackbird@sha256:22ef00ef002220002ab200222000ab00ef2222000ab00222ef1100cd003399f0
 ```
 {: screen}
 
@@ -467,6 +626,20 @@ Display details about the exposed ports for the `us.icr.io/birds/bluebird:1` ima
 ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds/bluebird:1
 ```
 {: pre}
+
+### Output
+{: #bx_cr_image_inspect_output}
+
+The command in the [example](#bx_cr_image_inspect_example) returns the following output:
+
+```text
+Inspecting 'us.icr.io/birds/bluebird:1'...
+
+map[8080/tcp:{}]
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
@@ -552,7 +725,7 @@ You can view all your tagged and untagged images by running the [`ibmcloud cr im
 {: tip}
 
 ```sh
-ibmcloud cr image-prune-untagged [--force | -f [--output json | -o json]] --restrict RESTRICTION
+ibmcloud cr image-prune-untagged [--force | -f] [--output | -o [json]] [--restrict RESTRICTION]
 ```
 
 ### Prerequisites
@@ -581,6 +754,25 @@ Delete all untagged images that are in the `birds` namespace without any user pr
 ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict birds
 ```
 {: pre}
+
+### Output
+{: #ic_cr_image_prune_untagged_output}
+
+The command in the [example](#ic_cr_image_prune_untagged_example) returns the following output:
+
+```text
+Deleting untagged images in namespace 'birds'...
+
+[
+  {
+    "Digest": "us.icr.io/birds/blackbird@sha256:22ef00ef002220002ab200222000ab00ef2222000ab00222ef1100cd003399f0",
+    "Status": "OK"
+  }
+]
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr image-restore`
 {: #bx_cr_image_restore}
@@ -626,6 +818,20 @@ ibmcloud cr image-restore us.icr.io/birds/bluebird:1
 ```
 {: pre}
 
+### Output
+{: #bx_cr_image_restore_output}
+
+The command in the [example](#bx_cr_image_restore_example) returns the following output:
+
+```text
+Restoring image 'us.icr.io/birds/bluebird:1'...
+
+Successfully restored image 'us.icr.io/birds/bluebird:1'.
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
 
@@ -668,6 +874,20 @@ Delete the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/blueb
 ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ```
 {: pre}
+
+### Output
+{: #bx_cr_image_rm_output}
+
+The command in the [example](#bx_cr_image_rm_example) returns the following output:
+
+```text
+Deleting image 'us.icr.io/birds/bluebird:1'...
+
+Successfully deleted image 'us.icr.io/birds/bluebird:1'.
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
@@ -729,6 +949,72 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
+### Example 1
+{: #bx_cr_image_tag_example1}
+
+Add another tag reference `latest`, to the image `us.icr.io/birds/bluebird:1` by entering `us.icr.io/birds/bluebird:1` as the source image and `us.icr.io/birds/bluebird:latest` as the target image.
+
+```sh
+ibmcloud cr image-tag  us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:latest
+```
+{: pre}
+
+### Output for example 1
+{: #bx_cr_image_tag_output1}
+
+The command in [example 1](#bx_cr_image_tag_example1) returns the following output:
+
+```text
+Tagging 'us.icr.io/birds/bluebird:1' to 'us.icr.io/birds/bluebird:latest'...
+
+OK
+```
+{: screen}
+
+### Example 2
+{: #bx_cr_image_tag_example2}
+
+Copy the image `us.icr.io/birds/bluebird:peck` to another repository in the same namespace `birds/pigeon` by entering `us.icr.io/birds/bluebird:peck` as the source image and `us.icr.io/birds/pigeon:peck` as the target image.
+
+```sh
+ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/birds/pigeon:peck
+```
+{: pre}
+
+### Output for example 2
+{: #bx_cr_image_tag_output2}
+
+The command in [example 2](#bx_cr_image_tag_example2) returns the following output:
+
+```text
+Tagging 'us.icr.io/birds/bluebird:peck' to 'us.icr.io/birds/pigeon:peck'...
+
+OK
+```
+{: screen}
+
+### Example 3
+{: #bx_cr_image_tag_example3}
+
+Copy the `us.icr.io/birds/bluebird:peck` image to another namespace that you have access to, in this example the `animals` namespace, by entering `us.icr.io/birds/bluebird:peck` as the source image and `us.icr.io/animals/dog:bark` as the target image.
+
+```sh
+ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
+```
+{: pre}
+
+### Output for example 3
+{: #bx_cr_image_tag_output3}
+
+The command in [example 3](#bx_cr_image_tag_example3) returns the following output:
+
+```text
+Tagging 'us.icr.io/birds/bluebird:peck' to 'us.icr.io/animals/dog:bark'...
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr image-untag`
 {: #bx_cr_image_untag}
 
@@ -763,6 +1049,20 @@ Remove the tag `1` from the `us.icr.io/birds/bluebird:1` image by entering `us.i
 ibmcloud cr image-untag us.icr.io/birds/bluebird:1
 ```
 {: pre}
+
+### Output
+{: #bx_cr_image_untag_output}
+
+The command in the [example](#bx_cr_image_untag_example) returns the following output:
+
+```text
+Removing tag for image 'us.icr.io/birds/bluebird:1'...
+
+Successfully removed tag '1' from image 'us.icr.io/birds/bluebird:1'.
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr info`
 {: #bx_cr_info}
@@ -841,13 +1141,26 @@ ibmcloud cr login --client podman
 ```
 {: pre}
 
+### Output
+{: #bx_cr_login_output}
+
+The command in the [example](#bx_cr_login_example) returns the following output:
+
+```text
+Logging 'podman' in to 'us.icr.io'...
+Logged in to 'us.icr.io'.
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr manifest-inspect`
 {: #bx_cr_manifest_inspect}
 
 View the contents of the [manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest) for an image. You can reference the image that you want to inspect either by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) `repository@digest`, or by [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) `repository:tag`.
 
 ```sh
-ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
+ibmcloud cr manifest-inspect [--quiet] IMAGE
 ```
 
 ### Prerequisites
@@ -881,6 +1194,31 @@ View the contents of the manifest for the `us.icr.io/birds/bluebird:1` image by 
 ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 ```
 {: pre}
+
+### Output
+{: #bx_cr_manifest_inspect_output}
+
+The command in the [example](#bx_cr_manifest_inspect_example) returns the following output:
+
+```text
+{
+   "schemaVersion": 2,
+   "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+   "config": {
+      "mediaType": "application/vnd.docker.container.image.v1+json",
+      "size": 1470,
+      "digest": "sha256:11ab001ab10011cd1000101cd0101010001ab111100cd00ab1119f3de21ba0cd"
+   },
+   "layers": [
+      {
+         "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+         "size": 2479088,
+         "digest": "sha256:22ef00ef002220002ab200222000ab00ef2222000ab00222ef1100cd003399f0"
+      }
+   ]
+}
+```
+{: screen}
 
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
@@ -1097,13 +1435,27 @@ ibmcloud cr namespace-rm birds
 ```
 {: pre}
 
+### Output
+{: #bx_cr_namespace_rm_output}
+
+The command in the [example](#bx_cr_namespace_rm_example) returns the following output:
+
+```text
+Removing namespace 'birds'...
+
+Successfully removed namespace 'birds'.
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
 Displays your pricing plan for the registry region that you're targeting.
 
 ```sh
-ibmcloud cr plan [--output json | -o json]
+ibmcloud cr plan [--output | -o [json]]
 ```
 
 ### Prerequisites
@@ -1170,6 +1522,18 @@ Upgrade to the standard pricing plan by entering `standard` as the plan.
 ibmcloud cr plan-upgrade standard
 ```
 {: pre}
+
+### Output
+{: #bx_cr_plan_upgrade_output}
+
+The command in the [example](#bx_cr_plan_upgrade_example) returns the following output:
+
+```text
+Upgrading account to 'standard' plan in registry 'us.icr.io'...
+
+OK
+```
+{: screen}
 
 ## `ibmcloud cr platform-metrics`
 {: #ic_cr_platform_metrics}
@@ -1263,13 +1627,25 @@ ibmcloud cr private-only --enable
 ```
 {: pre}
 
+### Output
+{: #ic_cr_private_only_output}
+
+The command in the [example](#ic_cr_private_only_example) returns the following output:
+
+```text
+Enabling private-only networking for account 'X's Account' in registry 'us.icr.io'...
+
+OK
+```
+{: screen}
+
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
 Display your quotas for traffic and storage, and the usage information against those quotas for the registry region that you're targeting.
 
 ```sh
-ibmcloud cr quota [--output json | -o json]
+ibmcloud cr quota [--output | -o [json]]
 ```
 
 ### Prerequisites
@@ -1318,7 +1694,7 @@ The command in the [example](#bx_cr_quota_example) returns the following output:
 Modify the specified quota for the registry region that you're targeting.
 
 ```sh
-ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
+ibmcloud cr quota-set [--storage STORAGE] [--traffic TRAFFIC]
 ```
 
 ### Prerequisites
@@ -1434,7 +1810,7 @@ Where an image within a repository is referenced by multiple tags, that image is
 {: tip}
 
 ```sh
-ibmcloud cr retention-policy-list [--output json | -o json]
+ibmcloud cr retention-policy-list [--output | -o [json]]
 ```
 
 For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
@@ -1623,7 +1999,7 @@ If an image that you're expecting to see doesn't show in the list that is produc
 {: tip}
 
 ```sh
-ibmcloud cr retention-run [--force | -f [--output json | -o json]] [--retain-untagged] [--deletion-threshold-days DAYS] --images IMAGE_COUNT NAMESPACE
+ibmcloud cr retention-run [--force | -f] [--output | -o [json]] [--retain-untagged] [--deletion-threshold-days DAYS] --images IMAGE_COUNT NAMESPACE
 ```
 
 For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
@@ -1692,7 +2068,7 @@ You can't delete images from the trash. Images are stored in the trash for 30 da
 {: note}
 
 ```sh
-ibmcloud cr trash-list [--restrict NAMESPACE] [--output json | -o json]
+ibmcloud cr trash-list [--restrict NAMESPACE] [--output | -o [json]]
 ```
 
 ### Prerequisites
@@ -1866,3 +2242,54 @@ View a vulnerability assessment report that shows the vulnerabilities for the `u
 ibmcloud cr vulnerability-assessment --vulnerabilities --output json us.icr.io/birds/bluebird:1
 ```
 {: pre}
+
+### Example 1
+{: #bx_cr_va_example1}
+
+View a standard vulnerability assessment report for the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
+
+```sh
+ibmcloud cr vulnerability-assessment us.icr.io/birds/bluebird:1
+```
+{: pre}
+
+### Output for example 1
+{: #bx_cr_va_output1}
+
+The command in [example 1](#bx_cr_va_example1) returns the following output:
+
+```text
+Checking security issues for 'us.icr.io/birds/bluebird:1'...
+
+Image                              Current   Configuration Issues   Vulnerabilities
+us.icr.io/birds/bluebird:1         OK        0                      0
+
+OK
+```
+{: screen}
+
+### Example 2
+{: #bx_cr_va_example2}
+
+View a vulnerability assessment report that shows the vulnerabilities for the `us.icr.io/birds/bluebird:1` image in JSON format by using the `-- vulnerabilities` option, and by entering `json` as the format for the output and `us.icr.io/birds/bluebird:1` as the image.
+
+```sh
+ibmcloud cr vulnerability-assessment --vulnerabilities --output json us.icr.io/birds/bluebird:1
+```
+{: pre}
+
+### Output for example 2
+{: #bx_cr_va_output2}
+
+The command in [example 2](#bx_cr_va_example2) returns the following output:
+
+```text
+[
+  {
+    "image": "us.icr.io/birds/bluebird:1",
+    "vulnerabilities": [],
+    "status": "OK"
+  }
+]
+```
+{: screen}

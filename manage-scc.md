@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
-keywords: Security and compliance for IBM Cloud Container Registry, security for IBM Cloud Container Registry, compliance for IBM Cloud Container Registry, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
+keywords: Security and compliance for {{site.data.keyword.registryshort_notm}}, security for {{site.data.keyword.registryshort_notm}}, compliance for {{site.data.keyword.registryshort_notm}}, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
 
 subcollection: Registry
 
@@ -12,10 +12,10 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Securing IBM Cloud container registry: Managing compliance
+# Securing {{site.data.keyword.registryshort_notm}}: Managing compliance
 {: #manage-security-compliance}
 
-{{site.data.keyword.registrylong}} is integrated with {{site.data.keyword.sysdigsecure_short}} to help you to manage security and compliance for your organization.
+{{site.data.keyword.registryshort_notm}} is integrated with IBM Cloud Security and Compliance Center to help you manage security posture, compliance, and vulnerability findings for your organization.
 {: shortdesc}
 
 You can monitor compliance posture, critical vulnerabilities, and threats across hybrid multicloud with [{{site.data.keyword.sysdigsecure_full_notm}}](/docs/workload-protection?topic=workload-protection-getting-started).

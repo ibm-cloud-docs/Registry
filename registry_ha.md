@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-08-11"
 
-keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
+keywords: load balancing, back ups, HA for {{site.data.keyword.registryshort_notm}}, DR for {{site.data.keyword.registryshort_notm}}, high availability for {{site.data.keyword.registryshort_notm}}, disaster recovery for {{site.data.keyword.registryshort_notm}}, failover for {{site.data.keyword.registryshort_notm}}, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
 
 subcollection: Registry
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # High availability for {{site.data.keyword.registryshort_notm}}
 {: #ha-dr}
 
-The {{site.data.keyword.registrylong}} service is a highly available, regional, service.
+{{site.data.keyword.registryshort_notm}} is a highly available regional service with traffic load-balanced across multiple availability zones to eliminate single points of failure.
 {: shortdesc}
 
 [High availability](#x2284708){: term} (HA) is a core discipline in an IT infrastructure that keeps your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-08-11"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash, deletion threshold, deletion_threshold_days, minimum age
 
@@ -32,6 +32,8 @@ You can't delete images from the trash. Images are stored in the trash for 30 da
 {: note}
 
 If you want to check your policies, you can run the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list) command.
+
+If you want to update a policy with new settings, see [Update a retention policy](#retention_policy_update).
 
 If you want to cancel a policy, [update the retention policy so that it keeps all your images](#retention_policy_keep).
 
@@ -215,6 +217,27 @@ To set a policy and immediately move your deleted images to the trash, complete 
     ibmcloud cr retention-policy-list
     ```
     {: pre}
+
+## Update a retention policy
+{: #retention_policy_update}
+{: help}
+{: support}
+
+A retention policy is a set of options applied per namespace. There is one policy per namespace, so to update a policy, run the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) command again with your new settings. The updated options replace the existing policy immediately, and the policy continues to run daily with the new settings.
+
+For example, to change the number of images to retain to `30` and add a deletion threshold of `14` days for the namespace `NAMESPACE`, run the following command:
+
+```txt
+ibmcloud cr retention-policy-set --images 30 --deletion-threshold-days 14 NAMESPACE
+```
+{: pre}
+
+You can verify the updated policy by running the following command:
+
+```txt
+ibmcloud cr retention-policy-list
+```
+{: pre}
 
 ## Update a retention policy to keep all your images
 {: #retention_policy_keep}

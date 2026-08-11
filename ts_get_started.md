@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: iam, access, policy, permission, access policy
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Troubleshooting getting started with IBM Cloud registry permissions
+# Troubleshooting getting started with {{site.data.keyword.registryshort_notm}} permissions
 {: #troubleshoot-get-started}
 {: troubleshoot}
 {: support}
 
-You're trying to use the [getting started instructions](/docs/Registry?topic=Registry-getting-started) for {{site.data.keyword.registrylong}}, but you can't get any {{site.data.keyword.registryshort}} commands to work.
+You're following the getting started instructions for {{site.data.keyword.registryshort_notm}} but none of the registry commands work because you lack the required IAM permission.
 {: shortdesc}
 
 You can't run any commands in {{site.data.keyword.registryshort}} because you don't have permission.

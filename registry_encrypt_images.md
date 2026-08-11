@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -17,13 +17,13 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Encrypting images for confidentiality in IBM Cloud registry
+# Encrypting images for confidentiality in {{site.data.keyword.registryshort_notm}}
 {: #registry_encrypt}
 {: toc-content-type="tutorial"}
 {: toc-services="key-protect"}
 {: toc-completion-time="2h"}
 
-You can protect the confidentiality of your {{site.data.keyword.registrylong}} images, and ensure that hosts that aren't trusted can't run the images.
+Protect the confidentiality of your {{site.data.keyword.registryshort_notm}} images by encrypting them with an RSA public-private key pair so that only trusted hosts can run them.
 {: shortdesc}
 
 Create an encrypted image so that people without the [private key](#x2034701){: term} can't access the content. Create the encrypted image by using an RSA public-private key pair to encrypt and decrypt the image. A public key is not a secret and anyone can use it to encrypt an image. A private key is a secret, and only users that have that private key can use it to decrypt the image.

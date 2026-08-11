@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Troubleshooting IBM Cloud container registry issues
+# Troubleshooting {{site.data.keyword.registryshort_notm}} issues
 {: #ts_index}
 {: troubleshoot}
 {: support}
 
-Answers to common troubleshooting questions about how to use {{site.data.keyword.registrylong}}.
+Find answers to common troubleshooting questions about {{site.data.keyword.registryshort_notm}}, covering authentication errors, image pull failures, namespace issues, and more.
 {: shortdesc}
 
 ## Troubleshooting topics

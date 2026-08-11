@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: registry, slow, performance, image, pull
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Troubleshooting slow image pulls in IBM Cloud registry
+# Troubleshooting slow image pulls in {{site.data.keyword.registryshort_notm}}
 {: #troubleshoot-pull-performance}
 {: troubleshoot}
 {: support}
 
-Pulling an image is slow from {{site.data.keyword.registrylong}}.
+Pulling an image from {{site.data.keyword.registryshort_notm}} is slow or times out. Use these steps to diagnose and resolve image pull performance issues.
 {: shortdesc}
 
 When you try to pull an image, it takes a long time.

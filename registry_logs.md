@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-18"
+lastupdated: "2026-08-11"
 
-keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
+keywords: platform services logs for {{site.data.keyword.registryshort_notm}}, logging for {{site.data.keyword.registryshort_notm}}, logging for {{site.data.keyword.registryshort_notm}}, {{site.data.keyword.registryshort_notm}} logs, {{site.data.keyword.registryshort_notm}} security, analyzing logs for {{site.data.keyword.registryshort_notm}}, viewing {{site.data.keyword.registryshort_notm}} logs, {{site.data.keyword.registryshort_notm}} logs, logs, region
 
 subcollection: Registry
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Logging for {{site.data.keyword.registryshort_notm}}
 {: #registry_logs}
 
-{{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, generate platform logs that you can use to investigate abnormal activity and critical actions in your account, and troubleshoot problems.
+{{site.data.keyword.registryshort_notm}} generates platform logs that you can route and analyze to investigate abnormal activity, audit critical actions, and troubleshoot problems.
 {: shortdesc}
 
 {{site.data.keyword.logs_routing_full_notm}} is a platform service. You can use {{site.data.keyword.logs_routing_full_notm}} to route the platform logs in your account to your choice of destination by configuring a tenant that defines where the platform logs are sent. For more information, see [About Logs Routing](/docs/logs-router?topic=logs-router-about).
