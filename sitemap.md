@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-13"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -910,7 +910,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
 * [`ibmcloud cr api`](/docs/Registry?topic=Registry-containerregcli#bx_cr_api)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_api_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_api_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_api_output)
 
@@ -968,7 +968,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_output)
 
@@ -976,13 +976,13 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable_prereq)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable_output)
 
 * [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status_output)
 
@@ -1004,7 +1004,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_output)
 
@@ -1024,7 +1024,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged_output)
 
@@ -1034,7 +1034,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_argument)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_output)
 
@@ -1044,7 +1044,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_argument)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_output)
 
@@ -1074,7 +1074,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_argument)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_output)
 
@@ -1082,7 +1082,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_info_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_info_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_info_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_info_output)
 
@@ -1090,7 +1090,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_login_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_login_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_login_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_login_output)
 
@@ -1102,7 +1102,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_output)
 
@@ -1114,7 +1114,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_output)
 
@@ -1126,7 +1126,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_output)
 
@@ -1136,7 +1136,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list_output)
 
@@ -1148,7 +1148,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_output)
 
@@ -1158,7 +1158,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_output)
 
@@ -1168,7 +1168,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_argument)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_output)
 
@@ -1178,7 +1178,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics_output)
 
@@ -1188,7 +1188,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only_output)
 
@@ -1198,7 +1198,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_output)
 
@@ -1208,13 +1208,13 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set_output)
 
 * [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_output)
 
@@ -1222,7 +1222,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_argument)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_output)
 
@@ -1232,7 +1232,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list_output)
 
@@ -1264,7 +1264,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_output)
 
@@ -1274,13 +1274,13 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list_option)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list_output)
 
 * [`ibmcloud cr va-version`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_output)
 
@@ -1288,11 +1288,11 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command arguments](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_argument)
 
-    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_example)
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_output)
 
-* [`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_va)
+* [`ibmcloud cr vulnerability-assessment`](/docs/Registry?topic=Registry-containerregcli#bx_cr_va)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_prereq)
 
