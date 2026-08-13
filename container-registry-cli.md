@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-13"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -61,7 +61,7 @@ This command returns the details about the registry API endpoint that the comman
 ibmcloud cr api
 ```
 
-### Example
+### Examples
 {: #bx_cr_api_example}
 
 Find out the details for the registry API endpoint.
@@ -418,7 +418,7 @@ To find out more about the required permissions, see [Access roles for configuri
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
 
-### Example
+### Examples
 {: #bx_cr_exemption_types_example}
 
 List the types of security issues.
@@ -462,7 +462,7 @@ ibmcloud cr iam-policies-enable
 
 To find out more about the required permissions, see [Access roles for configuring {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
-### Example
+### Examples
 {: #bx_cr_iam_policies_enable_example}
 
 Use IAM policies to enable fine-grained authorization.
@@ -496,7 +496,7 @@ All accounts require {{site.data.keyword.iamlong}} (IAM) access policies.
 ibmcloud cr iam-policies-status
 ```
 
-### Example
+### Examples
 {: #bx_cr_iam_policies_status_example}
 
 Show the status of the IAM access policy for your account.
@@ -617,7 +617,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--format FORMAT`
 :   (Optional) Format the output elements by using a Go template. For more information, see [Formatting and filtering the {{site.data.keyword.registryshort}} CLI output](/docs/Registry?topic=Registry-registry_cli_list).
 
-### Example
+### Examples
 {: #bx_cr_image_inspect_example}
 
 Display details about the exposed ports for the `us.icr.io/birds/bluebird:1` image by using the formatting directive `"{{ .Config.ExposedPorts }}"` and by entering `us.icr.io/birds/bluebird:1` as the image.
@@ -745,7 +745,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--restrict`
 :   (Optional) Limit the clean up to only untagged images in the specified namespace or repository.
 
-### Example
+### Examples
 {: #ic_cr_image_prune_untagged_example}
 
 Delete all untagged images that are in the `birds` namespace without any user prompts and output the results in JSON format by using the `--force` option to force the command to run with no user prompts, and by entering `--json` as the output and `birds` as the restriction.
@@ -808,7 +808,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 
     Images are stored in the trash for 30 days.
 
-### Example
+### Examples
 {: #bx_cr_image_restore_example}
 
 Restore the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
@@ -865,7 +865,7 @@ To find out more about the required permissions, see [Access roles for using {{s
     - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
     - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
 
-### Example
+### Examples
 {: #bx_cr_image_rm_example}
 
 Delete the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
@@ -1040,7 +1040,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 
     To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the command fails.
 
-### Example
+### Examples
 {: #bx_cr_image_untag_example}
 
 Remove the tag `1` from the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
@@ -1079,7 +1079,7 @@ ibmcloud cr info [--verbose]
 `--verbose`
 :   (Optional) Display additional information about the registry environment.
 
-### Example
+### Examples
 {: #bx_cr_info_example}
 
 Find the name and account of the registry.
@@ -1131,7 +1131,7 @@ Logging in to {{site.data.keyword.registryshort}} by using the `ibmcloud cr logi
 `--client CLIENT`
 :   (Optional) Select the client that you want to log in. Valid values are `docker` and `podman`. If this option is not used and Docker is installed, the default is `docker`; if Docker is not installed, the default is `podman`.
 
-### Example
+### Examples
 {: #bx_cr_login_example}
 
 To log in to the registry by using Podman, enter `podman` as the client.
@@ -1185,7 +1185,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--quiet`, `-q`
 :   (Optional) Reduces the output to display essential elements only.
 
-### Example
+### Examples
 {: #bx_cr_manifest_inspect_example}
 
 View the contents of the manifest for the `us.icr.io/birds/bluebird:1` image by entering `us.icr.io/birds/bluebird:1` as the image.
@@ -1266,7 +1266,7 @@ To find out more about the required permissions, see [Platform management roles]
 `-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)`
 :   (Optional) Specify the name or ID of the resource group to which you want to add the namespace. If you don't set this option, the targeted resource group is used. If you don't set this option and a resource group is not targeted, the default resource group for the account is used.
 
-### Example
+### Examples
 {: #bx_cr_namespace_add_example}
 
 Create a namespace with the name `birds2` and add it to the resource group `beaks` by entering `beaks` as the resource group name and `birds2` as the namespace.
@@ -1324,7 +1324,7 @@ To find out more about the required permissions, see [Platform management roles]
 `-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)`
 :   (Optional) Specify the name or ID of the resource group to which you want to assign the namespace. If you don't set this option, the targeted resource group is used.
 
-### Example
+### Examples
 {: #ic_cr_namespace_assign_example}
 
 Assign a namespace with the name `birds` to the resource group `beaks` by entering `beaks` as the resource group name and `birds` as the namespace.
@@ -1373,7 +1373,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
 
-### Example
+### Examples
 {: #bx_cr_namespace_list_example}
 
 View a list of all your namespaces, including information about resource groups and creation dates, by using the `--verbose` option.
@@ -1425,7 +1425,7 @@ To find out more about the required permissions, see [Access roles for configuri
 `--force`, `-f`
 :   (Optional) Force the command to run with no user prompts.
 
-### Example
+### Examples
 {: #bx_cr_namespace_rm_example}
 
 Remove the `birds` namespace by entering `birds` as the namespace.
@@ -1469,7 +1469,7 @@ To find out more about the required permissions, see [Access roles for configuri
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
 
-### Example
+### Examples
 {: #bx_cr_plan_example}
 
 Output your pricing plan in JSON format by entering `json` as the output.
@@ -1513,7 +1513,7 @@ To find out more about the required permissions, see [Access roles for configuri
 `PLAN`
 :   (Optional) The name of the pricing plan that you want to upgrade to. If `PLAN` is not specified, the default is `standard`.
 
-### Example
+### Examples
 {: #bx_cr_plan_upgrade_example}
 
 Upgrade to the standard pricing plan by entering `standard` as the plan.
@@ -1571,7 +1571,7 @@ For more information about the platform metrics that you can view in {{site.data
 `--status`
 :   (Optional) Display whether the setting is enabled for your account.
 
-### Example
+### Examples
 {: #ic_cr_platform_metrics_example}
 
 Enable platform metrics for your account by using the `--enable` option.
@@ -1617,7 +1617,7 @@ To find out more about the required permissions, see [Access roles for configuri
 `--status`
 :   (Optional) Check whether the use of public connections is prevented for image pushes or pulls in your account.
 
-### Example
+### Examples
 {: #ic_cr_private_only_example}
 
 Prevent image pulls or pushes over public network connections for your account by using the `--enable` option.
@@ -1659,7 +1659,7 @@ To find out more about the required permissions, see [Access roles for configuri
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
 
-### Example
+### Examples
 {: #bx_cr_quota_example}
 
 Display your traffic and storage quotas in JSON format by entering `json` as the output option.
@@ -1711,7 +1711,7 @@ To find out more about the required permissions, see [Access roles for configuri
 `--storage STORAGE`
 :   (Optional) Changes your storage quota to the specified value in megabytes. The operation fails if you are not authorized to set storage quotas, or if you set a value that exceeds your current pricing plan.
 
-### Example
+### Examples
 {: #bx_cr_quota_set_example}
 
 Set your quota limit for pull traffic to 7000 megabytes and storage to 600 megabytes by entering `7000` as your traffic quota and `600` as your storage quota.
@@ -1742,7 +1742,7 @@ Displays the targeted region and the registry. For more information, see [Region
 ibmcloud cr region
 ```
 
-### Example
+### Examples
 {: #bx_cr_region_example}
 
 Find out which region and registry you're targeting.
@@ -1779,7 +1779,7 @@ ibmcloud cr region-set [REGION]
 `REGION`
 :   (Optional) The name of your target region, for example `us-south`. For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
-### Example
+### Examples
 {: #bx_cr_region_set_example}
 
 Target the Dallas region by entering `us-south` as the region.
@@ -1826,7 +1826,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--output json`, `-o json`
 :   (Optional) Outputs the list in JSON format.
 
-### Example
+### Examples
 {: #bx_cr_retention_policy_list_example}
 
 List the retention policies in your account in JSON format by entering `json` as the output.
@@ -1876,7 +1876,7 @@ If a retention policy deletes an image that you want to keep, you can restore th
 If you want to cancel a retention policy, see [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep).
 
 ```sh
-ibmcloud cr retention-policy-set [--retain-untagged] [--deletion-threshold-days DAYS] [--force | -f] --images IMAGE_COUNT NAMESPACE
+ibmcloud cr retention-policy-set [--retain-untagged] [--deletion-threshold-days DAYS] [--force | -f] --images IMAGECOUNT NAMESPACE
 ```
 
 For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
@@ -1999,7 +1999,7 @@ If an image that you're expecting to see doesn't show in the list that is produc
 {: tip}
 
 ```sh
-ibmcloud cr retention-run [--force | -f] [--output | -o [json]] [--retain-untagged] [--deletion-threshold-days DAYS] --images IMAGE_COUNT NAMESPACE
+ibmcloud cr retention-run [--force | -f ] [--output | -o [json]] [--retain-untagged] [--deletion-threshold-days DAYS] --images IMAGECOUNT NAMESPACE
 ```
 
 For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
@@ -2033,7 +2033,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--images`
 :   Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGE_COUNT` is the number of images that you want to retain in each repository for the namespace.
 
-### Example
+### Examples
 {: #bx_cr_retention_run_example}
 
 Retain the newest 20 images within each repository in the `birds` namespace by entering `20` as the number of images to keep and `birds` as the namespace.
@@ -2085,7 +2085,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--output json`, `-o json`
 :   (Optional) Outputs JSON that contains the details of the contents of the trash.
 
-### Example
+### Examples
 {: #bx_cr_trash_list_example}
 
 Display the images that are in the trash in the `birds` namespace by entering `birds` as the restriction.
@@ -2119,7 +2119,7 @@ Find out which version of Vulnerability Advisor you're using. Version 4 is the o
 ibmcloud cr va-version
 ```
 
-### Example
+### Examples
 {: #ic_cr_va_version_example}
 
 Find out which version of Vulnerability Advisor you're using.
@@ -2159,7 +2159,7 @@ ibmcloud cr va-version-set [VERSION]
 `VERSION`
 :   (Optional) The version of Vulnerability Advisor that you want to use. The only valid value is `v4`. If `VERSION` is not specified, the default is `v4`.
 
-### Example
+### Examples
 {: #ic_cr_va_version_set_example}
 
 Set the version of Vulnerability Advisor to version 4 by entering `v4` as the version:
@@ -2181,10 +2181,10 @@ OK
 ```
 {: screen}
 
-## `ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)
+## `ibmcloud cr vulnerability-assessment`
 {: #bx_cr_va}
 
-Alias: `va`
+Alias: `va` (`ibmcloud cr va`)
 
 View a vulnerability assessment report for your images.
 
