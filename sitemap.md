@@ -930,7 +930,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Output for example 2](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_output2)
 
-* [`ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list)
+* [`ibmcloud cr exemption-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_prereq)
 

@@ -183,10 +183,10 @@ OK
 ```
 {: screen}
 
-## `ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)
+## `ibmcloud cr exemption-list`
 {: #bx_cr_exemption_list}
 
-Alias: `exemptions`
+Alias: `exemptions` (`ibmcloud cr exemptions`)
 
 List your exemptions for security issues.
 
@@ -2189,7 +2189,7 @@ Alias: `va` (`ibmcloud cr va`)
 View a vulnerability assessment report for your images.
 
 ```sh
-ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--output FORMAT | -o FORMAT] IMAGE [IMAGE...]
+ibmcloud cr vulnerability-assessment IMAGE [IMAGE...] [--extended | -e] [--vulnerabilities | -v] [--configuration-issues | -c] [--output FORMAT | -o FORMAT]
 ```
 
 ### Prerequisites
@@ -2217,6 +2217,9 @@ To find out more about the required permissions, see [Access roles for using {{s
 
 `--vulnerabilities`, `-v`
 :   (Optional) The command output is restricted to show vulnerabilities only.
+
+`--configuration-issues`, `-c`
+:   (Optional) The command output is restricted to show configuration issues only.
 
 `--output FORMAT`, `-o FORMAT`
 :   (Optional) The command output is returned in the chosen format. The default format is `text`.
