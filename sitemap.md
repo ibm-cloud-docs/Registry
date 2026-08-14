@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -954,6 +954,8 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_example)
 
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_examples_public)
+
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_example1)
 
     * [Output for example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_output1)
@@ -1055,6 +1057,8 @@ Explore the site map for IBM Cloud container registry, covering getting started 
     * [Command arguments](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_argument)
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_example)
+
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_examples_public)
 
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_example1)
 
@@ -1244,6 +1248,8 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_option)
 
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_example)
+
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_example1)
 
     * [Output for example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_output1)
@@ -1301,6 +1307,8 @@ Explore the site map for IBM Cloud container registry, covering getting started 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_option)
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_example)
+
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_examples_public)
 
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_example1)
 

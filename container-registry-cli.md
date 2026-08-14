@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-14"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -353,6 +353,11 @@ Delete an account-wide CVE exemption for the CVE with ID `CVE-2018-17929` by ent
 ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
+
+### Examples
+{: #bx_cr_exemption_rm_examples_public}
+
+The following examples show how to delete a security issue exemption.
 
 ### Example 1
 {: #bx_cr_exemption_rm_example1}
@@ -948,6 +953,11 @@ Copy the `us.icr.io/birds/bluebird:peck` image to another namespace that you hav
 ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
+
+### Examples
+{: #bx_cr_image_tag_examples_public}
+
+The following examples show how to tag an image.
 
 ### Example 1
 {: #bx_cr_image_tag_example1}
@@ -1907,6 +1917,11 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--images`
 :   Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGE_COUNT` is the number of images that you want to retain in each repository for the namespace. To return a policy to the default state that keeps all the images set `IMAGE_COUNT` to `All`.
 
+### Examples
+{: #bx_cr_retention_policy_set_example}
+
+The following examples show how to set a retention policy for your namespace.
+
 ### Example 1
 {: #bx_cr_retention_policy_set_example1}
 
@@ -2245,6 +2260,11 @@ View a vulnerability assessment report that shows the vulnerabilities for the `u
 ibmcloud cr vulnerability-assessment --vulnerabilities --output json us.icr.io/birds/bluebird:1
 ```
 {: pre}
+
+### Examples
+{: #bx_cr_va_examples_public}
+
+The following examples show how to run a vulnerability assessment on your images.
 
 ### Example 1
 {: #bx_cr_va_example1}
