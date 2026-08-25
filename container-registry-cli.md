@@ -139,7 +139,7 @@ ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-### Examples
+### More examples
 {: #bx_cr_exemption_add_examples_public}
 
 The following examples show how to create a security issue exemption.
@@ -244,7 +244,7 @@ ibmcloud cr exemption-list --scope birds/bluebird@sha256:10101010101010101010101
 ```
 {: pre}
 
-### Examples
+### More examples
 {: #bx_cr_exemption_list_examples_public}
 
 The following examples show how to list security issue exemptions.
@@ -364,7 +364,7 @@ ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-### Examples
+### More examples
 {: #bx_cr_exemption_rm_examples_public}
 
 The following examples show how to delete a security issue exemption.
@@ -964,7 +964,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
-### Examples
+### More examples
 {: #bx_cr_image_tag_examples_public}
 
 The following examples show how to tag an image.
@@ -2271,7 +2271,7 @@ ibmcloud cr vulnerability-assessment --vulnerabilities --output json us.icr.io/b
 ```
 {: pre}
 
-### Examples
+### More examples
 {: #bx_cr_va_examples_public}
 
 The following examples show how to run a vulnerability assessment on your images.
