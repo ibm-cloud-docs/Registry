@@ -922,7 +922,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_example)
 
-    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_examples_public)
+    * [More examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_examples_public)
 
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_example1)
 
@@ -940,7 +940,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_example)
 
-    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_examples_public)
+    * [More examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_examples_public)
 
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_example1)
 
@@ -958,7 +958,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_example)
 
-    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_examples_public)
+    * [More examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_examples_public)
 
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_example1)
 
@@ -1062,7 +1062,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_example)
 
-    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_examples_public)
+    * [More examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_examples_public)
 
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_example1)
 
@@ -1312,7 +1312,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_example)
 
-    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_examples_public)
+    * [More examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_examples_public)
 
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_example1)
 
