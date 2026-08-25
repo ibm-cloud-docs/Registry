@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -922,6 +922,8 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_example)
 
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_examples_public)
+
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_example1)
 
     * [Output for example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_output1)
@@ -937,6 +939,8 @@ Explore the site map for IBM Cloud container registry, covering getting started 
     * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_option)
 
     * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_example)
+
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_examples_public)
 
     * [Example 1](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_example1)
 
@@ -1134,7 +1138,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_output)
 
-* [`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list)
+* [`ibmcloud cr namespace-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list_prereq)
 
