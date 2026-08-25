@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-25"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -153,7 +153,7 @@ For more information about how to access {{site.data.keyword.registryshort}}, se
 
 To list all the images in your {{site.data.keyword.cloud_notm}} account, you can run the `ibmcloud cr images` command, which displays all tagged images in your {{site.data.keyword.cloud_notm}} account with a truncated digest. If you want to list all your images with the complete digest, including untagged images, run the `ibmcloud cr image-digests` command. The image name is in either the format `repository@digest` or `repository:tag`. The values for repository, digest, and tag are returned when you run the commands.
 
-For more information, see [`ibmcloud cr image-list` (`ibmcloud cr images`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) and [`ibmcloud cr image-digests` (`ibmcloud cr digests`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests).
+For more information, see [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) and [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests).
 
 ## How do you list public images?
 {: #faq_list_public_images}

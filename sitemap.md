@@ -992,7 +992,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status_output)
 
-* [`ibmcloud cr image-digests` (`ibmcloud cr digests`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests)
+* [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests_prereq)
 
@@ -1014,7 +1014,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
     * [Output](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_output)
 
-* [`ibmcloud cr image-list` (`ibmcloud cr images`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list)
+* [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list)
 
     * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list_prereq)
 
