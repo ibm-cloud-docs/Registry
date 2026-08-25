@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-25"
 
 keywords: IBM Cloud Container Registry, container registry, ibmcloud cr, container-registry, managing container registry cli, ibm cloud container registry cli, ibm cloud registry, container-registry cli, managing registry, managing registry resources, container-registry cli plug-in, registry cli, registry commands, container registry commands, ibm cloud container registry terminal, ibm cloud container registry command line, icr.io commands
 
@@ -103,7 +103,7 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Command options
 {: #bx_cr_exemption_add_option}
 
-`--scope SCOPE`
+`--scope`
 :   To set your account as the scope, use `"*"` as the value.
 
     To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats:
@@ -113,13 +113,13 @@ To find out more about the required permissions, see [Access roles for configuri
     - `namespace/repository:tag`
     - `namespace/repository@digest`
 
-`--issue-type ISSUE_TYPE`
+`--issue-type`
 :   The type of security issue that you want to exempt. To find valid issue types, run `ibmcloud cr exemption-types`.
 
-`--issue-id ISSUE_ID`
+`--issue-id`
 :   The ID of the security issue that you want to exempt. To find an issue ID, run `ibmcloud cr va <image>`, where `<image>` is the name of your image, and use the relevant value from the **Vulnerability ID** column.
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
 ### Examples
@@ -138,6 +138,11 @@ Create an account-wide CVE exemption for the CVE with ID `CVE-2018-17929` by ent
 ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
+
+### Examples
+{: #bx_cr_exemption_add_examples_public}
+
+The following examples show how to create a security issue exemption.
 
 ### Example 1
 {: #bx_cr_exemption_add_example1}
@@ -194,7 +199,7 @@ You can identify the images in the scope by using either the [tag](/docs/Registr
 {: tip}
 
 ```sh
-ibmcloud cr exemption-list [--scope SCOPE] [--output json | -o json]
+ibmcloud cr exemption-list [--scope SCOPE] [--output | -o [json]]
 ```
 
 ### Prerequisites
@@ -205,7 +210,7 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Command options
 {: #bx_cr_exemption_list_option}
 
-`--scope SCOPE`
+`--scope`
 :   (Optional) List only the exemptions that apply to this scope.
 
     To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats:
@@ -215,7 +220,7 @@ To find out more about the required permissions, see [Access roles for configuri
     - `namespace/repository:tag`
     - `namespace/repository@digest`
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
 ### Examples
@@ -238,6 +243,11 @@ The output includes exemptions that are account-wide, exemptions that are scoped
 ibmcloud cr exemption-list --scope birds/bluebird@sha256:1010101010101010101010101010101010101010101010101010101010101010
 ```
 {: pre}
+
+### Examples
+{: #bx_cr_exemption_list_examples_public}
+
+The following examples show how to list security issue exemptions.
 
 ### Example 1
 {: #bx_cr_exemption_list_example1}
@@ -318,7 +328,7 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Command options
 {: #bx_cr_exemption_rm_option}
 
-`--scope SCOPE`
+`--scope`
 :   To set your account as the scope, use `"*"` as the value.
 
     To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats:
@@ -328,13 +338,13 @@ To find out more about the required permissions, see [Access roles for configuri
     - `namespace/repository:tag`
     - `namespace/repository@digest`
 
-`--issue-type ISSUE_TYPE`
+`--issue-type`
 :   The type of issue for the exemption for the security issue that you want to remove. To find the types of issue for your exemptions, run `ibmcloud cr exemption-list`.
 
-`--issue-id ISSUE_ID`
+`--issue-id`
 :   The ID of the exemption for the security issue that you want to remove. To find the issue IDs for your exemptions, run `ibmcloud cr exemption-list`.
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
 ### Examples
@@ -420,7 +430,7 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Command options
 {: #bx_cr_exemption_types_option}
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
 ### Examples
@@ -536,7 +546,7 @@ You can refer to an image by using a combination of the **Repository** column (`
 {: tip}
 
 ```sh
-ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --output json | -o json] [--restrict RESTRICTION] [--include-ibm] [--no-va] [--va]
+ibmcloud cr image-digests [--format FORMAT | -q | --quiet | --output | -o [json]] [--restrict RESTRICTION] [--include-ibm] [--no-va] [--va]
 ```
 
 ### Prerequisites
@@ -547,16 +557,16 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #bx_cr_image_digests_option}
 
-`--format FORMAT`
+`--format`
 :   (Optional) Format the output elements by using a Go template. For more information, see [Formatting and filtering the {{site.data.keyword.registryshort}} CLI output](/docs/Registry?topic=Registry-registry_cli_list).
 
-`--quiet`, `-q`
+`-q`, `--quiet`
 :   (Optional) Each image is listed in the format: `repository@digest`
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
-`--restrict RESTRICTION`
+`--restrict`
 :   (Optional) Limit the output to display only images in the specified namespace or repository.
 
 `--include-ibm`
@@ -619,7 +629,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #bx_cr_image_inspect_option}
 
-`--format FORMAT`
+`--format`
 :   (Optional) Format the output elements by using a Go template. For more information, see [Formatting and filtering the {{site.data.keyword.registryshort}} CLI output](/docs/Registry?topic=Registry-registry_cli_list).
 
 ### Examples
@@ -663,7 +673,7 @@ If the command to list images times out, see [Why is it timing out when I list i
 {: tip}
 
 ```sh
-ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type] [--no-va] [--va] [--output json | -o json]
+ibmcloud cr image-list [--format FORMAT] [-q | --quiet] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type] [--no-va] [--va] [--output | -o [json]]
 ```
 
 ### Prerequisites
@@ -674,13 +684,13 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #bx_cr_image_list_option}
 
-`--format FORMAT`
+`--format`
 :   (Optional) Format the output elements by using a Go template. For more information, see [Formatting and filtering the {{site.data.keyword.registryshort}} CLI output](/docs/Registry?topic=Registry-registry_cli_list).
 
-`--quiet`, `-q`
+`-q`, `--quiet`
 :   (Optional) Each image is listed in the format: `repository:tag`
 
-`--restrict RESTRICTION`
+`--restrict`
 :   (Optional) Limit the output to display only images in the specified namespace or repository.
 
 `--include-ibm`
@@ -698,7 +708,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--va`
 :   (Optional) Includes the Vulnerability Advisor security status results in the output. You can use the `--va` option with the `--restrict` option to receive just the information that you require.
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
 ### Example
@@ -741,10 +751,10 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #ic_cr_image_prune_untagged_option}
 
-`--force`, `-f`
+`-f`, `--force`
 :   (Optional) Force the command to run with no user prompts.
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs JSON that contains the results of cleaning up your untagged images. This option must be used with `--force`.
 
 `--restrict`
@@ -1138,7 +1148,7 @@ Logging in to {{site.data.keyword.registryshort}} by using the `ibmcloud cr logi
 ### Command options
 {: #bx_cr_login_option}
 
-`--client CLIENT`
+`--client`
 :   (Optional) Select the client that you want to log in. Valid values are `docker` and `podman`. If this option is not used and Docker is installed, the default is `docker`; if Docker is not installed, the default is `podman`.
 
 ### Examples
@@ -1192,7 +1202,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #bx_cr_manifest_inspect_option}
 
-`--quiet`, `-q`
+`-q`, `--quiet`
 :   (Optional) Reduces the output to display essential elements only.
 
 ### Examples
@@ -1358,15 +1368,15 @@ OK
 ```
 {: screen}
 
-## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
+## `ibmcloud cr namespace-list`
 {: #bx_cr_namespace_list}
 
-Alias: `namespaces`
+Alias: `namespaces` (`ibmcloud cr namespaces`)
 
 Displays all namespaces that are owned by your {{site.data.keyword.cloud_notm}} account. You can use this command to list your namespaces so that you can verify which namespaces are assigned to resource groups, and which namespaces are unassigned. Namespaces that are assigned to a resource group also show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 
 ```sh
-ibmcloud cr namespace-list [--verbose | -v] [--output json | -o json]
+ibmcloud cr namespace-list [--verbose | -v] [--output | -o [json]]
 ```
 
 ### Prerequisites
@@ -1377,10 +1387,10 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #bx_cr_namespace_list_option}
 
-`--verbose`, `-v`
+`-v`, `--verbose`
 :   (Optional) List all the namespaces and include information about the resource group and the creation date of the namespace.
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
 ### Examples
@@ -1432,7 +1442,7 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Command options
 {: #bx_cr_namespace_rm_option}
 
-`--force`, `-f`
+`-f`, `--force`
 :   (Optional) Force the command to run with no user prompts.
 
 ### Examples
@@ -1476,7 +1486,7 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Command options
 {: #bx_cr_plan_option}
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
 ### Examples
@@ -1666,7 +1676,7 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Command options
 {: #bx_cr_quota_option}
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
 ### Examples
@@ -1715,10 +1725,10 @@ To find out more about the required permissions, see [Access roles for configuri
 ### Command options
 {: #bx_cr_quota_set_option}
 
-`--traffic TRAFFIC`
+`--traffic`
 :   (Optional) Changes your traffic quota to the specified value in megabytes. The operation fails if you are not authorized to set traffic, or if you set a value that exceeds your current pricing plan.
 
-`--storage STORAGE`
+`--storage`
 :   (Optional) Changes your storage quota to the specified value in megabytes. The operation fails if you are not authorized to set storage quotas, or if you set a value that exceeds your current pricing plan.
 
 ### Examples
@@ -1833,7 +1843,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #bx_cr_retention_policy_list_option}
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs the list in JSON format.
 
 ### Examples
@@ -1911,7 +1921,7 @@ To find out more about the required permissions, see [Access roles for using {{s
 `--deletion-threshold-days`
 :   (Optional) Sets a minimum age in days that an image must reach before the retention policy can delete it. Images that are younger than `DAYS` are always retained, even if retaining them exceeds the `--images` count. `DAYS` must be a positive integer. The default value is `0`, which means no threshold applies.
 
-`--force`, `-f`
+`-f`, `--force`
 :   (Optional) Force the command to run with no user prompts.
 
 `--images`
@@ -2033,10 +2043,10 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #bx_cr_retention_run_option}
 
-`--force`, `-f`
+`-f`, `--force`
 :   (Optional) Force the command to run with no user prompts.
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs JSON that contains the results of cleaning your namespace. This option must be used with `--force`.
 
 `--retain-untagged`
@@ -2094,10 +2104,10 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #bx_cr_trash_list_option}
 
-`--restrict NAMESPACE`
+`--restrict`
 :   (Optional) Limit the output to display only images in the specified namespace.
 
-`--output json`, `-o json`
+`-o`, `--output`
 :   (Optional) Outputs JSON that contains the details of the contents of the trash.
 
 ### Examples
@@ -2227,16 +2237,16 @@ To find out more about the required permissions, see [Access roles for using {{s
 ### Command options
 {: #bx_cr_va_option}
 
-`--extended`, `-e`
+`-e`, `--extended`
 :   (Optional) The command output shows additional information about fixes for vulnerable packages.
 
-`--vulnerabilities`, `-v`
+`-v`, `--vulnerabilities`
 :   (Optional) The command output is restricted to show vulnerabilities only.
 
-`--configuration-issues`, `-c`
+`-c`, `--configuration-issues`
 :   (Optional) The command output is restricted to show configuration issues only.
 
-`--output FORMAT`, `-o FORMAT`
+`-o`, `--output`
 :   (Optional) The command output is returned in the chosen format. The default format is `text`.
 
     The following formats are supported:
