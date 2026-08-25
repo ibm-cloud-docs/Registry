@@ -191,7 +191,7 @@ OK
 ## `ibmcloud cr exemption-list`
 {: #bx_cr_exemption_list}
 
-Alias: `exemptions` (`ibmcloud cr exemptions`)
+Alias: `exemptions`
 
 List your exemptions for security issues.
 
@@ -533,7 +533,7 @@ OK
 ```
 {: screen}
 
-## `ibmcloud cr image-digests` (`ibmcloud cr digests`)
+## `ibmcloud cr image-digests`
 {: #bx_cr_image_digests}
 
 Alias: `digests`
@@ -656,7 +656,7 @@ OK
 ```
 {: screen}
 
-## `ibmcloud cr image-list` (`ibmcloud cr images`)
+## `ibmcloud cr image-list`
 {: #bx_cr_image_list}
 
 Alias: `images`
@@ -1371,7 +1371,7 @@ OK
 ## `ibmcloud cr namespace-list`
 {: #bx_cr_namespace_list}
 
-Alias: `namespaces` (`ibmcloud cr namespaces`)
+Alias: `namespaces`
 
 Displays all namespaces that are owned by your {{site.data.keyword.cloud_notm}} account. You can use this command to list your namespaces so that you can verify which namespaces are assigned to resource groups, and which namespaces are unassigned. Namespaces that are assigned to a resource group also show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 
@@ -2209,7 +2209,7 @@ OK
 ## `ibmcloud cr vulnerability-assessment`
 {: #bx_cr_va}
 
-Alias: `va` (`ibmcloud cr va`)
+Alias: `va`
 
 View a vulnerability assessment report for your images.
 
