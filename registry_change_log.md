@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-06-11"
+lastupdated: "2026-08-31"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI, vulnerabilities, what's new in CLI
 
@@ -19,6 +19,34 @@ In this change log you can learn about what's new in the {{site.data.keyword.reg
 {: shortdesc}
 
 For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+
+## Version 1.4.2
+{: #cli-change-logv1-142}
+
+Version 1.4.2 of the CLI was released on 01 September 2026.
+
+This release has the following changes:
+
+- Remediates vulnerabilities.
+- Corrects the minimum IBM Cloud CLI version requirement for the plug-in.
+
+## Version 1.4.1
+{: #cli-change-logv1-141}
+
+Version 1.4.1 of the CLI was released on 18 August 2026.
+
+This release has the following changes:
+
+- Remediates vulnerabilities.
+
+## Version 1.4.0
+{: #cli-change-logv1-140}
+
+Version 1.4.0 of the CLI was released on 2 July 2026.
+
+This release has the following changes:
+
+- Adds the `--deletion-threshold-days` option to the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) commands. Use this option to set a minimum age in days that an image must reach before it can be deleted by a retention policy or retention run.
 
 ## Version 1.3.22
 {: #cli-change-logv1-1322}
