@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-31"
+lastupdated: "2026-10-02"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -277,11 +277,11 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 * [Cleaning up your account](/docs/Registry?topic=Registry-iam_access#clean_up)
 
 
-## Setting up your first cluster in your Virtual Private Cloud (VPC)
-{: #sitemap_setting_up_your_first_cluster_in_your_virtual_private_cloud_vpc}
+## Setting up your first cluster in your Virtual Private Cloud (VPC) (recommended)
+{: #sitemap_setting_up_your_first_cluster_in_your_virtual_private_cloud_vpc_recommended}
 
 
-[Setting up your first cluster in your Virtual Private Cloud (VPC)](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_tutorial)
+[Setting up your first cluster in your Virtual Private Cloud (VPC) (recommended)](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_tutorial)
 
 * [Audience](/docs/Registry?topic=Registry-vpc_ks_tutorial#vpc_ks_audience)
 
