@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-10-17"
+  years: 2017, 2026
+lastupdated: "2026-10-02"
 
 keywords: docker, latest, image, tag, latest tag, most recent
 
@@ -33,4 +33,4 @@ To make it easier to find the most recent image, define a different sequential t
 
 To find the most recent image, you can run the `ibmcloud cr image-list` command rather than the `docker pull` command.
 
-For more information about Docker tags, see [docker image tag](https://docs.docker.com/reference/cli/docker/image/tag/){: externa}.
+For more information about Docker tags, see [docker image tag](https://docs.docker.com/reference/cli/docker/image/tag/){: external}.

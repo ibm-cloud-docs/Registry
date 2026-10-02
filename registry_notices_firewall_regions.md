@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-02"
+lastupdated: "2026-10-02"
 
 keywords: IBM Cloud Container Registry notices, firewall, cdn, domain-based firewall, domains, icr.io, notices, content delivery network, regions
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Firewall changes from 18 March 2026 for users that pull {{site.data.keyword.registryshort}} images from regional instances
 {: #registry_notices_firewall_regions}
 
-To ensure continued performance for regional instances of {{site.data.keyword.registrylong}}, a content delivery network (CDN) is being enabled that means that you might have to adjust your firewall settings. If you need to adjust your firewall settings, you must adjust them by 18 March 2026.
+To ensure continued performance for regional instances of {{site.data.keyword.registrylong}}, a content delivery network (CDN) was enabled on 18 March 2026. If you use domain-based firewall rules to access regional registry instances, you must ensure that your rules include the required domains.
 {: shortdesc}
 
 The original announcement was published on 20 January 2026.
@@ -26,10 +26,10 @@ The original announcement was published on 20 January 2026.
 
 If you use domain-based firewall rules, you must add the following domains. The domains accommodate future changes that might issue a redirect for certain requests such as an image layer download for traffic optimization.
 
-## What actions you must take by 18 March 2026
+## Required firewall domains
 {: #registry_notices_firewall_regions_actions}
 
-If you use a public network to access {{site.data.keyword.registrylong_notm}}, you must add the following domains to your firewall rules by 18 March 2026:
+If you use a public network to access {{site.data.keyword.registrylong_notm}}, your firewall rules must include the following domains:
 
 | Local {{site.data.keyword.registryshort_notm}} region | Domain name |
 | ----------------------------------------------------- | ----------- |

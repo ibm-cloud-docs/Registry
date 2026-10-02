@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2025
-lastupdated: "2025-08-12"
+  years: 2017, 2026
+lastupdated: "2026-10-02"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -106,8 +106,6 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_el
 
 1. Install Docker or a tool of your choice, such as Podman.
     - Install the [Docker Engine CLI](https://www.docker.com/products/container-runtime/#/download){: external}.
-
-      [Windows]{: tag-windows} [macOS]{: tag-macos} For Windows&reg; 8, or macOS X Yosemite 10.10.x or earlier, install [Docker Desktop](https://docs.docker.com/desktop/){: external} instead.
 
       For more information about the version of Docker that is supported by {{site.data.keyword.registrylong_notm}}, see [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 

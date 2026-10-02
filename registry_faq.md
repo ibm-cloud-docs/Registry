@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-10-02"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -124,7 +124,7 @@ When you remove a namespace, any images that are stored in that namespace are al
 {: #faq_access}
 {: faq}
 
-You can access your {{site.data.keyword.registrylong_notm}} namespaces in several ways, depending on your use case. You can create, view, modify, and delete namespaces in the {{site.data.keyword.cloud_notm}} console or {{site.data.keyword.cloud_notm}} CLI. You can push and pull images by using using third party tools such as [Docker](https://www.docker.com/){: external}, [Podman](https://podman.io/){: external}, [Skopeo](https://skopeo.org/){: external}, [ORAS](https://oras.land/){: external}, [regctl](https://regclient.org/usage/regctl/){: external}, and [Crane](https://github.com/google/go-containerregistry/tree/main/cmd/crane){: external}. You can also use the {{site.data.keyword.cloud_notm}} SDKs to manipulate the registry.
+You can access your {{site.data.keyword.registrylong_notm}} namespaces in several ways, depending on your use case. You can create, view, modify, and delete namespaces in the {{site.data.keyword.cloud_notm}} console or {{site.data.keyword.cloud_notm}} CLI. You can push and pull images by using using third party tools such as [Docker](https://www.docker.com/){: external}, [Podman](https://podman.io/){: external}, [Skopeo](https://github.com/podman-container-tools/skopeo){: external}, [ORAS](https://oras.land/){: external}, [regctl](https://regclient.org/usage/regctl/){: external}, and [Crane](https://github.com/google/go-containerregistry/tree/main/cmd/crane){: external}. You can also use the {{site.data.keyword.cloud_notm}} SDKs to manipulate the registry.
 
 Authenticating automation with long-lived credentials
 :   Use API keys (either user API keys or service ID API keys) with IAM access policies. API keys are the preferred method for automation and Kubernetes clusters. For more information, see [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating).
