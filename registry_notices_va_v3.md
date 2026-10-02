@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-08-12"
+  years: 2023, 2026
+lastupdated: "2026-10-02"
 
 keywords: IBM Cloud Container Registry notices, vulnerability advisor, change, update, actions, sdk, code, api, cli, version 4, version 3
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Vulnerability Advisor version 3 is being discontinued on 13 November 2023
 {: #registry_notices_va_v3}
 
-The version of the Vulnerability Advisor component of {{site.data.keyword.registrylong}} has been updated. Vulnerability Advisor version 4 is now the default. Vulnerability Advisor version 3 is already [deprecated](/docs/Registry?topic=Registry-registry_notices_va_v4) and is discontinued from 13 November 2023. If you are still using version 3, you must update to Vulnerability Advisor version 4 by 13 November 2023. If you are already using version 4, no action is required.
+The version of the Vulnerability Advisor component of {{site.data.keyword.registrylong}} has been updated. Vulnerability Advisor version 4 is now the default. Vulnerability Advisor version 3 was discontinued on 13 November 2023. If you are still using version 3, you must update to Vulnerability Advisor version 4. If you are already using version 4, no action is required.
 {: shortdesc}
 
 The original announcement was published on 11 October 2023.
@@ -38,7 +38,7 @@ Any exemptions that you previously defined for version 3 continue to work. Howev
 
 Differences in Vulnerability Advisor version 4 behavior are documented in [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#about).
 
-## What actions you must take by 13 November 2023
+## Actions required to update to Vulnerability Advisor version 4
 {: #notices_va_v3_action}
 
 To update to Vulnerability Advisor version 4, complete the following steps:

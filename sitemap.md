@@ -166,19 +166,19 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_firewall_regions#registry_notices_firewall_regions_know)
 
-* [What actions you must take by 18 March 2026](/docs/Registry?topic=Registry-registry_notices_firewall_regions#registry_notices_firewall_regions_actions)
+* [Required firewall domains](/docs/Registry?topic=Registry-registry_notices_firewall_regions#registry_notices_firewall_regions_actions)
 
 [Firewall changes from 4 September 2024 for users that pull images from global](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_know)
 
-* [What actions you must take by 4 September 2024](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_actions)
+* [Required firewall domains](/docs/Registry?topic=Registry-registry_notices_firewall#registry_notices_firewall_actions)
 
 [Vulnerability Advisor version 3 is being discontinued on 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#registry_notices_va_v3)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_change)
 
-* [What actions you must take by 13 November 2023](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_action)
+* [Actions required to update to Vulnerability Advisor version 4](/docs/Registry?topic=Registry-registry_notices_va_v3#notices_va_v3_action)
 
 [Upcoming public networking changes from 15 June 2023](/docs/Registry?topic=Registry-registry_notices_wildcard_domains#registry_notices_wildcard_domains)
 
@@ -186,7 +186,7 @@ Explore the site map for IBM Cloud container registry, covering getting started 
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_change)
 
-* [What actions you must take by 19 June 2023](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_action)
+* [Actions required to use Vulnerability Advisor version 4](/docs/Registry?topic=Registry-registry_notices_va_v4#notices_va_v4_action)
 
 [IBM Cloud Container Registry is available](/docs/Registry?topic=Registry-registry_notices_ibcr#registry_notices_ibcr)
 
