@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-10-12"
 
 keywords: {{site.data.keyword.registryshort_notm}}, context-based restrictions, CBR, access
 
@@ -55,16 +55,16 @@ The **Resource Name** value is a namespace, as shown by the [`ibmcloud cr namesp
 ## Limitations
 {: #registry-cbr_limitations}
 
-Context-based restrictions protect only the actions that are associated with the [{{site.data.keyword.registrylong_notm}} API](/apidocs/container-registry) and the [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}} API](/apidocs/vulnerability-advisor). Actions that are associated with the following platform APIs are not protected by context-based restrictions. Reference the API documentation for the specific action IDs.
+Context-based restrictions protect only the actions that are associated with the [{{site.data.keyword.registrylong_notm}} API](https://cloud.ibm.com/docs/apis/container-registry) and the [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}} API](https://cloud.ibm.com/docs/apis/container-registry). Actions that are associated with the following platform APIs are not protected by context-based restrictions. Reference the API documentation for the specific action IDs.
 
-- [Resource Instance APIs](/apidocs/resource-controller/resource-controller#list-resource-instances)
-- [Resource Keys APIs](/apidocs/resource-controller/resource-controller#list-resource-keys)
-- [Resource Reclamations APIs](/apidocs/resource-controller/resource-controller#list-reclamations)
-- [IAM Policy APIs](/apidocs/iam-policy-management#list-policies)
-- [Global Search APIs](/apidocs/search)
-- [Global Tagging Attach tags](/apidocs/tagging#attach-tag) API and [Global Tagging Detach tags](/apidocs/tagging#detach-tag) API
-- [Context-based Restriction Rule APIs](/apidocs/context-based-restrictions#create-rule)
-- [Secrets Manager APIs](/apidocs/secrets-manager/secrets-manager-v2)
+- [Resource Instance APIs](https://cloud.ibm.com/docs/apis/resource-controller/resource-controller#list-resource-instances)
+- [Resource Keys APIs](https://cloud.ibm.com/docs/apis/resource-controller/resource-controller#list-resource-keys)
+- [Resource Reclamations APIs](https://cloud.ibm.com/docs/apis/resource-controller/resource-controller#list-reclamations)
+- [IAM Policy APIs](https://cloud.ibm.com/docs/apis/iam-policy-management#list-policies)
+- [Global Search APIs](https://cloud.ibm.com/docs/apis/search)
+- [Global Tagging Attach tags](https://cloud.ibm.com/docs/apis/tagging#attach-tag) API and [Global Tagging Detach tags](https://cloud.ibm.com/docs/apis/tagging#detach-tag) API
+- [Context-based Restriction Rule APIs](https://cloud.ibm.com/docs/apis/context-based-restrictions#create-rule)
+- [Secrets Manager APIs](https://cloud.ibm.com/docs/apis/secrets-manager/secrets-manager-v2)
 
 ## Creating rules
 {: #registry-cbr_create_rules}
@@ -101,7 +101,7 @@ ibmcloud cbr rule-create --description 'Only allow access to my_namespace over t
 {: #registry-cbr_rules_api}
 {: api}
 
-To create rules in the API, see the [API docs](/apidocs/context-based-restrictions#create-rule) and [Creating rules by using the API](/docs/iam?topic=iam-context-restrictions-create&interface=api#context-restrictions-create-rules-api).
+To create rules in the API, see the [API docs](https://cloud.ibm.com/docs/apis/context-based-restrictions#create-rule) and [Creating rules by using the API](/docs/iam?topic=iam-context-restrictions-create&interface=api#context-restrictions-create-rules-api).
 
 After you create a rule, it might take up to 10 minutes to before you can update that rule due to IAM TTL response caching.
 {: note}

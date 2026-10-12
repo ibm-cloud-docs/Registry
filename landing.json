@@ -51,7 +51,7 @@
     }
   ],
   "section_devtools": {
-    "api": "/apidocs/container-registry",
+    "api": "https://cloud.ibm.com/docs/apis/container-registry",
     "cli": "/docs/Registry?topic=Registry-containerregcli",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace"
   },

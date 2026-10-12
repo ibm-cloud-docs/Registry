@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-10-12"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for {{site.data.keyword.registryshort_notm}}, permissions for {{site.data.keyword.registryshort_notm}}, iam for {{site.data.keyword.registryshort_notm}}, roles for {{site.data.keyword.registryshort_notm}}, actions for {{site.data.keyword.registryshort_notm}}, assigning access for {{site.data.keyword.registryshort_notm}}, manager, reader, writer, actions, access group
 
@@ -154,7 +154,7 @@ The following table details actions that are mapped to operations on the service
 | `container-registry.image.push` | `docker push` Push a container image.  \n  \n `docker trust sign` Sign a container image.  \n  \n [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) Restore a deleted container image from the trash.  \n  \n [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) Create a container image that refers to a source image. | Writer, Manager |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list) List your namespaces. | Reader, Manager |
 | `container-registry.retention.analyze` | [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only container images that meet your criteria.  \n  \n [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) Clean up your namespaces by retaining only container images that meet your criteria. | Reader, Manager  \n  \n To run `ibmcloud cr retention-run` and `ibmcloud cr retention-policy-set` you must have Manager, or both Reader and Writer. |
-| `container-registry.retention.get` | View the image retention policy for a namespace by using the API, see [{{site.data.keyword.registrylong_notm}} API](/apidocs/container-registry). | Reader, Manager |
+| `container-registry.retention.get` | View the image retention policy for a namespace by using the API, see [{{site.data.keyword.registrylong_notm}} API](https://cloud.ibm.com/docs/apis/container-registry). | Reader, Manager |
 | `container-registry.retention.set` | [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only container images that meet your criteria. | Writer, Manager |
 | `container-registry.retention.list` | [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list) List the image retention policies for your account. | Reader, Manager |
 {: caption="Service actions and operations for using {{site.data.keyword.registryshort}}" caption-side="bottom"}
@@ -187,7 +187,7 @@ ibmcloud iam user-policy-create USER_EMAIL --service-name container-registry --r
 {: #registry_iam_assign-access-api}
 {: api}
 
-For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the API](/docs/iam?topic=iam-assign-access-resources&interface=api#access-resources-api) or [Create a policy](/apidocs/iam-policy-management#create-policy) in the API docs. Role cloud resource names (CRN) in the following table are used to assign access with the API.
+For step-by-step instructions for assigning, removing, and reviewing access, see [Assigning access to resources by using the API](/docs/iam?topic=iam-assign-access-resources&interface=api#access-resources-api) or [Create a policy](https://cloud.ibm.com/docs/apis/iam-policy-management#create-policy) in the API docs. Role cloud resource names (CRN) in the following table are used to assign access with the API.
 
 | Role name | Role CRN |
 | --------- | -------- |
