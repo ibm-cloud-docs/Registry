@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-10-12"
 
 keywords: Track, tracking events, find events, activity tracking for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -236,7 +236,7 @@ The following table lists the fields that are available through the `requestData
 {: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} account vulnerability reports list" caption-side="bottom"}
 {: #table_registry_at_event_va_custom_reports_list}
 
-For more information about the action `container-registry.account-vulnerability-report.list`, see [Get the vulnerability assessment for all images](/apidocs/vulnerability-advisor#accountreportquerypath) in the API documentation.
+For more information about the action `container-registry.account-vulnerability-report.list`, see [Get the vulnerability assessment for all images](https://cloud.ibm.com/docs/apis/container-registry) in the API documentation.
 
 #### Request data for the account vulnerability status
 {: #at_events_analyze_status_list}
@@ -253,7 +253,7 @@ The following table lists the fields that are available through the `requestData
 {: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} account vulnerability status list" caption-side="bottom"}
 {: #table_registry_at_event_va_custom_status_list}
 
-For more information about the action `container-registry.account-vulnerability-status.list`, see [Get vulnerability assessment status for all images](/apidocs/vulnerability-advisor#accountstatusquerypath) in the API documentation.
+For more information about the action `container-registry.account-vulnerability-status.list`, see [Get vulnerability assessment status for all images](https://cloud.ibm.com/docs/apis/container-registry) in the API documentation.
 
 #### Request and response data for the vulnerability report
 {: #at_events_analyze_report_read}
@@ -266,11 +266,11 @@ The following table lists the fields that are available through the `requestData
 | ------------------- | ---- | ----------- |
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n The following constraint applies: The value must match the regular expression `.*`. |
 | `responseData.id` | String | The unique ID of the report. |
-| `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/vulnerability-advisor#vulnerability-report-status-codes) in the API documentation. |
+| `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](https://cloud.ibm.com/docs/apis/container-registry) in the API documentation. |
 {: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability reports read" caption-side="bottom"}
 {: #table_registry_at_event_va_custom_reports_read}
 
-For more information, see [Get vulnerability assessment status](/apidocs/vulnerability-advisor#imagereportquerypath) in the API documentation.
+For more information, see [Get vulnerability assessment status](https://cloud.ibm.com/docs/apis/container-registry) in the API documentation.
 
 #### Request and response data for the vulnerability status
 {: #at_events_analyze_status_read}
@@ -282,11 +282,11 @@ The following table lists the fields that are available through the `requestData
 | Custom Event Fields | Type | Description |
 | ------------------- | ---- | ----------- |
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n The following constraint applies: The value must match the regular expression `.*`. |
-| `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/vulnerability-advisor#vulnerability-report-status-codes) in the API documentation. |
+| `responseData.status` | String | The following values for the overall vulnerability assessment status are available:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](https://cloud.ibm.com/docs/apis/container-registry) in the API documentation. |
 {: caption="Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability status read" caption-side="bottom"}
 {: #table_registry_at_event_va_custom_status_read}
 
-For more information, see [Get vulnerability status](/apidocs/vulnerability-advisor#imagestatusquerypath) in the API documentation.
+For more information, see [Get vulnerability status](https://cloud.ibm.com/docs/apis/container-registry) in the API documentation.
 
 ### Request data for image signing events
 {: #at_events_sign_events}
