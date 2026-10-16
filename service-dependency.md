@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-10-16"
 
 keywords:
 
@@ -52,6 +52,7 @@ The following dependencies apply to the following deployment locations: Chennai 
 | IBM Cloud Classic Infrastructure Resource Management | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Service Endpoints | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 | Akamai | Availability, Security compliance | No | Both |  external  |
+| Akamai | Availability, Security compliance | No | Both |  external  |
 {: row-headers}
 {: caption="IBM Cloud Container Registry - VPC Data and control plane service dependency information - Critical dependencies" caption-side="top"}
 {: tab-title="Critical dependencies"}
@@ -62,7 +63,7 @@ The following dependencies apply to the following deployment locations: Chennai 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
-| IBM Cloud Global Search and Tagging | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Global Search and Tagging | Availability, Instance control | No | Both |  Same region  |
 | PagerDuty | Availability, Operations, Security compliance | No | Both |  external  |
 | IBM Cloud Console | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.keymanagementservicefull}} | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
@@ -88,6 +89,10 @@ The following dependencies apply to the following deployment locations: Chennai 
 | Alpine Linux Vulnerabilities Databases| none | No | Both |  external  |
 | Red Hat Vulnerabilities Databases| none | No | Both |  external  |
 | IBM Cloud Log Routing| none | No | Both |  Same region  |
+| OSS Platform| Operations | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| corporate-uptycs| Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| corporate-magna| Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| {{site.data.keyword.pag_full}}| Security compliance | No | Both |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Container Registry - VPC Data and control plane service dependency information - Minimal dependencies" caption-side="top"}
 {: tab-title="Minimal dependencies"}
@@ -112,6 +117,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 | IBM Cloud Classic Infrastructure Resource Management | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Service Endpoints | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 | Akamai | Availability, Security compliance | No | Both |  external  |
+| Akamai | Availability, Security compliance | No | Both |  external  |
 {: row-headers}
 {: caption="IBM Cloud Container Registry - Data and Control plane deployment service dependency information - Critical dependencies" caption-side="top"}
 {: tab-title="Critical dependencies"}
@@ -122,7 +128,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
-| IBM Cloud Global Search and Tagging | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Global Search and Tagging | Availability, Instance control | No | Both |  Same region  |
 | PagerDuty | Availability, Operations, Security compliance | No | Both |  external  |
 | IBM Cloud Console | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.keymanagementservicefull}} | Availability, Disaster recovery, Security compliance | No | Both |  Same region  |
